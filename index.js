@@ -15,4 +15,4 @@ const minifiedHtml = htmlMinifier.minify(html, {
   removeAttributeQuotes: true,
   removeComments: true
 })
-fs.writeFileSync(path.resolve(`${__dirname}/docs/index.html`), minifiedHtml)
+fs.writeFileSync(path.resolve(`${__dirname}/index.html`), minifiedHtml)
