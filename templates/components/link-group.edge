@@ -1,0 +1,8 @@
+<div class="link-group">
+  <div class="link-group__name">{{ group.name }}</div>
+  <div class="link-group__list">
+    @each(link in group.items)
+      @!component('components.link-item', item = link)
+    @endeach
+  </div>
+</div>

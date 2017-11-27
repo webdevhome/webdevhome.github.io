@@ -1,0 +1,31 @@
+{
+  "name": "webdevhome.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "serve dist",
+    "build": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdevhome/webdevhome.github.io.git"
+  },
+  "main": "index.js",
+  "author": {
+    "name": "Andreas Linnert",
+    "email": "andreas@linnertmedia.de",
+    "url": "https://linnertmedia.de"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webdevhome/webdevhome.github.io/issues"
+  },
+  "homepage": "https://webdevhome.github.io",
+  "dependencies": {
+    "edge.js": "^1.1.2",
+    "html-minifier": "^3.5.7",
+    "json5": "^0.5.1",
+    "serve": "^6.4.1",
+    "standard": "^10.0.3"
+  }
+}
