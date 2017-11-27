@@ -76,6 +76,11 @@
           title: 'Google Chrome',
           url: 'https://chromestatus.com',
           image: 'chromestatus'
+        },
+        {
+          title: 'Timeline of Web Browsers',
+          url: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg',
+          image: 'timeline'
         }
       ]
     },
@@ -97,17 +102,6 @@
           title: 'Vue Newsletter',
           url: 'http://vue-newsletter.com',
           image: 'vue-weekly'
-        }
-      ]
-    },
-    {
-      name: 'Misc',
-      imageFolder: 'misc',
-      items: [
-        {
-          title: 'Timeline of Web Browsers',
-          url: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg',
-          image: 'timeline'
         }
       ]
     }
