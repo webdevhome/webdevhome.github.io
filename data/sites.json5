@@ -74,7 +74,7 @@
         },
         {
           title: 'Google Chrome',
-          url: 'https://chromestatus.com',
+          url: 'http://chromestatus.com',
           image: 'chromestatus'
         },
         {
