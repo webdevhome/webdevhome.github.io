@@ -1,7 +1,7 @@
 :root {
-  font-family: Segoe UI, sans-serif;
-  --primary-color: hsl(200, 80%, 50%);
-  --primary-color-dark: hsl(200, 80%, 30%);
+  font-family: Segoe UI, Helvetica, Helvetica Neue, Arial, Ubuntu, sans-serif;
+  --primary-color: hsl(210, 80%, 50%);
+  --primary-color-dark: hsl(210, 80%, 30%);
 }
 
 body {
@@ -23,10 +23,16 @@ a:hover {
 }
 
 .page-footer {
+  font-size: 14px;
+  color: #777;
   text-align: center;
   border-top: 1px solid hsl(0, 0%, 80%);
   padding-top: 20px;
   margin-top: 100px;
+}
+
+.page-footer a:hover {
+  text-decoration: underline;
 }
 
 .page-footer>div {
@@ -36,24 +42,34 @@ a:hover {
 .title {
   font-size: 40px;
   font-weight: normal;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   color: var(--primary-color);
 }
 
 .slug {
-  font-size: 16px;
-  color: hsl(200, 80%, 30%);
+  font-size: 14px;
+  color: var(--primary-color-dark);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+.divider {
+  color: #bbbbbb;
 }
 
 main {
   display: block;
   width: 800px;
-  margin: 100px auto 60px;
+  margin: 100px auto 40px;
 }
 
 .link-group__name {
-  font-size: 22px;
+  font-size: 20px;
+  color: #444;
   text-transform: uppercase;
+  letter-spacing: 1px;
   margin-top: 60px;
   margin-bottom: 10px;
 }
@@ -67,7 +83,9 @@ main {
 
 .link-item {
   background-color: white;
-  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.12), 0 2px 4px hsla(0, 0%, 0%, 0.2);
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 2px hsla(0, 0%, 0%, 0.08);
+  /* box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.12), 0 2px 4px hsla(0, 0%, 0%, 0.2); */
   border-radius: 3px;
   display: flex;
   align-items: center;
