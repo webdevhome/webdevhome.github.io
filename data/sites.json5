@@ -101,7 +101,7 @@
         {
           title: 'Vue Newsletter',
           url: 'http://vue-newsletter.com',
-          image: 'vue-weekly'
+          image: 'vue-newsletter'
         }
       ]
     }

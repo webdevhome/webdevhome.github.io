@@ -61,7 +61,7 @@ a:hover {
 
 main {
   display: block;
-  width: 800px;
+  width: 868px;
   margin: 100px auto 40px;
 }
 
@@ -85,18 +85,27 @@ main {
   background-color: white;
   border: 1px solid #ddd;
   box-shadow: 0 2px 2px hsla(0, 0%, 0%, 0.08);
-  /* box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.12), 0 2px 4px hsla(0, 0%, 0%, 0.2); */
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 4px;
 }
 
 .link-item__link {
-  display: block;
+  display: grid;
+  grid-template-rows: 120px auto;
   color: var(--primary-color);
-  padding: 10px;
   text-align: center;
+  height: 100%;
+}
+
+.link-item__image-container {
+  line-height: 0;
+}
+
+.link-item__image {
+  width: 100%;
+}
+
+.link-item__label {
+  padding: 10px;
 }
 
 .link-item__link:hover {
