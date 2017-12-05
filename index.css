@@ -22,6 +22,10 @@ a:hover {
   text-align: center;
 }
 
+.page-header__logo {
+  width: 1000px;
+}
+
 .page-footer {
   font-size: 14px;
   color: #777;
