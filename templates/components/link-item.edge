@@ -1,4 +1,6 @@
 <a class="link-item" href="{{ item.url }}">
   <img src="/images/{{ folder }}/{{ item.image }}.png" alt="" class="link-item__image">
-  <div class="link-item__label">{{ item.title }}</div>
+  @if(item.title)
+    <div class="link-item__label">{{ item.title }}</div>
+  @endif
 </a>
