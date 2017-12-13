@@ -2,6 +2,9 @@
   font-family: Segoe UI, Helvetica, Helvetica Neue, Arial, Ubuntu, sans-serif;
   --primary-color: hsl(210, 80%, 50%);
   --primary-color-dark: hsl(210, 80%, 30%);
+  --primary-color-hover: hsl(210, 0%, 90%);
+  --link-item-color: hsl(0, 0%, 40%);
+  --link-item-color-hover: hsl(0, 0%, 20%);
   --md-shadow-1: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
   --md-shadow-2: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
   --md-shadow-3: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
@@ -44,7 +47,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.page-footer>div {
+.page-footer > div {
   margin-bottom: 5px;
 }
 
@@ -75,12 +78,21 @@ main {
 }
 
 .link-group__name {
-  font-size: 20px;
-  color: #444;
+  display: inline-block;
+  color: var(--primary-color-dark);
+  font-size: 18px;
+  line-height: 2;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 60px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  padding-right: 20px;
+  border-bottom: 1px solid var(--primary-color-dark);
+}
+
+.link-group:first-child .link-group__name {
+  margin-top: 0;
 }
 
 .link-group__list {
@@ -95,19 +107,18 @@ main {
   grid-template-rows: 120px auto;
   color: var(--primary-color);
   text-align: center;
-  background-color: white;
-  border: 1px solid white;
-  box-shadow: var(--md-shadow-1);
-  transform: translateY(0);
-  transition: box-shadow 0.15s ease-out, transform 0.15s ease-out, border-color 0.15s ease-out;
+  background-color: hsla(0, 0%, 0%, 0);
 }
 
 .link-item:focus,
 .link-item:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--md-shadow-3);
-  border-color: #777;
-  outline: none;
+  background-color: var(--primary-color-hover);
+  outline: 2px solid var(--primary-color-hover);
+}
+
+.link-item:focus .link-item__label,
+.link-item:hover .link-item__label {
+  color: var(--link-item-color-hover);
 }
 
 .link-item__image-container {
@@ -116,12 +127,18 @@ main {
 
 .link-item__image {
   width: 100%;
+  border: 1px solid hsl(0, 0%, 70%);
+  box-sizing: border-box;
+}
+
+.link-item:focus .link-item__image,
+.link-item:hover .link-item__image {
+  border-color: hsl(0, 0%, 50%);
 }
 
 .link-item__label {
+  font-size: 14px;
+  font-weight: 600;
   padding: 10px;
-}
-
-.link-item__link:hover {
-  color: var(--primary-color-dark);
+  color: var(--link-item-color);
 }
