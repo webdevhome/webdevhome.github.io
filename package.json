@@ -22,10 +22,12 @@
   },
   "homepage": "https://webdevhome.github.io",
   "dependencies": {
-    "edge.js": "^1.1.2",
-    "html-minifier": "^3.5.7",
-    "json5": "^0.5.1",
-    "serve": "^6.4.1",
-    "standard": "^10.0.3"
+    "edge.js": "^1.1.4",
+    "html-minifier": "^3.5.15",
+    "json5": "^1.0.1"
+  },
+  "devDependencies": {
+    "serve": "^6.5.6",
+    "standard": "^11.0.1"
   }
 }
