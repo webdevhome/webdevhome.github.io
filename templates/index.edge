@@ -8,10 +8,20 @@
   @each(item in items)
     @!component('components.link-group', group = item)
   @endeach
+@endsection
 
+@section('footer')
   <footer class="page-footer">
-    <div>This is a service by Andreas Linnert</div>
-    <div><a href="https://linnertmedia.de">My website</a>&nbsp;&mdash;&nbsp;<a href="mailto:andreas@linnertmedia.de">Email me</a></div>
-    <div><a href="https://github.com/webdevhome/webdevhome.github.io">This page on GitHub</a>&nbsp;&mdash;&nbsp;<a href="https://github.com/alinnert">Me on GitHub</a></div>
+    <div>This is a service by Andreas Linnert.</div>
+    <div>
+      <a href="https://linnertmedia.de">my website</a>
+      &nbsp;&bullet;&nbsp;
+      <a href="mailto:andreas@linnertmedia.de">e-mail</a>
+      &nbsp;&bullet;&nbsp;
+      <a href="https://github.com/alinnert">me on GitHub</a>
+    </div>
+    <div>
+      <a href="https://github.com/webdevhome/webdevhome.github.io">This page on GitHub</a>
+    </div>
   </footer>
 @endsection

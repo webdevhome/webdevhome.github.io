@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "serve",
+    "start": "serve -l 9999",
     "build": "node index.js"
   },
   "repository": {
@@ -27,7 +27,7 @@
     "json5": "^1.0.1"
   },
   "devDependencies": {
-    "serve": "^6.5.6",
+    "serve": "^9.3.0",
     "standard": "^11.0.1"
   }
 }
