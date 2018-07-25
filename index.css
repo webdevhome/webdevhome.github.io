@@ -69,11 +69,10 @@ a:hover {
 
 .page-footer {
   font-size: 14px;
-  color: #777;
+  color: #bbb;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: var(--primary-color-hover);
+  padding: 20px;
+  background-color: #151515;
   /* background-image: radial-gradient(
     ellipse farthest-side at center top,
     hsla(0, 0%, 0%, 0.05),
@@ -81,7 +80,14 @@ a:hover {
   ); */
 }
 
-.page-footer a:hover {
+.page-footer__link {
+  display: inline-block;
+  padding: 5px 10px;
+  color: white;
+}
+
+.page-footer__link:hover {
+  color: white;
   text-decoration: underline;
 }
 
@@ -111,7 +117,7 @@ a:hover {
 
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   grid-gap: 60px;
   margin: 60px 100px;
 }
@@ -131,18 +137,20 @@ main {
   letter-spacing: 1px;
   margin-bottom: 15px;
   padding-right: 20px;
+  padding-left: 15px;
   border-bottom: 1px solid var(--primary-color-dark);
 }
 
 .link-group__list {
   display: grid;
-  grid-row-gap: 10px;
+  grid-row-gap: 5px;
 }
 
 .link-item {
   display: grid;
-  grid-template-columns: 80px auto;
-  grid-column-gap: 15px;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 10px;
+  min-height: 40px;
   color: var(--primary-color);
   background-color: hsla(0, 0%, 0%, 0);
 }
@@ -152,7 +160,15 @@ main {
 }
 
 .link-item:focus {
-  outline: 1px solid hsl(0, 0%, 90%);
+  outline: 1px solid hsl(0, 0%, 70%);
+}
+
+.link-item__label {
+  grid-column-start: 2;
+  align-self: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--link-item-color);
 }
 
 .link-item:hover .link-item__label {
@@ -163,23 +179,13 @@ main {
   color: var(--link-item-color-hover);
 }
 
-.link-item__image-container {
-  line-height: 0;
-}
-
 .link-item__image {
-  width: 100%;
+  align-self: center;
+  max-width: 100px;
   border: 1px solid hsla(0, 0%, 0%, 0);
   box-sizing: border-box;
 }
 
 .link-item:hover .link-item__label {
   color: var(--link-item-color-hover);
-}
-
-.link-item__label {
-  align-self: center;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--link-item-color);
 }
