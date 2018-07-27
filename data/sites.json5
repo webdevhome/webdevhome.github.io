@@ -4,112 +4,54 @@
       name: 'Documentation',
       imageFolder: 'docs',
       items: [
-        {
-          title: 'DevDocs',
-          url: 'https://devdocs.io/',
-          image: 'devdocs'
-        },
-        {
-          title: 'MDN',
-          url: 'https://developer.mozilla.org',
-          image: 'mdn'
-        }
+        { title: 'DevDocs', url: 'https://devdocs.io/', image: 'devdocs' },
+        { title: 'MDN', url: 'https://developer.mozilla.org', image: 'mdn' }
       ]
     },
     {
       name: 'Ask questions',
       imageFolder: 'questions',
       items: [
-        {
-          title: 'Stack Overflow',
-          url: 'https://stackoverflow.com'
-        }
+        { title: 'Stack Overflow', url: 'https://stackoverflow.com' },
+        { title: 'Reddit', url: 'https://reddit.com' }
       ]
     },
     {
       name: 'Browse projects',
       imageFolder: 'packages',
       items: [
-        {
-          title: 'GitHub',
-          url: 'https://github.com',
-          image: 'github'
-        },
-        {
-          title: 'npm',
-          url: 'https://npmjs.com',
-          image: 'npm'
-        }
+        { title: 'GitHub', url: 'https://github.com', image: 'github' },
+        { title: 'npm', url: 'https://npmjs.com', image: 'npm' }
       ]
     },
     {
       name: 'Standards and Proposals',
       imageFolder: 'features',
       items: [
-        {
-          title: 'Caniuse...',
-          url: 'https://caniuse.com'
-        },
-        {
-          title: 'ECMAScript Compatibility List',
-          url: 'https://kangax.github.io/compat-table/es6'
-        },
-        {
-          title: 'Node Green',
-          url: 'http://node.green'
-        },
-        {
-          title: 'ECMAScript Proposals',
-          url: 'https://github.com/tc39/proposals'
-        },
-        {
-          title: 'What\'s next for CSS?',
-          url: 'https://jonathantneal.github.io/css-db/'
-        }
+        { title: 'Caniuse...', url: 'https://caniuse.com' },
+        { title: 'ECMAScript Compatibility List', url: 'https://kangax.github.io/compat-table/es6' },
+        { title: 'Node Green', url: 'http://node.green' },
+        { title: 'ECMAScript Proposals', url: 'https://github.com/tc39/proposals' }
       ]
     },
     {
       name: 'Browser Status',
       imageFolder: 'browser',
       items: [
-        {
-          title: 'Microsoft Internet Explorer/Edge',
-          url: 'https://developer.microsoft.com/en-us/microsoft-edge/platform/status/'
-        },
-        {
-          title: 'Google Chrome',
-          url: 'http://chromestatus.com'
-        },
-        {
-          title: 'Mozilla Firefox',
-          url: 'https://platform-status.mozilla.org/'
-        },
-        {
-          title: 'Timeline of Web Browsers',
-          url: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg'
-        }
+        { title: 'Microsoft Internet Explorer/Edge', url: 'https://developer.microsoft.com/en-us/microsoft-edge/platform/status/' },
+        { title: 'Google Chrome', url: 'http://chromestatus.com' },
+        { title: 'Mozilla Firefox', url: 'https://platform-status.mozilla.org/' },
+        { title: 'Timeline of Web Browsers', url: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg' }
       ]
     },
     {
       name: 'Stay informed',
       imageFolder: 'newsletter',
       items: [
-        {
-          title: 'Frontend Focus',
-          url: 'https://frontendfoc.us'
-        },
-        {
-          title: 'JavaScript Weekly',
-          url: 'http://javascriptweekly.com'
-        },
-        {
-          title: 'Vue Newsletter',
-          url: 'http://vue-newsletter.com'
-        },
-        {
-          title: 'Node Weekly',
-          url: 'https://nodeweekly.com/'
-        }
+        { title: 'Frontend Focus', url: 'https://frontendfoc.us' },
+        { title: 'JavaScript Weekly', url: 'http://javascriptweekly.com' },
+        { title: 'Vue Newsletter', url: 'http://vue-newsletter.com' },
+        { title: 'Node Weekly', url: 'https://nodeweekly.com/' }
       ]
     }
   ]
