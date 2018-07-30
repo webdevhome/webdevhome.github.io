@@ -24,7 +24,8 @@
   "dependencies": {
     "edge.js": "^1.1.4",
     "html-minifier": "^3.5.15",
-    "json5": "^1.0.1"
+    "json5": "^1.0.1",
+    "simple-icons": "^1.7.1"
   },
   "devDependencies": {
     "serve": "^9.3.0",

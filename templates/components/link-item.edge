@@ -1,6 +1,8 @@
 <a class="link-item" href="{{ item.url }}">
-  @if(item.image)
-    <img src="/images/{{ folder }}/{{ item.image }}.png" alt="" class="link-item__image">
+  @if(item.icon)
+    <div class="link-item__icon-container" style="color: {{ item.color ? item.color : 'black' }}">
+      {{{ simpleIcons[item.icon].svg }}}
+    </div>
   @endif
   @if(item.title)
     <div class="link-item__label">{{ item.title }}</div>

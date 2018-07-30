@@ -2,7 +2,7 @@
   <div class="link-group__name">{{ group.name }}</div>
   <div class="link-group__list">
     @each(link in group.items)
-      @!component('components.link-item', item = link, folder = group.imageFolder)
+      @!component('components.link-item', item = link, folder = group.imageFolder, simpleIcons = simpleIcons)
     @endeach
   </div>
 </div>

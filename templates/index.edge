@@ -6,7 +6,7 @@
 
 @section('body')
   @each(item in items)
-    @!component('components.link-group', group = item)
+    @!component('components.link-group', group = item, simpleIcons = simpleIcons)
   @endeach
 @endsection
 
