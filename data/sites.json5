@@ -9,7 +9,7 @@
       ]
     },
     {
-      name: 'Ask questions',
+      name: 'Find help and discuss',
       imageFolder: 'questions',
       items: [
         { title: 'Stack Overflow', url: 'https://stackoverflow.com', icon: 'Stack Overflow', color: '#FE7A16' },
@@ -17,7 +17,7 @@
       ]
     },
     {
-      name: 'Browse projects and packages',
+      name: 'projects & packages',
       imageFolder: 'packages',
       items: [
         { title: 'GitHub', url: 'https://github.com', icon: 'GitHub', color: '#181717' },
@@ -25,7 +25,7 @@
       ]
     },
     {
-      name: 'Standards and Proposals',
+      name: 'Standards & Proposals',
       imageFolder: 'features',
       items: [
         { title: 'Caniuse...', url: 'https://caniuse.com' },
