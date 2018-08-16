@@ -1,7 +1,7 @@
 {
   items: [
     {
-      name: 'Documentation',
+      name: 'Read the docs',
       imageFolder: 'docs',
       items: [
         { title: 'DevDocs', url: 'https://devdocs.io/' },
@@ -17,7 +17,7 @@
       ]
     },
     {
-      name: 'Browse projects',
+      name: 'Browse projects and packages',
       imageFolder: 'packages',
       items: [
         { title: 'GitHub', url: 'https://github.com', icon: 'GitHub', color: '#181717' },
@@ -35,7 +35,7 @@
       ]
     },
     {
-      name: 'Browser Status',
+      name: 'Browser status',
       imageFolder: 'browser',
       items: [
         { title: 'Microsoft Internet Explorer/Edge', url: 'https://developer.microsoft.com/en-us/microsoft-edge/platform/status/', icon: 'Microsoft Edge', color: '#0078D7' },
