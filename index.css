@@ -122,7 +122,7 @@ a:hover {
 main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  grid-gap: 40px;
+  grid-gap: 80px 60px;
   margin: 60px 100px;
 }
 
