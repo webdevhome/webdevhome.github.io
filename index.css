@@ -43,32 +43,13 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr;
   text-align: center;
+  background-image: linear-gradient(to left top, var(--primary-color-dark), var(--primary-color));
+  color: white;
+  padding: 10px 40px;
 }
 
 .page-header__logo {
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  align-self: center;
-  justify-self: center;
-  width: 225px;
-  height: 225px;
-  max-width: 100%;
-}
-
-.page-header__logo-text {
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  align-self: self-start;
-  font-size: 24px;
-  padding: 15px 30px;
-  letter-spacing: 2px;
-  font-weight: 400;
-  background-image: linear-gradient(to left top, var(--primary-color-dark), var(--primary-color));
-  color: white;
+  height: 50px;
 }
 
 .page-footer {
