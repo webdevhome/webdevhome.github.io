@@ -1,5 +1,6 @@
 :root {
   font-family: Segoe UI, Helvetica, Helvetica Neue, Arial, Ubuntu, sans-serif;
+  height: 100%;
   --primary-color-hue: 210;
   --primary-color: hsl(var(--primary-color-hue), 80%, 50%);
   --primary-color-dark: hsl(var(--primary-color-hue), 60%, 40%);
@@ -24,6 +25,9 @@ svg {
 
 body {
   margin: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 a {
@@ -38,7 +42,6 @@ a:hover {
 .page-header {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 225px;
   text-align: center;
 }
 
@@ -59,16 +62,13 @@ a:hover {
   grid-row-end: 2;
   grid-column-start: 1;
   grid-column-end: 2;
-  align-self: center;
-  justify-self: center;
+  align-self: self-start;
   font-size: 24px;
-  background-color: white;
-  color: var(--primary-color-dark);
-  padding: 10px 30px;
+  padding: 15px 30px;
   letter-spacing: 2px;
   font-weight: 400;
-  border-top: 2px solid var(--primary-color-dark);
-  border-bottom: 2px solid var(--primary-color-dark);
+  background-image: linear-gradient(to left top, var(--primary-color-dark), var(--primary-color));
+  color: white;
 }
 
 .page-footer {
@@ -76,12 +76,7 @@ a:hover {
   color: #bbb;
   text-align: center;
   padding: 20px;
-  background-color: #151515;
-  /* background-image: radial-gradient(
-    ellipse farthest-side at center top,
-    hsla(0, 0%, 0%, 0.05),
-    hsla(0, 0%, 0%, 0)
-  ); */
+  background-image: linear-gradient(to left top, hsl(0, 0%, 10%), hsl(0, 0%, 25%));
 }
 
 .page-footer__link {
@@ -97,6 +92,7 @@ a:hover {
 
 .page-footer > div {
   margin-bottom: 5px;
+  font-weight: 500;
 }
 
 .title {
@@ -124,6 +120,7 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   grid-gap: 80px 60px;
   margin: 60px 100px;
+  align-self: self-start;
 }
 
 @media (max-width: 900px) {
@@ -134,15 +131,15 @@ main {
 
 .link-group__name {
   color: var(--primary-color-dark);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 15px;
   padding-right: 20px;
   padding-left: 10px;
-  border-bottom: 1px solid var(--primary-color-dark);
+  border-bottom: 2px solid var(--primary-color-dark);
 }
 
 .link-group__list {
