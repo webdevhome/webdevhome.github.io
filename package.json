@@ -28,7 +28,7 @@
     "simple-icons": "^1.7.1"
   },
   "devDependencies": {
-    "serve": "^9.3.0",
+    "serve": "^10.0.0",
     "standard": "^11.0.1"
   }
 }

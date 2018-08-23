@@ -71,8 +71,8 @@ a:hover {
   text-decoration: underline;
 }
 
-.page-footer > div {
-  margin-bottom: 5px;
+.page-footer__description {
+  margin-bottom: 10px;
   font-weight: 500;
 }
 
