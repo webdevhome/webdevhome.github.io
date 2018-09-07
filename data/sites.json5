@@ -13,7 +13,8 @@
       imageFolder: 'questions',
       items: [
         { title: 'Stack Overflow', url: 'https://stackoverflow.com', icon: 'Stack Overflow', color: '#FE7A16' },
-        { title: 'Reddit', url: 'https://reddit.com', icon: 'Reddit', color: '#FF4500' }
+        { title: 'Reddit', url: 'https://reddit.com', icon: 'Reddit', color: '#FF4500' },
+        { title: 'Twitter', url: 'https://twitter.com', icon: 'Twitter', color: '#1da1f2' }
       ]
     },
     {
@@ -52,6 +53,7 @@
         { title: 'JavaScript Weekly', url: 'https://javascriptweekly.com' },
         { title: 'Vue Newsletter', url: 'https://vue-newsletter.com' },
         { title: 'Node Weekly', url: 'https://nodeweekly.com/' },
+        { title: 'ES.next News', url: 'http://esnextnews.com/' },
         { title: 'Codrops Collective', url: 'https://tympanus.net/codrops/collective/' }
       ]
     }
