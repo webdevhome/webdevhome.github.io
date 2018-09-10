@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "serve -l 9999",
+    "serve": "serve -l 9999",
     "build": "node index.js"
   },
   "repository": {
@@ -28,7 +28,6 @@
     "simple-icons": "^1.7.1"
   },
   "devDependencies": {
-    "serve": "^10.0.0",
-    "standard": "^11.0.1"
+    "serve": "^10.0.0"
   }
 }
