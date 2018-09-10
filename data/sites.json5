@@ -51,9 +51,9 @@
       items: [
         { title: 'Frontend Focus', url: 'https://frontendfoc.us' },
         { title: 'JavaScript Weekly', url: 'https://javascriptweekly.com' },
-        { title: 'Vue Newsletter', url: 'https://vue-newsletter.com' },
-        { title: 'Node Weekly', url: 'https://nodeweekly.com/' },
         { title: 'ES.next News', url: 'http://esnextnews.com/' },
+        { title: 'Node Weekly', url: 'https://nodeweekly.com/' },
+        { title: 'Vue.js News', url: 'https://news.vuejs.org' },
         { title: 'Codrops Collective', url: 'https://tympanus.net/codrops/collective/' }
       ]
     }
