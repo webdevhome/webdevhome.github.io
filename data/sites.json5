@@ -1,8 +1,14 @@
 {
   items: [
     {
+      name: 'projects & packages',
+      items: [
+        { title: 'GitHub', url: 'https://github.com', icon: 'GitHub', color: '#181717' },
+        { title: 'npm', url: 'https://npmjs.com', icon: 'NPM', color: '#CB3837' }
+      ]
+    },
+    {
       name: 'Read the docs',
-      imageFolder: 'docs',
       items: [
         { title: 'DevDocs', url: 'https://devdocs.io/' },
         { title: 'MDN', url: 'https://developer.mozilla.org', icon: 'Mozilla', color: '#000000' }
@@ -10,7 +16,6 @@
     },
     {
       name: 'Find help and discuss',
-      imageFolder: 'questions',
       items: [
         { title: 'Stack Overflow', url: 'https://stackoverflow.com', icon: 'Stack Overflow', color: '#FE7A16' },
         { title: 'Reddit', url: 'https://reddit.com', icon: 'Reddit', color: '#FF4500' },
@@ -18,16 +23,13 @@
       ]
     },
     {
-      name: 'projects & packages',
-      imageFolder: 'packages',
+      name: 'Cheat Sheets',
       items: [
-        { title: 'GitHub', url: 'https://github.com', icon: 'GitHub', color: '#181717' },
-        { title: 'npm', url: 'https://npmjs.com', icon: 'NPM', color: '#CB3837' }
+        { title: 'Interactive Git Cheat Sheet', url: 'https://ndpsoftware.com/git-cheatsheet.html' }
       ]
     },
     {
       name: 'Standards & Proposals',
-      imageFolder: 'features',
       items: [
         { title: 'Caniuse...', url: 'https://caniuse.com' },
         { title: 'ECMAScript Compatibility List', url: 'https://kangax.github.io/compat-table/es6' },
@@ -38,7 +40,6 @@
     },
     {
       name: 'Browser status',
-      imageFolder: 'browser',
       items: [
         { title: 'Microsoft IE/Edge', url: 'https://developer.microsoft.com/en-us/microsoft-edge/platform/status/', icon: 'Microsoft Edge', color: '#0078D7' },
         { title: 'Google Chrome', url: 'https://www.chromestatus.com', icon: 'Google Chrome', color: '#4285F4' },
@@ -48,7 +49,6 @@
     },
     {
       name: 'Stay in the loop',
-      imageFolder: 'newsletter',
       items: [
         { title: 'Frontend Focus', url: 'https://frontendfoc.us' },
         { title: 'JavaScript Weekly', url: 'https://javascriptweekly.com' },
