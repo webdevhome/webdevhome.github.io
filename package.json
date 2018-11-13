@@ -28,6 +28,6 @@
     "simple-icons": "^1.7.1"
   },
   "devDependencies": {
-    "serve": "^10.0.0"
+    "serve": "^10.1.1"
   }
 }

@@ -43,31 +43,40 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr;
   text-align: center;
-  background-image: linear-gradient(to left top, var(--primary-color-dark), var(--primary-color));
+  background: var(--primary-color-dark);
   color: white;
   padding: 10px 40px;
 }
 
 .page-header__logo {
   height: 50px;
+  justify-self: center;
 }
 
 .page-footer {
   font-size: 14px;
-  color: #bbb;
+  color: hsla(0, 0%, 0%, 0.5);
   text-align: center;
   padding: 20px;
-  background-image: linear-gradient(to left top, hsl(0, 0%, 10%), hsl(0, 0%, 25%));
+  background: hsl(0, 0%, 95%);
 }
 
 .page-footer__link {
   display: inline-block;
+  margin: 0 3px;
   padding: 5px 10px;
-  color: white;
+  color: var(--primary-color);
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.page-footer__link:focus {
+  outline: none;
+  background: hsla(0, 0%, 0%, 0.05);
 }
 
 .page-footer__link:hover {
-  color: white;
+  color: var(--primary-color-dark);
   text-decoration: underline;
 }
 
@@ -125,7 +134,7 @@ main {
 
 .link-group__list {
   display: grid;
-  grid-row-gap: 5px;
+  grid-row-gap: 2px;
 }
 
 .link-item {
