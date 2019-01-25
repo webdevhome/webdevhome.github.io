@@ -1,10 +1,11 @@
 {
   items: [
     {
-      name: 'projects & packages',
+      name: 'Code & Packages',
       items: [
         { title: 'GitHub', url: 'https://github.com', icon: 'GitHub', color: '#181717' },
-        { title: 'npm', url: 'https://npmjs.com', icon: 'NPM', color: '#CB3837' }
+        { title: 'npm', url: 'https://npmjs.com', icon: 'NPM', color: '#CB3837' },
+        { title: '30 seconds of code', url: 'https://30secondsofcode.org' }
       ]
     },
     {
@@ -12,7 +13,7 @@
       items: [
         { title: 'DevDocs', url: 'https://devdocs.io/' },
         { title: 'MDN', url: 'https://developer.mozilla.org', icon: 'Mozilla', color: '#000000' },
-        { title: 'Interactive Git Cheat Sheet', url: 'https://ndpsoftware.com/git-cheatsheet.html' }
+        { title: 'Interactive Git Cheat Sheet', url: 'https://ndpsoftware.com/git-cheatsheet.html', icon: 'Git', color: '#F05032' }
       ]
     },
     {
@@ -36,20 +37,23 @@
     {
       name: 'Browser status',
       items: [
-        { title: 'Microsoft IE/Edge', url: 'https://developer.microsoft.com/en-us/microsoft-edge/platform/status/', icon: 'Microsoft Edge', color: '#0078D7' },
         { title: 'Google Chrome', url: 'https://www.chromestatus.com', icon: 'Google Chrome', color: '#4285F4' },
+        { title: 'Microsoft IE/Edge', url: 'https://developer.microsoft.com/en-us/microsoft-edge/platform/status/', icon: 'Microsoft Edge', color: '#0078D7' },
         { title: 'Mozilla Firefox', url: 'https://platform-status.mozilla.org/', icon: 'Mozilla Firefox', color: '#FF9400' },
+        { title: 'WebKit', url: 'https://webkit.org/status/', icon: 'Safari', color: '#000000' },
         { title: 'Timeline of Web Browsers', url: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg' }
       ]
     },
     {
       name: 'Stay in the loop',
       items: [
-        { title: 'Frontend Focus', url: 'https://frontendfoc.us' },
-        { title: 'JavaScript Weekly', url: 'https://javascriptweekly.com' },
-        { title: 'ES.next News', url: 'http://esnextnews.com/' },
-        { title: 'Node Weekly', url: 'https://nodeweekly.com/' },
-        { title: 'Vue.js News', url: 'https://news.vuejs.org' },
+        { title: 'Frontend Focus', url: 'https://frontendfoc.us', icon: 'HTML5', color: '#E34F26' },
+        { title: 'JavaScript Weekly', url: 'https://javascriptweekly.com', icon: 'JavaScript', color: '#F7DF1E' },
+        { title: 'ES.next News', url: 'http://esnextnews.com' },
+        { title: 'TypeScript Weekly', url: 'https://www.typescript-weekly.com' },
+        { title: 'Node Weekly', url: 'https://nodeweekly.com', icon: 'Node.js', color: '#339933' },
+        { title: 'Vue.js News', url: 'https://news.vuejs.org', icon: 'Vue.js', color: '#4FC08D' },
+        { title: 'React.js Newsletter', url: 'http://reactjsnewsletter.com/', icon: 'React', color: '#61DAFB' },
         { title: 'Codrops Collective', url: 'https://tympanus.net/codrops/collective/' }
       ]
     }
