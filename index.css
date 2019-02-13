@@ -1,22 +1,17 @@
 :root {
-  font-family: Segoe UI, Helvetica, Helvetica Neue, Arial, Ubuntu, sans-serif;
-  height: 100%;
-  --primary-color-hue: 210;
-  --primary-color: hsl(var(--primary-color-hue), 80%, 50%);
-  --primary-color-dark: hsl(var(--primary-color-hue), 60%, 32%);
+  --primary-color-hue: 190;
+  --primary-color: hsl(var(--primary-color-hue), 50%, 40%);
+  --primary-color-dark: hsl(var(--primary-color-hue), 50%, 25%);
   --primary-color-hover: hsl(var(--primary-color-hue), 0%, 97%);
   --link-item-color: hsl(var(--primary-color-hue), 0%, 30%);
-  --link-item-color-hover: hsl(var(--primary-color-hue), 60%, 50%);
-  --md-shadow-1: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  --md-shadow-2: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-    0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
-  --md-shadow-3: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
-    0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
-  --md-shadow-4: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
-  --md-shadow-5: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+  --link-item-color-hover: hsl(var(--primary-color-hue), 50%, 40%);
+  --md-shadow-1: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  --md-shadow-2: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+  --md-shadow-3: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
+  --md-shadow-4: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
+  --md-shadow-5: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+  font-family: Roboto, Segoe UI, Helvetica, Helvetica Neue, Arial, Ubuntu, sans-serif;
+  height: 100%;
 }
 
 svg {
@@ -45,27 +40,44 @@ a:hover {
   text-align: center;
   background: var(--primary-color-dark);
   color: white;
-  padding: 15px 40px;
+  padding: 15px 50px;
+}
+
+@media (max-width: 1024px) {
+  .page-header {
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-header {
+    padding: 15px 20px;
+  }
 }
 
 .page-header__logo {
   height: 50px;
-  justify-self: center;
 }
 
 .page-footer {
   display: flex;
   align-items: center;
-  justify-content: center;
   font-size: 14px;
   color: hsla(0, 0%, 0%, 0.5);
-  padding: 15px;
+  padding: 15px 50px;
   background: hsl(0, 0%, 95%);
   border-top: 1px solid #ddd;
 }
 
+@media (max-width: 1024px) {
+  .page-footer {
+    padding: 15px 30px;
+  }
+}
+
 @media (max-width: 900px) {
   .page-footer {
+    padding: 15px 20px;
     flex-direction: column;
   }
 }
@@ -76,20 +88,32 @@ a:hover {
   }
 }
 
+@media (max-width: 500px) {
+  .page-footer {
+    padding: 15px 0;
+  }
+}
+
 .page-footer__link {
   display: inline-block;
   margin: 0 3px;
   padding: 5px 12px;
   color: var(--primary-color);
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 4px;
 }
 
 @media (max-width: 600px) {
   .page-footer__link {
     display: block;
-    margin: 5px -10px;
+    margin: 5px 0px;
     padding: 8px 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .page-footer__link {
+    border-radius: 0;
   }
 }
 
@@ -105,7 +129,7 @@ a:hover {
 
 .page-footer__description {
   font-weight: 500;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 @media (max-width: 900px) {
@@ -116,7 +140,7 @@ a:hover {
 
 @media (max-width: 600px) {
   .page-footer__description {
-    margin: 10px 0;
+    margin: 10px;
   }
 }
 
@@ -125,15 +149,6 @@ a:hover {
   font-weight: normal;
   margin-bottom: 0;
   color: var(--primary-color);
-}
-
-.slug {
-  font-size: 14px;
-  color: var(--primary-color-dark);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 5px;
 }
 
 .divider {
@@ -162,17 +177,23 @@ main {
   }
 }
 
+@media (max-width: 500px) {
+  main {
+    margin: 20px 0 40px;
+  }
+}
+
 .link-group__name {
-  color: var(--primary-color-dark);
+  color: var(--primary-color);
   font-size: 15px;
-  line-height: 2;
-  font-weight: 700;
+  line-height: 1.8;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding-right: 20px;
   padding-left: 10px;
-  border-bottom: 2px solid var(--primary-color-dark);
+  border-bottom: 1px solid var(--primary-color-dark);
 }
 
 .link-group__list {
