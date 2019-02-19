@@ -1,43 +1,29 @@
-import fs from 'fs'
-import path from 'path'
-import http from 'http'
-import edge from 'edge.js'
-import json5 from 'json5'
-import htmlMinifier from 'html-minifier'
-import simpleIcons from 'simple-icons'
-import gulp from 'gulp'
-import serveHandler from 'serve-handler'
+import gulp from 'gulp';
+import { buildCss } from './build-css';
+import { buildHtml } from './build-html';
+import { buildJs, watchJs } from './build-js';
+import { runServer } from './serve';
+import { never } from './utils';
 
-const folder = it => path.resolve(__dirname, '..', it)
-
-async function build () {
-  edge.registerViews(folder('templates'))
-  const dataString = fs.readFileSync(folder('data/sites.json5'))
-  const data = json5.parse(dataString)
-  const html = edge.render('index', { ...data, simpleIcons })
-  const minifiedHtml = htmlMinifier.minify(html, {
-    collapseBooleanAttributes: true,
-    collapseInlineTagWhitespace: true,
-    collapseWhitespace: true,
-    removeAttributeQuotes: true,
-    removeComments: true
-  })
-  fs.writeFileSync(folder('index.html'), minifiedHtml)
+function watchHtml () {
+  gulp.watch(
+    ['src/data/**/*', 'src/templates/**/*'],
+    { ignoreInitial: false },
+    buildHtml
+  )
+  return never
 }
 
-function watch () {
-  gulp.watch(['templates/**/*.edge', 'data/**/*.json5'], build)
-  return new Promise(() => {})
+async function watchCss () {
+  gulp.watch(
+    ['src/css/**/*'],
+    { ignoreInitial: false },
+    buildCss
+  )
+  return never
 }
 
-function serve () {
-  const port = 3000
-  http.createServer((...args) => serveHandler(...args))
-    .listen(port, () => { console.log(`running at http://localhost:${port}`) })
-  return new Promise(() => {})
-}
-
-export const buildTask = build
-export const watchTask = watch
-export const serveTask = serve
-export const devTask = gulp.parallel(serve, watch)
+export const serveTask = runServer
+export const buildTask = gulp.parallel(buildHtml, buildCss, buildJs)
+export const watchTask = gulp.parallel(watchHtml, watchCss, watchJs)
+export const devTask = gulp.parallel(runServer, watchHtml, watchCss, watchJs)
