@@ -32,6 +32,8 @@
     "babel-loader": "^8.0.5",
     "cssnano": "^4.1.10",
     "edge.js": "^1.1.4",
+    "feather-icons": "^4.17.0",
+    "fuzzysort": "^1.1.4",
     "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",
     "gulp-postcss": "^8.0.0",

@@ -4,6 +4,18 @@
   //webdev/home
 @endsection
 
+@section('actions')
+  <div class="page-actions">
+    <div class="page-actions__item" id="page-search-action">
+      {{{ featherIcons.icons.search.toSvg() }}}
+    </div>
+  </div>
+  <div class="page-search" id="page-search-container">
+    <input type="text" class="page-search__input" id="page-search-input">
+    <div class="page-search__results" id="page-search-results"></div>
+  </div>
+@endsection
+
 @section('body')
   @each(item in items)
     @!component('components.link-group', group = item, simpleIcons = simpleIcons)
@@ -17,7 +29,7 @@
       <a class="page-footer__link" href="https://linnertmedia.de">my website</a>
       <a class="page-footer__link" href="mailto:andreas@linnertmedia.de">e-mail me</a>
       <a class="page-footer__link" href="https://github.com/alinnert">me on GitHub</a>
-      <a class="page-footer__link" href="https://github.com/webdevhome/webdevhome.github.io">this page on GitHub</a>
+      <a class="page-footer__link" href="https://github.com/webdevhome/webdevhome.github.io">this site on GitHub</a>
     </div>
   </footer>
 @endsection
