@@ -42,7 +42,12 @@ const state = {
           this.searchResultSelectedIndex = 0
         })
     } else {
-      $id('page-search-results').innerHTML = '<div class="page-search__results-hint">Type ahead to filter sites...</div>'
+      $id('page-search-results').innerHTML = `
+        <div class="page-search__results-hint">Type ahead to filter links.</div>
+        <div class="page-search__results-hint"><code>ENTER</code> opens link.</div>
+        <div class="page-search__results-hint"><code>CTRL</code> + <code>ENTER</code> opens link in new background tab.</div>
+        <div class="page-search__results-hint"><code>CTRL</code> + <code>SHIFT</code> + <code>ENTER</code> opens link in new foreground tab.</div>
+      `
       this.searchResultSelectedIndex = 0
     }
   },
@@ -111,7 +116,7 @@ function onPageSearchInputKeydown(event) {
   if (event.key === 'Enter') {
     const link = $$class('link-item--has-focus')[0].getAttribute('href')
     if (event.ctrlKey) {
-      window.open(link)
+      window.open(link, '', 'alwaysRaised=on')
     } else {
       window.location.href = link
     }

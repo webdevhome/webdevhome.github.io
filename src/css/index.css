@@ -5,6 +5,7 @@
   --primary-color-hover: hsl(var(--primary-color-hue), 0%, 97%);
   --link-item-color: hsl(var(--primary-color-hue), 0%, 30%);
   --link-item-color-hover: hsl(var(--primary-color-hue), 50%, 40%);
+  --input-background: hsl(0, 0%, 90%);
   --icon-button-size: 46px;
   --h-page-margin: 50px;
   --md-shadow-1: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -49,6 +50,11 @@ a {
 
 a:hover {
   color: var(--primary-color-dark);
+}
+
+code {
+  font-family: Roboto Mono, monospace;
+  color: var(--primary-color);
 }
 
 .page-header {
@@ -111,9 +117,13 @@ a:hover {
 .page-search {
   grid-area: 2 / 1 / span 1 / span 2;
   align-self: start;
+  justify-self: center;
   display: none;
-  margin-left: var(--h-page-margin);
-  margin-right: var(--h-page-margin);
+  width: 600px;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
   opacity: 0;
   transition: opacity 0.15s ease-out;
 }
@@ -126,7 +136,7 @@ a:hover {
 .page-search__input {
   align-self: end;
   border: none;
-  background-color: var(--primary-color-hover);
+  background-color: var(--input-background);
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -144,6 +154,7 @@ a:hover {
 .page-search__results-hint {
   padding-left: 30px;
   padding-right: 30px;
+  margin-bottom: 10px;
 }
 
 .page-footer {
