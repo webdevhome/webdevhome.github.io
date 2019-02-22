@@ -110,7 +110,11 @@ function onPageSearchInputKeydown(event) {
 
   if (event.key === 'Enter') {
     const link = $$class('link-item--has-focus')[0].getAttribute('href')
-    window.location.href = link
+    if (event.ctrlKey) {
+      window.open(link)
+    } else {
+      window.location.href = link
+    }
   }
 
   if (event.key === 'Backspace') {
