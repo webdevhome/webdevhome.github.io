@@ -9,6 +9,14 @@
       ]
     },
     {
+      name: 'Find help and discuss',
+      items: [
+        { title: 'Stack Overflow', url: 'https://stackoverflow.com', icon: 'Stack Overflow', color: '#FE7A16' },
+        { title: 'Reddit', url: 'https://reddit.com', icon: 'Reddit', color: '#FF4500' },
+        { title: 'Twitter', url: 'https://twitter.com', icon: 'Twitter', color: '#1da1f2' }
+      ]
+    },
+    {
       name: 'Read the docs',
       items: [
         { title: 'DevDocs', url: 'https://devdocs.io/' },
@@ -17,11 +25,25 @@
       ]
     },
     {
-      name: 'Find help and discuss',
+      name: 'Try something out',
       items: [
-        { title: 'Stack Overflow', url: 'https://stackoverflow.com', icon: 'Stack Overflow', color: '#FE7A16' },
-        { title: 'Reddit', url: 'https://reddit.com', icon: 'Reddit', color: '#FF4500' },
-        { title: 'Twitter', url: 'https://twitter.com', icon: 'Twitter', color: '#1da1f2' }
+        { title: 'JSFiddle', url: 'https://jsfiddle.net', icon: 'JSFiddle', color: '#4679A4' },
+        { title: 'CodePen', url: 'https://codepen.io', icon: 'CodePen', color: '#000000' },
+        { title: 'JS Bin', url: 'https://jsbin.com' }
+      ]
+    },
+    {
+      name: 'Discover & Compare',
+      items: [
+        { title: 'AlternativeTo', url: 'https://alternativeto.net' },
+        { title: 'StackShare', url: 'https://stackshare.io', icon: 'StackShare', color: '#0690FA' }
+      ]
+    },
+    {
+      name: 'Languages',
+      items: [
+        { title: 'Sass', url: 'https://sass-lang.com/', icon: 'Sass', color: '#CC6699' },
+        { title: 'TypeScript', url: 'https://www.typescriptlang.org/', icon: 'TypeScript', color: '#007ACC' }
       ]
     },
     {
