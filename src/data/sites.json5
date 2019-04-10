@@ -72,8 +72,8 @@
         { title: 'Frontend Focus', url: 'https://frontendfoc.us', icon: 'HTML5', color: '#E34F26' },
         { title: 'JavaScript Weekly', url: 'https://javascriptweekly.com', icon: 'JavaScript', color: '#F7DF1E' },
         { title: 'ES.next News', url: 'http://esnextnews.com' },
-        { title: 'TypeScript Weekly', url: 'https://www.typescript-weekly.com' },
-        { title: 'Node Weekly', url: 'https://nodeweekly.com', icon: 'Node.js', color: '#339933' },
+        { title: 'TypeScript Weekly', url: 'https://www.typescript-weekly.com', icon: 'TypeScript', color: '#007ACC' },
+        { title: 'Nogde Weekly', url: 'https://nodeweekly.com', icon: 'Node.js', color: '#339933' },
         { title: 'Vue.js News', url: 'https://news.vuejs.org', icon: 'Vue.js', color: '#4FC08D' },
         { title: 'React.js Newsletter', url: 'http://reactjsnewsletter.com/', icon: 'React', color: '#61DAFB' },
         { title: 'Codrops Collective', url: 'https://tympanus.net/codrops/collective/' }
