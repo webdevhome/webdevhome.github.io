@@ -5,7 +5,8 @@
       items: [
         { title: 'GitHub', url: 'https://github.com', icon: 'GitHub', color: '#181717' },
         { title: 'npm', url: 'https://npmjs.com', icon: 'NPM', color: '#CB3837' },
-        { title: '30 seconds of code', url: 'https://30secondsofcode.org' }
+        { title: '30 seconds of code', url: 'https://30secondsofcode.org' },
+        { title: 'BundlePhobia', url: 'https://bundlephobia.com/' }
       ]
     },
     {
