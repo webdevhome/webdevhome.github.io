@@ -2,9 +2,9 @@
   --primary-color-hue: 190;
   --primary-color: hsl(var(--primary-color-hue), 50%, 40%);
   --primary-color-dark: hsl(var(--primary-color-hue), 50%, 25%);
-  --primary-color-hover: hsl(var(--primary-color-hue), 0%, 97%);
+  --primary-color-hover: hsl(0, 0%, 90%);
   --link-item-color: hsl(var(--primary-color-hue), 0%, 30%);
-  --link-item-color-hover: hsl(var(--primary-color-hue), 50%, 40%);
+  --link-item-color-hover: hsl(var(--primary-color-hue), 50%, 0%);
   --input-background: hsl(0, 0%, 90%);
   --icon-button-size: 46px;
   --h-page-margin: 50px;
@@ -108,10 +108,17 @@ code {
   width: var(--icon-button-size);
   height: var(--icon-button-size);
   border-radius: calc(var(--icon-button-size) * 0.5);
+  transition: box-shadow 0.05s ease-out;
+  box-shadow: 0 0 0 0 hsla(var(--primary-color-hue), 50%, 40%, 0.7);
 }
 
 .page-actions__item:hover {
   background-color: var(--primary-color-hover);
+}
+
+.page-actions__item:active {
+  color: var(--primary-color);
+  box-shadow: 0 0 0 2px hsla(var(--primary-color-hue), 50%, 40%, 0.7);
 }
 
 .page-search {
@@ -155,6 +162,7 @@ code {
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 10px;
+  user-select: none;
 }
 
 .page-footer {
@@ -194,7 +202,8 @@ code {
   padding: 8px 12px;
   color: var(--primary-color);
   font-weight: 500;
-  border-radius: 4px;
+  border-radius: 3px;
+  user-select: none;
 }
 
 @media (max-width: 600px) {
@@ -224,6 +233,7 @@ code {
 .page-footer__description {
   font-weight: 500;
   margin-right: 40px;
+  user-select: none;
 }
 
 @media (max-width: 900px) {
@@ -306,6 +316,7 @@ code {
   padding-right: 20px;
   padding-left: 10px;
   border-bottom: 1px solid var(--primary-color-dark);
+  user-select: none;
 }
 
 @media (max-width: 500px) {
@@ -326,6 +337,7 @@ code {
   min-height: 36px;
   color: var(--primary-color);
   background-color: hsla(0, 0%, 0%, 0);
+  border-radius: 3px;
 }
 
 @media (max-width: 500px) {
@@ -343,8 +355,10 @@ code {
   background-color: var(--primary-color-hover);
 }
 
-.link-item:focus, .link-item--has-focus {
-  outline: 1px solid hsl(0, 0%, 70%);
+.link-item:focus,
+.link-item--has-focus {
+  outline: none;
+  box-shadow: 0 0 0 1px hsl(0, 0%, 70%);
 }
 
 .link-item__icon-container {
@@ -376,6 +390,7 @@ code {
   letter-spacing: 0.4px;
   font-weight: 500;
   color: var(--link-item-color);
+  user-select: none;
 }
 
 .link-item:hover .link-item__label {
@@ -387,8 +402,4 @@ code {
   max-width: 100px;
   border: 1px solid hsla(0, 0%, 0%, 0);
   box-sizing: border-box;
-}
-
-.link-item:hover .link-item__label {
-  color: var(--link-item-color-hover);
 }

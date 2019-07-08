@@ -3,8 +3,11 @@ import serveHandler from 'serve-handler';
 import { never } from './utils';
 
 export function runServer() {
-  const port = 3000
-  http.createServer((...args) => serveHandler(...args))
-    .listen(port, () => { console.log(`running at http://localhost:${port}`) })
+  const serverInit = () => { console.log(`running at http://localhost:${port}`) }
+  const port = 4000
+
+  http.createServer(serveHandler)
+    .listen(port, serverInit)
+
   return never
 }
