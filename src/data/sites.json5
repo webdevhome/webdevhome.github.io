@@ -23,7 +23,8 @@
         { title: 'DevDocs', url: 'https://devdocs.io/' },
         { title: 'MDN', url: 'https://developer.mozilla.org', icon: 'Mozilla', color: '#000000' },
         { title: 'Interactive Git Cheat Sheet', url: 'https://ndpsoftware.com/git-cheatsheet.html', icon: 'Git', color: '#F05032' },
-        { title: 'Emmet Cheat Sheet', url: 'https://docs.emmet.io/cheat-sheet/' }
+        { title: 'Emmet Cheat Sheet', url: 'https://docs.emmet.io/cheat-sheet/' },
+        { title: 'OWASP Cheat Sheet Series Project', url: 'https://cheatsheetseries.owasp.org/' }
       ]
     },
     {
