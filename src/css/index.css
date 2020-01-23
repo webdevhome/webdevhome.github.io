@@ -2,7 +2,8 @@
   --primary-color-hue: 190;
   --primary-color: hsl(var(--primary-color-hue), 50%, 40%);
   --primary-color-dark: hsl(var(--primary-color-hue), 50%, 25%);
-  --primary-color-hover: hsl(0, 0%, 90%);
+  --primary-color-hover: hsl(0, 0%, 85%);
+  --link-item-background: hsl(0, 0%, 90%);
   --link-item-color: hsl(var(--primary-color-hue), 0%, 30%);
   --link-item-color-hover: hsl(var(--primary-color-hue), 50%, 0%);
   --input-background: hsl(0, 0%, 90%);
@@ -107,6 +108,7 @@ code {
   justify-content: center;
   width: var(--icon-button-size);
   height: var(--icon-button-size);
+  background-color: var(--link-item-background);
   border-radius: calc(var(--icon-button-size) * 0.5);
   transition: box-shadow 0.05s ease-out;
   box-shadow: 0 0 0 0 hsla(var(--primary-color-hue), 50%, 40%, 0.7);
@@ -117,7 +119,6 @@ code {
 }
 
 .page-actions__item:active {
-  color: var(--primary-color);
   box-shadow: 0 0 0 2px hsla(var(--primary-color-hue), 50%, 40%, 0.7);
 }
 
@@ -152,10 +153,13 @@ code {
   padding: 0 30px;
   height: 60px;
   border-radius: 30px;
+  transition: box-shadow 0.05s ease-out;
+  box-shadow: 0 0 0 0 hsla(var(--primary-color-hue), 50%, 40%, 0.7);
 }
 
 .page-search__input:focus {
   outline: none;
+  box-shadow: 0 0 0 2px hsla(var(--primary-color-hue), 50%, 40%, 0.7);
 }
 
 .page-search__results-hint {
