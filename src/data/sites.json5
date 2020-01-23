@@ -23,12 +23,19 @@
         { title: 'DevDocs', url: 'https://devdocs.io/' },
         { title: 'MDN', url: 'https://developer.mozilla.org', icon: 'Mozilla', color: '#000000' },
         { title: 'Interactive Git Cheat Sheet', url: 'https://ndpsoftware.com/git-cheatsheet.html', icon: 'Git', color: '#F05032' },
-        { title: 'Emmet Cheat Sheet', url: 'https://docs.emmet.io/cheat-sheet/' },
-        { title: 'OWASP Cheat Sheet Series Project', url: 'https://cheatsheetseries.owasp.org/' }
+        { title: 'Emmet Cheat Sheet', url: 'https://docs.emmet.io/cheat-sheet/' }
       ]
     },
     {
-      name: 'Try something out',
+      name: 'Best practices & conventions',
+      items: [
+        { title: 'OWASP Cheat Sheet Series Project', url: 'https://cheatsheetseries.owasp.org/' },
+        { title: 'Keep a changelog', url: 'https://keepachangelog.com/en/1.1.0/' },
+        { title: 'Gitmoji', url: 'https://gitmoji.carloscuesta.me/' }
+      ]
+    },
+    {
+      name: 'Fiddling around',
       items: [
         { title: 'JSFiddle', url: 'https://jsfiddle.net', icon: 'JSFiddle', color: '#4679A4' },
         { title: 'CodePen', url: 'https://codepen.io', icon: 'CodePen', color: '#000000' },
