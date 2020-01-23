@@ -30,7 +30,7 @@
       name: 'Best practices & conventions',
       items: [
         { title: 'OWASP Cheat Sheet Series Project', url: 'https://cheatsheetseries.owasp.org/' },
-        { title: 'Keep a changelog', url: 'https://keepachangelog.com/en/1.1.0/' },
+        { title: 'Keep a Changelog', url: 'https://keepachangelog.com/en/1.1.0/' },
         { title: 'Gitmoji', url: 'https://gitmoji.carloscuesta.me/' }
       ]
     },
