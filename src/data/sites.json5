@@ -37,7 +37,7 @@
     {
       name: 'Fiddling around',
       items: [
-        { title: 'JSFiddle', url: 'https://jsfiddle.net', icon: 'JSFiddle', color: '#4679A4' },
+        { title: 'JSFiddle', url: 'https://jsfiddle.net', icon: 'JSFiddle', color: '#0084FF' },
         { title: 'CodePen', url: 'https://codepen.io', icon: 'CodePen', color: '#000000' },
         { title: 'JS Bin', url: 'https://jsbin.com' }
       ]
@@ -57,13 +57,12 @@
       ]
     },
     {
-      name: 'Standards & Proposals',
+      name: 'Software',
       items: [
-        { title: 'Caniuse...', url: 'https://caniuse.com' },
-        { title: 'ECMAScript Compatibility List', url: 'https://kangax.github.io/compat-table/es6' },
-        { title: 'Node Green', url: 'https://node.green' },
-        { title: 'Is Houdini ready yet?', url: 'https://ishoudinireadyyet.com' },
-        { title: 'ECMAScript Proposals', url: 'https://github.com/tc39/proposals' }
+        { title: 'Visual Studio Code', url: 'https://code.visualstudio.com/', icon: 'Visual Studio Code', color: '#007ACC' },
+        { title: 'JetBrains', url: 'https://www.jetbrains.com/', icon: 'JetBrains', color: '#000000' },
+        { title: 'Node.js', url: 'https://nodejs.org/en/', icon: 'Node.js', color: '#339933' },
+        { title: 'Deno', url: 'https://deno.land/', icon: 'Deno', color: '#000000' }
       ]
     },
     {
@@ -74,6 +73,16 @@
         { title: 'Mozilla Firefox', url: 'https://platform-status.mozilla.org/', icon: 'Mozilla Firefox', color: '#FF9400' },
         { title: 'WebKit', url: 'https://webkit.org/status/', icon: 'Safari', color: '#000000' },
         { title: 'Timeline of Web Browsers', url: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg' }
+      ]
+    },
+    {
+      name: 'Standards & Proposals',
+      items: [
+        { title: 'Caniuse...', url: 'https://caniuse.com' },
+        { title: 'ECMAScript Compatibility List', url: 'https://kangax.github.io/compat-table/es6' },
+        { title: 'Node Green', url: 'https://node.green' },
+        { title: 'Is Houdini ready yet?', url: 'https://ishoudinireadyyet.com' },
+        { title: 'ECMAScript Proposals', url: 'https://github.com/tc39/proposals' }
       ]
     },
     {
