@@ -10,7 +10,7 @@
   --link-item-color: hsl(var(--primary-color-hue), 0%, 30%);
   --link-item-color-hover: hsl(var(--primary-color-hue), 50%, 0%);
   --link-item-focus-border: hsl(0, 0%, 70%);
-  --icon-background: none;
+  --icon-background: hsl(0, 0%, 100%);
   --input-background: hsl(0, 0%, 90%);
   --input-text-color: hsl(0, 0%, 0%);
   --input-placeholder-color: hsl(0, 0%, 50%);
