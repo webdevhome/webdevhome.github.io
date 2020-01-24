@@ -73,8 +73,6 @@
     --footer-link-background-hover: hsl(0, 0%, 35%);
     --footer-background: hsl(0, 0%, 30%);
     --footer-border: hsl(0, 0%, 40%);
-    --icon-button-size: 46px;
-    --h-page-margin: 50px;
   }
 }
 
@@ -425,8 +423,8 @@ code {
 
 @media (max-width: 500px) {
   .link-item {
-    grid-column-gap: 15px;
     min-height: 42px;
+    border-radius: 0;
   }
 }
 
@@ -456,13 +454,6 @@ code {
   margin-left: 10px;
   border-radius: 2px;
   background: var(--icon-background);
-}
-
-@media (max-width: 500px) {
-  .link-item__icon-container {
-    padding-left: 15px;
-    padding-right: 0;
-  }
 }
 
 .link-item__icon-container > svg {
