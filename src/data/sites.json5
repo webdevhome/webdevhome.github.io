@@ -78,11 +78,11 @@
     {
       name: 'Standards & Proposals',
       items: [
+        { title: 'ECMAScript Proposals', url: 'https://github.com/tc39/proposals' },
         { title: 'Caniuse...', url: 'https://caniuse.com' },
-        { title: 'ECMAScript Compatibility List', url: 'https://kangax.github.io/compat-table/es6' },
+        { title: 'ECMAScript Compatibility Table', url: 'https://kangax.github.io/compat-table/es6' },
         { title: 'Node Green', url: 'https://node.green' },
-        { title: 'Is Houdini ready yet?', url: 'https://ishoudinireadyyet.com' },
-        { title: 'ECMAScript Proposals', url: 'https://github.com/tc39/proposals' }
+        { title: 'Is Houdini ready yet?', url: 'https://ishoudinireadyyet.com' }
       ]
     },
     {
