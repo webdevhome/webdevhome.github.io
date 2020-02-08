@@ -350,7 +350,7 @@ code {
 .page-content {
   grid-area: 2 / 1 / span 1 / span 2;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 80px var(--h-page-margin);
   margin: 20px var(--h-page-margin);
   align-self: self-start;
