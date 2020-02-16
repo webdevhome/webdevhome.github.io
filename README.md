@@ -4,14 +4,16 @@ This is a collection of links I as a web developer use very frequently. Maybe yo
 
 Link: [webdevhome.github.io](https://webdevhome.github.io)
 
-**Planned Features:**
+## Planned Features
 
 - [x] Filter links by typing their name and open a page by pressing `[return]`
 - [ ] Submit searches of supported sites from within this site (similar to Chrome's Omnibar)
 - [ ] Possibility to customize which links are visible
 - [ ] MOAR LINKS!
 
-**Credits:**
+**Status:** I'm working on a new implementation of *//webdev/home* based on React in the `react` branch. I will take this opportunity to implement the features listed above.
+
+## Credits
 
 - [Simple Icons](http://simpleicons.org/)
 - [Feather Icons](https://github.com/feathericons/feather)
