@@ -1,0 +1,14 @@
+.app-actions {
+  grid-area: actions;
+  justify-self: center;
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  margin-right: var(--h-page-margin);
+
+  @media (max-width: 500px) {
+    margin: 20px 0;
+  }
+}

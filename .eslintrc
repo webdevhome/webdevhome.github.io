@@ -1,0 +1,16 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "root": true,
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "react-app",
+    "standard-with-typescript"
+  ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {}
+}
