@@ -1,5 +1,5 @@
 import { mdiFormatListChecks, mdiMagnify } from '@mdi/js'
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 import { AppAction } from './components/AppAction'
 import { AppActions } from './components/AppActions'
 import { AppContent } from './components/AppContent'
@@ -10,25 +10,20 @@ import { FooterLink } from './components/FooterLink'
 import { FooterText } from './components/FooterText'
 import { Link } from './components/Link'
 import { LinkGroup } from './components/LinkGroup'
-import { links, LinkGroup as ILinkGroup } from './links'
-import { useHiddenLinks, HiddenLinks } from './stores/hiddenLinksStore'
+import { LinkGroup as ILinkGroup, links } from './links'
+import { HiddenLinks, useHiddenLinks } from './stores/hiddenLinksStore'
+import { useCurrentMode, setMode, toggleMode } from './stores/currentModeStore'
 
 export const App: FC = () => {
-  const {
-    handleCustomizeAction,
-    hiddenLinks,
-    customizeMode
-  } = useCustomizeFeature()
-
-  const {
-    handleSearchAction
-  } = useSearchFeature()
+  const { handleCustomizeAction, hiddenLinks } = useCustomizeFeature()
+  const { handleSearchAction } = useSearchFeature()
+  const { mode } = useCurrentMode()
 
   function getLinkGroup (group: ILinkGroup): JSX.Element | null {
     const noVisibleLinksInGroup = group.items
       .every(link => hiddenLinks.links.includes(link.url))
 
-    if (noVisibleLinksInGroup && !customizeMode) { return null }
+    if (noVisibleLinksInGroup && mode !== 'customize') { return null }
 
     return (
       <LinkGroup key={group.name} name={group.name}>
@@ -39,7 +34,7 @@ export const App: FC = () => {
             url={link.url}
             icon={link.icon}
             color={link.color}
-            customize={customizeMode}
+            customize={mode === 'customize'}
             visible={!hiddenLinks.links.includes(link.url)}
           />
         ))}
@@ -55,12 +50,12 @@ export const App: FC = () => {
         <AppAction
           icon={mdiMagnify}
           action={handleSearchAction}
-          active={false}
+          active={mode === 'search'}
         />
         <AppAction
           icon={mdiFormatListChecks}
           action={handleCustomizeAction}
-          active={customizeMode}
+          active={mode === 'customize'}
         />
       </AppActions>
 
@@ -94,29 +89,27 @@ export const App: FC = () => {
 // #region customize feature
 interface CustomizeFeature {
   hiddenLinks: HiddenLinks
-  customizeMode: boolean
   handleCustomizeAction (): void
 }
 
 function useCustomizeFeature (): CustomizeFeature {
-  const [customizeMode, setCustomizeMode] = useState<boolean>(false)
   const hiddenLinks = useHiddenLinks()
 
   useEffect(() => {
     document.addEventListener('keydown', handleGlobalKeydown)
+
+    function handleGlobalKeydown (event: KeyboardEvent): void {
+      if (event.key === 'Escape') {
+        setMode('default')
+      }
+    }
   }, [])
 
   function handleCustomizeAction (): void {
-    setCustomizeMode(!customizeMode)
+    toggleMode('customize')
   }
 
-  function handleGlobalKeydown (this: Document, event: KeyboardEvent): void {
-    if (event.key === 'Escape') {
-      setCustomizeMode(false)
-    }
-  }
-
-  return { hiddenLinks, handleCustomizeAction, customizeMode }
+  return { hiddenLinks, handleCustomizeAction }
 }
 // #endregion customize feature
 
@@ -126,8 +119,23 @@ interface SearchFeature {
 }
 
 function useSearchFeature (): SearchFeature {
+  useEffect(() => {
+    document.addEventListener('keydown', handleGlobalKeydown)
+    document.addEventListener('keypress', handleGlobalKeypress)
+
+    function handleGlobalKeydown (event: KeyboardEvent): void {
+      if (event.key === 'Escape') {
+        setMode('default')
+      }
+    }
+
+    function handleGlobalKeypress (event: KeyboardEvent): void {
+      // TODO: pwease, impwement me!
+    }
+  }, [])
+
   function handleSearchAction (): void {
-    // TODO: pwease, impwement me! (｡◕‿‿◕｡)
+    toggleMode('search')
   }
 
   return { handleSearchAction }
