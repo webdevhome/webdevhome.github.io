@@ -1,9 +1,35 @@
-.app-actions {
-  grid-area: 1 / 2;
+.app-action {
   display: grid;
-  gap: 20px;
   align-items: center;
-  grid-auto-flow: column;
-  grid-auto-columns: auto;
-  margin-right: var(--h-page-margin);
+  justify-content: center;
+  width: var(--icon-button-size);
+  height: var(--icon-button-size);
+  background-color: var(--link-item-background);
+  border-radius: calc(var(--icon-button-size) * 0.5);
+  transition: box-shadow 0.05s ease-out;
+  box-shadow: 0 0 0 0 var(--icon-focus-border);
+
+  &:hover {
+    background-color: var(--primary-color-hover);
+  }
+  
+  &:active {
+    box-shadow: 0 0 0 2px var(--icon-focus-border);
+  }
+  
+  & > svg {
+    fill: var(--icon-color);
+  }
+
+  &--is-active {
+    background-color: var(--primary-color);
+  }  
+
+  &--is-active:hover {
+    background-color: var(--primary-color-dark);
+  }
+  
+  &--is-active > svg {
+    fill: var(--icon-color-active);
+  }
 }

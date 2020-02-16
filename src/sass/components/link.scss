@@ -24,7 +24,7 @@
     outline: none;
     box-shadow: 0 0 0 1px var(--link-item-focus-border);
   }
-  
+
   &__icon-container {
     align-self: center;
     justify-self: start;
@@ -68,5 +68,17 @@
     margin: 4px;
     box-sizing: border-box;
     background: white;
+  }
+
+  &--is-visible &__action {
+    color: var(--primary-color-dark);
+  }
+
+  &:not(&--is-visible) &__action {
+    color: var(--primary-color-pale);
+  }
+
+  & svg {
+    fill: currentColor;
   }
 }  

@@ -1,16 +1,19 @@
 :root {
   --page-background: hsl(0, 0%, 100%);
   --icon-color: hsl(0, 0%, 0%);
+  --icon-color-active: hsl(0, 0%, 100%);
+  --icon-background: hsl(0, 0%, 100%);
   --icon-focus-border: hsla(var(--primary-color-hue), 50%, 40%, 0.7);
+  --icon-button-size: 46px;
   --primary-color-hue: 190;
   --primary-color: hsl(var(--primary-color-hue), 50%, 40%);
+  --primary-color-pale: hsl(var(--primary-color-hue), 50%, 80%);
   --primary-color-dark: hsl(var(--primary-color-hue), 50%, 25%);
   --primary-color-hover: hsl(0, 0%, 85%);
   --link-item-background: hsl(0, 0%, 90%);
   --link-item-color: hsl(var(--primary-color-hue), 0%, 30%);
   --link-item-color-hover: hsl(var(--primary-color-hue), 50%, 0%);
   --link-item-focus-border: hsl(0, 0%, 70%);
-  --icon-background: hsl(0, 0%, 100%);
   --input-background: hsl(0, 0%, 90%);
   --input-text-color: hsl(0, 0%, 0%);
   --input-placeholder-color: hsl(0, 0%, 50%);
@@ -23,7 +26,6 @@
   --footer-link-background-hover: hsl(0, 0%, 88%);
   --footer-background: hsl(0, 0%, 95%);
   --footer-border: hsl(0, 0%, 70%);
-  --icon-button-size: 46px;
   --h-page-margin: 50px;
   font-family: Roboto, Segoe UI, Helvetica, Helvetica Neue, Arial, Ubuntu, sans-serif;
   height: 100%;
@@ -51,7 +53,9 @@
   :root {
     --page-background: hsl(0, 0%, 20%);
     --icon-color: hsl(0, 0%, 100%);
+    --icon-color-active: hsl(0, 0%, 0%);
     --icon-focus-border: hsl(var(--primary-color-hue), 50%, 60%);
+    --icon-background: hsl(0, 0%, 100%);
     --primary-color-hue: 190;
     --primary-color: hsl(var(--primary-color-hue), 50%, 60%);
     --primary-color-dark: hsl(var(--primary-color-hue), 50%, 40%);
@@ -60,7 +64,6 @@
     --link-item-color: hsl(var(--primary-color-hue), 0%, 80%);
     --link-item-color-hover: hsl(var(--primary-color-hue), 0%, 100%);
     --link-item-focus-border: hsl(0, 0%, 50%);
-    --icon-background: hsl(0, 0%, 100%);
     --input-background: hsl(0, 0%, 40%);
     --input-text-color: hsl(0, 0%, 95%);
     --input-placeholder-color: hsl(0, 0%, 70%);
