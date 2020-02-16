@@ -115,9 +115,8 @@ function useSearchFeature (): SearchFeature {
     }
 
     function handleGlobalKeypress (event: KeyboardEvent): void {
-      setLatestKeypress(event.key)
-
       if (mode === 'default') {
+        setLatestKeypress(event.key)
         setMode('search')
       }
     }

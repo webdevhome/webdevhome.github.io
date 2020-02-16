@@ -121,7 +121,7 @@ interface UseSearch {
 
 function useSearch (latestKeypress: string): UseSearch {
   const [keyboardIndex, setKeyboardIndex] = useState<number>(0)
-  const [searchTerm, setSearchTerm] = useState<string>(latestKeypress)
+  const [searchTerm, setSearchTerm] = useState<string>('')
   const inputElement = useRef<HTMLInputElement>(null)
   const { links } = useHiddenLinks()
   const visibleLinks = getAllLinks().filter(link => !links.includes(link.url))
@@ -137,8 +137,9 @@ function useSearch (latestKeypress: string): UseSearch {
   const focusedLink = filteredLinks?.[keyboardIndex] ?? null
 
   useEffect(() => {
+    setSearchTerm(latestKeypress)
     inputElement.current?.focus()
-  }, [])
+  }, [latestKeypress])
 
   return {
     searchTerm,
