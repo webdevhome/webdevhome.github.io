@@ -1,10 +1,10 @@
 import { mdiEye, mdiEyeOff } from '@mdi/js'
 import Icon from '@mdi/react'
 import React, { FC, memo, MouseEvent } from 'react'
-import { get as getIcon } from 'simple-icons'
-import { DefaultIcon } from './DefaultIcon'
 import { toggleLink } from '../stores/hiddenLinksStore'
 import { classes } from '../utils/jsx'
+import { DefaultIcon } from './DefaultIcon'
+import { ReactSVG } from 'react-svg'
 
 interface LinkProps {
   title: string
@@ -38,12 +38,15 @@ export const Link: FC<LinkProps> = memo(({
     <a href={url} className={classes(linkClasses)} onClick={handleLinkClick}>
       <div className="link__icon-container" style={{ color }}>
         {icon !== undefined ? (
-          <Icon path={getIcon(icon).path} size={1} color={color} />
+          // <Icon path={getIcon(icon).path} size={1} color={color} />
+          <ReactSVG src={`/simple-icons/${icon}.svg`} className="link__icon" />
         ) : (
           <DefaultIcon />
         )}
       </div>
+
       <div className="link__label">{title}</div>
+
       {customize ? (
         <div className="link__action">
           {visible ? (

@@ -37,6 +37,11 @@
     border-radius: 2px;
     background: var(--icon-background);
   }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
   
   &__label {
     grid-column-start: 2;
