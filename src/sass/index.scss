@@ -1,132 +1,17 @@
-:root {
-  --page-background: hsl(0, 0%, 100%);
-  --icon-color: hsl(0, 0%, 0%);
-  --icon-color-active: hsl(0, 0%, 100%);
-  --icon-background: hsl(0, 0%, 100%);
-  --icon-focus-border: hsla(var(--primary-color-hue), 50%, 40%, 0.7);
-  --icon-button-size: 46px;
-  --primary-color-hue: 190;
-  --primary-color: hsl(var(--primary-color-hue), 50%, 40%);
-  --primary-color-pale: hsl(var(--primary-color-hue), 50%, 80%);
-  --primary-color-dark: hsl(var(--primary-color-hue), 50%, 25%);
-  --primary-color-hover: hsl(0, 0%, 85%);
-  --link-item-background: hsl(0, 0%, 90%);
-  --link-item-color: hsl(var(--primary-color-hue), 0%, 30%);
-  --link-item-color-hover: hsl(var(--primary-color-hue), 50%, 0%);
-  --link-item-focus-border: hsl(0, 0%, 70%);
-  --input-background: hsl(0, 0%, 90%);
-  --input-text-color: hsl(0, 0%, 0%);
-  --input-placeholder-color: hsl(0, 0%, 50%);
-  --logo-char-color: hsl(190, 50%, 25%);
-  --logo-shape-1-color: hsl(191, 50%, 40%);
-  --logo-shape-2-color: hsl(190, 50%, 25%);
-  --footer-text-color: hsl(0, 0%, 20%);
-  --footer-link-color: var(--primary-color);
-  --footer-link-color-hover: var(--primary-color-dark);
-  --footer-link-background-hover: hsl(0, 0%, 88%);
-  --footer-background: hsl(0, 0%, 95%);
-  --footer-border: hsl(0, 0%, 70%);
-  --h-page-margin: 50px;
-  font-family: Roboto, Segoe UI, Helvetica, Helvetica Neue, Arial, Ubuntu, sans-serif;
-  height: 100%;
-}
+@import './fonts.scss';
+@import './themes.scss';
+@import './elements.scss';
 
-@media (max-width: 1024px) {
-  :root {
-    --h-page-margin: 30px;
-  }
-}
-
-@media (max-width: 900px) {
-  :root {
-    --h-page-margin: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  :root {
-    --h-page-margin: 15px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --page-background: hsl(0, 0%, 20%);
-    --icon-color: hsl(0, 0%, 100%);
-    --icon-color-active: hsl(0, 0%, 0%);
-    --icon-focus-border: hsl(var(--primary-color-hue), 50%, 60%);
-    --icon-background: hsl(0, 0%, 100%);
-    --primary-color-hue: 190;
-    --primary-color: hsl(var(--primary-color-hue), 50%, 60%);
-    --primary-color-dark: hsl(var(--primary-color-hue), 50%, 40%);
-    --primary-color-hover: hsl(0, 0%, 30%);
-    --link-item-background: hsl(0, 0%, 40%);
-    --link-item-color: hsl(var(--primary-color-hue), 0%, 80%);
-    --link-item-color-hover: hsl(var(--primary-color-hue), 0%, 100%);
-    --link-item-focus-border: hsl(0, 0%, 50%);
-    --input-background: hsl(0, 0%, 40%);
-    --input-text-color: hsl(0, 0%, 95%);
-    --input-placeholder-color: hsl(0, 0%, 70%);
-    --logo-char-color: hsl(190, 50%, 55%);
-    --logo-shape-1-color: hsl(191, 50%, 40%);
-    --logo-shape-2-color: hsl(190, 50%, 55%);
-    --footer-text-color: hsl(0, 0%, 80%);
-    --footer-link-color: var(--primary-color);
-    --footer-link-color-hover: hsl(var(--primary-color-hue), 50%, 80%);
-    --footer-link-background-hover: hsl(0, 0%, 35%);
-    --footer-background: hsl(0, 0%, 30%);
-    --footer-border: hsl(0, 0%, 40%);
-  }
-}
-
-body {
-  margin: 0;
-  height: 100%;
-  background: var(--page-background);
-}
-
-#root {
-  height: 100%;
-}
-
-a {
-  text-decoration: none;
-  color: var(--primary-color);
-}
-
-a:hover {
-  color: var(--primary-color-dark);
-}
-
-code {
-  font-family: Roboto Mono, monospace;
-  color: var(--primary-color);
-}
-
-svg {
-  vertical-align: middle;
-}
-
-.title {
-  font-size: 40px;
-  font-weight: normal;
-  margin-bottom: 0;
-  color: var(--primary-color);
-}
-
-.divider {
-  color: #bbbbbb;
-}
-
+@import './components/app.scss';
 @import './components/app-actions.scss';
 @import './components/app-action.scss';
 @import './components/app-content.scss';
 @import './components/app-footer.scss';
 @import './components/app-header.scss';
-@import './components/app-search.scss';
 @import './components/footer-divider.scss';
 @import './components/footer-link.scss';
 @import './components/footer-text.scss';
 @import './components/link-group.scss';
 @import './components/link.scss';
 @import './components/logo.scss';
+@import './components/search.scss';

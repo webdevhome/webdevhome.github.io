@@ -1,12 +1,5 @@
-.app {
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 1fr auto;
-}
-
 .app-header {
-  grid-area: 1 / 1;
+  grid-area: header;
   color: white;
   padding: 30px 0;
   line-height: 0;

@@ -1,5 +1,5 @@
 .app-content {
-  grid-area: 2 / 1 / span 1 / span 2;
+  grid-area: content;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 80px var(--h-page-margin);

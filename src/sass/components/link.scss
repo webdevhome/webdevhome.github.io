@@ -67,15 +67,14 @@
     padding: 4px;
     margin: 4px;
     box-sizing: border-box;
-    background: white;
   }
 
   &--is-visible &__action {
-    color: var(--primary-color-dark);
+    color: var(--action-color);
   }
 
   &:not(&--is-visible) &__action {
-    color: var(--primary-color-pale);
+    color: var(--action-color-inactive);
   }
 
   & svg {

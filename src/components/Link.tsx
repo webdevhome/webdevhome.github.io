@@ -11,12 +11,13 @@ interface LinkProps {
   url: string
   icon?: string
   color?: string
-  customize: boolean
-  visible: boolean
+  customize?: boolean
+  visible?: boolean
+  focus?: boolean
 }
 
 export const Link: FC<LinkProps> = memo(({
-  title, url, icon, color, customize, visible
+  title, url, icon, color, customize = false, visible = true, focus = false
 }) => {
   function handleLinkClick (event: MouseEvent<HTMLAnchorElement>): void {
     if (customize) {
@@ -27,7 +28,8 @@ export const Link: FC<LinkProps> = memo(({
 
   const linkClasses = {
     link: true,
-    'link--is-visible': visible
+    'link--is-visible': visible,
+    'link--has-focus': focus
   }
 
   if (!customize && !visible) return null

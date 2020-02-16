@@ -1,0 +1,52 @@
+:root {
+  --primary-color-hue: 190;
+  --icon-button-size: 46px;
+  --h-page-margin: 50px;
+  font-family: Roboto, Segoe UI, Helvetica, Helvetica Neue, Arial, Ubuntu, sans-serif;
+  height: 100%;
+
+  @media (max-width: 1024px) {
+    --h-page-margin: 30px;
+  }
+
+  @media (max-width: 900px) {
+    --h-page-margin: 20px;
+  }
+
+  @media (max-width: 600px) {
+    --h-page-margin: 15px;
+  }
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--page-background);
+}
+
+#root {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+
+  &:hover {
+    color: var(--primary-color-dark);
+  }
+}
+
+kbd {
+  font-family: Roboto Mono, monospace;
+  font-size: 14px;
+  color: var(--input-text-color);
+  background-color: var(--footer-background);
+  border: 1px solid var(--footer-border);
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+svg {
+  vertical-align: middle;
+}
