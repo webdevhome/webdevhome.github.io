@@ -1,0 +1,9 @@
+.app-actions {
+  grid-area: 1 / 2;
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  margin-right: var(--h-page-margin);
+}

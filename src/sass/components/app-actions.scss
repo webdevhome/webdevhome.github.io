@@ -1,0 +1,23 @@
+.app-action {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-button-size);
+  height: var(--icon-button-size);
+  background-color: var(--link-item-background);
+  border-radius: calc(var(--icon-button-size) * 0.5);
+  transition: box-shadow 0.05s ease-out;
+  box-shadow: 0 0 0 0 var(--icon-focus-border);
+}
+
+.app-action:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.app-action:active {
+  box-shadow: 0 0 0 2px var(--icon-focus-border);
+}
+
+.app-action>svg {
+  fill: var(--icon-color);
+}

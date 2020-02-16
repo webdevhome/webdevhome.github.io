@@ -1,0 +1,14 @@
+.app-footer {
+  grid-area: 3 / 1 / span 1 / span 2;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--footer-text-color);
+  padding: 15px var(--h-page-margin);
+  background: var(--footer-background);
+  border-top: 1px solid var(--footer-border);
+  
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+}

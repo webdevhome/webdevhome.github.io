@@ -1,0 +1,25 @@
+.footer-link {
+  display: inline-block;
+  margin: 0 3px;
+  padding: 8px 12px;
+  color: var(--primary-color);
+  font-weight: 500;
+  border-radius: 3px;
+  user-select: none;
+
+  @media (max-width: 900px) {
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    background: var(--footer-link-background-hover);
+  }
+
+  &:hover {
+    color: var(--footer-link-color-hover);
+    background: var(--footer-link-background-hover);
+  }
+}

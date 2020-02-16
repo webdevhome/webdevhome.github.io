@@ -1,0 +1,19 @@
+.footer-text {
+  font-weight: 500;
+  margin-right: 20px;
+  user-select: none;
+
+  @media (min-width: 901px) {
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    margin: 0;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+}

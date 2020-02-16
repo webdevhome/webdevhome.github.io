@@ -1,0 +1,42 @@
+.app {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr auto;
+}
+
+.app-header {
+  grid-area: 1 / 1;
+  color: white;
+  padding: 30px 0;
+  line-height: 0;
+}
+
+@media (max-width: 1024px) {
+  .app-header {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-header {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .app-header {
+    padding-right: 10%;
+  }
+}
+
+.app-header__logo {
+  height: 50px;
+  max-width: 100%;
+}
+
+@media (max-width: 500px) {
+  .app-header__logo {
+    height: auto;
+  }
+}
