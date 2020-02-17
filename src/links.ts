@@ -141,7 +141,8 @@ export const links: Links = {
         { title: 'Spotify', url: 'https://spotify.com', icon: 'spotify', color: '#1ED760' },
         { title: 'Deezer', url: 'https://www.deezer.com/', icon: 'deezer', color: '#FEAA2D' },
         { title: 'SoundCloud', url: 'https://soundcloud.com', icon: 'soundcloud', color: '#FF3300' },
-        { title: 'Mixcloud', url: 'https://mixcloud.com', icon: 'mixcloud', color: '#314359' }
+        { title: 'Mixcloud', url: 'https://mixcloud.com', icon: 'mixcloud', color: '#314359' },
+        { title: 'DI.FM', url: 'https://di.fm' }
       ]
     },
     {
