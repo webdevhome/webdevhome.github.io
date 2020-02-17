@@ -54,7 +54,7 @@ export const Search: FC<SearchProps> = memo(({ latestKeypress }) => {
     <div className="search__results-hint">
       <kbd>Return</kbd>
       <div className="search__results-hint-description">
-        open link
+        Open link
       </div>
     </div>
     <div className="search__results-hint">
