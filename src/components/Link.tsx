@@ -5,6 +5,7 @@ import { toggleLink } from '../stores/hiddenLinksStore'
 import { classes } from '../utils/jsx'
 import { DefaultIcon } from './DefaultIcon'
 import { ReactSVG } from 'react-svg'
+import { MdiIcon } from './MdiIcon'
 
 interface LinkProps {
   title: string
@@ -38,7 +39,6 @@ export const Link: FC<LinkProps> = memo(({
     <a href={url} className={classes(linkClasses)} onClick={handleLinkClick}>
       <div className="link__icon-container" style={{ color }}>
         {icon !== undefined ? (
-          // <Icon path={getIcon(icon).path} size={1} color={color} />
           <ReactSVG src={`/simple-icons/${icon}.svg`} className="link__icon" />
         ) : (
           <DefaultIcon />
@@ -49,11 +49,7 @@ export const Link: FC<LinkProps> = memo(({
 
       {customize ? (
         <div className="link__action">
-          {visible ? (
-            <Icon path={mdiEye} size={1} />
-          ) : (
-            <Icon path={mdiEyeOff} size={1} />
-          )}
+          <MdiIcon path={visible ? mdiEye : mdiEyeOff} />
         </div>
       ) : null}
     </a>

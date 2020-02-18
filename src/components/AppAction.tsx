@@ -1,5 +1,5 @@
 import React, { FC, memo } from 'react'
-import { Icon } from '@mdi/react'
+import { MdiIcon } from './MdiIcon'
 import { classes } from '../utils/jsx'
 
 interface AppActionProps {
@@ -18,7 +18,7 @@ export const AppAction: FC<AppActionProps> = memo(({
 
   return (
     <div className={classes(actionClasses)} onClick={action}>
-      <Icon path={icon} size={1} />
+      <MdiIcon path={icon} />
     </div>
   )
 })
