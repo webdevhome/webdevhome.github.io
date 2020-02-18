@@ -1,8 +1,8 @@
 import React, { FC, memo } from 'react'
 import { LinkGroup as ILinkGroup } from '../links'
-import { useCurrentMode } from '../stores/currentModeStore'
-import { LinkGroup } from './LinkGroup'
+import { AppMode, useCurrentMode } from '../stores/currentModeStore'
 import { Link } from './Link'
+import { LinkGroup } from './LinkGroup'
 
 interface LinkListProps {
   links: ILinkGroup[]
@@ -16,7 +16,7 @@ export const LinkList: FC<LinkListProps> = memo(({ links, hiddenLinks }) => {
     const noVisibleLinksInGroup = group.items
       .every(link => hiddenLinks.includes(link.url))
 
-    if (noVisibleLinksInGroup && mode !== 'customize') { return null }
+    if (noVisibleLinksInGroup && mode !== AppMode.customize) { return null }
 
     return (
       <LinkGroup key={group.name} name={group.name}>
@@ -27,7 +27,7 @@ export const LinkList: FC<LinkListProps> = memo(({ links, hiddenLinks }) => {
             url={link.url}
             icon={link.icon}
             color={link.color}
-            customize={mode === 'customize'}
+            customize={mode === AppMode.customize}
             visible={!hiddenLinks.includes(link.url)}
           />
         ))}

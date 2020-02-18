@@ -1,7 +1,7 @@
 import fuzzy from 'fuzzysort'
 import React, { ChangeEvent, FC, KeyboardEvent, memo, useEffect, useRef, useState, Dispatch, SetStateAction, RefObject } from 'react'
 import { getAllLinks, LinkItem } from '../links'
-import { setMode } from '../stores/currentModeStore'
+import { setMode, AppMode } from '../stores/currentModeStore'
 import { useHiddenLinks } from '../stores/hiddenLinksStore'
 import { Link } from './Link'
 
@@ -23,7 +23,7 @@ export const Search: FC<SearchProps> = memo(({ latestKeypress }) => {
 
   function handleInputKeyDown (event: KeyboardEvent<HTMLInputElement>): void {
     if (event.key === 'Backspace' && searchTerm === '') {
-      setMode('default')
+      setMode(AppMode.default)
     }
 
     if (filteredLinks === null || filteredLinks.total === 0) { return }

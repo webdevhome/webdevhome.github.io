@@ -11,7 +11,7 @@ import { FooterText } from './components/FooterText'
 import { LinkList } from './components/LinkList'
 import { Search } from './components/Search'
 import { links } from './links'
-import { setMode, toggleMode, useCurrentMode } from './stores/currentModeStore'
+import { setMode, toggleMode, useCurrentMode, AppMode } from './stores/currentModeStore'
 import { HiddenLinks, useHiddenLinks } from './stores/hiddenLinksStore'
 
 export const App: FC = () => {
@@ -27,16 +27,16 @@ export const App: FC = () => {
         <AppAction
           icon={mdiMagnify}
           action={handleSearchAction}
-          active={mode === 'search'}
+          active={mode === AppMode.search}
         />
         <AppAction
           icon={mdiFormatListChecks}
           action={handleCustomizeAction}
-          active={mode === 'customize'}
+          active={mode === AppMode.customize}
         />
       </AppActions>
 
-      {mode === 'default' || mode === 'customize' ? (
+      {mode === AppMode.default || mode === AppMode.customize ? (
         <AppContent>
           <LinkList links={links.items} hiddenLinks={hiddenLinks.links} />
         </AppContent>
@@ -81,13 +81,13 @@ function useCustomizeFeature (): CustomizeFeature {
 
     function handleGlobalKeydown (event: KeyboardEvent): void {
       if (event.key === 'Escape') {
-        setMode('default')
+        setMode(AppMode.default)
       }
     }
   }, [])
 
   function handleCustomizeAction (): void {
-    toggleMode('customize')
+    toggleMode(AppMode.customize)
   }
 
   return { hiddenLinks, handleCustomizeAction }
@@ -110,14 +110,14 @@ function useSearchFeature (): SearchFeature {
 
     function handleGlobalKeydown (event: KeyboardEvent): void {
       if (event.key === 'Escape') {
-        setMode('default')
+        setMode(AppMode.default)
       }
     }
 
     function handleGlobalKeypress (event: KeyboardEvent): void {
-      if (mode === 'default') {
+      if (mode === AppMode.default) {
         setLatestKeypress(event.key)
-        setMode('search')
+        setMode(AppMode.search)
       }
     }
 
@@ -129,7 +129,7 @@ function useSearchFeature (): SearchFeature {
 
   function handleSearchAction (): void {
     setLatestKeypress('')
-    toggleMode('search')
+    toggleMode(AppMode.search)
   }
 
   return { handleSearchAction, latestKeypress }

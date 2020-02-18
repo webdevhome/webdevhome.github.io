@@ -1,24 +1,24 @@
 import { createStore, createReactHook } from '@alinnert/tstate'
 
-type Mode = 'default' | 'search' | 'customize'
+export enum AppMode { 'default', 'search', 'customize' }
 
 interface CurrentMode {
-  mode: Mode
+  mode: AppMode
 }
 
 const initialState: CurrentMode = {
-  mode: 'default'
+  mode: AppMode.default
 }
 
 const currentModeStore = createStore<CurrentMode>(initialState)
 export const useCurrentMode = createReactHook(currentModeStore)
 
-export function setMode (mode: Mode): void {
+export function setMode (mode: AppMode): void {
   currentModeStore.set({ mode })
 }
 
-export function toggleMode (mode: Mode): void {
+export function toggleMode (mode: AppMode): void {
   currentModeStore.set({
-    mode: currentModeStore.state.mode === mode ? 'default' : mode
+    mode: currentModeStore.state.mode === mode ? AppMode.default : mode
   })
 }
