@@ -86,7 +86,7 @@ export const Search: FC<SearchProps> = memo(({ latestKeypress }) => {
         />
       ))
     ) : (
-      <div>No results found...</div>
+      <div className="search__results-hint">No results found...</div>
     )}
   </>
 
