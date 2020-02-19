@@ -3,6 +3,10 @@
   font-size: 32px;
   line-height: 50px;
   user-select: none;
+
+  @media (max-width: 500px) {
+    text-align: center;
+  }
   
   &__char-1 {
     font-weight: 700;

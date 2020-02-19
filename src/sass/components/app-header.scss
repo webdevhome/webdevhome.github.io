@@ -15,12 +15,6 @@
   }
 }
 
-@media (max-width: 500px) {
-  .app-header {
-    padding-right: 10%;
-  }
-}
-
 .app-header__logo {
   height: 50px;
   max-width: 100%;
@@ -30,5 +24,6 @@
 @media (max-width: 500px) {
   .app-header__logo {
     height: auto;
+    padding-left: 0;
   }
 }
