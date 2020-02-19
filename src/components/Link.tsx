@@ -1,10 +1,9 @@
 import { mdiEye, mdiEyeOff } from '@mdi/js'
-import Icon from '@mdi/react'
 import React, { FC, memo, MouseEvent } from 'react'
+import { ReactSVG } from 'react-svg'
 import { toggleLink } from '../stores/hiddenLinksStore'
 import { classes } from '../utils/jsx'
 import { DefaultIcon } from './DefaultIcon'
-import { ReactSVG } from 'react-svg'
 import { MdiIcon } from './MdiIcon'
 
 interface LinkProps {
