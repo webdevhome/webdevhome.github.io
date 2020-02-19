@@ -1,8 +1,6 @@
 .app-header {
   grid-area: header;
-  color: white;
   padding: 30px 0;
-  line-height: 0;
 }
 
 @media (max-width: 1024px) {
@@ -26,6 +24,7 @@
 .app-header__logo {
   height: 50px;
   max-width: 100%;
+  padding-left: var(--h-page-margin);
 }
 
 @media (max-width: 500px) {

@@ -1,11 +1,19 @@
-.logo__char {
-  fill: var(--logo-char-color);
-}
+.logo {
+  font-family: "Roboto Mono";
+  font-size: 32px;
+  line-height: 50px;
+  user-select: none;
+  
+  &__char-1 {
+    font-weight: 700;
+    color: var(--logo-char-1-color);
+  }
 
-.logo__shape-1 {
-  fill: var(--logo-shape-1-color);
-}
+  &__char-2 {
+    color: var(--logo-char-2-color);
+  }
 
-.logo__shape-2 {
-  fill: var(--logo-shape-2-color);
+  &__shape {
+    color: var(--logo-shape-color);
+  }
 }

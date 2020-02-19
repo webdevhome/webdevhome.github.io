@@ -1,17 +1,15 @@
-# //webdev/home
+# <WebdevHome />
+
+[webdevhome.github.io](https://webdevhome.github.io)
 
 This is a collection of links I as a web developer use very frequently. Maybe you will find them useful, too.
 
-Link: [webdevhome.github.io](https://webdevhome.github.io)
-
 ## Planned Features
 
-- [x] Filter links by typing their name and open a page by pressing `[return]`
+- [x] Filter links by typing their name and open a page by pressing `Return`
+- [x] Possibility to customize which links are visible
 - [ ] Submit searches of supported sites from within this site (similar to Chrome's Omnibar)
-- [ ] Possibility to customize which links are visible
-- [ ] MOAR LINKS!
-
-**Status:** I'm working on a new implementation of *//webdev/home* based on React in the `react` branch. I will take this opportunity to implement the features listed above.
+- [ ] MOAR LINKS! \(°O°)/
 
 ## Credits
 

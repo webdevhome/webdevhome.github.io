@@ -1,7 +1,7 @@
 .app-content {
   grid-area: content;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   grid-gap: 80px var(--h-page-margin);
   margin: 20px var(--h-page-margin);
   align-self: self-start;

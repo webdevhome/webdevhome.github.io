@@ -14,7 +14,7 @@ import { links } from './links'
 import { setMode, toggleMode, useCurrentMode, AppMode } from './stores/currentModeStore'
 import { HiddenLinks, useHiddenLinks } from './stores/hiddenLinksStore'
 
-export const App: FC = () => {
+export const WebdevHome: FC = () => {
   const { handleCustomizeAction, hiddenLinks } = useCustomizeFeature()
   const { handleSearchAction, latestKeypress } = useSearchFeature()
   const { mode } = useCurrentMode()

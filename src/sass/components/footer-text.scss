@@ -3,6 +3,14 @@
   margin-right: 20px;
   user-select: none;
 
+  & a {
+    color: var(--footer-link-color);
+
+    &:hover {
+      color: var(--footer-link-color-hover);
+    }
+  }
+
   @media (min-width: 901px) {
     &:not(:first-child) {
       margin-left: 10px;
