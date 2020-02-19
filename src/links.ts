@@ -116,7 +116,8 @@ export const links: Links = {
       items: [
         { title: 'W3C', url: 'https://www.w3.org/', icon: 'w3c', color: '#005A9C' },
         { title: 'ECMAScript Proposals', url: 'https://github.com/tc39/proposals' },
-        { title: 'Caniuse...', url: 'https://caniuse.com' },
+        { title: 'Can I use...', url: 'https://caniuse.com' },
+        { title: 'Can I email...', url: 'https://caniemail.com' },
         { title: 'ECMAScript Compatibility Table', url: 'https://kangax.github.io/compat-table/es6' },
         { title: 'Node Green', url: 'https://node.green' },
         { title: 'Is Houdini ready yet?', url: 'https://ishoudinireadyyet.com' }
