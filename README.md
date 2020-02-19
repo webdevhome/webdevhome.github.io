@@ -1,4 +1,6 @@
-# <WebdevHome />
+![Build and deploy website](https://github.com/webdevhome/webdevhome.github.io/workflows/Build%20and%20deploy%20website/badge.svg)
+
+# &lt;WebdevHome /&gt;
 
 [webdevhome.github.io](https://webdevhome.github.io)
 
