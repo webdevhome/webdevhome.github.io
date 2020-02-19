@@ -15,10 +15,13 @@ This is a collection of links I as a web developer use very frequently. Maybe yo
 
 ## Credits
 
-- [Simple Icons](http://simpleicons.org/)
-- [Feather Icons](https://github.com/feathericons/feather)
-- [farzher/fuzzysort](https://github.com/farzher/fuzzysort)
+[TypeScript](https://github.com/microsoft/TypeScript)
+| [React](https://github.com/facebook/react)
+| [farzher/fuzzysort](https://github.com/farzher/fuzzysort)
+| [Sass](https://github.com/sass/dart-sass)
+| [Simple Icons](https://github.com/simple-icons/simple-icons)
+| [Material Design Icons](https://github.com/Templarian/MaterialDesign)
 
 ---
 
-Developed and maintained by: Andreas Linnert (→ [alinnert](https://github.com/alinnert))
+Developed and maintained by: Andreas Linnert ([alinnert](https://github.com/alinnert))
