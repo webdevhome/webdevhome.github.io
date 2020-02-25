@@ -38,7 +38,7 @@ export const Link: FC<LinkProps> = memo(({
     <a href={url} className={classes(linkClasses)} onClick={handleLinkClick}>
       <div className="link__icon-container" style={{ color }}>
         {icon !== undefined ? (
-          <ReactSVG src={`/simple-icons/${icon}.svg`} className="link__icon" />
+          <ReactSVG src={`${process.env.REACT_APP_PUBLIC_URL ?? ''}/simple-icons/${icon}.svg`} className="link__icon" />
         ) : (
           <DefaultIcon />
         )}
