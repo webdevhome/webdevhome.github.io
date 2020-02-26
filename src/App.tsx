@@ -49,7 +49,7 @@ export const WebdevHome: FC = () => {
           This list is curated by <a href="https://github.com/alinnert">Andreas Linnert</a>
         </FooterText>
         <FooterLink
-          text="//webdev/home on GitHub"
+          text="GitHub"
           url="https://github.com/webdevhome/webdevhome.github.io"
         />
         <FooterDivider/>
