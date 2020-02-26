@@ -36,3 +36,4 @@ jobs:
         BASE_BRANCH: develop
         BRANCH: master
         FOLDER: build
+        CLEAN: true

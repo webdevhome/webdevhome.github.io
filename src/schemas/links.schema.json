@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Links",
+  "description": "A list of links to output on the website",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "items"],
+      "properties": {
+        "name": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#$defs/link"
+          }
+        }
+      }
+    },
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "url"],
+      "properties": {
+        "title": { "type": "string" },
+        "url": { "type": "string" },
+        "icon": { "type": "string" },
+        "color": { "type": "string" }
+      }
+    }
+  },
+  "properties": {
+    "$schema": { "type": "string" },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#$defs/group"
+      }
+    }
+  }
+}
