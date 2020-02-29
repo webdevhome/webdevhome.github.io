@@ -19,6 +19,7 @@ export const Search: FC<SearchProps> = memo(({ latestKeypress }) => {
 
   function handleInputChange (event: ChangeEvent<HTMLInputElement>): void {
     setSearchTerm(event.currentTarget.value)
+    setKeyboardIndex(0)
   }
 
   function handleInputKeyDown (event: KeyboardEvent<HTMLInputElement>): void {
