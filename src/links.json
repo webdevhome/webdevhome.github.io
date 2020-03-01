@@ -201,6 +201,12 @@
           "color": "#000000"
         },
         {
+          "title": "Apollo",
+          "url": "https://www.apollographql.com/",
+          "icon": "apollographql",
+          "color": "#311C87"
+        },
+        {
           "title": "Vue",
           "url": "https://vuejs.org",
           "icon": "vue-dot-js",
