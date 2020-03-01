@@ -6,13 +6,6 @@
 
 This is a collection of links I as a web developer use very frequently. Maybe you will find them useful, too.
 
-## Planned Features
-
-- [x] Filter links by typing their name and open a page by pressing `Return`
-- [x] Possibility to customize which links are visible
-- [ ] Submit searches of supported sites from within this site (similar to Chrome's Omnibar)
-- [ ] MOAR LINKS! \(°O°)/
-
 ## Credits
 
 [TypeScript](https://github.com/microsoft/TypeScript)
