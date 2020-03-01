@@ -8,27 +8,35 @@
           "title": "GitHub",
           "url": "https://github.com",
           "icon": "github",
-          "color": "#181717"
+          "color": "#181717",
+          "searchUrl": "https://github.com/search?q={search}"
         },
         {
           "title": "GitLab",
           "url": "https://gitlab.com/explore",
           "icon": "gitlab",
-          "color": "#fca121"
+          "color": "#fca121",
+          "searchUrl": "https://gitlab.com/search?utf8=%E2%9C%93&search={search}"
         },
         {
           "title": "npm",
           "url": "https://npmjs.com",
           "icon": "npm",
-          "color": "#cb3837"
+          "color": "#cb3837",
+          "searchUrl": "https://www.npmjs.com/search?q={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "30 seconds of code",
-          "url": "https://30secondsofcode.org"
+          "url": "https://30secondsofcode.org",
+          "searchUrl": "https://www.30secondsofcode.org/search/?keyphrase={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "BundlePhobia",
-          "url": "https://bundlephobia.com"
+          "url": "https://bundlephobia.com",
+          "searchUrl": "https://bundlephobia.com/result?p={search}",
+          "searchConcat": "%20"
         }
       ]
     },
@@ -39,19 +47,24 @@
           "title": "Stack Overflow",
           "url": "https://stackoverflow.com",
           "icon": "stackoverflow",
-          "color": "#fe7a16"
+          "color": "#fe7a16",
+          "searchUrl": "https://stackoverflow.com/search?q={search}"
         },
         {
           "title": "Reddit",
           "url": "https://reddit.com",
           "icon": "reddit",
-          "color": "#ff4500"
+          "color": "#ff4500",
+          "searchUrl": "https://www.reddit.com/search/?q={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "Twitter",
           "url": "https://twitter.com",
           "icon": "twitter",
-          "color": "#1da1f2"
+          "color": "#1da1f2",
+          "searchUrl": "https://twitter.com/search?q={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "WhatsApp Web",
@@ -84,7 +97,8 @@
           "title": "MDN",
           "url": "https://developer.mozilla.org",
           "icon": "mdnwebdocs",
-          "color": "#000000"
+          "color": "#000000",
+          "searchUrl": "https://developer.mozilla.org/de/search?q={search}"
         },
         {
           "title": "Interactive Git Cheat Sheet",
@@ -103,7 +117,9 @@
       "items": [
         {
           "title": "OWASP Cheat Sheet Series Project",
-          "url": "https://cheatsheetseries.owasp.org"
+          "url": "https://cheatsheetseries.owasp.org",
+          "searchUrl": "https://cheatsheetseries.owasp.org/?q={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "Keep a Changelog",
@@ -122,13 +138,16 @@
           "title": "CodePen",
           "url": "https://codepen.io",
           "icon": "codepen",
-          "color": "#000000"
+          "color": "#000000",
+          "searchUrl": "https://codepen.io/search/pens?q={search}"
         },
         {
           "title": "CodeSandbox",
           "url": "https://codesandbox.io",
           "icon": "codesandbox",
-          "color": "#000000"
+          "color": "#000000",
+          "searchUrl": "https://codesandbox.io/search?query={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "JSFiddle",
@@ -147,13 +166,16 @@
       "items": [
         {
           "title": "AlternativeTo",
-          "url": "https://alternativeto.net"
+          "url": "https://alternativeto.net",
+          "searchUrl": "https://alternativeto.net/browse/search?q={search}"
         },
         {
           "title": "StackShare",
           "url": "https://stackshare.io",
           "icon": "stackshare",
-          "color": "#0690fa"
+          "color": "#0690fa",
+          "searchUrl": "https://stackshare.io/search/q={search}",
+          "searchConcat": "%20"
         }
       ]
     },
@@ -258,7 +280,8 @@
           "title": "Dart",
           "url": "https://dart.dev",
           "icon": "dart",
-          "color": "#0175c2"
+          "color": "#0175c2",
+          "searchUrl": "https://dart.dev/search?ie=UTF-8&q={search}"
         }
       ]
     },
@@ -275,7 +298,9 @@
           "title": "Microsoft IE/Edge",
           "url": "https://developer.microsoft.com/en-us/microsoft-edge/platform/status",
           "icon": "microsoftedge",
-          "color": "#0078d7"
+          "color": "#0078d7",
+          "searchUrl": "https://developer.microsoft.com/en-us/microsoft-edge/status/?q={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "Mozilla Firefox",
@@ -287,7 +312,9 @@
           "title": "WebKit",
           "url": "https://webkit.org/status",
           "icon": "safari",
-          "color": "#000000"
+          "color": "#000000",
+          "searchUrl": "https://webkit.org/status/#?search={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "Timeline of Web Browsers",
@@ -310,11 +337,14 @@
         },
         {
           "title": "Can I use...",
-          "url": "https://caniuse.com"
+          "url": "https://caniuse.com",
+          "searchUrl": "https://caniuse.com/#search={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "Can I email...",
-          "url": "https://caniemail.com"
+          "url": "https://caniemail.com",
+          "searchUrl": "https://www.caniemail.com/search/?s={search}"
         },
         {
           "title": "ECMAScript Compatibility Table",
@@ -337,13 +367,16 @@
           "title": "Git",
           "url": "https://git-scm.com",
           "icon": "git",
-          "color": "#f05032"
+          "color": "#f05032",
+          "searchUrl": "https://git-scm.com/search/results?search={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "Visual Studio Code",
           "url": "https://code.visualstudio.com",
           "icon": "visualstudiocode",
-          "color": "#007acc"
+          "color": "#007acc",
+          "searchUrl": "https://code.visualstudio.com/Search?q={search}"
         },
         {
           "title": "Atom",
@@ -355,13 +388,17 @@
           "title": "JetBrains",
           "url": "https://www.jetbrains.com",
           "icon": "jetbrains",
-          "color": "#000000"
+          "color": "#000000",
+          "searchUrl": "https://www.jetbrains.com/search/?q={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "Adobe",
           "url": "https://www.adobe.com",
           "icon": "adobe",
-          "color": "#ff0000"
+          "color": "#ff0000",
+          "searchUrl": "https://www.adobe.com/search.html#q={search}&sort=relevancy",
+          "searchConcat": "%20"
         },
         {
           "title": "Affinity",
@@ -378,29 +415,37 @@
           "title": "YouTube",
           "url": "https://youtube.com",
           "icon": "youtube",
-          "color": "#ff0000"
+          "color": "#ff0000",
+          "searchUrl": "https://www.youtube.com/results?search_query={search}"
         },
         {
           "title": "YouTube Music",
-          "url": "https://music.youtube.com"
+          "url": "https://music.youtube.com",
+          "searchUrl": "https://music.youtube.com/search?q={search}"
         },
         {
           "title": "Spotify",
           "url": "https://open.spotify.com/",
           "icon": "spotify",
-          "color": "#1ED760"
+          "color": "#1ED760",
+          "searchUrl": "https://open.spotify.com/search/{search}",
+          "searchConcat": "%20"
         },
         {
           "title": "Deezer",
           "url": "https://www.deezer.com/",
           "icon": "deezer",
-          "color": "#FEAA2D"
+          "color": "#FEAA2D",
+          "searchUrl": "https://www.deezer.com/search/{search}",
+          "searchConcat": "%20"
         },
         {
           "title": "SoundCloud",
           "url": "https://soundcloud.com",
           "icon": "soundcloud",
-          "color": "#FF3300"
+          "color": "#FF3300",
+          "searchUrl": "https://soundcloud.com/search?q={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "Mixcloud",
@@ -410,7 +455,8 @@
         },
         {
           "title": "DI.FM",
-          "url": "https://di.fm"
+          "url": "https://di.fm",
+          "searchUrl": "https://www.di.fm/search?q={search}"
         }
       ]
     },
@@ -478,7 +524,8 @@
         },
         {
           "title": "Codrops Collective",
-          "url": "https://tympanus.net/codrops/collective"
+          "url": "https://tympanus.net/codrops/collective",
+          "searchUrl": "https://tympanus.net/codrops/?s={search}&search-type=posts"
         }
       ]
     }

@@ -1,9 +1,10 @@
 import fuzzy from 'fuzzysort'
-import React, { ChangeEvent, FC, KeyboardEvent, memo, useEffect, useRef, useState, Dispatch, SetStateAction, RefObject } from 'react'
-import { getAllLinks, LinkItem } from '../links'
-import { setMode, AppMode } from '../stores/currentModeStore'
+import React, { ChangeEvent, Dispatch, FC, KeyboardEvent as ReactKeyboardEvent, memo, RefObject, SetStateAction, useEffect, useRef, useState } from 'react'
+import { getAllLinks, LinkItem, SearchTarget } from '../links'
+import { AppMode, setMode } from '../stores/currentModeStore'
 import { useHiddenLinks } from '../stores/hiddenLinksStore'
 import { Link } from './Link'
+import { SearchTargetItem } from './SearchTargetItem'
 
 interface SearchProps {
   latestKeypress: string
@@ -12,39 +13,89 @@ interface SearchProps {
 export const Search: FC<SearchProps> = memo(({ latestKeypress }) => {
   const {
     searchTerm, setSearchTerm,
+    searchTarget, setSearchTarget,
     keyboardIndex, setKeyboardIndex,
-    filteredLinks, focusedLink,
+    results, focusedResult,
     inputElement
   } = useSearch(latestKeypress)
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleGlobalKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleGlobalKeyDown)
+    }
+  })
 
   function handleInputChange (event: ChangeEvent<HTMLInputElement>): void {
     setSearchTerm(event.currentTarget.value)
     setKeyboardIndex(0)
   }
 
-  function handleInputKeyDown (event: KeyboardEvent<HTMLInputElement>): void {
-    if (event.key === 'Backspace' && searchTerm === '') {
-      setMode(AppMode.default)
-    }
+  function handleInputKeyDown (event: ReactKeyboardEvent<HTMLInputElement>): void {
+    switch (event.key) {
+      case 'Backspace': {
+        if (searchTerm !== '') { return }
 
-    if (filteredLinks === null || filteredLinks.total === 0) { return }
-
-    if (event.key === 'Enter' && focusedLink !== null) {
-      if (event.ctrlKey) {
-        window.open(focusedLink.obj.url, '', 'alwaysRaised=on')
-      } else {
-        window.location.href = focusedLink.obj.url
+        if (searchTarget !== null) {
+          setSearchTarget(null)
+        } else {
+          setMode(AppMode.default)
+        }
+        break
       }
-      return
-    }
 
-    if (event.key === 'ArrowUp') {
-      setKeyboardIndex(Math.max(0, keyboardIndex - 1))
-      return
-    }
+      case 'Tab': {
+        event.preventDefault()
 
-    if (event.key === 'ArrowDown') {
-      setKeyboardIndex(Math.min(filteredLinks.total - 1, keyboardIndex + 1))
+        if (searchTarget !== null) { return }
+        if (focusedResult === null) { return }
+        if (focusedResult.obj.searchUrl === undefined) { return }
+
+        setSearchTarget(focusedResult.obj as SearchTarget)
+        setSearchTerm('')
+        break
+      }
+
+      case 'Enter': {
+        const url = getUrl(focusedResult?.obj ?? null, searchTarget, searchTerm)
+
+        if (url === null) { return }
+
+        if (event.ctrlKey) {
+          window.open(url, '', 'alwaysRaised=on')
+        } else {
+          window.location.href = url
+        }
+
+        setMode(AppMode.default)
+        break
+      }
+
+      case 'ArrowUp': {
+        if (results === null) { return }
+        event.preventDefault()
+        setKeyboardIndex(Math.max(0, keyboardIndex - 1))
+        break
+      }
+
+      case 'ArrowDown': {
+        if (results === null) { return }
+        event.preventDefault()
+        setKeyboardIndex(Math.min(results.total - 1, keyboardIndex + 1))
+      }
+    }
+  }
+
+  function handleGlobalKeyDown (event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      if (searchTarget !== null) {
+        setSearchTarget(null)
+        setSearchTerm('')
+        return
+      }
+
+      setMode(AppMode.default)
     }
   }
 
@@ -72,18 +123,19 @@ export const Search: FC<SearchProps> = memo(({ latestKeypress }) => {
     </div>
   </>
 
-  const results = <>
-    {filteredLinks !== null && filteredLinks.total > 0 ? (
-      filteredLinks.map(link => (
+  const resultElements = <>
+    {results !== null && results.total > 0 ? (
+      results.map(link => (
         <Link
           key={link.obj.url}
           title={link.obj.title}
           url={link.obj.url}
           icon={link.obj.icon}
+          searchable={link.obj.searchUrl !== undefined}
           color={link.obj.color}
           customize={false}
           visible={true}
-          focus={link === focusedLink}
+          focus={link === focusedResult}
         />
       ))
     ) : (
@@ -93,18 +145,29 @@ export const Search: FC<SearchProps> = memo(({ latestKeypress }) => {
 
   return (
     <div className="search">
+      {searchTarget !== null ? (
+        <SearchTargetItem
+          title={searchTarget.title}
+          icon={searchTarget.icon}
+          color={searchTarget.color}
+        />
+      ) : null}
+
       <input
         className="search__input"
         ref={inputElement}
         type="text"
         value={searchTerm}
-        placeholder="Search links..."
+        placeholder={searchTarget === null ? 'Search links...' : 'Search...'}
         onChange={handleInputChange}
         onKeyDown={handleInputKeyDown}
       />
 
       <div className="search__results">
-        {searchTerm === '' ? hints : results}
+        {searchTarget === null
+          ? (searchTerm === '' ? hints : resultElements)
+          : null
+        }
       </div>
     </div>
   )
@@ -113,16 +176,19 @@ export const Search: FC<SearchProps> = memo(({ latestKeypress }) => {
 interface UseSearch {
   searchTerm: string
   setSearchTerm: Dispatch<SetStateAction<string>>
+  searchTarget: SearchTarget | null
+  setSearchTarget: Dispatch<SetStateAction<SearchTarget | null>>
   keyboardIndex: number
   setKeyboardIndex: Dispatch<SetStateAction<number>>
-  filteredLinks: Fuzzysort.KeyResults<LinkItem> | null
-  focusedLink: Fuzzysort.KeyResult<LinkItem> | null
+  results: Fuzzysort.KeyResults<LinkItem> | null
+  focusedResult: Fuzzysort.KeyResult<LinkItem> | null
   inputElement: RefObject<HTMLInputElement>
 }
 
 function useSearch (latestKeypress: string): UseSearch {
   const [keyboardIndex, setKeyboardIndex] = useState<number>(0)
   const [searchTerm, setSearchTerm] = useState<string>('')
+  const [searchTarget, setSearchTarget] = useState<SearchTarget | null>(null)
   const inputElement = useRef<HTMLInputElement>(null)
   const { links } = useHiddenLinks()
   const visibleLinks = getAllLinks().filter(link => !links.includes(link.url))
@@ -131,11 +197,11 @@ function useSearch (latestKeypress: string): UseSearch {
     key: 'title', allowTypo: false, limit: 6
   }
 
-  const filteredLinks = searchTerm !== ''
+  const results = searchTerm !== '' && searchTarget === null
     ? fuzzy.go(searchTerm, visibleLinks, fuzzyOptions)
     : null
 
-  const focusedLink = filteredLinks?.[keyboardIndex] ?? null
+  const focusedResult = results?.[keyboardIndex] ?? null
 
   useEffect(() => {
     setSearchTerm(latestKeypress)
@@ -145,10 +211,33 @@ function useSearch (latestKeypress: string): UseSearch {
   return {
     searchTerm,
     setSearchTerm,
+    searchTarget,
+    setSearchTarget,
     keyboardIndex,
     setKeyboardIndex,
-    filteredLinks,
-    focusedLink,
+    results,
+    focusedResult,
     inputElement
   }
+}
+
+function getUrl (
+  focusedItem: LinkItem | null,
+  searchTarget?: SearchTarget | null,
+  searchTerm?: string
+): string | null {
+  if (
+    searchTarget !== null &&
+    searchTarget !== undefined &&
+    searchTerm !== undefined &&
+    searchTerm !== ''
+  ) {
+    return searchTarget.searchUrl.replace(/\{search\}/, searchTerm)
+  }
+
+  if (focusedItem !== null) {
+    return focusedItem.url
+  }
+
+  return null
 }

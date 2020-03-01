@@ -27,7 +27,9 @@
         "title": { "type": "string" },
         "url": { "type": "string" },
         "icon": { "type": "string" },
-        "color": { "type": "string" }
+        "color": { "type": "string" },
+        "searchUrl": { "type": "string" },
+        "searchConcat": { "type": "string" }
       }
     }
   },

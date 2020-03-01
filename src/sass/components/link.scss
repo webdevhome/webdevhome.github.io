@@ -57,7 +57,26 @@
   &:hover &__label {
     color: var(--link-item-color-hover);
   }
-  
+
+  &__info {
+    align-self: center;
+    color: var(--link-item-color);
+    margin-right: 10px;
+  }
+
+  &:not(&--has-focus) &__info {
+    opacity: 0.2;
+  }
+
+  &__info-text {
+    vertical-align: middle;
+    font-size: 14px;
+  }
+
+  &__info-text > kbd {
+    font-size: inherit;
+  }
+
   &__image {
     align-self: center;
     max-width: 100px;

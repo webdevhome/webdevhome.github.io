@@ -11,13 +11,15 @@ interface LinkProps {
   url: string
   icon?: string
   color?: string
+  searchable?: boolean
   customize?: boolean
   visible?: boolean
   focus?: boolean
 }
 
 export const Link: FC<LinkProps> = memo(({
-  title, url, icon, color, customize = false, visible = true, focus = false
+  title, url, icon, color, searchable = false,
+  customize = false, visible = true, focus = false
 }) => {
   function handleLinkClick (event: MouseEvent<HTMLAnchorElement>): void {
     if (customize) {
@@ -38,13 +40,21 @@ export const Link: FC<LinkProps> = memo(({
     <a href={url} className={classes(linkClasses)} onClick={handleLinkClick}>
       <div className="link__icon-container" style={{ color }}>
         {icon !== undefined ? (
-          <ReactSVG src={`${process.env.REACT_APP_PUBLIC_URL ?? ''}/simple-icons/${icon}.svg`} className="link__icon" />
+          <ReactSVG src={getIconUrl(icon)} className="link__icon" />
         ) : (
           <DefaultIcon />
         )}
       </div>
 
       <div className="link__label">{title}</div>
+
+      {searchable ? (
+        <div className="link__info">
+          <span className="link__info-text">
+            <kbd>Tab</kbd>: Search on site
+          </span>
+        </div>
+      ) : null}
 
       {customize ? (
         <div className="link__action">
@@ -54,3 +64,7 @@ export const Link: FC<LinkProps> = memo(({
     </a>
   )
 })
+
+function getIconUrl (icon: string): string {
+  return `${process.env.REACT_APP_PUBLIC_URL ?? ''}/simple-icons/${icon}.svg`
+}

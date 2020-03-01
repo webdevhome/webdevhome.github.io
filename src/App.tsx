@@ -75,16 +75,21 @@ interface CustomizeFeature {
 
 function useCustomizeFeature (): CustomizeFeature {
   const hiddenLinks = useHiddenLinks()
+  const { mode } = useCurrentMode()
 
   useEffect(() => {
     document.addEventListener('keydown', handleGlobalKeydown)
 
     function handleGlobalKeydown (event: KeyboardEvent): void {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && mode === AppMode.customize) {
         setMode(AppMode.default)
       }
     }
-  }, [])
+
+    return () => {
+      document.removeEventListener('keydown', handleGlobalKeydown)
+    }
+  }, [mode])
 
   function handleCustomizeAction (): void {
     toggleMode(AppMode.customize)
@@ -105,14 +110,7 @@ function useSearchFeature (): SearchFeature {
   const { mode } = useCurrentMode()
 
   useEffect(() => {
-    window.addEventListener('keydown', handleGlobalKeydown)
     window.addEventListener('keypress', handleGlobalKeypress)
-
-    function handleGlobalKeydown (event: KeyboardEvent): void {
-      if (event.key === 'Escape') {
-        setMode(AppMode.default)
-      }
-    }
 
     function handleGlobalKeypress (event: KeyboardEvent): void {
       if (mode === AppMode.default) {
@@ -122,7 +120,6 @@ function useSearchFeature (): SearchFeature {
     }
 
     return (): void => {
-      window.removeEventListener('keydown', handleGlobalKeydown)
       window.removeEventListener('keypress', handleGlobalKeypress)
     }
   }, [mode])
