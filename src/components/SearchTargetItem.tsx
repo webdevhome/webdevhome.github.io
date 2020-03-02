@@ -1,6 +1,7 @@
 import React, { FC, memo } from 'react'
-import { LinkItem } from '../links'
 import { ReactSVG } from 'react-svg'
+import { LinkItem } from '../links'
+import { getIconUrl } from '../utils/misc'
 
 interface SearchTargetItemProps {
   title: LinkItem['title']
@@ -27,7 +28,3 @@ export const SearchTargetItem: FC<SearchTargetItemProps> = memo(
     )
   }
 )
-
-function getIconUrl (icon: string): string {
-  return `${process.env.REACT_APP_PUBLIC_URL ?? ''}/simple-icons/${icon}.svg`
-}

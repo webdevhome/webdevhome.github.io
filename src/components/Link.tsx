@@ -3,6 +3,7 @@ import React, { FC, memo, MouseEvent } from 'react'
 import { ReactSVG } from 'react-svg'
 import { toggleLink } from '../stores/hiddenLinksStore'
 import { classes } from '../utils/jsx'
+import { getIconUrl } from '../utils/misc'
 import { DefaultIcon } from './DefaultIcon'
 import { MdiIcon } from './MdiIcon'
 
@@ -69,7 +70,3 @@ export const Link: FC<LinkProps> = memo(({
     </a>
   )
 })
-
-function getIconUrl (icon: string): string {
-  return `${process.env.REACT_APP_PUBLIC_URL ?? ''}/simple-icons/${icon}.svg`
-}
