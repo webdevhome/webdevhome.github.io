@@ -114,6 +114,7 @@ function useSearchFeature (): SearchFeature {
 
     function handleGlobalKeypress (event: KeyboardEvent): void {
       if (mode === AppMode.default) {
+        if (event.key === '\n') { return }
         setLatestKeypress(event.key)
         setMode(AppMode.search)
       }

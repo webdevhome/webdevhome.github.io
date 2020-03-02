@@ -68,7 +68,7 @@ export const Search: FC<SearchProps> = memo(({ latestKeypress }) => {
           window.location.href = url
         }
 
-        setMode(AppMode.default)
+        if (event.ctrlKey || event.shiftKey) { setMode(AppMode.default) }
         break
       }
 
@@ -204,8 +204,8 @@ function useSearch (latestKeypress: string): UseSearch {
   const focusedResult = results?.[keyboardIndex] ?? null
 
   useEffect(() => {
-    setSearchTerm(latestKeypress)
     inputElement.current?.focus()
+    setSearchTerm(latestKeypress)
   }, [latestKeypress])
 
   return {
