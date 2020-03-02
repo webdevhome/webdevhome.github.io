@@ -37,7 +37,12 @@ export const Link: FC<LinkProps> = memo(({
   if (!customize && !visible) return null
 
   return (
-    <a href={url} className={classes(linkClasses)} onClick={handleLinkClick}>
+    <a
+      href={url}
+      rel="noreferrer"
+      className={classes(linkClasses)}
+      onClick={handleLinkClick}
+    >
       <div className="link__icon-container" style={{ color }}>
         {icon !== undefined ? (
           <ReactSVG src={getIconUrl(icon)} className="link__icon" />
