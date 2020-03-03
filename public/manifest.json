@@ -1,6 +1,6 @@
 {
-  "short_name": "webdev/home",
-  "name": "//webdev/home",
+  "short_name": "WebdevHome",
+  "name": "<WebdevHome />",
   "icons": [
     {
       "src": "favicon.ico",
