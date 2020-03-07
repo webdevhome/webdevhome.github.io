@@ -101,6 +101,11 @@
           "searchUrl": "https://developer.mozilla.org/de/search?q={search}"
         },
         {
+          "title": "Cheatography",
+          "url": "https://cheatography.com/",
+          "searchUrl": "https://cheatography.com/explore/search/?q={search}"
+        },
+        {
           "title": "Interactive Git Cheat Sheet",
           "url": "https://ndpsoftware.com/git-cheatsheet.html",
           "icon": "git",
