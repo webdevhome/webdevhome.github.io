@@ -19,6 +19,12 @@
           "searchUrl": "https://gitlab.com/search?utf8=%E2%9C%93&search={search}"
         },
         {
+          "title": "Bitbucket",
+          "url": "https://bitbucket.org/",
+          "icon": "bitbucket",
+          "color": "#0052CC"
+        },
+        {
           "title": "npm",
           "url": "https://npmjs.com",
           "icon": "npm",
@@ -99,6 +105,13 @@
           "icon": "mdnwebdocs",
           "color": "#000000",
           "searchUrl": "https://developer.mozilla.org/de/search?q={search}"
+        },
+        {
+          "title": "Microsoft Docs",
+          "url": "https://docs.microsoft.com/",
+          "icon": "microsoft",
+          "color": "#666666",
+          "searchUrl": "https://docs.microsoft.com/en-us/search/?search={search}&category=All"
         },
         {
           "title": "Cheatography",
@@ -218,6 +231,12 @@
           "color": "#4FC08D"
         },
         {
+          "title": "Nuxt.js",
+          "url": "https://nuxtjs.org/",
+          "icon": "nuxt-dot-js",
+          "color": "#00C58E"
+        },
+        {
           "title": "Svelte",
           "url": "https://svelte.dev/",
           "icon": "svelte",
@@ -251,6 +270,33 @@
           "url": "https://mochajs.org/",
           "icon": "mocha",
           "color": "#8D6748"
+        }
+      ]
+    },
+    {
+      "name": "Build it",
+      "items": [
+        {
+          "title": "Webpack",
+          "url": "https://webpack.js.org/",
+          "icon": "webpack",
+          "color": "#8DD6F9"
+        },
+        {
+          "title": "Parcel",
+          "url": "https://parceljs.org/"
+        },
+        {
+          "title": "Rollup",
+          "url": "https://rollupjs.org/",
+          "icon": "rollup-dot-js",
+          "color": "#EC4A3F"
+        },
+        {
+          "title": "Gulp",
+          "url": "https://gulpjs.com/",
+          "icon": "gulp",
+          "color": "#DA4648"
         }
       ]
     },
@@ -293,6 +339,20 @@
           "icon": "dart",
           "color": "#0175c2",
           "searchUrl": "https://dart.dev/search?ie=UTF-8&q={search}"
+        },
+        {
+          "title": "Golang",
+          "url": "https://golang.org/",
+          "icon": "go",
+          "color": "#00ADD8",
+          "searchUrl": "https://golang.org/search?q={search}"
+        },
+        {
+          "title": "PHP",
+          "url": "https://www.php.net/",
+          "icon": "php",
+          "color": "#777BB4",
+          "searchUrl": "https://www.php.net/manual-lookup.php?pattern={search}"
         }
       ]
     },
@@ -532,6 +592,12 @@
           "url": "https://www.sveltestatus.dev",
           "icon": "svelte",
           "color": "#ff3e00"
+        },
+        {
+          "title": "Golang Weekly",
+          "url": "https://golangweekly.com",
+          "icon": "go",
+          "color": "#00ADD8"
         },
         {
           "title": "Codrops Collective",
