@@ -503,6 +503,14 @@
           "searchConcat": "%20"
         },
         {
+          "title": "Apple Music",
+          "url": "https://music.apple.com/",
+          "icon": "applemusic",
+          "color": "#000000",
+          "searchUrl": "https://music.apple.com/us/search?term={search}",
+          "searchConcat": "%20"
+        },
+        {
           "title": "Deezer",
           "url": "https://www.deezer.com/",
           "icon": "deezer",
