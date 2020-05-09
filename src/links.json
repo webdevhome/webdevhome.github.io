@@ -584,6 +584,12 @@
           "color": "#339933"
         },
         {
+          "title": "Deno Weekly",
+          "url": "https://denoweekly.com/",
+          "icon": "deno",
+          "color": "#000000"
+        },
+        {
           "title": "Vue.js News",
           "url": "https://news.vuejs.org",
           "icon": "vue-dot-js",
