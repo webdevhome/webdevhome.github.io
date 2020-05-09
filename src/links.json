@@ -39,6 +39,10 @@
           "searchConcat": "%20"
         },
         {
+          "title": "1loc",
+          "url": "https://1loc.dev/"
+        },
+        {
           "title": "BundlePhobia",
           "url": "https://bundlephobia.com",
           "searchUrl": "https://bundlephobia.com/result?p={search}",
