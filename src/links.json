@@ -2,7 +2,7 @@
   "$schema": "./schemas/links.schema.json",
   "items": [
     {
-      "name": "Code & Packages",
+      "name": "Code and packages",
       "items": [
         {
           "title": "GitHub",
@@ -31,6 +31,20 @@
           "color": "#cb3837",
           "searchUrl": "https://www.npmjs.com/search?q={search}",
           "searchConcat": "%20"
+        },
+        {
+          "title": "GoDoc",
+          "url": "https://godoc.org",
+          "icon": "go",
+          "color": "#00ADD8",
+          "searchUrl": "https://godoc.org/?q={search}"
+        },
+        {
+          "title": "Dart Packages",
+          "url": "https://pub.dev/",
+          "icon": "dart",
+          "color": "#0175C2",
+          "searchUrl": "https://pub.dev/packages?q={search}"
         },
         {
           "title": "30 seconds of code",
@@ -104,6 +118,13 @@
           "url": "https://devdocs.io"
         },
         {
+          "title": "Read the Docs",
+          "url": "https://readthedocs.org/",
+          "icon": "readthedocs",
+          "color": "#8CA1AF",
+          "searchUrl": "https://readthedocs.org/search/?q={search}"
+        },
+        {
           "title": "MDN",
           "url": "https://developer.mozilla.org",
           "icon": "mdnwebdocs",
@@ -116,6 +137,12 @@
           "icon": "microsoft",
           "color": "#666666",
           "searchUrl": "https://docs.microsoft.com/en-us/search/?search={search}&category=All"
+        },
+        {
+          "title": "Oracle Help Center",
+          "url": "https://docs.oracle.com/en/",
+          "icon": "oracle",
+          "color": "#F80000"
         },
         {
           "title": "Cheatography",
@@ -135,7 +162,7 @@
       ]
     },
     {
-      "name": "Best practices & conventions",
+      "name": "Best practices and conventions",
       "items": [
         {
           "title": "OWASP Cheat Sheet Series Project",
@@ -184,7 +211,7 @@
       ]
     },
     {
-      "name": "Discover & Compare",
+      "name": "Discover and compare",
       "items": [
         {
           "title": "AlternativeTo",
@@ -202,7 +229,7 @@
       ]
     },
     {
-      "name": "Build some UI",
+      "name": "UI Development",
       "items": [
         {
           "title": "React",
@@ -278,7 +305,7 @@
       ]
     },
     {
-      "name": "Build it",
+      "name": "Build and bundle",
       "items": [
         {
           "title": "Webpack",
@@ -305,7 +332,7 @@
       ]
     },
     {
-      "name": "Languages & Runtimes",
+      "name": "Languages and runtimes",
       "items": [
         {
           "title": "Sass",
@@ -357,6 +384,77 @@
           "icon": "php",
           "color": "#777BB4",
           "searchUrl": "https://www.php.net/manual-lookup.php?pattern={search}"
+        },
+        {
+          "title": ".NET",
+          "url": "https://dotnet.microsoft.com/",
+          "icon": "dot-net",
+          "color": "#5C2D91"
+        },
+        {
+          "title": "Java",
+          "url": "https://www.java.com",
+          "icon": "java",
+          "color": "#007396"
+        }
+      ]
+    },
+    {
+      "name": "Databases",
+      "items": [
+        {
+          "title": "MySQL",
+          "url": "https://www.mysql.com",
+          "icon": "mysql",
+          "color": "#4479A1",
+          "searchUrl": "https://www.oracle.com/search/results?Ntt={search}&Dy=1&Nty=1&cat=mysql&Ntk=SI-ALL5",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "Microsoft SQL Server",
+          "url": "https://www.microsoft.com/de-de/sql-server/",
+          "icon": "microsoftsqlserver",
+          "color": "#CC2927",
+          "searchUrl": "https://www.microsoft.com/en-us/search/explore?q={search}"
+        },
+        {
+          "title": "PostgreSQL",
+          "url": "https://www.postgresql.org",
+          "icon": "postgresql",
+          "color": "#336791",
+          "searchUrl": "https://www.postgresql.org/search/?q={search}"
+        },
+        {
+          "title": "Oracle Database",
+          "url": "https://www.oracle.com/de/database/technologies/",
+          "icon": "oracle",
+          "color": "#F80000"
+        },
+        {
+          "title": "SQLite",
+          "url": "https://www.sqlite.org",
+          "icon": "sqlite",
+          "color": "#003B57",
+          "searchUrl": "https://www.sqlite.org/search?s=d&q={search}"
+        },
+        {
+          "title": "MongoDB",
+          "url": "https://www.mongodb.com/",
+          "icon": "mongodb",
+          "color": "#47A248",
+          "searchUrl": "https://www.mongodb.com/search?addsearch={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "CouchDB",
+          "url": "https://couchdb.apache.org/",
+          "searchUrl": "https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default"
+        },
+        {
+          "title": "Redis",
+          "url": "https://redis.io",
+          "icon": "redis",
+          "color": "#DC382D"
         }
       ]
     },
@@ -398,7 +496,7 @@
       ]
     },
     {
-      "name": "Standards & Proposals",
+      "name": "Standards and proposals",
       "items": [
         {
           "title": "W3C",
@@ -468,6 +566,18 @@
           "searchConcat": "%20"
         },
         {
+          "title": "Postman",
+          "url": "https://www.postman.com/",
+          "icon": "postman",
+          "color": "#FF6C37"
+        },
+        {
+          "title": "Insomnia",
+          "url": "https://insomnia.rest/",
+          "icon": "insomnia",
+          "color": "#5849BE"
+        },
+        {
           "title": "Adobe",
           "url": "https://www.adobe.com",
           "icon": "adobe",
@@ -496,7 +606,9 @@
         {
           "title": "YouTube Music",
           "url": "https://music.youtube.com",
-          "searchUrl": "https://music.youtube.com/search?q={search}"
+          "searchUrl": "https://music.youtube.com/search?q={search}",
+          "icon": "youtubemusic",
+          "color": "#ff0000"
         },
         {
           "title": "Spotify",
@@ -548,11 +660,15 @@
       "items": [
         {
           "title": "State of CSS",
-          "url": "https://stateofcss.com/"
+          "url": "https://stateofcss.com/",
+          "icon": "css3",
+          "color": "#1572b6"
         },
         {
           "title": "State of JavaScript",
-          "url": "https://stateofjs.com/"
+          "url": "https://stateofjs.com/",
+          "icon": "javascript",
+          "color": "#f7df1e"
         }
       ]
     },
@@ -604,12 +720,6 @@
           "url": "http://reactjsnewsletter.com",
           "icon": "react",
           "color": "#61dafb"
-        },
-        {
-          "title": "Svelte Status",
-          "url": "https://www.sveltestatus.dev",
-          "icon": "svelte",
-          "color": "#ff3e00"
         },
         {
           "title": "Golang Weekly",
