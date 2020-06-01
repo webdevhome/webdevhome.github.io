@@ -4,6 +4,7 @@
   justify-content: center;
   width: var(--icon-button-size);
   height: var(--icon-button-size);
+  color: var(--icon-color);
   background-color: var(--link-item-background);
   border-radius: calc(var(--icon-button-size) * 0.5);
   transition: box-shadow 0.05s ease-out;
@@ -17,19 +18,12 @@
     box-shadow: 0 0 0 2px var(--icon-focus-border);
   }
   
-  & > svg {
-    fill: var(--icon-color);
-  }
-
   &--is-active {
     background-color: var(--primary-color);
+    color: var(--icon-color-active);
   }  
 
   &--is-active:hover {
     background-color: var(--primary-color-dark);
-  }
-  
-  &--is-active > svg {
-    fill: var(--icon-color-active);
   }
 }
