@@ -396,6 +396,10 @@
           "url": "https://www.java.com",
           "icon": "java",
           "color": "#007396"
+        },
+        {
+          "title": "OpenJDK",
+          "url": "https://openjdk.java.net"
         }
       ]
     },
