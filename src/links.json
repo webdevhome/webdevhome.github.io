@@ -33,11 +33,11 @@
           "searchConcat": "%20"
         },
         {
-          "title": "GoDoc",
-          "url": "https://godoc.org",
+          "title": "Go Packages",
+          "url": "https://pkg.go.dev",
           "icon": "go",
           "color": "#00ADD8",
-          "searchUrl": "https://godoc.org/?q={search}"
+          "searchUrl": "https://pkg.go.dev/search?q={search}"
         },
         {
           "title": "Dart Packages",
