@@ -10,23 +10,23 @@
   },
   "dependencies": {
     "@alinnert/tstate": "^1.0.3",
-    "@mdi/js": "^5.1.45",
+    "@mdi/js": "^5.4.55",
     "@mdi/react": "^1.4.0",
     "fuzzysort": "^1.1.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-svg": "^11.0.29"
+    "react-svg": "^11.0.32"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.0",
-    "@testing-library/react": "^10.4.4",
-    "@testing-library/user-event": "^12.0.11",
-    "@types/jest": "^26.0.3",
-    "@types/node": "^14.0.14",
-    "@types/react": "^16.9.41",
+    "@testing-library/jest-dom": "^5.11.2",
+    "@testing-library/react": "^10.4.7",
+    "@testing-library/user-event": "^12.0.17",
+    "@types/jest": "^26.0.7",
+    "@types/node": "^14.0.27",
+    "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
-    "@typescript-eslint/eslint-plugin": "^3.5.0",
-    "@typescript-eslint/parser": "^3.5.0",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
     "eslint": "^6.8.0",
     "eslint-config-standard-with-typescript": "^18.0.2",
     "eslint-plugin-import": "^2.22.0",
@@ -34,8 +34,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "react-scripts": "^3.4.1",
-    "sass": "^1.26.9",
-    "typescript": "^3.9.6"
+    "sass": "^1.26.10",
+    "typescript": "^3.9.7"
   },
   "eslintConfig": {
     "extends": "react-app"
