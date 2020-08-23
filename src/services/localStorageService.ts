@@ -1,4 +1,6 @@
-type StorageKey = 'wdh:hidden-items'
+import { themeStates, ThemeState } from '../App'
+
+type StorageKey = 'wdh:hidden-items' | 'sdh:theme-setting'
 
 export function getHiddenLinks (): string[] {
   const key: StorageKey = 'wdh:hidden-items'
@@ -35,4 +37,24 @@ export function setHiddenLinks (values: string[]): void {
   } catch {
     throw new Error('[setHiddenLinks()] Values cannot be serialized to JSON.')
   }
+}
+
+export function getThemeStateSetting (): ThemeState {
+  const key: StorageKey = 'sdh:theme-setting'
+  const storageString = localStorage.getItem(key)
+
+  if (storageString === null) { return 'auto' }
+  if (
+    storageString !== 'auto' &&
+    storageString !== 'light' &&
+    storageString !== 'dark'
+  ) { return 'auto' }
+
+  return storageString
+}
+
+export function setThemeStateSetting (value: ThemeState): void {
+  const key: StorageKey = 'sdh:theme-setting'
+
+  localStorage.setItem(key, value)
 }

@@ -1,4 +1,4 @@
-:root {
+@mixin lightTheme () {
   --primary-color-hue: 190;
   --page-background: hsl(0, 0%, 100%);
   --icon-color: hsl(0, 0%, 0%);
@@ -28,36 +28,43 @@
   --footer-link-background-hover: hsl(0, 0%, 88%);
   --footer-background: hsl(0, 0%, 95%);
   --footer-border: hsl(0, 0%, 70%);
+}
 
-  @media (prefers-color-scheme: dark) {
-    --primary-color-hue: 190;
-    --page-background: hsl(0, 0%, 20%);
-    --icon-color: hsl(0, 0%, 100%);
-    --icon-color-active: hsl(0, 0%, 0%);
-    --icon-focus-border: hsl(var(--primary-color-hue), 50%, 60%);
-    --icon-background: hsl(0, 0%, 100%);
-    --primary-color: hsl(var(--primary-color-hue), 50%, 80%);
-    --primary-color-pale: hsl(var(--primary-color-hue), 50%, 55%);
-    --primary-color-dark: hsl(var(--primary-color-hue), 50%, 55%);
-    --primary-color-hover: hsl(0, 0%, 30%);
-    --action-color: hsl(var(--primary-color-hue), 50%, 60%);
-    --action-color-inactive: hsl(var(--primary-color-hue), 50%, 30%);
-    --link-item-background: hsl(0, 0%, 40%);
-    --link-item-background-hover: hsl(0, 0%, 35%);
-    --link-item-color: hsl(var(--primary-color-hue), 0%, 90%);
-    --link-item-color-hover: hsl(var(--primary-color-hue), 0%, 100%);
-    --link-item-focus-border: hsl(0, 0%, 50%);
-    --input-background: hsl(0, 0%, 40%);
-    --input-text-color: hsl(0, 0%, 95%);
-    --input-placeholder-color: hsl(0, 0%, 70%);
-    --logo-char-1-color: hsl(var(--primary-color-hue), 60%, 55%);
-    --logo-char-2-color: hsl(var(--primary-color-hue), 60%, 80%);
-    --logo-shape-color: hsl(var(--primary-color-hue), 60%, 55%);
-    --footer-text-color: hsl(0, 0%, 80%);
-    --footer-link-color: var(--primary-color-pale);
-    --footer-link-color-hover: hsl(var(--primary-color-hue), 50%, 80%);
-    --footer-link-background-hover: hsl(0, 0%, 35%);
-    --footer-background: hsl(0, 0%, 30%);
-    --footer-border: hsl(0, 0%, 40%);
-  }
+@mixin darkTheme () {
+  --primary-color-hue: 190;
+  --page-background: hsl(0, 0%, 20%);
+  --icon-color: hsl(0, 0%, 100%);
+  --icon-color-active: hsl(0, 0%, 0%);
+  --icon-focus-border: hsl(var(--primary-color-hue), 50%, 60%);
+  --icon-background: hsl(0, 0%, 100%);
+  --primary-color: hsl(var(--primary-color-hue), 50%, 80%);
+  --primary-color-pale: hsl(var(--primary-color-hue), 50%, 55%);
+  --primary-color-dark: hsl(var(--primary-color-hue), 50%, 55%);
+  --primary-color-hover: hsl(0, 0%, 30%);
+  --action-color: hsl(var(--primary-color-hue), 50%, 60%);
+  --action-color-inactive: hsl(var(--primary-color-hue), 50%, 30%);
+  --link-item-background: hsl(0, 0%, 40%);
+  --link-item-background-hover: hsl(0, 0%, 35%);
+  --link-item-color: hsl(var(--primary-color-hue), 0%, 90%);
+  --link-item-color-hover: hsl(var(--primary-color-hue), 0%, 100%);
+  --link-item-focus-border: hsl(0, 0%, 50%);
+  --input-background: hsl(0, 0%, 40%);
+  --input-text-color: hsl(0, 0%, 95%);
+  --input-placeholder-color: hsl(0, 0%, 70%);
+  --logo-char-1-color: hsl(var(--primary-color-hue), 60%, 55%);
+  --logo-char-2-color: hsl(var(--primary-color-hue), 60%, 80%);
+  --logo-shape-color: hsl(var(--primary-color-hue), 60%, 55%);
+  --footer-text-color: hsl(0, 0%, 80%);
+  --footer-link-color: var(--primary-color-pale);
+  --footer-link-color-hover: hsl(var(--primary-color-hue), 50%, 80%);
+  --footer-link-background-hover: hsl(0, 0%, 35%);
+  --footer-background: hsl(0, 0%, 30%);
+  --footer-border: hsl(0, 0%, 40%);
+}
+
+body {
+  @include lightTheme();
+  @media (prefers-color-scheme: dark) { @include darkTheme(); }
+  &.light-theme { @include lightTheme(); }
+  &.dark-theme { @include darkTheme(); }
 }

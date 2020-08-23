@@ -1,5 +1,5 @@
-import { mdiFormatListChecks, mdiMagnify } from '@mdi/js'
-import React, { FC, useEffect, useState } from 'react'
+import { mdiFormatListChecks, mdiMagnify, mdiThemeLightDark, mdiWeatherNight, mdiWeatherSunny } from '@mdi/js'
+import React, { FC, useCallback, useEffect, useMemo, useState } from 'react'
 import { AppAction } from './components/AppAction'
 import { AppActions } from './components/AppActions'
 import { AppContent } from './components/AppContent'
@@ -11,19 +11,26 @@ import { FooterText } from './components/FooterText'
 import { LinkList } from './components/LinkList'
 import { Search } from './components/Search'
 import { links } from './links'
-import { setMode, toggleMode, useCurrentMode, AppMode } from './stores/currentModeStore'
+import { AppMode, setMode, toggleMode, useCurrentMode } from './stores/currentModeStore'
 import { HiddenLinks, useHiddenLinks } from './stores/hiddenLinksStore'
+import { setThemeStateSetting, getThemeStateSetting } from './services/localStorageService'
 
 export const WebdevHome: FC = () => {
-  const { handleCustomizeAction, hiddenLinks } = useCustomizeFeature()
-  const { handleSearchAction, latestKeypress } = useSearchFeature()
   const { mode } = useCurrentMode()
+  const { handleCustomizeAction, hiddenLinks } = useCustomizeMode()
+  const { handleSearchAction, latestKeypress } = useSearchMode()
+  const { themeSwitcherIcon, handleThemeSwitcherAction } = useThemeSwitcher()
 
   return (
     <div className="app">
       <AppHeader />
 
       <AppActions>
+        <AppAction
+          icon={themeSwitcherIcon}
+          action={handleThemeSwitcherAction}
+          active={false}
+        />
         <AppAction
           icon={mdiMagnify}
           action={handleSearchAction}
@@ -68,12 +75,12 @@ export const WebdevHome: FC = () => {
 }
 
 // #region customize feature
-interface CustomizeFeature {
+interface UseCustomizeModeReturn {
   hiddenLinks: HiddenLinks
   handleCustomizeAction: () => void
 }
 
-function useCustomizeFeature (): CustomizeFeature {
+function useCustomizeMode (): UseCustomizeModeReturn {
   const hiddenLinks = useHiddenLinks()
   const { mode } = useCurrentMode()
 
@@ -100,12 +107,12 @@ function useCustomizeFeature (): CustomizeFeature {
 // #endregion customize feature
 
 // #region search feature
-interface SearchFeature {
+interface UseSearchModeReturn {
   handleSearchAction: () => void
   latestKeypress: string
 }
 
-function useSearchFeature (): SearchFeature {
+function useSearchMode (): UseSearchModeReturn {
   const [latestKeypress, setLatestKeypress] = useState<string>('')
   const { mode } = useCurrentMode()
 
@@ -133,3 +140,55 @@ function useSearchFeature (): SearchFeature {
   return { handleSearchAction, latestKeypress }
 }
 // #endregion search feature
+
+// #region theme switcher
+export const themeStates = ['auto', 'light', 'dark'] as const
+export type ThemeState = typeof themeStates[number]
+
+interface UseThemeSwitcherReturn {
+  themeSwitcherIcon: string
+  handleThemeSwitcherAction: () => void
+}
+
+function useThemeSwitcher (): UseThemeSwitcherReturn {
+  const bodyElement = globalThis.document.getElementsByTagName('body')[0]
+  const [themeState, setThemeState] =
+    useState<ThemeState>(getThemeStateSetting())
+
+  useEffect(
+    () => {
+      setThemeStateSetting(themeState)
+      bodyElement.className = `${themeState}-theme`
+    },
+    [bodyElement.className, themeState]
+  )
+
+  const themeSwitcherIcon = useMemo(
+    (): string => {
+      if (themeState === 'light') { return mdiWeatherSunny }
+      if (themeState === 'dark') { return mdiWeatherNight }
+      return mdiThemeLightDark
+    },
+    [themeState]
+  )
+
+  const handleThemeSwitcherAction = useCallback(
+    (): void => {
+      switch (themeState) {
+        case 'light':
+          setThemeState('dark')
+          break
+        case 'dark':
+          setThemeState('auto')
+          break
+        default:
+          setThemeState('light')
+          break
+      }
+    },
+    [themeState]
+  )
+
+  return { themeSwitcherIcon, handleThemeSwitcherAction }
+}
+// #endregion theme switcher
