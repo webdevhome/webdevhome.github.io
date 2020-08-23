@@ -472,12 +472,24 @@
           "color": "#4285f4"
         },
         {
-          "title": "Microsoft IE/Edge",
+          "title": "Microsoft Edge: Platform Status",
           "url": "https://developer.microsoft.com/en-us/microsoft-edge/platform/status",
           "icon": "microsoftedge",
           "color": "#0078d7",
           "searchUrl": "https://developer.microsoft.com/en-us/microsoft-edge/status/?q={search}",
           "searchConcat": "%20"
+        },
+        {
+          "title": "Microsoft Edge Insiders: New Features",
+          "url": "https://www.microsoftedgeinsider.com/en-us/whats-new",
+          "icon": "microsoftedge",
+          "color": "#0078d7"
+        },
+        {
+          "title": "Microsoft 365/Edge Roadmap",
+          "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge",
+          "icon": "microsoft",
+          "color": "#666666"
         },
         {
           "title": "Mozilla Firefox",
