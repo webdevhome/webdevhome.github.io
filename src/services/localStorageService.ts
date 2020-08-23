@@ -1,4 +1,4 @@
-import { themeStates, ThemeState } from '../App'
+import { ThemeState } from '../App'
 
 type StorageKey = 'wdh:hidden-items' | 'sdh:theme-setting'
 
