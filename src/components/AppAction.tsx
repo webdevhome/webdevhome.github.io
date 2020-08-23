@@ -5,7 +5,7 @@ import { classes } from '../utils/jsx'
 interface AppActionProps {
   icon: string
   active: boolean
-  action(): void
+  action: () => void
 }
 
 export const AppAction: FC<AppActionProps> = memo(({

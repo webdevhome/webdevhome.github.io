@@ -70,7 +70,7 @@ export const WebdevHome: FC = () => {
 // #region customize feature
 interface CustomizeFeature {
   hiddenLinks: HiddenLinks
-  handleCustomizeAction (): void
+  handleCustomizeAction: () => void
 }
 
 function useCustomizeFeature (): CustomizeFeature {
@@ -101,7 +101,7 @@ function useCustomizeFeature (): CustomizeFeature {
 
 // #region search feature
 interface SearchFeature {
-  handleSearchAction (): void
+  handleSearchAction: () => void
   latestKeypress: string
 }
 

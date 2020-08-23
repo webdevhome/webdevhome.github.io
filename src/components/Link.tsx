@@ -22,7 +22,7 @@ export const Link: FC<LinkProps> = memo(({
   title, url, icon, color, searchable = false,
   customize = false, visible = true, focus = false
 }) => {
-  function handleLinkClick(event: MouseEvent<HTMLAnchorElement>): void {
+  function handleLinkClick (event: MouseEvent<HTMLAnchorElement>): void {
     if (customize) {
       event.preventDefault()
       toggleLink(url)
