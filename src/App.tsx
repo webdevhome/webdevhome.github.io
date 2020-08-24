@@ -98,9 +98,10 @@ function useCustomizeMode (): UseCustomizeModeReturn {
     }
   }, [mode])
 
-  function handleCustomizeAction (): void {
-    toggleMode(AppMode.customize)
-  }
+  const handleCustomizeAction = useCallback(
+    (): void => { toggleMode(AppMode.customize) },
+    []
+  )
 
   return { hiddenLinks, handleCustomizeAction }
 }
@@ -132,10 +133,13 @@ function useSearchMode (): UseSearchModeReturn {
     }
   }, [mode])
 
-  function handleSearchAction (): void {
-    setLatestKeypress('')
-    toggleMode(AppMode.search)
-  }
+  const handleSearchAction = useCallback(
+    (): void => {
+      setLatestKeypress('')
+      toggleMode(AppMode.search)
+    },
+    []
+  )
 
   return { handleSearchAction, latestKeypress }
 }

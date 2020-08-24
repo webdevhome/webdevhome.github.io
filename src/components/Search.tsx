@@ -1,5 +1,5 @@
 import fuzzy from 'fuzzysort'
-import React, { ChangeEvent, Dispatch, FC, KeyboardEvent as ReactKeyboardEvent, memo, RefObject, SetStateAction, useEffect, useRef, useState } from 'react'
+import React, { ChangeEvent, Dispatch, FC, KeyboardEvent as ReactKeyboardEvent, memo, RefObject, SetStateAction, useEffect, useRef, useState, useCallback, useMemo } from 'react'
 import { getAllLinks, LinkItem, SearchTarget } from '../links'
 import { AppMode, setMode } from '../stores/currentModeStore'
 import { useHiddenLinks } from '../stores/hiddenLinksStore'
@@ -27,121 +27,136 @@ export const Search: FC<SearchProps> = memo(({ latestKeypress }) => {
     }
   })
 
-  function handleInputChange (event: ChangeEvent<HTMLInputElement>): void {
-    setSearchTerm(event.currentTarget.value)
-    setKeyboardIndex(0)
-  }
+  const handleInputChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>): void => {
+      setSearchTerm(event.currentTarget.value)
+      setKeyboardIndex(0)
+    },
+    [setKeyboardIndex, setSearchTerm]
+  )
 
-  function handleInputKeyDown (event: ReactKeyboardEvent<HTMLInputElement>): void {
-    switch (event.key) {
-      case 'Backspace': {
-        if (searchTerm !== '') { return }
+  const handleInputKeyDown = useCallback(
+    (event: ReactKeyboardEvent<HTMLInputElement>): void => {
+      switch (event.key) {
+        case 'Backspace': {
+          if (searchTerm !== '') { return }
 
+          if (searchTarget !== null) {
+            setSearchTarget(null)
+          } else {
+            setMode(AppMode.default)
+          }
+          break
+        }
+
+        case 'Tab': {
+          event.preventDefault()
+
+          if (searchTarget !== null) { return }
+          if (focusedResult === null) { return }
+          if (focusedResult.obj.searchUrl === undefined) { return }
+
+          setSearchTarget(focusedResult.obj as SearchTarget)
+          setSearchTerm('')
+          break
+        }
+
+        case 'Enter': {
+          const url = getUrl(focusedResult?.obj ?? null, searchTarget, searchTerm)
+
+          if (url === null) { return }
+
+          if (event.ctrlKey) {
+            window.open(url, '', 'alwaysRaised=on')
+          } else {
+            window.location.href = url
+          }
+
+          if (event.ctrlKey || event.shiftKey) { setMode(AppMode.default) }
+          break
+        }
+
+        case 'ArrowUp': {
+          if (results === null) { return }
+          event.preventDefault()
+          setKeyboardIndex(Math.max(0, keyboardIndex - 1))
+          break
+        }
+
+        case 'ArrowDown': {
+          if (results === null) { return }
+          event.preventDefault()
+          setKeyboardIndex(Math.min(results.total - 1, keyboardIndex + 1))
+        }
+      }
+    },
+    [focusedResult, keyboardIndex, results, searchTarget, searchTerm, setKeyboardIndex, setSearchTarget, setSearchTerm]
+  )
+
+  const handleGlobalKeyDown = useCallback(
+    (event: KeyboardEvent): void => {
+      if (event.key === 'Escape') {
         if (searchTarget !== null) {
           setSearchTarget(null)
-        } else {
-          setMode(AppMode.default)
-        }
-        break
-      }
-
-      case 'Tab': {
-        event.preventDefault()
-
-        if (searchTarget !== null) { return }
-        if (focusedResult === null) { return }
-        if (focusedResult.obj.searchUrl === undefined) { return }
-
-        setSearchTarget(focusedResult.obj as SearchTarget)
-        setSearchTerm('')
-        break
-      }
-
-      case 'Enter': {
-        const url = getUrl(focusedResult?.obj ?? null, searchTarget, searchTerm)
-
-        if (url === null) { return }
-
-        if (event.ctrlKey) {
-          window.open(url, '', 'alwaysRaised=on')
-        } else {
-          window.location.href = url
+          setSearchTerm('')
+          return
         }
 
-        if (event.ctrlKey || event.shiftKey) { setMode(AppMode.default) }
-        break
+        setMode(AppMode.default)
       }
+    },
+    [searchTarget, setSearchTarget, setSearchTerm]
+  )
 
-      case 'ArrowUp': {
-        if (results === null) { return }
-        event.preventDefault()
-        setKeyboardIndex(Math.max(0, keyboardIndex - 1))
-        break
-      }
-
-      case 'ArrowDown': {
-        if (results === null) { return }
-        event.preventDefault()
-        setKeyboardIndex(Math.min(results.total - 1, keyboardIndex + 1))
-      }
-    }
-  }
-
-  function handleGlobalKeyDown (event: KeyboardEvent): void {
-    if (event.key === 'Escape') {
-      if (searchTarget !== null) {
-        setSearchTarget(null)
-        setSearchTerm('')
-        return
-      }
-
-      setMode(AppMode.default)
-    }
-  }
-
-  const hints = <>
-    <div className="search__results-hint">
+  const hints = useMemo(
+    () => <>
+      <div className="search__results-hint">
       Type ahead to filter links.
-    </div>
-    <div className="search__results-hint">
-      <kbd>Return</kbd>
-      <div className="search__results-hint-description">
+      </div>
+      <div className="search__results-hint">
+        <kbd>Return</kbd>
+        <div className="search__results-hint-description">
         Open link
+        </div>
       </div>
-    </div>
-    <div className="search__results-hint">
-      <kbd>Ctrl</kbd> + <kbd>Return</kbd>
-      <div className="search__results-hint-description">
+      <div className="search__results-hint">
+        <kbd>Ctrl</kbd> + <kbd>Return</kbd>
+        <div className="search__results-hint-description">
         Open link in a new tab (background)
+        </div>
       </div>
-    </div>
-    <div className="search__results-hint">
-      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Return</kbd>
-      <div className="search__results-hint-description">
+      <div className="search__results-hint">
+        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Return</kbd>
+        <div className="search__results-hint-description">
         Open link in a new tab (foreground)
+        </div>
       </div>
-    </div>
-  </>
+    </>,
+    []
+  )
 
-  const resultElements = <>
-    {results !== null && results.total > 0 ? (
-      results.map(link => (
-        <Link
-          key={link.obj.url}
-          title={link.obj.title}
-          url={link.obj.url}
-          icon={link.obj.icon}
-          searchable={link.obj.searchUrl !== undefined}
-          color={link.obj.color}
-          customize={false}
-          visible={true}
-          focus={link === focusedResult}
-        />
-      ))
-    ) : (
-      <div className="search__results-hint">No results found...</div>
-    )}
-  </>
+  const resultElements = useMemo(
+    () => <>
+      {results !== null && results.total > 0 ? (
+        results.map(link => (
+          <Link
+            key={link.obj.url}
+            title={link.obj.title}
+            url={link.obj.url}
+            icon={link.obj.icon}
+            searchable={link.obj.searchUrl !== undefined}
+            color={link.obj.color}
+            customize={false}
+            visible={true}
+            focus={link === focusedResult}
+          />
+        ))
+      ) : (
+        <div className="search__results-hint">No results found...</div>
+      )}
+    </>,
+    [focusedResult, results]
+  )
 
   return (
     <div className="search">
@@ -193,19 +208,26 @@ function useSearch (latestKeypress: string): UseSearch {
   const { links } = useHiddenLinks()
   const visibleLinks = getAllLinks().filter(link => !links.includes(link.url))
 
-  const fuzzyOptions: Fuzzysort.KeyOptions = {
-    key: 'title', allowTypo: false, limit: 6
-  }
+  const fuzzyOptions: Fuzzysort.KeyOptions = useMemo(
+    () => ({ key: 'title', allowTypo: false, limit: 6 }),
+    []
+  )
 
-  const results = searchTerm !== '' && searchTarget === null
-    ? fuzzy.go(searchTerm, visibleLinks, fuzzyOptions)
-    : null
+  const results = useMemo(
+    () => searchTerm !== '' && searchTarget === null
+      ? fuzzy.go(searchTerm, visibleLinks, fuzzyOptions)
+      : null,
+    [fuzzyOptions, searchTarget, searchTerm, visibleLinks]
+  )
 
-  const focusedResult = results?.[keyboardIndex] ?? null
+  const focusedResult = useMemo(
+    () => results?.[keyboardIndex] ?? null,
+    [keyboardIndex, results]
+  )
 
   useEffect(() => {
-    inputElement.current?.focus()
     setSearchTerm(latestKeypress)
+    setTimeout(() => { inputElement.current?.focus() }, 0)
   }, [latestKeypress])
 
   return {
