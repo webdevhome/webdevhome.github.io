@@ -33,6 +33,20 @@
           "searchConcat": "%20"
         },
         {
+          "title": "Yarn",
+          "url": "https://yarnpkg.com",
+          "icon": "yarn",
+          "color": "#2C8EBB",
+          "searchUrl": "https://yarnpkg.com/?q={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "Composer",
+          "url": "https://getcomposer.org",
+          "icon": "composer",
+          "color": "#885630"
+        },
+        {
           "title": "Go Packages",
           "url": "https://pkg.go.dev",
           "icon": "go",
@@ -162,6 +176,30 @@
       ]
     },
     {
+      "name": "Development Platforms",
+      "items": [
+        {
+          "title": "ChromeOS.dev",
+          "url": "https://chromeos.dev",
+          "icon": "googlechrome",
+          "color": "#4285F4",
+          "searchUrl": "https://chromeos.dev/en/search?q={search}"
+        },
+        {
+          "title": "Chrome Web Store Developer Dashboard",
+          "url": "https://chrome.google.com/webstore/devconsole",
+          "icon": "googlechrome",
+          "color": "#4285F4"
+        },
+        {
+          "title": "Firefox Add-On Developer Hub",
+          "url": "https://addons.mozilla.org/en-US/developers/addons",
+          "icon": "firefoxbrowser",
+          "color": "#FF7139"
+        }
+      ]
+    },
+    {
       "name": "Best practices and conventions",
       "items": [
         {
@@ -238,6 +276,10 @@
           "color": "#61DAFB"
         },
         {
+          "title": "Create React App",
+          "url": "https://create-react-app.dev"
+        },
+        {
           "title": "Gatsby",
           "url": "https://gatsbyjs.org",
           "icon": "gatsby",
@@ -248,12 +290,6 @@
           "url": "https://nextjs.org",
           "icon": "next-dot-js",
           "color": "#000000"
-        },
-        {
-          "title": "Apollo",
-          "url": "https://www.apollographql.com/",
-          "icon": "apollographql",
-          "color": "#311C87"
         },
         {
           "title": "Vue",
@@ -278,6 +314,54 @@
           "url": "https://angular.io",
           "icon": "angular",
           "color": "#DD0031"
+        },
+        {
+          "title": "Electron",
+          "url": "https://www.electronjs.org",
+          "icon": "electron",
+          "color": "#47848F",
+          "searchUrl": "https://www.electronjs.org/?q={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "Flutter",
+          "url": "https://flutter.dev",
+          "icon": "flutter",
+          "color": "#02569B",
+          "searchUrl": "https://flutter.dev/search?q={search}"
+        }
+      ]
+    },
+    {
+      "name": "Additional libraries",
+      "items": [
+        {
+          "title": "React Router",
+          "url": "https://reactrouter.com/",
+          "icon": "reactrouter",
+          "color": "#CA4245"
+        },
+        {
+          "title": "Reach Router",
+          "url": "https://reach.tech/router/"
+        },
+        {
+          "title": "Redux",
+          "url": "https://redux.js.org",
+          "icon": "redux",
+          "color": "#764ABC"
+        },
+        {
+          "title": "Apollo",
+          "url": "https://www.apollographql.com/",
+          "icon": "apollographql",
+          "color": "#311C87"
+        },
+        {
+          "title": "RxJS",
+          "url": "https://rxjs.dev",
+          "icon": "reactivex",
+          "color": "#B7178C"
         }
       ]
     },
@@ -301,6 +385,10 @@
           "url": "https://mochajs.org/",
           "icon": "mocha",
           "color": "#8D6748"
+        },
+        {
+          "title": "EditorConfig",
+          "url": "https://editorconfig.org"
         }
       ]
     },
@@ -341,10 +429,22 @@
           "color": "#cc6699"
         },
         {
+          "title": "PostCSS",
+          "url": "https://postcss.org",
+          "icon": "postcss",
+          "color": "#DD3A0A"
+        },
+        {
           "title": "TypeScript",
           "url": "https://www.typescriptlang.org",
           "icon": "typescript",
           "color": "#007acc"
+        },
+        {
+          "title": "Reason",
+          "url": "https://reasonml.github.io",
+          "icon": "reason",
+          "color": "#DD4B39"
         },
         {
           "title": "Babel",
@@ -370,6 +470,12 @@
           "icon": "dart",
           "color": "#0175c2",
           "searchUrl": "https://dart.dev/search?ie=UTF-8&q={search}"
+        },
+        {
+          "title": "Swift",
+          "url": "https://swift.org",
+          "icon": "swift",
+          "color": "#FA7343"
         },
         {
           "title": "Golang",
@@ -400,6 +506,16 @@
         {
           "title": "OpenJDK",
           "url": "https://openjdk.java.net"
+        }
+      ]
+    },
+    {
+      "name": "Resources",
+      "items": [
+        {
+          "title": "Google Fonts",
+          "url": "https://fonts.google.com",
+          "searchUrl": "https://fonts.google.com/?query={search}"
         }
       ]
     },
@@ -459,6 +575,20 @@
           "url": "https://redis.io",
           "icon": "redis",
           "color": "#DC382D"
+        },
+        {
+          "title": "Neo4j",
+          "url": "https://neo4j.com",
+          "icon": "neo4j",
+          "color": "#008CC1"
+        },
+        {
+          "title": "Firebase",
+          "url": "https://firebase.google.com",
+          "icon": "firebase",
+          "color": "#FFCA28",
+          "searchUrl": "https://firebase.google.com/s/results?q={search}",
+          "searchConcat": "%20"
         }
       ]
     },
@@ -561,11 +691,32 @@
           "searchConcat": "%20"
         },
         {
+          "title": "Docker",
+          "url": "https://www.docker.com",
+          "icon": "docker",
+          "color": "#2496ED",
+          "searchUrl": "https://www.docker.com/search/node?keys={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "Kubernetes",
+          "url": "https://kubernetes.io",
+          "icon": "kubernetes",
+          "color": "#326CE5"
+        },
+        {
           "title": "Visual Studio Code",
           "url": "https://code.visualstudio.com",
           "icon": "visualstudiocode",
           "color": "#007acc",
           "searchUrl": "https://code.visualstudio.com/Search?q={search}"
+        },
+        {
+          "title": "Visual Studio",
+          "url": "https://visualstudio.microsoft.com",
+          "icon": "visualstudio",
+          "color": "#5C2D91",
+          "searchUrl": "https://visualstudio.microsoft.com/search/?query={search}"
         },
         {
           "title": "Atom",
@@ -665,6 +816,13 @@
           "color": "#314359"
         },
         {
+          "title": "TuneIn",
+          "url": "https://tunein.com",
+          "icon": "tunein",
+          "color": "#14D8CC",
+          "searchUrl": "https://tunein.com/search/?query={search}","searchConcat": "%20"
+        },
+        {
           "title": "DI.FM",
           "url": "https://di.fm",
           "searchUrl": "https://www.di.fm/search?q={search}"
@@ -742,6 +900,10 @@
           "url": "https://golangweekly.com",
           "icon": "go",
           "color": "#00ADD8"
+        },
+        {
+          "title": "daily.dev",
+          "url": "https://daily.dev"
         },
         {
           "title": "Codrops Collective",
