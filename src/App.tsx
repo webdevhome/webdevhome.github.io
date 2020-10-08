@@ -59,6 +59,10 @@ export const WebdevHome: FC = () => {
           text="GitHub"
           url="https://github.com/webdevhome/webdevhome.github.io"
         />
+        <FooterLink
+          text="Latest changes"
+          url="https://github.com/webdevhome/webdevhome.github.io/releases"
+        />
         <FooterDivider/>
         <FooterText>Used icons:</FooterText>
         <FooterLink
