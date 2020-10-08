@@ -1,9 +1,8 @@
 name: Build and deploy website
 
 on:
-  push:
-    branches:
-      - develop
+  release:
+    types: [published]
 
 jobs:
   build-and-deploy:
