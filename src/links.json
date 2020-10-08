@@ -172,6 +172,10 @@
         {
           "title": "Emmet Cheat Sheet",
           "url": "https://docs.emmet.io/cheat-sheet"
+        },
+        {
+          "title": "this vs that",
+          "url": "https://thisthat.dev"
         }
       ]
     },
@@ -668,6 +672,12 @@
         {
           "title": "ECMAScript Compatibility Table",
           "url": "https://kangax.github.io/compat-table/es6"
+        },
+        {
+          "title": "Mozilla Specification Position",
+          "url": "https://mozilla.github.io/standards-positions",
+          "icon": "mozilla",
+          "color": "#000000"
         },
         {
           "title": "Node Green",
