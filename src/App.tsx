@@ -11,9 +11,9 @@ import { FooterText } from './components/FooterText'
 import { LinkList } from './components/LinkList'
 import { Search } from './components/Search'
 import { links } from './links'
+import { getThemeStateSetting, setThemeStateSetting } from './services/localStorageService'
 import { AppMode, setMode, toggleMode, useCurrentMode } from './stores/currentModeStore'
 import { HiddenLinks, useHiddenLinks } from './stores/hiddenLinksStore'
-import { setThemeStateSetting, getThemeStateSetting } from './services/localStorageService'
 
 export const WebdevHome: FC = () => {
   const { mode } = useCurrentMode()
@@ -27,14 +27,14 @@ export const WebdevHome: FC = () => {
 
       <AppActions>
         <AppAction
-          icon={themeSwitcherIcon}
-          action={handleThemeSwitcherAction}
-          active={false}
-        />
-        <AppAction
           icon={mdiMagnify}
           action={handleSearchAction}
           active={mode === AppMode.search}
+        />
+        <AppAction
+          icon={themeSwitcherIcon}
+          action={handleThemeSwitcherAction}
+          active={false}
         />
         <AppAction
           icon={mdiFormatListChecks}
