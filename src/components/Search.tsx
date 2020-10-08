@@ -1,5 +1,5 @@
 import fuzzy from 'fuzzysort'
-import React, { ChangeEvent, Dispatch, FC, KeyboardEvent as ReactKeyboardEvent, memo, RefObject, SetStateAction, useEffect, useRef, useState, useCallback, useMemo } from 'react'
+import React, { ChangeEvent, Dispatch, FC, KeyboardEvent as ReactKeyboardEvent, memo, RefObject, SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getAllLinks, LinkItem, SearchTarget } from '../links'
 import { AppMode, setMode } from '../stores/currentModeStore'
 import { useHiddenLinks } from '../stores/hiddenLinksStore'
@@ -7,17 +7,17 @@ import { Link } from './Link'
 import { SearchTargetItem } from './SearchTargetItem'
 
 interface SearchProps {
-  latestKeypress: string
+  searchTerm: string
+  setSearchTerm: Dispatch<SetStateAction<string>>
 }
 
-export const Search: FC<SearchProps> = memo(({ latestKeypress }) => {
+export const Search: FC<SearchProps> = memo(({ searchTerm, setSearchTerm }) => {
   const {
-    searchTerm, setSearchTerm,
     searchTarget, setSearchTarget,
     keyboardIndex, setKeyboardIndex,
     results, focusedResult,
     inputElement
-  } = useSearch(latestKeypress)
+  } = useSearch(searchTerm, setSearchTerm)
 
   useEffect(() => {
     window.addEventListener('keydown', handleGlobalKeyDown)
@@ -200,9 +200,11 @@ interface UseSearch {
   inputElement: RefObject<HTMLInputElement>
 }
 
-function useSearch (latestKeypress: string): UseSearch {
+function useSearch (
+  searchTerm: string,
+  setSearchTerm: Dispatch<SetStateAction<string>>
+): UseSearch {
   const [keyboardIndex, setKeyboardIndex] = useState<number>(0)
-  const [searchTerm, setSearchTerm] = useState<string>('')
   const [searchTarget, setSearchTarget] = useState<SearchTarget | null>(null)
   const inputElement = useRef<HTMLInputElement>(null)
   const { links } = useHiddenLinks()
@@ -226,9 +228,9 @@ function useSearch (latestKeypress: string): UseSearch {
   )
 
   useEffect(() => {
-    setSearchTerm(latestKeypress)
+    setSearchTerm(searchTerm)
     setTimeout(() => { inputElement.current?.focus() }, 0)
-  }, [latestKeypress])
+  }, [searchTerm, setSearchTerm])
 
   return {
     searchTerm,

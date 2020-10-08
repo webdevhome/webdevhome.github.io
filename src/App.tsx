@@ -1,5 +1,5 @@
 import { mdiFormatListChecks, mdiMagnify, mdiThemeLightDark, mdiWeatherNight, mdiWeatherSunny } from '@mdi/js'
-import React, { FC, useCallback, useEffect, useMemo, useState } from 'react'
+import React, { Dispatch, FC, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react'
 import { version } from '../package.json'
 import { AppAction } from './components/AppAction'
 import { AppActions } from './components/AppActions'
@@ -19,7 +19,7 @@ import { HiddenLinks, useHiddenLinks } from './stores/hiddenLinksStore'
 export const WebdevHome: FC = () => {
   const { mode } = useCurrentMode()
   const { handleCustomizeAction, hiddenLinks } = useCustomizeMode()
-  const { handleSearchAction, latestKeypress } = useSearchMode()
+  const { handleSearchAction, searchTerm, setSearchTerm } = useSearchMode()
   const { themeSwitcherIcon, handleThemeSwitcherAction } = useThemeSwitcher()
 
   return (
@@ -49,7 +49,7 @@ export const WebdevHome: FC = () => {
           <LinkList links={links.items} hiddenLinks={hiddenLinks.links} />
         </AppContent>
       ) : (
-        <Search latestKeypress={latestKeypress} />
+        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       )}
 
       <AppFooter>
@@ -71,10 +71,7 @@ export const WebdevHome: FC = () => {
             text="Material Design Icons"
             url="https://materialdesignicons.com"
           />
-          <FooterLink
-            text="Simple Icons"
-            url="https://simpleicons.org/"
-          />
+          <FooterLink text="Simple Icons" url="https://simpleicons.org/" />
         </FooterGroup>
       </AppFooter>
     </div>
@@ -117,11 +114,12 @@ function useCustomizeMode (): UseCustomizeModeReturn {
 // #region search feature
 interface UseSearchModeReturn {
   handleSearchAction: () => void
-  latestKeypress: string
+  searchTerm: string
+  setSearchTerm: Dispatch<SetStateAction<string>>
 }
 
 function useSearchMode (): UseSearchModeReturn {
-  const [latestKeypress, setLatestKeypress] = useState<string>('')
+  const [searchTerm, setSearchTerm] = useState<string>('')
   const { mode } = useCurrentMode()
 
   useEffect(() => {
@@ -130,7 +128,7 @@ function useSearchMode (): UseSearchModeReturn {
     function handleGlobalKeypress (event: KeyboardEvent): void {
       if (mode === AppMode.default) {
         if (event.key === '\n') { return }
-        setLatestKeypress(event.key)
+        setSearchTerm(event.key)
         setMode(AppMode.search)
       }
     }
@@ -142,13 +140,13 @@ function useSearchMode (): UseSearchModeReturn {
 
   const handleSearchAction = useCallback(
     (): void => {
-      setLatestKeypress('')
+      setSearchTerm('')
       toggleMode(AppMode.search)
     },
     []
   )
 
-  return { handleSearchAction, latestKeypress }
+  return { handleSearchAction, searchTerm, setSearchTerm }
 }
 // #endregion search feature
 
