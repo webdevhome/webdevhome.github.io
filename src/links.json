@@ -20,7 +20,7 @@
         },
         {
           "title": "Bitbucket",
-          "url": "https://bitbucket.org/",
+          "url": "https://bitbucket.org",
           "icon": "bitbucket",
           "color": "#0052CC"
         },
@@ -55,7 +55,7 @@
         },
         {
           "title": "Dart Packages",
-          "url": "https://pub.dev/",
+          "url": "https://pub.dev",
           "icon": "dart",
           "color": "#0175C2",
           "searchUrl": "https://pub.dev/packages?q={search}"
@@ -68,7 +68,7 @@
         },
         {
           "title": "1loc",
-          "url": "https://1loc.dev/"
+          "url": "https://1loc.dev"
         },
         {
           "title": "BundlePhobia",
@@ -112,7 +112,7 @@
         },
         {
           "title": "Telegram Web",
-          "url": "https://evgeny-nadymov.github.io/telegram-react/",
+          "url": "https://evgeny-nadymov.github.io/telegram-react",
           "icon": "telegram",
           "color": "#2ca5e0"
         },
@@ -133,7 +133,7 @@
         },
         {
           "title": "Read the Docs",
-          "url": "https://readthedocs.org/",
+          "url": "https://readthedocs.org",
           "icon": "readthedocs",
           "color": "#8CA1AF",
           "searchUrl": "https://readthedocs.org/search/?q={search}"
@@ -155,14 +155,14 @@
         },
         {
           "title": "Microsoft Docs",
-          "url": "https://docs.microsoft.com/",
+          "url": "https://docs.microsoft.com",
           "icon": "microsoft",
           "color": "#666666",
           "searchUrl": "https://docs.microsoft.com/en-us/search/?search={search}&category=All"
         },
         {
           "title": "Oracle Help Center",
-          "url": "https://docs.oracle.com/en/",
+          "url": "https://docs.oracle.com/en",
           "icon": "oracle",
           "color": "#F80000"
         },
@@ -311,13 +311,13 @@
         },
         {
           "title": "Nuxt.js",
-          "url": "https://nuxtjs.org/",
+          "url": "https://nuxtjs.org",
           "icon": "nuxt-dot-js",
           "color": "#00C58E"
         },
         {
           "title": "Svelte",
-          "url": "https://svelte.dev/",
+          "url": "https://svelte.dev",
           "icon": "svelte",
           "color": "#FF3E00"
         },
@@ -349,13 +349,13 @@
       "items": [
         {
           "title": "React Router",
-          "url": "https://reactrouter.com/",
+          "url": "https://reactrouter.com",
           "icon": "reactrouter",
           "color": "#CA4245"
         },
         {
           "title": "Reach Router",
-          "url": "https://reach.tech/router/"
+          "url": "https://reach.tech/router"
         },
         {
           "title": "Redux",
@@ -365,7 +365,7 @@
         },
         {
           "title": "Apollo",
-          "url": "https://www.apollographql.com/",
+          "url": "https://www.apollographql.com",
           "icon": "apollographql",
           "color": "#311C87"
         },
@@ -382,21 +382,27 @@
       "items": [
         {
           "title": "ESLint",
-          "url": "https://eslint.org/",
+          "url": "https://eslint.org",
           "icon": "eslint",
           "color": "#4B32C3"
         },
         {
           "title": "Jest",
-          "url": "https://jestjs.io/",
+          "url": "https://jestjs.io",
           "icon": "jest",
           "color": "#C21325"
         },
         {
           "title": "Mocha",
-          "url": "https://mochajs.org/",
+          "url": "https://mochajs.org",
           "icon": "mocha",
           "color": "#8D6748"
+        },
+        {
+          "title": "Prettier",
+          "url": "https://prettier.io",
+          "icon": "prettier",
+          "color": "#F7B93E"
         },
         {
           "title": "EditorConfig",
@@ -409,23 +415,23 @@
       "items": [
         {
           "title": "Webpack",
-          "url": "https://webpack.js.org/",
+          "url": "https://webpack.js.org",
           "icon": "webpack",
           "color": "#8DD6F9"
         },
         {
           "title": "Parcel",
-          "url": "https://parceljs.org/"
+          "url": "https://parceljs.org"
         },
         {
           "title": "Rollup",
-          "url": "https://rollupjs.org/",
+          "url": "https://rollupjs.org",
           "icon": "rollup-dot-js",
           "color": "#EC4A3F"
         },
         {
           "title": "Gulp",
-          "url": "https://gulpjs.com/",
+          "url": "https://gulpjs.com",
           "icon": "gulp",
           "color": "#DA4648"
         }
@@ -491,21 +497,21 @@
         },
         {
           "title": "Golang",
-          "url": "https://golang.org/",
+          "url": "https://golang.org",
           "icon": "go",
           "color": "#00ADD8",
           "searchUrl": "https://golang.org/search?q={search}"
         },
         {
           "title": "PHP",
-          "url": "https://www.php.net/",
+          "url": "https://www.php.net",
           "icon": "php",
           "color": "#777BB4",
           "searchUrl": "https://www.php.net/manual-lookup.php?pattern={search}"
         },
         {
           "title": ".NET",
-          "url": "https://dotnet.microsoft.com/",
+          "url": "https://dotnet.microsoft.com",
           "icon": "dot-net",
           "color": "#5C2D91"
         },
@@ -544,7 +550,7 @@
         },
         {
           "title": "Microsoft SQL Server",
-          "url": "https://www.microsoft.com/de-de/sql-server/",
+          "url": "https://www.microsoft.com/de-de/sql-server",
           "icon": "microsoftsqlserver",
           "color": "#CC2927",
           "searchUrl": "https://www.microsoft.com/en-us/search/explore?q={search}"
@@ -558,7 +564,7 @@
         },
         {
           "title": "Oracle Database",
-          "url": "https://www.oracle.com/de/database/technologies/",
+          "url": "https://www.oracle.com/de/database/technologies",
           "icon": "oracle",
           "color": "#F80000"
         },
@@ -571,7 +577,7 @@
         },
         {
           "title": "MongoDB",
-          "url": "https://www.mongodb.com/",
+          "url": "https://www.mongodb.com",
           "icon": "mongodb",
           "color": "#47A248",
           "searchUrl": "https://www.mongodb.com/search?addsearch={search}",
@@ -579,7 +585,7 @@
         },
         {
           "title": "CouchDB",
-          "url": "https://couchdb.apache.org/",
+          "url": "https://couchdb.apache.org",
           "searchUrl": "https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default"
         },
         {
@@ -658,7 +664,7 @@
       "items": [
         {
           "title": "W3C",
-          "url": "https://www.w3.org/",
+          "url": "https://www.w3.org",
           "icon": "w3c",
           "color": "#005A9C"
         },
@@ -738,7 +744,7 @@
         },
         {
           "title": "Atom",
-          "url": "https://atom.io/",
+          "url": "https://atom.io",
           "icon": "atom",
           "color": "#66595C"
         },
@@ -752,13 +758,13 @@
         },
         {
           "title": "Postman",
-          "url": "https://www.postman.com/",
+          "url": "https://www.postman.com",
           "icon": "postman",
           "color": "#FF6C37"
         },
         {
           "title": "Insomnia",
-          "url": "https://insomnia.rest/",
+          "url": "https://insomnia.rest",
           "icon": "insomnia",
           "color": "#5849BE"
         },
@@ -797,7 +803,7 @@
         },
         {
           "title": "Spotify",
-          "url": "https://open.spotify.com/",
+          "url": "https://open.spotify.com",
           "icon": "spotify",
           "color": "#1ED760",
           "searchUrl": "https://open.spotify.com/search/{search}",
@@ -805,7 +811,7 @@
         },
         {
           "title": "Apple Music",
-          "url": "https://music.apple.com/",
+          "url": "https://music.apple.com",
           "icon": "applemusic",
           "color": "#000000",
           "searchUrl": "https://music.apple.com/us/search?term={search}",
@@ -813,7 +819,7 @@
         },
         {
           "title": "Deezer",
-          "url": "https://www.deezer.com/",
+          "url": "https://www.deezer.com",
           "icon": "deezer",
           "color": "#FEAA2D",
           "searchUrl": "https://www.deezer.com/search/{search}",
@@ -838,7 +844,8 @@
           "url": "https://tunein.com",
           "icon": "tunein",
           "color": "#14D8CC",
-          "searchUrl": "https://tunein.com/search/?query={search}","searchConcat": "%20"
+          "searchUrl": "https://tunein.com/search/?query={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "DI.FM",
@@ -852,13 +859,13 @@
       "items": [
         {
           "title": "State of CSS",
-          "url": "https://stateofcss.com/",
+          "url": "https://stateofcss.com",
           "icon": "css3",
           "color": "#1572b6"
         },
         {
           "title": "State of JavaScript",
-          "url": "https://stateofjs.com/",
+          "url": "https://stateofjs.com",
           "icon": "javascript",
           "color": "#f7df1e"
         }
@@ -897,7 +904,7 @@
         },
         {
           "title": "Deno Weekly",
-          "url": "https://denoweekly.com/",
+          "url": "https://denoweekly.com",
           "icon": "deno",
           "color": "#000000"
         },
