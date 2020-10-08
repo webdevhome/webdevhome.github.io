@@ -11,8 +11,10 @@ export interface LinkItem {
   searchConcat?: string
 }
 
-export type SearchTarget =
-  OptionalExceptFor<LinkItem, 'title' | 'url' | 'searchUrl'>
+export type SearchTarget = OptionalExceptFor<
+  LinkItem,
+  'title' | 'url' | 'searchUrl'
+>
 
 export interface LinkGroup {
   name: string
@@ -24,9 +26,9 @@ export interface Links {
 }
 
 export const links: Links = {
-  items: linksData.items
+  items: linksData.items,
 }
 
-export function getAllLinks (): LinkItem[] {
-  return links.items.flatMap(group => group.items)
+export function getAllLinks(): LinkItem[] {
+  return links.items.flatMap((group) => group.items)
 }

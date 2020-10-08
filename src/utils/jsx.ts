@@ -1,4 +1,4 @@
-export function classes (classesObject: Record<string, boolean>): string {
+export function classes(classesObject: Record<string, boolean>): string {
   const result: string[] = []
 
   for (const [className, condition] of Object.entries(classesObject)) {

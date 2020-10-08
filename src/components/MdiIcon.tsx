@@ -1,21 +1,16 @@
 import { Icon } from '@mdi/react'
-import React, { FC, memo } from 'react'
+import React, { FC, memo, useMemo } from 'react'
 
-interface MdiIconProps {
+interface Props {
   path: string
   className?: string
   color?: string
 }
 
-export const MdiIcon: FC<MdiIconProps> = memo(({ className, path, color }) => {
-  const iconStyle = { width: 24, height: 24 }
+export const MdiIcon: FC<Props> = memo(({ className, path, color }) => {
+  const iconStyle = useMemo(() => ({ width: 24, height: 24 }), [])
 
   return (
-    <Icon
-      className={className}
-      path={path}
-      style={iconStyle}
-      color={color}
-    />
+    <Icon className={className} path={path} style={iconStyle} color={color} />
   )
 })

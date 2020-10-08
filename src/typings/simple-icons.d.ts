@@ -8,5 +8,5 @@ declare module 'simple-icons' {
     path: string
   }
 
-  export function get (title: string): IconObject
+  export function get(title: string): IconObject
 }

@@ -4,13 +4,7 @@
     "project": "./tsconfig.json"
   },
   "root": true,
-  "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "react-app",
-    "standard-with-typescript"
-  ],
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "extends": ["plugin:@typescript-eslint/recommended", "react-app", "prettier"],
+  "plugins": ["@typescript-eslint"],
   "rules": {}
 }

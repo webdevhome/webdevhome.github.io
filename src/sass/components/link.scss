@@ -10,15 +10,15 @@
     min-height: 42px;
     border-radius: 0;
   }
-  
+
   &--is-hidden-by-filter {
     display: none;
   }
-  
+
   &:hover {
     background-color: var(--link-item-background-hover);
   }
-  
+
   &:focus,
   &--has-focus {
     outline: none;
@@ -42,7 +42,7 @@
     width: 24px;
     height: 24px;
   }
-  
+
   &__label {
     grid-column-start: 2;
     align-self: center;
@@ -53,7 +53,7 @@
     color: var(--link-item-color);
     user-select: none;
   }
-  
+
   &:hover &__label {
     color: var(--link-item-color-hover);
   }
@@ -104,4 +104,4 @@
   & svg {
     fill: currentColor;
   }
-}  
+}

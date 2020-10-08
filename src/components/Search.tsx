@@ -1,22 +1,38 @@
 import fuzzy from 'fuzzysort'
-import React, { ChangeEvent, Dispatch, FC, KeyboardEvent as ReactKeyboardEvent, memo, RefObject, SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, {
+  ChangeEvent,
+  Dispatch,
+  FC,
+  KeyboardEvent as ReactKeyboardEvent,
+  memo,
+  RefObject,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState
+} from 'react'
 import { getAllLinks, LinkItem, SearchTarget } from '../links'
 import { AppMode, setMode } from '../stores/currentModeStore'
 import { useHiddenLinks } from '../stores/hiddenLinksStore'
 import { Link } from './Link'
 import { SearchTargetItem } from './SearchTargetItem'
 
-interface SearchProps {
+interface Props {
   searchTerm: string
   setSearchTerm: Dispatch<SetStateAction<string>>
 }
 
-export const Search: FC<SearchProps> = memo(({ searchTerm, setSearchTerm }) => {
+export const Search: FC<Props> = memo(({ searchTerm, setSearchTerm }) => {
   const {
-    searchTarget, setSearchTarget,
-    keyboardIndex, setKeyboardIndex,
-    results, focusedResult,
-    inputElement
+    searchTarget,
+    setSearchTarget,
+    keyboardIndex,
+    setKeyboardIndex,
+    results,
+    focusedResult,
+    inputElement,
   } = useSearch(searchTerm, setSearchTerm)
 
   useEffect(() => {
@@ -39,7 +55,9 @@ export const Search: FC<SearchProps> = memo(({ searchTerm, setSearchTerm }) => {
     (event: ReactKeyboardEvent<HTMLInputElement>): void => {
       switch (event.key) {
         case 'Backspace': {
-          if (searchTerm !== '') { return }
+          if (searchTerm !== '') {
+            return
+          }
 
           if (searchTarget !== null) {
             setSearchTarget(null)
@@ -52,9 +70,15 @@ export const Search: FC<SearchProps> = memo(({ searchTerm, setSearchTerm }) => {
         case 'Tab': {
           event.preventDefault()
 
-          if (searchTarget !== null) { return }
-          if (focusedResult === null) { return }
-          if (focusedResult.obj.searchUrl === undefined) { return }
+          if (searchTarget !== null) {
+            return
+          }
+          if (focusedResult === null) {
+            return
+          }
+          if (focusedResult.obj.searchUrl === undefined) {
+            return
+          }
 
           setSearchTarget(focusedResult.obj as SearchTarget)
           setSearchTerm('')
@@ -62,9 +86,15 @@ export const Search: FC<SearchProps> = memo(({ searchTerm, setSearchTerm }) => {
         }
 
         case 'Enter': {
-          const url = getUrl(focusedResult?.obj ?? null, searchTarget, searchTerm)
+          const url = getUrl(
+            focusedResult?.obj ?? null,
+            searchTarget,
+            searchTerm
+          )
 
-          if (url === null) { return }
+          if (url === null) {
+            return
+          }
 
           if (event.ctrlKey) {
             window.open(url, '', 'alwaysRaised=on')
@@ -72,25 +102,40 @@ export const Search: FC<SearchProps> = memo(({ searchTerm, setSearchTerm }) => {
             window.location.href = url
           }
 
-          if (event.ctrlKey || event.shiftKey) { setMode(AppMode.default) }
+          if (event.ctrlKey || event.shiftKey) {
+            setMode(AppMode.default)
+          }
           break
         }
 
         case 'ArrowUp': {
-          if (results === null) { return }
+          if (results === null) {
+            return
+          }
           event.preventDefault()
           setKeyboardIndex(Math.max(0, keyboardIndex - 1))
           break
         }
 
         case 'ArrowDown': {
-          if (results === null) { return }
+          if (results === null) {
+            return
+          }
           event.preventDefault()
           setKeyboardIndex(Math.min(results.total - 1, keyboardIndex + 1))
         }
       }
     },
-    [focusedResult, keyboardIndex, results, searchTarget, searchTerm, setKeyboardIndex, setSearchTarget, setSearchTerm]
+    [
+      focusedResult,
+      keyboardIndex,
+      results,
+      searchTarget,
+      searchTerm,
+      setKeyboardIndex,
+      setSearchTarget,
+      setSearchTerm,
+    ]
   )
 
   const handleGlobalKeyDown = useCallback(
@@ -109,52 +154,52 @@ export const Search: FC<SearchProps> = memo(({ searchTerm, setSearchTerm }) => {
   )
 
   const hints = useMemo(
-    () => <>
-      <div className="search__results-hint">
-      Type ahead to filter links.
-      </div>
-      <div className="search__results-hint">
-        <kbd>Return</kbd>
-        <div className="search__results-hint-description">
-        Open link
+    () => (
+      <>
+        <div className="search__results-hint">Type ahead to filter links.</div>
+        <div className="search__results-hint">
+          <kbd>Return</kbd>
+          <div className="search__results-hint-description">Open link</div>
         </div>
-      </div>
-      <div className="search__results-hint">
-        <kbd>Ctrl</kbd> + <kbd>Return</kbd>
-        <div className="search__results-hint-description">
-        Open link in a new tab (background)
+        <div className="search__results-hint">
+          <kbd>Ctrl</kbd> + <kbd>Return</kbd>
+          <div className="search__results-hint-description">
+            Open link in a new tab (background)
+          </div>
         </div>
-      </div>
-      <div className="search__results-hint">
-        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Return</kbd>
-        <div className="search__results-hint-description">
-        Open link in a new tab (foreground)
+        <div className="search__results-hint">
+          <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Return</kbd>
+          <div className="search__results-hint-description">
+            Open link in a new tab (foreground)
+          </div>
         </div>
-      </div>
-    </>,
+      </>
+    ),
     []
   )
 
   const resultElements = useMemo(
-    () => <>
-      {results !== null && results.total > 0 ? (
-        results.map(link => (
-          <Link
-            key={link.obj.url}
-            title={link.obj.title}
-            url={link.obj.url}
-            icon={link.obj.icon}
-            searchable={link.obj.searchUrl !== undefined}
-            color={link.obj.color}
-            customize={false}
-            visible={true}
-            focus={link === focusedResult}
-          />
-        ))
-      ) : (
-        <div className="search__results-hint">No results found...</div>
-      )}
-    </>,
+    () => (
+      <>
+        {results !== null && results.total > 0 ? (
+          results.map((link) => (
+            <Link
+              key={link.obj.url}
+              title={link.obj.title}
+              url={link.obj.url}
+              icon={link.obj.icon}
+              searchable={link.obj.searchUrl !== undefined}
+              color={link.obj.color}
+              customize={false}
+              visible={true}
+              focus={link === focusedResult}
+            />
+          ))
+        ) : (
+          <div className="search__results-hint">No results found...</div>
+        )}
+      </>
+    ),
     [focusedResult, results]
   )
 
@@ -180,9 +225,10 @@ export const Search: FC<SearchProps> = memo(({ searchTerm, setSearchTerm }) => {
 
       <div className="search__results">
         {searchTarget === null
-          ? (searchTerm === '' ? hints : resultElements)
-          : null
-        }
+          ? searchTerm === ''
+            ? hints
+            : resultElements
+          : null}
       </div>
     </div>
   )
@@ -200,7 +246,7 @@ interface UseSearch {
   inputElement: RefObject<HTMLInputElement>
 }
 
-function useSearch (
+function useSearch(
   searchTerm: string,
   setSearchTerm: Dispatch<SetStateAction<string>>
 ): UseSearch {
@@ -208,7 +254,11 @@ function useSearch (
   const [searchTarget, setSearchTarget] = useState<SearchTarget | null>(null)
   const inputElement = useRef<HTMLInputElement>(null)
   const { links } = useHiddenLinks()
-  const visibleLinks = getAllLinks().filter(link => !links.includes(link.url))
+
+  const visibleLinks = useMemo(
+    () => getAllLinks().filter((link) => !links.includes(link.url)),
+    [links]
+  )
 
   const fuzzyOptions: Fuzzysort.KeyOptions = useMemo(
     () => ({ key: 'title', allowTypo: false, limit: 6 }),
@@ -216,20 +266,23 @@ function useSearch (
   )
 
   const results = useMemo(
-    () => searchTerm !== '' && searchTarget === null
-      ? fuzzy.go(searchTerm, visibleLinks, fuzzyOptions)
-      : null,
+    () =>
+      searchTerm !== '' && searchTarget === null
+        ? fuzzy.go(searchTerm, visibleLinks, fuzzyOptions)
+        : null,
     [fuzzyOptions, searchTarget, searchTerm, visibleLinks]
   )
 
-  const focusedResult = useMemo(
-    () => results?.[keyboardIndex] ?? null,
-    [keyboardIndex, results]
-  )
+  const focusedResult = useMemo(() => results?.[keyboardIndex] ?? null, [
+    keyboardIndex,
+    results,
+  ])
 
   useEffect(() => {
     setSearchTerm(searchTerm)
-    setTimeout(() => { inputElement.current?.focus() }, 0)
+    setTimeout(() => {
+      inputElement.current?.focus()
+    }, 0)
   }, [searchTerm, setSearchTerm])
 
   return {
@@ -241,11 +294,11 @@ function useSearch (
     setKeyboardIndex,
     results,
     focusedResult,
-    inputElement
+    inputElement,
   }
 }
 
-function getUrl (
+function getUrl(
   focusedItem: LinkItem | null,
   searchTarget?: SearchTarget | null,
   searchTerm?: string
