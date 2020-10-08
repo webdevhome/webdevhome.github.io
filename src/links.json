@@ -146,6 +146,14 @@
           "searchUrl": "https://developer.mozilla.org/de/search?q={search}"
         },
         {
+          "title": "GitHub Docs",
+          "url": "https://docs.github.com",
+          "icon": "github",
+          "color": "#181717",
+          "searchUrl": "https://docs.github.com/en?github-docs-dotcom-en%5Bquery%5D={search}",
+          "searchConcat": "%20"
+        },
+        {
           "title": "Microsoft Docs",
           "url": "https://docs.microsoft.com/",
           "icon": "microsoft",
