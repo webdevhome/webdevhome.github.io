@@ -1,5 +1,19 @@
-import { mdiFormatListChecks, mdiMagnify, mdiThemeLightDark, mdiWeatherNight, mdiWeatherSunny } from '@mdi/js'
-import React, { Dispatch, FC, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react'
+import {
+  mdiFormatListChecks,
+  mdiMagnify,
+  mdiThemeLightDark,
+  mdiWeatherNight,
+  mdiWeatherSunny
+} from '@mdi/js'
+import React, {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState
+} from 'react'
 import { version } from '../package.json'
 import { AppAction } from './components/AppAction'
 import { AppActions } from './components/AppActions'
@@ -12,8 +26,16 @@ import { FooterLink } from './components/FooterLink'
 import { LinkList } from './components/LinkList'
 import { Search } from './components/Search'
 import { links } from './links'
-import { getThemeStateSetting, setThemeStateSetting } from './services/localStorageService'
-import { AppMode, setMode, toggleMode, useCurrentMode } from './stores/currentModeStore'
+import {
+  getThemeStateSetting,
+  setThemeStateSetting
+} from './services/localStorageService'
+import {
+  AppMode,
+  setMode,
+  toggleMode,
+  useCurrentMode
+} from './stores/currentModeStore'
 import { HiddenLinks, useHiddenLinks } from './stores/hiddenLinksStore'
 
 export const WebdevHome: FC = () => {
@@ -64,7 +86,7 @@ export const WebdevHome: FC = () => {
           />
         </FooterGroup>
 
-        <FooterDivider/>
+        <FooterDivider />
 
         <FooterGroup title="Icons">
           <FooterLink
@@ -84,14 +106,14 @@ interface UseCustomizeModeReturn {
   handleCustomizeAction: () => void
 }
 
-function useCustomizeMode (): UseCustomizeModeReturn {
+function useCustomizeMode(): UseCustomizeModeReturn {
   const hiddenLinks = useHiddenLinks()
   const { mode } = useCurrentMode()
 
   useEffect(() => {
     document.addEventListener('keydown', handleGlobalKeydown)
 
-    function handleGlobalKeydown (event: KeyboardEvent): void {
+    function handleGlobalKeydown(event: KeyboardEvent): void {
       if (event.key === 'Escape' && mode === AppMode.customize) {
         setMode(AppMode.default)
       }
@@ -102,10 +124,9 @@ function useCustomizeMode (): UseCustomizeModeReturn {
     }
   }, [mode])
 
-  const handleCustomizeAction = useCallback(
-    (): void => { toggleMode(AppMode.customize) },
-    []
-  )
+  const handleCustomizeAction = useCallback((): void => {
+    toggleMode(AppMode.customize)
+  }, [])
 
   return { hiddenLinks, handleCustomizeAction }
 }
@@ -118,16 +139,18 @@ interface UseSearchModeReturn {
   setSearchTerm: Dispatch<SetStateAction<string>>
 }
 
-function useSearchMode (): UseSearchModeReturn {
+function useSearchMode(): UseSearchModeReturn {
   const [searchTerm, setSearchTerm] = useState<string>('')
   const { mode } = useCurrentMode()
 
   useEffect(() => {
     window.addEventListener('keypress', handleGlobalKeypress)
 
-    function handleGlobalKeypress (event: KeyboardEvent): void {
+    function handleGlobalKeypress(event: KeyboardEvent): void {
       if (mode === AppMode.default) {
-        if (event.key === '\n') { return }
+        if (event.key === '\n') {
+          return
+        }
         setSearchTerm(event.key)
         setMode(AppMode.search)
       }
@@ -138,13 +161,10 @@ function useSearchMode (): UseSearchModeReturn {
     }
   }, [mode])
 
-  const handleSearchAction = useCallback(
-    (): void => {
-      setSearchTerm('')
-      toggleMode(AppMode.search)
-    },
-    []
-  )
+  const handleSearchAction = useCallback((): void => {
+    setSearchTerm('')
+    toggleMode(AppMode.search)
+  }, [])
 
   return { handleSearchAction, searchTerm, setSearchTerm }
 }
@@ -159,44 +179,44 @@ interface UseThemeSwitcherReturn {
   handleThemeSwitcherAction: () => void
 }
 
-function useThemeSwitcher (): UseThemeSwitcherReturn {
-  const bodyElement = globalThis.document.getElementsByTagName('body')[0]
-  const [themeState, setThemeState] =
-    useState<ThemeState>(getThemeStateSetting())
-
-  useEffect(
-    () => {
-      setThemeStateSetting(themeState)
-      bodyElement.className = `${themeState}-theme`
-    },
-    [bodyElement.className, themeState]
+function useThemeSwitcher(): UseThemeSwitcherReturn {
+  const [themeState, setThemeState] = useState<ThemeState>(
+    getThemeStateSetting()
   )
 
-  const themeSwitcherIcon = useMemo(
-    (): string => {
-      if (themeState === 'light') { return mdiWeatherSunny }
-      if (themeState === 'dark') { return mdiWeatherNight }
-      return mdiThemeLightDark
-    },
-    [themeState]
+  const bodyElement = useMemo(
+    () => globalThis.document.getElementsByTagName('body')[0],
+    []
   )
 
-  const handleThemeSwitcherAction = useCallback(
-    (): void => {
-      switch (themeState) {
-        case 'light':
-          setThemeState('dark')
-          break
-        case 'dark':
-          setThemeState('auto')
-          break
-        default:
-          setThemeState('light')
-          break
-      }
-    },
-    [themeState]
-  )
+  useEffect(() => {
+    setThemeStateSetting(themeState)
+    bodyElement.className = `${themeState}-theme`
+  }, [bodyElement.className, themeState])
+
+  const themeSwitcherIcon = useMemo((): string => {
+    if (themeState === 'light') {
+      return mdiWeatherSunny
+    }
+    if (themeState === 'dark') {
+      return mdiWeatherNight
+    }
+    return mdiThemeLightDark
+  }, [themeState])
+
+  const handleThemeSwitcherAction = useCallback((): void => {
+    switch (themeState) {
+      case 'light':
+        setThemeState('dark')
+        break
+      case 'dark':
+        setThemeState('auto')
+        break
+      default:
+        setThemeState('light')
+        break
+    }
+  }, [themeState])
 
   return { themeSwitcherIcon, handleThemeSwitcherAction }
 }

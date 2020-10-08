@@ -2,17 +2,17 @@
   height: 100%;
   display: grid;
   grid-template:
-    "header actions" auto
-    "content content" 1fr
-    "footer footer" auto /
+    'header actions' auto
+    'content content' 1fr
+    'footer footer' auto /
     1fr auto;
 
   @media (max-width: 500px) {
     grid-template:
-      "header" auto
-      "actions" auto
-      "content" 1fr
-      "footer" auto /
+      'header' auto
+      'actions' auto
+      'content' 1fr
+      'footer' auto /
       1fr;
   }
 }

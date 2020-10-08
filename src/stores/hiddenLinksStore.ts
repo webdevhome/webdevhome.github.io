@@ -7,7 +7,7 @@ export interface HiddenLinks {
 }
 
 const initialState: HiddenLinks = {
-  links: getHiddenLinks()
+  links: getHiddenLinks(),
 }
 
 const hiddenLinksStore = createStore<HiddenLinks>(initialState)
@@ -23,15 +23,15 @@ const mutations = {
   },
 
   removeUrl: (link: string): void => {
-    const links = hiddenLinksStore.state.links.filter(it => it !== link)
+    const links = hiddenLinksStore.state.links.filter((it) => it !== link)
     hiddenLinksStore.set({ links })
     setHiddenLinks(links)
-  }
+  },
 }
 // #endregion mutations
 
 // #region actions
-export function toggleLink (url: string): void {
+export function toggleLink(url: string): void {
   if (hiddenLinksStore.state.links.includes(url)) {
     mutations.removeUrl(url)
   } else {

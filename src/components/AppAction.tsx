@@ -1,20 +1,21 @@
-import React, { FC, memo } from 'react'
-import { MdiIcon } from './MdiIcon'
+import React, { FC, memo, useMemo } from 'react'
 import { classes } from '../utils/jsx'
+import { MdiIcon } from './MdiIcon'
 
-interface AppActionProps {
+interface Props {
   icon: string
   active: boolean
   action: () => void
 }
 
-export const AppAction: FC<AppActionProps> = memo(({
-  icon, action, active
-}) => {
-  const actionClasses = {
-    'app-action': true,
-    'app-action--is-active': active
-  }
+export const AppAction: FC<Props> = memo(({ icon, action, active }) => {
+  const actionClasses = useMemo(
+    () => ({
+      'app-action': true,
+      'app-action--is-active': active,
+    }),
+    [active]
+  )
 
   return (
     <div className={classes(actionClasses)} onClick={action}>

@@ -1,4 +1,4 @@
-@mixin lightTheme () {
+@mixin lightTheme() {
   --primary-color-hue: 190;
   --page-background: hsl(0, 0%, 100%);
   --icon-color: hsl(0, 0%, 0%);
@@ -30,7 +30,7 @@
   --footer-border: hsl(0, 0%, 70%);
 }
 
-@mixin darkTheme () {
+@mixin darkTheme() {
   --primary-color-hue: 190;
   --page-background: hsl(0, 0%, 20%);
   --icon-color: hsl(0, 0%, 100%);
@@ -64,7 +64,13 @@
 
 body {
   @include lightTheme();
-  @media (prefers-color-scheme: dark) { @include darkTheme(); }
-  &.light-theme { @include lightTheme(); }
-  &.dark-theme { @include darkTheme(); }
+  @media (prefers-color-scheme: dark) {
+    @include darkTheme();
+  }
+  &.light-theme {
+    @include lightTheme();
+  }
+  &.dark-theme {
+    @include darkTheme();
+  }
 }

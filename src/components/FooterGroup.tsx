@@ -5,8 +5,9 @@ interface Props {
   title: string
 }
 
-export const FooterGroup = memo(function FooterGroup ({
-  children, title
+export const FooterGroup = memo(function FooterGroup({
+  children,
+  title,
 }: Props) {
   return (
     <div className="footer-group">
