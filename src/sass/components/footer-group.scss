@@ -1,0 +1,32 @@
+.footer-group {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  @at-root .footer-divider + & {
+    @media (min-width: 901px) {
+      margin-left: 10px;
+    }
+
+    @media (max-width: 500px) {
+      margin-top: 15px;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    margin-right: 10px;
+    user-select: none;
+
+    @media (max-width: 500px) {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-bottom: 15px;
+      margin-right: 0;
+    }
+  }
+}

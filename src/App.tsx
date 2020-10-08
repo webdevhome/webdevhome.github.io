@@ -1,13 +1,14 @@
 import { mdiFormatListChecks, mdiMagnify, mdiThemeLightDark, mdiWeatherNight, mdiWeatherSunny } from '@mdi/js'
 import React, { FC, useCallback, useEffect, useMemo, useState } from 'react'
+import { version } from '../package.json'
 import { AppAction } from './components/AppAction'
 import { AppActions } from './components/AppActions'
 import { AppContent } from './components/AppContent'
 import { AppFooter } from './components/AppFooter'
 import { AppHeader } from './components/AppHeader'
 import { FooterDivider } from './components/FooterDivider'
+import { FooterGroup } from './components/FooterGroup'
 import { FooterLink } from './components/FooterLink'
-import { FooterText } from './components/FooterText'
 import { LinkList } from './components/LinkList'
 import { Search } from './components/Search'
 import { links } from './links'
@@ -52,27 +53,29 @@ export const WebdevHome: FC = () => {
       )}
 
       <AppFooter>
-        <FooterText>
-          This list is curated by <a href="https://github.com/alinnert">Andreas Linnert</a>
-        </FooterText>
-        <FooterLink
-          text="GitHub"
-          url="https://github.com/webdevhome/webdevhome.github.io"
-        />
-        <FooterLink
-          text="Latest changes"
-          url="https://github.com/webdevhome/webdevhome.github.io/releases"
-        />
+        <FooterGroup title={'WebdevHome v' + version}>
+          <FooterLink
+            text="Changelog"
+            url="https://github.com/webdevhome/webdevhome.github.io/releases"
+          />
+          <FooterLink
+            text="GitHub"
+            url="https://github.com/webdevhome/webdevhome.github.io"
+          />
+        </FooterGroup>
+
         <FooterDivider/>
-        <FooterText>Used icons:</FooterText>
-        <FooterLink
-          text="Material Design Icons"
-          url="https://materialdesignicons.com"
-        />
-        <FooterLink
-          text="Simple Icons"
-          url="https://simpleicons.org/"
-        />
+
+        <FooterGroup title="Icons">
+          <FooterLink
+            text="Material Design Icons"
+            url="https://materialdesignicons.com"
+          />
+          <FooterLink
+            text="Simple Icons"
+            url="https://simpleicons.org/"
+          />
+        </FooterGroup>
       </AppFooter>
     </div>
   )

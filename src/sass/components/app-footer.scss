@@ -10,5 +10,12 @@
   
   @media (max-width: 900px) {
     flex-direction: column;
+    align-items: start;
+  }
+
+  @media (max-width: 500px) {
+    align-items: stretch;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

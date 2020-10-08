@@ -7,12 +7,6 @@
   border-radius: 3px;
   user-select: none;
 
-  @media (max-width: 900px) {
-    &:not(:first-child) {
-      margin-top: 10px;
-    }
-  }
-
   &:focus {
     outline: none;
     background: var(--footer-link-background-hover);
@@ -21,5 +15,10 @@
   &:hover {
     color: var(--footer-link-color-hover);
     background: var(--footer-link-background-hover);
+  }
+
+  @media (max-width: 500px) {
+    margin: 0 0 10px;
+    padding: 10px 15px;
   }
 }

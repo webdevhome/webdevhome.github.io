@@ -9,4 +9,9 @@
     height: 1px;
     margin: 10px 0;
   }
+
+  @media (max-width: 500px) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }

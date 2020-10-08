@@ -9,14 +9,6 @@
   transition: opacity 0.2s ease-out;
 }
 
-@media (max-width: 1024px) {
-  .app-content {
-    grid-gap: 50px var(--h-page-margin);
-    margin-left: var(--h-page-margin);
-    margin-right: var(--h-page-margin);
-  }
-}
-
 @media (max-width: 900px) {
   .app-content {
     grid-gap: 40px var(--h-page-margin);
