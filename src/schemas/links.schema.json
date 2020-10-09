@@ -23,9 +23,15 @@
       "type": "object",
       "additionalProperties": false,
       "required": ["title", "url"],
+      "dependencies": {
+        "icon": ["color"],
+        "color": ["icon"],
+        "searchUrl": ["searchConcat"],
+        "searchConcat": ["searchUrl"]
+      },
       "properties": {
         "title": { "type": "string" },
-        "url": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
         "icon": { "type": "string" },
         "color": { "type": "string" },
         "searchUrl": { "type": "string" },

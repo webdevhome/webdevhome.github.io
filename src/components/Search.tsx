@@ -279,11 +279,9 @@ function useSearch(
   ])
 
   useEffect(() => {
-    setSearchTerm(searchTerm)
-    setTimeout(() => {
-      inputElement.current?.focus()
-    }, 0)
-  }, [searchTerm, setSearchTerm])
+    setSearchTerm('')
+    inputElement.current?.focus()
+  }, [setSearchTerm])
 
   return {
     searchTerm,
@@ -309,7 +307,9 @@ function getUrl(
     searchTerm !== undefined &&
     searchTerm !== ''
   ) {
-    return searchTarget.searchUrl.replace(/\{search\}/, searchTerm)
+    const concatChar = searchTarget.searchConcat ?? '+'
+    const encodedSearchTerm = searchTerm.replace(/ /g, concatChar)
+    return searchTarget.searchUrl.replace(/\{search\}/, encodedSearchTerm)
   }
 
   if (focusedItem !== null) {

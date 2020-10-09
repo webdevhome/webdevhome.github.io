@@ -151,7 +151,7 @@ function useSearchMode(): UseSearchModeReturn {
         if (event.key === '\n') {
           return
         }
-        setSearchTerm(event.key)
+        
         setMode(AppMode.search)
       }
     }

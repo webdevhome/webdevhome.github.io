@@ -9,14 +9,16 @@
           "url": "https://github.com",
           "icon": "github",
           "color": "#181717",
-          "searchUrl": "https://github.com/search?q={search}"
+          "searchUrl": "https://github.com/search?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "GitLab",
           "url": "https://gitlab.com/explore",
           "icon": "gitlab",
           "color": "#fca121",
-          "searchUrl": "https://gitlab.com/search?utf8=%E2%9C%93&search={search}"
+          "searchUrl": "https://gitlab.com/search?utf8=%E2%9C%93&search={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Bitbucket",
@@ -51,14 +53,16 @@
           "url": "https://pkg.go.dev",
           "icon": "go",
           "color": "#00ADD8",
-          "searchUrl": "https://pkg.go.dev/search?q={search}"
+          "searchUrl": "https://pkg.go.dev/search?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Dart Packages",
           "url": "https://pub.dev",
           "icon": "dart",
           "color": "#0175C2",
-          "searchUrl": "https://pub.dev/packages?q={search}"
+          "searchUrl": "https://pub.dev/packages?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Docker Hub",
@@ -94,7 +98,8 @@
           "url": "https://stackoverflow.com",
           "icon": "stackoverflow",
           "color": "#fe7a16",
-          "searchUrl": "https://stackoverflow.com/search?q={search}"
+          "searchUrl": "https://stackoverflow.com/search?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Reddit",
@@ -144,14 +149,16 @@
           "url": "https://readthedocs.org",
           "icon": "readthedocs",
           "color": "#8CA1AF",
-          "searchUrl": "https://readthedocs.org/search/?q={search}"
+          "searchUrl": "https://readthedocs.org/search/?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "MDN",
           "url": "https://developer.mozilla.org",
           "icon": "mdnwebdocs",
           "color": "#000000",
-          "searchUrl": "https://developer.mozilla.org/de/search?q={search}"
+          "searchUrl": "https://developer.mozilla.org/de/search?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "GitHub Docs",
@@ -166,7 +173,8 @@
           "url": "https://docs.microsoft.com",
           "icon": "microsoft",
           "color": "#666666",
-          "searchUrl": "https://docs.microsoft.com/en-us/search/?search={search}&category=All"
+          "searchUrl": "https://docs.microsoft.com/en-us/search/?search={search}&category=All",
+          "searchConcat": "+"
         },
         {
           "title": "Oracle Help Center",
@@ -177,7 +185,8 @@
         {
           "title": "Cheatography",
           "url": "https://cheatography.com",
-          "searchUrl": "https://cheatography.com/explore/search/?q={search}"
+          "searchUrl": "https://cheatography.com/explore/search/?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Interactive Git Cheat Sheet",
@@ -203,7 +212,8 @@
           "url": "https://chromeos.dev",
           "icon": "googlechrome",
           "color": "#4285F4",
-          "searchUrl": "https://chromeos.dev/en/search?q={search}"
+          "searchUrl": "https://chromeos.dev/en/search?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Chrome Web Store Developer Dashboard",
@@ -246,7 +256,8 @@
           "url": "https://codepen.io",
           "icon": "codepen",
           "color": "#000000",
-          "searchUrl": "https://codepen.io/search/pens?q={search}"
+          "searchUrl": "https://codepen.io/search/pens?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "CodeSandbox",
@@ -274,7 +285,8 @@
         {
           "title": "AlternativeTo",
           "url": "https://alternativeto.net",
-          "searchUrl": "https://alternativeto.net/browse/search?q={search}"
+          "searchUrl": "https://alternativeto.net/browse/search?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "StackShare",
@@ -348,7 +360,8 @@
           "url": "https://flutter.dev",
           "icon": "flutter",
           "color": "#02569B",
-          "searchUrl": "https://flutter.dev/search?q={search}"
+          "searchUrl": "https://flutter.dev/search?q={search}",
+          "searchConcat": "+"
         }
       ]
     },
@@ -495,7 +508,8 @@
           "url": "https://dart.dev",
           "icon": "dart",
           "color": "#0175c2",
-          "searchUrl": "https://dart.dev/search?ie=UTF-8&q={search}"
+          "searchUrl": "https://dart.dev/search?ie=UTF-8&q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Swift",
@@ -508,14 +522,16 @@
           "url": "https://golang.org",
           "icon": "go",
           "color": "#00ADD8",
-          "searchUrl": "https://golang.org/search?q={search}"
+          "searchUrl": "https://golang.org/search?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "PHP",
           "url": "https://www.php.net",
           "icon": "php",
           "color": "#777BB4",
-          "searchUrl": "https://www.php.net/manual-lookup.php?pattern={search}"
+          "searchUrl": "https://www.php.net/manual-lookup.php?pattern={search}",
+          "searchConcat": "+"
         },
         {
           "title": ".NET",
@@ -588,14 +604,16 @@
           "url": "https://www.microsoft.com/de-de/sql-server",
           "icon": "microsoftsqlserver",
           "color": "#CC2927",
-          "searchUrl": "https://www.microsoft.com/en-us/search/explore?q={search}"
+          "searchUrl": "https://www.microsoft.com/en-us/search/explore?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "PostgreSQL",
           "url": "https://www.postgresql.org",
           "icon": "postgresql",
           "color": "#336791",
-          "searchUrl": "https://www.postgresql.org/search/?q={search}"
+          "searchUrl": "https://www.postgresql.org/search/?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Oracle Database",
@@ -608,7 +626,8 @@
           "url": "https://www.sqlite.org",
           "icon": "sqlite",
           "color": "#003B57",
-          "searchUrl": "https://www.sqlite.org/search?s=d&q={search}"
+          "searchUrl": "https://www.sqlite.org/search?s=d&q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "MongoDB",
@@ -621,7 +640,8 @@
         {
           "title": "CouchDB",
           "url": "https://couchdb.apache.org",
-          "searchUrl": "https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default"
+          "searchUrl": "https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default",
+          "searchConcat": "+"
         },
         {
           "title": "Redis",
@@ -657,7 +677,8 @@
         {
           "title": "Can I email...",
           "url": "https://caniemail.com",
-          "searchUrl": "https://www.caniemail.com/search/?s={search}"
+          "searchUrl": "https://www.caniemail.com/search/?s={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Chrome Platform Status",
@@ -768,14 +789,16 @@
           "url": "https://code.visualstudio.com",
           "icon": "visualstudiocode",
           "color": "#007acc",
-          "searchUrl": "https://code.visualstudio.com/Search?q={search}"
+          "searchUrl": "https://code.visualstudio.com/Search?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Visual Studio",
           "url": "https://visualstudio.microsoft.com",
           "icon": "visualstudio",
           "color": "#5C2D91",
-          "searchUrl": "https://visualstudio.microsoft.com/search/?query={search}"
+          "searchUrl": "https://visualstudio.microsoft.com/search/?query={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Atom",
@@ -827,14 +850,16 @@
           "url": "https://youtube.com",
           "icon": "youtube",
           "color": "#ff0000",
-          "searchUrl": "https://www.youtube.com/results?search_query={search}"
+          "searchUrl": "https://www.youtube.com/results?search_query={search}",
+          "searchConcat": "+"
         },
         {
           "title": "YouTube Music",
           "url": "https://music.youtube.com",
-          "searchUrl": "https://music.youtube.com/search?q={search}",
           "icon": "youtubemusic",
-          "color": "#ff0000"
+          "color": "#ff0000",
+          "searchUrl": "https://music.youtube.com/search?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Spotify",
@@ -885,7 +910,8 @@
         {
           "title": "DI.FM",
           "url": "https://di.fm",
-          "searchUrl": "https://www.di.fm/search?q={search}"
+          "searchUrl": "https://www.di.fm/search?q={search}",
+          "searchConcat": "+"
         }
       ]
     },
@@ -968,7 +994,8 @@
         {
           "title": "Codrops Collective",
           "url": "https://tympanus.net/codrops/collective",
-          "searchUrl": "https://tympanus.net/codrops/?s={search}&search-type=posts"
+          "searchUrl": "https://tympanus.net/codrops/?s={search}&search-type=posts",
+          "searchConcat": "+"
         }
       ]
     }
