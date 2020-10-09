@@ -280,8 +280,7 @@ function useSearch(
 
   useEffect(() => {
     setSearchTerm('')
-    if (inputElement.current === null) { return }
-    inputElement.current.focus()
+    inputElement.current?.focus()
   }, [setSearchTerm])
 
   return {
