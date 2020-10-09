@@ -649,13 +649,24 @@
       "name": "Browser status",
       "items": [
         {
-          "title": "Google Chrome",
+          "title": "Can I use...",
+          "url": "https://caniuse.com",
+          "searchUrl": "https://caniuse.com/#search={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "Can I email...",
+          "url": "https://caniemail.com",
+          "searchUrl": "https://www.caniemail.com/search/?s={search}"
+        },
+        {
+          "title": "Chrome Platform Status",
           "url": "https://www.chromestatus.com",
           "icon": "googlechrome",
           "color": "#4285f4"
         },
         {
-          "title": "Microsoft Edge: Platform Status",
+          "title": "Microsoft Edge Platform Status",
           "url": "https://developer.microsoft.com/en-us/microsoft-edge/platform/status",
           "icon": "microsoftedge",
           "color": "#0078d7",
@@ -675,18 +686,26 @@
           "color": "#666666"
         },
         {
-          "title": "Mozilla Firefox",
+          "title": "Firefox Platform Status",
           "url": "https://platform-status.mozilla.org",
           "icon": "mozillafirefox",
           "color": "#ff9400"
         },
         {
-          "title": "WebKit",
+          "title": "WebKit Feature Status",
           "url": "https://webkit.org/status",
           "icon": "safari",
           "color": "#000000",
           "searchUrl": "https://webkit.org/status/#?search={search}",
           "searchConcat": "%20"
+        },
+        {
+          "title": "Node Green",
+          "url": "https://node.green"
+        },
+        {
+          "title": "Is Houdini ready yet?",
+          "url": "https://ishoudinireadyyet.com"
         },
         {
           "title": "Timeline of Web Browsers",
@@ -708,17 +727,6 @@
           "url": "https://github.com/tc39/proposals"
         },
         {
-          "title": "Can I use...",
-          "url": "https://caniuse.com",
-          "searchUrl": "https://caniuse.com/#search={search}",
-          "searchConcat": "%20"
-        },
-        {
-          "title": "Can I email...",
-          "url": "https://caniemail.com",
-          "searchUrl": "https://www.caniemail.com/search/?s={search}"
-        },
-        {
           "title": "ECMAScript Compatibility Table",
           "url": "https://kangax.github.io/compat-table/es6"
         },
@@ -727,14 +735,6 @@
           "url": "https://mozilla.github.io/standards-positions",
           "icon": "mozilla",
           "color": "#000000"
-        },
-        {
-          "title": "Node Green",
-          "url": "https://node.green"
-        },
-        {
-          "title": "Is Houdini ready yet?",
-          "url": "https://ishoudinireadyyet.com"
         }
       ]
     },
