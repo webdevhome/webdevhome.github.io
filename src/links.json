@@ -61,6 +61,14 @@
           "searchUrl": "https://pub.dev/packages?q={search}"
         },
         {
+          "title": "Docker Hub",
+          "url": "https://hub.docker.com",
+          "icon": "docker",
+          "color": "#2496ED",
+          "searchUrl": "https://hub.docker.com/search?q={search}&type=image",
+          "searchConcat": "%20"
+        },
+        {
           "title": "30 seconds of code",
           "url": "https://30secondsofcode.org",
           "searchUrl": "https://www.30secondsofcode.org/search/?keyphrase={search}",
