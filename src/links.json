@@ -541,7 +541,34 @@
         {
           "title": "Google Fonts",
           "url": "https://fonts.google.com",
-          "searchUrl": "https://fonts.google.com/?query={search}"
+          "icon": "google",
+          "color": "#4285F4",
+          "searchUrl": "https://fonts.google.com/?query={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Pexels",
+          "url": "https://www.pexels.com",
+          "icon": "pexels",
+          "color": "#05A081",
+          "searchUrl": "https://www.pexels.com/de-de/suche/{search}/",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "Unsplash",
+          "url": "https://unsplash.com",
+          "icon": "unsplash",
+          "color": "#000000",
+          "searchUrl": "https://unsplash.com/s/photos/{search}",
+          "searchConcat": "-"
+        },
+        {
+          "title": "Subtle Patterns (by Toptal)",
+          "url": "https://www.toptal.com/designers/subtlepatterns",
+          "icon": "toptal",
+          "color": "#3863A0",
+          "searchUrl": "https://www.toptal.com/designers/subtlepatterns/?s={search}",
+          "searchConcat": "+"
         }
       ]
     },
