@@ -25,146 +25,176 @@ import { FooterGroup } from './components/FooterGroup'
 import { FooterLink } from './components/FooterLink'
 import { LinkList } from './components/LinkList'
 import { Search } from './components/Search'
-import { links } from './links'
-import {
-  getThemeStateSetting,
-  setThemeStateSetting
-} from './services/localStorageService'
 import {
   AppMode,
-  setMode,
-  toggleMode,
-  useCurrentMode
-} from './stores/currentModeStore'
-import { HiddenLinks, useHiddenLinks } from './stores/hiddenLinksStore'
+  CurrentModeContext,
+  CurrentModeContextValue,
+  useCurrentModeContextValue
+} from './contexts/currentModeContext'
+import {
+  HiddenLinksContext,
+  useHiddenLinksContextValue
+} from './contexts/hiddenLinksContext'
+import { links } from './links'
+import {
+  loadThemeSetting,
+  saveThemeSetting
+} from './services/localStorage/values/themeSetting'
 
 export const WebdevHome: FC = () => {
-  const { mode } = useCurrentMode()
-  const { handleCustomizeAction, hiddenLinks } = useCustomizeMode()
-  const { handleSearchAction, searchTerm, setSearchTerm } = useSearchMode()
-  const { themeSwitcherIcon, handleThemeSwitcherAction } = useThemeSwitcher()
+  const currentModeContextValue = useCurrentModeContextValue()
+  const hiddenLinksContextValue = useHiddenLinksContextValue()
+
+  const customizeMode = useCustomizeMode({ currentModeContextValue })
+  const searchMode = useSearchMode({ currentModeContextValue })
+  const themeSwitcher = useThemeSwitcher()
+
+  const { isCurrentMode } = currentModeContextValue
+  const { hiddenLinks } = hiddenLinksContextValue
 
   return (
-    <div className="app">
-      <AppHeader />
+    <CurrentModeContext.Provider value={currentModeContextValue}>
+      <HiddenLinksContext.Provider value={hiddenLinksContextValue}>
+        <div className="app">
+          <AppHeader />
 
-      <AppActions>
-        <AppAction
-          icon={mdiMagnify}
-          action={handleSearchAction}
-          active={mode === AppMode.search}
-        />
-        <AppAction
-          icon={themeSwitcherIcon}
-          action={handleThemeSwitcherAction}
-          active={false}
-        />
-        <AppAction
-          icon={mdiFormatListChecks}
-          action={handleCustomizeAction}
-          active={mode === AppMode.customize}
-        />
-      </AppActions>
+          <AppActions>
+            <AppAction
+              icon={mdiMagnify}
+              action={searchMode.handleSearchAction}
+              active={isCurrentMode(AppMode.search)}
+            />
+            <AppAction
+              icon={themeSwitcher.icon}
+              action={themeSwitcher.switchTheme}
+              active={false}
+            />
+            <AppAction
+              icon={mdiFormatListChecks}
+              action={customizeMode.handleCustomizeAction}
+              active={isCurrentMode(AppMode.customize)}
+            />
+          </AppActions>
 
-      {mode === AppMode.default || mode === AppMode.customize ? (
-        <AppContent>
-          <LinkList links={links.items} hiddenLinks={hiddenLinks.links} />
-        </AppContent>
-      ) : (
-        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      )}
+          {isCurrentMode(AppMode.default, AppMode.customize) ? (
+            <AppContent>
+              <LinkList links={links.items} hiddenLinks={hiddenLinks} />
+            </AppContent>
+          ) : (
+            <Search
+              searchTerm={searchMode.searchTerm}
+              setSearchTerm={searchMode.setSearchTerm}
+            />
+          )}
 
-      <AppFooter>
-        <FooterGroup title={'WebdevHome v' + version}>
-          <FooterLink
-            text="Changelog"
-            url="https://github.com/webdevhome/webdevhome.github.io/releases"
-          />
-          <FooterLink
-            text="GitHub"
-            url="https://github.com/webdevhome/webdevhome.github.io"
-          />
-        </FooterGroup>
+          <AppFooter>
+            <FooterGroup title={'WebdevHome v' + version}>
+              <FooterLink
+                text="Changelog"
+                url="https://github.com/webdevhome/webdevhome.github.io/releases"
+              />
+              <FooterLink
+                text="GitHub"
+                url="https://github.com/webdevhome/webdevhome.github.io"
+              />
+            </FooterGroup>
 
-        <FooterDivider />
+            <FooterDivider />
 
-        <FooterGroup title="Icons">
-          <FooterLink
-            text="Material Design Icons"
-            url="https://materialdesignicons.com"
-          />
-          <FooterLink text="Simple Icons" url="https://simpleicons.org/" />
-        </FooterGroup>
-      </AppFooter>
-    </div>
+            <FooterGroup title="Icons">
+              <FooterLink
+                text="Material Design Icons"
+                url="https://materialdesignicons.com"
+              />
+              <FooterLink text="Simple Icons" url="https://simpleicons.org/" />
+            </FooterGroup>
+          </AppFooter>
+        </div>
+      </HiddenLinksContext.Provider>
+    </CurrentModeContext.Provider>
   )
 }
 
 // #region customize feature
+interface UseCustomizeModeParams {
+  currentModeContextValue: CurrentModeContextValue
+}
+
 interface UseCustomizeModeReturn {
-  hiddenLinks: HiddenLinks
   handleCustomizeAction: () => void
 }
 
-function useCustomizeMode(): UseCustomizeModeReturn {
-  const hiddenLinks = useHiddenLinks()
-  const { mode } = useCurrentMode()
+function useCustomizeMode({
+  currentModeContextValue,
+}: UseCustomizeModeParams): UseCustomizeModeReturn {
+  const { isCurrentMode, setCurrentMode, toggleMode } = currentModeContextValue
 
   useEffect(() => {
     document.addEventListener('keydown', handleGlobalKeydown)
 
     function handleGlobalKeydown(event: KeyboardEvent): void {
-      if (event.key === 'Escape' && mode === AppMode.customize) {
-        setMode(AppMode.default)
+      if (event.key === 'Escape' && isCurrentMode(AppMode.customize)) {
+        setCurrentMode(AppMode.default)
       }
     }
 
     return () => {
       document.removeEventListener('keydown', handleGlobalKeydown)
     }
-  }, [mode])
+  }, [isCurrentMode, setCurrentMode])
 
   const handleCustomizeAction = useCallback((): void => {
     toggleMode(AppMode.customize)
-  }, [])
+  }, [toggleMode])
 
-  return { hiddenLinks, handleCustomizeAction }
+  return { handleCustomizeAction }
 }
 // #endregion customize feature
 
 // #region search feature
+interface UseSearchModeParams {
+  currentModeContextValue: CurrentModeContextValue
+}
+
 interface UseSearchModeReturn {
   handleSearchAction: () => void
   searchTerm: string
   setSearchTerm: Dispatch<SetStateAction<string>>
 }
 
-function useSearchMode(): UseSearchModeReturn {
+function useSearchMode({
+  currentModeContextValue,
+}: UseSearchModeParams): UseSearchModeReturn {
   const [searchTerm, setSearchTerm] = useState<string>('')
-  const { mode } = useCurrentMode()
+
+  const { isCurrentMode, setCurrentMode, toggleMode } = currentModeContextValue
+
+  const handleGlobalKeypress = useCallback(
+    (event: KeyboardEvent) => {
+      if (isCurrentMode(AppMode.default)) {
+        if (event.key === '\n') {
+          return
+        }
+
+        setSearchTerm(event.key)
+        setCurrentMode(AppMode.search)
+      }
+    },
+    [isCurrentMode, setCurrentMode]
+  )
 
   useEffect(() => {
     window.addEventListener('keypress', handleGlobalKeypress)
 
-    function handleGlobalKeypress(event: KeyboardEvent): void {
-      if (mode === AppMode.default) {
-        if (event.key === '\n') {
-          return
-        }
-        
-        setMode(AppMode.search)
-      }
-    }
-
-    return (): void => {
+    return () => {
       window.removeEventListener('keypress', handleGlobalKeypress)
     }
-  }, [mode])
+  }, [handleGlobalKeypress, isCurrentMode, setCurrentMode])
 
   const handleSearchAction = useCallback((): void => {
     setSearchTerm('')
     toggleMode(AppMode.search)
-  }, [])
+  }, [toggleMode])
 
   return { handleSearchAction, searchTerm, setSearchTerm }
 }
@@ -175,14 +205,12 @@ export const themeStates = ['auto', 'light', 'dark'] as const
 export type ThemeState = typeof themeStates[number]
 
 interface UseThemeSwitcherReturn {
-  themeSwitcherIcon: string
-  handleThemeSwitcherAction: () => void
+  icon: string
+  switchTheme: () => void
 }
 
 function useThemeSwitcher(): UseThemeSwitcherReturn {
-  const [themeState, setThemeState] = useState<ThemeState>(
-    getThemeStateSetting()
-  )
+  const [themeState, setThemeState] = useState<ThemeState>(loadThemeSetting())
 
   const bodyElement = useMemo(
     () => globalThis.document.getElementsByTagName('body')[0],
@@ -190,11 +218,11 @@ function useThemeSwitcher(): UseThemeSwitcherReturn {
   )
 
   useEffect(() => {
-    setThemeStateSetting(themeState)
+    saveThemeSetting(themeState)
     bodyElement.className = `${themeState}-theme`
   }, [bodyElement.className, themeState])
 
-  const themeSwitcherIcon = useMemo((): string => {
+  const icon = useMemo((): string => {
     if (themeState === 'light') {
       return mdiWeatherSunny
     }
@@ -204,7 +232,7 @@ function useThemeSwitcher(): UseThemeSwitcherReturn {
     return mdiThemeLightDark
   }, [themeState])
 
-  const handleThemeSwitcherAction = useCallback((): void => {
+  const switchTheme = useCallback((): void => {
     switch (themeState) {
       case 'light':
         setThemeState('dark')
@@ -218,6 +246,6 @@ function useThemeSwitcher(): UseThemeSwitcherReturn {
     }
   }, [themeState])
 
-  return { themeSwitcherIcon, handleThemeSwitcherAction }
+  return { icon, switchTheme }
 }
 // #endregion theme switcher

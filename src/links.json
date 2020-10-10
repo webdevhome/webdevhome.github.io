@@ -1,5 +1,5 @@
 {
-  "$schema": "./schemas/links.schema.json",
+  "$schema": "./links.schema.json",
   "items": [
     {
       "name": "Code and packages",

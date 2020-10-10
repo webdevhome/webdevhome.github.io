@@ -10,7 +10,6 @@
     "lint": "eslint ./src --ext .ts,.tsx"
   },
   "dependencies": {
-    "@alinnert/tstate": "^1.0.3",
     "@mdi/js": "^5.6.55",
     "@mdi/react": "^1.4.0",
     "fuzzysort": "^1.1.4",

@@ -5,17 +5,17 @@ import React, {
   FC,
   KeyboardEvent as ReactKeyboardEvent,
   memo,
-  RefObject,
   SetStateAction,
   useCallback,
+  useContext,
   useEffect,
+  useLayoutEffect,
   useMemo,
-  useRef,
   useState
 } from 'react'
+import { AppMode, CurrentModeContext } from '../contexts/currentModeContext'
+import { HiddenLinksContext } from '../contexts/hiddenLinksContext'
 import { getAllLinks, LinkItem, SearchTarget } from '../links'
-import { AppMode, setMode } from '../stores/currentModeStore'
-import { useHiddenLinks } from '../stores/hiddenLinksStore'
 import { Link } from './Link'
 import { SearchTargetItem } from './SearchTargetItem'
 
@@ -32,8 +32,9 @@ export const Search: FC<Props> = memo(({ searchTerm, setSearchTerm }) => {
     setKeyboardIndex,
     results,
     focusedResult,
-    inputElement,
   } = useSearch(searchTerm, setSearchTerm)
+
+  const currentModeContext = useContext(CurrentModeContext)
 
   useEffect(() => {
     window.addEventListener('keydown', handleGlobalKeyDown)
@@ -45,7 +46,7 @@ export const Search: FC<Props> = memo(({ searchTerm, setSearchTerm }) => {
 
   const handleInputChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>): void => {
-      setSearchTerm(event.currentTarget.value)
+      setSearchTerm(event.target.value)
       setKeyboardIndex(0)
     },
     [setKeyboardIndex, setSearchTerm]
@@ -62,7 +63,7 @@ export const Search: FC<Props> = memo(({ searchTerm, setSearchTerm }) => {
           if (searchTarget !== null) {
             setSearchTarget(null)
           } else {
-            setMode(AppMode.default)
+            currentModeContext?.setCurrentMode(AppMode.default)
           }
           break
         }
@@ -103,7 +104,7 @@ export const Search: FC<Props> = memo(({ searchTerm, setSearchTerm }) => {
           }
 
           if (event.ctrlKey || event.shiftKey) {
-            setMode(AppMode.default)
+            currentModeContext?.setCurrentMode(AppMode.default)
           }
           break
         }
@@ -127,6 +128,7 @@ export const Search: FC<Props> = memo(({ searchTerm, setSearchTerm }) => {
       }
     },
     [
+      currentModeContext,
       focusedResult,
       keyboardIndex,
       results,
@@ -147,10 +149,10 @@ export const Search: FC<Props> = memo(({ searchTerm, setSearchTerm }) => {
           return
         }
 
-        setMode(AppMode.default)
+        currentModeContext?.setCurrentMode(AppMode.default)
       }
     },
-    [searchTarget, setSearchTarget, setSearchTerm]
+    [currentModeContext, searchTarget, setSearchTarget, setSearchTerm]
   )
 
   const hints = useMemo(
@@ -215,7 +217,7 @@ export const Search: FC<Props> = memo(({ searchTerm, setSearchTerm }) => {
 
       <input
         className="search__input"
-        ref={inputElement}
+        autoFocus
         type="text"
         value={searchTerm}
         placeholder={searchTarget === null ? 'Search links...' : 'Search...'}
@@ -243,7 +245,6 @@ interface UseSearch {
   setKeyboardIndex: Dispatch<SetStateAction<number>>
   results: Fuzzysort.KeyResults<LinkItem> | null
   focusedResult: Fuzzysort.KeyResult<LinkItem> | null
-  inputElement: RefObject<HTMLInputElement>
 }
 
 function useSearch(
@@ -252,35 +253,41 @@ function useSearch(
 ): UseSearch {
   const [keyboardIndex, setKeyboardIndex] = useState<number>(0)
   const [searchTarget, setSearchTarget] = useState<SearchTarget | null>(null)
-  const inputElement = useRef<HTMLInputElement>(null)
-  const { links } = useHiddenLinks()
+  const hiddenLinksContext = useContext(HiddenLinksContext)
 
-  const visibleLinks = useMemo(
-    () => getAllLinks().filter((link) => !links.includes(link.url)),
-    [links]
-  )
+  const visibleLinks = useMemo(() => {
+    if (hiddenLinksContext === null) {
+      return null
+    }
+
+    return getAllLinks().filter(
+      (link) => !hiddenLinksContext.hiddenLinks.includes(link.url)
+    )
+  }, [hiddenLinksContext])
 
   const fuzzyOptions: Fuzzysort.KeyOptions = useMemo(
     () => ({ key: 'title', allowTypo: false, limit: 6 }),
     []
   )
 
-  const results = useMemo(
-    () =>
-      searchTerm !== '' && searchTarget === null
-        ? fuzzy.go(searchTerm, visibleLinks, fuzzyOptions)
-        : null,
-    [fuzzyOptions, searchTarget, searchTerm, visibleLinks]
-  )
+  const results = useMemo(() => {
+    if (visibleLinks === null) return null
+    if (searchTerm === '') return null
+    if (searchTarget !== null) return null
+
+    return fuzzy.go(searchTerm, visibleLinks, fuzzyOptions)
+  }, [fuzzyOptions, searchTarget, searchTerm, visibleLinks])
 
   const focusedResult = useMemo(() => results?.[keyboardIndex] ?? null, [
     keyboardIndex,
     results,
   ])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setSearchTerm('')
-    inputElement.current?.focus()
+    return () => {
+      setSearchTerm('')
+    }
   }, [setSearchTerm])
 
   return {
@@ -292,7 +299,6 @@ function useSearch(
     setKeyboardIndex,
     results,
     focusedResult,
-    inputElement,
   }
 }
 

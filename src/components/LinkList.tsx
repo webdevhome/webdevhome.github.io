@@ -1,6 +1,6 @@
-import React, { FC, memo, useCallback } from 'react'
+import React, { FC, memo, useCallback, useContext } from 'react'
+import { AppMode, CurrentModeContext } from '../contexts/currentModeContext'
 import { LinkGroup as ILinkGroup } from '../links'
-import { AppMode, useCurrentMode } from '../stores/currentModeStore'
 import { Link } from './Link'
 import { LinkGroup } from './LinkGroup'
 
@@ -10,7 +10,13 @@ interface Props {
 }
 
 export const LinkList: FC<Props> = memo(({ links, hiddenLinks }) => {
-  const { mode } = useCurrentMode()
+  const currentModeContext = useContext(CurrentModeContext)
+
+  if (currentModeContext === null) {
+    return null
+  }
+
+  const { isCurrentMode } = currentModeContext
 
   const getLinkGroup = useCallback(
     (group: ILinkGroup) => {
@@ -18,7 +24,7 @@ export const LinkList: FC<Props> = memo(({ links, hiddenLinks }) => {
         hiddenLinks.includes(link.url)
       )
 
-      if (noVisibleLinksInGroup && mode !== AppMode.customize) {
+      if (noVisibleLinksInGroup && isCurrentMode(AppMode.customize)) {
         return null
       }
 
@@ -31,14 +37,14 @@ export const LinkList: FC<Props> = memo(({ links, hiddenLinks }) => {
               url={link.url}
               icon={link.icon}
               color={link.color}
-              customize={mode === AppMode.customize}
+              customize={isCurrentMode(AppMode.customize)}
               visible={!hiddenLinks.includes(link.url)}
             />
           ))}
         </LinkGroup>
       )
     },
-    [hiddenLinks, mode]
+    [hiddenLinks, isCurrentMode]
   )
 
   return <>{links.map(getLinkGroup)}</>

@@ -1,7 +1,14 @@
 import { mdiEye, mdiEyeOff } from '@mdi/js'
-import React, { FC, memo, MouseEvent, useCallback, useMemo } from 'react'
+import React, {
+  FC,
+  memo,
+  MouseEvent,
+  useCallback,
+  useContext,
+  useMemo
+} from 'react'
 import { ReactSVG } from 'react-svg'
-import { toggleLink } from '../stores/hiddenLinksStore'
+import { HiddenLinksContext } from '../contexts/hiddenLinksContext'
 import { classes } from '../utils/jsx'
 import { getIconUrl } from '../utils/misc'
 import { DefaultIcon } from './DefaultIcon'
@@ -29,14 +36,16 @@ export const Link: FC<Props> = memo(
     visible = true,
     focus = false,
   }) => {
+    const hiddenLinksContext = useContext(HiddenLinksContext)
     const handleLinkClick = useCallback(
       (event: MouseEvent<HTMLAnchorElement>): void => {
-        if (customize) {
-          event.preventDefault()
-          toggleLink(url)
-        }
+        if (!customize) return
+        if (hiddenLinksContext === null) return
+
+        event.preventDefault()
+        hiddenLinksContext.toggleHiddenLink(url)
       },
-      [customize, url]
+      [customize, hiddenLinksContext, url]
     )
 
     const linkClasses = useMemo(
