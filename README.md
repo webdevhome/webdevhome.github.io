@@ -15,6 +15,24 @@ This is a collection of links I, as a web developer, use very frequently. Maybe 
 • [Simple Icons](https://github.com/simple-icons/simple-icons)
 • [Material Design Icons](https://github.com/Templarian/MaterialDesign)
 
+## Development
+
+To start WebdevHome locally and make some changes quickly run:
+
+~~~
+npm ci
+~~~
+
+and then:
+
+~~~
+npm start
+~~~
+
+This starts a watcher that builds the project every time you make some changes. Also, the local version of your app (running on localhost:3000) gets opened in your default browser automatically.
+
+End the watcher script by pressing `[Ctrl]` + `[C]` in your terminal.
+
 ## Run in a Docker environment
 
 If you want to run this app in your own Docker environment run the following commands from inside the project root directory:
