@@ -29,9 +29,13 @@ and then:
 docker-compose up
 ~~~
 
-(*or `docker-compose up -d` to run in detached mode. Halt the app in detached mode by running `docker-compose down`.*)
+*Or `docker-compose up -d` to run in detached mode.*
+
+*Halt the app in detached mode by running `docker-compose down`.*
 
 If you make any changes, start again at `docker-compose build`.
+
+**Important:** If you change the `dependencies` in `package.json` directly you have to run `npm install` locally before running `docker-compose build`! Better use `npm i <package-name>` to add dependencies or `npm un <package-name>` to remove packages instead.
 
 ---
 
