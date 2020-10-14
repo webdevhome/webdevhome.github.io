@@ -1,53 +1,96 @@
-import React, { memo, useCallback, useContext } from 'react'
+import { mdiTableEye, mdiTableEyeOff } from '@mdi/js'
+import React, { memo, useCallback, useContext, useMemo } from 'react'
 import { AppMode, CurrentModeContext } from '../../contexts/currentModeContext'
-import { LinkGroup as ILinkGroup } from '../../links'
+import {
+  HiddenLinksContext,
+  LinkState
+} from '../../contexts/hiddenLinksContext'
+import { LinkGroup as ILinkGroup, LinkItem } from '../../links'
+import { classes } from '../../utils/jsx'
+import { MdiIcon } from '../Icon/MdiIcon'
 import { Link } from './Link'
 import './LinkGroup.scss'
 
 interface Props {
-  links: ILinkGroup[]
-  hiddenLinks: string[]
+  group: ILinkGroup
 }
 
-export const LinkGroup = memo<Props>(function LinkGroup({
-  links,
-  hiddenLinks,
-}) {
+export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
   const currentModeContext = useContext(CurrentModeContext)
+  const hiddenLinksContext = useContext(HiddenLinksContext)
 
-  const getLinkGroup = useCallback(
-    (group: ILinkGroup) => {
-      if (currentModeContext === null) return null
+  const linkGroupClasses = useMemo(() => {
+    return classes({
+      'link-group': true,
+      'link-group--is-visible':
+        !hiddenLinksContext?.allLinksAreHidden(...group.items) ?? false,
+    })
+  }, [group.items, hiddenLinksContext])
 
-      const { isCurrentMode } = currentModeContext
-
-      const noVisibleLinksInGroup = group.items.every((link) =>
-        hiddenLinks.includes(link.url)
-      )
-
-      if (noVisibleLinksInGroup && isCurrentMode(AppMode.customize)) return null
-
-      return (
-        <div className="link-group" key={group.name}>
-          <div className="link-group__name">{group.name}</div>
-          <div className="link-group__list">
-            {group.items.map((link) => (
-              <Link
-                key={link.url}
-                title={link.title}
-                url={link.url}
-                icon={link.icon}
-                color={link.color}
-                customize={isCurrentMode(AppMode.customize)}
-                visible={!hiddenLinks.includes(link.url)}
-              />
-            ))}
-          </div>
-        </div>
-      )
+  const allGroupLinksAreHidden = useCallback(
+    (items: LinkItem[]): boolean => {
+      if (hiddenLinksContext === null) return false
+      const { allLinksAreHidden } = hiddenLinksContext
+      return allLinksAreHidden(...items)
     },
-    [currentModeContext, hiddenLinks]
+    [hiddenLinksContext]
   )
 
-  return <>{links.map(getLinkGroup)}</>
+  const handleToggleGroupClick = useCallback(
+    (...items: LinkItem[]): void => {
+      if (hiddenLinksContext === null) return
+      const { toggleGroup, allLinksAreHidden } = hiddenLinksContext
+      const newState: LinkState = allLinksAreHidden(...items) ? 'show' : 'hide'
+      toggleGroup(newState, ...items.map((item) => item.url))
+    },
+    [hiddenLinksContext]
+  )
+
+  const noVisibleLinksInGroup = useMemo(() => {
+    if (hiddenLinksContext === null) return false
+    const { allLinksAreHidden } = hiddenLinksContext
+    return allLinksAreHidden(...group.items)
+  }, [group.items, hiddenLinksContext])
+
+  if (currentModeContext === null) return null
+  if (hiddenLinksContext === null) return null
+
+  const { isCurrentMode } = currentModeContext
+  const { hiddenLinks } = hiddenLinksContext
+
+  if (noVisibleLinksInGroup && !isCurrentMode(AppMode.customize)) return null
+
+  return (
+    <div className={linkGroupClasses}>
+      <div className="link-group__header">
+        <div className="link-group__name">{group.name}</div>
+
+        {isCurrentMode(AppMode.customize) ? (
+          <div
+            className="link-group__action"
+            onClick={() => handleToggleGroupClick(...group.items)}
+          >
+            {allGroupLinksAreHidden(group.items) ? (
+              <MdiIcon path={mdiTableEyeOff} />
+            ) : (
+              <MdiIcon path={mdiTableEye} />
+            )}
+          </div>
+        ) : null}
+      </div>
+      <div className="link-group__list">
+        {group.items.map((link) => (
+          <Link
+            key={link.url}
+            title={link.title}
+            url={link.url}
+            icon={link.icon}
+            color={link.color}
+            customize={isCurrentMode(AppMode.customize)}
+            visible={!hiddenLinks.includes(link.url)}
+          />
+        ))}
+      </div>
+    </div>
+  )
 })

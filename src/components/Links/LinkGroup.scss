@@ -1,15 +1,19 @@
 .link-group {
+  &__header {
+    display: flex;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--primary-color-dark);
+  }
+
   &__name {
+    flex: 1 1 auto;
     color: var(--primary-color);
     font-size: 15px;
     line-height: 1.8;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.4px;
-    margin-bottom: 10px;
-    padding-right: 20px;
-    padding-left: 10px;
-    border-bottom: 1px solid var(--primary-color-dark);
+    padding: 4px 10px;
     user-select: none;
   }
 
@@ -17,6 +21,30 @@
     &__name {
       padding-left: 15px;
     }
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    margin: 0 4px;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+
+  &__action:hover {
+    background-color: var(--link-item-background-hover);
+  }
+
+  &--is-visible &__action {
+    color: var(--action-color);
+  }
+
+  &:not(&--is-visible) &__action {
+    color: var(--action-color-inactive);
   }
 
   &__list {

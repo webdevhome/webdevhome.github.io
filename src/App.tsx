@@ -51,7 +51,6 @@ export const WebdevHome: FC = () => {
   const themeSwitcher = useThemeSwitcher()
 
   const { isCurrentMode } = currentModeContextValue
-  const { hiddenLinks } = hiddenLinksContextValue
 
   return (
     <CurrentModeContext.Provider value={currentModeContextValue}>
@@ -79,7 +78,9 @@ export const WebdevHome: FC = () => {
 
           {isCurrentMode(AppMode.default, AppMode.customize) ? (
             <AppContent>
-              <LinkGroup links={links.items} hiddenLinks={hiddenLinks} />
+              {links.items.map((group) => (
+                <LinkGroup group={group} key={group.name} />
+              ))}
             </AppContent>
           ) : (
             <Search

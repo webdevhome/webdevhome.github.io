@@ -15,6 +15,10 @@
     display: none;
   }
 
+  &--customize-mode {
+    cursor: default;
+  }
+
   &:hover {
     background-color: var(--link-item-background-hover);
   }

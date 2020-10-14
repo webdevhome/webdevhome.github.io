@@ -42,18 +42,20 @@ export const Link = memo<Props>(function Link({
       if (hiddenLinksContext === null) return
 
       event.preventDefault()
-      hiddenLinksContext.toggleHiddenLink(url)
+      hiddenLinksContext.toggleLink(url)
     },
     [customize, hiddenLinksContext, url]
   )
 
   const linkClasses = useMemo(
-    () => ({
-      link: true,
-      'link--is-visible': visible,
-      'link--has-focus': focus,
-    }),
-    [focus, visible]
+    () =>
+      classes({
+        link: true,
+        'link--is-visible': visible,
+        'link--has-focus': focus,
+        'link--customize-mode': customize,
+      }),
+    [customize, focus, visible]
   )
 
   if (!customize && !visible) {
@@ -64,7 +66,7 @@ export const Link = memo<Props>(function Link({
     <a
       href={url}
       rel="noreferrer"
-      className={classes(linkClasses)}
+      className={linkClasses}
       onClick={handleLinkClick}
     >
       <div className="link__icon-container" style={{ color }}>
