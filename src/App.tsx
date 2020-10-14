@@ -23,7 +23,7 @@ import { AppHeader } from './components/AppHeader'
 import { FooterDivider } from './components/FooterDivider'
 import { FooterGroup } from './components/FooterGroup'
 import { FooterLink } from './components/FooterLink'
-import { LinkList } from './components/LinkList'
+import { LinkGroup } from './components/LinkGroup'
 import { Search } from './components/Search'
 import {
   AppMode,
@@ -78,7 +78,7 @@ export const WebdevHome: FC = () => {
 
           {isCurrentMode(AppMode.default, AppMode.customize) ? (
             <AppContent>
-              <LinkList links={links.items} hiddenLinks={hiddenLinks} />
+              <LinkGroup links={links.items} hiddenLinks={hiddenLinks} />
             </AppContent>
           ) : (
             <Search
