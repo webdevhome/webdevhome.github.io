@@ -2,7 +2,7 @@ import fuzzy from 'fuzzysort'
 import React, {
   ChangeEvent,
   Dispatch,
-  FC,
+
   KeyboardEvent as ReactKeyboardEvent,
   memo,
   SetStateAction,
@@ -13,10 +13,11 @@ import React, {
   useMemo,
   useState
 } from 'react'
-import { AppMode, CurrentModeContext } from '../contexts/currentModeContext'
-import { HiddenLinksContext } from '../contexts/hiddenLinksContext'
-import { getAllLinks, LinkItem, SearchTarget } from '../links'
-import { Link } from './Link'
+import { AppMode, CurrentModeContext } from '../../contexts/currentModeContext'
+import { HiddenLinksContext } from '../../contexts/hiddenLinksContext'
+import { getAllLinks, LinkItem, SearchTarget } from '../../links'
+import { Link } from '../Links/Link'
+import './Search.scss'
 import { SearchTargetItem } from './SearchTargetItem'
 
 interface Props {
@@ -24,7 +25,7 @@ interface Props {
   setSearchTerm: Dispatch<SetStateAction<string>>
 }
 
-export const Search: FC<Props> = memo(function Search({
+export const Search = memo<Props>(function Search({
   searchTerm,
   setSearchTerm,
 }) {

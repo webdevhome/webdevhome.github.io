@@ -1,6 +1,5 @@
 import { mdiEye, mdiEyeOff } from '@mdi/js'
 import React, {
-  FC,
   memo,
   MouseEvent,
   useCallback,
@@ -8,11 +7,12 @@ import React, {
   useMemo
 } from 'react'
 import { ReactSVG } from 'react-svg'
-import { HiddenLinksContext } from '../contexts/hiddenLinksContext'
-import { classes } from '../utils/jsx'
-import { getIconUrl } from '../utils/misc'
-import { DefaultIcon } from './DefaultIcon'
-import { MdiIcon } from './MdiIcon'
+import { HiddenLinksContext } from '../../contexts/hiddenLinksContext'
+import { classes } from '../../utils/jsx'
+import { getIconUrl } from '../../utils/misc'
+import { DefaultIcon } from '../Icon/DefaultIcon'
+import { MdiIcon } from '../Icon/MdiIcon'
+import './Link.scss'
 
 interface Props {
   title: string
@@ -25,7 +25,7 @@ interface Props {
   focus?: boolean
 }
 
-export const Link: FC<Props> = memo(function Link({
+export const Link = memo<Props>(function Link({
   title,
   url,
   icon,

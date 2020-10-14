@@ -1,14 +1,15 @@
-import React, { FC, memo, useCallback, useContext } from 'react'
-import { AppMode, CurrentModeContext } from '../contexts/currentModeContext'
-import { LinkGroup as ILinkGroup } from '../links'
+import React, { memo, useCallback, useContext } from 'react'
+import { AppMode, CurrentModeContext } from '../../contexts/currentModeContext'
+import { LinkGroup as ILinkGroup } from '../../links'
 import { Link } from './Link'
+import './LinkGroup.scss'
 
 interface Props {
   links: ILinkGroup[]
   hiddenLinks: string[]
 }
 
-export const LinkGroup: FC<Props> = memo(function LinkGroup({
+export const LinkGroup = memo<Props>(function LinkGroup({
   links,
   hiddenLinks,
 }) {
@@ -27,7 +28,7 @@ export const LinkGroup: FC<Props> = memo(function LinkGroup({
       if (noVisibleLinksInGroup && isCurrentMode(AppMode.customize)) return null
 
       return (
-        <div className="link-group">
+        <div className="link-group" key={group.name}>
           <div className="link-group__name">{group.name}</div>
           <div className="link-group__list">
             {group.items.map((link) => (

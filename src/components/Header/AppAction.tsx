@@ -1,6 +1,7 @@
-import React, { FC, memo, useMemo } from 'react'
-import { classes } from '../utils/jsx'
-import { MdiIcon } from './MdiIcon'
+import React, { memo, useMemo } from 'react'
+import { classes } from '../../utils/jsx'
+import { MdiIcon } from '../Icon/MdiIcon'
+import './AppAction.scss'
 
 interface Props {
   icon: string
@@ -8,7 +9,7 @@ interface Props {
   action: () => void
 }
 
-export const AppAction: FC<Props> = memo(function AppAction({
+export const AppAction = memo<Props>(function AppAction({
   icon,
   action,
   active,

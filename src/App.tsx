@@ -15,16 +15,17 @@ import React, {
   useState
 } from 'react'
 import { version } from '../package.json'
-import { AppAction } from './components/AppAction'
-import { AppActions } from './components/AppActions'
-import { AppContent } from './components/AppContent'
-import { AppFooter } from './components/AppFooter'
-import { AppHeader } from './components/AppHeader'
-import { FooterDivider } from './components/FooterDivider'
-import { FooterGroup } from './components/FooterGroup'
-import { FooterLink } from './components/FooterLink'
-import { LinkGroup } from './components/LinkGroup'
-import { Search } from './components/Search'
+import './App.scss'
+import { AppFooter } from './components/Footer/AppFooter'
+import { FooterDivider } from './components/Footer/FooterDivider'
+import { FooterGroup } from './components/Footer/FooterGroup'
+import { FooterLink } from './components/Footer/FooterLink'
+import { AppAction } from './components/Header/AppAction'
+import { AppActions } from './components/Header/AppActions'
+import { AppHeader } from './components/Header/AppHeader'
+import { AppContent } from './components/Layout/AppContent'
+import { LinkGroup } from './components/Links/LinkGroup'
+import { Search } from './components/Search/Search'
 import {
   AppMode,
   CurrentModeContext,

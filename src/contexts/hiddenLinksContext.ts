@@ -1,5 +1,8 @@
 import { createContext, Dispatch, SetStateAction, useState } from 'react'
-import { loadHiddenLinks, saveHiddenLinks } from '../services/localStorage/values/hiddenLinks'
+import {
+  loadHiddenLinks,
+  saveHiddenLinks
+} from '../services/localStorage/values/hiddenLinks'
 
 export interface HiddenLinksContextValue {
   hiddenLinks: string[]

@@ -1,7 +1,8 @@
-import React, { FC, memo, useCallback } from 'react'
+import React, { memo, useCallback } from 'react'
 import { ReactSVG } from 'react-svg'
-import { LinkItem } from '../links'
-import { getIconUrl } from '../utils/misc'
+import { LinkItem } from '../../links'
+import { getIconUrl } from '../../utils/misc'
+import './SearchTargetItem.scss'
 
 interface Props {
   title: LinkItem['title']
@@ -9,7 +10,7 @@ interface Props {
   color: LinkItem['color']
 }
 
-export const SearchTargetItem: FC<Props> = memo(function SearchTargetItem({
+export const SearchTargetItem = memo<Props>(function SearchTargetItem({
   title,
   icon,
   color,
