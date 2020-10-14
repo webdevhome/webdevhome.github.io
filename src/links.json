@@ -49,6 +49,12 @@
           "color": "#885630"
         },
         {
+          "title": "Packagist (PHP packages)",
+          "url": "https://packagist.org",
+          "searchUrl": "https://packagist.org/?query={search}",
+          "searchConcat": "%20"
+        },
+        {
           "title": "Go Packages",
           "url": "https://pkg.go.dev",
           "icon": "go",
