@@ -4,7 +4,10 @@ interface Props {
   name: string
 }
 
-export const LinkGroup: FC<Props> = memo(({ children, name }) => {
+export const LinkGroup: FC<Props> = memo(function LinkGroup({
+  children,
+  name,
+}) {
   return (
     <div className="link-group">
       <div className="link-group__name">{name}</div>

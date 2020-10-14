@@ -8,7 +8,11 @@ interface Props {
   action: () => void
 }
 
-export const AppAction: FC<Props> = memo(({ icon, action, active }) => {
+export const AppAction: FC<Props> = memo(function AppAction({
+  icon,
+  action,
+  active,
+}) {
   const actionClasses = useMemo(
     () => ({
       'app-action': true,

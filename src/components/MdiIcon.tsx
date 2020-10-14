@@ -7,7 +7,11 @@ interface Props {
   color?: string
 }
 
-export const MdiIcon: FC<Props> = memo(({ className, path, color }) => {
+export const MdiIcon: FC<Props> = memo(function MdiIcon({
+  className,
+  path,
+  color,
+}) {
   const iconStyle = useMemo(() => ({ width: 24, height: 24 }), [])
 
   return (

@@ -5,7 +5,7 @@ interface Props {
   url: string
 }
 
-export const FooterLink: FC<Props> = memo(({ text, url }) => {
+export const FooterLink: FC<Props> = memo(function FooterLink({ text, url }) {
   return (
     <a href={url} className="footer-link">
       {text}

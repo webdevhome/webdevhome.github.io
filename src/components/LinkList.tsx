@@ -9,24 +9,23 @@ interface Props {
   hiddenLinks: string[]
 }
 
-export const LinkList: FC<Props> = memo(({ links, hiddenLinks }) => {
+export const LinkList: FC<Props> = memo(function LinkList({
+  links,
+  hiddenLinks,
+}) {
   const currentModeContext = useContext(CurrentModeContext)
-
-  if (currentModeContext === null) {
-    return null
-  }
-
-  const { isCurrentMode } = currentModeContext
 
   const getLinkGroup = useCallback(
     (group: ILinkGroup) => {
+      if (currentModeContext === null) return null
+
+      const { isCurrentMode } = currentModeContext
+
       const noVisibleLinksInGroup = group.items.every((link) =>
         hiddenLinks.includes(link.url)
       )
 
-      if (noVisibleLinksInGroup && isCurrentMode(AppMode.customize)) {
-        return null
-      }
+      if (noVisibleLinksInGroup && isCurrentMode(AppMode.customize)) return null
 
       return (
         <LinkGroup key={group.name} name={group.name}>
@@ -44,7 +43,7 @@ export const LinkList: FC<Props> = memo(({ links, hiddenLinks }) => {
         </LinkGroup>
       )
     },
-    [hiddenLinks, isCurrentMode]
+    [currentModeContext, hiddenLinks]
   )
 
   return <>{links.map(getLinkGroup)}</>

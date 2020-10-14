@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react'
 
-export const AppHeader: FC = memo(() => {
+export const AppHeader: FC = memo(function AppHeader() {
   return (
     <div className="app-header">
       <div className="app-header__logo logo">

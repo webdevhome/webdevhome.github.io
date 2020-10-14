@@ -24,7 +24,10 @@ interface Props {
   setSearchTerm: Dispatch<SetStateAction<string>>
 }
 
-export const Search: FC<Props> = memo(({ searchTerm, setSearchTerm }) => {
+export const Search: FC<Props> = memo(function Search({
+  searchTerm,
+  setSearchTerm,
+}) {
   const {
     searchTarget,
     setSearchTarget,
