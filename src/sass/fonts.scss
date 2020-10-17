@@ -1,29 +1,34 @@
 @font-face {
   font-family: 'Roboto';
   font-weight: 400;
+  font-display: swap;
   src: url('../assets/fonts/roboto-regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Roboto';
   font-weight: 500;
+  font-display: swap;
   src: url('../assets/fonts/roboto-medium.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Roboto';
   font-weight: 600;
+  font-display: swap;
   src: url('../assets/fonts/roboto-bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Roboto Mono';
   font-weight: 400;
+  font-display: swap;
   src: url('../assets/fonts/robotomono-regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Roboto Mono';
   font-weight: 600;
+  font-display: swap;
   src: url('../assets/fonts/robotomono-bold.ttf') format('truetype');
 }
