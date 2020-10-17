@@ -10,6 +10,7 @@ import React, {
   FC,
   SetStateAction,
   useCallback,
+  useContext,
   useEffect,
   useMemo,
   useState
@@ -28,14 +29,8 @@ import { LinkGroup } from './components/Links/LinkGroup'
 import { Search } from './components/Search/Search'
 import {
   AppMode,
-  CurrentModeContext,
-  CurrentModeContextValue,
-  useCurrentModeContextValue
+  CurrentModeContext
 } from './contexts/currentModeContext'
-import {
-  HiddenLinksContext,
-  useHiddenLinksContextValue
-} from './contexts/hiddenLinksContext'
 import { links } from './links'
 import {
   loadThemeSetting,
@@ -43,93 +38,82 @@ import {
 } from './services/localStorage/values/themeSetting'
 
 export const WebdevHome: FC = () => {
-  const currentModeContextValue = useCurrentModeContextValue()
-  const hiddenLinksContextValue = useHiddenLinksContextValue()
-
-  const customizeMode = useCustomizeMode({ currentModeContextValue })
-  const searchMode = useSearchMode({ currentModeContextValue })
+  const customizeMode = useCustomizeMode()
+  const searchMode = useSearchMode()
   const themeSwitcher = useThemeSwitcher()
 
-  const { isCurrentMode } = currentModeContextValue
+  const { isCurrentMode } = useContext(CurrentModeContext)
 
   return (
-    <CurrentModeContext.Provider value={currentModeContextValue}>
-      <HiddenLinksContext.Provider value={hiddenLinksContextValue}>
-        <div className="app">
-          <AppHeader />
+    <div className="app">
+      <AppHeader />
 
-          <AppActions>
-            <AppAction
-              icon={mdiMagnify}
-              action={searchMode.handleSearchAction}
-              active={isCurrentMode(AppMode.search)}
-            />
-            <AppAction
-              icon={themeSwitcher.icon}
-              action={themeSwitcher.switchTheme}
-              active={false}
-            />
-            <AppAction
-              icon={mdiFormatListChecks}
-              action={customizeMode.handleCustomizeAction}
-              active={isCurrentMode(AppMode.customize)}
-            />
-          </AppActions>
+      <AppActions>
+        <AppAction
+          icon={mdiMagnify}
+          action={searchMode.handleSearchAction}
+          active={isCurrentMode(AppMode.search)}
+        />
+        <AppAction
+          icon={themeSwitcher.icon}
+          action={themeSwitcher.switchTheme}
+          active={false}
+        />
+        <AppAction
+          icon={mdiFormatListChecks}
+          action={customizeMode.handleCustomizeAction}
+          active={isCurrentMode(AppMode.customize)}
+        />
+      </AppActions>
 
-          {isCurrentMode(AppMode.default, AppMode.customize) ? (
-            <AppContent>
-              {links.items.map((group) => (
-                <LinkGroup group={group} key={group.name} />
-              ))}
-            </AppContent>
-          ) : (
-            <Search
-              searchTerm={searchMode.searchTerm}
-              setSearchTerm={searchMode.setSearchTerm}
-            />
-          )}
+      {isCurrentMode(AppMode.default, AppMode.customize) ? (
+        <AppContent>
+          {links.items.map((group) => (
+            <LinkGroup group={group} key={group.name} />
+          ))}
+        </AppContent>
+      ) : (
+        <Search
+          searchTerm={searchMode.searchTerm}
+          setSearchTerm={searchMode.setSearchTerm}
+        />
+      )}
 
-          <AppFooter>
-            <FooterGroup title={'WebdevHome v' + version}>
-              <FooterLink
-                text="Changelog"
-                url="https://github.com/webdevhome/webdevhome.github.io/releases"
-              />
-              <FooterLink
-                text="GitHub"
-                url="https://github.com/webdevhome/webdevhome.github.io"
-              />
-            </FooterGroup>
+      <AppFooter>
+        <FooterGroup title={'WebdevHome v' + version}>
+          <FooterLink
+            text="Changelog"
+            url="https://github.com/webdevhome/webdevhome.github.io/releases"
+          />
+          <FooterLink
+            text="GitHub"
+            url="https://github.com/webdevhome/webdevhome.github.io"
+          />
+        </FooterGroup>
 
-            <FooterDivider />
+        <FooterDivider />
 
-            <FooterGroup title="Icons">
-              <FooterLink
-                text="Material Design Icons"
-                url="https://materialdesignicons.com"
-              />
-              <FooterLink text="Simple Icons" url="https://simpleicons.org/" />
-            </FooterGroup>
-          </AppFooter>
-        </div>
-      </HiddenLinksContext.Provider>
-    </CurrentModeContext.Provider>
+        <FooterGroup title="Icons">
+          <FooterLink
+            text="Material Design Icons"
+            url="https://materialdesignicons.com"
+          />
+          <FooterLink text="Simple Icons" url="https://simpleicons.org/" />
+        </FooterGroup>
+      </AppFooter>
+    </div>
   )
 }
 
 // #region customize feature
-interface UseCustomizeModeParams {
-  currentModeContextValue: CurrentModeContextValue
-}
-
 interface UseCustomizeModeReturn {
   handleCustomizeAction: () => void
 }
 
-function useCustomizeMode({
-  currentModeContextValue,
-}: UseCustomizeModeParams): UseCustomizeModeReturn {
-  const { isCurrentMode, setCurrentMode, toggleMode } = currentModeContextValue
+function useCustomizeMode(): UseCustomizeModeReturn {
+  const { isCurrentMode, setCurrentMode, toggleMode } = useContext(
+    CurrentModeContext
+  )
 
   useEffect(() => {
     document.addEventListener('keydown', handleGlobalKeydown)
@@ -154,22 +138,18 @@ function useCustomizeMode({
 // #endregion customize feature
 
 // #region search feature
-interface UseSearchModeParams {
-  currentModeContextValue: CurrentModeContextValue
-}
-
 interface UseSearchModeReturn {
   handleSearchAction: () => void
   searchTerm: string
   setSearchTerm: Dispatch<SetStateAction<string>>
 }
 
-function useSearchMode({
-  currentModeContextValue,
-}: UseSearchModeParams): UseSearchModeReturn {
+function useSearchMode(): UseSearchModeReturn {
   const [searchTerm, setSearchTerm] = useState<string>('')
 
-  const { isCurrentMode, setCurrentMode, toggleMode } = currentModeContextValue
+  const { isCurrentMode, setCurrentMode, toggleMode } = useContext(
+    CurrentModeContext
+  )
 
   const handleGlobalKeypress = useCallback(
     (event: KeyboardEvent) => {
