@@ -59,9 +59,7 @@ export const Search = memo<Props>(function Search({
     (event: ReactKeyboardEvent<HTMLInputElement>): void => {
       switch (event.key) {
         case 'Backspace': {
-          if (searchTerm !== '') {
-            return
-          }
+          if (searchTerm !== '') return
 
           if (searchTarget !== null) {
             setSearchTarget(null)
@@ -74,15 +72,9 @@ export const Search = memo<Props>(function Search({
         case 'Tab': {
           event.preventDefault()
 
-          if (searchTarget !== null) {
-            return
-          }
-          if (focusedResult === null) {
-            return
-          }
-          if (focusedResult.obj.searchUrl === undefined) {
-            return
-          }
+          if (searchTarget !== null) return
+          if (focusedResult === null) return
+          if (focusedResult.obj.searchUrl === undefined) return
 
           setSearchTarget(focusedResult.obj as SearchTarget)
           setSearchTerm('')
@@ -96,9 +88,7 @@ export const Search = memo<Props>(function Search({
             searchTerm
           )
 
-          if (url === null) {
-            return
-          }
+          if (url === null) return
 
           if (event.ctrlKey) {
             window.open(url, '', 'alwaysRaised=on')
@@ -113,18 +103,16 @@ export const Search = memo<Props>(function Search({
         }
 
         case 'ArrowUp': {
-          if (results === null) {
-            return
-          }
+          if (results === null) return
+
           event.preventDefault()
           setKeyboardIndex(Math.max(0, keyboardIndex - 1))
           break
         }
 
         case 'ArrowDown': {
-          if (results === null) {
-            return
-          }
+          if (results === null) return
+
           event.preventDefault()
           setKeyboardIndex(Math.min(results.total - 1, keyboardIndex + 1))
         }
@@ -239,7 +227,7 @@ export const Search = memo<Props>(function Search({
   )
 })
 
-interface UseSearch {
+interface UseSearchReturn {
   searchTerm: string
   setSearchTerm: Dispatch<SetStateAction<string>>
   searchTarget: SearchTarget | null
@@ -253,7 +241,7 @@ interface UseSearch {
 function useSearch(
   searchTerm: string,
   setSearchTerm: Dispatch<SetStateAction<string>>
-): UseSearch {
+): UseSearchReturn {
   const [keyboardIndex, setKeyboardIndex] = useState<number>(0)
   const [searchTarget, setSearchTarget] = useState<SearchTarget | null>(null)
   const hiddenLinksContext = useContext(HiddenLinksContext)
@@ -315,9 +303,5 @@ function getUrl(
     return searchTarget.searchUrl.replace(/\{search\}/, encodedSearchTerm)
   }
 
-  if (focusedItem !== null) {
-    return focusedItem.url
-  }
-
-  return null
+  return focusedItem !== null ? focusedItem.url : null
 }

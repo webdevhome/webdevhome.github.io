@@ -1,9 +1,7 @@
 import React, { memo } from 'react'
 import './Logo.scss'
 
-interface Props {}
-
-export const Logo = memo<Props>(function Logo() {
+export const Logo = memo(function Logo() {
   return (
     <div className="logo">
       <span className="logo__shape">&lt;</span>

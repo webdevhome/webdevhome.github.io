@@ -174,9 +174,7 @@ function useSearchMode({
   const handleGlobalKeypress = useCallback(
     (event: KeyboardEvent) => {
       if (isCurrentMode(AppMode.default)) {
-        if (event.key === '\n') {
-          return
-        }
+        if (event.key === '\n') return
 
         setSearchTerm(event.key)
         setCurrentMode(AppMode.search)
@@ -225,26 +223,25 @@ function useThemeSwitcher(): UseThemeSwitcherReturn {
   }, [bodyElement.className, themeState])
 
   const icon = useMemo((): string => {
-    if (themeState === 'light') {
-      return mdiWeatherSunny
-    }
-    if (themeState === 'dark') {
-      return mdiWeatherNight
-    }
+    if (themeState === 'light') return mdiWeatherSunny
+    if (themeState === 'dark') return mdiWeatherNight
     return mdiThemeLightDark
   }, [themeState])
 
   const switchTheme = useCallback((): void => {
     switch (themeState) {
-      case 'light':
+      case 'light': {
         setThemeState('dark')
         break
-      case 'dark':
+      }
+      case 'dark': {
         setThemeState('auto')
         break
-      default:
+      }
+      default: {
         setThemeState('light')
         break
+      }
     }
   }, [themeState])
 

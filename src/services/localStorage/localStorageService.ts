@@ -26,10 +26,14 @@ export function removeStorageValue(key: StorageKey): void {
 migrateLocalStorage()
 
 function migrateLocalStorage(): void {
-  const localStorageVersion = getStorageValue(StorageKey.storageVersion, 'v0')
+  const currentVersion = getStorageValue(StorageKey.storageVersion, 'v0')
 
-  switch (localStorageVersion) {
-    case 'v0':
-      migrateToV1()
+  const migrations = {
+    v0: migrateToV1,
   }
+
+  Object.entries(migrations).forEach(([version, migration]) => {
+    if (currentVersion !== version) return
+    migration()
+  })
 }

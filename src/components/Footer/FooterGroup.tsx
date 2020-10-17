@@ -1,12 +1,11 @@
-import React, { memo, ReactNode } from 'react'
+import React, { memo, PropsWithChildren } from 'react'
 import './FooterGroup.scss'
 
 interface Props {
-  children?: ReactNode
   title: string
 }
 
-export const FooterGroup = memo<Props>(function FooterGroup({
+export const FooterGroup = memo<PropsWithChildren<Props>>(function FooterGroup({
   children,
   title,
 }) {
