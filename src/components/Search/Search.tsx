@@ -2,7 +2,6 @@ import fuzzy from 'fuzzysort'
 import React, {
   ChangeEvent,
   Dispatch,
-
   KeyboardEvent as ReactKeyboardEvent,
   memo,
   SetStateAction,
@@ -260,19 +259,14 @@ function useSearch(
   const hiddenLinksContext = useContext(HiddenLinksContext)
 
   const visibleLinks = useMemo(() => {
-    if (hiddenLinksContext === null) {
-      return null
-    }
-
     return getAllLinks().filter(
       (link) => !hiddenLinksContext.hiddenLinks.includes(link.url)
     )
   }, [hiddenLinksContext])
 
-  const fuzzyOptions: Fuzzysort.KeyOptions = useMemo(
-    () => ({ key: 'title', allowTypo: false, limit: 6 }),
-    []
-  )
+  const fuzzyOptions: Fuzzysort.KeyOptions = useMemo(() => {
+    return { key: 'title', allowTypo: false, limit: 6 }
+  }, [])
 
   const results = useMemo(() => {
     if (visibleLinks === null) return null
@@ -282,10 +276,9 @@ function useSearch(
     return fuzzy.go(searchTerm, visibleLinks, fuzzyOptions)
   }, [fuzzyOptions, searchTarget, searchTerm, visibleLinks])
 
-  const focusedResult = useMemo(() => results?.[keyboardIndex] ?? null, [
-    keyboardIndex,
-    results,
-  ])
+  const focusedResult = useMemo(() => {
+    return results?.[keyboardIndex] ?? null
+  }, [keyboardIndex, results])
 
   useLayoutEffect(() => {
     setSearchTerm('')

@@ -3,7 +3,7 @@ import React, { memo, useCallback, useContext, useMemo } from 'react'
 import { AppMode, CurrentModeContext } from '../../contexts/currentModeContext'
 import {
   HiddenLinksContext,
-  LinkState
+  LinkVisibilityAction
 } from '../../contexts/hiddenLinksContext'
 import { LinkGroup as ILinkGroup, LinkItem } from '../../links'
 import { classes } from '../../utils/jsx'
@@ -29,7 +29,6 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
 
   const allGroupLinksAreHidden = useCallback(
     (items: LinkItem[]): boolean => {
-      if (hiddenLinksContext === null) return false
       const { allLinksAreHidden } = hiddenLinksContext
       return allLinksAreHidden(...items)
     },
@@ -38,22 +37,19 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
 
   const handleToggleGroupClick = useCallback(
     (...items: LinkItem[]): void => {
-      if (hiddenLinksContext === null) return
       const { toggleGroup, allLinksAreHidden } = hiddenLinksContext
-      const newState: LinkState = allLinksAreHidden(...items) ? 'show' : 'hide'
+      const newState: LinkVisibilityAction = allLinksAreHidden(...items)
+        ? LinkVisibilityAction.show
+        : LinkVisibilityAction.hide
       toggleGroup(newState, ...items.map((item) => item.url))
     },
     [hiddenLinksContext]
   )
 
   const noVisibleLinksInGroup = useMemo(() => {
-    if (hiddenLinksContext === null) return false
     const { allLinksAreHidden } = hiddenLinksContext
     return allLinksAreHidden(...group.items)
   }, [group.items, hiddenLinksContext])
-
-  if (currentModeContext === null) return null
-  if (hiddenLinksContext === null) return null
 
   const { isCurrentMode } = currentModeContext
   const { hiddenLinks } = hiddenLinksContext

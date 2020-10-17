@@ -39,7 +39,6 @@ export const Link = memo<Props>(function Link({
   const handleLinkClick = useCallback(
     (event: MouseEvent<HTMLAnchorElement>): void => {
       if (!customize) return
-      if (hiddenLinksContext === null) return
 
       event.preventDefault()
       hiddenLinksContext.toggleLink(url)
