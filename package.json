@@ -1,6 +1,6 @@
 {
   "name": "webdevhome",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
