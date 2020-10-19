@@ -948,6 +948,12 @@
           "color": "#e34f26"
         },
         {
+          "title": "CSS Weekly",
+          "url": "https://css-weekly.com",
+          "icon": "css3",
+          "color": "#1572b6"
+        },
+        {
           "title": "JavaScript Weekly",
           "url": "https://javascriptweekly.com",
           "icon": "javascript",
