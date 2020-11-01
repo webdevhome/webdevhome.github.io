@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from 'react'
 import { ReactSVG } from 'react-svg'
 import { LinkItem } from '../../links'
-import { getIconUrl } from './getIconUrl'
+import { getIconUrl } from '../../utils/getIconUrl'
 import './SearchTargetItem.scss'
 
 interface Props {

@@ -9,10 +9,10 @@ import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
 import { AppMode } from '../../stores/appMode/appModeReducer'
 import { toggleHiddenLink } from '../../stores/hiddenLinks/hiddenLinksActions'
 import { setSearchTarget } from '../../stores/search/searchActions'
+import { getIconUrl } from '../../utils/getIconUrl'
 import { classes } from '../../utils/jsx'
 import { DefaultIcon } from '../Icon/DefaultIcon'
 import { MdiIcon } from '../Icon/MdiIcon'
-import { getIconUrl } from '../Search/getIconUrl'
 import './Link.scss'
 
 interface Props {
