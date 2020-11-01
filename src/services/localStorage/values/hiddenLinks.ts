@@ -1,3 +1,4 @@
+import { LinkItem } from '../../../links'
 import {
   getStorageValue,
   removeStorageValue,
@@ -5,7 +6,7 @@ import {
   StorageKey
 } from '../localStorageService'
 
-export function loadHiddenLinks(): string[] {
+export function loadHiddenLinks(): Array<LinkItem['url']> {
   const storageString = getStorageValue(StorageKey.hiddenItems)
 
   if (storageString === null) {
@@ -32,11 +33,11 @@ export function loadHiddenLinks(): string[] {
   }
 }
 
-export function saveHiddenLinks(values: string[]): void {
+export function saveHiddenLinks(values: Array<LinkItem['url']>): void {
   try {
     const storageString = JSON.stringify(values)
     setStorageValue(StorageKey.hiddenItems, storageString)
   } catch {
-    throw new Error('[setHiddenLinks()] Values cannot be serialized to JSON.')
+    throw new Error('[saveHiddenLinks()] "values" is no valid JSON.')
   }
 }

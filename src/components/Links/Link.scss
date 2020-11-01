@@ -68,11 +68,9 @@
     margin-right: 10px;
   }
 
-  &:not(&--has-focus) &__info {
-    opacity: 0.2;
-  }
-
   &__info-text {
+    display: flex;
+    align-items: center;
     vertical-align: middle;
     font-size: 14px;
   }
@@ -81,11 +79,20 @@
     font-size: inherit;
   }
 
+  &:not(&--has-focus) &__info-text > kbd {
+    display: none;
+  }
+
   &__image {
     align-self: center;
     max-width: 100px;
     border: 1px solid hsla(0, 0%, 0%, 0);
     box-sizing: border-box;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
   }
 
   &__action {

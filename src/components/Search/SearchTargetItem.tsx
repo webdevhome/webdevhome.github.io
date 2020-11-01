@@ -1,7 +1,7 @@
-import React, { memo, useCallback } from 'react'
+import React, { memo, useMemo } from 'react'
 import { ReactSVG } from 'react-svg'
 import { LinkItem } from '../../links'
-import { getIconUrl } from '../../utils/misc'
+import { getIconUrl } from './getIconUrl'
 import './SearchTargetItem.scss'
 
 interface Props {
@@ -10,15 +10,13 @@ interface Props {
   color: LinkItem['color']
 }
 
-export const SearchTargetItem = memo<Props>(function SearchTargetItem({
+export const SearchTargetLabel = memo<Props>(function SearchTargetItem({
   title,
   icon,
   color,
 }) {
-  const getIcon = useCallback(() => {
-    if (icon === undefined) {
-      return null
-    }
+  const searchTargetIcon = useMemo(() => {
+    if (icon === undefined) return null
 
     const iconUrl = getIconUrl(icon)
 
@@ -31,7 +29,7 @@ export const SearchTargetItem = memo<Props>(function SearchTargetItem({
 
   return (
     <div className="search-target-item">
-      Search on {getIcon()} {title}:
+      Search on {searchTargetIcon} {title}:
     </div>
   )
 })

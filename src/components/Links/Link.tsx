@@ -1,49 +1,58 @@
-import { mdiEye, mdiEyeOff } from '@mdi/js'
-import React, {
-  memo,
-  MouseEvent,
-  useCallback,
-  useContext,
-  useMemo
-} from 'react'
+import { mdiEye, mdiEyeOff, mdiMagnify } from '@mdi/js'
+import React, { memo, MouseEvent, useCallback, useMemo } from 'react'
+import { useDispatch } from 'react-redux'
 import { ReactSVG } from 'react-svg'
-import { HiddenLinksContext } from '../../contexts/hiddenLinksContext'
+import { LinkItem, SearchTarget } from '../../links'
+import { AppDispatch } from '../../stores'
+import { setAppMode } from '../../stores/appMode/appModeActions'
+import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
+import { AppMode } from '../../stores/appMode/appModeReducer'
+import { toggleHiddenLink } from '../../stores/hiddenLinks/hiddenLinksActions'
+import { setSearchTarget } from '../../stores/search/searchActions'
 import { classes } from '../../utils/jsx'
-import { getIconUrl } from '../../utils/misc'
 import { DefaultIcon } from '../Icon/DefaultIcon'
 import { MdiIcon } from '../Icon/MdiIcon'
+import { getIconUrl } from '../Search/getIconUrl'
 import './Link.scss'
 
 interface Props {
-  title: string
-  url: string
-  icon?: string
-  color?: string
+  link: LinkItem
   searchable?: boolean
-  customize?: boolean
   visible?: boolean
   focus?: boolean
 }
 
 export const Link = memo<Props>(function Link({
-  title,
-  url,
-  icon,
-  color,
+  link,
   searchable = false,
-  customize = false,
   visible = true,
   focus = false,
 }) {
-  const hiddenLinksContext = useContext(HiddenLinksContext)
+  const isCurrentAppMode = useIsCurrentAppMode()
+  const dispatch: AppDispatch = useDispatch()
+
+  const isCustomizeMode = useMemo(() => isCurrentAppMode(AppMode.customize), [
+    isCurrentAppMode,
+  ])
+
   const handleLinkClick = useCallback(
     (event: MouseEvent<HTMLAnchorElement>): void => {
-      if (!customize) return
+      if (!isCustomizeMode) return
 
       event.preventDefault()
-      hiddenLinksContext.toggleLink(url)
+      dispatch(toggleHiddenLink(link.url))
     },
-    [customize, hiddenLinksContext, url]
+    [dispatch, isCustomizeMode, link.url]
+  )
+
+  const handleSearchClick = useCallback(
+    (event: MouseEvent<HTMLDivElement>) => {
+      event.stopPropagation()
+      event.preventDefault()
+      dispatch(setAppMode(AppMode.search))
+      dispatch(setSearchTarget(link as SearchTarget))
+    },
+    [dispatch, link]
   )
 
   const linkClasses = useMemo(
@@ -52,45 +61,50 @@ export const Link = memo<Props>(function Link({
         link: true,
         'link--is-visible': visible,
         'link--has-focus': focus,
-        'link--customize-mode': customize,
+        'link--customize-mode': isCustomizeMode,
       }),
-    [customize, focus, visible]
+    [focus, isCustomizeMode, visible]
   )
 
-  if (!customize && !visible) {
-    return null
-  }
+  if (!isCustomizeMode && !visible) return null
 
   return (
     <a
-      href={url}
+      href={link.url}
       rel="noreferrer"
       className={linkClasses}
       onClick={handleLinkClick}
     >
-      <div className="link__icon-container" style={{ color }}>
-        {icon !== undefined ? (
-          <ReactSVG src={getIconUrl(icon)} className="link__icon" />
+      <div className="link__icon-container" style={{ color: link.color }}>
+        {link.icon !== undefined ? (
+          <ReactSVG src={getIconUrl(link.icon)} className="link__icon" />
         ) : (
           <DefaultIcon />
         )}
       </div>
 
-      <div className="link__label">{title}</div>
+      <div className="link__label">{link.title}</div>
 
-      {searchable ? (
-        <div className="link__info">
-          <span className="link__info-text">
-            <kbd>Tab</kbd>: Search on site
-          </span>
-        </div>
-      ) : null}
+      <div className="link__actions">
+        {searchable && !isCustomizeMode ? (
+          <>
+            <div className="link__info">
+              <span className="link__info-text">
+                <kbd>Tab</kbd>
+              </span>
+            </div>
+            <div className="link__action" onClick={handleSearchClick}>
+              <MdiIcon path={mdiMagnify} />
+            </div>
+          </>
+        ) : null}
 
-      {customize ? (
-        <div className="link__action">
-          <MdiIcon path={visible ? mdiEye : mdiEyeOff} />
-        </div>
-      ) : null}
+        {isCustomizeMode ? (
+          <div className="link__action">
+            <MdiIcon path={visible ? mdiEye : mdiEyeOff} />
+          </div>
+        ) : null}
+      </div>
     </a>
   )
 })

@@ -1,11 +1,14 @@
 import { mdiTableEye, mdiTableEyeOff } from '@mdi/js'
-import React, { memo, useCallback, useContext, useMemo } from 'react'
-import { AppMode, CurrentModeContext } from '../../contexts/currentModeContext'
-import {
-  HiddenLinksContext,
-  LinkVisibilityAction
-} from '../../contexts/hiddenLinksContext'
+import React, { memo, useCallback, useMemo } from 'react'
+import { useDispatch } from 'react-redux'
 import { LinkGroup as ILinkGroup, LinkItem } from '../../links'
+import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
+import { AppMode } from '../../stores/appMode/appModeReducer'
+import { toggleHiddenLinksGroup } from '../../stores/hiddenLinks/hiddenLinksActions'
+import {
+  useAllLinksInGroupAreHidden,
+  useLinkIsHidden
+} from '../../stores/hiddenLinks/hiddenLinksHooks'
 import { classes } from '../../utils/jsx'
 import { MdiIcon } from '../Icon/MdiIcon'
 import { Link } from './Link'
@@ -16,52 +19,47 @@ interface Props {
 }
 
 export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
-  const currentModeContext = useContext(CurrentModeContext)
-  const hiddenLinksContext = useContext(HiddenLinksContext)
+  const allLinksInGroupAreHidden = useAllLinksInGroupAreHidden()
+  const isCurrentAppMode = useIsCurrentAppMode()
+  const linkIsHidden = useLinkIsHidden()
+  const dispatch = useDispatch()
 
   const linkGroupClasses = useMemo(() => {
     return classes({
       'link-group': true,
       'link-group--is-visible':
-        !hiddenLinksContext?.allLinksAreHidden(...group.items) ?? false,
+        !allLinksInGroupAreHidden(group.items.map((link) => link.url)) ?? false,
     })
-  }, [group.items, hiddenLinksContext])
+  }, [allLinksInGroupAreHidden, group.items])
 
   const allGroupLinksAreHidden = useCallback(
     (items: LinkItem[]): boolean => {
-      const { allLinksAreHidden } = hiddenLinksContext
-      return allLinksAreHidden(...items)
+      return allLinksInGroupAreHidden(items.map((link) => link.url))
     },
-    [hiddenLinksContext]
+    [allLinksInGroupAreHidden]
   )
 
   const handleToggleGroupClick = useCallback(
     (...items: LinkItem[]): void => {
-      const { toggleGroup, allLinksAreHidden } = hiddenLinksContext
-      const newState: LinkVisibilityAction = allLinksAreHidden(...items)
-        ? LinkVisibilityAction.show
-        : LinkVisibilityAction.hide
-      toggleGroup(newState, ...items.map((item) => item.url))
+      dispatch(toggleHiddenLinksGroup(items.map((link) => link.url)))
     },
-    [hiddenLinksContext]
+    [dispatch]
   )
 
   const noVisibleLinksInGroup = useMemo(() => {
-    const { allLinksAreHidden } = hiddenLinksContext
-    return allLinksAreHidden(...group.items)
-  }, [group.items, hiddenLinksContext])
+    return allLinksInGroupAreHidden(group.items.map((link) => link.url))
+  }, [allLinksInGroupAreHidden, group.items])
 
-  const { isCurrentMode } = currentModeContext
-  const { hiddenLinks } = hiddenLinksContext
-
-  if (noVisibleLinksInGroup && !isCurrentMode(AppMode.customize)) return null
+  if (noVisibleLinksInGroup && !isCurrentAppMode(AppMode.customize)) {
+    return null
+  }
 
   return (
     <div className={linkGroupClasses}>
       <div className="link-group__header">
         <div className="link-group__name">{group.name}</div>
 
-        {isCurrentMode(AppMode.customize) ? (
+        {isCurrentAppMode(AppMode.customize) ? (
           <div
             className="link-group__action"
             onClick={() => handleToggleGroupClick(...group.items)}
@@ -78,12 +76,9 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
         {group.items.map((link) => (
           <Link
             key={link.url}
-            title={link.title}
-            url={link.url}
-            icon={link.icon}
-            color={link.color}
-            customize={isCurrentMode(AppMode.customize)}
-            visible={!hiddenLinks.includes(link.url)}
+            link={link}
+            searchable={link.searchUrl !== undefined}
+            visible={!linkIsHidden(link)}
           />
         ))}
       </div>

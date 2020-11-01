@@ -1,19 +1,25 @@
-import { ThemeState } from '../../../App'
+import { AppTheme } from '../../../stores/appSettings/appSettingsReducer'
 import {
   getStorageValue,
   setStorageValue,
   StorageKey
 } from '../localStorageService'
 
-export function loadThemeSetting(): ThemeState {
-  const value = getStorageValue(StorageKey.themeSetting)
+export function loadThemeSetting(): AppTheme {
+  const value = getStorageValue(StorageKey.themeSetting) as AppTheme
 
-  if (value === null) return 'auto'
-  if (value !== 'auto' && value !== 'light' && value !== 'dark') return 'auto'
+  const noThemeValue = value === null
+  const invalidThemeValue =
+    value !== AppTheme.auto &&
+    value !== AppTheme.light &&
+    value !== AppTheme.dark
+
+  if (invalidThemeValue) saveThemeSetting(AppTheme.auto)
+  if (noThemeValue || invalidThemeValue) return AppTheme.auto
 
   return value
 }
 
-export function saveThemeSetting(value: ThemeState): void {
+export function saveThemeSetting(value: AppTheme): void {
   setStorageValue(StorageKey.themeSetting, value)
 }

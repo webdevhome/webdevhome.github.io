@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { WebdevHome } from './App'
-import { Contexts } from './Contexts'
+import { Provider } from 'react-redux'
+import { WebdevHome } from './components/App/App'
 import './index.scss'
+import { store } from './stores'
 
 ReactDOM.render(
-  <Contexts>
+  <Provider store={store}>
     <WebdevHome />
-  </Contexts>,
+  </Provider>,
   document.getElementById('root')
 )
