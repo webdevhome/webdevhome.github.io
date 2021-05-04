@@ -97,6 +97,35 @@
       ]
     },
     {
+      "name": "CI/CD/Deployment",
+      "items": [
+        {
+          "title": "CircleCI",
+          "url": "https://circleci.com/",
+          "icon": "circleCi",
+          "color": "#343434"
+        },
+        {
+          "title": "Jenkins",
+          "url": "https://www.jenkins.io/",
+          "icon": "jenkins",
+          "color": "#D24939"
+        },
+        {
+          "title": "Buddy",
+          "url": "https://buddy.works",
+          "icon": "buddy",
+          "color": "#1A86FD"
+        },
+        {
+          "title": "Octopus Deploy",
+          "url": "https://octopus.com/",
+          "icon": "octopusDeploy",
+          "color": "#2f93e0"
+        }
+      ]
+    },
+    {
       "name": "Find help and discuss",
       "items": [
         {
@@ -105,6 +134,22 @@
           "icon": "stackoverflow",
           "color": "#fe7a16",
           "searchUrl": "https://stackoverflow.com/search?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Super User",
+          "url": "https://superuser.com",
+          "icon": "superUser",
+          "color": "#38A1CE",
+          "searchUrl": "https://superuser.com/search?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Server Fault",
+          "url": "https://serverfault.com",
+          "icon": "serverFault",
+          "color": "#E7282D",
+          "searchUrl": "https://serverfault.com/search?q={search}",
           "searchConcat": "+"
         },
         {
@@ -214,6 +259,12 @@
       "name": "Development Platforms",
       "items": [
         {
+          "title": "Chrome Developers",
+          "url": "https://developer.chrome.com",
+          "icon": "googlechrome",
+          "color": "#4285F4"
+        },
+        {
           "title": "ChromeOS.dev",
           "url": "https://chromeos.dev",
           "icon": "googlechrome",
@@ -241,6 +292,8 @@
         {
           "title": "OWASP Cheat Sheet Series Project",
           "url": "https://cheatsheetseries.owasp.org",
+          "icon": "owasp",
+          "color": "#000000",
           "searchUrl": "https://cheatsheetseries.owasp.org/?q={search}",
           "searchConcat": "%20"
         },
@@ -282,6 +335,10 @@
         {
           "title": "JS Bin",
           "url": "https://jsbin.com"
+        },
+        {
+          "title": "regex101",
+          "url": "https://regex101.com/"
         }
       ]
     },
@@ -300,6 +357,25 @@
           "icon": "stackshare",
           "color": "#0690fa",
           "searchUrl": "https://stackshare.io/search/q={search}",
+          "searchConcat": "%20"
+        }
+      ]
+    },
+    {
+      "name": "UI Design",
+      "items": [
+        {
+          "title": "Tailwind CSS",
+          "url": "https://tailwindcss.com/",
+          "icon": "tailwindCss",
+          "color": "#38B2AC"
+        },
+        {
+          "title": "Material Design",
+          "url": "https://material.io/design",
+          "icon": "materialDesign",
+          "color": "#757575",
+          "searchUrl": "https://material.io/search.html?q={search}",
           "searchConcat": "%20"
         }
       ]
@@ -408,10 +484,22 @@
       "name": "Code safe and secure",
       "items": [
         {
+          "title": "webhint",
+          "url": "https://webhint.io",
+          "icon": "webhint",
+          "color": "#a700a3"
+        },
+        {
           "title": "ESLint",
           "url": "https://eslint.org",
           "icon": "eslint",
           "color": "#4B32C3"
+        },
+        {
+          "title": "Puppeteer",
+          "url": "https://developers.google.com/web/tools/puppeteer/",
+          "icon": "puppeteer",
+          "color": "#40B5A4"
         },
         {
           "title": "Jest",
@@ -433,7 +521,15 @@
         },
         {
           "title": "EditorConfig",
-          "url": "https://editorconfig.org"
+          "url": "https://editorconfig.org",
+          "icon": "editorconfig",
+          "color": "#000000"
+        },
+        {
+          "title": "Let's Encrypt",
+          "url": "https://letsencrypt.org",
+          "icon": "letsEncrypt",
+          "color": "#003a70"
         }
       ]
     },
@@ -445,6 +541,16 @@
           "url": "https://webpack.js.org",
           "icon": "webpack",
           "color": "#8DD6F9"
+        },
+        {
+          "title": "Vite",
+          "url": "https://vitejs.dev",
+          "icon": "vite",
+          "color": "#646CFF"
+        },
+        {
+          "title": "Rome",
+          "url": "https://rome.tools/"
         },
         {
           "title": "Parcel",
@@ -486,6 +592,12 @@
           "color": "#007acc"
         },
         {
+          "title": "AssemblyScript",
+          "url": "https://www.assemblyscript.org",
+          "icon": "assemblyScript",
+          "color": "#007AAC"
+        },
+        {
           "title": "Reason",
           "url": "https://reasonml.github.io",
           "icon": "reason",
@@ -518,10 +630,22 @@
           "searchConcat": "+"
         },
         {
+          "title": "Kotlin",
+          "url": "https://kotlinlang.org/",
+          "icon": "kotlin",
+          "color": "#0095D5"
+        },
+        {
           "title": "Swift",
           "url": "https://swift.org",
           "icon": "swift",
           "color": "#FA7343"
+        },
+        {
+          "title": "Rust",
+          "url": "https://rust-lang.org",
+          "icon": "rust",
+          "color": "#000000"
         },
         {
           "title": "Golang",
@@ -569,6 +693,10 @@
           "searchConcat": "+"
         },
         {
+          "title": "Coding Fonts (by CSS Tricks)",
+          "url": "https://coding-fonts.css-tricks.com/"
+        },
+        {
           "title": "Pexels",
           "url": "https://www.pexels.com",
           "icon": "pexels",
@@ -591,6 +719,10 @@
           "color": "#3863A0",
           "searchUrl": "https://www.toptal.com/designers/subtlepatterns/?s={search}",
           "searchConcat": "+"
+        },
+        {
+          "title": "Transparent Textures",
+          "url": "https://transparenttextures.com/"
         }
       ]
     },
@@ -777,6 +909,16 @@
           "searchConcat": "%20"
         },
         {
+          "title": "GitKraken",
+          "url": "https://gitkraken.com",
+          "icon": "gitKraken",
+          "color": "#179287"
+        },
+        {
+          "title": "Fork (Git Client)",
+          "url": "https://git-fork.com"
+        },
+        {
           "title": "Docker",
           "url": "https://www.docker.com",
           "icon": "docker",
@@ -789,6 +931,12 @@
           "url": "https://kubernetes.io",
           "icon": "kubernetes",
           "color": "#326CE5"
+        },
+        {
+          "title": "Vagrant",
+          "url": "https://www.vagrantup.com",
+          "icon": "vagrant",
+          "color": "#1563ff"
         },
         {
           "title": "Visual Studio Code",
@@ -952,6 +1100,12 @@
           "url": "https://css-weekly.com",
           "icon": "css3",
           "color": "#1572b6"
+        },
+        {
+          "title": "Tailwind Weekly",
+          "url": "https://www.getrevue.co/profile/tailwind-weekly",
+          "icon": "tailwindCss",
+          "color": "#38B2AC"
         },
         {
           "title": "JavaScript Weekly",
