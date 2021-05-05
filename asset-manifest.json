@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.174e0ae9.chunk.css",
+    "main.js": "/static/js/main.21ceaa39.chunk.js",
+    "main.js.map": "/static/js/main.21ceaa39.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.66df5ecd.js",
+    "runtime-main.js.map": "/static/js/runtime-main.66df5ecd.js.map",
+    "static/js/2.317d871e.chunk.js": "/static/js/2.317d871e.chunk.js",
+    "static/js/2.317d871e.chunk.js.map": "/static/js/2.317d871e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.174e0ae9.chunk.css.map": "/static/css/main.174e0ae9.chunk.css.map",
+    "static/js/2.317d871e.chunk.js.LICENSE.txt": "/static/js/2.317d871e.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/static/media/robotomono-regular.47313723.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.66df5ecd.js",
+    "static/js/2.317d871e.chunk.js",
+    "static/css/main.174e0ae9.chunk.css",
+    "static/js/main.21ceaa39.chunk.js"
+  ]
+}
