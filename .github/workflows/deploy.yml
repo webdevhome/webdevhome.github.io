@@ -28,6 +28,6 @@ jobs:
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BASE_BRANCH: develop
-        BRANCH: master
+        BRANCH: deploy
         FOLDER: build
         CLEAN: true
