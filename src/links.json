@@ -102,7 +102,7 @@
         {
           "title": "CircleCI",
           "url": "https://circleci.com/",
-          "icon": "circleCi",
+          "icon": "circleci",
           "color": "#343434"
         },
         {
@@ -120,7 +120,7 @@
         {
           "title": "Octopus Deploy",
           "url": "https://octopus.com/",
-          "icon": "octopusDeploy",
+          "icon": "octopusdeploy",
           "color": "#2f93e0"
         }
       ]
@@ -139,7 +139,7 @@
         {
           "title": "Super User",
           "url": "https://superuser.com",
-          "icon": "superUser",
+          "icon": "superuser",
           "color": "#38A1CE",
           "searchUrl": "https://superuser.com/search?q={search}",
           "searchConcat": "+"
@@ -147,7 +147,7 @@
         {
           "title": "Server Fault",
           "url": "https://serverfault.com",
-          "icon": "serverFault",
+          "icon": "serverfault",
           "color": "#E7282D",
           "searchUrl": "https://serverfault.com/search?q={search}",
           "searchConcat": "+"
@@ -367,13 +367,13 @@
         {
           "title": "Tailwind CSS",
           "url": "https://tailwindcss.com/",
-          "icon": "tailwindCss",
+          "icon": "tailwindcss",
           "color": "#38B2AC"
         },
         {
           "title": "Material Design",
           "url": "https://material.io/design",
-          "icon": "materialDesign",
+          "icon": "materialdesign",
           "color": "#757575",
           "searchUrl": "https://material.io/search.html?q={search}",
           "searchConcat": "%20"
@@ -528,7 +528,7 @@
         {
           "title": "Let's Encrypt",
           "url": "https://letsencrypt.org",
-          "icon": "letsEncrypt",
+          "icon": "letsencrypt",
           "color": "#003a70"
         }
       ]
@@ -594,7 +594,7 @@
         {
           "title": "AssemblyScript",
           "url": "https://www.assemblyscript.org",
-          "icon": "assemblyScript",
+          "icon": "assemblyscript",
           "color": "#007AAC"
         },
         {
@@ -911,7 +911,7 @@
         {
           "title": "GitKraken",
           "url": "https://gitkraken.com",
-          "icon": "gitKraken",
+          "icon": "gitkraken",
           "color": "#179287"
         },
         {
@@ -1104,7 +1104,7 @@
         {
           "title": "Tailwind Weekly",
           "url": "https://www.getrevue.co/profile/tailwind-weekly",
-          "icon": "tailwindCss",
+          "icon": "tailwindcss",
           "color": "#38B2AC"
         },
         {
