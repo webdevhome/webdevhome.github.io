@@ -6,7 +6,7 @@ import {
   useCallback,
   useEffect,
   useMemo,
-  useState
+  useState,
 } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllLinks, LinkItem, SearchTarget } from '../../links'
@@ -17,7 +17,7 @@ import { useLinkIsHidden } from '../../stores/hiddenLinks/hiddenLinksHooks'
 import {
   setOnSiteSearchTerm,
   setSearchTarget,
-  setSearchTerm
+  setSearchTerm,
 } from '../../stores/search/searchActions'
 import { getUrl } from './getUrl'
 
@@ -38,6 +38,9 @@ export function useSearch({
   searchInputRef,
 }: UseSearchParams): UseSearchReturn {
   const searchTerm = useSelector((state: AppState) => state.search.searchTerm)
+  const onSiteSearchTerm = useSelector(
+    (state: AppState) => state.search.onSiteSearchTerm
+  )
   const linkIsHidden = useLinkIsHidden()
   const dispatch = useDispatch()
   const searchTarget = useSelector(
@@ -116,13 +119,16 @@ export function useSearch({
     (event: KeyboardEvent<HTMLInputElement>): void => {
       switch (event.key) {
         case 'Backspace': {
-          if (searchTerm !== '') return
-
-          if (searchTarget !== null) {
+          if (searchTarget !== null && onSiteSearchTerm === '') {
             dispatch(setSearchTarget(null))
-          } else {
+            event.preventDefault()
+            if (searchTerm === '') {
+              dispatch(setAppMode(AppMode.default))
+            }
+          } else if (searchTerm === '' && onSiteSearchTerm === '') {
             dispatch(setAppMode(AppMode.default))
           }
+
           break
         }
 
@@ -178,10 +184,10 @@ export function useSearch({
       dispatch,
       focusedResult,
       keyboardIndex,
+      onSiteSearchTerm,
       results,
       searchTarget,
       searchTerm,
-      setKeyboardIndex,
     ]
   )
 
