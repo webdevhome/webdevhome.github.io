@@ -150,7 +150,7 @@ export function useSearch({
           const url = getUrl(
             focusedResult?.obj ?? null,
             searchTarget,
-            searchTerm
+            onSiteSearchTerm
           )
 
           if (url === null) return
