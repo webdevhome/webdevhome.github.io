@@ -75,11 +75,13 @@ export function useSearch({
     (event: globalThis.KeyboardEvent) => {
       if (event.key === 'Escape') {
         if (searchTarget !== null) {
+          event.preventDefault()
           dispatch(setSearchTarget(null))
           if (searchTerm === '') {
             dispatch(setAppMode(AppMode.default))
           }
         } else {
+          event.preventDefault()
           dispatch(setAppMode(AppMode.default))
         }
         return
@@ -120,12 +122,13 @@ export function useSearch({
       switch (event.key) {
         case 'Backspace': {
           if (searchTarget !== null && onSiteSearchTerm === '') {
-            dispatch(setSearchTarget(null))
             event.preventDefault()
+            dispatch(setSearchTarget(null))
             if (searchTerm === '') {
               dispatch(setAppMode(AppMode.default))
             }
           } else if (searchTerm === '' && onSiteSearchTerm === '') {
+            event.preventDefault()
             dispatch(setAppMode(AppMode.default))
           }
 
