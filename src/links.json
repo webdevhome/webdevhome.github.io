@@ -467,6 +467,12 @@
           "color": "#764ABC"
         },
         {
+          "title": "MobX",
+          "url": "https://mobx.js.org",
+          "icon": "mobx",
+          "color": "#FF9955"
+        },
+        {
           "title": "Apollo",
           "url": "https://www.apollographql.com",
           "icon": "apollographql",
@@ -1122,6 +1128,12 @@
           "url": "https://www.typescript-weekly.com",
           "icon": "typescript",
           "color": "#007acc"
+        },
+        {
+          "title": "WebAssembly Weekly",
+          "url": "https://wasmweekly.news",
+          "icon": "webassembly",
+          "color": "#654FF0"
         },
         {
           "title": "Node Weekly",
