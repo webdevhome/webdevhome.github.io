@@ -51,6 +51,8 @@
         {
           "title": "Packagist (PHP packages)",
           "url": "https://packagist.org",
+          "icon": "packagist",
+          "color": "#F28D1A",
           "searchUrl": "https://packagist.org/?query={search}",
           "searchConcat": "%20"
         },
@@ -693,7 +695,7 @@
         {
           "title": "Google Fonts",
           "url": "https://fonts.google.com",
-          "icon": "google",
+          "icon": "googlefonts",
           "color": "#4285F4",
           "searchUrl": "https://fonts.google.com/?query={search}",
           "searchConcat": "+"
