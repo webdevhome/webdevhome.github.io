@@ -57,6 +57,14 @@
           "searchConcat": "%20"
         },
         {
+          "title": "Nuget",
+          "url": "https://nuget.org",
+          "icon": "nuget",
+          "color": "#004880",
+          "searchUrl": "https://www.nuget.org/packages?q={search}",
+          "searchConcat": "+"
+        },
+        {
           "title": "Go Packages",
           "url": "https://pkg.go.dev",
           "icon": "go",
