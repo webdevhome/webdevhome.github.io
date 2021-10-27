@@ -1164,6 +1164,12 @@
           "color": "#4fc08d"
         },
         {
+          "title": "React Status Newsletter",
+          "url": "https://react.statuscode.com",
+          "icon": "react",
+          "color": "#61dafb"
+        },
+        {
           "title": "React.js Newsletter",
           "url": "http://reactjsnewsletter.com",
           "icon": "react",
