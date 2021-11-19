@@ -489,10 +489,22 @@
           "color": "#311C87"
         },
         {
+          "title": "i18next",
+          "url": "https://www.i18next.com",
+          "icon": "i18next",
+          "color": "#26A69A",
+          "searchUrl": "https://www.i18next.com/?q={search}",
+          "searchConcat": "+"
+        },
+        {
           "title": "RxJS",
           "url": "https://rxjs.dev",
           "icon": "reactivex",
           "color": "#B7178C"
+        },
+        {
+          "title": "HeadlessUI",
+          "url": "https://headlessui.dev/"
         }
       ]
     },
