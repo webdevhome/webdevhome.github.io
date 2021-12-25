@@ -6,13 +6,15 @@ import './AppAction.scss'
 interface Props {
   icon: string
   active: boolean
+  title?: string
   action: () => void
 }
 
 export const AppAction = memo<Props>(function AppAction({
   icon,
-  action,
   active,
+  title,
+  action,
 }) {
   const actionClasses = useMemo(
     () => ({
@@ -23,8 +25,8 @@ export const AppAction = memo<Props>(function AppAction({
   )
 
   return (
-    <div className={classes(actionClasses)} onClick={action}>
-      <MdiIcon path={icon} />
+    <div className={classes(actionClasses)} onClick={action} title={title}>
+      <MdiIcon path={icon} title={title} />
     </div>
   )
 })

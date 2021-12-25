@@ -8,12 +8,11 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { getAllLinks, LinkItem, SearchTarget } from '../../links'
-import { AppState } from '../../stores'
+import { useAppDispatch, useAppSelector } from '../../stores'
 import { setAppMode } from '../../stores/appMode/appModeActions'
 import { AppMode } from '../../stores/appMode/appModeReducer'
-import { useLinkIsHidden } from '../../stores/hiddenLinks/hiddenLinksHooks'
+import { useGetIsLinkHidden } from '../../stores/hiddenLinks/hiddenLinksHooks'
 import {
   setOnSiteSearchTerm,
   setSearchTarget,
@@ -21,7 +20,14 @@ import {
 } from '../../stores/search/searchActions'
 import { getUrl } from './getUrl'
 
-const fuzzyOptions = { key: 'title', allowTypo: false, limit: 6 }
+const fuzzyOptions = { key: 'title', allowTypo: false }
+const maxResultsCount = 6
+const maxHiddenResultsCount = 2
+
+interface GroupedLinks {
+  visible: LinkItem[]
+  hidden: LinkItem[]
+}
 
 interface UseSearchParams {
   searchInputRef: RefObject<HTMLInputElement>
@@ -29,6 +35,7 @@ interface UseSearchParams {
 
 interface UseSearchReturn {
   results: Fuzzysort.KeyResults<LinkItem> | null
+  hiddenResults: Fuzzysort.KeyResults<LinkItem> | null
   focusedResult: Fuzzysort.KeyResult<LinkItem> | null
   handleInputKeydown: (event: KeyboardEvent<HTMLInputElement>) => void
   handleInputChange: (event: ChangeEvent<HTMLInputElement>) => void
@@ -37,33 +44,60 @@ interface UseSearchReturn {
 export function useSearch({
   searchInputRef,
 }: UseSearchParams): UseSearchReturn {
-  const searchTerm = useSelector((state: AppState) => state.search.searchTerm)
-  const onSiteSearchTerm = useSelector(
-    (state: AppState) => state.search.onSiteSearchTerm
+  const searchTerm = useAppSelector((state) => state.search.searchTerm)
+  const onSiteSearchTerm = useAppSelector(
+    (state) => state.search.onSiteSearchTerm
   )
-  const linkIsHidden = useLinkIsHidden()
-  const dispatch = useDispatch()
-  const searchTarget = useSelector(
-    (state: AppState) => state.search.searchTarget
-  )
+  const searchTarget = useAppSelector((state) => state.search.searchTarget)
+  const getIsLinkHidden = useGetIsLinkHidden()
+  const dispatch = useAppDispatch()
 
   const [keyboardIndex, setKeyboardIndex] = useState<number>(0)
 
-  const visibleLinks = useMemo(() => {
-    return getAllLinks().filter((link) => !linkIsHidden(link))
-  }, [linkIsHidden])
+  const links = useMemo(() => {
+    const result: GroupedLinks = { visible: [], hidden: [] }
+    const allLinks = getAllLinks()
+
+    for (const link of allLinks) {
+      result[getIsLinkHidden(link) ? 'hidden' : 'visible'].push(link)
+    }
+
+    return result
+  }, [getIsLinkHidden])
 
   const results = useMemo(() => {
-    if (visibleLinks === null) return null
+    if (links.visible.length === 0) return null
     if (searchTerm === '') return null
     if (searchTarget !== null) return null
 
-    return fuzzy.go(searchTerm, visibleLinks, fuzzyOptions)
-  }, [searchTarget, searchTerm, visibleLinks])
+    return fuzzy.go(searchTerm, links.visible, {
+      ...fuzzyOptions,
+      limit: maxResultsCount,
+    })
+  }, [searchTarget, searchTerm, links])
+
+  const hiddenResults = useMemo(() => {
+    if (links.hidden.length === 0) return null
+    if (searchTerm === '') return null
+    if (searchTarget !== null) return null
+
+    return fuzzy.go(searchTerm, links.hidden, {
+      ...fuzzyOptions,
+      limit: maxHiddenResultsCount,
+    })
+  }, [links.hidden, searchTarget, searchTerm])
 
   const focusedResult = useMemo(() => {
-    return results?.[keyboardIndex] ?? null
-  }, [keyboardIndex, results])
+    if (results !== null && keyboardIndex < results.length) {
+      return results[keyboardIndex]
+    }
+
+    if (hiddenResults !== null) {
+      return hiddenResults[keyboardIndex - (results?.length ?? 0)]
+    }
+
+    return null
+  }, [hiddenResults, keyboardIndex, results])
 
   useEffect(() => {
     setTimeout(() => {
@@ -179,13 +213,22 @@ export function useSearch({
           if (results === null) return
 
           event.preventDefault()
-          setKeyboardIndex(Math.min(results.total - 1, keyboardIndex + 1))
+
+          const resultsCount = Math.min(results.total, maxResultsCount)
+          const hiddenResultsCount = Math.min(
+            hiddenResults?.total ?? 0,
+            maxHiddenResultsCount
+          )
+          const totalResultsCount = resultsCount + hiddenResultsCount
+
+          setKeyboardIndex(Math.min(totalResultsCount - 1, keyboardIndex + 1))
         }
       }
     },
     [
       dispatch,
       focusedResult,
+      hiddenResults?.total,
       keyboardIndex,
       onSiteSearchTerm,
       results,
@@ -194,5 +237,11 @@ export function useSearch({
     ]
   )
 
-  return { results, focusedResult, handleInputKeydown, handleInputChange }
+  return {
+    results,
+    hiddenResults,
+    focusedResult,
+    handleInputKeydown,
+    handleInputChange,
+  }
 }

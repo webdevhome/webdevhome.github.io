@@ -1,11 +1,16 @@
 .logo {
-  font-family: 'Roboto Mono';
+  font-family: var(--font-family-mono);
   font-size: 32px;
   line-height: 50px;
   user-select: none;
 
-  @media (max-width: 500px) {
+  @media (max-width: 900px) {
     text-align: center;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 26px;
+    line-height: 36px;
   }
 
   &__char-1 {

@@ -1,30 +1,44 @@
 import { AppTheme } from './appSettingsReducer'
 
-export const SET_THEME = 'SET_THEME'
+export const enum SettingsActions {
+  setTheme,
+  setDisplayDescription,
+}
 
 interface SetThemeAction {
-  type: typeof SET_THEME
+  type: SettingsActions.setTheme
   payload: AppTheme
 }
 
-export type AppSettingsActions = SetThemeAction
-
-export function setTheme(theme: AppTheme): SetThemeAction {
-  return { type: SET_THEME, payload: theme }
+interface SetDisplayDescriptionAction {
+  type: SettingsActions.setDisplayDescription
+  payload: boolean
 }
 
-export function cycleTheme(currentTheme: AppTheme): SetThemeAction {
+export type AppSettingsActions = SetThemeAction | SetDisplayDescriptionAction
+
+export function setTheme(payload: AppTheme): SetThemeAction {
+  return { type: SettingsActions.setTheme, payload }
+}
+
+export function setDisplayDescription(
+  payload: boolean
+): SetDisplayDescriptionAction {
+  return { type: SettingsActions.setDisplayDescription, payload }
+}
+
+export function cycleTheme(currentTheme: AppTheme): AppTheme {
   switch (currentTheme) {
     case AppTheme.auto: {
-      return { type: SET_THEME, payload: AppTheme.light }
+      return AppTheme.light
     }
 
     case AppTheme.light: {
-      return { type: SET_THEME, payload: AppTheme.dark }
+      return AppTheme.dark
     }
 
     case AppTheme.dark: {
-      return { type: SET_THEME, payload: AppTheme.auto }
+      return AppTheme.auto
     }
   }
 }

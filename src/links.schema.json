@@ -8,9 +8,14 @@
     "group": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "items"],
+      "required": [
+        "name",
+        "items"
+      ],
       "properties": {
-        "name": { "type": "string" },
+        "name": {
+          "type": "string"
+        },
         "items": {
           "type": "array",
           "items": {
@@ -22,25 +27,54 @@
     "link": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "url"],
+      "required": [
+        "title",
+        "url"
+      ],
       "dependencies": {
-        "icon": ["color"],
-        "color": ["icon"],
-        "searchUrl": ["searchConcat"],
-        "searchConcat": ["searchUrl"]
+        "icon": [
+          "color"
+        ],
+        "color": [
+          "icon"
+        ],
+        "searchUrl": [
+          "searchConcat"
+        ],
+        "searchConcat": [
+          "searchUrl"
+        ]
       },
       "properties": {
-        "title": { "type": "string" },
-        "url": { "type": "string", "format": "uri" },
-        "icon": { "type": "string" },
-        "color": { "type": "string" },
-        "searchUrl": { "type": "string" },
-        "searchConcat": { "type": "string" }
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "description": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        },
+        "searchUrl": {
+          "type": "string"
+        },
+        "searchConcat": {
+          "type": "string"
+        }
       }
     }
   },
   "properties": {
-    "$schema": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
     "items": {
       "type": "array",
       "items": {

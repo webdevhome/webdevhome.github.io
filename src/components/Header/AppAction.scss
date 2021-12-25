@@ -5,13 +5,13 @@
   width: var(--icon-button-size);
   height: var(--icon-button-size);
   color: var(--icon-color);
-  background-color: var(--link-item-background);
+  // background-color: var(--action-background);
   border-radius: calc(var(--icon-button-size) * 0.5);
   transition: box-shadow 0.05s ease-out;
   box-shadow: 0 0 0 0 var(--icon-focus-border);
 
   &:hover {
-    background-color: var(--primary-color-hover);
+    background-color: var(--action-background-hover);
   }
 
   &:active {

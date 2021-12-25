@@ -4,6 +4,7 @@ import { OptionalExceptFor } from './utilityTypes'
 export interface LinkItem {
   title: string
   url: string
+  description?: string
   icon?: string
   color?: string
   iconComp?: JSX.Element

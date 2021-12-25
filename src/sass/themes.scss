@@ -1,6 +1,14 @@
+:root {
+  --font-family-sans-serif: Roboto, Segoe UI, Helvetica, Helvetica Neue, Arial, Ubuntu,
+  sans-serif;
+  --font-family-mono: Roboto Mono, Cascadia Code, Consolas, monospace;
+}
+
 @mixin lightTheme() {
   --primary-color-hue: 190;
   --page-background: hsl(0, 0%, 100%);
+  --header-background: hsla(0, 0%, 100%, 1);
+  --header-background-transparent: hsla(0, 0%, 100%, 0.7);
   --icon-color: hsl(0, 0%, 0%);
   --icon-color-active: hsl(0, 0%, 100%);
   --icon-background: hsl(0, 0%, 100%);
@@ -8,14 +16,17 @@
   --primary-color: hsl(var(--primary-color-hue), 50%, 40%);
   --primary-color-pale: hsl(var(--primary-color-hue), 50%, 80%);
   --primary-color-dark: hsl(var(--primary-color-hue), 50%, 25%);
-  --primary-color-hover: hsl(0, 0%, 85%);
+  --action-background: hsl(0, 0%, 90%);
+  --action-background-hover: hsl(0, 0%, 80%);
   --action-color: hsl(var(--primary-color-hue), 50%, 40%);
   --action-color-inactive: hsl(var(--primary-color-hue), 50%, 70%);
-  --link-item-background: hsl(0, 0%, 90%);
   --link-item-background-hover: hsl(0, 0%, 90%);
   --link-item-color: hsl(var(--primary-color-hue), 0%, 30%);
-  --link-item-color-hover: hsl(var(--primary-color-hue), 50%, 0%);
+  --link-item-color-hover: hsl(var(--primary-color-hue), 0%, 0%);
+  --link-item-color-disabled: hsl(var(--primary-color-hue), 0%, 60%);
+  --link-item-color-hover-disabled: hsl(var(--primary-color-hue), 0%, 40%);
   --link-item-focus-border: hsl(0, 0%, 70%);
+  --link-item-description-text: hsl(0, 0%, 50%);
   --input-background: hsl(0, 0%, 90%);
   --input-text-color: hsl(0, 0%, 0%);
   --input-placeholder-color: hsl(0, 0%, 50%);
@@ -33,21 +44,24 @@
 @mixin darkTheme() {
   --primary-color-hue: 190;
   --page-background: hsl(0, 0%, 20%);
+  --header-background: hsla(0, 0%, 20%, 1);
+  --header-background-transparent: hsla(0, 0%, 20%, 0.7);
   --icon-color: hsl(0, 0%, 100%);
   --icon-color-active: hsl(0, 0%, 0%);
   --icon-focus-border: hsl(var(--primary-color-hue), 50%, 60%);
   --icon-background: hsl(0, 0%, 100%);
   --primary-color: hsl(var(--primary-color-hue), 50%, 80%);
-  --primary-color-pale: hsl(var(--primary-color-hue), 50%, 55%);
-  --primary-color-dark: hsl(var(--primary-color-hue), 50%, 55%);
-  --primary-color-hover: hsl(0, 0%, 30%);
+  --primary-color-pale: hsl(var(--primary-color-hue), 50%, 30%);
+  --primary-color-dark: hsl(var(--primary-color-hue), 50%, 80%);
+  --action-background: hsl(0, 0%, 40%);
+  --action-background-hover: hsl(0, 0%, 30%);
   --action-color: hsl(var(--primary-color-hue), 50%, 60%);
-  --action-color-inactive: hsl(var(--primary-color-hue), 50%, 30%);
-  --link-item-background: hsl(0, 0%, 40%);
+  --action-color-inactive: hsl(var(--primary-color-hue), 50%, 40%);
   --link-item-background-hover: hsl(0, 0%, 35%);
   --link-item-color: hsl(var(--primary-color-hue), 0%, 90%);
   --link-item-color-hover: hsl(var(--primary-color-hue), 0%, 100%);
   --link-item-focus-border: hsl(0, 0%, 50%);
+  --link-item-description-text: hsl(0, 0%, 70%);
   --input-background: hsl(0, 0%, 40%);
   --input-text-color: hsl(0, 0%, 95%);
   --input-placeholder-color: hsl(0, 0%, 70%);
@@ -55,21 +69,24 @@
   --logo-char-2-color: hsl(var(--primary-color-hue), 60%, 80%);
   --logo-shape-color: hsl(var(--primary-color-hue), 60%, 55%);
   --footer-text-color: hsl(0, 0%, 80%);
-  --footer-link-color: var(--primary-color-pale);
+  --footer-link-color: var(--primary-color-dark);
   --footer-link-color-hover: hsl(var(--primary-color-hue), 50%, 80%);
   --footer-link-background-hover: hsl(0, 0%, 35%);
-  --footer-background: hsl(0, 0%, 30%);
+  --footer-background: hsl(0, 0%, 25%);
   --footer-border: hsl(0, 0%, 40%);
 }
 
 body {
   @include lightTheme();
+
   @media (prefers-color-scheme: dark) {
     @include darkTheme();
   }
+
   &.light-theme {
     @include lightTheme();
   }
+
   &.dark-theme {
     @include darkTheme();
   }

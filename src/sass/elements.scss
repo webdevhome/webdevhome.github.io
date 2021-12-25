@@ -1,8 +1,7 @@
 :root {
   --icon-button-size: 46px;
   --h-page-margin: 50px;
-  font-family: Roboto, Segoe UI, Helvetica, Helvetica Neue, Arial, Ubuntu,
-    sans-serif;
+  font-family: var(--font-family-sans-serif);
   height: 100%;
 
   @media (max-width: 900px) {
@@ -30,7 +29,7 @@ a {
 }
 
 kbd {
-  font-family: Roboto Mono, Cascadia Code, Consolas, monospace;
+  font-family: var(--font-family-mono);
   font-size: 14px;
   color: var(--input-text-color);
   background-color: var(--footer-background);

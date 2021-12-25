@@ -1,18 +1,21 @@
 import { mdiThemeLightDark, mdiWeatherNight, mdiWeatherSunny } from '@mdi/js'
 import { useCallback, useEffect, useMemo } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppState } from '../../stores'
-import { cycleTheme } from '../../stores/appSettings/appSettingsActions'
+import { useAppDispatch, useAppSelector } from '../../stores'
+import {
+  cycleTheme,
+  setTheme,
+} from '../../stores/appSettings/appSettingsActions'
 import { AppTheme } from '../../stores/appSettings/appSettingsReducer'
 
-export interface UseThemeSwitcherReturn {
+export interface UseThemeSwitcherResult {
   icon: string
+  title: string
   switchTheme: () => void
 }
 
-export function useThemeSwitcher(): UseThemeSwitcherReturn {
-  const dispatch = useDispatch()
-  const currentTheme = useSelector((state: AppState) => state.appSettings.theme)
+export function useThemeSwitcher(): UseThemeSwitcherResult {
+  const dispatch = useAppDispatch()
+  const currentTheme = useAppSelector((state) => state.appSettings.theme)
 
   const bodyElement = useMemo(
     () => globalThis.document.getElementsByTagName('body')[0],
@@ -34,9 +37,13 @@ export function useThemeSwitcher(): UseThemeSwitcherReturn {
     }
   }, [currentTheme])
 
+  const title = useMemo(() => {
+    return `Switch theme (current theme: ${currentTheme})`
+  }, [currentTheme])
+
   const switchTheme = useCallback((): void => {
-    dispatch(cycleTheme(currentTheme))
+    dispatch(setTheme(cycleTheme(currentTheme)))
   }, [currentTheme, dispatch])
 
-  return { icon, switchTheme }
+  return { icon, title, switchTheme }
 }

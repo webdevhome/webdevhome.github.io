@@ -1,4 +1,4 @@
-import { AppSettingsActions, SET_THEME } from './appSettingsActions'
+import { AppSettingsActions, SettingsActions } from './appSettingsActions'
 
 export enum AppTheme {
   auto = 'auto',
@@ -8,10 +8,12 @@ export enum AppTheme {
 
 interface AppSettingsState {
   theme: AppTheme
+  showDescriptions: boolean
 }
 
 const initialState: AppSettingsState = {
   theme: AppTheme.auto,
+  showDescriptions: false,
 }
 
 export function appSettings(
@@ -19,8 +21,12 @@ export function appSettings(
   action: AppSettingsActions
 ): AppSettingsState {
   switch (action.type) {
-    case SET_THEME: {
+    case SettingsActions.setTheme: {
       return { ...state, theme: action.payload }
+    }
+
+    case SettingsActions.setDisplayDescription: {
+      return { ...state, showDescriptions: action.payload }
     }
 
     default: {

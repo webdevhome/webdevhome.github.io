@@ -1,9 +1,12 @@
-import { mdiEye, mdiEyeOff, mdiMagnify } from '@mdi/js'
+import {
+  mdiCheckboxBlankOutline,
+  mdiCheckboxOutline,
+  mdiMagnify,
+} from '@mdi/js'
 import React, { memo, MouseEvent, useCallback, useMemo } from 'react'
-import { useDispatch } from 'react-redux'
 import { ReactSVG } from 'react-svg'
 import { LinkItem, SearchTarget } from '../../links'
-import { AppDispatch } from '../../stores'
+import { useAppDispatch, useAppSelector } from '../../stores'
 import { setAppMode } from '../../stores/appMode/appModeActions'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
 import { AppMode } from '../../stores/appMode/appModeReducer'
@@ -28,12 +31,17 @@ export const Link = memo<Props>(function Link({
   visible = true,
   focus = false,
 }) {
+  const dispatch = useAppDispatch()
   const isCurrentAppMode = useIsCurrentAppMode()
-  const dispatch: AppDispatch = useDispatch()
 
-  const isCustomizeMode = useMemo(() => isCurrentAppMode(AppMode.customize), [
-    isCurrentAppMode,
-  ])
+  const showDescription = useAppSelector(
+    (state) => state.appSettings.showDescriptions
+  )
+
+  const isCustomizeMode = useMemo(
+    () => isCurrentAppMode(AppMode.customize),
+    [isCurrentAppMode]
+  )
 
   const handleLinkClick = useCallback(
     (event: MouseEvent<HTMLAnchorElement>): void => {
@@ -101,10 +109,16 @@ export const Link = memo<Props>(function Link({
 
         {isCustomizeMode ? (
           <div className="link__action">
-            <MdiIcon path={visible ? mdiEye : mdiEyeOff} />
+            <MdiIcon
+              path={visible ? mdiCheckboxOutline : mdiCheckboxBlankOutline}
+            />
           </div>
         ) : null}
       </div>
+
+      {showDescription && link.description !== undefined ? (
+        <div className="link__description">{link.description}</div>
+      ) : null}
     </a>
   )
 })

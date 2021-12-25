@@ -1,10 +1,11 @@
 .link {
   display: grid;
   grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
   grid-column-gap: 10px;
   color: var(--primary-color);
   background-color: hsla(0, 0%, 0%, 0);
-  border-radius: 3px;
+  border-radius: 6px;
 
   @media (max-width: 500px) {
     min-height: 42px;
@@ -36,26 +37,35 @@
     flex-direction: column;
     justify-content: center;
     grid-area: 1 / 1 / 2 / 2;
-    padding: 4px;
+    padding: 6px;
     margin: 4px;
-    border-radius: 2px;
+    border-radius: 4px;
     background: var(--icon-background);
   }
 
   &__icon {
-    width: 25px;
-    height: 25px;
+    width: 27px;
+    height: 27px;
   }
 
   &__label {
     grid-column-start: 2;
     align-self: center;
-    font-size: 15px;
-    line-height: 1;
+    font-size: 16px;
+    line-height: 1.2;
     letter-spacing: 0.4px;
     font-weight: 500;
     color: var(--link-item-color);
     user-select: none;
+  }
+
+  &:not(&--is-visible) &__label {
+    color: var(--link-item-color-disabled);
+    text-decoration: line-through;
+  }
+
+  &:hover:not(&--is-visible) &__label {
+    color: var(--link-item-color-hover-disabled);
   }
 
   &:hover &__label {
@@ -114,5 +124,15 @@
 
   & svg {
     fill: currentColor;
+  }
+
+  &__description {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    margin-bottom: 8px;
+    color: var(--link-item-description-text);
+    font-size: 15px;
+    line-height: 1.4;
+    user-select: none;
   }
 }

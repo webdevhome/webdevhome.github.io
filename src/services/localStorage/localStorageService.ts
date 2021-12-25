@@ -4,6 +4,7 @@ export enum StorageKey {
   storageVersion = 'wdh:storage-version',
   hiddenItems = 'wdh:hidden-items',
   themeSetting = 'wdh:theme-setting',
+  showDescriptionsSetting = 'wdh:show-descriptions-setting',
 }
 
 export function getStorageValue(key: StorageKey): string | null

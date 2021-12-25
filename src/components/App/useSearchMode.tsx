@@ -1,21 +1,18 @@
 import { useCallback, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch, AppState } from '../../stores'
+import { useAppDispatch, useAppSelector } from '../../stores'
 import { setAppMode, toggleAppMode } from '../../stores/appMode/appModeActions'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
 import { AppMode } from '../../stores/appMode/appModeReducer'
 import { setSearchTerm } from '../../stores/search/searchActions'
 
-export interface UseSearchModeReturn {
+export interface UseSearchModeResult {
   handleSearchAction: () => void
 }
 
-export function useSearchMode(): UseSearchModeReturn {
+export function useSearchMode(): UseSearchModeResult {
   const isCurrentAppMode = useIsCurrentAppMode()
-  const currentAppMode = useSelector(
-    (state: AppState) => state.appMode.currentMode
-  )
-  const dispatch: AppDispatch = useDispatch()
+  const currentAppMode = useAppSelector((state) => state.appMode.currentMode)
+  const dispatch = useAppDispatch()
 
   const handleGlobalKeypress = useCallback(
     (event: KeyboardEvent) => {

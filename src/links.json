@@ -29,6 +29,7 @@
         {
           "title": "npm",
           "url": "https://npmjs.com",
+          "description": "Node.js package directory.",
           "icon": "npm",
           "color": "#cb3837",
           "searchUrl": "https://www.npmjs.com/search?q={search}",
@@ -37,6 +38,7 @@
         {
           "title": "Yarn",
           "url": "https://yarnpkg.com",
+          "description": "Alternative for npm.",
           "icon": "yarn",
           "color": "#2C8EBB",
           "searchUrl": "https://yarnpkg.com/?q={search}",
@@ -45,12 +47,14 @@
         {
           "title": "Composer",
           "url": "https://getcomposer.org",
+          "description": "PHP package manager.",
           "icon": "composer",
           "color": "#885630"
         },
         {
           "title": "Packagist (PHP packages)",
           "url": "https://packagist.org",
+          "description": "PHP package directory.",
           "icon": "packagist",
           "color": "#F28D1A",
           "searchUrl": "https://packagist.org/?query={search}",
@@ -59,6 +63,7 @@
         {
           "title": "Nuget",
           "url": "https://nuget.org",
+          "description": ".Net package manager.",
           "icon": "nuget",
           "color": "#004880",
           "searchUrl": "https://www.nuget.org/packages?q={search}",
@@ -67,6 +72,7 @@
         {
           "title": "Go Packages",
           "url": "https://pkg.go.dev",
+          "description": "Golang package directory.",
           "icon": "go",
           "color": "#00ADD8",
           "searchUrl": "https://pkg.go.dev/search?q={search}",
@@ -75,6 +81,7 @@
         {
           "title": "Dart Packages",
           "url": "https://pub.dev",
+          "description": "Dart package directory.",
           "icon": "dart",
           "color": "#0175C2",
           "searchUrl": "https://pub.dev/packages?q={search}",
@@ -83,6 +90,7 @@
         {
           "title": "Docker Hub",
           "url": "https://hub.docker.com",
+          "description": "Docker image directory.",
           "icon": "docker",
           "color": "#2496ED",
           "searchUrl": "https://hub.docker.com/search?q={search}&type=image",
@@ -91,16 +99,19 @@
         {
           "title": "30 seconds of code",
           "url": "https://30secondsofcode.org",
+          "description": "Short code snippets for repeating programming tasks.",
           "searchUrl": "https://www.30secondsofcode.org/search/?keyphrase={search}",
           "searchConcat": "%20"
         },
         {
           "title": "1loc",
-          "url": "https://1loc.dev"
+          "url": "https://1loc.dev",
+          "description": "Collection of one liner functions and code."
         },
         {
           "title": "BundlePhobia",
           "url": "https://bundlephobia.com",
+          "description": "Check impact of npm packages at bundle size.",
           "searchUrl": "https://bundlephobia.com/result?p={search}",
           "searchConcat": "%20"
         }
@@ -203,11 +214,13 @@
       "items": [
         {
           "title": "DevDocs",
-          "url": "https://devdocs.io"
+          "url": "https://devdocs.io",
+          "description": "Collection of language and library documentations."
         },
         {
           "title": "Read the Docs",
           "url": "https://readthedocs.org",
+          "description": "Service for writing documentation for your libraries.",
           "icon": "readthedocs",
           "color": "#8CA1AF",
           "searchUrl": "https://readthedocs.org/search/?q={search}",
@@ -216,6 +229,7 @@
         {
           "title": "MDN",
           "url": "https://developer.mozilla.org",
+          "description": "Web technology documentation (HTML, CSS, JS, Browser APIs, etc.) by Mozilla.",
           "icon": "mdnwebdocs",
           "color": "#000000",
           "searchUrl": "https://developer.mozilla.org/de/search?q={search}",
@@ -246,6 +260,7 @@
         {
           "title": "Cheatography",
           "url": "https://cheatography.com",
+          "description": "List of various cheat sheets.",
           "searchUrl": "https://cheatography.com/explore/search/?q={search}",
           "searchConcat": "+"
         },
@@ -257,11 +272,13 @@
         },
         {
           "title": "Emmet Cheat Sheet",
-          "url": "https://docs.emmet.io/cheat-sheet"
+          "url": "https://docs.emmet.io/cheat-sheet",
+          "description": "The official cheat sheet for Emmet - the editor shortcuts to quickly write HTML."
         },
         {
           "title": "this vs that",
-          "url": "https://thisthat.dev"
+          "url": "https://thisthat.dev",
+          "description": "A collection that explains the difference between similar programming concepts."
         }
       ]
     },
@@ -271,12 +288,14 @@
         {
           "title": "Chrome Developers",
           "url": "https://developer.chrome.com",
+          "description": "Official developer resources about Chrome Browser.",
           "icon": "googlechrome",
           "color": "#4285F4"
         },
         {
           "title": "ChromeOS.dev",
           "url": "https://chromeos.dev",
+          "description": "Official developer resources about ChromeOS.",
           "icon": "googlechrome",
           "color": "#4285F4",
           "searchUrl": "https://chromeos.dev/en/search?q={search}",
@@ -285,12 +304,14 @@
         {
           "title": "Chrome Web Store Developer Dashboard",
           "url": "https://chrome.google.com/webstore/devconsole",
+          "description": "Official Dashboard to manage Chrome Extensions, Themes, etc.",
           "icon": "googlechrome",
           "color": "#4285F4"
         },
         {
           "title": "Firefox Add-On Developer Hub",
           "url": "https://addons.mozilla.org/en-US/developers/addons",
+          "description": "Official Dashboard to manage Firefox Extensions.",
           "icon": "firefoxbrowser",
           "color": "#FF7139"
         }
@@ -302,6 +323,7 @@
         {
           "title": "OWASP Cheat Sheet Series Project",
           "url": "https://cheatsheetseries.owasp.org",
+          "description": "Open Web Application Security Project (OWASP) Cheat Sheets.",
           "icon": "owasp",
           "color": "#000000",
           "searchUrl": "https://cheatsheetseries.owasp.org/?q={search}",
@@ -309,11 +331,13 @@
         },
         {
           "title": "Keep a Changelog",
-          "url": "https://keepachangelog.com/en/1.1.0"
+          "url": "https://keepachangelog.com/en/1.1.0",
+          "description": "Convention for writing changelogs."
         },
         {
           "title": "Gitmoji",
-          "url": "https://gitmoji.carloscuesta.me"
+          "url": "https://gitmoji.carloscuesta.me",
+          "description": "An emoji guide for your commit messages."
         }
       ]
     },
@@ -358,12 +382,14 @@
         {
           "title": "AlternativeTo",
           "url": "https://alternativeto.net",
+          "description": "Find alternatives to some given technology.",
           "searchUrl": "https://alternativeto.net/browse/search?q={search}",
           "searchConcat": "+"
         },
         {
           "title": "StackShare",
           "url": "https://stackshare.io",
+          "description": "A service that let's you analyze and manage your technology stack. You can also browse other company's stacks.",
           "icon": "stackshare",
           "color": "#0690fa",
           "searchUrl": "https://stackshare.io/search/q={search}",
@@ -377,12 +403,14 @@
         {
           "title": "Tailwind CSS",
           "url": "https://tailwindcss.com/",
+          "description": "A popular utility class based CSS framework.",
           "icon": "tailwindcss",
           "color": "#38B2AC"
         },
         {
           "title": "Material Design",
           "url": "https://material.io/design",
+          "description": "Official documentation for Google's Material Design.",
           "icon": "materialdesign",
           "color": "#757575",
           "searchUrl": "https://material.io/search.html?q={search}",
@@ -401,7 +429,9 @@
         },
         {
           "title": "Create React App",
-          "url": "https://create-react-app.dev"
+          "url": "https://create-react-app.dev",
+          "icon": "createreactapp",
+          "color": "#09D3AC"
         },
         {
           "title": "Gatsby",
@@ -473,24 +503,28 @@
         {
           "title": "Redux",
           "url": "https://redux.js.org",
+          "description": "Application state management library.",
           "icon": "redux",
           "color": "#764ABC"
         },
         {
           "title": "MobX",
           "url": "https://mobx.js.org",
+          "description": "Application state management library.",
           "icon": "mobx",
           "color": "#FF9955"
         },
         {
           "title": "Apollo",
           "url": "https://www.apollographql.com",
+          "description": "GraphQL client.",
           "icon": "apollographql",
           "color": "#311C87"
         },
         {
           "title": "i18next",
           "url": "https://www.i18next.com",
+          "description": "Framework agnostic i18n library.",
           "icon": "i18next",
           "color": "#26A69A",
           "searchUrl": "https://www.i18next.com/?q={search}",
@@ -499,12 +533,14 @@
         {
           "title": "RxJS",
           "url": "https://rxjs.dev",
+          "description": "Library for functional reactive programming.",
           "icon": "reactivex",
           "color": "#B7178C"
         },
         {
           "title": "HeadlessUI",
-          "url": "https://headlessui.dev/"
+          "url": "https://headlessui.dev/",
+          "description": "Unstyled UI components - by the developers behind Tailwind CSS."
         }
       ]
     },
@@ -514,48 +550,56 @@
         {
           "title": "webhint",
           "url": "https://webhint.io",
+          "description": "Linting tool that checks your website's accessibility, speed, cross-browser compatibility, and more.",
           "icon": "webhint",
           "color": "#a700a3"
         },
         {
           "title": "ESLint",
           "url": "https://eslint.org",
+          "description": "JavaScript and TypeScript linter.",
           "icon": "eslint",
           "color": "#4B32C3"
         },
         {
           "title": "Puppeteer",
           "url": "https://developers.google.com/web/tools/puppeteer/",
+          "description": "API to control and automate a browser without showing its UI.",
           "icon": "puppeteer",
           "color": "#40B5A4"
         },
         {
           "title": "Jest",
           "url": "https://jestjs.io",
+          "description": "JS/TS testing framework.",
           "icon": "jest",
           "color": "#C21325"
         },
         {
           "title": "Mocha",
           "url": "https://mochajs.org",
+          "description": "JS/TS testing framework.",
           "icon": "mocha",
           "color": "#8D6748"
         },
         {
           "title": "Prettier",
           "url": "https://prettier.io",
+          "description": "An opinionated code formatter",
           "icon": "prettier",
           "color": "#F7B93E"
         },
         {
           "title": "EditorConfig",
           "url": "https://editorconfig.org",
+          "description": "Control some text editor settings by using a config file.",
           "icon": "editorconfig",
           "color": "#000000"
         },
         {
           "title": "Let's Encrypt",
           "url": "https://letsencrypt.org",
+          "description": "Free TLS certificates.",
           "icon": "letsencrypt",
           "color": "#003a70"
         }
@@ -567,32 +611,40 @@
         {
           "title": "Webpack",
           "url": "https://webpack.js.org",
+          "description": "A JavaScript bundler.",
           "icon": "webpack",
           "color": "#8DD6F9"
         },
         {
           "title": "Vite",
           "url": "https://vitejs.dev",
+          "description": "A JavaScript bundler.",
           "icon": "vite",
           "color": "#646CFF"
         },
         {
           "title": "Rome",
-          "url": "https://rome.tools/"
+          "url": "https://rome.tools/",
+          "description": "A universal build chain that includes a linter, compiler, bundler, and more.",
+          "icon": "rome",
+          "color": "#27272A"
         },
         {
           "title": "Parcel",
-          "url": "https://parceljs.org"
+          "url": "https://parceljs.org",
+          "description": "A JavaScript bundler."
         },
         {
           "title": "Rollup",
           "url": "https://rollupjs.org",
+          "description": "A JavaScript bundler.",
           "icon": "rollup-dot-js",
           "color": "#EC4A3F"
         },
         {
           "title": "Gulp",
           "url": "https://gulpjs.com",
+          "description": "A task management toolkit.",
           "icon": "gulp",
           "color": "#DA4648"
         }
@@ -721,12 +773,14 @@
           "searchConcat": "+"
         },
         {
-          "title": "Coding Fonts (by CSS Tricks)",
-          "url": "https://coding-fonts.css-tricks.com/"
+          "title": "Coding Fonts",
+          "url": "https://coding-fonts.css-tricks.com/",
+          "description": "A collection of fonts for code editors - by CSS Tricks."
         },
         {
           "title": "Pexels",
           "url": "https://www.pexels.com",
+          "description": "Stock images.",
           "icon": "pexels",
           "color": "#05A081",
           "searchUrl": "https://www.pexels.com/de-de/suche/{search}/",
@@ -735,14 +789,16 @@
         {
           "title": "Unsplash",
           "url": "https://unsplash.com",
+          "description": "Stock images.",
           "icon": "unsplash",
           "color": "#000000",
           "searchUrl": "https://unsplash.com/s/photos/{search}",
           "searchConcat": "-"
         },
         {
-          "title": "Subtle Patterns (by Toptal)",
+          "title": "Subtle Patterns",
           "url": "https://www.toptal.com/designers/subtlepatterns",
+          "description": "A collection of subtle background patterns - by Toptal.",
           "icon": "toptal",
           "color": "#3863A0",
           "searchUrl": "https://www.toptal.com/designers/subtlepatterns/?s={search}",
@@ -750,7 +806,8 @@
         },
         {
           "title": "Transparent Textures",
-          "url": "https://transparenttextures.com/"
+          "url": "https://transparenttextures.com/",
+          "description": "A collection of transparent background patterns."
         }
       ]
     },
@@ -837,24 +894,28 @@
         {
           "title": "Can I use...",
           "url": "https://caniuse.com",
+          "description": "Check browser compatibility of various language features and browser APIs.",
           "searchUrl": "https://caniuse.com/#search={search}",
           "searchConcat": "%20"
         },
         {
           "title": "Can I email...",
           "url": "https://caniemail.com",
+          "description": "Check e-mail client compatibility of various language features.",
           "searchUrl": "https://www.caniemail.com/search/?s={search}",
           "searchConcat": "+"
         },
         {
           "title": "Chrome Platform Status",
           "url": "https://www.chromestatus.com",
+          "description": "Chrome browser release notes.",
           "icon": "googlechrome",
           "color": "#4285f4"
         },
         {
           "title": "Microsoft Edge Platform Status",
           "url": "https://developer.microsoft.com/en-us/microsoft-edge/platform/status",
+          "description": "Edge browser release notes.",
           "icon": "microsoftedge",
           "color": "#0078d7",
           "searchUrl": "https://developer.microsoft.com/en-us/microsoft-edge/status/?q={search}",
@@ -863,6 +924,7 @@
         {
           "title": "Microsoft Edge Insiders: New Features",
           "url": "https://www.microsoftedgeinsider.com/en-us/whats-new",
+          "description": "List of news around the Edge browser Insiders channel.",
           "icon": "microsoftedge",
           "color": "#0078d7"
         },
@@ -875,12 +937,14 @@
         {
           "title": "Firefox Platform Status",
           "url": "https://platform-status.mozilla.org",
+          "description": "Firefox browser release notes.",
           "icon": "mozillafirefox",
           "color": "#ff9400"
         },
         {
           "title": "WebKit Feature Status",
           "url": "https://webkit.org/status",
+          "description": "Safari browser release notes.",
           "icon": "safari",
           "color": "#000000",
           "searchUrl": "https://webkit.org/status/#?search={search}",
@@ -888,15 +952,18 @@
         },
         {
           "title": "Node Green",
-          "url": "https://node.green"
+          "url": "https://node.green",
+          "description": "Table that illustrates which Node.js version supports which ECMAScript features."
         },
         {
           "title": "Is Houdini ready yet?",
-          "url": "https://ishoudinireadyyet.com"
+          "url": "https://ishoudinireadyyet.com",
+          "description": "Table that illustrates the current development status of Houdini in all major browsers."
         },
         {
           "title": "Timeline of Web Browsers",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg"
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg",
+          "description": "A graphical timeline of all web browsers, grouped by used engine."
         }
       ]
     },
@@ -911,15 +978,18 @@
         },
         {
           "title": "ECMAScript Proposals",
-          "url": "https://github.com/tc39/proposals"
+          "url": "https://github.com/tc39/proposals",
+          "description": "Official repository of all ECMAScript proposals."
         },
         {
           "title": "ECMAScript Compatibility Table",
-          "url": "https://kangax.github.io/compat-table/es6"
+          "url": "https://kangax.github.io/compat-table/es6",
+          "description": "Table illustrating browser support of ECMAScript features."
         },
         {
           "title": "Mozilla Specification Positions",
           "url": "https://mozilla.github.io/standards-positions",
+          "description": "A list of Mozilla's position on open web and web-related specifications.",
           "icon": "mozilla",
           "color": "#000000"
         }
@@ -939,12 +1009,14 @@
         {
           "title": "GitKraken",
           "url": "https://gitkraken.com",
+          "description": "A git client.",
           "icon": "gitkraken",
           "color": "#179287"
         },
         {
-          "title": "Fork (Git Client)",
-          "url": "https://git-fork.com"
+          "title": "Fork",
+          "url": "https://git-fork.com",
+          "description": "A git client."
         },
         {
           "title": "Docker",
@@ -999,12 +1071,14 @@
         {
           "title": "Postman",
           "url": "https://www.postman.com",
+          "description": "A REST client.",
           "icon": "postman",
           "color": "#FF6C37"
         },
         {
           "title": "Insomnia",
           "url": "https://insomnia.rest",
+          "description": "A REST client.",
           "icon": "insomnia",
           "color": "#5849BE"
         },
@@ -1120,6 +1194,7 @@
         {
           "title": "Frontend Focus",
           "url": "https://frontendfoc.us",
+          "description": "Newsletter with news about web frontend development.",
           "icon": "html5",
           "color": "#e34f26"
         },

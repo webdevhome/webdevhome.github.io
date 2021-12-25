@@ -1,20 +1,27 @@
 .link-group {
   &__header {
     display: flex;
+    align-items: center;
+    column-gap: 4px;
     margin-bottom: 10px;
-    border-bottom: 1px solid var(--primary-color-dark);
   }
 
   &__name {
     flex: 1 1 auto;
-    color: var(--primary-color);
-    font-size: 15px;
-    line-height: 1.8;
+    color: var(--primary-color-dark);
+    background: var(--primary-color-pale);
+    font-size: 16px;
+    line-height: 1.2;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.4px;
-    padding: 4px 10px;
+    letter-spacing: 1px;
+    padding: 8px 10px;
     user-select: none;
+    border-radius: 6px;
+
+    @media (max-width: 500px) {
+      border-radius: 0;
+    }
   }
 
   @media (max-width: 500px) {
@@ -50,5 +57,21 @@
   &__list {
     display: grid;
     grid-row-gap: 1px;
+  }
+
+  &__hidden-links-button {
+    justify-self: center;
+    border: 1px solid var(--link-item-focus-border);
+    color: var(--link-item-color);
+    user-select: none;
+    margin: 8px 4px;
+    padding: 4px 16px;
+    text-align: center;
+    border-radius: 6px;
+
+    &:hover {
+      background: var(--action-background);
+      color: var(--link-item-color-hover);
+    }
   }
 }
