@@ -1,21 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.3f022ce7.chunk.css",
-    "main.js": "/static/js/main.cf0a0777.chunk.js",
-    "main.js.map": "/static/js/main.cf0a0777.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.471856e9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.471856e9.js.map",
-    "static/js/2.e70b97da.chunk.js": "/static/js/2.e70b97da.chunk.js",
-    "static/js/2.e70b97da.chunk.js.map": "/static/js/2.e70b97da.chunk.js.map",
+    "main.css": "/static/css/main.811dbf60.css",
+    "main.js": "/static/js/main.17ff84b9.js",
+    "static/media/roboto-regular.ttf": "/static/media/roboto-regular.71779d80f05ad6beea6e.ttf",
+    "static/media/roboto-medium.ttf": "/static/media/roboto-medium.ea7d3afe129bb3e2ff35.ttf",
+    "static/media/roboto-bold.ttf": "/static/media/roboto-bold.9630c546d8b557e14b59.ttf",
+    "static/media/robotomono-bold.ttf": "/static/media/robotomono-bold.3584f5042d3eee6a4b3b.ttf",
+    "static/media/robotomono-regular.ttf": "/static/media/robotomono-regular.473137234b890954c09c.ttf",
     "index.html": "/index.html",
-    "static/css/main.3f022ce7.chunk.css.map": "/static/css/main.3f022ce7.chunk.css.map",
-    "static/js/2.e70b97da.chunk.js.LICENSE.txt": "/static/js/2.e70b97da.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/static/media/robotomono-regular.47313723.ttf"
+    "main.811dbf60.css.map": "/static/css/main.811dbf60.css.map",
+    "main.17ff84b9.js.map": "/static/js/main.17ff84b9.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.471856e9.js",
-    "static/js/2.e70b97da.chunk.js",
-    "static/css/main.3f022ce7.chunk.css",
-    "static/js/main.cf0a0777.chunk.js"
+    "static/css/main.811dbf60.css",
+    "static/js/main.17ff84b9.js"
   ]
 }
