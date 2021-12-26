@@ -863,6 +863,8 @@
         {
           "title": "CouchDB",
           "url": "https://couchdb.apache.org",
+          "icon": "apachecouchdb",
+          "color": "#E42528",
           "searchUrl": "https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default",
           "searchConcat": "+"
         },
