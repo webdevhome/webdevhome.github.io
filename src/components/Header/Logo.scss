@@ -5,12 +5,12 @@
   user-select: none;
 
   @media (max-width: 900px) {
-    text-align: center;
+    font-size: 22px;
   }
-
+  
   @media (max-width: 500px) {
-    font-size: 26px;
-    line-height: 36px;
+    text-align: center;
+    line-height: 32px;
   }
 
   &__char-1 {

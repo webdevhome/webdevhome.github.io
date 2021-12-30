@@ -7,7 +7,7 @@
   align-items: center;
   padding: 8px 0;
 
-  @media (max-width: 900px) {
+  @media (max-width: 500px) {
     padding: 10px 0;
     grid-template:
       'logo' auto
@@ -21,7 +21,7 @@
     max-width: 100%;
     padding-left: var(--h-page-margin);
 
-    @media (max-width: 900px) {
+    @media (max-width: 500px) {
       height: auto;
       padding-left: 0;
     }
@@ -35,11 +35,11 @@
     padding-right: var(--h-page-margin);
 
     @media (max-width: 900px) {
-      margin-top: 16px;
-      padding-right: 0;
+      column-gap: 8px;
     }
 
     @media (max-width: 500px) {
+      padding-right: 0;
       margin-top: 8px;
     }
   }
