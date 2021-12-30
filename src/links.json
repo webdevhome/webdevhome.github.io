@@ -52,7 +52,7 @@
           "color": "#885630"
         },
         {
-          "title": "Packagist (PHP packages)",
+          "title": "Packagist",
           "url": "https://packagist.org",
           "description": "PHP package directory.",
           "icon": "packagist",
