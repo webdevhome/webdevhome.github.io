@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import linksData from './links.json'
 import { OptionalExceptFor } from './utilityTypes'
 
@@ -30,6 +31,10 @@ export const links: Links = {
   items: linksData.items,
 }
 
-export function getAllLinks(): LinkItem[] {
-  return links.items.flatMap((group) => group.items)
+export function useAllLinks(): LinkItem[] {
+  const allLinks = useMemo(() => {
+    return links.items.flatMap((group) => group.items)
+  }, [])
+
+  return allLinks
 }

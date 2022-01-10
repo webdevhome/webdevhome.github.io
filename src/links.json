@@ -2,7 +2,7 @@
   "$schema": "./links.schema.json",
   "items": [
     {
-      "name": "Code and packages",
+      "name": "Managing projects",
       "items": [
         {
           "title": "GitHub",
@@ -21,11 +21,103 @@
           "searchConcat": "+"
         },
         {
+          "title": "Atlassian Home",
+          "url": "https://start.atlassian.com",
+          "description": "A portal page to access your Atlassian services.",
+          "icon": "atlassian",
+          "color": "#0052CC"
+        },
+        {
           "title": "Bitbucket",
           "url": "https://bitbucket.org",
           "icon": "bitbucket",
           "color": "#0052CC"
         },
+        {
+          "title": "Asana",
+          "url": "https://asana.com",
+          "description": "Project management service.",
+          "icon": "asana",
+          "color": "#273347"
+        },
+        {
+          "title": "CircleCI",
+          "url": "https://circleci.com",
+          "description": "CI/CD/Deployment service.",
+          "icon": "circleci",
+          "color": "#343434"
+        },
+        {
+          "title": "Jenkins",
+          "url": "https://www.jenkins.io",
+          "description": "CI/CD/Deployment service.",
+          "icon": "jenkins",
+          "color": "#D24939"
+        },
+        {
+          "title": "Buddy",
+          "url": "https://buddy.works",
+          "description": "CI/CD/Deployment service.",
+          "icon": "buddy",
+          "color": "#1A86FD"
+        },
+        {
+          "title": "Octopus Deploy",
+          "url": "https://octopus.com",
+          "description": "CI/CD/Deployment service.",
+          "icon": "octopusdeploy",
+          "color": "#2f93e0"
+        },
+        {
+          "title": "Vercel",
+          "url": "https://vercel.co",
+          "description": "Hosting solution by the developers of Next.js.",
+          "icon": "vercel",
+          "color": "#000000"
+        },
+        {
+          "title": "Microsoft Azure",
+          "url": "https://azure.microsoft.com",
+          "icon": "microsoftazure",
+          "color": "#0078D4",
+          "searchUrl": "https://azure.microsoft.com/de-de/search/?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Amazon Web Services",
+          "url": "https://aws.amazon.com",
+          "icon": "amazonaws",
+          "color": "#232F3E",
+          "searchUrl": "https://aws.amazon.com/de/search/?searchQuery={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Google Cloud",
+          "url": "https://cloud.google.com",
+          "icon": "googlecloud",
+          "color": "#4285F4",
+          "searchUrl": "https://cloud.google.com/s/results/?q={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "Firebase",
+          "url": "https://firebase.google.com",
+          "icon": "firebase",
+          "color": "#FFCA28",
+          "searchUrl": "https://firebase.google.com/s/results?q={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "DigitalOcean",
+          "url": "https://www.digitalocean.com",
+          "icon": "digitalocean",
+          "color": "#0080FF"
+        }
+      ]
+    },
+    {
+      "name": "Packages",
+      "items": [
         {
           "title": "npm",
           "url": "https://npmjs.com",
@@ -95,7 +187,12 @@
           "color": "#2496ED",
           "searchUrl": "https://hub.docker.com/search?q={search}&type=image",
           "searchConcat": "%20"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Code related services",
+      "items": [
         {
           "title": "30 seconds of code",
           "url": "https://30secondsofcode.org",
@@ -114,35 +211,29 @@
           "description": "Check impact of npm packages at bundle size.",
           "searchUrl": "https://bundlephobia.com/result?p={search}",
           "searchConcat": "%20"
-        }
-      ]
-    },
-    {
-      "name": "CI/CD/Deployment",
-      "items": [
-        {
-          "title": "CircleCI",
-          "url": "https://circleci.com/",
-          "icon": "circleci",
-          "color": "#343434"
         },
         {
-          "title": "Jenkins",
-          "url": "https://www.jenkins.io/",
-          "icon": "jenkins",
-          "color": "#D24939"
+          "title": "gitignore.io",
+          "url": "https://www.toptal.com/developers/gitignore",
+          "description": "Generate .gitignore files (by Toptal).",
+          "icon": "gitignoredotio",
+          "color": "#204ECF"
         },
         {
-          "title": "Buddy",
-          "url": "https://buddy.works",
-          "icon": "buddy",
-          "color": "#1A86FD"
+          "title": "AlternativeTo",
+          "url": "https://alternativeto.net",
+          "description": "Find alternatives to some given technology.",
+          "searchUrl": "https://alternativeto.net/browse/search?q={search}",
+          "searchConcat": "+"
         },
         {
-          "title": "Octopus Deploy",
-          "url": "https://octopus.com/",
-          "icon": "octopusdeploy",
-          "color": "#2f93e0"
+          "title": "StackShare",
+          "url": "https://stackshare.io",
+          "description": "A service that let's you analyze and manage your technology stack. You can also browse other company's stacks.",
+          "icon": "stackshare",
+          "color": "#0690fa",
+          "searchUrl": "https://stackshare.io/search/q={search}",
+          "searchConcat": "%20"
         }
       ]
     },
@@ -210,7 +301,7 @@
       ]
     },
     {
-      "name": "Read the docs",
+      "name": "Documentation",
       "items": [
         {
           "title": "DevDocs",
@@ -225,6 +316,13 @@
           "color": "#8CA1AF",
           "searchUrl": "https://readthedocs.org/search/?q={search}",
           "searchConcat": "+"
+        },
+        {
+          "title": "GitBook",
+          "url": "https://www.gitbook.com",
+          "description": "",
+          "icon": "gitbook",
+          "color": "#3884FF"
         },
         {
           "title": "MDN",
@@ -342,7 +440,7 @@
       ]
     },
     {
-      "name": "Fiddling around",
+      "name": "Sandboxes",
       "items": [
         {
           "title": "CodePen",
@@ -372,28 +470,7 @@
         },
         {
           "title": "regex101",
-          "url": "https://regex101.com/"
-        }
-      ]
-    },
-    {
-      "name": "Discover and compare",
-      "items": [
-        {
-          "title": "AlternativeTo",
-          "url": "https://alternativeto.net",
-          "description": "Find alternatives to some given technology.",
-          "searchUrl": "https://alternativeto.net/browse/search?q={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "StackShare",
-          "url": "https://stackshare.io",
-          "description": "A service that let's you analyze and manage your technology stack. You can also browse other company's stacks.",
-          "icon": "stackshare",
-          "color": "#0690fa",
-          "searchUrl": "https://stackshare.io/search/q={search}",
-          "searchConcat": "%20"
+          "url": "https://regex101.com"
         }
       ]
     },
@@ -402,10 +479,22 @@
       "items": [
         {
           "title": "Tailwind CSS",
-          "url": "https://tailwindcss.com/",
+          "url": "https://tailwindcss.com",
           "description": "A popular utility class based CSS framework.",
           "icon": "tailwindcss",
           "color": "#38B2AC"
+        },
+        {
+          "title": "Bootstrap",
+          "url": "https://getbootstrap.com",
+          "icon": "bootstrap",
+          "color": "#7952B3"
+        },
+        {
+          "title": "Bulma",
+          "url": "https://bulma.io",
+          "icon": "bulma",
+          "color": "#00D1B2"
         },
         {
           "title": "Material Design",
@@ -419,7 +508,7 @@
       ]
     },
     {
-      "name": "UI Development",
+      "name": "UI frameworks and libraries",
       "items": [
         {
           "title": "React",
@@ -442,26 +531,20 @@
         {
           "title": "Next.js",
           "url": "https://nextjs.org",
-          "icon": "next-dot-js",
+          "icon": "nextdotjs",
           "color": "#000000"
         },
         {
           "title": "Vue",
           "url": "https://vuejs.org",
-          "icon": "vue-dot-js",
+          "icon": "vuedotjs",
           "color": "#4FC08D"
         },
         {
           "title": "Nuxt.js",
           "url": "https://nuxtjs.org",
-          "icon": "nuxt-dot-js",
+          "icon": "nuxtdotjs",
           "color": "#00C58E"
-        },
-        {
-          "title": "Svelte",
-          "url": "https://svelte.dev",
-          "icon": "svelte",
-          "color": "#FF3E00"
         },
         {
           "title": "Angular",
@@ -470,12 +553,30 @@
           "color": "#DD0031"
         },
         {
+          "title": "Svelte",
+          "url": "https://svelte.dev",
+          "icon": "svelte",
+          "color": "#FF3E00"
+        },
+        {
+          "title": "Alpine.js",
+          "url": "https://alpinejs.dev",
+          "icon": "alpinedotjs",
+          "color": "#8BC0D0"
+        },
+        {
           "title": "Electron",
           "url": "https://www.electronjs.org",
           "icon": "electron",
           "color": "#47848F",
           "searchUrl": "https://www.electronjs.org/?q={search}",
           "searchConcat": "%20"
+        },
+        {
+          "title": "Blazor",
+          "url": "https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor",
+          "icon": "blazor",
+          "color": "#512BD4"
         },
         {
           "title": "Flutter",
@@ -538,14 +639,28 @@
           "color": "#B7178C"
         },
         {
+          "title": "D3",
+          "url": "https://d3js.org",
+          "description": "A library for data-driven visualizations.",
+          "icon": "d3dotjs",
+          "color": "#F9A03C"
+        },
+        {
+          "title": "Three.js",
+          "url": "https://threejs.org",
+          "description": "A library for creating 3D graphics.",
+          "icon": "threedotjs",
+          "color": "#000000"
+        },
+        {
           "title": "HeadlessUI",
-          "url": "https://headlessui.dev/",
+          "url": "https://headlessui.dev",
           "description": "Unstyled UI components - by the developers behind Tailwind CSS."
         }
       ]
     },
     {
-      "name": "Code safe and secure",
+      "name": "Testing and security",
       "items": [
         {
           "title": "webhint",
@@ -563,7 +678,7 @@
         },
         {
           "title": "Puppeteer",
-          "url": "https://developers.google.com/web/tools/puppeteer/",
+          "url": "https://developers.google.com/web/tools/puppeteer",
           "description": "API to control and automate a browser without showing its UI.",
           "icon": "puppeteer",
           "color": "#40B5A4"
@@ -602,6 +717,13 @@
           "description": "Free TLS certificates.",
           "icon": "letsencrypt",
           "color": "#003a70"
+        },
+        {
+          "title": "JWT",
+          "url": "https://jwt.io",
+          "description": "JSON Web Tokens",
+          "icon": "jsonwebtokens",
+          "color": "#000000"
         }
       ]
     },
@@ -624,7 +746,7 @@
         },
         {
           "title": "Rome",
-          "url": "https://rome.tools/",
+          "url": "https://rome.tools",
           "description": "A universal build chain that includes a linter, compiler, bundler, and more.",
           "icon": "rome",
           "color": "#27272A"
@@ -638,7 +760,7 @@
           "title": "Rollup",
           "url": "https://rollupjs.org",
           "description": "A JavaScript bundler.",
-          "icon": "rollup-dot-js",
+          "icon": "rollupdotjs",
           "color": "#EC4A3F"
         },
         {
@@ -684,6 +806,12 @@
           "color": "#DD4B39"
         },
         {
+          "title": "Elm",
+          "url": "https://elm-lang.org",
+          "icon": "elm",
+          "color": "#1293D8"
+        },
+        {
           "title": "Babel",
           "url": "https://babeljs.io",
           "icon": "babel",
@@ -692,7 +820,7 @@
         {
           "title": "Node.js",
           "url": "https://nodejs.org/en",
-          "icon": "node-dot-js",
+          "icon": "nodedotjs",
           "color": "#339933"
         },
         {
@@ -711,7 +839,7 @@
         },
         {
           "title": "Kotlin",
-          "url": "https://kotlinlang.org/",
+          "url": "https://kotlinlang.org",
           "icon": "kotlin",
           "color": "#0095D5"
         },
@@ -746,7 +874,7 @@
         {
           "title": ".NET",
           "url": "https://dotnet.microsoft.com",
-          "icon": "dot-net",
+          "icon": "dotnet",
           "color": "#5C2D91"
         },
         {
@@ -774,8 +902,16 @@
         },
         {
           "title": "Coding Fonts",
-          "url": "https://coding-fonts.css-tricks.com/",
+          "url": "https://coding-fonts.css-tricks.com",
           "description": "A collection of fonts for code editors - by CSS Tricks."
+        },
+        {
+          "title": "Font Awesome",
+          "url": "https://fontawesome.com",
+          "icon": "fontawesome",
+          "color": "#528DD7",
+          "searchUrl": "https://fontawesome.com/icons?d=gallery&p=2&q={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "Pexels",
@@ -783,7 +919,7 @@
           "description": "Stock images.",
           "icon": "pexels",
           "color": "#05A081",
-          "searchUrl": "https://www.pexels.com/de-de/suche/{search}/",
+          "searchUrl": "https://www.pexels.com/de-de/suche/{search}",
           "searchConcat": "%20"
         },
         {
@@ -798,7 +934,7 @@
         {
           "title": "Subtle Patterns",
           "url": "https://www.toptal.com/designers/subtlepatterns",
-          "description": "A collection of subtle background patterns - by Toptal.",
+          "description": "A collection of subtle background patterns (by Toptal).",
           "icon": "toptal",
           "color": "#3863A0",
           "searchUrl": "https://www.toptal.com/designers/subtlepatterns/?s={search}",
@@ -806,7 +942,7 @@
         },
         {
           "title": "Transparent Textures",
-          "url": "https://transparenttextures.com/",
+          "url": "https://transparenttextures.com",
           "description": "A collection of transparent background patterns."
         }
       ]
@@ -879,14 +1015,6 @@
           "url": "https://neo4j.com",
           "icon": "neo4j",
           "color": "#008CC1"
-        },
-        {
-          "title": "Firebase",
-          "url": "https://firebase.google.com",
-          "icon": "firebase",
-          "color": "#FFCA28",
-          "searchUrl": "https://firebase.google.com/s/results?q={search}",
-          "searchConcat": "%20"
         }
       ]
     },
@@ -935,13 +1063,6 @@
           "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge",
           "icon": "microsoft",
           "color": "#666666"
-        },
-        {
-          "title": "Firefox Platform Status",
-          "url": "https://platform-status.mozilla.org",
-          "description": "Firefox browser release notes.",
-          "icon": "mozillafirefox",
-          "color": "#ff9400"
         },
         {
           "title": "WebKit Feature Status",
@@ -1065,6 +1186,7 @@
         {
           "title": "JetBrains",
           "url": "https://www.jetbrains.com",
+          "description": "Developer of IDEs like IntelliJ, PHPStorm, WebStorm, etc.",
           "icon": "jetbrains",
           "color": "#000000",
           "searchUrl": "https://www.jetbrains.com/search/?q={search}",
@@ -1082,7 +1204,7 @@
           "url": "https://insomnia.rest",
           "description": "A REST client.",
           "icon": "insomnia",
-          "color": "#5849BE"
+          "color": "#4000BF"
         },
         {
           "title": "Adobe",
@@ -1174,7 +1296,7 @@
       ]
     },
     {
-      "name": "State of...",
+      "name": "Developer surveys",
       "items": [
         {
           "title": "State of CSS",
@@ -1237,7 +1359,7 @@
         {
           "title": "Node Weekly",
           "url": "https://nodeweekly.com",
-          "icon": "node-dot-js",
+          "icon": "nodedotjs",
           "color": "#339933"
         },
         {
@@ -1249,7 +1371,7 @@
         {
           "title": "Vue.js News",
           "url": "https://news.vuejs.org",
-          "icon": "vue-dot-js",
+          "icon": "vuedotjs",
           "color": "#4fc08d"
         },
         {

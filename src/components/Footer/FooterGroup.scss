@@ -5,6 +5,7 @@
   @media (max-width: 500px) {
     flex-direction: column;
     align-items: stretch;
+    text-align: center;
   }
 
   @at-root .footer-divider + & {
@@ -27,6 +28,33 @@
       padding-right: 15px;
       margin-bottom: 15px;
       margin-right: 0;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0 3px;
+    padding: 8px 12px;
+
+    @media (max-width: 500px) {
+      margin: 0 var(--h-page-margin);
+      padding: 10px;
+    }
+  }
+
+  &__item--type-link {
+    color: var(--footer-link-color);
+    border-radius: 6px;
+    user-select: none;
+
+    &:focus {
+      outline: none;
+      background: var(--footer-link-background-hover);
+    }
+
+    &:hover {
+      color: var(--footer-link-color-hover);
+      background: var(--footer-link-background-hover);
     }
   }
 }

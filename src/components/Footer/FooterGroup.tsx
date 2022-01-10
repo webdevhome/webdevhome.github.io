@@ -1,18 +1,34 @@
-import React, { memo, PropsWithChildren } from 'react'
+import React, { FC } from 'react'
 import './FooterGroup.scss'
+
+interface FooterItem {
+  label: string
+  href?: string
+}
 
 interface Props {
   title: string
+  items: FooterItem[]
 }
 
-export const FooterGroup = memo<PropsWithChildren<Props>>(function FooterGroup({
-  children,
-  title,
-}) {
+export const FooterGroup: FC<Props> = ({ title, items }) => {
   return (
     <div className="footer-group">
       <div className="footer-group__title">{title}</div>
-      {children}
+      {items.map((item) =>
+        item.href !== undefined ? (
+          <a
+            href={item.href}
+            className="footer-group__item footer-group__item--type-link"
+          >
+            {item.label}
+          </a>
+        ) : (
+          <div className="footer-group__item footer-group__item--type-text">
+            {item.label}
+          </div>
+        )
+      )}
     </div>
   )
-})
+}

@@ -1,13 +1,12 @@
 import { mdiFormatListChecks, mdiMagnify, mdiStickerTextOutline } from '@mdi/js'
 import React, { FC } from 'react'
 import packageJson from '../../../package.json'
-import { links } from '../../links'
+import { links, useAllLinks } from '../../links'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
 import { AppMode } from '../../stores/appMode/appModeReducer'
 import { AppFooter } from '../Footer/AppFooter'
 import { FooterDivider } from '../Footer/FooterDivider'
 import { FooterGroup } from '../Footer/FooterGroup'
-import { FooterLink } from '../Footer/FooterLink'
 import { AppAction } from '../Header/AppAction'
 import { AppHeader } from '../Header/AppHeader'
 import { AppContent } from '../Layout/AppContent'
@@ -25,6 +24,7 @@ export const WebdevHome: FC = () => {
   const themeSwitcher = useThemeSwitcher()
   const toggleDescriptions = useToggleDescriptions()
   const isCurrentAppMode = useIsCurrentAppMode()
+  const allLinks = useAllLinks()
 
   return (
     <div className="app">
@@ -74,26 +74,36 @@ export const WebdevHome: FC = () => {
 
         {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
           <AppFooter>
-            <FooterGroup title={'WebdevHome v' + packageJson.version}>
-              <FooterLink
-                text="Changelog"
-                url="https://github.com/webdevhome/webdevhome.github.io/releases"
-              />
-              <FooterLink
-                text="GitHub"
-                url="https://github.com/webdevhome/webdevhome.github.io"
-              />
-            </FooterGroup>
+            <FooterGroup
+              title={`WebdevHome v${packageJson.version}`}
+              items={[
+                { label: `${allLinks.length} links` },
+                {
+                  label: 'Changelog',
+                  href: 'https://github.com/webdevhome/webdevhome.github.io/releases',
+                },
+                {
+                  label: 'GitHub',
+                  href: 'https://github.com/webdevhome/webdevhome.github.io',
+                },
+              ]}
+            />
 
             <FooterDivider />
 
-            <FooterGroup title="Icons">
-              <FooterLink
-                text="Material Design Icons"
-                url="https://materialdesignicons.com"
-              />
-              <FooterLink text="Simple Icons" url="https://simpleicons.org/" />
-            </FooterGroup>
+            <FooterGroup
+              title="Icons"
+              items={[
+                {
+                  label: 'Material Design Icons',
+                  href: 'https://materialdesignicons.com',
+                },
+                {
+                  label: 'Simple Icons',
+                  href: 'https://simpleicons.org/',
+                },
+              ]}
+            />
           </AppFooter>
         ) : null}
       </div>

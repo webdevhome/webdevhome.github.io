@@ -7,6 +7,10 @@
   @media (max-width: 900px) {
     --h-page-margin: 20px;
   }
+
+  @media (max-width: 500px) {
+    --h-page-margin: 10px;
+  }
 }
 
 body {

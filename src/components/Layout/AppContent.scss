@@ -13,7 +13,7 @@
   }
 
   @media (max-width: 500px) {
-    margin: 20px 0 40px;
+    margin: 20px var(--h-page-margin) 40px;
   }
 
   &--is-filtering {

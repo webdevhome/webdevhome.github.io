@@ -8,7 +8,7 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { getAllLinks, LinkItem, SearchTarget } from '../../links'
+import { LinkItem, SearchTarget, useAllLinks } from '../../links'
 import { useAppDispatch, useAppSelector } from '../../stores'
 import { setAppMode } from '../../stores/appMode/appModeActions'
 import { AppMode } from '../../stores/appMode/appModeReducer'
@@ -51,19 +51,19 @@ export function useSearch({
   const searchTarget = useAppSelector((state) => state.search.searchTarget)
   const getIsLinkHidden = useGetIsLinkHidden()
   const dispatch = useAppDispatch()
+  const allLinks = useAllLinks()
 
   const [keyboardIndex, setKeyboardIndex] = useState<number>(0)
 
   const links = useMemo(() => {
     const result: GroupedLinks = { visible: [], hidden: [] }
-    const allLinks = getAllLinks()
 
     for (const link of allLinks) {
       result[getIsLinkHidden(link) ? 'hidden' : 'visible'].push(link)
     }
 
     return result
-  }, [getIsLinkHidden])
+  }, [allLinks, getIsLinkHidden])
 
   const results = useMemo(() => {
     if (links.visible.length === 0) return null
