@@ -653,9 +653,9 @@
           "color": "#000000"
         },
         {
-          "title": "HeadlessUI",
+          "title": "Headless UI",
           "url": "https://headlessui.dev",
-          "description": "Unstyled UI components - by the developers behind Tailwind CSS."
+          "description": "Unstyled UI components for React and Vue by the developers of Tailwind CSS."
         }
       ]
     },
@@ -911,6 +911,27 @@
           "icon": "fontawesome",
           "color": "#528DD7",
           "searchUrl": "https://fontawesome.com/icons?d=gallery&p=2&q={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "Material Design Icons",
+          "url": "https://materialdesignicons.com",
+          "description": "Icons in the style of Google's official icon set, maintained by the community.",
+          "icon": "materialdesignicons",
+          "color": "#2196F3"
+        },
+        {
+          "title": "Heroicons",
+          "url": "https://heroicons.com",
+          "description": "Icons by the developers of Tailwind CSS."
+        },
+        {
+          "title": "Simple Icons",
+          "url": "https://simpleicons.org",
+          "description": "Collection of single colored brand logos.",
+          "icon": "simpleicons",
+          "color": "#111111",
+          "searchUrl": "https://simpleicons.org/?q={search}",
           "searchConcat": "%20"
         },
         {
