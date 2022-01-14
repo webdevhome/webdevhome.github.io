@@ -1,4 +1,5 @@
 import { mdiFormatListChecks, mdiMagnify, mdiStickerTextOutline } from '@mdi/js'
+import classNames from 'classnames'
 import React, { FC } from 'react'
 import packageJson from '../../../package.json'
 import { links, useAllLinks } from '../../links'
@@ -12,7 +13,6 @@ import { AppHeader } from '../Header/AppHeader'
 import { AppContent } from '../Layout/AppContent'
 import { LinkGroup } from '../Links/LinkGroup'
 import { Search } from '../Search/Search'
-import './App.scss'
 import { useCustomizeMode } from './useCustomizeMode'
 import { useSearchMode } from './useSearchMode'
 import { useThemeSwitcher } from './useThemeSwitcher'
@@ -27,8 +27,17 @@ export const WebdevHome: FC = () => {
   const allLinks = useAllLinks()
 
   return (
-    <div className="app">
-      <div className="app__header">
+    <div className="min-h-full">
+      <div
+        className={classNames(
+          'sticky top-0 left-0 right-0',
+          'bg-white/75',
+          'border-b border-b-black/20',
+          'shadow-md',
+          // TODO: Add fallback for browsers that don't support backdrop-filter.
+          'backdrop-blur'
+        )}
+      >
         <AppHeader
           actions={
             <>
@@ -61,7 +70,7 @@ export const WebdevHome: FC = () => {
         />
       </div>
 
-      <div className="app__content">
+      <div className="h-full">
         {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
           <AppContent>
             {links.items.map((group) => (
