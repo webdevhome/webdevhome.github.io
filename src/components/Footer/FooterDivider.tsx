@@ -1,6 +1,16 @@
-import React, { memo } from 'react'
-import './FooterDivider.scss'
+import classNames from 'classnames'
+import React, { FC } from 'react'
 
-export const FooterDivider = memo(function FooterDivider() {
-  return <div className="footer-divider"></div>
-})
+export const FooterDivider: FC = () => {
+  return (
+    <div
+      className={classNames(
+        'w-1/6 h-px',
+        'lg:w-px lg:h-6',
+        'mx-auto my-4',
+        'lg:mx-4 lg:my-0',
+        'bg-stone-500'
+      )}
+    />
+  )
+}
