@@ -3,6 +3,7 @@ import {
   mdiCheckboxOutline,
   mdiMagnify,
 } from '@mdi/js'
+import classNames from 'classnames'
 import React, { memo, MouseEvent, useCallback, useMemo } from 'react'
 import { ReactSVG } from 'react-svg'
 import { LinkItem, SearchTarget } from '../../links'
@@ -35,12 +36,12 @@ export const Link = memo<Props>(function Link({
   const isCurrentAppMode = useIsCurrentAppMode()
 
   const showDescription = useAppSelector(
-    (state) => state.appSettings.showDescriptions
+    (state) => state.appSettings.showDescriptions,
   )
 
   const isCustomizeMode = useMemo(
     () => isCurrentAppMode(AppMode.customize),
-    [isCurrentAppMode]
+    [isCurrentAppMode],
   )
 
   const handleLinkClick = useCallback(
@@ -50,7 +51,7 @@ export const Link = memo<Props>(function Link({
       event.preventDefault()
       dispatch(toggleHiddenLink(link.url))
     },
-    [dispatch, isCustomizeMode, link.url]
+    [dispatch, isCustomizeMode, link.url],
   )
 
   const handleSearchClick = useCallback(
@@ -60,7 +61,7 @@ export const Link = memo<Props>(function Link({
       dispatch(setAppMode(AppMode.search))
       dispatch(setSearchTarget(link as SearchTarget))
     },
-    [dispatch, link]
+    [dispatch, link],
   )
 
   const linkClasses = useMemo(
@@ -71,7 +72,7 @@ export const Link = memo<Props>(function Link({
         'link--has-focus': focus,
         'link--customize-mode': isCustomizeMode,
       }),
-    [focus, isCustomizeMode, visible]
+    [focus, isCustomizeMode, visible],
   )
 
   if (!isCustomizeMode && !visible) return null
@@ -98,7 +99,17 @@ export const Link = memo<Props>(function Link({
           <>
             <div className="link__info">
               <span className="link__info-text">
-                <kbd>Tab</kbd>
+                <kbd
+                  className={classNames(
+                    'py-[1px] px-1',
+                    'font-mono text-sm text-gray-600',
+                    'bg-gray-100',
+                    'border border-gray-400',
+                    'rounded',
+                  )}
+                >
+                  Tab
+                </kbd>
               </span>
             </div>
             <div className="link__action" onClick={handleSearchClick}>

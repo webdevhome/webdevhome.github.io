@@ -9,7 +9,7 @@ export const FooterDivider: FC = () => {
         'lg:w-px lg:h-6',
         'mx-auto my-4',
         'lg:mx-4 lg:my-0',
-        'bg-stone-500'
+        'bg-gray-500'
       )}
     />
   )
