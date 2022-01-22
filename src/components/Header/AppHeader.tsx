@@ -1,5 +1,5 @@
+import classNames from 'classnames'
 import React, { FC, ReactElement } from 'react'
-import './AppHeader.scss'
 import { Logo } from './Logo'
 
 interface Props {
@@ -8,13 +8,24 @@ interface Props {
 
 export const AppHeader: FC<Props> = ({ actions }) => {
   return (
-    <div className="app-header">
-      <div className="app-header__logo">
-        <Logo />
-      </div>
+    <div
+      className={classNames(
+        'grid items-center',
+        'grid-rows-[auto,auto] md:grid-rows-[auto] md:grid-cols-[1fr,auto]',
+        'px-page',
+      )}
+    >
+      <Logo />
 
       {actions !== null ? (
-        <div className="app-header__actions">{actions}</div>
+        <div
+          className={classNames(
+            'flex gap-x-2 justify-center flex-wrap',
+            'py-2',
+          )}
+        >
+          {actions}
+        </div>
       ) : null}
     </div>
   )

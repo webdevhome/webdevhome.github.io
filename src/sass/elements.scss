@@ -1,7 +1,7 @@
 :root {
   --icon-button-size: 46px;
   --h-page-margin: 50px;
-  font-family: var(--font-family-sans-serif);
+  // font-family: var(--font-family-sans-serif);
   height: 100%;
 
   @media (max-width: 900px) {
@@ -33,7 +33,7 @@ a {
 }
 
 kbd {
-  font-family: var(--font-family-mono);
+  // font-family: var(--font-family-mono);
   font-size: 14px;
   color: var(--input-text-color);
   background-color: var(--footer-background);

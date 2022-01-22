@@ -2,6 +2,7 @@ import {
   mdiCheckboxMultipleBlankOutline,
   mdiCheckboxMultipleOutline,
 } from '@mdi/js'
+import classNames from 'classnames'
 import React, { memo, useCallback, useMemo, useState } from 'react'
 import { LinkGroup as ILinkGroup, LinkItem } from '../../links'
 import { useAppDispatch } from '../../stores'
@@ -16,6 +17,7 @@ import { classes } from '../../utils/jsx'
 import { MdiIcon } from '../Icon/MdiIcon'
 import { Link } from './Link'
 import './LinkGroup.scss'
+import { LinkGroupButton } from './LinkGroupButton'
 
 interface Props {
   group: ILinkGroup
@@ -45,14 +47,14 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
     (items: LinkItem[]): boolean => {
       return allLinksInGroupAreHidden(items.map((link) => link.url))
     },
-    [allLinksInGroupAreHidden]
+    [allLinksInGroupAreHidden],
   )
 
   const handleToggleGroupClick = useCallback(
     (...items: LinkItem[]): void => {
       dispatch(toggleHiddenLinksGroup(items.map((link) => link.url)))
     },
-    [dispatch]
+    [dispatch],
   )
 
   const noVisibleLinksInGroup = useMemo(() => {
@@ -79,7 +81,18 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
   return (
     <div className={linkGroupClasses}>
       <div className="link-group__header">
-        <div className="link-group__name">{group.name}</div>
+        <div
+          className={classNames(
+            'flex-auto',
+            'px-4 py-2',
+            'bg-brand-100',
+            'font-semibold uppercase tracking-wider',
+            'text-brand-700',
+            'rounded-md',
+          )}
+        >
+          {group.name}
+        </div>
 
         {isCurrentAppMode(AppMode.customize) ? (
           <div
@@ -107,12 +120,9 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
 
         {isCurrentAppMode(AppMode.default) && hiddenLinks.length > 0 ? (
           <>
-            <div
-              className="link-group__hidden-links-button"
-              onClick={handleShowHiddenLinksClick}
-            >
+            <LinkGroupButton onClick={handleShowHiddenLinksClick}>
               {showHiddenLinksButtonLabel}
-            </div>
+            </LinkGroupButton>
 
             {showHiddenLinks ? (
               <div>

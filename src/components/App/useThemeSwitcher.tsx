@@ -38,7 +38,7 @@ export function useThemeSwitcher(): UseThemeSwitcherResult {
   }, [currentTheme])
 
   const title = useMemo(() => {
-    return `Switch theme (current theme: ${currentTheme})`
+    return `Theme: ${currentTheme}`
   }, [currentTheme])
 
   const switchTheme = useCallback((): void => {

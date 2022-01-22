@@ -11,11 +11,15 @@ module.exports = {
       brand: colors.teal,
       gray: colors.stone,
     },
+    fontFamily: {
+      sans: ['Segoe UI', 'Roboto', 'Verdana', 'Arial', 'sans-serif'],
+      mono: ['Consolas', 'Fira Code', 'Roboto Mono', 'monospace'],
+    },
     extend: {},
   },
   plugins: [
     plugin(({ addVariant }) => {
       addVariant('supports-backdrop', '@supports (backdrop-filter: blur(1px))')
-    })
+    }),
   ],
 }

@@ -1,32 +1,39 @@
-import React, { memo, useMemo } from 'react'
-import { classes } from '../../utils/jsx'
+import classNames from 'classnames'
+import React, { memo } from 'react'
 import { MdiIcon } from '../Icon/MdiIcon'
-import './AppAction.scss'
 
 interface Props {
   icon: string
   active: boolean
-  title?: string
+  label?: string
   action: () => void
 }
 
 export const AppAction = memo<Props>(function AppAction({
   icon,
   active,
-  title,
+  label,
   action,
 }) {
-  const actionClasses = useMemo(
-    () => ({
-      'app-action': true,
-      'app-action--is-active': active,
-    }),
-    [active]
-  )
-
   return (
-    <div className={classes(actionClasses)} onClick={action} title={title}>
-      <MdiIcon path={icon} title={title} />
+    <div
+      className={classNames(
+        'flex items-center',
+        'p-2',
+        'hover:bg-gray-200 active:bg-gray-300',
+        'rounded-md',
+        'select-none',
+        {
+          'bg-brand-600 hover:bg-brand-700 active:bg-brand-800': active,
+          'text-white': active,
+          'text-gray-800': !active,
+        },
+      )}
+      onClick={action}
+    >
+      <MdiIcon path={icon} />
+
+      <div className="ml-2 text-sm font-semibold tracking-wide">{label}</div>
     </div>
   )
 })

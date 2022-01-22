@@ -43,25 +43,25 @@ export const WebdevHome: FC = () => {
               <AppAction
                 icon={mdiMagnify}
                 active={isCurrentAppMode(AppMode.search)}
-                title="Filter links"
+                label="Search"
                 action={searchMode.handleSearchAction}
               />
               <AppAction
                 icon={themeSwitcher.icon}
                 active={false}
-                title={themeSwitcher.title}
+                label={themeSwitcher.title}
                 action={themeSwitcher.switchTheme}
               />
               <AppAction
                 icon={mdiStickerTextOutline}
                 active={toggleDescriptions.showDescriptions}
-                title="Toggle descriptions"
+                label="Descriptions"
                 action={toggleDescriptions.toggle}
               />
               <AppAction
                 icon={mdiFormatListChecks}
                 active={isCurrentAppMode(AppMode.customize)}
-                title="Toggle links visibility"
+                label="Customize"
                 action={customizeMode.handleCustomizeAction}
               />
             </>

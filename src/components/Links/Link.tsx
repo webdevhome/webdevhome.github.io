@@ -17,7 +17,6 @@ import { getIconUrl } from '../../utils/getIconUrl'
 import { classes } from '../../utils/jsx'
 import { DefaultIcon } from '../Icon/DefaultIcon'
 import { MdiIcon } from '../Icon/MdiIcon'
-import './Link.scss'
 
 interface Props {
   link: LinkItem
@@ -81,18 +80,40 @@ export const Link = memo<Props>(function Link({
     <a
       href={link.url}
       rel="noreferrer"
-      className={linkClasses}
+      className={classNames(
+        'grid grid-cols-[auto,1fr,auto] grid-rows-[auto,auto]',
+        'items-center gap-x-2',
+        'p-1',
+        'text-gray-700',
+        'hover:bg-gray-200',
+        { 'bg-gray-100 border': focus },
+        'focus:outline focus:outline-1 focus:outline-offset-0',
+        'focus:outline-gray-400',
+        'rounded-md',
+        { 'cursor-default': isCustomizeMode },
+      )}
       onClick={handleLinkClick}
     >
-      <div className="link__icon-container" style={{ color: link.color }}>
+      <div
+        className={classNames(
+          'grid items-center justify-center',
+          'p-1',
+          'bg-white',
+          'rounded',
+        )}
+        style={{ color: link.color }}
+      >
         {link.icon !== undefined ? (
-          <ReactSVG src={getIconUrl(link.icon)} className="link__icon" />
+          <ReactSVG
+            src={getIconUrl(link.icon)}
+            className={classNames('w-[27px] h-[27px]')}
+          />
         ) : (
           <DefaultIcon />
         )}
       </div>
 
-      <div className="link__label">{link.title}</div>
+      <div className={classNames('font-semibold')}>{link.title}</div>
 
       <div className="link__actions">
         {searchable && !isCustomizeMode ? (
@@ -101,6 +122,7 @@ export const Link = memo<Props>(function Link({
               <span className="link__info-text">
                 <kbd
                   className={classNames(
+                    { hidden: !focus },
                     'py-[1px] px-1',
                     'font-mono text-sm text-gray-600',
                     'bg-gray-100',
@@ -128,7 +150,7 @@ export const Link = memo<Props>(function Link({
       </div>
 
       {showDescription && link.description !== undefined ? (
-        <div className="link__description">{link.description}</div>
+        <div className="col-start-2">{link.description}</div>
       ) : null}
     </a>
   )

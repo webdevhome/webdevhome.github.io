@@ -1,13 +1,20 @@
+import classNames from 'classnames'
 import React, { memo } from 'react'
-import './Logo.scss'
 
 export const Logo = memo(function Logo() {
   return (
-    <div className="logo">
-      <span className="logo__shape">&lt;</span>
-      <span className="logo__char-1">Webdev</span>
-      <span className="logo__char-2">Home</span>
-      <span className="logo__shape"> /&gt;</span>
+    <div
+      className={classNames(
+        'font-mono text-2xl',
+        'tracking-wide',
+        'text-center md:text-left text-gray-400',
+        'pt-2 md:pt-0',
+      )}
+    >
+      <span>&lt;</span>
+      <span className="text-brand-600">Webdev</span>
+      <span className="text-brand-900">Home</span>
+      <span> /&gt;</span>
     </div>
   )
 })
