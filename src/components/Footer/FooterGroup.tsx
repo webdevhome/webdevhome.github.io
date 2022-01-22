@@ -15,10 +15,13 @@ interface Props {
 
 export const FooterGroup: FC<Props> = ({ title, items }) => {
   return (
-    <div className={classNames('flex items-center')}>
-      <div className={classNames('px-4', 'font-semibold')}>
-        {title}
-      </div>
+    <div
+      className={classNames(
+        'flex flex-col sm:flex-row sm:items-center',
+        'text-center sm:text-left',
+      )}
+    >
+      <FooterGroupText className="font-semibold">{title}</FooterGroupText>
 
       {items.map((item, index) =>
         item.href !== undefined ? (
@@ -27,7 +30,7 @@ export const FooterGroup: FC<Props> = ({ title, items }) => {
           </FooterGroupLink>
         ) : (
           <FooterGroupText key={index}>{item.label}</FooterGroupText>
-        )
+        ),
       )}
     </div>
   )

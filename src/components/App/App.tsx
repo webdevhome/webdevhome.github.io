@@ -31,11 +31,10 @@ export const WebdevHome: FC = () => {
       <div
         className={classNames(
           'sticky top-0 left-0 right-0',
-          'bg-white/75',
+          'bg-white supports-backdrop:bg-white/75',
           'border-b border-b-black/25',
-          'shadow-md',
-          // TODO: Add fallback for browsers that don't support backdrop-filter.
-          'backdrop-blur'
+          'shadow-lg',
+          'supports-backdrop:backdrop-blur'
         )}
       >
         <AppHeader
