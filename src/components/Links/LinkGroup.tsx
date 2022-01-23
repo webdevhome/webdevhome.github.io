@@ -13,10 +13,8 @@ import {
   useAllLinksInGroupAreHidden,
   useGetIsLinkHidden,
 } from '../../stores/hiddenLinks/hiddenLinksHooks'
-import { classes } from '../../utils/jsx'
 import { MdiIcon } from '../Icon/MdiIcon'
 import { Link } from './Link'
-import './LinkGroup.scss'
 import { LinkGroupButton } from './LinkGroupButton'
 
 interface Props {
@@ -30,14 +28,6 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
   const dispatch = useAppDispatch()
 
   const [showHiddenLinks, setShowHiddenLinks] = useState(false)
-
-  const linkGroupClasses = useMemo(() => {
-    return classes({
-      'link-group': true,
-      'link-group--is-visible':
-        !allLinksInGroupAreHidden(group.items.map((link) => link.url)) ?? false,
-    })
-  }, [allLinksInGroupAreHidden, group.items])
 
   const hiddenLinks = useMemo(() => {
     return group.items.filter((item) => getIsLinkHidden(item))
@@ -79,8 +69,8 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
   }
 
   return (
-    <div className={linkGroupClasses}>
-      <div className="link-group__header">
+    <div>
+      <div className="flex gap-x-1 mb-2">
         <div
           className={classNames(
             'flex-auto',
@@ -96,7 +86,17 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
 
         {isCurrentAppMode(AppMode.customize) ? (
           <div
-            className="link-group__action"
+            className={classNames(
+              'grid items-center justify-center',
+              'px-2',
+              'hover:bg-gray-200 active:bg-gray-300',
+              {
+                'text-brand-700': !allGroupLinksAreHidden(group.items),
+                'text-gray-400 hover:text-gray-500 active:text-gray-600':
+                  allGroupLinksAreHidden(group.items),
+              },
+              'rounded',
+            )}
             onClick={() => handleToggleGroupClick(...group.items)}
           >
             {allGroupLinksAreHidden(group.items) ? (
@@ -108,7 +108,7 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
         ) : null}
       </div>
 
-      <div className="link-group__list">
+      <div className="grid gap-y-[1px]">
         {group.items.map((link) => (
           <Link
             key={link.url}

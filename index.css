@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  svg {
+    vertical-align: middle;
+    fill: currentColor;
+  }
+}
+
 @layer components {
   .px-page {
     @apply px-2 sm:px-4 lg:px-8;

@@ -18,12 +18,12 @@ export function useThemeSwitcher(): UseThemeSwitcherResult {
   const currentTheme = useAppSelector((state) => state.appSettings.theme)
 
   const bodyElement = useMemo(
-    () => globalThis.document.getElementsByTagName('body')[0],
-    []
+    () => globalThis.document.getElementsByTagName('html')[0],
+    [],
   )
 
   useEffect(() => {
-    bodyElement.className = `${currentTheme}-theme`
+    bodyElement.className = currentTheme
   }, [bodyElement, currentTheme])
 
   const icon = useMemo((): string => {

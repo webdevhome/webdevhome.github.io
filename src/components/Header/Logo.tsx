@@ -12,8 +12,8 @@ export const Logo = memo(function Logo() {
       )}
     >
       <span>&lt;</span>
-      <span className="text-brand-600">Webdev</span>
-      <span className="text-brand-900">Home</span>
+      <span className="text-brand-500">Webdev</span>
+      <span className="text-brand-800">Home</span>
       <span> /&gt;</span>
     </div>
   )

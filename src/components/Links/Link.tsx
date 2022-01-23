@@ -14,9 +14,10 @@ import { AppMode } from '../../stores/appMode/appModeReducer'
 import { toggleHiddenLink } from '../../stores/hiddenLinks/hiddenLinksActions'
 import { setSearchTarget } from '../../stores/search/searchActions'
 import { getIconUrl } from '../../utils/getIconUrl'
-import { classes } from '../../utils/jsx'
+import { Kbd } from '../basics/Kbd'
 import { DefaultIcon } from '../Icon/DefaultIcon'
 import { MdiIcon } from '../Icon/MdiIcon'
+import { LinkAction } from './LinkAction'
 
 interface Props {
   link: LinkItem
@@ -63,17 +64,6 @@ export const Link = memo<Props>(function Link({
     [dispatch, link],
   )
 
-  const linkClasses = useMemo(
-    () =>
-      classes({
-        link: true,
-        'link--is-visible': visible,
-        'link--has-focus': focus,
-        'link--customize-mode': isCustomizeMode,
-      }),
-    [focus, isCustomizeMode, visible],
-  )
-
   if (!isCustomizeMode && !visible) return null
 
   return (
@@ -83,21 +73,27 @@ export const Link = memo<Props>(function Link({
       className={classNames(
         'grid grid-cols-[auto,1fr,auto] grid-rows-[auto,auto]',
         'items-center gap-x-2',
-        'p-1',
-        'text-gray-700',
-        'hover:bg-gray-200',
-        { 'bg-gray-100 border': focus },
+        {
+          'text-gray-400 hover:text-gray-600': !visible,
+          'text-gray-700': visible,
+        },
+        'hover:bg-gray-200 dark:hover:bg-gray-500',
+        {
+          'bg-gray-100': focus,
+          'outline outline-1 outline-offset-0 outline-gray-400': focus,
+        },
         'focus:outline focus:outline-1 focus:outline-offset-0',
         'focus:outline-gray-400',
         'rounded-md',
         { 'cursor-default': isCustomizeMode },
+        'overflow-hidden',
       )}
       onClick={handleLinkClick}
     >
       <div
         className={classNames(
           'grid items-center justify-center',
-          'p-1',
+          'm-1 p-1',
           'bg-white',
           'rounded',
         )}
@@ -113,44 +109,57 @@ export const Link = memo<Props>(function Link({
         )}
       </div>
 
-      <div className={classNames('font-semibold')}>{link.title}</div>
+      <div
+        className={classNames('my-1', {
+          'text-gray-900 dark:text-gray-50': visible,
+          'line-through': !visible,
+        })}
+      >
+        {link.title}
+      </div>
 
-      <div className="link__actions">
+      <div className="flex self-stretch">
         {searchable && !isCustomizeMode ? (
           <>
-            <div className="link__info">
-              <span className="link__info-text">
-                <kbd
-                  className={classNames(
-                    { hidden: !focus },
-                    'py-[1px] px-1',
-                    'font-mono text-sm text-gray-600',
-                    'bg-gray-100',
-                    'border border-gray-400',
-                    'rounded',
-                  )}
-                >
-                  Tab
-                </kbd>
-              </span>
-            </div>
-            <div className="link__action" onClick={handleSearchClick}>
+            {focus ? (
+              <div className="self-center mr-2">
+                <span className="flex items-center justify-center">
+                  <Kbd>Tab</Kbd>
+                </span>
+              </div>
+            ) : null}
+
+            <LinkAction
+              className="self-stretch"
+              hasHover
+              onClick={handleSearchClick}
+            >
               <MdiIcon path={mdiMagnify} />
-            </div>
+            </LinkAction>
           </>
         ) : null}
 
         {isCustomizeMode ? (
-          <div className="link__action">
+          <LinkAction
+            className={classNames({
+              'text-brand-700': visible,
+            })}
+          >
             <MdiIcon
               path={visible ? mdiCheckboxOutline : mdiCheckboxBlankOutline}
             />
-          </div>
+          </LinkAction>
         ) : null}
       </div>
 
       {showDescription && link.description !== undefined ? (
-        <div className="col-start-2">{link.description}</div>
+        <div
+          className={classNames('col-start-2', 'pb-1', 'text-sm', {
+            'text-gray-600 dark:text-gray-300': visible,
+          })}
+        >
+          {link.description}
+        </div>
       ) : null}
     </a>
   )

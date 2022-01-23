@@ -10,6 +10,7 @@ export const FooterGroupLink: FC<Props> = ({ href, children }) => {
     <a
       className={classNames(
         'px-2 py-2 sm:mx-1',
+        'text-sm',
         'hover:bg-gray-300',
         'rounded',
         'focus:outline outline-1 outline-gray-500'

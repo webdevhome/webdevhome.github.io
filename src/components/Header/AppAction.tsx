@@ -24,7 +24,7 @@ export const AppAction = memo<Props>(function AppAction({
         'rounded-md',
         'select-none',
         {
-          'bg-brand-600 hover:bg-brand-700 active:bg-brand-800': active,
+          'bg-brand-500 hover:bg-brand-700 active:bg-brand-800': active,
           'text-white': active,
           'text-gray-800': !active,
         },

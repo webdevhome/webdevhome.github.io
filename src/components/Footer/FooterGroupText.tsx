@@ -7,6 +7,8 @@ interface Props {
 
 export const FooterGroupText: FC<Props> = ({ className = '', children }) => {
   return (
-    <div className={classNames('px-2 py-2 sm:mx-1', className)}>{children}</div>
+    <div className={classNames('px-2 py-2 sm:mx-1', 'text-sm', className)}>
+      {children}
+    </div>
   )
 }
