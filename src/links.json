@@ -565,6 +565,12 @@
           "color": "#8BC0D0"
         },
         {
+          "title": "Stimulus",
+          "url": "https://stimulus.hotwired.dev",
+          "icon": "stimulus",
+          "color": "#77E8B9"
+        },
+        {
           "title": "Electron",
           "url": "https://www.electronjs.org",
           "icon": "electron",
@@ -1181,6 +1187,14 @@
           "url": "https://www.vagrantup.com",
           "icon": "vagrant",
           "color": "#1563ff"
+        },
+        {
+          "title": "VirtualBox",
+          "url": "https://www.virtualbox.org",
+          "icon": "virtualbox",
+          "color": "#183A61",
+          "searchUrl": "https://www.virtualbox.org/search?q={search}&wiki=on&changeset=on&ticket=on",
+          "searchConcat": "+"
         },
         {
           "title": "Visual Studio Code",
