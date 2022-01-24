@@ -20,7 +20,10 @@ export const LinkAction: FC<Props> = ({
         'grid items-center justify-center',
         'px-2',
         'cursor-default',
-        { 'hover:bg-gray-300 active:bg-gray-400': hasHover },
+        {
+          'hover:bg-gray-300 active:bg-gray-400': hasHover,
+          'dark:hover:bg-gray-500 dark:active:bg-gray-400': hasHover,
+        },
       )}
       onClick={onClick}
     >

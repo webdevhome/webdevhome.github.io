@@ -32,6 +32,7 @@ export const WebdevHome: FC = () => {
         className={classNames(
           'sticky top-0 left-0 right-0',
           'bg-white supports-backdrop:bg-white/75',
+          'dark:bg-gray-900 dark:supports-backdrop:bg-gray-900/70',
           'border-b border-b-black/25',
           'shadow-lg',
           'supports-backdrop:backdrop-blur'

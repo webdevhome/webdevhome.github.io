@@ -3,7 +3,7 @@ import {
   mdiCheckboxMultipleOutline,
 } from '@mdi/js'
 import classNames from 'classnames'
-import React, { memo, useCallback, useMemo, useState } from 'react'
+import React, { FC, useCallback, useMemo, useState } from 'react'
 import { LinkGroup as ILinkGroup, LinkItem } from '../../links'
 import { useAppDispatch } from '../../stores'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
@@ -21,7 +21,7 @@ interface Props {
   group: ILinkGroup
 }
 
-export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
+export const LinkGroup: FC<Props> = ({ group }) => {
   const allLinksInGroupAreHidden = useAllLinksInGroupAreHidden()
   const isCurrentAppMode = useIsCurrentAppMode()
   const getIsLinkHidden = useGetIsLinkHidden()
@@ -33,11 +33,9 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
     return group.items.filter((item) => getIsLinkHidden(item))
   }, [group.items, getIsLinkHidden])
 
-  const allGroupLinksAreHidden = useCallback(
-    (items: LinkItem[]): boolean => {
-      return allLinksInGroupAreHidden(items.map((link) => link.url))
-    },
-    [allLinksInGroupAreHidden],
+  const allGroupLinksAreHidden = useMemo(
+    () => allLinksInGroupAreHidden(group.items.map((link) => link.url)),
+    [allLinksInGroupAreHidden, group.items],
   )
 
   const handleToggleGroupClick = useCallback(
@@ -75,9 +73,9 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
           className={classNames(
             'flex-auto',
             'px-4 py-2',
-            'bg-brand-100',
+            'bg-brand-100 dark:bg-brand-500',
             'font-semibold uppercase tracking-wider',
-            'text-brand-700',
+            'text-brand-800 dark:text-brand-50',
             'rounded-md',
           )}
         >
@@ -90,16 +88,19 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
               'grid items-center justify-center',
               'px-2',
               'hover:bg-gray-200 active:bg-gray-300',
+              'dark:hover:bg-gray-600 dark:active:bg-gray-500',
               {
-                'text-brand-700': !allGroupLinksAreHidden(group.items),
+                'text-brand-700 dark:text-brand-300': !allGroupLinksAreHidden,
                 'text-gray-400 hover:text-gray-500 active:text-gray-600':
-                  allGroupLinksAreHidden(group.items),
+                  allGroupLinksAreHidden,
+                'dark:text-gray-400 dark:hover:text-gray-300':
+                  allGroupLinksAreHidden,
               },
               'rounded',
             )}
             onClick={() => handleToggleGroupClick(...group.items)}
           >
-            {allGroupLinksAreHidden(group.items) ? (
+            {allGroupLinksAreHidden ? (
               <MdiIcon path={mdiCheckboxMultipleBlankOutline} />
             ) : (
               <MdiIcon path={mdiCheckboxMultipleOutline} />
@@ -140,4 +141,4 @@ export const LinkGroup = memo<Props>(function LinkGroup({ group }) {
       </div>
     </div>
   )
-})
+}

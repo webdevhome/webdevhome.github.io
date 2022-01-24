@@ -75,9 +75,11 @@ export const Link = memo<Props>(function Link({
         'items-center gap-x-2',
         {
           'text-gray-400 hover:text-gray-600': !visible,
+          'dark:text-gray-400 dark:hover:text-gray-300': !visible,
           'text-gray-700': visible,
         },
-        'hover:bg-gray-200 dark:hover:bg-gray-500',
+        'hover:bg-gray-200 active:bg-gray-300',
+        'dark:hover:bg-gray-600 dark:active:bg-gray-500',
         {
           'bg-gray-100': focus,
           'outline outline-1 outline-offset-0 outline-gray-400': focus,
@@ -130,7 +132,7 @@ export const Link = memo<Props>(function Link({
             ) : null}
 
             <LinkAction
-              className="self-stretch"
+              className="self-stretch dark:text-gray-50"
               hasHover
               onClick={handleSearchClick}
             >
@@ -142,7 +144,7 @@ export const Link = memo<Props>(function Link({
         {isCustomizeMode ? (
           <LinkAction
             className={classNames({
-              'text-brand-700': visible,
+              'text-brand-700 dark:text-brand-300': visible,
             })}
           >
             <MdiIcon

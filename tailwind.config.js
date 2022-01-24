@@ -9,7 +9,7 @@ module.exports = {
     colors: {
       black: colors.black,
       white: colors.white,
-      gray: colors.stone,
+      gray: colors.gray,
       brand: {
         50: '#f6fdfd',
         100: '#cce6e5',
