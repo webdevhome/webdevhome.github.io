@@ -1,12 +1,12 @@
 import classNames from 'classnames'
-import React, { memo, useRef } from 'react'
+import React, { FC, useRef } from 'react'
 import { useAppSelector } from '../../stores'
 import { Link } from '../Links/Link'
 import { SearchHints } from './SearchHints'
 import { SearchTargetLabel } from './SearchTargetItem'
 import { useSearch } from './useSearch'
 
-export const Search = memo(function Search() {
+export const Search: FC = () => {
   const searchInputRef = useRef<HTMLInputElement>(null)
 
   const searchTerm = useAppSelector((state) => state.search.searchTerm)
@@ -79,11 +79,13 @@ export const Search = memo(function Search() {
 
               {hiddenResults !== null && hiddenResults.total > 0 ? (
                 <>
-                    <div className={classNames(
+                  <div
+                    className={classNames(
                       'grid grid-cols-[1fr,auto,1fr] gap-x-4 items-center',
                       'text-gray-500',
-                      'uppercase tracking-wide'
-                  )}>
+                      'uppercase tracking-wide',
+                    )}
+                  >
                     <div className="h-px bg-gray-400" />
                     Disabled links
                     <div className="h-px bg-gray-400" />
@@ -105,4 +107,4 @@ export const Search = memo(function Search() {
       </div>
     </div>
   )
-})
+}

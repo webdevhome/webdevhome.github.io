@@ -1,8 +1,9 @@
+import { useMemo } from 'react'
 import { useAppSelector } from '..'
 import { LinkItem } from '../../links'
 
 export function useAllLinksInGroupAreHidden(): (
-  links: Array<LinkItem['url']>
+  links: Array<LinkItem['url']>,
 ) => boolean {
   const hiddenLinks = useAppSelector((state) => state.hiddenLinks.links)
 
@@ -17,4 +18,14 @@ export function useGetIsLinkHidden(): (link: LinkItem) => boolean {
   return function getIsLinkHidden(link) {
     return hiddenLinks.includes(link.url)
   }
+}
+
+export function useHiddenLinksCount(): number {
+  const hiddenLinks = useAppSelector((state) => state.hiddenLinks.links)
+
+  const hiddenLinksCount = useMemo(() => {
+    return hiddenLinks.length
+  }, [hiddenLinks.length])
+
+  return hiddenLinksCount
 }

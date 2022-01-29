@@ -4,7 +4,7 @@ import {
   mdiMagnify,
 } from '@mdi/js'
 import classNames from 'classnames'
-import React, { memo, MouseEvent, useCallback, useMemo } from 'react'
+import React, { FC, MouseEvent, useCallback, useMemo } from 'react'
 import { ReactSVG } from 'react-svg'
 import { LinkItem, SearchTarget } from '../../links'
 import { useAppDispatch, useAppSelector } from '../../stores'
@@ -26,12 +26,12 @@ interface Props {
   focus?: boolean
 }
 
-export const Link = memo<Props>(function Link({
+export const Link: FC<Props> = ({
   link,
   searchable = false,
   visible = true,
   focus = false,
-}) {
+}) => {
   const dispatch = useAppDispatch()
   const isCurrentAppMode = useIsCurrentAppMode()
 
@@ -165,4 +165,4 @@ export const Link = memo<Props>(function Link({
       ) : null}
     </a>
   )
-})
+}

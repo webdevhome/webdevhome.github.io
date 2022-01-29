@@ -1,5 +1,5 @@
 import { Icon } from '@mdi/react'
-import React, { memo } from 'react'
+import React, { FC } from 'react'
 
 interface Props {
   path: string
@@ -7,11 +7,7 @@ interface Props {
   title?: string
 }
 
-export const MdiIcon = memo<Props>(function MdiIcon({
-  path,
-  color,
-  title = '',
-}) {
+export const MdiIcon: FC<Props> = ({ path, color, title = '' }) => {
   return (
     <Icon
       style={{ width: 24, height: 24 }}
@@ -20,4 +16,4 @@ export const MdiIcon = memo<Props>(function MdiIcon({
       title={title}
     />
   )
-})
+}

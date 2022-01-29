@@ -1,7 +1,7 @@
-import React, { memo } from 'react'
+import React, { FC } from 'react'
 import { SearchHint } from './SearchHint'
 
-export const SearchHints = memo(function SearchHints() {
+export const SearchHints: FC = () => {
   return (
     <div className="mx-8 text-lg">
       <SearchHint>Type ahead to filter links.</SearchHint>
@@ -17,4 +17,4 @@ export const SearchHints = memo(function SearchHints() {
       </SearchHint>
     </div>
   )
-})
+}

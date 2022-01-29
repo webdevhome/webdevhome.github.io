@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { memo, useMemo } from 'react'
+import React, { FC, useMemo } from 'react'
 import { ReactSVG } from 'react-svg'
 import { LinkItem } from '../../links'
 import { getIconUrl } from '../../utils/getIconUrl'
@@ -10,11 +10,7 @@ interface Props {
   color: LinkItem['color']
 }
 
-export const SearchTargetLabel = memo<Props>(function SearchTargetItem({
-  title,
-  icon,
-  color,
-}) {
+export const SearchTargetLabel: FC<Props> = ({ title, icon, color }) => {
   const searchTargetIcon = useMemo(() => {
     if (icon === undefined) {
       return <span className="w-2" />
@@ -45,4 +41,4 @@ export const SearchTargetLabel = memo<Props>(function SearchTargetItem({
       <span className="text-brand-600 dark:text-brand-300">{title}</span>:
     </div>
   )
-})
+}

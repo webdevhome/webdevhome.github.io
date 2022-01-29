@@ -37,9 +37,7 @@ export function useThemeSwitcher(): UseThemeSwitcherResult {
     }
   }, [currentTheme])
 
-  const title = useMemo(() => {
-    return `Theme: ${currentTheme}`
-  }, [currentTheme])
+  const title = useMemo(() => `Theme: ${currentTheme}`, [currentTheme])
 
   const switchTheme = useCallback((): void => {
     dispatch(setTheme(cycleTheme(currentTheme)))

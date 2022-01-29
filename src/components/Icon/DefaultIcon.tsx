@@ -1,9 +1,9 @@
 import { mdiLinkVariant } from '@mdi/js'
 import classNames from 'classnames'
-import React, { memo } from 'react'
+import React, { FC } from 'react'
 import { MdiIcon } from './MdiIcon'
 
-export const DefaultIcon = memo(function DefaultIcon() {
+export const DefaultIcon: FC = () => {
   return (
     <div
       className={classNames(
@@ -15,4 +15,4 @@ export const DefaultIcon = memo(function DefaultIcon() {
       <MdiIcon path={mdiLinkVariant} />
     </div>
   )
-})
+}

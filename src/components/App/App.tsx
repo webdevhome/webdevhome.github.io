@@ -11,6 +11,7 @@ import packageJson from '../../../package.json'
 import { links, useAllLinks } from '../../links'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
 import { AppMode } from '../../stores/appMode/appModeReducer'
+import { useHiddenLinksCount } from '../../stores/hiddenLinks/hiddenLinksHooks'
 import { AppFooter } from '../Footer/AppFooter'
 import { FooterDivider } from '../Footer/FooterDivider'
 import { FooterGroup } from '../Footer/FooterGroup'
@@ -31,6 +32,7 @@ export const WebdevHome: FC = () => {
   const toggleDescriptions = useToggleDescriptions()
   const isCurrentAppMode = useIsCurrentAppMode()
   const allLinks = useAllLinks()
+  const hiddenLinksCount = useHiddenLinksCount()
 
   return (
     <div className="min-h-full">
@@ -112,7 +114,9 @@ export const WebdevHome: FC = () => {
             <FooterGroup
               title={`WebdevHome v${packageJson.version}`}
               items={[
-                { label: `${allLinks.length} links` },
+                {
+                  label: `${allLinks.length} links / ${hiddenLinksCount} hidden`,
+                },
                 {
                   label: 'Changelog',
                   href: 'https://github.com/webdevhome/webdevhome.github.io/releases',

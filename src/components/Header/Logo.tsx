@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import React, { memo } from 'react'
+import React, { FC } from 'react'
 
-export const Logo = memo(function Logo() {
+export const Logo: FC = () => {
   return (
     <div
       className={classNames(
@@ -17,4 +17,4 @@ export const Logo = memo(function Logo() {
       <span> /&gt;</span>
     </div>
   )
-})
+}

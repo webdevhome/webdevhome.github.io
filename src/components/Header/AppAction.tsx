@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { memo } from 'react'
+import React, { FC } from 'react'
 import { MdiIcon } from '../Icon/MdiIcon'
 
 interface Props {
@@ -9,12 +9,12 @@ interface Props {
   action: () => void
 }
 
-export const AppAction = memo<Props>(function AppAction({
+export const AppAction: FC<Props> = ({
   icon,
   active = false,
   label,
   action,
-}) {
+}) => {
   return (
     <div
       className={classNames(
@@ -38,4 +38,4 @@ export const AppAction = memo<Props>(function AppAction({
       <div className="ml-2 text-sm font-semibold tracking-wide">{label}</div>
     </div>
   )
-})
+}
