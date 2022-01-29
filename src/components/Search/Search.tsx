@@ -40,8 +40,10 @@ export const Search = memo(function Search() {
             'block h-14',
             'my-5 px-8',
             'border-none',
-            'bg-gray-200',
+            'bg-gray-200 dark:bg-gray-500',
             'font-sans text-2xl',
+            'text-gray-800 dark:text-white',
+            'placeholder:text-gray-400 dark:placeholder:text-gray-300',
             'rounded-full',
             'outline-2 focus:outline-brand-500',
           )}

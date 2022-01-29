@@ -11,9 +11,11 @@ export const FooterGroupLink: FC<Props> = ({ href, children }) => {
       className={classNames(
         'px-2 py-2 sm:mx-1',
         'text-sm',
-        'hover:bg-gray-300',
+        'text-brand-500 dark:text-brand-200',
+        'hover:text-brand-600 hover:dark:text-brand-50',
+        'hover:bg-gray-300 dark:hover:bg-gray-500',
         'rounded',
-        'focus:outline outline-1 outline-gray-500'
+        'focus:outline outline-1 outline-gray-500 dark:outline-gray-300'
       )}
       href={href}
     >

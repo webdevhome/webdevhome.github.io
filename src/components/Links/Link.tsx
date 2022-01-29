@@ -81,7 +81,7 @@ export const Link = memo<Props>(function Link({
         'hover:bg-gray-200 active:bg-gray-300',
         'dark:hover:bg-gray-600 dark:active:bg-gray-500',
         {
-          'bg-gray-100': focus,
+          'bg-gray-100 dark:bg-gray-500': focus,
           'outline outline-1 outline-offset-0 outline-gray-400': focus,
         },
         'focus:outline focus:outline-1 focus:outline-offset-0',

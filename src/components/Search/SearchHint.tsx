@@ -19,7 +19,7 @@ export const SearchHint: FC<Props> = ({ children, inputs }) => {
         </div>
       ) : null}
 
-      <div>{children}</div>
+      <div className="text-gray-600 dark:text-gray-300">{children}</div>
     </div>
   )
 }

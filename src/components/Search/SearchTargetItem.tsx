@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React, { memo, useMemo } from 'react'
 import { ReactSVG } from 'react-svg'
 import { LinkItem } from '../../links'
@@ -23,7 +24,7 @@ export const SearchTargetLabel = memo<Props>(function SearchTargetItem({
 
     return (
       <span
-        className="mx-1 p-1 w-[31px] h-[31px] bg-white rounded"
+        className="mx-2 p-1 w-[31px] h-[31px] bg-white rounded"
         style={{ color }}
       >
         <ReactSVG src={iconUrl} className="search-target-item__icon" />
@@ -32,9 +33,16 @@ export const SearchTargetLabel = memo<Props>(function SearchTargetItem({
   }, [color, icon])
 
   return (
-    <div className="col-start-2 flex items-center px-8 text-xl text-gray-700">
+    <div
+      className={classNames(
+        'col-start-2 flex items-center',
+        'px-8',
+        'text-xl',
+        'text-gray-700 dark:text-gray-100',
+      )}
+    >
       Search on {searchTargetIcon}
-      <span className="text-brand-600">{title}</span>:
+      <span className="text-brand-600 dark:text-brand-300">{title}</span>:
     </div>
   )
 })
