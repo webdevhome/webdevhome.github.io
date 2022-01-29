@@ -19,6 +19,7 @@ export const LinkGroupButton: FC<Props> = ({ children, onClick }) => {
         'dark:hover:bg-gray-600 dark:active:bg-gray-500',
         'rounded',
         'select-none',
+        'cursor-default',
       )}
       onClick={onClick}
     >
