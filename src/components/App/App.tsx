@@ -1,4 +1,10 @@
-import { mdiFormatListChecks, mdiMagnify, mdiStickerTextOutline } from '@mdi/js'
+import {
+  mdiArrowLeft,
+  mdiCheck,
+  mdiFormatListChecks,
+  mdiMagnify,
+  mdiStickerTextOutline,
+} from '@mdi/js'
 import classNames from 'classnames'
 import React, { FC } from 'react'
 import packageJson from '../../../package.json'
@@ -10,9 +16,9 @@ import { FooterDivider } from '../Footer/FooterDivider'
 import { FooterGroup } from '../Footer/FooterGroup'
 import { AppAction } from '../Header/AppAction'
 import { AppHeader } from '../Header/AppHeader'
-import { AppContent } from './AppContent'
 import { LinkGroup } from '../Links/LinkGroup'
 import { Search } from '../Search/Search'
+import { AppContent } from './AppContent'
 import { useCustomizeMode } from './useCustomizeMode'
 import { useSearchMode } from './useSearchMode'
 import { useThemeSwitcher } from './useThemeSwitcher'
@@ -35,36 +41,56 @@ export const WebdevHome: FC = () => {
           'dark:bg-gray-900 dark:supports-backdrop:bg-gray-900/70',
           'border-b border-b-black/25',
           'shadow-lg',
-          'supports-backdrop:backdrop-blur'
+          'supports-backdrop:backdrop-blur',
         )}
       >
         <AppHeader
           actions={
             <>
-              <AppAction
-                icon={mdiMagnify}
-                active={isCurrentAppMode(AppMode.search)}
-                label="Search"
-                action={searchMode.handleSearchAction}
-              />
-              <AppAction
-                icon={themeSwitcher.icon}
-                active={false}
-                label={themeSwitcher.title}
-                action={themeSwitcher.switchTheme}
-              />
-              <AppAction
-                icon={mdiStickerTextOutline}
-                active={toggleDescriptions.showDescriptions}
-                label="Descriptions"
-                action={toggleDescriptions.toggle}
-              />
-              <AppAction
-                icon={mdiFormatListChecks}
-                active={isCurrentAppMode(AppMode.customize)}
-                label="Customize"
-                action={customizeMode.handleCustomizeAction}
-              />
+              {isCurrentAppMode(AppMode.default) ? (
+                <>
+                  <AppAction
+                    icon={mdiMagnify}
+                    label="Search"
+                    action={searchMode.handleSearchAction}
+                  />
+                  <AppAction
+                    icon={themeSwitcher.icon}
+                    active={false}
+                    label={themeSwitcher.title}
+                    action={themeSwitcher.switchTheme}
+                  />
+                  <AppAction
+                    icon={mdiStickerTextOutline}
+                    active={toggleDescriptions.showDescriptions}
+                    label="Descriptions"
+                    action={toggleDescriptions.toggle}
+                  />
+                  <AppAction
+                    icon={mdiFormatListChecks}
+                    label="Customize"
+                    action={customizeMode.handleCustomizeAction}
+                  />
+                </>
+              ) : isCurrentAppMode(AppMode.search) ? (
+                <>
+                  <AppAction
+                    icon={mdiArrowLeft}
+                    active
+                    label="Back"
+                    action={searchMode.handleSearchAction}
+                  />
+                </>
+              ) : isCurrentAppMode(AppMode.customize) ? (
+                <>
+                  <AppAction
+                    icon={mdiCheck}
+                    active
+                    label="Done"
+                    action={customizeMode.handleCustomizeAction}
+                  />
+                </>
+              ) : null}
             </>
           }
         />

@@ -4,14 +4,14 @@ import { MdiIcon } from '../Icon/MdiIcon'
 
 interface Props {
   icon: string
-  active: boolean
+  active?: boolean
   label?: string
   action: () => void
 }
 
 export const AppAction = memo<Props>(function AppAction({
   icon,
-  active,
+  active = false,
   label,
   action,
 }) {
