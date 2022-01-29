@@ -76,6 +76,14 @@
           "color": "#000000"
         },
         {
+          "title": "Heroku",
+          "url": "https://heroku.com",
+          "icon": "heroku",
+          "color": "#430098",
+          "searchUrl": "https://heroku.com/search?q={search}",
+          "searchConcat": "+"
+        },
+        {
           "title": "Microsoft Azure",
           "url": "https://azure.microsoft.com",
           "icon": "microsoftazure",
@@ -106,6 +114,12 @@
           "color": "#FFCA28",
           "searchUrl": "https://firebase.google.com/s/results?q={search}",
           "searchConcat": "%20"
+        },
+        {
+          "title": "Supabase",
+          "url": "https://supabase.com",
+          "icon": "supabase",
+          "color": "#3ecf8e"
         },
         {
           "title": "DigitalOcean",
@@ -662,6 +676,12 @@
           "title": "Headless UI",
           "url": "https://headlessui.dev",
           "description": "Unstyled UI components for React and Vue by the developers of Tailwind CSS."
+        },
+        {
+          "title": "Lodash",
+          "url": "https://lodash.com",
+          "icon": "lodash",
+          "color": "#3492ff"
         }
       ]
     },
@@ -756,6 +776,20 @@
           "description": "A universal build chain that includes a linter, compiler, bundler, and more.",
           "icon": "rome",
           "color": "#27272A"
+        },
+        {
+          "title": "SWC",
+          "url": "https://swc.rs",
+          "description": "Rust-based platform for the web.",
+          "icon": "swc",
+          "color": "#000000"
+        },
+        {
+          "title": "esbuild",
+          "url": "https://esbuild.github.io",
+          "description": "An extremely fast JavaScript bundler.",
+          "icon": "esbuild",
+          "color": "#ffcf00"
         },
         {
           "title": "Parcel",
@@ -1142,6 +1176,25 @@
           "description": "A list of Mozilla's position on open web and web-related specifications.",
           "icon": "mozilla",
           "color": "#000000"
+        },
+        {
+          "title": "TC39 Website",
+          "url": "https://tc39.es",
+          "description": "Official forum of Ecma International's TC39 (Technical Committee 39)."
+        },
+        {
+          "title": "TC39 Forum",
+          "url": "https://es.discourse.group",
+          "description": "Official forum of Ecma International's TC39 (Technical Committee 39). Talk about ECMAScript features and proposals.",
+          "searchUrl": "https://es.discourse.group/search?q={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "WICG Forum",
+          "url": "https://discourse.wicg.io",
+          "description": "Official forum of the WICG (Web Incubator Community Group). Talk about web standards and proposals.",
+          "searchUrl": "https://discourse.wicg.io/search?q={search}",
+          "searchConcat": "%20"
         }
       ]
     },
@@ -1254,6 +1307,12 @@
           "url": "https://affinity.serif.com",
           "icon": "affinity",
           "color": "#222324"
+        },
+        {
+          "title": "Figma",
+          "url": "https://figma.com",
+          "icon": "figma",
+          "color": "#f24e1e"
         }
       ]
     },
