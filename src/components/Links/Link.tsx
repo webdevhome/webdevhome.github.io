@@ -4,7 +4,7 @@ import {
   mdiMagnify,
 } from '@mdi/js'
 import classNames from 'classnames'
-import React, { FC, MouseEvent, useCallback, useMemo } from 'react'
+import { FC, MouseEvent, useCallback, useMemo } from 'react'
 import { ReactSVG } from 'react-svg'
 import { LinkItem, SearchTarget } from '../../links'
 import { useAppDispatch, useAppSelector } from '../../stores'

@@ -1,5 +1,5 @@
 import { Icon } from '@mdi/react'
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 interface Props {
   path: string

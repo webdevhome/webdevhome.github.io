@@ -1,6 +1,6 @@
 import { mdiLinkVariant } from '@mdi/js'
 import classNames from 'classnames'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { MdiIcon } from './MdiIcon'
 
 export const DefaultIcon: FC = () => {

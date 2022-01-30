@@ -1,5 +1,5 @@
 import { mdiThemeLightDark, mdiWeatherNight, mdiWeatherSunny } from '@mdi/js'
-import { useCallback, useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../stores'
 import {
   cycleTheme,
@@ -13,18 +13,70 @@ export interface UseThemeSwitcherResult {
   switchTheme: () => void
 }
 
+const prefersDarkQuery = '(prefers-color-scheme: dark)'
+
 export function useThemeSwitcher(): UseThemeSwitcherResult {
   const dispatch = useAppDispatch()
   const currentTheme = useAppSelector((state) => state.appSettings.theme)
 
-  const bodyElement = useMemo(
+  const [prefersDark, setPrefersDark] = useState<boolean>(
+    () => matchMedia(prefersDarkQuery).matches,
+  )
+
+  const [effectiveTheme, setEffectiveTheme] = useState<
+    AppTheme.light | AppTheme.dark
+  >(AppTheme.light)
+
+  const rootElement = useMemo(
     () => globalThis.document.getElementsByTagName('html')[0],
     [],
   )
 
+  function handlePrefersColorSchemeChange(event: MediaQueryListEvent): void {
+    setPrefersDark(event.matches)
+  }
+
   useEffect(() => {
-    bodyElement.className = currentTheme
-  }, [bodyElement, currentTheme])
+    console.log('init')
+
+    matchMedia(prefersDarkQuery).addEventListener(
+      'change',
+      handlePrefersColorSchemeChange,
+    )
+
+    return () => {
+      console.log('destroy')
+      matchMedia(prefersDarkQuery).removeEventListener(
+        'change',
+        handlePrefersColorSchemeChange,
+      )
+    }
+  }, [])
+
+  // Set effectiveTheme
+  useEffect(() => {
+    if (currentTheme === AppTheme.auto) {
+      setEffectiveTheme(prefersDark ? AppTheme.dark : AppTheme.light)
+      return
+    }
+
+    setEffectiveTheme(currentTheme)
+  }, [rootElement, currentTheme, prefersDark])
+
+  // Set className
+  useEffect(() => {
+    const htmlElement = document.getElementsByTagName('html')[0]
+    if (htmlElement === undefined) return
+
+    htmlElement.classList.toggle(
+      AppTheme.light,
+      effectiveTheme === AppTheme.light,
+    )
+    htmlElement.classList.toggle(
+      AppTheme.dark,
+      effectiveTheme === AppTheme.dark,
+    )
+  }, [effectiveTheme])
 
   const icon = useMemo((): string => {
     switch (currentTheme) {

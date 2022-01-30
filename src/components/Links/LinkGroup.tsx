@@ -3,7 +3,7 @@ import {
   mdiCheckboxMultipleOutline,
 } from '@mdi/js'
 import classNames from 'classnames'
-import React, { FC, useCallback, useMemo, useState } from 'react'
+import { FC, useCallback, useMemo, useState } from 'react'
 import { LinkGroup as ILinkGroup, LinkItem } from '../../links'
 import { useAppDispatch } from '../../stores'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'

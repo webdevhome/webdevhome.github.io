@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { FC, useMemo } from 'react'
+import { FC, useMemo } from 'react'
 import { ReactSVG } from 'react-svg'
 import { LinkItem } from '../../links'
 import { getIconUrl } from '../../utils/getIconUrl'

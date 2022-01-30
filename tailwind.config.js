@@ -30,8 +30,20 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    plugin(({ addVariant }) => {
+    plugin(({ addVariant, addUtilities }) => {
       addVariant('supports-backdrop', '@supports (backdrop-filter: blur(1px))')
+
+      addUtilities({
+        '.scrollbargutter-auto': { 'scrollbar-gutter': 'auto' },
+        '.scrollbargutter-stable': { 'scrollbar-gutter': 'stable' },
+        '.scrollbargutter-stable-both': {
+          'scrollbar-gutter': 'stable both-edges',
+        },
+        '.scrollbargutter-inherit': { 'scrollbar-gutter': 'inherit' },
+        '.scrollbargutter-initial': { 'scrollbar-gutter': 'initial' },
+        '.scrollbargutter-revert': { 'scrollbar-gutter': 'revert' },
+        '.scrollbargutter-unset': { 'scrollbar-gutter': 'unset' },
+      })
     }),
   ],
 }

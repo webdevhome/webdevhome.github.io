@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, Fragment } from 'react'
 import { Kbd } from '../basics/Kbd'
 
 interface Props {
@@ -11,10 +11,10 @@ export const SearchHint: FC<Props> = ({ children, inputs }) => {
       {inputs !== undefined && inputs.length > 0 ? (
         <div>
           {inputs.map((input, index) => (
-            <>
+            <Fragment key={index}>
               {index > 0 ? ' + ' : null}
               <Kbd>{input}</Kbd>
-            </>
+            </Fragment>
           ))}
         </div>
       ) : null}

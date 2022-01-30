@@ -6,7 +6,7 @@ import {
   mdiStickerTextOutline,
 } from '@mdi/js'
 import classNames from 'classnames'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import packageJson from '../../../package.json'
 import { links, useAllLinks } from '../../links'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'

@@ -1,7 +1,9 @@
 import classNames from 'classnames'
-import React, { FC, useRef } from 'react'
+import { FC, useRef } from 'react'
 import { useAppSelector } from '../../stores'
 import { Link } from '../Links/Link'
+import { SearchDivider } from './SearchDivider'
+import { SearchHint } from './SearchHint'
 import { SearchHints } from './SearchHints'
 import { SearchTargetLabel } from './SearchTargetItem'
 import { useSearch } from './useSearch'
@@ -58,7 +60,19 @@ export const Search: FC = () => {
       <div>
         {searchTarget === null ? (
           searchTerm === '' ? (
-            <SearchHints />
+            <SearchHints>
+              <SearchHint>Type ahead to filter links.</SearchHint>
+
+              <SearchHint inputs={['Return']}>Open link</SearchHint>
+
+              <SearchHint inputs={['Ctrl', 'Return']}>
+                Open link in a new tab (background)
+              </SearchHint>
+
+              <SearchHint inputs={['Ctrl', 'Shift', 'Return']}>
+                Open link in a new tab (foreground)
+              </SearchHint>
+            </SearchHints>
           ) : (
             <>
               {results !== null && results.total > 0 ? (
@@ -72,24 +86,15 @@ export const Search: FC = () => {
                   />
                 ))
               ) : (
-                <div className="px-8 text-gray-800 text-lg select-none">
-                  No results found...
-                </div>
+                <SearchHints>
+                  <SearchHint>No results found...</SearchHint>
+                </SearchHints>
               )}
 
               {hiddenResults !== null && hiddenResults.total > 0 ? (
                 <>
-                  <div
-                    className={classNames(
-                      'grid grid-cols-[1fr,auto,1fr] gap-x-4 items-center',
-                      'text-gray-500',
-                      'uppercase tracking-wide',
-                    )}
-                  >
-                    <div className="h-px bg-gray-400" />
-                    Disabled links
-                    <div className="h-px bg-gray-400" />
-                  </div>
+                  <SearchDivider text="Disabled links" />
+
                   {hiddenResults.map((link) => (
                     <Link
                       key={link.obj.url}

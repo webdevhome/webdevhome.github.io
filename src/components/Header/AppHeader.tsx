@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { FC, ReactElement } from 'react'
+import { FC, ReactElement } from 'react'
 import { Logo } from './Logo'
 
 interface Props {
