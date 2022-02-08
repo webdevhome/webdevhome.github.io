@@ -941,6 +941,11 @@
           "searchConcat": "+"
         },
         {
+          "title": "Google Webfonts Helper",
+          "url": "https://google-webfonts-helper.herokuapp.com",
+          "description": "A web service that helps to self-host fonts from Google Fonts"
+        },
+        {
           "title": "Coding Fonts",
           "url": "https://coding-fonts.css-tricks.com",
           "description": "A collection of fonts for code editors - by CSS Tricks."
