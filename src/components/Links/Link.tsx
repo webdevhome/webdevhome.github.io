@@ -73,6 +73,7 @@ export const Link: FC<Props> = ({
       className={classNames(
         'grid grid-cols-[auto,1fr,auto] grid-rows-[auto,auto]',
         'items-center gap-x-2',
+        'p-1',
         {
           'text-gray-400 hover:text-gray-600': !visible,
           'dark:text-gray-400 dark:hover:text-gray-300': !visible,
@@ -95,7 +96,7 @@ export const Link: FC<Props> = ({
       <div
         className={classNames(
           'grid items-center justify-center',
-          'm-1 p-1',
+          'p-1',
           'bg-white',
           'rounded',
         )}
@@ -112,15 +113,15 @@ export const Link: FC<Props> = ({
       </div>
 
       <div
-        className={classNames('my-1', {
-          'text-gray-900 dark:text-gray-50': visible,
+        className={classNames({
+          'text-black dark:text-gray-50': visible,
           'line-through': !visible,
         })}
       >
         {link.title}
       </div>
 
-      <div className="flex self-stretch">
+      <div className="flex self-stretch -my-1 -mr-1">
         {searchable && !isCustomizeMode ? (
           <>
             {focus ? (
@@ -157,7 +158,7 @@ export const Link: FC<Props> = ({
       {showDescription && link.description !== undefined ? (
         <div
           className={classNames('col-start-2', 'pb-1', 'text-sm', {
-            'text-gray-600 dark:text-gray-300': visible,
+            'text-gray-500 dark:text-gray-300': visible,
           })}
         >
           {link.description}
