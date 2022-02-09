@@ -442,6 +442,11 @@
           "searchConcat": "%20"
         },
         {
+          "title": "The Twelve-Factor App",
+          "url": "https://12factor.net",
+          "description": "A methodology for building modern, scalable, maintainable software-as-a-service apps."
+        },
+        {
           "title": "Keep a Changelog",
           "url": "https://keepachangelog.com/en/1.1.0",
           "description": "Convention for writing changelogs."
