@@ -839,6 +839,10 @@
           "color": "#007acc"
         },
         {
+          "title": "JSDoc",
+          "url": "https://jsdoc.app"
+        },
+        {
           "title": "AssemblyScript",
           "url": "https://www.assemblyscript.org",
           "icon": "assemblyscript",
