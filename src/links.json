@@ -680,7 +680,9 @@
         {
           "title": "Headless UI",
           "url": "https://headlessui.dev",
-          "description": "Unstyled UI components for React and Vue by the developers of Tailwind CSS."
+          "description": "Unstyled UI components for React and Vue by the developers of Tailwind CSS.",
+          "icon": "headlessui",
+          "color": "#66E3FF"
         },
         {
           "title": "Lodash",
@@ -1011,9 +1013,7 @@
           "url": "https://www.toptal.com/designers/subtlepatterns",
           "description": "A collection of subtle background patterns (by Toptal).",
           "icon": "toptal",
-          "color": "#3863A0",
-          "searchUrl": "https://www.toptal.com/designers/subtlepatterns/?s={search}",
-          "searchConcat": "+"
+          "color": "#3863A0"
         },
         {
           "title": "Transparent Textures",
