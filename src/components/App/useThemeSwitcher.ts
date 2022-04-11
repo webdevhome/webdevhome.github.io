@@ -37,15 +37,12 @@ export function useThemeSwitcher(): UseThemeSwitcherResult {
   }
 
   useEffect(() => {
-    console.log('init')
-
     matchMedia(prefersDarkQuery).addEventListener(
       'change',
       handlePrefersColorSchemeChange,
     )
 
     return () => {
-      console.log('destroy')
       matchMedia(prefersDarkQuery).removeEventListener(
         'change',
         handlePrefersColorSchemeChange,
