@@ -841,6 +841,13 @@
           "color": "#007acc"
         },
         {
+          "title": "DefinitelyTyped",
+          "url": "https://definitelytyped.org",
+          "description": "Type definitions for existing JS code.",
+          "searchUrl": "https://www.typescriptlang.org/dt/search?search={search}",
+          "searchConcat": "+"
+        },
+        {
           "title": "JSDoc",
           "url": "https://jsdoc.app"
         },
