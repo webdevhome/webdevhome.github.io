@@ -19,7 +19,7 @@
         "items": {
           "type": "array",
           "items": {
-            "$ref": "#$defs/link"
+            "$ref": "#/$defs/link"
           }
         }
       }
@@ -78,7 +78,7 @@
     "items": {
       "type": "array",
       "items": {
-        "$ref": "#$defs/group"
+        "$ref": "#/$defs/group"
       }
     }
   }

@@ -16,7 +16,7 @@
           "title": "GitLab",
           "url": "https://gitlab.com/explore",
           "icon": "gitlab",
-          "color": "#fca121",
+          "color": "#FC6D26",
           "searchUrl": "https://gitlab.com/search?utf8=%E2%9C%93&search={search}",
           "searchConcat": "+"
         },
@@ -258,7 +258,7 @@
           "title": "Stack Overflow",
           "url": "https://stackoverflow.com",
           "icon": "stackoverflow",
-          "color": "#fe7a16",
+          "color": "#F58025",
           "searchUrl": "https://stackoverflow.com/search?q={search}",
           "searchConcat": "+"
         },
@@ -304,7 +304,7 @@
           "title": "Telegram Web",
           "url": "https://evgeny-nadymov.github.io/telegram-react",
           "icon": "telegram",
-          "color": "#2ca5e0"
+          "color": "#26A5E4"
         },
         {
           "title": "Slack",
@@ -359,7 +359,7 @@
           "title": "Microsoft Docs",
           "url": "https://docs.microsoft.com",
           "icon": "microsoft",
-          "color": "#666666",
+          "color": "#5E5E5E",
           "searchUrl": "https://docs.microsoft.com/en-us/search/?search={search}&category=All",
           "searchConcat": "+"
         },
@@ -501,7 +501,7 @@
           "url": "https://tailwindcss.com",
           "description": "A popular utility class based CSS framework.",
           "icon": "tailwindcss",
-          "color": "#38B2AC"
+          "color": "#06B6D4"
         },
         {
           "title": "Bootstrap",
@@ -563,7 +563,7 @@
           "title": "Nuxt.js",
           "url": "https://nuxtjs.org",
           "icon": "nuxtdotjs",
-          "color": "#00C58E"
+          "color": "#00DC82"
         },
         {
           "title": "Angular",
@@ -742,7 +742,7 @@
           "url": "https://editorconfig.org",
           "description": "Control some text editor settings by using a config file.",
           "icon": "editorconfig",
-          "color": "#000000"
+          "color": "#010101"
         },
         {
           "title": "Let's Encrypt",
@@ -815,7 +815,7 @@
           "url": "https://gulpjs.com",
           "description": "A task management toolkit.",
           "icon": "gulp",
-          "color": "#DA4648"
+          "color": "#CF4647"
         }
       ]
     },
@@ -838,7 +838,7 @@
           "title": "TypeScript",
           "url": "https://www.typescriptlang.org",
           "icon": "typescript",
-          "color": "#007acc"
+          "color": "#3178C6"
         },
         {
           "title": "DefinitelyTyped",
@@ -862,6 +862,12 @@
           "url": "https://reasonml.github.io",
           "icon": "reason",
           "color": "#DD4B39"
+        },
+        {
+          "title": "ReScript",
+          "url": "https://rescript-lang.org",
+          "icon": "rescript",
+          "color": "#E6484F"
         },
         {
           "title": "Elm",
@@ -899,13 +905,13 @@
           "title": "Kotlin",
           "url": "https://kotlinlang.org",
           "icon": "kotlin",
-          "color": "#0095D5"
+          "color": "#7F52FF"
         },
         {
           "title": "Swift",
           "url": "https://swift.org",
           "icon": "swift",
-          "color": "#FA7343"
+          "color": "#F05138"
         },
         {
           "title": "Rust",
@@ -933,7 +939,7 @@
           "title": ".NET",
           "url": "https://dotnet.microsoft.com",
           "icon": "dotnet",
-          "color": "#5C2D91"
+          "color": "#512BD4"
         },
         {
           "title": "Java",
@@ -981,7 +987,7 @@
           "url": "https://materialdesignicons.com",
           "description": "Icons in the style of Google's official icon set, maintained by the community.",
           "icon": "materialdesignicons",
-          "color": "#2196F3"
+          "color": "#757575"
         },
         {
           "title": "Heroicons",
@@ -1052,7 +1058,7 @@
           "title": "PostgreSQL",
           "url": "https://www.postgresql.org",
           "icon": "postgresql",
-          "color": "#336791",
+          "color": "#4169E1",
           "searchUrl": "https://www.postgresql.org/search/?q={search}",
           "searchConcat": "+"
         },
@@ -1144,7 +1150,7 @@
           "title": "Microsoft 365/Edge Roadmap",
           "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge",
           "icon": "microsoft",
-          "color": "#666666"
+          "color": "#5E5E5E"
         },
         {
           "title": "WebKit Feature Status",
@@ -1260,7 +1266,7 @@
           "title": "Vagrant",
           "url": "https://www.vagrantup.com",
           "icon": "vagrant",
-          "color": "#1563ff"
+          "color": "#1868F2"
         },
         {
           "title": "VirtualBox",
@@ -1360,7 +1366,7 @@
           "title": "Spotify",
           "url": "https://open.spotify.com",
           "icon": "spotify",
-          "color": "#1ED760",
+          "color": "#1DB954",
           "searchUrl": "https://open.spotify.com/search/{search}",
           "searchConcat": "%20"
         },
@@ -1368,7 +1374,7 @@
           "title": "Apple Music",
           "url": "https://music.apple.com",
           "icon": "applemusic",
-          "color": "#000000",
+          "color": "#FA243C",
           "searchUrl": "https://music.apple.com/us/search?term={search}",
           "searchConcat": "%20"
         },
@@ -1392,7 +1398,7 @@
           "title": "Mixcloud",
           "url": "https://mixcloud.com",
           "icon": "mixcloud",
-          "color": "#314359"
+          "color": "#5000FF"
         },
         {
           "title": "TuneIn",
@@ -1447,7 +1453,7 @@
           "title": "Tailwind Weekly",
           "url": "https://www.getrevue.co/profile/tailwind-weekly",
           "icon": "tailwindcss",
-          "color": "#38B2AC"
+          "color": "#06B6D4"
         },
         {
           "title": "JavaScript Weekly",
@@ -1463,7 +1469,7 @@
           "title": "TypeScript Weekly",
           "url": "https://www.typescript-weekly.com",
           "icon": "typescript",
-          "color": "#007acc"
+          "color": "#3178C6"
         },
         {
           "title": "WebAssembly Weekly",
