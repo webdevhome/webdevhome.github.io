@@ -949,7 +949,9 @@
         },
         {
           "title": "OpenJDK",
-          "url": "https://openjdk.java.net"
+          "url": "https://openjdk.java.net",
+          "icon": "openjdk",
+          "color": "#000000"
         }
       ]
     },
