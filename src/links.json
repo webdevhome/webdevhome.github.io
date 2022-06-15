@@ -943,9 +943,7 @@
         },
         {
           "title": "Java",
-          "url": "https://www.java.com",
-          "icon": "java",
-          "color": "#007396"
+          "url": "https://www.java.com"
         },
         {
           "title": "OpenJDK",
