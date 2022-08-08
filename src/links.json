@@ -1,5 +1,5 @@
 {
-  "$schema": "./links.schema.json",
+"$schema": "./links.schema.json",
   "items": [
     {
       "name": "Managing projects",
@@ -222,9 +222,19 @@
         {
           "title": "BundlePhobia",
           "url": "https://bundlephobia.com",
-          "description": "Check impact of npm packages at bundle size.",
+          "description": "Check bundle size of npm packages.",
           "searchUrl": "https://bundlephobia.com/result?p={search}",
           "searchConcat": "%20"
+        },
+        {
+          "title": "bundlejs",
+          "url": "https://bundlejs.com",
+          "description": "A npm package size checker."
+        },
+        {
+          "title": "up-to.date/?",
+          "url": "https://up-to.date",
+          "description": "Check which version of a package or software is the latest."
         },
         {
           "title": "gitignore.io",
@@ -689,6 +699,13 @@
           "url": "https://lodash.com",
           "icon": "lodash",
           "color": "#3492ff"
+        },
+        {
+          "title": "Autoprefixer",
+          "url": "https://github.com/postcss/autoprefixer",
+          "description": "Library that automatically insert browser prefixes into your CSS.",
+          "icon": "autoprefixer",
+          "color": "#DD3735"
         }
       ]
     },
@@ -1512,6 +1529,18 @@
           "url": "https://golangweekly.com",
           "icon": "go",
           "color": "#00ADD8"
+        },
+        {
+          "title": "Pycoder's Weekly",
+          "url": "https://pycoders.com",
+          "icon": "python",
+          "color": "#3776AB"
+        },
+        {
+          "title": "Postgres Weekly",
+          "url": "https://postgresweekly.com",
+          "icon": "postgresql",
+          "color": "#4169E1"
         },
         {
           "title": "daily.dev",
