@@ -1,5 +1,5 @@
 {
-"$schema": "./links.schema.json",
+  "$schema": "./links.schema.json",
   "items": [
     {
       "name": "Managing projects",
@@ -74,6 +74,12 @@
           "description": "Hosting solution by the developers of Next.js.",
           "icon": "vercel",
           "color": "#000000"
+        },
+        {
+          "title": "Netlify",
+          "url": "https://netlify.com",
+          "icon": "netlify",
+          "color": "#00C7B7"
         },
         {
           "title": "Heroku",
