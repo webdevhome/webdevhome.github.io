@@ -1,11 +1,14 @@
 import classNames from 'classnames'
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
 interface Props {
   onClick?: () => void
 }
 
-export const LinkGroupButton: FC<Props> = ({ children, onClick }) => {
+export const LinkGroupButton: FC<PropsWithChildren<Props>> = ({
+  children,
+  onClick,
+}) => {
   return (
     <button
       className={classNames(

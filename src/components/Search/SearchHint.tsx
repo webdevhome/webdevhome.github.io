@@ -1,11 +1,14 @@
-import { FC, Fragment } from 'react'
+import { FC, Fragment, PropsWithChildren } from 'react'
 import { Kbd } from '../basics/Kbd'
 
 interface Props {
   inputs?: string[]
 }
 
-export const SearchHint: FC<Props> = ({ children, inputs }) => {
+export const SearchHint: FC<PropsWithChildren<Props>> = ({
+  children,
+  inputs,
+}) => {
   return (
     <div className="mt-4">
       {inputs !== undefined && inputs.length > 0 ? (

@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { FC, MouseEvent } from 'react'
+import { FC, MouseEvent, PropsWithChildren } from 'react'
 
 interface Props {
   className?: string
@@ -7,7 +7,7 @@ interface Props {
   onClick?: (event: MouseEvent<HTMLDivElement>) => void
 }
 
-export const LinkAction: FC<Props> = ({
+export const LinkAction: FC<PropsWithChildren<Props>> = ({
   children,
   className,
   hasHover = false,

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
-export const Kbd: FC = ({ children }) => {
+export const Kbd: FC<PropsWithChildren> = ({ children }) => {
   return (
     <kbd
       className={classNames(

@@ -1,11 +1,14 @@
 import classNames from 'classnames'
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
 interface Props {
   href: string
 }
 
-export const FooterGroupLink: FC<Props> = ({ href, children }) => {
+export const FooterGroupLink: FC<PropsWithChildren<Props>> = ({
+  href,
+  children,
+}) => {
   return (
     <a
       className={classNames(
@@ -15,7 +18,7 @@ export const FooterGroupLink: FC<Props> = ({ href, children }) => {
         'hover:text-brand-600 hover:dark:text-brand-50',
         'hover:bg-gray-300 dark:hover:bg-gray-500',
         'rounded',
-        'focus:outline outline-1 outline-gray-500 dark:outline-gray-300'
+        'focus:outline outline-1 outline-gray-500 dark:outline-gray-300',
       )}
       href={href}
     >

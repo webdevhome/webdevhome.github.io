@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
-export const AppContent: FC = ({ children }) => {
+export const AppContent: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div
       className={classNames(
