@@ -465,7 +465,9 @@
         {
           "title": "Keep a Changelog",
           "url": "https://keepachangelog.com/en/1.1.0",
-          "description": "Convention for writing changelogs."
+          "description": "Convention for writing changelogs.",
+          "icon": "keepachangelog",
+          "color": "#E05735"
         },
         {
           "title": "Gitmoji",
@@ -492,6 +494,24 @@
           "color": "#000000",
           "searchUrl": "https://codesandbox.io/search?query={search}",
           "searchConcat": "%20"
+        },
+        {
+          "title": "TS Playground",
+          "url": "https://www.typescriptlang.org/play",
+          "icon": "typescript",
+          "color": "#3178C6"
+        },
+        {
+          "title": "DartPad",
+          "url": "https://dartpad.dev",
+          "icon": "dart",
+          "color": "#0175C2"
+        },
+        {
+          "title": "SassMeister",
+          "url": "https://www.sassmeister.com",
+          "icon": "sass",
+          "color": "#CC6699"
         },
         {
           "title": "JSFiddle",
@@ -801,6 +821,13 @@
           "color": "#646CFF"
         },
         {
+          "title": "Snowpack",
+          "url": "https://www.snowpack.dev",
+          "description": "A frontend build tool.",
+          "icon": "snowpack",
+          "color": "#2E5E82"
+        },
+        {
           "title": "Rome",
           "url": "https://rome.tools",
           "description": "A universal build chain that includes a linter, compiler, bundler, and more.",
@@ -1010,7 +1037,7 @@
           "url": "https://materialdesignicons.com",
           "description": "Icons in the style of Google's official icon set, maintained by the community.",
           "icon": "materialdesignicons",
-          "color": "#757575"
+          "color": "#2196F3"
         },
         {
           "title": "Heroicons",
@@ -1064,6 +1091,7 @@
         {
           "title": "MySQL",
           "url": "https://www.mysql.com",
+          "description": "A relational database.",
           "icon": "mysql",
           "color": "#4479A1",
           "searchUrl": "https://www.oracle.com/search/results?Ntt={search}&Dy=1&Nty=1&cat=mysql&Ntk=SI-ALL5",
@@ -1072,6 +1100,7 @@
         {
           "title": "Microsoft SQL Server",
           "url": "https://www.microsoft.com/de-de/sql-server",
+          "description": "A relational database.",
           "icon": "microsoftsqlserver",
           "color": "#CC2927",
           "searchUrl": "https://www.microsoft.com/en-us/search/explore?q={search}",
@@ -1080,6 +1109,7 @@
         {
           "title": "PostgreSQL",
           "url": "https://www.postgresql.org",
+          "description": "A relational database.",
           "icon": "postgresql",
           "color": "#4169E1",
           "searchUrl": "https://www.postgresql.org/search/?q={search}",
@@ -1088,12 +1118,14 @@
         {
           "title": "Oracle Database",
           "url": "https://www.oracle.com/de/database/technologies",
+          "description": "A relational database.",
           "icon": "oracle",
           "color": "#F80000"
         },
         {
           "title": "SQLite",
           "url": "https://www.sqlite.org",
+          "description": "A file based relational database.",
           "icon": "sqlite",
           "color": "#003B57",
           "searchUrl": "https://www.sqlite.org/search?s=d&q={search}",
@@ -1102,6 +1134,7 @@
         {
           "title": "MongoDB",
           "url": "https://www.mongodb.com",
+          "description": "A document database.",
           "icon": "mongodb",
           "color": "#47A248",
           "searchUrl": "https://www.mongodb.com/search?addsearch={search}",
@@ -1110,6 +1143,7 @@
         {
           "title": "CouchDB",
           "url": "https://couchdb.apache.org",
+          "description": "A document database.",
           "icon": "apachecouchdb",
           "color": "#E42528",
           "searchUrl": "https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default",
@@ -1118,14 +1152,16 @@
         {
           "title": "Redis",
           "url": "https://redis.io",
+          "description": "An in-memory key value store.",
           "icon": "redis",
           "color": "#DC382D"
         },
         {
           "title": "Neo4j",
           "url": "https://neo4j.com",
+          "description": "A graph database.",
           "icon": "neo4j",
-          "color": "#008CC1"
+          "color": "#4581C3"
         }
       ]
     },
