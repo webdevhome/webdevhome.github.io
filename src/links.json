@@ -1100,6 +1100,13 @@
           "searchConcat": "%20"
         },
         {
+          "title": "MariaDB",
+          "url": "https://mariadb.org",
+          "description": "A relational database.",
+          "icon": "mariadb",
+          "color": "#003545"
+        },
+        {
           "title": "Microsoft SQL Server",
           "url": "https://www.microsoft.com/de-de/sql-server",
           "description": "A relational database.",
