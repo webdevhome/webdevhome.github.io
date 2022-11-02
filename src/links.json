@@ -891,9 +891,11 @@
           "color": "#3178C6"
         },
         {
-          "title": "DefinitelyTyped",
-          "url": "https://definitelytyped.org",
-          "description": "Type definitions for existing JS code.",
+          "title": "Definitely Typed",
+          "url": "https://www.typescriptlang.org/dt/search",
+          "description": "Find npm packages that have type declarations, either bundled or on Definitely Typed.",
+          "icon": "typescript",
+          "color": "#3178C6",
           "searchUrl": "https://www.typescriptlang.org/dt/search?search={search}",
           "searchConcat": "+"
         },
