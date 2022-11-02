@@ -2,29 +2,30 @@ name: Build and deploy website
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches: [develop]
+  pull_request:
+    branches: [develop]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '16'
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
 
-    - name: npm install and build
-      run: |
-        npm ci
-        npm run build
+      - name: npm install and build
+        run: |
+          npm ci
+          npm run build
 
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4.3.2
-      with:
-        folder: dist
-        branch: deploy
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          folder: dist
+          branch: deploy
