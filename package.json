@@ -1,6 +1,6 @@
 {
   "name": "webdevhome.github.io-vite",
-  "version": "2.0.13",
+  "version": "2.0.14",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

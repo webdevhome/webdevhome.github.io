@@ -535,9 +535,16 @@
         {
           "title": "Tailwind CSS",
           "url": "https://tailwindcss.com",
-          "description": "A popular utility class based CSS framework.",
+          "description": "A utility class based CSS framework.",
           "icon": "tailwindcss",
           "color": "#06B6D4"
+        },
+        {
+          "title": "Windi CSS",
+          "url": "https://windicss.org",
+          "description": "A utility class based CSS framework.",
+          "icon": "windicss",
+          "color": "#48B0F1"
         },
         {
           "title": "Bootstrap",
@@ -559,6 +566,30 @@
           "color": "#757575",
           "searchUrl": "https://material.io/search.html?q={search}",
           "searchConcat": "%20"
+        },
+        {
+          "title": "CSS Modules",
+          "url": "https://github.com/css-modules/css-modules",
+          "icon": "cssmodules",
+          "color": "#000000"
+        },
+        {
+          "title": "vanilla-extract",
+          "url": "https://vanilla-extract.style",
+          "description": "A zero-runtime CSS-in-JS library."
+        },
+        {
+          "title": "Styled Components",
+          "url": "https://styled-components.com",
+          "icon": "styledcomponents",
+          "color": "#DB7093"
+        },
+        {
+          "title": "JSS",
+          "url": "https://cssinjs.org",
+          "description": "CSS-in-JS library.",
+          "icon": "jss",
+          "color": "#F7DF1E"
         }
       ]
     },
@@ -574,18 +605,21 @@
         {
           "title": "Create React App",
           "url": "https://create-react-app.dev",
+          "description": "A starter template for React apps.",
           "icon": "createreactapp",
           "color": "#09D3AC"
         },
         {
           "title": "Gatsby",
           "url": "https://gatsbyjs.org",
+          "description": "A framework based on React.",
           "icon": "gatsby",
           "color": "#663399"
         },
         {
           "title": "Next.js",
           "url": "https://nextjs.org",
+          "description": "A framework based on React.",
           "icon": "nextdotjs",
           "color": "#000000"
         },
@@ -598,6 +632,7 @@
         {
           "title": "Nuxt.js",
           "url": "https://nuxtjs.org",
+          "description": "A framework based on Vue.",
           "icon": "nuxtdotjs",
           "color": "#00DC82"
         },
@@ -608,26 +643,37 @@
           "color": "#DD0031"
         },
         {
+          "title": "Lit",
+          "url": "https://lit.dev",
+          "description": "A library for building web components.",
+          "icon": "lit",
+          "color": "#324FFF"
+        },
+        {
           "title": "Svelte",
           "url": "https://svelte.dev",
+          "description": "A framework without a runtime.",
           "icon": "svelte",
           "color": "#FF3E00"
         },
         {
           "title": "Alpine.js",
           "url": "https://alpinejs.dev",
+          "description": "A library that attaches JS logic to the DOM.",
           "icon": "alpinedotjs",
           "color": "#8BC0D0"
         },
         {
           "title": "Stimulus",
           "url": "https://stimulus.hotwired.dev",
+          "description": "A framework for existing HTML.",
           "icon": "stimulus",
           "color": "#77E8B9"
         },
         {
           "title": "Electron",
           "url": "https://www.electronjs.org",
+          "description": "A framework to build native desktop apps using the web stack.",
           "icon": "electron",
           "color": "#47848F",
           "searchUrl": "https://www.electronjs.org/?q={search}",
@@ -636,12 +682,14 @@
         {
           "title": "Blazor",
           "url": "https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor",
+          "description": "Compile C# to WASM and run it in the Browser.",
           "icon": "blazor",
           "color": "#512BD4"
         },
         {
           "title": "Flutter",
           "url": "https://flutter.dev",
+          "description": "A Dart based framework to build multi-platform apps.",
           "icon": "flutter",
           "color": "#02569B",
           "searchUrl": "https://flutter.dev/search?q={search}",
@@ -682,6 +730,13 @@
           "description": "GraphQL client.",
           "icon": "apollographql",
           "color": "#311C87"
+        },
+        {
+          "title": "Axios",
+          "url": "https://axios-http.com",
+          "description": "JS REST client library.",
+          "icon": "axios",
+          "color": "#5A29E4"
         },
         {
           "title": "i18next",
@@ -800,6 +855,13 @@
           "description": "JSON Web Tokens",
           "icon": "jsonwebtokens",
           "color": "#000000"
+        },
+        {
+          "title": "Auth0",
+          "url": "https://auth0.com",
+          "description": "An authentication and authorization platform.",
+          "icon": "auth0",
+          "color": "#EB5424"
         }
       ]
     },
@@ -943,6 +1005,26 @@
           "title": "Deno",
           "url": "https://deno.land",
           "icon": "deno",
+          "color": "#000000"
+        },
+        {
+          "title": "Python",
+          "url": "https://www.python.org",
+          "icon": "python",
+          "color": "#3776AB",
+          "searchUrl": "https://www.python.org/search/?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Ruby",
+          "url": "https://www.ruby-lang.org",
+          "icon": "ruby",
+          "color": "#CC342D"
+        },
+        {
+          "title": "Crystal",
+          "url": "https://crystal-lang.org",
+          "icon": "crystal",
           "color": "#000000"
         },
         {
@@ -1498,6 +1580,12 @@
           "url": "https://stateofjs.com",
           "icon": "javascript",
           "color": "#f7df1e"
+        },
+        {
+          "title": "State of GraphQL",
+          "url": "https://www.stateofgraphql.com",
+          "icon": "graphql",
+          "color": "#E10098"
         }
       ]
     },
