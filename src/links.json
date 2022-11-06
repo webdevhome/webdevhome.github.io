@@ -502,6 +502,12 @@
           "color": "#3178C6"
         },
         {
+          "title": "Rust Playground",
+          "url": "https://play.rust-lang.org",
+          "icon": "rust",
+          "color": "#000000"
+        },
+        {
           "title": "DartPad",
           "url": "https://dartpad.dev",
           "icon": "dart",
