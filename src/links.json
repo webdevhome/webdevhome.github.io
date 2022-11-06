@@ -574,18 +574,21 @@
         {
           "title": "Create React App",
           "url": "https://create-react-app.dev",
+          "description": "A starter template for React apps.",
           "icon": "createreactapp",
           "color": "#09D3AC"
         },
         {
           "title": "Gatsby",
           "url": "https://gatsbyjs.org",
+          "description": "A framework based on React.",
           "icon": "gatsby",
           "color": "#663399"
         },
         {
           "title": "Next.js",
           "url": "https://nextjs.org",
+          "description": "A framework based on React.",
           "icon": "nextdotjs",
           "color": "#000000"
         },
@@ -598,6 +601,7 @@
         {
           "title": "Nuxt.js",
           "url": "https://nuxtjs.org",
+          "description": "A framework based on Vue.",
           "icon": "nuxtdotjs",
           "color": "#00DC82"
         },
@@ -608,26 +612,37 @@
           "color": "#DD0031"
         },
         {
+          "title": "Lit",
+          "url": "https://lit.dev",
+          "description": "A library for building web components.",
+          "icon": "lit",
+          "color": "#324FFF"
+        },
+        {
           "title": "Svelte",
           "url": "https://svelte.dev",
+          "description": "A framework without a runtime.",
           "icon": "svelte",
           "color": "#FF3E00"
         },
         {
           "title": "Alpine.js",
           "url": "https://alpinejs.dev",
+          "description": "A library that attaches JS logic to the DOM.",
           "icon": "alpinedotjs",
           "color": "#8BC0D0"
         },
         {
           "title": "Stimulus",
           "url": "https://stimulus.hotwired.dev",
+          "description": "A framework for existing HTML.",
           "icon": "stimulus",
           "color": "#77E8B9"
         },
         {
           "title": "Electron",
           "url": "https://www.electronjs.org",
+          "description": "A framework to build native desktop apps using the web stack.",
           "icon": "electron",
           "color": "#47848F",
           "searchUrl": "https://www.electronjs.org/?q={search}",
@@ -636,12 +651,14 @@
         {
           "title": "Blazor",
           "url": "https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor",
+          "description": "Compile C# to WASM and run it in the Browser.",
           "icon": "blazor",
           "color": "#512BD4"
         },
         {
           "title": "Flutter",
           "url": "https://flutter.dev",
+          "description": "A Dart based framework to build multi-platform apps.",
           "icon": "flutter",
           "color": "#02569B",
           "searchUrl": "https://flutter.dev/search?q={search}",
