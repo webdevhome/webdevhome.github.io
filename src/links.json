@@ -191,6 +191,15 @@
           "searchConcat": "+"
         },
         {
+          "title": "Rust Crates",
+          "url": "https://crates.io",
+          "description": "Rust package directory",
+          "icon": "rust",
+          "color": "#000000",
+          "searchUrl": "https://crates.io/search?q={search}",
+          "searchConcat": "%20"
+        },
+        {
           "title": "Dart Packages",
           "url": "https://pub.dev",
           "description": "Dart package directory.",
@@ -609,6 +618,13 @@
           "color": "#61DAFB"
         },
         {
+          "title": "Preact",
+          "url": "https://preactjs.com",
+          "description": "Fast and small alternative to React with the same API.",
+          "icon": "preact",
+          "color": "#673AB8"
+        },
+        {
           "title": "Create React App",
           "url": "https://create-react-app.dev",
           "description": "A starter template for React apps.",
@@ -724,6 +740,11 @@
           "color": "#764ABC"
         },
         {
+          "title": "Recoil",
+          "url": "https://recoiljs.org",
+          "description": "An experimental new state management library for React by Facebook Open Source."
+        },
+        {
           "title": "MobX",
           "url": "https://mobx.js.org",
           "description": "Application state management library.",
@@ -736,6 +757,13 @@
           "description": "GraphQL client.",
           "icon": "apollographql",
           "color": "#311C87"
+        },
+        {
+          "title": "React Query",
+          "url": "https://tanstack.com/query",
+          "description": "Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte.",
+          "icon": "reactquery",
+          "color": "#FF4154"
         },
         {
           "title": "Axios",
@@ -938,7 +966,7 @@
       ]
     },
     {
-      "name": "Languages and runtimes",
+      "name": "Browser languages",
       "items": [
         {
           "title": "Sass",
@@ -1000,7 +1028,12 @@
           "url": "https://babeljs.io",
           "icon": "babel",
           "color": "#F9DC3E"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Server languages",
+      "items": [
         {
           "title": "Node.js",
           "url": "https://nodejs.org/en",
@@ -1665,7 +1698,7 @@
         },
         {
           "title": "React.js Newsletter",
-          "url": "http://reactjsnewsletter.com",
+          "url": "https://reactnewsletter.com",
           "icon": "react",
           "color": "#61dafb"
         },
