@@ -38,7 +38,7 @@
           "url": "https://asana.com",
           "description": "Project management service.",
           "icon": "asana",
-          "color": "#273347"
+          "color": "#F06A6A"
         },
         {
           "title": "CircleCI",
