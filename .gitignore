@@ -1,5 +1,6 @@
-node_modules
+/.idea
+/node_modules
+/dist
+/dist-ssr
 .DS_Store
-dist
-dist-ssr
 *.local
