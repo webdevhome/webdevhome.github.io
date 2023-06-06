@@ -30,7 +30,7 @@ export const SearchTargetLabel: FC<Props> = ({ title, icon, color }) => {
 
     return (
       <span
-        className="mx-2 p-1 w-[31px] h-[31px] bg-white rounded"
+        className="mr-2 p-1 w-[31px] h-[31px] bg-white rounded shrink-0"
         style={{ color }}
       >
         <ReactSVG src={iconUrl} className="search-target-item__icon" />
@@ -49,30 +49,38 @@ export const SearchTargetLabel: FC<Props> = ({ title, icon, color }) => {
   return (
     <div
       className={classNames(
-        'col-start-2 flex items-center',
-        'px-8',
+        'flex flex-col gap-y-4 items-start sm:flex-row sm:items-center',
+        'sm:px-8',
         'text-xl',
         'text-gray-700 dark:text-gray-100',
       )}
     >
-      <span
+      <div
         onClick={handleBackClick}
         className={classNames(
           'flex items-center',
           'mr-4 px-2 py-1',
-          'hover:bg-gray-100 dark:hover:bg-gray-500',
-          'active:bg-gray-200 dark:hover:bg-gray-400',
+          'bg-gray-100 hover:bg-gray-200 active:bg-gray-300',
+          'dark:bg-gray-600 dark:hover:bg-gray-500 dark:active:bg-gray-400',
           'rounded',
-          'cursor-default',
+          'cursor-default select-none',
         )}
       >
         <span className="mr-1">
           <MdiIcon path={mdiArrowLeft} />
         </span>
         Back
-      </span>
-      Search on {searchTargetIcon}
-      <span className="text-brand-600 dark:text-brand-300">{title}</span>:
+      </div>
+
+      <div className="flex items-center flex-wrap gap-y-2">
+        <span className="mr-2">Search on</span>
+        <span className="flex items-center">
+          {searchTargetIcon}
+          <span>
+            <span className="text-brand-600 dark:text-brand-300">{title}</span>:
+          </span>
+        </span>
+      </div>
     </div>
   )
 }
