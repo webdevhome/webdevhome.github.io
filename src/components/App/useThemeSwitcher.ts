@@ -27,11 +27,6 @@ export function useThemeSwitcher(): UseThemeSwitcherResult {
     AppTheme.light | AppTheme.dark
   >(AppTheme.light)
 
-  const rootElement = useMemo(
-    () => globalThis.document.getElementsByTagName('html')[0],
-    [],
-  )
-
   function handlePrefersColorSchemeChange(event: MediaQueryListEvent): void {
     setPrefersDark(event.matches)
   }
@@ -58,7 +53,7 @@ export function useThemeSwitcher(): UseThemeSwitcherResult {
     }
 
     setEffectiveTheme(currentTheme)
-  }, [rootElement, currentTheme, prefersDark])
+  }, [currentTheme, prefersDark])
 
   // Set className
   useEffect(() => {
