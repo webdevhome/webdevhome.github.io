@@ -413,6 +413,13 @@
           "description": "The official cheat sheet for Emmet - the editor shortcuts to quickly write HTML."
         },
         {
+          "title": "BEM",
+          "url": "https://getbem.com/introduction",
+          "description": "A CSS naming convention that groups classes using namespaces.",
+          "icon": "bem",
+          "color": "#000000"
+        },
+        {
           "title": "this vs that",
           "url": "https://thisthat.dev",
           "description": "A collection that explains the difference between similar programming concepts."
@@ -560,6 +567,13 @@
           "description": "A utility class based CSS framework.",
           "icon": "windicss",
           "color": "#48B0F1"
+        },
+        {
+          "title": "MUI",
+          "url": "https://mui.com",
+          "description": "React component library with different design languages, including Material UI, and an unstyled version of every component.",
+          "icon": "mui",
+          "color": "#007FFF"
         },
         {
           "title": "Bootstrap",
@@ -1639,6 +1653,16 @@
           "color": "#e34f26"
         },
         {
+          "title": "Web Weekly",
+          "url": "https://webweekly.email"
+        },
+        {
+          "title": "JAMstacked",
+          "url": "https://jamstack.email",
+          "icon": "jamstack",
+          "color": "#F0047F"
+        },
+        {
           "title": "CSS Weekly",
           "url": "https://css-weekly.com",
           "icon": "css3",
@@ -1713,6 +1737,12 @@
           "url": "https://pycoders.com",
           "icon": "python",
           "color": "#3776AB"
+        },
+        {
+          "title": "Ruby Weekly",
+          "url": "https://rubyweekly.com",
+          "icon": "ruby",
+          "color": "#CC342D"
         },
         {
           "title": "Postgres Weekly",

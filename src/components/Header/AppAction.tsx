@@ -20,12 +20,12 @@ export const AppAction: FC<Props> = ({
       className={classNames(
         'flex items-center',
         'p-2',
-        'hover:bg-gray-200 active:bg-gray-300',
-        'dark:hover:bg-gray-600 dark:active:bg-gray-500',
         'rounded-md',
         'select-none',
         {
+          'hover:bg-gray-200 active:bg-gray-300': !active,
           'bg-brand-500 hover:bg-brand-600 active:bg-brand-700': active,
+          'dark:hover:bg-gray-600 dark:active:bg-gray-500': !active,
           'dark:hover:bg-brand-600 dark:active:bg-brand-700': active,
           'text-white': active,
           'text-gray-800 dark:text-gray-100': !active,

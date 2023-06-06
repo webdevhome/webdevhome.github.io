@@ -5,7 +5,7 @@ import { Link } from '../Links/Link'
 import { SearchDivider } from './SearchDivider'
 import { SearchHint } from './SearchHint'
 import { SearchHints } from './SearchHints'
-import { SearchTargetLabel } from './SearchTargetItem'
+import { SearchTargetLabel } from './SearchTargetLabel'
 import { useSearch } from './useSearch'
 
 export const Search: FC = () => {
