@@ -312,10 +312,10 @@
           "searchConcat": "%20"
         },
         {
-          "title": "Twitter",
+          "title": "X / Twitter",
           "url": "https://twitter.com",
-          "icon": "twitter",
-          "color": "#1da1f2",
+          "icon": "x",
+          "color": "#000000",
           "searchUrl": "https://twitter.com/search?q={search}",
           "searchConcat": "%20"
         },
@@ -700,9 +700,23 @@
           "color": "#8BC0D0"
         },
         {
+          "title": "Hotwire",
+          "url": "https://hotwired.dev",
+          "description": "Hotwire is an alternative approach to building modern web applications without using much JavaScript by sending HTML instead of JSON over the wire. (Hotwire = Turbo + Stimulus)",
+          "icon": "hotwire",
+          "color": "#FFE801"
+        },
+        {
+          "title": "Turbo",
+          "url": "https://turbo.hotwired.dev",
+          "description": "The speed of a single-page web application without having to write any JavaScript.",
+          "icon": "turbo",
+          "color": "#5CD8E5"
+        },
+        {
           "title": "Stimulus",
           "url": "https://stimulus.hotwired.dev",
-          "description": "A framework for existing HTML.",
+          "description": "A modest JavaScript framework for the HTML you already have.",
           "icon": "stimulus",
           "color": "#77E8B9"
         },
@@ -796,6 +810,13 @@
           "searchConcat": "+"
         },
         {
+          "title": "Zod",
+          "url": "https://zod.dev",
+          "description": "TypeScript-first schema validation with static type inference",
+          "icon": "zod",
+          "color": "#3E67B1"
+        },
+        {
           "title": "RxJS",
           "url": "https://rxjs.dev",
           "description": "Library for functional reactive programming.",
@@ -870,6 +891,12 @@
           "color": "#C21325"
         },
         {
+          "title": "Vitest",
+          "url": "https://vitest.dev",
+          "icon": "vitest",
+          "color": "#6E9F18"
+        },
+        {
           "title": "Mocha",
           "url": "https://mochajs.org",
           "description": "JS/TS testing framework.",
@@ -910,6 +937,12 @@
           "description": "An authentication and authorization platform.",
           "icon": "auth0",
           "color": "#EB5424"
+        },
+        {
+          "title": "Have I been pwned",
+          "url": "https://haveibeenpwned.com",
+          "icon": "haveibeenpwned",
+          "color": "#2A6379"
         }
       ]
     },
