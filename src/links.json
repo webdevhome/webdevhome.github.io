@@ -423,6 +423,16 @@
           "title": "this vs that",
           "url": "https://thisthat.dev",
           "description": "A collection that explains the difference between similar programming concepts."
+        },
+        {
+          "title": "Learn X in Y minutes",
+          "url": "https://learnxinyminutes.com",
+          "description": "Resources to learn languages or tools in X minutes."
+        },
+        {
+          "title": "Type Level TypeScript",
+          "url": "https://type-level-typescript.com/",
+          "description": "A course to learn TypeScript in-depth."
         }
       ]
     },
@@ -667,7 +677,7 @@
         },
         {
           "title": "Nuxt.js",
-          "url": "https://nuxtjs.org",
+          "url": "https://nuxt.com",
           "description": "A framework based on Vue.",
           "icon": "nuxtdotjs",
           "color": "#00DC82"
@@ -728,6 +738,13 @@
           "color": "#47848F",
           "searchUrl": "https://www.electronjs.org/?q={search}",
           "searchConcat": "%20"
+        },
+        {
+          "title": "Tauri",
+          "url": "https://tauri.app",
+          "description": "A framework to build native desktop apps using the web stack and Rust.",
+          "icon": "tauri",
+          "color": "#24C8D8"
         },
         {
           "title": "Blazor",

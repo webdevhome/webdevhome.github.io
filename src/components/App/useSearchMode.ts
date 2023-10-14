@@ -18,12 +18,13 @@ export function useSearchMode(): UseSearchModeResult {
     (event: KeyboardEvent) => {
       if (isCurrentAppMode(AppMode.default)) {
         if (event.key === '\n') return
+        if (event.key === ' ') return
         if (event.key.length !== 1) return
         dispatch(setAppMode(AppMode.search))
         dispatch(setSearchTerm(event.key))
       }
     },
-    [dispatch, isCurrentAppMode]
+    [dispatch, isCurrentAppMode],
   )
 
   useEffect(() => {
