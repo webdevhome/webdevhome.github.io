@@ -26,7 +26,7 @@ npm ci
 and then:
 
 ~~~
-npm start
+npm run dev
 ~~~
 
 This starts a watcher that builds the project every time you make some changes. Also, the local version of your app (running on localhost:3000) gets opened in your default browser automatically.
