@@ -17,7 +17,7 @@ This is a collection of links I, as a web developer, use very frequently. Maybe 
 
 ## Development
 
-To start WebdevHome locally and make some changes quickly run:
+To start WebdevHome locally run:
 
 ~~~
 npm ci
