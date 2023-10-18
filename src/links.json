@@ -1111,6 +1111,12 @@
           "color": "#000000"
         },
         {
+          "title": "Bun",
+          "url": "https://bun.sh",
+          "icon": "bun",
+          "color": "#000000"
+        },
+        {
           "title": "Python",
           "url": "https://www.python.org",
           "icon": "python",
