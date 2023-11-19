@@ -78,17 +78,41 @@ export const WebdevHome: FC = () => {
                 <>
                   <AppAction
                     icon={mdiArrowLeft}
-                    active
                     label="Back"
+                    highlight
                     action={searchMode.handleSearchAction}
+                  />
+                  <AppAction
+                    icon={themeSwitcher.icon}
+                    active={false}
+                    label={themeSwitcher.title}
+                    action={themeSwitcher.switchTheme}
+                  />
+                  <AppAction
+                    icon={mdiStickerTextOutline}
+                    active={toggleDescriptions.showDescriptions}
+                    label="Descriptions"
+                    action={toggleDescriptions.toggle}
                   />
                 </>
               ) : isCurrentAppMode(AppMode.customize) ? (
                 <>
                   <AppAction
+                    icon={themeSwitcher.icon}
+                    active={false}
+                    label={themeSwitcher.title}
+                    action={themeSwitcher.switchTheme}
+                  />
+                  <AppAction
+                    icon={mdiStickerTextOutline}
+                    active={toggleDescriptions.showDescriptions}
+                    label="Descriptions"
+                    action={toggleDescriptions.toggle}
+                  />
+                  <AppAction
                     icon={mdiCheck}
-                    active
-                    label="Done"
+                    label="Save"
+                    highlight
                     action={customizeMode.handleCustomizeAction}
                   />
                 </>
