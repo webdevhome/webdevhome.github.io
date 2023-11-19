@@ -90,6 +90,16 @@
           "searchConcat": "+"
         },
         {
+          "title": "Render",
+          "url": "https://render.com",
+          "icon": "render",
+          "color": "#46E3B7"
+        },
+        {
+          "title": "Fly.io",
+          "url": "https://fly.io"
+        },
+        {
           "title": "Microsoft Azure",
           "url": "https://azure.microsoft.com",
           "icon": "microsoftazure",
@@ -277,7 +287,7 @@
       ]
     },
     {
-      "name": "Find help and discuss",
+      "name": "Find help & discuss",
       "items": [
         {
           "title": "Stack Overflow",
@@ -340,7 +350,7 @@
       ]
     },
     {
-      "name": "Documentation",
+      "name": "Docs & learning resources",
       "items": [
         {
           "title": "DevDocs",
@@ -472,7 +482,7 @@
       ]
     },
     {
-      "name": "Best practices and conventions",
+      "name": "Best practices & conventions",
       "items": [
         {
           "title": "OWASP Cheat Sheet Series Project",
@@ -633,7 +643,7 @@
       ]
     },
     {
-      "name": "UI frameworks and libraries",
+      "name": "UI frameworks & libraries",
       "items": [
         {
           "title": "React",
@@ -787,7 +797,9 @@
         {
           "title": "Recoil",
           "url": "https://recoiljs.org",
-          "description": "An experimental new state management library for React by Facebook Open Source."
+          "description": "An experimental new state management library for React by Facebook Open Source.",
+          "icon": "recoil",
+          "color": "#3578E5"
         },
         {
           "title": "MobX",
@@ -877,7 +889,7 @@
       ]
     },
     {
-      "name": "Testing and security",
+      "name": "Testing & security",
       "items": [
         {
           "title": "webhint",
@@ -964,7 +976,7 @@
       ]
     },
     {
-      "name": "Build and bundle",
+      "name": "Build & bundle",
       "items": [
         {
           "title": "Webpack",
@@ -1037,6 +1049,18 @@
           "url": "https://sass-lang.com",
           "icon": "sass",
           "color": "#cc6699"
+        },
+        {
+          "title": "Less",
+          "url": "https://lesscss.org",
+          "icon": "less",
+          "color": "#1D365D"
+        },
+        {
+          "title": "Stylus",
+          "url": "https://stylus-lang.com",
+          "icon": "stylus",
+          "color": "#333333"
         },
         {
           "title": "PostCSS",
@@ -1209,7 +1233,7 @@
         },
         {
           "title": "Google Webfonts Helper",
-          "url": "https://google-webfonts-helper.herokuapp.com",
+          "url": "https://gwfh.mranftl.com",
           "description": "A web service that helps to self-host fonts from Google Fonts"
         },
         {
@@ -1390,15 +1414,6 @@
           "color": "#4285f4"
         },
         {
-          "title": "Microsoft Edge Platform Status",
-          "url": "https://developer.microsoft.com/en-us/microsoft-edge/platform/status",
-          "description": "Edge browser release notes.",
-          "icon": "microsoftedge",
-          "color": "#0078d7",
-          "searchUrl": "https://developer.microsoft.com/en-us/microsoft-edge/status/?q={search}",
-          "searchConcat": "%20"
-        },
-        {
           "title": "Microsoft Edge Insiders: New Features",
           "url": "https://www.microsoftedgeinsider.com/en-us/whats-new",
           "description": "List of news around the Edge browser Insiders channel.",
@@ -1410,15 +1425,6 @@
           "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge",
           "icon": "microsoft",
           "color": "#5E5E5E"
-        },
-        {
-          "title": "WebKit Feature Status",
-          "url": "https://webkit.org/status",
-          "description": "Safari browser release notes.",
-          "icon": "safari",
-          "color": "#000000",
-          "searchUrl": "https://webkit.org/status/#?search={search}",
-          "searchConcat": "%20"
         },
         {
           "title": "Node Green",
@@ -1438,7 +1444,7 @@
       ]
     },
     {
-      "name": "Standards and proposals",
+      "name": "Standards & proposals",
       "items": [
         {
           "title": "W3C",
@@ -1487,6 +1493,24 @@
     {
       "name": "Software",
       "items": [
+        {
+          "title": "Mozilla Firefox",
+          "url": "https://www.mozilla.org/de/firefox/new",
+          "icon": "firefoxbrowser",
+          "color": "#FF7139"
+        },
+        {
+          "title": "Google Chrome",
+          "url": "https://www.google.com/intl/de/chrome",
+          "icon": "googlechrome",
+          "color": "#4285F4"
+        },
+        {
+          "title": "Microsoft Edge",
+          "url": "https://www.microsoft.com/de-de/edge/download",
+          "icon": "microsoftedge",
+          "color": "#0078D7"
+        },
         {
           "title": "Git",
           "url": "https://git-scm.com",
@@ -1679,6 +1703,12 @@
       "name": "Developer surveys",
       "items": [
         {
+          "title": "State of HTML",
+          "url": "https://stateofhtml.com",
+          "icon": "html5",
+          "color": "#E34F26"
+        },
+        {
           "title": "State of CSS",
           "url": "https://stateofcss.com",
           "icon": "css3",
@@ -1695,6 +1725,12 @@
           "url": "https://www.stateofgraphql.com",
           "icon": "graphql",
           "color": "#E10098"
+        },
+        {
+          "title": "State of React",
+          "url": "https://stateofreact.com",
+          "icon": "react",
+          "color": "#61DAFB"
         }
       ]
     },
