@@ -506,6 +506,11 @@
           "color": "#E05735"
         },
         {
+          "title": "Semver",
+          "url": "https://semver.org",
+          "description": "A detailed description of the versioning schema \"MAJOR.MINOR.PATCH\"."
+        },
+        {
           "title": "Gitmoji",
           "url": "https://gitmoji.carloscuesta.me",
           "description": "An emoji guide for your commit messages."
@@ -689,7 +694,7 @@
           "title": "Angular",
           "url": "https://angular.io",
           "icon": "angular",
-          "color": "#DD0031"
+          "color": "#0F0F11"
         },
         {
           "title": "Lit",
@@ -871,6 +876,13 @@
           "url": "https://lodash.com",
           "icon": "lodash",
           "color": "#3492ff"
+        },
+        {
+          "title": "date-fns",
+          "url": "https://date-fns.org",
+          "description": "date-fns provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.",
+          "icon": "datefns",
+          "color": "#770C56"
         },
         {
           "title": "Autoprefixer",
@@ -1448,7 +1460,7 @@
         },
         {
           "title": "ECMAScript Compatibility Table",
-          "url": "https://kangax.github.io/compat-table/es6",
+          "url": "https://compat-table.github.io/compat-table/es2016plus",
           "description": "Table illustrating browser support of ECMAScript features."
         },
         {
