@@ -582,13 +582,6 @@
           "color": "#06B6D4"
         },
         {
-          "title": "Windi CSS",
-          "url": "https://windicss.org",
-          "description": "A utility class based CSS framework.",
-          "icon": "windicss",
-          "color": "#48B0F1"
-        },
-        {
           "title": "MUI",
           "url": "https://mui.com",
           "description": "React component library with different design languages, including Material UI, and an unstyled version of every component.",
@@ -894,9 +887,7 @@
         {
           "title": "webhint",
           "url": "https://webhint.io",
-          "description": "Linting tool that checks your website's accessibility, speed, cross-browser compatibility, and more.",
-          "icon": "webhint",
-          "color": "#a700a3"
+          "description": "Linting tool that checks your website's accessibility, speed, cross-browser compatibility, and more."
         },
         {
           "title": "ESLint",
@@ -1448,9 +1439,7 @@
       "items": [
         {
           "title": "W3C",
-          "url": "https://www.w3.org",
-          "icon": "w3c",
-          "color": "#005A9C"
+          "url": "https://www.w3.org"
         },
         {
           "title": "ECMAScript Proposals",
@@ -1576,12 +1565,6 @@
           "searchConcat": "+"
         },
         {
-          "title": "Atom",
-          "url": "https://atom.io",
-          "icon": "atom",
-          "color": "#66595C"
-        },
-        {
           "title": "JetBrains",
           "url": "https://www.jetbrains.com",
           "description": "Developer of IDEs like IntelliJ, PHPStorm, WebStorm, etc.",
@@ -1664,8 +1647,6 @@
         {
           "title": "Deezer",
           "url": "https://www.deezer.com",
-          "icon": "deezer",
-          "color": "#FEAA2D",
           "searchUrl": "https://www.deezer.com/search/{search}",
           "searchConcat": "%20"
         },
