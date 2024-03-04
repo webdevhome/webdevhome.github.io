@@ -1,6 +1,5 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { combineReducers, createStore } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
 import { loadHiddenLinks } from '../services/localStorage/values/hiddenLinks'
 import { loadShowDescriptionsSetting } from '../services/localStorage/values/showDescriptionsSetting'
 import { loadThemeSetting } from '../services/localStorage/values/themeSetting'
@@ -17,17 +16,13 @@ const rootReducer = combineReducers({
   appSettings,
 })
 
-export const store = createStore(
-  rootReducer,
-  {
-    hiddenLinks: { links: loadHiddenLinks() },
-    appSettings: {
-      theme: loadThemeSetting(),
-      showDescriptions: loadShowDescriptionsSetting(),
-    },
+export const store = createStore(rootReducer, {
+  hiddenLinks: { links: loadHiddenLinks() },
+  appSettings: {
+    theme: loadThemeSetting(),
+    showDescriptions: loadShowDescriptionsSetting(),
   },
-  composeWithDevTools({ trace: true })()
-)
+})
 
 persistToLocalStorage(store)
 
