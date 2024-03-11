@@ -412,6 +412,11 @@
           "searchConcat": "+"
         },
         {
+          "title": "devhints.io",
+          "url": "https://devhints.io/",
+          "description": "A list of cheatsheets by Rico Sta. Cruz."
+        },
+        {
           "title": "Interactive Git Cheat Sheet",
           "url": "https://ndpsoftware.com/git-cheatsheet.html",
           "icon": "git",
