@@ -435,11 +435,6 @@
           "color": "#000000"
         },
         {
-          "title": "this vs that",
-          "url": "https://thisthat.dev",
-          "description": "A collection that explains the difference between similar programming concepts."
-        },
-        {
           "title": "Learn X in Y minutes",
           "url": "https://learnxinyminutes.com",
           "description": "Resources to learn languages or tools in X minutes."
@@ -774,6 +769,11 @@
           "color": "#02569B",
           "searchUrl": "https://flutter.dev/search?q={search}",
           "searchConcat": "+"
+        },
+        {
+          "title": "JS web framework benchmark",
+          "url": "https://krausest.github.io/js-framework-benchmark",
+          "description": "A performance benchmark table for many JS web frameworks."
         }
       ]
     },
@@ -819,7 +819,7 @@
           "color": "#311C87"
         },
         {
-          "title": "React Query",
+          "title": "TanStack Query",
           "url": "https://tanstack.com/query",
           "description": "Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte.",
           "icon": "reactquery",
@@ -941,6 +941,13 @@
           "color": "#8D6748"
         },
         {
+          "title": "Selenium",
+          "url": "https://www.selenium.dev",
+          "description": "A framework for browser automation.",
+          "icon": "selenium",
+          "color": "#43B02A"
+        },
+        {
           "title": "Prettier",
           "url": "https://prettier.io",
           "description": "An opinionated code formatter",
@@ -1001,18 +1008,11 @@
           "color": "#646CFF"
         },
         {
-          "title": "Snowpack",
-          "url": "https://www.snowpack.dev",
-          "description": "A frontend build tool.",
-          "icon": "snowpack",
-          "color": "#2E5E82"
-        },
-        {
-          "title": "Rome",
-          "url": "https://rome.tools",
-          "description": "A universal build chain that includes a linter, compiler, bundler, and more.",
-          "icon": "rome",
-          "color": "#27272A"
+          "title": "Biome",
+          "url": "https://biomejs.dev",
+          "description": "A universal build chain that includes a linter, compiler, bundler, and more. It's the successor of Rome.",
+          "icon": "biome",
+          "color": "#60A5FA"
         },
         {
           "title": "SWC",
@@ -1245,11 +1245,6 @@
           "description": "A web service that helps to self-host fonts from Google Fonts"
         },
         {
-          "title": "Coding Fonts",
-          "url": "https://coding-fonts.css-tricks.com",
-          "description": "A collection of fonts for code editors - by CSS Tricks."
-        },
-        {
           "title": "Font Awesome",
           "url": "https://fontawesome.com",
           "icon": "fontawesome",
@@ -1422,13 +1417,6 @@
           "color": "#4285f4"
         },
         {
-          "title": "Microsoft Edge Insiders: New Features",
-          "url": "https://www.microsoftedgeinsider.com/en-us/whats-new",
-          "description": "List of news around the Edge browser Insiders channel.",
-          "icon": "microsoftedge",
-          "color": "#0078d7"
-        },
-        {
           "title": "Microsoft 365/Edge Roadmap",
           "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge",
           "icon": "microsoft",
@@ -1488,11 +1476,16 @@
           "searchConcat": "%20"
         },
         {
-          "title": "WICG Forum",
-          "url": "https://discourse.wicg.io",
-          "description": "Official forum of the WICG (Web Incubator Community Group). Talk about web standards and proposals.",
+          "title": "WICG",
+          "url": "https://wicg.io/",
+          "description": "Official website of the WICG (Web Incubator Community Group).",
           "searchUrl": "https://discourse.wicg.io/search?q={search}",
           "searchConcat": "%20"
+        },
+        {
+          "title": "Open UI",
+          "url": "https://open-ui.org/",
+          "description": "Official website of Open UI (a W3C community group). It's about making built-in form controls styleable while also adding new ones."
         }
       ]
     },
