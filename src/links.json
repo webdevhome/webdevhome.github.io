@@ -695,6 +695,12 @@
           "color": "#0F0F11"
         },
         {
+          "title": "Stencil",
+          "url": "https://stenciljs.com",
+          "icon": "stencil",
+          "color": "#5530FF"
+        },
+        {
           "title": "Lit",
           "url": "https://lit.dev",
           "description": "A library for building web components.",
