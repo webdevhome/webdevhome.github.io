@@ -1271,6 +1271,11 @@
           "url": "https://openjdk.java.net",
           "icon": "openjdk",
           "color": "#000000"
+        },
+        {
+          "title": "TypeSpec",
+          "url": "https://typespec.io",
+          "description": "A language by Microsoft to describe data and to generate API specs, client and server code, docs, etc."
         }
       ]
     },
@@ -1288,7 +1293,14 @@
         {
           "title": "Google Webfonts Helper",
           "url": "https://gwfh.mranftl.com",
-          "description": "A web service that helps to self-host fonts from Google Fonts"
+          "description": "A web service that helps to self-host fonts from Google Fonts."
+        },
+        {
+          "title": "Icônes",
+          "url": "https://icones.js.org",
+          "description": "A collection of many icon sets. You can search for icons in all icon sets at once.",
+          "searchUrl": "https://icones.js.org/collection/all?s={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Font Awesome",
@@ -1458,6 +1470,13 @@
           "url": "https://www.canidev.tools",
           "description": "Check which devtools support which debugging action.",
           "searchUrl": "https://www.canidev.tools/?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Web Platform Status",
+          "url": "https://webstatus.dev",
+          "description": "A website to check which browser supports which web platform features. Initially developed by Google.",
+          "searchUrl": "https://webstatus.dev/?q={search}",
           "searchConcat": "+"
         },
         {
@@ -1803,50 +1822,20 @@
           "color": "#1572b6"
         },
         {
-          "title": "Tailwind Weekly",
-          "url": "https://www.getrevue.co/profile/tailwind-weekly",
-          "icon": "tailwindcss",
-          "color": "#06B6D4"
-        },
-        {
           "title": "JavaScript Weekly",
           "url": "https://javascriptweekly.com",
           "icon": "javascript",
           "color": "#f7df1e"
         },
         {
-          "title": "ES.next News",
-          "url": "http://esnextnews.com"
-        },
-        {
-          "title": "TypeScript Weekly",
-          "url": "https://www.typescript-weekly.com",
-          "icon": "typescript",
-          "color": "#3178C6"
-        },
-        {
-          "title": "WebAssembly Weekly",
-          "url": "https://wasmweekly.news",
-          "icon": "webassembly",
-          "color": "#654FF0"
+          "title": "ECMAScript News",
+          "url": "https://ecmascript.news"
         },
         {
           "title": "Node Weekly",
           "url": "https://nodeweekly.com",
           "icon": "nodedotjs",
           "color": "#339933"
-        },
-        {
-          "title": "Deno Weekly",
-          "url": "https://denoweekly.com",
-          "icon": "deno",
-          "color": "#000000"
-        },
-        {
-          "title": "Vue.js News",
-          "url": "https://news.vuejs.org",
-          "icon": "vuedotjs",
-          "color": "#4fc08d"
         },
         {
           "title": "React Status Newsletter",
