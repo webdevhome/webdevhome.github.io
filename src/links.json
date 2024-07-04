@@ -2,7 +2,7 @@
   "$schema": "./links.schema.json",
   "items": [
     {
-      "name": "Managing projects",
+      "name": "Source Control & CI/CD",
       "items": [
         {
           "title": "GitHub",
@@ -67,7 +67,12 @@
           "description": "CI/CD/Deployment service.",
           "icon": "octopusdeploy",
           "color": "#2f93e0"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Hosting & Cloud Services",
+      "items": [
         {
           "title": "Vercel",
           "url": "https://vercel.co",
@@ -142,6 +147,14 @@
           "url": "https://www.digitalocean.com",
           "icon": "digitalocean",
           "color": "#0080FF"
+        },
+        {
+          "title": "Cloudflare",
+          "url": "https://www.cloudflare.com",
+          "icon": "cloudflare",
+          "color": "#F38020",
+          "searchUrl": "https://www.cloudflare.com/searchresults/#q={search}&f[Language]=English",
+          "searchConcat": "%20"
         }
       ]
     },
@@ -655,13 +668,6 @@
           "color": "#673AB8"
         },
         {
-          "title": "Create React App",
-          "url": "https://create-react-app.dev",
-          "description": "A starter template for React apps.",
-          "icon": "createreactapp",
-          "color": "#09D3AC"
-        },
-        {
           "title": "Gatsby",
           "url": "https://gatsbyjs.org",
           "description": "A framework based on React.",
@@ -1061,6 +1067,13 @@
           "color": "#646CFF"
         },
         {
+          "title": "Create React App",
+          "url": "https://create-react-app.dev",
+          "description": "A starter template for React apps.",
+          "icon": "createreactapp",
+          "color": "#09D3AC"
+        },
+        {
           "title": "Biome",
           "url": "https://biomejs.dev",
           "description": "A universal build chain that includes a linter, compiler, bundler, and more. It's the successor of Rome.",
@@ -1181,7 +1194,7 @@
       ]
     },
     {
-      "name": "Server languages",
+      "name": "Other languages",
       "items": [
         {
           "title": "Node.js",
@@ -1541,7 +1554,7 @@
           "color": "#000000"
         },
         {
-          "title": "TC39 Website",
+          "title": "TC39",
           "url": "https://tc39.es",
           "description": "Official forum of Ecma International's TC39 (Technical Committee 39)."
         },
