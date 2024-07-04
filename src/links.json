@@ -722,6 +722,13 @@
           "color": "#8BC0D0"
         },
         {
+          "title": "HTMX",
+          "url": "https://htmx.org",
+          "description": "A library to add logic to HTML by using attributes.",
+          "icon": "htmx",
+          "color": "#3366CC"
+        },
+        {
           "title": "Hotwire",
           "url": "https://hotwired.dev",
           "description": "Hotwire is an alternative approach to building modern web applications without using much JavaScript by sending HTML instead of JSON over the wire. (Hotwire = Turbo + Stimulus)",
