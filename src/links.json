@@ -857,6 +857,11 @@
           "color": "#764ABC"
         },
         {
+          "title": "Jotai",
+          "url": "https://jotai.org",
+          "description": "Atomic state management library for React similar to Recoil."
+        },
+        {
           "title": "Recoil",
           "url": "https://recoiljs.org",
           "description": "An experimental new state management library for React by Facebook Open Source.",
