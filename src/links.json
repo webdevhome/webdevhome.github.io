@@ -3,6 +3,7 @@
   "items": [
     {
       "name": "Source Control & CI/CD",
+      "color": "slate",
       "items": [
         {
           "title": "GitHub",
@@ -72,6 +73,7 @@
     },
     {
       "name": "Hosting & Cloud Services",
+      "color": "slate",
       "items": [
         {
           "title": "Vercel",
@@ -98,7 +100,7 @@
           "title": "Render",
           "url": "https://render.com",
           "icon": "render",
-          "color": "#46E3B7"
+          "color": "#000000"
         },
         {
           "title": "Fly.io",
@@ -107,15 +109,13 @@
         {
           "title": "Microsoft Azure",
           "url": "https://azure.microsoft.com",
-          "icon": "microsoftazure",
-          "color": "#0078D4",
           "searchUrl": "https://azure.microsoft.com/de-de/search/?q={search}",
           "searchConcat": "+"
         },
         {
           "title": "Amazon Web Services",
           "url": "https://aws.amazon.com",
-          "icon": "amazonaws",
+          "icon": "amazonwebservices",
           "color": "#232F3E",
           "searchUrl": "https://aws.amazon.com/de/search/?searchQuery={search}",
           "searchConcat": "+"
@@ -132,7 +132,7 @@
           "title": "Firebase",
           "url": "https://firebase.google.com",
           "icon": "firebase",
-          "color": "#FFCA28",
+          "color": "#DD2C00",
           "searchUrl": "https://firebase.google.com/s/results?q={search}",
           "searchConcat": "%20"
         },
@@ -160,11 +160,12 @@
     },
     {
       "name": "Packages",
+      "color": "orange",
       "items": [
         {
           "title": "npm",
           "url": "https://npmjs.com",
-          "description": "Node.js package directory.",
+          "description": "Node.js package directory and package manager.",
           "icon": "npm",
           "color": "#cb3837",
           "searchUrl": "https://www.npmjs.com/search?q={search}",
@@ -173,11 +174,18 @@
         {
           "title": "Yarn",
           "url": "https://yarnpkg.com",
-          "description": "Alternative for npm.",
+          "description": "Alternative package manager for Node.js.",
           "icon": "yarn",
-          "color": "#2C8EBB",
-          "searchUrl": "https://yarnpkg.com/?q={search}",
-          "searchConcat": "%20"
+          "color": "#2e2a65",
+          "searchUrl": "https://yarnpkg.com/search?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "pnpm",
+          "url": "https://pnpm.io",
+          "description": "Alternative package manager for Node.js.",
+          "icon": "pnpm",
+          "color": "#F69220"
         },
         {
           "title": "Composer",
@@ -244,6 +252,7 @@
     },
     {
       "name": "Code related services",
+      "color": "orange",
       "items": [
         {
           "title": "30 seconds of code",
@@ -298,7 +307,44 @@
       ]
     },
     {
+      "name": "Development Platforms",
+      "color": "orange",
+      "items": [
+        {
+          "title": "Chrome Developers",
+          "url": "https://developer.chrome.com",
+          "description": "Official developer resources about Chrome Browser.",
+          "icon": "googlechrome",
+          "color": "#4285F4"
+        },
+        {
+          "title": "ChromeOS.dev",
+          "url": "https://chromeos.dev",
+          "description": "Official developer resources about ChromeOS.",
+          "icon": "googlechrome",
+          "color": "#4285F4",
+          "searchUrl": "https://chromeos.dev/en/search?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Chrome Web Store Developer Dashboard",
+          "url": "https://chrome.google.com/webstore/devconsole",
+          "description": "Official Dashboard to manage Chrome Extensions, Themes, etc.",
+          "icon": "chromewebstore",
+          "color": "#4285F4"
+        },
+        {
+          "title": "Firefox Add-On Developer Hub",
+          "url": "https://addons.mozilla.org/en-US/developers/addons",
+          "description": "Official Dashboard to manage Firefox Extensions.",
+          "icon": "firefoxbrowser",
+          "color": "#FF7139"
+        }
+      ]
+    },
+    {
       "name": "Find help & discuss",
+      "color": "cyan",
       "items": [
         {
           "title": "Stack Overflow",
@@ -353,6 +399,10 @@
           "color": "#26A5E4"
         },
         {
+          "title": "Microsoft Teams",
+          "url": "https://www.microsoft.com/microsoft-teams/log-in"
+        },
+        {
           "title": "Slack",
           "url": "https://slack.com",
           "icon": "slack",
@@ -362,6 +412,7 @@
     },
     {
       "name": "Docs & learning resources",
+      "color": "cyan",
       "items": [
         {
           "title": "DevDocs",
@@ -404,10 +455,16 @@
         {
           "title": "Microsoft Docs",
           "url": "https://docs.microsoft.com",
-          "icon": "microsoft",
-          "color": "#5E5E5E",
           "searchUrl": "https://docs.microsoft.com/en-us/search/?search={search}&category=All",
           "searchConcat": "+"
+        },
+        {
+          "title": "Apple Developer",
+          "url": "https://developer.apple.com",
+          "icon": "apple",
+          "color": "#000000",
+          "searchUrl": "https://developer.apple.com/search/?q={search}",
+          "searchConcat": "%20"
         },
         {
           "title": "Oracle Help Center",
@@ -458,78 +515,8 @@
       ]
     },
     {
-      "name": "Development Platforms",
-      "items": [
-        {
-          "title": "Chrome Developers",
-          "url": "https://developer.chrome.com",
-          "description": "Official developer resources about Chrome Browser.",
-          "icon": "googlechrome",
-          "color": "#4285F4"
-        },
-        {
-          "title": "ChromeOS.dev",
-          "url": "https://chromeos.dev",
-          "description": "Official developer resources about ChromeOS.",
-          "icon": "googlechrome",
-          "color": "#4285F4",
-          "searchUrl": "https://chromeos.dev/en/search?q={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "Chrome Web Store Developer Dashboard",
-          "url": "https://chrome.google.com/webstore/devconsole",
-          "description": "Official Dashboard to manage Chrome Extensions, Themes, etc.",
-          "icon": "googlechrome",
-          "color": "#4285F4"
-        },
-        {
-          "title": "Firefox Add-On Developer Hub",
-          "url": "https://addons.mozilla.org/en-US/developers/addons",
-          "description": "Official Dashboard to manage Firefox Extensions.",
-          "icon": "firefoxbrowser",
-          "color": "#FF7139"
-        }
-      ]
-    },
-    {
-      "name": "Best practices & conventions",
-      "items": [
-        {
-          "title": "OWASP Cheat Sheet Series Project",
-          "url": "https://cheatsheetseries.owasp.org",
-          "description": "Open Web Application Security Project (OWASP) Cheat Sheets.",
-          "icon": "owasp",
-          "color": "#000000",
-          "searchUrl": "https://cheatsheetseries.owasp.org/?q={search}",
-          "searchConcat": "%20"
-        },
-        {
-          "title": "The Twelve-Factor App",
-          "url": "https://12factor.net",
-          "description": "A methodology for building modern, scalable, maintainable software-as-a-service apps."
-        },
-        {
-          "title": "Keep a Changelog",
-          "url": "https://keepachangelog.com/en/1.1.0",
-          "description": "Convention for writing changelogs.",
-          "icon": "keepachangelog",
-          "color": "#E05735"
-        },
-        {
-          "title": "Semver",
-          "url": "https://semver.org",
-          "description": "A detailed description of the versioning schema \"MAJOR.MINOR.PATCH\"."
-        },
-        {
-          "title": "Gitmoji",
-          "url": "https://gitmoji.carloscuesta.me",
-          "description": "An emoji guide for your commit messages."
-        }
-      ]
-    },
-    {
       "name": "Sandboxes",
+      "color": "cyan",
       "items": [
         {
           "title": "CodePen",
@@ -589,6 +576,7 @@
     },
     {
       "name": "UI Design",
+      "color": "blue",
       "items": [
         {
           "title": "Tailwind CSS",
@@ -653,6 +641,7 @@
     },
     {
       "name": "UI frameworks & libraries",
+      "color": "blue",
       "items": [
         {
           "title": "React",
@@ -764,6 +753,7 @@
     },
     {
       "name": "Native & hybrid apps",
+      "color": "blue",
       "items": [
         {
           "title": "Ionic",
@@ -821,9 +811,7 @@
         },
         {
           "title": "Xamarin",
-          "url": "https://visualstudio.microsoft.com/de/xamarin/",
-          "icon": "xamarin",
-          "color": "#3498DB"
+          "url": "https://visualstudio.microsoft.com/de/xamarin/"
         },
         {
           "title": "Flutter",
@@ -838,6 +826,7 @@
     },
     {
       "name": "Additional libraries",
+      "color": "blue",
       "items": [
         {
           "title": "React Router",
@@ -864,7 +853,7 @@
         {
           "title": "Recoil",
           "url": "https://recoiljs.org",
-          "description": "An experimental new state management library for React by Facebook Open Source.",
+          "description": "An experimental new state management library for React by Facebook Open Source. (Seems to be deprecated now with Jotai as its alternative!)",
           "icon": "recoil",
           "color": "#3578E5"
         },
@@ -874,6 +863,13 @@
           "description": "Application state management library.",
           "icon": "mobx",
           "color": "#FF9955"
+        },
+        {
+          "title": "Socket.io",
+          "url": "https://socket.io",
+          "description": "Bidirectional and low-latency communication for every platform.",
+          "icon": "socketdotio",
+          "color": "#010101"
         },
         {
           "title": "Apollo",
@@ -947,6 +943,11 @@
           "color": "#3492ff"
         },
         {
+          "title": "es-toolkit",
+          "url": "https://es-toolkit.slash.page",
+          "description": "State-of-the-art JavaScript utility library."
+        },
+        {
           "title": "date-fns",
           "url": "https://date-fns.org",
           "description": "date-fns provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.",
@@ -963,7 +964,75 @@
       ]
     },
     {
+      "name": "Build & bundle",
+      "color": "green",
+      "items": [
+        {
+          "title": "Webpack",
+          "url": "https://webpack.js.org",
+          "description": "A JavaScript bundler.",
+          "icon": "webpack",
+          "color": "#8DD6F9"
+        },
+        {
+          "title": "Vite",
+          "url": "https://vitejs.dev",
+          "description": "A JavaScript bundler.",
+          "icon": "vite",
+          "color": "#646CFF"
+        },
+        {
+          "title": "Create React App",
+          "url": "https://create-react-app.dev",
+          "description": "A starter template for React apps.",
+          "icon": "createreactapp",
+          "color": "#09D3AC"
+        },
+        {
+          "title": "Biome",
+          "url": "https://biomejs.dev",
+          "description": "A universal build chain that includes a linter, compiler, bundler, and more. It's the successor of Rome.",
+          "icon": "biome",
+          "color": "#60A5FA"
+        },
+        {
+          "title": "SWC",
+          "url": "https://swc.rs",
+          "description": "Rust-based platform for the web.",
+          "icon": "swc",
+          "color": "#000000"
+        },
+        {
+          "title": "esbuild",
+          "url": "https://esbuild.github.io",
+          "description": "An extremely fast JavaScript bundler.",
+          "icon": "esbuild",
+          "color": "#ffcf00"
+        },
+        {
+          "title": "Parcel",
+          "url": "https://parceljs.org",
+          "description": "A JavaScript bundler."
+        },
+        {
+          "title": "Rollup",
+          "url": "https://rollupjs.org",
+          "description": "A JavaScript bundler.",
+          "icon": "rollupdotjs",
+          "color": "#EC4A3F"
+        },
+        {
+          "title": "Gulp",
+          "url": "https://gulpjs.com",
+          "description": "A task management toolkit.",
+          "icon": "gulp",
+          "color": "#CF4647"
+        }
+      ]
+    },
+    {
       "name": "Testing & security",
+      "color": "green",
       "items": [
         {
           "title": "webhint",
@@ -1055,73 +1124,45 @@
       ]
     },
     {
-      "name": "Build & bundle",
+      "name": "Best practices & conventions",
+      "color": "green",
       "items": [
         {
-          "title": "Webpack",
-          "url": "https://webpack.js.org",
-          "description": "A JavaScript bundler.",
-          "icon": "webpack",
-          "color": "#8DD6F9"
+          "title": "OWASP Cheat Sheet Series Project",
+          "url": "https://cheatsheetseries.owasp.org",
+          "description": "Open Web Application Security Project (OWASP) Cheat Sheets.",
+          "icon": "owasp",
+          "color": "#000000",
+          "searchUrl": "https://cheatsheetseries.owasp.org/?q={search}",
+          "searchConcat": "%20"
         },
         {
-          "title": "Vite",
-          "url": "https://vitejs.dev",
-          "description": "A JavaScript bundler.",
-          "icon": "vite",
-          "color": "#646CFF"
+          "title": "The Twelve-Factor App",
+          "url": "https://12factor.net",
+          "description": "A methodology for building modern, scalable, maintainable software-as-a-service apps."
         },
         {
-          "title": "Create React App",
-          "url": "https://create-react-app.dev",
-          "description": "A starter template for React apps.",
-          "icon": "createreactapp",
-          "color": "#09D3AC"
+          "title": "Keep a Changelog",
+          "url": "https://keepachangelog.com/en/1.1.0",
+          "description": "Convention for writing changelogs.",
+          "icon": "keepachangelog",
+          "color": "#E05735"
         },
         {
-          "title": "Biome",
-          "url": "https://biomejs.dev",
-          "description": "A universal build chain that includes a linter, compiler, bundler, and more. It's the successor of Rome.",
-          "icon": "biome",
-          "color": "#60A5FA"
+          "title": "Semver",
+          "url": "https://semver.org",
+          "description": "A detailed description of the versioning schema \"MAJOR.MINOR.PATCH\"."
         },
         {
-          "title": "SWC",
-          "url": "https://swc.rs",
-          "description": "Rust-based platform for the web.",
-          "icon": "swc",
-          "color": "#000000"
-        },
-        {
-          "title": "esbuild",
-          "url": "https://esbuild.github.io",
-          "description": "An extremely fast JavaScript bundler.",
-          "icon": "esbuild",
-          "color": "#ffcf00"
-        },
-        {
-          "title": "Parcel",
-          "url": "https://parceljs.org",
-          "description": "A JavaScript bundler."
-        },
-        {
-          "title": "Rollup",
-          "url": "https://rollupjs.org",
-          "description": "A JavaScript bundler.",
-          "icon": "rollupdotjs",
-          "color": "#EC4A3F"
-        },
-        {
-          "title": "Gulp",
-          "url": "https://gulpjs.com",
-          "description": "A task management toolkit.",
-          "icon": "gulp",
-          "color": "#CF4647"
+          "title": "Gitmoji",
+          "url": "https://gitmoji.carloscuesta.me",
+          "description": "An emoji guide for your commit messages."
         }
       ]
     },
     {
       "name": "Browser languages",
+      "color": "amber",
       "items": [
         {
           "title": "Sass",
@@ -1199,13 +1240,26 @@
       ]
     },
     {
-      "name": "Other languages",
+      "name": "Server languages",
+      "color": "amber",
       "items": [
         {
           "title": "Node.js",
           "url": "https://nodejs.org/en",
           "icon": "nodedotjs",
           "color": "#339933"
+        },
+        {
+          "title": "nvm",
+          "url": "https://github.com/nvm-sh/nvm",
+          "description": "Node.js version manager for macOS and Linux.",
+          "icon": "nvm",
+          "color": "#F4DD4B"
+        },
+        {
+          "title": "NVM for Windows",
+          "url": "https://github.com/coreybutler/nvm-windows",
+          "description": "Node.js version manager for Windows. (Notice: The developers are working on a successor called \"Runtime\". NVM for Windows will be deprecated as soon as Runtime gets released.)"
         },
         {
           "title": "Deno",
@@ -1305,7 +1359,214 @@
       ]
     },
     {
+      "name": "Server frameworks & CMS",
+      "color": "amber",
+      "items": [
+        {
+          "title": "Symfony",
+          "url": "https://symfony.com",
+          "description": "PHP web framework.",
+          "icon": "symfony",
+          "color": "#000000",
+          "searchUrl": "https://symfony.com/search?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Laravel",
+          "url": "https://laravel.com",
+          "description": "PHP web framework.",
+          "icon": "laravel",
+          "color": "#FF2D20"
+        },
+        {
+          "title": "Yii",
+          "url": "https://www.yiiframework.com",
+          "description": "PHP web framework.",
+          "searchUrl": "https://www.yiiframework.com/search?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "WordPress",
+          "url": "https://wordpress.org",
+          "description": "Open source PHP CMS.",
+          "icon": "wordpress",
+          "color": "#21759B",
+          "searchUrl": "https://wordpress.org/search/{search}/",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Drupal",
+          "url": "https://www.drupal.org",
+          "description": "Open source PHP CMS.",
+          "icon": "drupal",
+          "color": "#0678BE",
+          "searchUrl": "https://www.drupal.org/search/site/{search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "Grav",
+          "url": "https://getgrav.org",
+          "description": "Open source PHP CMS.",
+          "icon": "grav",
+          "color": "#221E1F"
+        },
+        {
+          "title": "Craft CMS",
+          "url": "https://craftcms.com",
+          "description": "Commercial PHP CMS.",
+          "icon": "craftcms",
+          "color": "#E5422B"
+        },
+        {
+          "title": "Kirby",
+          "url": "https://getkirby.com",
+          "description": "Commercial PHP CMS.",
+          "icon": "kirby",
+          "color": "#000000"
+        },
+        {
+          "title": "Fiber",
+          "url": "https://gofiber.io",
+          "description": "Go web framework."
+        },
+        {
+          "title": "Express",
+          "url": "https://expressjs.com",
+          "description": "Node.js web framework.",
+          "icon": "express",
+          "color": "#000000"
+        },
+        {
+          "title": "Fastify",
+          "url": "https://fastify.dev",
+          "description": "Node.js web framework.",
+          "icon": "fastify",
+          "color": "#000000"
+        },
+        {
+          "title": "NestJS",
+          "url": "https://nestjs.com",
+          "description": "Node.js web framework.",
+          "icon": "nestjs",
+          "color": "#E0234E"
+        },
+        {
+          "title": "Directus",
+          "url": "https://directus.io",
+          "description": "Free* headless CMS for Node.js.",
+          "icon": "directus",
+          "color": "#263238"
+        },
+        {
+          "title": "Ruby on Rails",
+          "url": "https://rubyonrails.org",
+          "description": "Ruby web framework.",
+          "icon": "rubyonrails",
+          "color": "#D30001"
+        },
+        {
+          "title": "ASP.NET",
+          "url": "https://dotnet.microsoft.com/apps/aspnet",
+          "description": ".NET web framework."
+        },
+        {
+          "title": "Spring",
+          "url": "https://spring.io",
+          "description": "Java web framework.",
+          "icon": "spring",
+          "color": "#6DB33F"
+        }
+      ]
+    },
+    {
+      "name": "Databases",
+      "color": "amber",
+      "items": [
+        {
+          "title": "MySQL",
+          "url": "https://www.mysql.com",
+          "description": "A relational database.",
+          "icon": "mysql",
+          "color": "#4479A1",
+          "searchUrl": "https://www.oracle.com/search/results?Ntt={search}&Dy=1&Nty=1&cat=mysql&Ntk=SI-ALL5",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "MariaDB",
+          "url": "https://mariadb.org",
+          "description": "A relational database.",
+          "icon": "mariadb",
+          "color": "#003545"
+        },
+        {
+          "title": "Microsoft SQL Server",
+          "url": "https://www.microsoft.com/de-de/sql-server",
+          "description": "A relational database.",
+          "searchUrl": "https://www.microsoft.com/en-us/search/explore?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "PostgreSQL",
+          "url": "https://www.postgresql.org",
+          "description": "A relational database.",
+          "icon": "postgresql",
+          "color": "#4169E1",
+          "searchUrl": "https://www.postgresql.org/search/?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Oracle Database",
+          "url": "https://www.oracle.com/de/database/technologies",
+          "description": "A relational database.",
+          "icon": "oracle",
+          "color": "#F80000"
+        },
+        {
+          "title": "SQLite",
+          "url": "https://www.sqlite.org",
+          "description": "A file based relational database.",
+          "icon": "sqlite",
+          "color": "#003B57",
+          "searchUrl": "https://www.sqlite.org/search?s=d&q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "MongoDB",
+          "url": "https://www.mongodb.com",
+          "description": "A document database.",
+          "icon": "mongodb",
+          "color": "#47A248",
+          "searchUrl": "https://www.mongodb.com/search?addsearch={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "CouchDB",
+          "url": "https://couchdb.apache.org",
+          "description": "A document database.",
+          "icon": "apachecouchdb",
+          "color": "#E42528",
+          "searchUrl": "https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Redis",
+          "url": "https://redis.io",
+          "description": "An in-memory key value store.",
+          "icon": "redis",
+          "color": "#FF4438"
+        },
+        {
+          "title": "Neo4j",
+          "url": "https://neo4j.com",
+          "description": "A graph database.",
+          "icon": "neo4j",
+          "color": "#4581C3"
+        }
+      ]
+    },
+    {
       "name": "Resources",
+      "color": "pink",
       "items": [
         {
           "title": "Google Fonts",
@@ -1387,94 +1648,8 @@
       ]
     },
     {
-      "name": "Databases",
-      "items": [
-        {
-          "title": "MySQL",
-          "url": "https://www.mysql.com",
-          "description": "A relational database.",
-          "icon": "mysql",
-          "color": "#4479A1",
-          "searchUrl": "https://www.oracle.com/search/results?Ntt={search}&Dy=1&Nty=1&cat=mysql&Ntk=SI-ALL5",
-          "searchConcat": "%20"
-        },
-        {
-          "title": "MariaDB",
-          "url": "https://mariadb.org",
-          "description": "A relational database.",
-          "icon": "mariadb",
-          "color": "#003545"
-        },
-        {
-          "title": "Microsoft SQL Server",
-          "url": "https://www.microsoft.com/de-de/sql-server",
-          "description": "A relational database.",
-          "icon": "microsoftsqlserver",
-          "color": "#CC2927",
-          "searchUrl": "https://www.microsoft.com/en-us/search/explore?q={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "PostgreSQL",
-          "url": "https://www.postgresql.org",
-          "description": "A relational database.",
-          "icon": "postgresql",
-          "color": "#4169E1",
-          "searchUrl": "https://www.postgresql.org/search/?q={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "Oracle Database",
-          "url": "https://www.oracle.com/de/database/technologies",
-          "description": "A relational database.",
-          "icon": "oracle",
-          "color": "#F80000"
-        },
-        {
-          "title": "SQLite",
-          "url": "https://www.sqlite.org",
-          "description": "A file based relational database.",
-          "icon": "sqlite",
-          "color": "#003B57",
-          "searchUrl": "https://www.sqlite.org/search?s=d&q={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "MongoDB",
-          "url": "https://www.mongodb.com",
-          "description": "A document database.",
-          "icon": "mongodb",
-          "color": "#47A248",
-          "searchUrl": "https://www.mongodb.com/search?addsearch={search}",
-          "searchConcat": "%20"
-        },
-        {
-          "title": "CouchDB",
-          "url": "https://couchdb.apache.org",
-          "description": "A document database.",
-          "icon": "apachecouchdb",
-          "color": "#E42528",
-          "searchUrl": "https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default",
-          "searchConcat": "+"
-        },
-        {
-          "title": "Redis",
-          "url": "https://redis.io",
-          "description": "An in-memory key value store.",
-          "icon": "redis",
-          "color": "#DC382D"
-        },
-        {
-          "title": "Neo4j",
-          "url": "https://neo4j.com",
-          "description": "A graph database.",
-          "icon": "neo4j",
-          "color": "#4581C3"
-        }
-      ]
-    },
-    {
       "name": "Browser status",
+      "color": "indigo",
       "items": [
         {
           "title": "Can I use...",
@@ -1513,9 +1688,7 @@
         },
         {
           "title": "Microsoft 365/Edge Roadmap",
-          "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge",
-          "icon": "microsoft",
-          "color": "#5E5E5E"
+          "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge"
         },
         {
           "title": "Node Green",
@@ -1536,6 +1709,7 @@
     },
     {
       "name": "Standards & proposals",
+      "color": "indigo",
       "items": [
         {
           "title": "W3C",
@@ -1561,7 +1735,7 @@
         {
           "title": "TC39",
           "url": "https://tc39.es",
-          "description": "Official forum of Ecma International's TC39 (Technical Committee 39)."
+          "description": "Official website of Ecma International's TC39 (Technical Committee 39)."
         },
         {
           "title": "TC39 Forum",
@@ -1581,11 +1755,18 @@
           "title": "Open UI",
           "url": "https://open-ui.org/",
           "description": "Official website of Open UI (a W3C community group). It's about making built-in form controls styleable while also adding new ones."
+        },
+        {
+          "title": "OpenJS Foundation",
+          "url": "https://openjsf.org",
+          "icon": "openjsfoundation",
+          "color": "#0075C9"
         }
       ]
     },
     {
       "name": "Software",
+      "color": "rose",
       "items": [
         {
           "title": "Mozilla Firefox",
@@ -1601,9 +1782,7 @@
         },
         {
           "title": "Microsoft Edge",
-          "url": "https://www.microsoft.com/de-de/edge/download",
-          "icon": "microsoftedge",
-          "color": "#0078D7"
+          "url": "https://www.microsoft.com/de-de/edge/download"
         },
         {
           "title": "Git",
@@ -1656,16 +1835,12 @@
         {
           "title": "Visual Studio Code",
           "url": "https://code.visualstudio.com",
-          "icon": "visualstudiocode",
-          "color": "#007acc",
           "searchUrl": "https://code.visualstudio.com/Search?q={search}",
           "searchConcat": "+"
         },
         {
           "title": "Visual Studio",
           "url": "https://visualstudio.microsoft.com",
-          "icon": "visualstudio",
-          "color": "#5C2D91",
           "searchUrl": "https://visualstudio.microsoft.com/search/?query={search}",
           "searchConcat": "+"
         },
@@ -1707,6 +1882,12 @@
           "color": "#222324"
         },
         {
+          "title": "Canva",
+          "url": "https://www.canva.com",
+          "icon": "canva",
+          "color": "#00C4CC"
+        },
+        {
           "title": "Figma",
           "url": "https://figma.com",
           "icon": "figma",
@@ -1716,6 +1897,7 @@
     },
     {
       "name": "Stay focused",
+      "color": "rose",
       "items": [
         {
           "title": "YouTube",
@@ -1759,7 +1941,7 @@
           "title": "SoundCloud",
           "url": "https://soundcloud.com",
           "icon": "soundcloud",
-          "color": "#FF3300",
+          "color": "#FF5500",
           "searchUrl": "https://soundcloud.com/search?q={search}",
           "searchConcat": "%20"
         },
@@ -1787,6 +1969,7 @@
     },
     {
       "name": "Developer surveys",
+      "color": "stone",
       "items": [
         {
           "title": "State of HTML",
@@ -1822,6 +2005,7 @@
     },
     {
       "name": "Stay in the loop",
+      "color": "stone",
       "items": [
         {
           "title": "Frontend Focus",

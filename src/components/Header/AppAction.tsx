@@ -25,10 +25,10 @@ export const AppAction: FC<Props> = ({
         'rounded-md',
         'select-none',
         {
-          'hover:bg-gray-200 active:bg-gray-300': !active && !highlight,
+          'hover:bg-gray-300 active:bg-gray-400': !active && !highlight,
           'bg-brand-500 hover:bg-brand-600 active:bg-brand-700':
             active && !highlight,
-          'bg-black/10 hover:bg-black/20 active:bg-black/30': highlight,
+          'bg-brand-500/15 hover:bg-brand-500/25 active:bg-brand-500/35': highlight,
           'dark:hover:bg-gray-600 dark:active:bg-gray-500':
             !active && !highlight,
           'dark:hover:bg-brand-600 dark:active:bg-brand-700':
@@ -37,7 +37,7 @@ export const AppAction: FC<Props> = ({
             highlight,
           'text-white': active && !highlight,
           'text-gray-800 dark:text-gray-100': !active && !highlight,
-          'text-brand-600 dark:text-brand-400': highlight,
+          'text-brand-600 dark:text-brand-300': highlight,
         },
       )}
       onClick={action}

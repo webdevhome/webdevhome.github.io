@@ -93,7 +93,7 @@ export const Search: FC = () => {
 
               {hiddenResults !== null && hiddenResults.total > 0 ? (
                 <>
-                  <SearchDivider text="Disabled links" />
+                  <SearchDivider text="Hidden links" />
 
                   {hiddenResults.map((link) => (
                     <Link

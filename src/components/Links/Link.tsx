@@ -44,6 +44,14 @@ export const Link: FC<Props> = ({
     [isCurrentAppMode],
   )
 
+  const linkTitle = useMemo(() => {
+    if (link.description === undefined) {
+      return link.title
+    }
+
+    return `${link.title}: ${link.description}`
+  }, [link.description, link.title])
+
   const handleLinkClick = useCallback(
     (event: MouseEvent<HTMLAnchorElement>): void => {
       if (!isCustomizeMode) return
@@ -70,6 +78,7 @@ export const Link: FC<Props> = ({
     <a
       href={link.url}
       rel="noreferrer"
+      title={linkTitle}
       className={classNames(
         'grid grid-cols-[auto,1fr,auto] grid-rows-[auto,auto]',
         'items-center gap-x-2',

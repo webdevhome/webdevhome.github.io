@@ -18,8 +18,33 @@ export type SearchTarget = OptionalExceptFor<
   'title' | 'url' | 'searchUrl'
 >
 
+export type TailwindColorName =
+  | 'red'
+  | 'orange'
+  | 'amber'
+  | 'yellow'
+  | 'lime'
+  | 'green'
+  | 'emerald'
+  | 'teal'
+  | 'cyan'
+  | 'sky'
+  | 'blue'
+  | 'indigo'
+  | 'violet'
+  | 'purple'
+  | 'fuchsia'
+  | 'pink'
+  | 'rose'
+  | 'slate'
+  | 'gray'
+  | 'zinc'
+  | 'neutral'
+  | 'stone'
+
 export interface LinkGroup {
   name: string
+  color?: TailwindColorName
   items: LinkItem[]
 }
 
