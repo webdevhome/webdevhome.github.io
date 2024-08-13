@@ -54,8 +54,8 @@ export const LinkGroup: FC<Props> = ({ group }) => {
     const isSingular = hiddenLinksCount === 1
 
     return showHiddenLinks
-      ? `Hide ${hiddenLinksCount} disabled ${isSingular ? 'link' : 'links'}`
-      : `Show ${hiddenLinksCount} disabled ${isSingular ? 'link' : 'links'}`
+      ? `Hide ${hiddenLinksCount} hidden ${isSingular ? 'link' : 'links'}`
+      : `Show ${hiddenLinksCount} hidden ${isSingular ? 'link' : 'links'}`
   }, [hiddenLinks.length, showHiddenLinks])
 
   function handleShowHiddenLinksClick(): void {
@@ -73,9 +73,9 @@ export const LinkGroup: FC<Props> = ({ group }) => {
           className={classNames(
             'flex-auto',
             'px-4 py-2',
-            'bg-brand-100 dark:bg-brand-500',
+            `bg-${group.color ?? 'gray'}-100 dark:bg-${group.color ?? 'gray'}-600`,
             'font-semibold uppercase tracking-wider',
-            'text-brand-800 dark:text-brand-50',
+            `text-${group.color ?? 'gray'}-800 dark:text-${group.color ?? 'gray'}-50`,
             'rounded-md',
           )}
         >
