@@ -53,7 +53,7 @@ export interface Links {
 }
 
 export const links: Links = {
-  items: linksData.items,
+  items: linksData.items as LinkGroup[],
 }
 
 export function useAllLinks(): LinkItem[] {
