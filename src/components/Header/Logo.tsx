@@ -7,8 +7,9 @@ export const Logo: FC = () => {
       className={classNames(
         'font-mono text-2xl',
         'tracking-wide',
-        'text-center md:text-left text-gray-400 dark:text-gray-200',
-        'pt-2 md:pt-0',
+        'text-center lg:text-left text-gray-400 dark:text-gray-200',
+        'pt-2 lg:pt-0',
+        'text-nowrap',
       )}
     >
       <span>&lt;</span>

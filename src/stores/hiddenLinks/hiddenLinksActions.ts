@@ -25,19 +25,19 @@ export type HiddenLinksActions =
   | ToggleHiddenLinksGroup
 
 export function setHiddenLinks(
-  links: Array<LinkItem['url']>
+  links: Array<LinkItem['url']>,
 ): SetHiddenLinksAction {
   return { type: SET_HIDDEN_LINKS, payload: links }
 }
 
 export function toggleHiddenLink(
-  link: LinkItem['url']
+  link: LinkItem['url'],
 ): ToggleHiddenLinkAction {
   return { type: TOGGLE_HIDDEN_LINK, payload: link }
 }
 
 export function toggleHiddenLinksGroup(
-  links: Array<LinkItem['url']>
+  items: LinkItem[],
 ): ToggleHiddenLinksGroup {
-  return { type: TOGGLE_HIDDEN_LINKS_GROUP, payload: links }
+  return { type: TOGGLE_HIDDEN_LINKS_GROUP, payload: items.map((i) => i.url) }
 }
