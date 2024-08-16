@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import linksData from './links.json'
 import { OptionalExceptFor } from './utilityTypes'
 
-export interface LinkItem {
+export type LinkItem = {
   title: string
   url: string
   description?: string
@@ -42,13 +42,13 @@ export type TailwindColorName =
   | 'neutral'
   | 'stone'
 
-export interface LinkGroup {
+export type LinkGroup = {
   name: string
   color?: TailwindColorName
   items: LinkItem[]
 }
 
-export interface Links {
+export type Links = {
   items: LinkGroup[]
 }
 

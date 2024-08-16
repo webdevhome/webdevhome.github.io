@@ -13,6 +13,7 @@ import {
   useAllLinksInGroupAreHidden,
   useGetIsLinkHidden,
 } from '../../stores/hiddenLinks/hiddenLinksHooks'
+import { slugify } from '../../utils/slugify'
 import { MdiIcon } from '../Icon/MdiIcon'
 import { Link } from './Link'
 import { LinkGroupButton } from './LinkGroupButton'
@@ -34,20 +35,20 @@ export const LinkGroup: FC<Props> = ({ group }) => {
   }, [group.items, getIsLinkHidden])
 
   const allGroupLinksAreHidden = useMemo(
-    () => allLinksInGroupAreHidden(group.items.map((link) => link.url)),
-    [allLinksInGroupAreHidden, group.items],
+    () => allLinksInGroupAreHidden(group),
+    [allLinksInGroupAreHidden, group],
   )
 
   const handleToggleGroupClick = useCallback(
     (...items: LinkItem[]): void => {
-      dispatch(toggleHiddenLinksGroup(items.map((link) => link.url)))
+      dispatch(toggleHiddenLinksGroup(items))
     },
     [dispatch],
   )
 
   const noVisibleLinksInGroup = useMemo(() => {
-    return allLinksInGroupAreHidden(group.items.map((link) => link.url))
-  }, [allLinksInGroupAreHidden, group.items])
+    return allLinksInGroupAreHidden(group)
+  }, [allLinksInGroupAreHidden, group])
 
   const showHiddenLinksButtonLabel = useMemo(() => {
     const hiddenLinksCount = hiddenLinks.length
@@ -67,14 +68,17 @@ export const LinkGroup: FC<Props> = ({ group }) => {
   }
 
   return (
-    <div>
+    <div
+      id={slugify(group.name)}
+      className="scroll-mt-32 md:scroll-mt-28 lg:scroll-mt-20"
+    >
       <div className="flex gap-x-1 mb-2">
         <div
           className={classNames(
             'flex-auto',
             'px-4 py-2',
             `bg-${group.color ?? 'gray'}-100 dark:bg-${group.color ?? 'gray'}-600`,
-            'font-semibold uppercase tracking-wider',
+            'text-center font-semibold uppercase tracking-wider',
             `text-${group.color ?? 'gray'}-800 dark:text-${group.color ?? 'gray'}-50`,
             'rounded-md',
           )}

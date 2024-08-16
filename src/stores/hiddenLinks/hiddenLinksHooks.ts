@@ -1,14 +1,12 @@
 import { useMemo } from 'react'
 import { useAppSelector } from '..'
-import { LinkItem } from '../../links'
+import { LinkGroup, LinkItem } from '../../links'
 
-export function useAllLinksInGroupAreHidden(): (
-  links: Array<LinkItem['url']>,
-) => boolean {
+export function useAllLinksInGroupAreHidden(): (group: LinkGroup) => boolean {
   const hiddenLinks = useAppSelector((state) => state.hiddenLinks.links)
 
-  return function allLinksInGroupAreHidden(links) {
-    return links.every((link) => hiddenLinks.includes(link))
+  return function allLinksInGroupAreHidden(group) {
+    return group.items.every((link) => hiddenLinks.includes(link.url))
   }
 }
 

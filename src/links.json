@@ -251,7 +251,7 @@
       ]
     },
     {
-      "name": "Code related services",
+      "name": "Code Related Services",
       "color": "orange",
       "items": [
         {
@@ -343,7 +343,7 @@
       ]
     },
     {
-      "name": "Find help & discuss",
+      "name": "Find Help & Discuss",
       "color": "cyan",
       "items": [
         {
@@ -411,7 +411,7 @@
       ]
     },
     {
-      "name": "Docs & learning resources",
+      "name": "Docs & Learning Resources",
       "color": "cyan",
       "items": [
         {
@@ -640,7 +640,7 @@
       ]
     },
     {
-      "name": "UI frameworks & libraries",
+      "name": "UI Frameworks & Libraries",
       "color": "blue",
       "items": [
         {
@@ -752,7 +752,7 @@
       ]
     },
     {
-      "name": "Native & hybrid apps",
+      "name": "Native & Hybrid Apps",
       "color": "blue",
       "items": [
         {
@@ -825,7 +825,7 @@
       ]
     },
     {
-      "name": "Additional libraries",
+      "name": "Additional Libraries",
       "color": "blue",
       "items": [
         {
@@ -964,7 +964,7 @@
       ]
     },
     {
-      "name": "Build & bundle",
+      "name": "Build & Bundle",
       "color": "green",
       "items": [
         {
@@ -1031,7 +1031,7 @@
       ]
     },
     {
-      "name": "Testing & security",
+      "name": "Testing & Security",
       "color": "green",
       "items": [
         {
@@ -1124,7 +1124,7 @@
       ]
     },
     {
-      "name": "Best practices & conventions",
+      "name": "Best Practices & Conventions",
       "color": "green",
       "items": [
         {
@@ -1161,7 +1161,7 @@
       ]
     },
     {
-      "name": "Browser languages",
+      "name": "Browser Languages",
       "color": "amber",
       "items": [
         {
@@ -1240,7 +1240,7 @@
       ]
     },
     {
-      "name": "Server languages",
+      "name": "Server Languages",
       "color": "amber",
       "items": [
         {
@@ -1359,7 +1359,7 @@
       ]
     },
     {
-      "name": "Server frameworks & CMS",
+      "name": "Server Frameworks & CMS",
       "color": "amber",
       "items": [
         {
@@ -1566,7 +1566,7 @@
     },
     {
       "name": "Resources",
-      "color": "pink",
+      "color": "fuchsia",
       "items": [
         {
           "title": "Google Fonts",
@@ -1648,8 +1648,8 @@
       ]
     },
     {
-      "name": "Browser status",
-      "color": "indigo",
+      "name": "Browser Status",
+      "color": "violet",
       "items": [
         {
           "title": "Can I use...",
@@ -1708,8 +1708,8 @@
       ]
     },
     {
-      "name": "Standards & proposals",
-      "color": "indigo",
+      "name": "Standards & Proposals",
+      "color": "violet",
       "items": [
         {
           "title": "W3C",
@@ -1896,7 +1896,7 @@
       ]
     },
     {
-      "name": "Stay focused",
+      "name": "Stay Focused",
       "color": "rose",
       "items": [
         {
@@ -1968,7 +1968,7 @@
       ]
     },
     {
-      "name": "Developer surveys",
+      "name": "Developer Surveys",
       "color": "stone",
       "items": [
         {
@@ -2004,7 +2004,7 @@
       ]
     },
     {
-      "name": "Stay in the loop",
+      "name": "Stay in the Loop",
       "color": "stone",
       "items": [
         {

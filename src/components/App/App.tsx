@@ -1,4 +1,5 @@
 import {
+  mdiArrowCollapseUp,
   mdiArrowLeft,
   mdiCheck,
   mdiFormatListChecks,
@@ -17,6 +18,7 @@ import { FooterDivider } from '../Footer/FooterDivider'
 import { FooterGroup } from '../Footer/FooterGroup'
 import { AppAction } from '../Header/AppAction'
 import { AppHeader } from '../Header/AppHeader'
+import { JumpLinks } from '../JumpLinks/JumpLinks'
 import { LinkGroup } from '../Links/LinkGroup'
 import { Search } from '../Search/Search'
 import { AppContent } from './AppContent'
@@ -33,6 +35,13 @@ export const WebdevHome: FC = () => {
   const isCurrentAppMode = useIsCurrentAppMode()
   const allLinks = useAllLinks()
   const hiddenLinksCount = useHiddenLinksCount()
+
+  function handleScrollTopClick() {
+    const htmlEl = document.children.item(0)
+    if (htmlEl === null) return
+
+    htmlEl.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <div className="min-h-full">
@@ -51,6 +60,11 @@ export const WebdevHome: FC = () => {
               {isCurrentAppMode(AppMode.default) ? (
                 <>
                   <AppAction
+                    icon={mdiArrowCollapseUp}
+                    label="Top"
+                    action={handleScrollTopClick}
+                  />
+                  <AppAction
                     icon={mdiMagnify}
                     label="Search"
                     action={searchMode.handleSearchAction}
@@ -64,7 +78,7 @@ export const WebdevHome: FC = () => {
                   <AppAction
                     icon={mdiStickerTextOutline}
                     active={toggleDescriptions.showDescriptions}
-                    label="Descriptions"
+                    label="Link info"
                     action={toggleDescriptions.toggle}
                   />
                   <AppAction
@@ -123,11 +137,14 @@ export const WebdevHome: FC = () => {
 
       <div className="h-full">
         {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
-          <AppContent>
-            {links.items.map((group) => (
-              <LinkGroup group={group} key={group.name} />
-            ))}
-          </AppContent>
+          <>
+            <JumpLinks />
+            <AppContent>
+              {links.items.map((group, index) => (
+                <LinkGroup group={group} key={group.name} />
+              ))}
+            </AppContent>
+          </>
         ) : (
           <Search />
         )}
