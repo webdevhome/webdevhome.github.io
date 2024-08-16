@@ -1,11 +1,11 @@
 {
   "name": "webdevhome.github.io",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm test && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc"
+    "test": "tsc && eslint src"
   },
   "dependencies": {
     "@mdi/react": "^1.4.0",
