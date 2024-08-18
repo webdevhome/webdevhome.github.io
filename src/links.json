@@ -575,7 +575,7 @@
       ]
     },
     {
-      "name": "UI Design",
+      "name": "CSS Frameworks",
       "color": "blue",
       "items": [
         {
@@ -640,7 +640,7 @@
       ]
     },
     {
-      "name": "UI Frameworks & Libraries",
+      "name": "JS Frameworks",
       "color": "blue",
       "items": [
         {
@@ -825,7 +825,7 @@
       ]
     },
     {
-      "name": "Additional Libraries",
+      "name": "Other Libraries",
       "color": "blue",
       "items": [
         {
@@ -1382,6 +1382,8 @@
           "title": "Yii",
           "url": "https://www.yiiframework.com",
           "description": "PHP web framework.",
+          "icon": "yii",
+          "color": "#40B3D8",
           "searchUrl": "https://www.yiiframework.com/search?q={search}",
           "searchConcat": "+"
         },
