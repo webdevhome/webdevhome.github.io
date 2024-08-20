@@ -2,9 +2,10 @@ import {
   mdiArrowCollapseUp,
   mdiArrowLeft,
   mdiCheck,
-  mdiFormatListChecks,
+  mdiCogOutline,
+  mdiListStatus,
   mdiMagnify,
-  mdiStickerTextOutline,
+  mdiNoteTextOutline,
 } from '@mdi/js'
 import classNames from 'classnames'
 import { FC } from 'react'
@@ -18,23 +19,28 @@ import { FooterDivider } from '../Footer/FooterDivider'
 import { FooterGroup } from '../Footer/FooterGroup'
 import { AppAction } from '../Header/AppAction'
 import { AppHeader } from '../Header/AppHeader'
+import { AppMenu } from '../Header/AppMenu'
+import { AppMenuItem } from '../Header/AppMenuItem'
+import { MdiIcon } from '../Icon/MdiIcon'
 import { JumpLinks } from '../JumpLinks/JumpLinks'
 import { LinkGroup } from '../Links/LinkGroup'
 import { Search } from '../Search/Search'
 import { AppContent } from './AppContent'
+import { AppThemeSwitcher } from './AppThemeSwitcher'
 import { useCustomizeMode } from './useCustomizeMode'
 import { useSearchMode } from './useSearchMode'
-import { useThemeSwitcher } from './useThemeSwitcher'
+import { useTheme } from './useTheme'
 import { useToggleDescriptions } from './useToggleDescriptions'
 
 export const WebdevHome: FC = () => {
   const customizeMode = useCustomizeMode()
   const searchMode = useSearchMode()
-  const themeSwitcher = useThemeSwitcher()
   const toggleDescriptions = useToggleDescriptions()
   const isCurrentAppMode = useIsCurrentAppMode()
   const allLinks = useAllLinks()
   const hiddenLinksCount = useHiddenLinksCount()
+
+  useTheme()
 
   function handleScrollTopClick() {
     const htmlEl = document.children.item(0)
@@ -48,7 +54,7 @@ export const WebdevHome: FC = () => {
       <div
         className={classNames(
           'sticky top-0 left-0 right-0',
-          'bg-gray-200 supports-backdrop:bg-gray-200/75',
+          'bg-gray-200 supports-backdrop:bg-gray-100/75',
           'dark:bg-gray-900 dark:supports-backdrop:bg-gray-900/70',
           'border-b border-gray-300 dark:border-gray-600',
           'supports-backdrop:backdrop-blur',
@@ -69,23 +75,21 @@ export const WebdevHome: FC = () => {
                     label="Search"
                     action={searchMode.handleSearchAction}
                   />
-                  <AppAction
-                    icon={themeSwitcher.icon}
-                    active={false}
-                    label={themeSwitcher.title}
-                    action={themeSwitcher.switchTheme}
-                  />
-                  <AppAction
-                    icon={mdiStickerTextOutline}
-                    active={toggleDescriptions.showDescriptions}
-                    label="Link info"
-                    action={toggleDescriptions.toggle}
-                  />
-                  <AppAction
-                    icon={mdiFormatListChecks}
-                    label="Customize"
-                    action={customizeMode.handleCustomizeAction}
-                  />
+                  <AppMenu icon={mdiCogOutline} label="Options">
+                    <AppMenuItem
+                      label="Customize links"
+                      icon={<MdiIcon path={mdiListStatus} />}
+                      action={customizeMode.handleCustomizeAction}
+                    />
+                    <AppMenuItem
+                      label="Show link info"
+                      icon={<MdiIcon path={mdiNoteTextOutline} />}
+                      selected={toggleDescriptions.showDescriptions}
+                      action={toggleDescriptions.toggle}
+                    />
+
+                    <AppThemeSwitcher />
+                  </AppMenu>
                 </>
               ) : isCurrentAppMode(AppMode.search) ? (
                 <>
@@ -95,39 +99,35 @@ export const WebdevHome: FC = () => {
                     highlight
                     action={searchMode.handleSearchAction}
                   />
-                  <AppAction
-                    icon={themeSwitcher.icon}
-                    active={false}
-                    label={themeSwitcher.title}
-                    action={themeSwitcher.switchTheme}
-                  />
-                  <AppAction
-                    icon={mdiStickerTextOutline}
-                    active={toggleDescriptions.showDescriptions}
-                    label="Descriptions"
-                    action={toggleDescriptions.toggle}
-                  />
+                  <AppMenu icon={mdiCogOutline} label="Options">
+                    <AppMenuItem
+                      label="Show link info"
+                      icon={<MdiIcon path={mdiNoteTextOutline} />}
+                      selected={toggleDescriptions.showDescriptions}
+                      action={toggleDescriptions.toggle}
+                    />
+
+                    <AppThemeSwitcher />
+                  </AppMenu>
                 </>
               ) : isCurrentAppMode(AppMode.customize) ? (
                 <>
                   <AppAction
-                    icon={themeSwitcher.icon}
-                    active={false}
-                    label={themeSwitcher.title}
-                    action={themeSwitcher.switchTheme}
-                  />
-                  <AppAction
-                    icon={mdiStickerTextOutline}
-                    active={toggleDescriptions.showDescriptions}
-                    label="Descriptions"
-                    action={toggleDescriptions.toggle}
-                  />
-                  <AppAction
                     icon={mdiCheck}
-                    label="Save"
+                    label="Done"
                     highlight
                     action={customizeMode.handleCustomizeAction}
                   />
+                  <AppMenu icon={mdiCogOutline} label="Options">
+                    <AppMenuItem
+                      label="Show link info"
+                      icon={<MdiIcon path={mdiNoteTextOutline} />}
+                      selected={toggleDescriptions.showDescriptions}
+                      action={toggleDescriptions.toggle}
+                    />
+
+                    <AppThemeSwitcher />
+                  </AppMenu>
                 </>
               ) : null}
             </>

@@ -7,7 +7,7 @@ interface Props {
   active?: boolean
   highlight?: boolean
   label?: string
-  action: () => void
+  action?: () => void
 }
 
 export const AppAction: FC<Props> = ({
@@ -15,12 +15,12 @@ export const AppAction: FC<Props> = ({
   active = false,
   highlight = false,
   label,
-  action,
+  action = () => {},
 }) => {
   return (
     <div
       className={classNames(
-        'flex flex-col items-center md:flex-row',
+        'flex items-center',
         'p-2',
         'rounded-md',
         'select-none',
@@ -28,7 +28,8 @@ export const AppAction: FC<Props> = ({
           'hover:bg-gray-300 active:bg-gray-400': !active && !highlight,
           'bg-brand-500 hover:bg-brand-600 active:bg-brand-700':
             active && !highlight,
-          'bg-brand-500/15 hover:bg-brand-500/25 active:bg-brand-500/35': highlight,
+          'bg-brand-500/15 hover:bg-brand-500/25 active:bg-brand-500/35':
+            highlight,
           'dark:hover:bg-gray-600 dark:active:bg-gray-500':
             !active && !highlight,
           'dark:hover:bg-brand-600 dark:active:bg-brand-700':
@@ -40,11 +41,17 @@ export const AppAction: FC<Props> = ({
           'text-brand-600 dark:text-brand-300': highlight,
         },
       )}
+      tabIndex={0}
       onClick={action}
     >
       <MdiIcon path={icon} />
-
-      <div className="md:ml-2 text-xs md:text-sm font-semibold">{label}</div>
+      <div
+        className={classNames('ml-2 text-sm font-semibold', {
+          'hidden sm:block': !highlight,
+        })}
+      >
+        {label}
+      </div>
     </div>
   )
 }

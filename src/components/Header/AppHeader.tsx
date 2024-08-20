@@ -11,7 +11,7 @@ export const AppHeader: FC<Props> = ({ actions }) => {
     <div
       className={classNames(
         'grid items-center',
-        'grid-rows-[auto,auto] lg:grid-rows-[auto] lg:grid-cols-[1fr,auto]',
+        'grid-cols-[1fr,auto]',
         'px-page',
       )}
     >
@@ -20,7 +20,7 @@ export const AppHeader: FC<Props> = ({ actions }) => {
       {actions !== null ? (
         <div
           className={classNames(
-            'flex md:gap-x-2 justify-center flex-wrap',
+            'flex gap-x-1 justify-center flex-wrap',
             'py-2',
           )}
         >

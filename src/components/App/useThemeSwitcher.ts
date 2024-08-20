@@ -1,91 +1,53 @@
-import { mdiThemeLightDark, mdiWeatherNight, mdiWeatherSunny } from '@mdi/js'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useAppDispatch, useAppSelector } from '../../stores'
-import {
-  cycleTheme,
-  setTheme,
-} from '../../stores/appSettings/appSettingsActions'
+import { setTheme } from '../../stores/appSettings/appSettingsActions'
 import { AppTheme } from '../../stores/appSettings/appSettingsReducer'
 
 export interface UseThemeSwitcherResult {
-  icon: string
-  title: string
-  switchTheme: () => void
+  currentTheme: AppTheme
+  setLightTheme: () => void
+  setDarkTheme: () => void
+  setAutoTheme: () => void
+  isLightTheme: boolean
+  isDarkTheme: boolean
+  isAutoTheme: boolean
 }
-
-const prefersDarkQuery = '(prefers-color-scheme: dark)'
 
 export function useThemeSwitcher(): UseThemeSwitcherResult {
   const dispatch = useAppDispatch()
   const currentTheme = useAppSelector((state) => state.appSettings.theme)
 
-  const [prefersDark, setPrefersDark] = useState<boolean>(
-    () => matchMedia(prefersDarkQuery).matches,
-  )
+  const setLightTheme = useCallback(() => {
+    dispatch(setTheme(AppTheme.light))
+  }, [dispatch])
 
-  const [effectiveTheme, setEffectiveTheme] = useState<
-    AppTheme.light | AppTheme.dark
-  >(AppTheme.light)
+  const setDarkTheme = useCallback(() => {
+    dispatch(setTheme(AppTheme.dark))
+  }, [dispatch])
 
-  function handlePrefersColorSchemeChange(event: MediaQueryListEvent): void {
-    setPrefersDark(event.matches)
-  }
+  const setAutoTheme = useCallback(() => {
+    dispatch(setTheme(AppTheme.auto))
+  }, [dispatch])
 
-  useEffect(() => {
-    matchMedia(prefersDarkQuery).addEventListener(
-      'change',
-      handlePrefersColorSchemeChange,
-    )
-
-    return () => {
-      matchMedia(prefersDarkQuery).removeEventListener(
-        'change',
-        handlePrefersColorSchemeChange,
-      )
-    }
-  }, [])
-
-  // Set effectiveTheme
-  useEffect(() => {
-    if (currentTheme === AppTheme.auto) {
-      setEffectiveTheme(prefersDark ? AppTheme.dark : AppTheme.light)
-      return
-    }
-
-    setEffectiveTheme(currentTheme)
-  }, [currentTheme, prefersDark])
-
-  // Set className
-  useEffect(() => {
-    const htmlElement = document.getElementsByTagName('html')[0]
-    if (htmlElement === undefined) return
-
-    htmlElement.classList.toggle(
-      AppTheme.light,
-      effectiveTheme === AppTheme.light,
-    )
-    htmlElement.classList.toggle(
-      AppTheme.dark,
-      effectiveTheme === AppTheme.dark,
-    )
-  }, [effectiveTheme])
-
-  const icon = useMemo((): string => {
-    switch (currentTheme) {
-      case AppTheme.light:
-        return mdiWeatherSunny
-      case AppTheme.dark:
-        return mdiWeatherNight
-      default:
-        return mdiThemeLightDark
-    }
+  const isLightTheme = useMemo(() => {
+    return currentTheme === AppTheme.light
   }, [currentTheme])
 
-  const title = useMemo(() => `Theme: ${currentTheme}`, [currentTheme])
+  const isDarkTheme = useMemo(() => {
+    return currentTheme === AppTheme.dark
+  }, [currentTheme])
 
-  const switchTheme = useCallback((): void => {
-    dispatch(setTheme(cycleTheme(currentTheme)))
-  }, [currentTheme, dispatch])
+  const isAutoTheme = useMemo(() => {
+    return currentTheme === AppTheme.auto
+  }, [currentTheme])
 
-  return { icon, title, switchTheme }
+  return {
+    currentTheme,
+    setLightTheme,
+    setDarkTheme,
+    setAutoTheme,
+    isLightTheme,
+    isDarkTheme,
+    isAutoTheme,
+  }
 }
