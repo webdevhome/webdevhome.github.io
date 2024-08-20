@@ -710,6 +710,13 @@
           "color": "#FF3E00"
         },
         {
+          "title": "Astro",
+          "url": "https://astro.build",
+          "description": "A framework for content-driven websites.",
+          "icon": "astro",
+          "color": "#BC52EE"
+        },
+        {
           "title": "Alpine.js",
           "url": "https://alpinejs.dev",
           "description": "A library that attaches JS logic to the DOM.",
