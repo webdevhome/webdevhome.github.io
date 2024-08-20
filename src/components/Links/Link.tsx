@@ -92,9 +92,10 @@ export const Link: FC<Props> = ({
         'dark:hover:bg-gray-600 dark:active:bg-gray-500',
         {
           'bg-gray-100 dark:bg-gray-500': focus,
-          'outline outline-1 outline-offset-0 outline-gray-400': focus,
+          'outline outline-2 -outline-offset-1 outline-gray-400': focus,
         },
-        'focus:outline focus:outline-1 focus:outline-offset-0',
+        'focus:outline focus:outline-2 focus:-outline-offset-1',
+        'focus:relative focus:z-10',
         'focus:outline-gray-400',
         'rounded-md',
         { 'cursor-default': isCustomizeMode },

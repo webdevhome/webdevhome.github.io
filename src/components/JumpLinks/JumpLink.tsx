@@ -25,6 +25,7 @@ export const JumpLink: FC<Props> = ({ label, color = 'gray' }) => {
         'text-sm font-semibold',
         `bg-${color}-100 dark:bg-${color}-600`,
         `text-${color}-800 dark:text-${color}-50`,
+        'select-none',
       )}
       onClick={handleClick}
     >
