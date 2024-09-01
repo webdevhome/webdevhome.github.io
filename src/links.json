@@ -104,7 +104,14 @@
         },
         {
           "title": "Fly.io",
-          "url": "https://fly.io"
+          "url": "https://fly.io",
+          "icon": "flydotio",
+          "color": "#24175B"
+        },
+        {
+          "title": "Fortrabbit",
+          "url": "https://www.fortrabbit.com",
+          "description": "PHP hosting platform."
         },
         {
           "title": "Microsoft Azure",
@@ -1427,6 +1434,13 @@
           "color": "#E5422B"
         },
         {
+          "title": "October CMS",
+          "url": "https://octobercms.com/",
+          "description": "Commercial PHP CMS.",
+          "icon": "octobercms",
+          "color": "#DB6A26"
+        },
+        {
           "title": "Kirby",
           "url": "https://getkirby.com",
           "description": "Commercial PHP CMS.",
@@ -1574,7 +1588,7 @@
       ]
     },
     {
-      "name": "Resources",
+      "name": "Fonts, Icons & Images",
       "color": "fuchsia",
       "items": [
         {
@@ -1614,6 +1628,11 @@
           "title": "Heroicons",
           "url": "https://heroicons.com",
           "description": "Icons by the developers of Tailwind CSS."
+        },
+        {
+          "title": "Lucide",
+          "url": "https://lucide.dev",
+          "description": "Fork of Feather Icons."
         },
         {
           "title": "Simple Icons",
@@ -1812,6 +1831,10 @@
           "title": "Fork",
           "url": "https://git-fork.com",
           "description": "A git client."
+        },
+        {
+          "title": "ddev",
+          "url": "https://ddev.com"
         },
         {
           "title": "Docker",
