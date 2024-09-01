@@ -12,8 +12,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Segoe UI', 'Roboto', 'Verdana', 'Arial', 'sans-serif'],
-      mono: ['Consolas', 'Fira Code', 'Roboto Mono', 'monospace'],
+      sans: ['Helvetica Neue', 'Segoe UI', 'Roboto', 'Verdana', 'Arial', 'sans-serif'],
+      mono: ['JetBrains Mono', 'IBM Plex Mono', 'Cascadia Code', 'Roboto Mono', 'Fira Code', 'monospace'],
     },
     extend: {
       colors: {
