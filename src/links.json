@@ -264,7 +264,9 @@
         {
           "title": "30 seconds of code",
           "url": "https://30secondsofcode.org",
-          "description": "Short code snippets for repeating programming tasks."
+          "description": "Short code snippets for repeating programming tasks.",
+          "icon": "30secondsofcode",
+          "color": "#5395FD"
         },
         {
           "title": "1loc",
@@ -1632,7 +1634,9 @@
         {
           "title": "Lucide",
           "url": "https://lucide.dev",
-          "description": "Fork of Feather Icons."
+          "description": "Fork of Feather Icons.",
+          "icon": "lucide",
+          "color": "#F56565"
         },
         {
           "title": "Simple Icons",
