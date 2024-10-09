@@ -9,7 +9,10 @@ interface LastState {
   showDescriptionsSetting: AppState['appSettings']['showDescriptions'] | null
 }
 
-const lastState: LastState = {hiddenLinks: null, themeSetting: null, showDescriptionsSetting: null
+const lastState: LastState = {
+  hiddenLinks: null,
+  themeSetting: null,
+  showDescriptionsSetting: null,
 }
 
 export function persistToLocalStorage(store: AppStore): void {

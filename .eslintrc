@@ -1,5 +1,0 @@
-{
-  "parser": "@typescript-eslint/parser",
-  "root": true,
-  "extends": ["react-app", "prettier"]
-}

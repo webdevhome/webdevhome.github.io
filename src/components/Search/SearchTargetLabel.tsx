@@ -30,7 +30,7 @@ export const SearchTargetLabel: FC<Props> = ({ title, icon, color }) => {
 
     return (
       <span
-        className="mr-2 p-1 w-[31px] h-[31px] bg-white rounded shrink-0"
+        className="mr-2 h-[31px] w-[31px] shrink-0 rounded bg-white p-1"
         style={{ color }}
       >
         <ReactSVG src={iconUrl} className="search-target-item__icon" />
@@ -49,7 +49,7 @@ export const SearchTargetLabel: FC<Props> = ({ title, icon, color }) => {
   return (
     <div
       className={classNames(
-        'flex flex-col gap-y-4 items-start sm:flex-row sm:items-center',
+        'flex flex-col items-start gap-y-4 sm:flex-row sm:items-center',
         'sm:px-8',
         'text-xl',
         'text-gray-700 dark:text-gray-100',
@@ -72,7 +72,7 @@ export const SearchTargetLabel: FC<Props> = ({ title, icon, color }) => {
         Back
       </div>
 
-      <div className="flex items-center flex-wrap gap-y-2">
+      <div className="flex flex-wrap items-center gap-y-2">
         <span className="mr-2">Search on</span>
         <span className="flex items-center">
           {searchTargetIcon}

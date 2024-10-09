@@ -115,7 +115,7 @@ export const Link: FC<Props> = ({
         {link.icon !== undefined ? (
           <ReactSVG
             src={getIconUrl(link.icon)}
-            className={classNames('w-[27px] h-[27px]')}
+            className={classNames('h-[27px] w-[27px]')}
           />
         ) : (
           <DefaultIcon />
@@ -131,11 +131,11 @@ export const Link: FC<Props> = ({
         {link.title}
       </div>
 
-      <div className="flex self-stretch -my-1 -mr-1">
+      <div className="-my-1 -mr-1 flex self-stretch">
         {searchable && !isCustomizeMode ? (
           <>
             {focus ? (
-              <div className="self-center mr-2">
+              <div className="mr-2 self-center">
                 <span className="flex items-center justify-center">
                   <Kbd>Tab</Kbd>
                 </span>

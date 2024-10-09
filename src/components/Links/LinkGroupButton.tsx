@@ -13,7 +13,7 @@ export const LinkGroupButton: FC<PropsWithChildren<Props>> = ({
     <button
       className={classNames(
         'justify-self-center',
-        'font-semibold text-gray-600 dark:text-gray-300 text-sm',
+        'text-sm font-semibold text-gray-600 dark:text-gray-300',
         'tracking-wide',
         'my-2 px-4 py-1',
         'border border-gray-300 hover:border-gray-400',

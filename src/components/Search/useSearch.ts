@@ -46,7 +46,7 @@ export function useSearch({
 }: UseSearchParams): UseSearchReturn {
   const searchTerm = useAppSelector((state) => state.search.searchTerm)
   const onSiteSearchTerm = useAppSelector(
-    (state) => state.search.onSiteSearchTerm
+    (state) => state.search.onSiteSearchTerm,
   )
   const searchTarget = useAppSelector((state) => state.search.searchTarget)
   const getIsLinkHidden = useGetIsLinkHidden()
@@ -128,7 +128,7 @@ export function useSearch({
         }
       }
     },
-    [dispatch, searchInputRef, searchTarget, searchTerm]
+    [dispatch, searchInputRef, searchTarget, searchTerm],
   )
 
   useEffect(() => {
@@ -148,7 +148,7 @@ export function useSearch({
 
       setKeyboardIndex(0)
     },
-    [dispatch, searchTarget, setKeyboardIndex]
+    [dispatch, searchTarget, setKeyboardIndex],
   )
 
   const handleInputKeydown = useCallback(
@@ -184,7 +184,7 @@ export function useSearch({
           const url = getUrl(
             focusedResult?.obj ?? null,
             searchTarget,
-            onSiteSearchTerm
+            onSiteSearchTerm,
           )
 
           if (url === null) return
@@ -217,7 +217,7 @@ export function useSearch({
           const resultsCount = Math.min(results.total, maxResultsCount)
           const hiddenResultsCount = Math.min(
             hiddenResults?.total ?? 0,
-            maxHiddenResultsCount
+            maxHiddenResultsCount,
           )
           const totalResultsCount = resultsCount + hiddenResultsCount
 
@@ -234,7 +234,7 @@ export function useSearch({
       results,
       searchTarget,
       searchTerm,
-    ]
+    ],
   )
 
   return {

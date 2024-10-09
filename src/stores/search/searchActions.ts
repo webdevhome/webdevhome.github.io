@@ -29,13 +29,13 @@ export function setSearchTerm(searchTerm: string): SetSearchTermAction {
 }
 
 export function setOnSiteSearchTerm(
-  searchTerm: string
+  searchTerm: string,
 ): SetOnSiteSearchTermAction {
   return { type: SET_ON_SITE_SEARCH_TERM, payload: searchTerm }
 }
 
 export function setSearchTarget(
-  searchTarget: SearchTarget | null
+  searchTarget: SearchTarget | null,
 ): SetSearchTargetAction {
   return { type: SET_CURRENT_SEARCH_TARGET, payload: searchTarget }
 }

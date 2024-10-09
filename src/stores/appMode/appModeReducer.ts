@@ -17,7 +17,7 @@ const initialState: AppModeState = {
 
 export function appMode(
   state = initialState,
-  action: AppActions
+  action: AppActions,
 ): AppModeState {
   switch (action.type) {
     case SET_MODE: {

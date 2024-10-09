@@ -72,7 +72,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
       id={slugify(group.name)}
       className="scroll-mt-32 md:scroll-mt-28 lg:scroll-mt-20"
     >
-      <div className="flex gap-x-1 mb-2">
+      <div className="mb-2 flex gap-x-1">
         <div
           className={classNames(
             'flex-auto',

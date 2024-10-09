@@ -8,7 +8,7 @@ export const Logo: FC = () => {
         'font-mono text-lg sm:text-2xl',
         'sm:tracking-wide',
         'text-gray-400 dark:text-gray-200',
-        'text-nowrap',
+        'select-none text-nowrap',
       )}
     >
       <span>&lt;</span>

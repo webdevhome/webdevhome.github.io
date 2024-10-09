@@ -4,7 +4,7 @@ import { SET_MODE } from '../appMode/appModeActions'
 import {
   SET_CURRENT_SEARCH_TARGET,
   SET_ON_SITE_SEARCH_TERM,
-  SET_SEARCH_TERM
+  SET_SEARCH_TERM,
 } from './searchActions'
 
 export interface SearchState {
@@ -19,7 +19,7 @@ function getInitialState(): SearchState {
 
 export function search(
   state = getInitialState(),
-  action: AppActions
+  action: AppActions,
 ): SearchState {
   switch (action.type) {
     case SET_SEARCH_TERM: {

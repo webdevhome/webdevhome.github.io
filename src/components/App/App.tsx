@@ -3,29 +3,24 @@ import {
   mdiArrowLeft,
   mdiCheck,
   mdiCogOutline,
+  mdiDockLeft,
   mdiListStatus,
   mdiMagnify,
   mdiNoteTextOutline,
 } from '@mdi/js'
-import classNames from 'classnames'
 import { FC } from 'react'
-import packageJson from '../../../package.json'
-import { links, useAllLinks } from '../../links'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
 import { AppMode } from '../../stores/appMode/appModeReducer'
-import { useHiddenLinksCount } from '../../stores/hiddenLinks/hiddenLinksHooks'
-import { AppFooter } from '../Footer/AppFooter'
-import { FooterDivider } from '../Footer/FooterDivider'
-import { FooterGroup } from '../Footer/FooterGroup'
 import { AppAction } from '../Header/AppAction'
 import { AppHeader } from '../Header/AppHeader'
 import { AppMenu } from '../Header/AppMenu'
 import { AppMenuItem } from '../Header/AppMenuItem'
 import { MdiIcon } from '../Icon/MdiIcon'
 import { JumpLinks } from '../JumpLinks/JumpLinks'
-import { LinkGroup } from '../Links/LinkGroup'
+import { Links } from '../Links/Links'
 import { Search } from '../Search/Search'
-import { AppContent } from './AppContent'
+import { AppInfo } from './AppInfo'
+import { AppLayout } from './AppLayout'
 import { AppThemeSwitcher } from './AppThemeSwitcher'
 import { useCustomizeMode } from './useCustomizeMode'
 import { useSearchMode } from './useSearchMode'
@@ -37,8 +32,6 @@ export const WebdevHome: FC = () => {
   const searchMode = useSearchMode()
   const toggleDescriptions = useToggleDescriptions()
   const isCurrentAppMode = useIsCurrentAppMode()
-  const allLinks = useAllLinks()
-  const hiddenLinksCount = useHiddenLinksCount()
 
   useTheme()
 
@@ -50,16 +43,13 @@ export const WebdevHome: FC = () => {
   }
 
   return (
-    <div className="min-h-full">
-      <div
-        className={classNames(
-          'sticky top-0 left-0 right-0',
-          'bg-gray-200 supports-backdrop:bg-gray-100/75',
-          'dark:bg-gray-900 dark:supports-backdrop:bg-gray-900/70',
-          'border-b border-gray-300 dark:border-gray-600',
-          'supports-backdrop:backdrop-blur',
-        )}
-      >
+    <AppLayout
+      sidebar={
+        isCurrentAppMode(AppMode.default, AppMode.customize) ? (
+          <JumpLinks />
+        ) : null
+      }
+      header={
         <AppHeader
           actions={
             <>
@@ -87,8 +77,15 @@ export const WebdevHome: FC = () => {
                       selected={toggleDescriptions.showDescriptions}
                       action={toggleDescriptions.toggle}
                     />
+                    <AppMenuItem
+                      label="Show group list"
+                      icon={<MdiIcon path={mdiDockLeft} />}
+                      selected={true}
+                      action={() => {}}
+                    />
 
                     <AppThemeSwitcher />
+                    <AppInfo />
                   </AppMenu>
                 </>
               ) : isCurrentAppMode(AppMode.search) ? (
@@ -133,59 +130,13 @@ export const WebdevHome: FC = () => {
             </>
           }
         />
-      </div>
-
-      <div className="h-full">
-        {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
-          <>
-            <JumpLinks />
-            <AppContent>
-              {links.items.map((group, index) => (
-                <LinkGroup group={group} key={group.name} />
-              ))}
-            </AppContent>
-          </>
-        ) : (
-          <Search />
-        )}
-
-        {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
-          <AppFooter>
-            <FooterGroup
-              title={`WebdevHome v${packageJson.version}`}
-              items={[
-                {
-                  label: `${allLinks.length} links / ${hiddenLinksCount} hidden`,
-                },
-                {
-                  label: 'Changelog',
-                  href: 'https://github.com/webdevhome/webdevhome.github.io/releases',
-                },
-                {
-                  label: 'GitHub',
-                  href: 'https://github.com/webdevhome/webdevhome.github.io',
-                },
-              ]}
-            />
-
-            <FooterDivider />
-
-            <FooterGroup
-              title="Icons"
-              items={[
-                {
-                  label: 'Material Design Icons',
-                  href: 'https://materialdesignicons.com',
-                },
-                {
-                  label: 'Simple Icons',
-                  href: 'https://simpleicons.org/',
-                },
-              ]}
-            />
-          </AppFooter>
-        ) : null}
-      </div>
-    </div>
+      }
+    >
+      {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
+        <Links />
+      ) : (
+        <Search />
+      )}
+    </AppLayout>
   )
 }

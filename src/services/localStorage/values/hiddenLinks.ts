@@ -3,7 +3,7 @@ import {
   getStorageValue,
   removeStorageValue,
   setStorageValue,
-  StorageKey
+  StorageKey,
 } from '../localStorageService'
 
 export function loadHiddenLinks(): Array<LinkItem['url']> {

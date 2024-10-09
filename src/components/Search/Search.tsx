@@ -26,7 +26,7 @@ export const Search: FC = () => {
   } = useSearch({ searchInputRef })
 
   return (
-    <div className="flex flex-col w-[600px] max-w-full mx-auto px-4 py-10">
+    <div className="mx-auto flex w-[600px] max-w-full flex-col px-4 py-10">
       {searchTarget !== null ? (
         <SearchTargetLabel
           title={searchTarget.title}
@@ -35,7 +35,7 @@ export const Search: FC = () => {
         />
       ) : null}
 
-      <div className="max-w-full flex flex-col">
+      <div className="flex max-w-full flex-col">
         <input
           ref={searchInputRef}
           className={classNames(

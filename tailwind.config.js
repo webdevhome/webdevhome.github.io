@@ -1,19 +1,46 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const plugin = require('tailwindcss/plugin')
+import plugin from 'tailwindcss/plugin'
 
-module.exports = {
+export default {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class',
   safelist: [
-    { pattern: /bg-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-100/ },
-    { pattern: /bg-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-600/, variants: ['dark'] },
-    { pattern: /text-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-800/ },
-    { pattern: /text-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-50/, variants: ['dark'] },
+    {
+      pattern:
+        /bg-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-100/,
+    },
+    {
+      pattern:
+        /bg-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-600/,
+      variants: ['dark'],
+    },
+    {
+      pattern:
+        /text-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-800/,
+    },
+    {
+      pattern:
+        /text-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-50/,
+      variants: ['dark'],
+    },
   ],
   theme: {
     fontFamily: {
-      sans: ['Helvetica Neue', 'Segoe UI', 'Roboto', 'Verdana', 'Arial', 'sans-serif'],
-      mono: ['JetBrains Mono', 'IBM Plex Mono', 'Cascadia Code', 'Roboto Mono', 'Fira Code', 'monospace'],
+      sans: [
+        'Helvetica Neue',
+        'Segoe UI',
+        'Roboto',
+        'Verdana',
+        'Arial',
+        'sans-serif',
+      ],
+      mono: [
+        'JetBrains Mono',
+        'IBM Plex Mono',
+        'Cascadia Code',
+        'Roboto Mono',
+        'Fira Code',
+        'monospace',
+      ],
     },
     extend: {
       colors: {

@@ -20,7 +20,7 @@ export const AppHeader: FC<Props> = ({ actions }) => {
       {actions !== null ? (
         <div
           className={classNames(
-            'flex gap-x-1 justify-center flex-wrap',
+            'flex flex-wrap justify-center gap-x-1',
             'py-2',
           )}
         >

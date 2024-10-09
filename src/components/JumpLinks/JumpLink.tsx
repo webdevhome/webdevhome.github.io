@@ -19,7 +19,7 @@ export const JumpLink: FC<Props> = ({ label, color = 'gray' }) => {
     <div
       className={classNames(
         'jump-link',
-        'px-3 py-1 md:px-2.5 md:py-0.5',
+        'px-3 py-1 md:px-2.5 md:py-1',
         'rounded-md',
         'cursor-pointer',
         'text-sm font-semibold',

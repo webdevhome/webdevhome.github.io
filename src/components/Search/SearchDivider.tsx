@@ -9,7 +9,7 @@ export const SearchDivider: FC<Props> = ({ text }) => {
   return (
     <div
       className={classNames(
-        'grid grid-cols-[1fr,auto,1fr] gap-x-4 items-center',
+        'grid grid-cols-[1fr,auto,1fr] items-center gap-x-4',
         'my-4',
         'text-gray-500',
         'uppercase tracking-wide',

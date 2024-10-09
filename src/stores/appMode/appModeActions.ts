@@ -15,7 +15,7 @@ export function setAppMode(mode: AppMode): SetModeAction {
 
 export function toggleAppMode(
   mode: AppMode,
-  currentMode: AppMode
+  currentMode: AppMode,
 ): SetModeAction {
   return {
     type: SET_MODE,

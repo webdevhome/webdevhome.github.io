@@ -11,7 +11,7 @@ export function useToggleDescriptions(): UseToggleDescriptionsResult {
   const dispatch = useAppDispatch()
 
   const showDescriptions = useAppSelector(
-    (state) => state.appSettings.showDescriptions
+    (state) => state.appSettings.showDescriptions,
   )
 
   const toggle = useCallback(() => {

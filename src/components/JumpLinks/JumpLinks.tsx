@@ -16,16 +16,16 @@ export const JumpLinks: FC = () => {
   }
 
   return (
-    <div className="jump-links px-page pt-4 lg:pt-8">
+    <div className="jump-links px-page w-[300px] py-4">
       <div
-        className="flex items-center gap-x-2 md:hidden dark:text-white cursor-default select-none"
+        className="flex cursor-default select-none items-center gap-x-2 dark:text-white md:hidden"
         onClick={handleToggleClick}
       >
         <MdiIcon path={isOpen ? mdiChevronUp : mdiChevronDown}></MdiIcon>
         <div>Jump to</div>
       </div>
       <div
-        className={classNames('flex flex-wrap gap-1 md:flex pt-2', {
+        className={classNames('flex flex-col gap-1 md:flex', {
           hidden: !isOpen,
           block: isOpen,
         })}

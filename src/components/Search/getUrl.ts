@@ -3,7 +3,7 @@ import { LinkItem, SearchTarget } from '../../links'
 export function getUrl(
   focusedItem: LinkItem | null,
   searchTarget?: SearchTarget | null,
-  searchTerm?: string
+  searchTerm?: string,
 ): string | null {
   if (
     searchTarget !== null &&

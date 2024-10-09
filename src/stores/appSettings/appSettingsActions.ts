@@ -22,7 +22,7 @@ export function setTheme(payload: AppTheme): SetThemeAction {
 }
 
 export function setDisplayDescription(
-  payload: boolean
+  payload: boolean,
 ): SetDisplayDescriptionAction {
   return { type: SettingsActions.setDisplayDescription, payload }
 }

@@ -4,7 +4,7 @@
 
 @layer base {
   svg {
-    @apply align-middle fill-current;
+    @apply fill-current align-middle;
   }
 }
 

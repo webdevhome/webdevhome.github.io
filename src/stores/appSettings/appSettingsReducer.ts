@@ -18,7 +18,7 @@ const initialState: AppSettingsState = {
 
 export function appSettings(
   state = initialState,
-  action: AppSettingsActions
+  action: AppSettingsActions,
 ): AppSettingsState {
   switch (action.type) {
     case SettingsActions.setTheme: {

@@ -3,7 +3,7 @@ import { AppActions } from '../actions'
 import {
   SET_HIDDEN_LINKS,
   TOGGLE_HIDDEN_LINK,
-  TOGGLE_HIDDEN_LINKS_GROUP
+  TOGGLE_HIDDEN_LINKS_GROUP,
 } from './hiddenLinksActions'
 
 export interface HiddenLinksState {
@@ -16,7 +16,7 @@ function getInitialState(): HiddenLinksState {
 
 export function hiddenLinks(
   state = getInitialState(),
-  action: AppActions
+  action: AppActions,
 ): HiddenLinksState {
   switch (action.type) {
     case SET_HIDDEN_LINKS: {
@@ -44,7 +44,7 @@ export function hiddenLinks(
       // At least some links in this group are visible. In this case,
       // first get all links that are visible, then add them to `hiddenLinks`.
       const missingLinks = action.payload.filter(
-        (link) => !state.links.includes(link)
+        (link) => !state.links.includes(link),
       )
 
       return { ...state, links: [...state.links, ...missingLinks] }
