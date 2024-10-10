@@ -6,8 +6,7 @@ import {
 
 export function loadShowDescriptionsSetting(): boolean {
   const value = getStorageValue(StorageKey.showDescriptionsSetting)
-
-  return value === 'true' ? true : false
+  return value === 'true'
 }
 
 export function saveShowDescriptionsSetting(value: boolean): void {

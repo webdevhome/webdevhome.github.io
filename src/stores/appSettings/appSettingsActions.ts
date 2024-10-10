@@ -3,19 +3,28 @@ import { AppTheme } from './appSettingsReducer'
 export const enum SettingsActions {
   setTheme,
   setDisplayDescription,
+  setDisplayJumpLinks,
 }
 
-interface SetThemeAction {
+type SetThemeAction = {
   type: SettingsActions.setTheme
   payload: AppTheme
 }
 
-interface SetDisplayDescriptionAction {
+type SetDisplayDescriptionAction = {
   type: SettingsActions.setDisplayDescription
   payload: boolean
 }
 
-export type AppSettingsActions = SetThemeAction | SetDisplayDescriptionAction
+type SetDisplayJumpLinksAction = {
+  type: SettingsActions.setDisplayJumpLinks
+  payload: boolean
+}
+
+export type AppSettingsActions =
+  | SetThemeAction
+  | SetDisplayDescriptionAction
+  | SetDisplayJumpLinksAction
 
 export function setTheme(payload: AppTheme): SetThemeAction {
   return { type: SettingsActions.setTheme, payload }
@@ -27,18 +36,8 @@ export function setDisplayDescription(
   return { type: SettingsActions.setDisplayDescription, payload }
 }
 
-export function cycleTheme(currentTheme: AppTheme): AppTheme {
-  switch (currentTheme) {
-    case AppTheme.auto: {
-      return AppTheme.light
-    }
-
-    case AppTheme.light: {
-      return AppTheme.dark
-    }
-
-    case AppTheme.dark: {
-      return AppTheme.auto
-    }
-  }
+export function setDisplayJumpLinks(
+  payload: boolean,
+): SetDisplayJumpLinksAction {
+  return { type: SettingsActions.setDisplayJumpLinks, payload }
 }

@@ -6,7 +6,7 @@ import {
   TOGGLE_HIDDEN_LINKS_GROUP,
 } from './hiddenLinksActions'
 
-export interface HiddenLinksState {
+export type HiddenLinksState = {
   links: Array<LinkItem['url']>
 }
 

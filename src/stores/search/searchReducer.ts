@@ -7,7 +7,7 @@ import {
   SET_SEARCH_TERM,
 } from './searchActions'
 
-export interface SearchState {
+export type SearchState = {
   searchTerm: string
   onSiteSearchTerm: string
   searchTarget: SearchTarget | null

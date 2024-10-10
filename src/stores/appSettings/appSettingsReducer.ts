@@ -6,14 +6,16 @@ export enum AppTheme {
   dark = 'dark',
 }
 
-interface AppSettingsState {
+type AppSettingsState = {
   theme: AppTheme
   showDescriptions: boolean
+  showJumpLinks: boolean
 }
 
 const initialState: AppSettingsState = {
   theme: AppTheme.auto,
   showDescriptions: false,
+  showJumpLinks: true,
 }
 
 export function appSettings(
@@ -27,6 +29,10 @@ export function appSettings(
 
     case SettingsActions.setDisplayDescription: {
       return { ...state, showDescriptions: action.payload }
+    }
+
+    case SettingsActions.setDisplayJumpLinks: {
+      return { ...state, showJumpLinks: action.payload }
     }
 
     default: {

@@ -24,16 +24,16 @@ const fuzzyOptions = { key: 'title', allowTypo: false }
 const maxResultsCount = 6
 const maxHiddenResultsCount = 2
 
-interface GroupedLinks {
+type GroupedLinks = {
   visible: LinkItem[]
   hidden: LinkItem[]
 }
 
-interface UseSearchParams {
+type UseSearchParams = {
   searchInputRef: RefObject<HTMLInputElement>
 }
 
-interface UseSearchReturn {
+type UseSearchReturn = {
   results: Fuzzysort.KeyResults<LinkItem> | null
   hiddenResults: Fuzzysort.KeyResults<LinkItem> | null
   focusedResult: Fuzzysort.KeyResult<LinkItem> | null

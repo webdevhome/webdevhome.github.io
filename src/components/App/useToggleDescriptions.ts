@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import { useAppDispatch, useAppSelector } from '../../stores'
 import { setDisplayDescription } from '../../stores/appSettings/appSettingsActions'
 
-interface UseToggleDescriptionsResult {
+type UseToggleDescriptionsResult = {
   showDescriptions: boolean
   toggle: () => void
 }

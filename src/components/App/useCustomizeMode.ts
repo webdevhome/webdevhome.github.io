@@ -4,7 +4,7 @@ import { setAppMode, toggleAppMode } from '../../stores/appMode/appModeActions'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
 import { AppMode } from '../../stores/appMode/appModeReducer'
 
-export interface UseCustomizeModeResult {
+export type UseCustomizeModeResult = {
   handleCustomizeAction: () => void
 }
 

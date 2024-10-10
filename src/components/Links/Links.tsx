@@ -1,9 +1,9 @@
 import classNames from 'classnames'
-import { FC, PropsWithChildren } from 'react'
+import { FC } from 'react'
 import { links } from '../../links'
 import { LinkGroup } from './LinkGroup'
 
-export const Links: FC<PropsWithChildren> = ({ children }) => {
+export const Links: FC = () => {
   return (
     <div
       className={classNames(
@@ -12,7 +12,7 @@ export const Links: FC<PropsWithChildren> = ({ children }) => {
         'px-page py-4',
       )}
     >
-      {links.items.map((group, index) => (
+      {links.items.map((group) => (
         <LinkGroup group={group} key={group.name} />
       ))}
     </div>

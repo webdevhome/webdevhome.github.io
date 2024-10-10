@@ -7,7 +7,7 @@ export enum AppMode {
   customize = 'CUSTOMIZE',
 }
 
-export interface AppModeState {
+export type AppModeState = {
   currentMode: AppMode
 }
 

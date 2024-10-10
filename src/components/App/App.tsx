@@ -26,11 +26,13 @@ import { useCustomizeMode } from './useCustomizeMode'
 import { useSearchMode } from './useSearchMode'
 import { useTheme } from './useTheme'
 import { useToggleDescriptions } from './useToggleDescriptions'
+import { useToggleJumpLinks } from './useToggleJumpLinks'
 
 export const WebdevHome: FC = () => {
   const customizeMode = useCustomizeMode()
   const searchMode = useSearchMode()
   const toggleDescriptions = useToggleDescriptions()
+  const toggleJumpLinks = useToggleJumpLinks()
   const isCurrentAppMode = useIsCurrentAppMode()
 
   useTheme()
@@ -45,7 +47,7 @@ export const WebdevHome: FC = () => {
   return (
     <AppLayout
       sidebar={
-        isCurrentAppMode(AppMode.default, AppMode.customize) ? (
+        isCurrentAppMode(AppMode.default, AppMode.customize) && toggleJumpLinks.showJumpLinks ? (
           <JumpLinks />
         ) : null
       }
@@ -80,8 +82,8 @@ export const WebdevHome: FC = () => {
                     <AppMenuItem
                       label="Show group list"
                       icon={<MdiIcon path={mdiDockLeft} />}
-                      selected={true}
-                      action={() => {}}
+                      selected={toggleJumpLinks.showJumpLinks}
+                      action={toggleJumpLinks.toggle}
                     />
 
                     <AppThemeSwitcher />

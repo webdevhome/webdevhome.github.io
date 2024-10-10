@@ -3,7 +3,7 @@ import { saveShowDescriptionsSetting } from '../services/localStorage/values/sho
 import { saveThemeSetting } from '../services/localStorage/values/themeSetting'
 import { AppState, AppStore } from './index'
 
-interface LastState {
+type LastState = {
   hiddenLinks: AppState['hiddenLinks']['links'] | null
   themeSetting: AppState['appSettings']['theme'] | null
   showDescriptionsSetting: AppState['appSettings']['showDescriptions'] | null

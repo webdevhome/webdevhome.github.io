@@ -10,7 +10,7 @@ export default tseslint.config(
   { ignores: ['dist/**/*'] },
   js.configs.recommended,
   {
-    files: ['ui/**/*.{js,jsx,ts,tsx}'],
+    files: ['src/**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       globals: { ...globals.browser },
     },
@@ -30,7 +30,7 @@ export default tseslint.config(
   },
   reactPlugin.configs.flat['jsx-runtime'],
   {
-    files: ['ui/**/*.tsx'],
+    files: ['src/**/*.{ts,tsx}'],
     plugins: {
       'react-hooks': reactHooksPlugin,
     },

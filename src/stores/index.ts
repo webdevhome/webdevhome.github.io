@@ -8,6 +8,7 @@ import { appSettings } from './appSettings/appSettingsReducer'
 import { hiddenLinks } from './hiddenLinks/hiddenLinksReducer'
 import { persistToLocalStorage } from './persistToLocalStorage'
 import { search } from './search/searchReducer'
+import { loadShowJumpLinksSetting } from '../services/localStorage/values/showJumpLinksSetting'
 
 const rootReducer = combineReducers({
   appMode,
@@ -21,6 +22,7 @@ export const store = createStore(rootReducer, {
   appSettings: {
     theme: loadThemeSetting(),
     showDescriptions: loadShowDescriptionsSetting(),
+    showJumpLinks: loadShowJumpLinksSetting(),
   },
 })
 

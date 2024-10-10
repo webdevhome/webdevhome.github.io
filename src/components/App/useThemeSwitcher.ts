@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../stores'
 import { setTheme } from '../../stores/appSettings/appSettingsActions'
 import { AppTheme } from '../../stores/appSettings/appSettingsReducer'
 
-export interface UseThemeSwitcherResult {
+export type UseThemeSwitcherResult = {
   currentTheme: AppTheme
   setLightTheme: () => void
   setDarkTheme: () => void

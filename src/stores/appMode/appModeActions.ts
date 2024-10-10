@@ -2,7 +2,7 @@ import { AppMode } from './appModeReducer'
 
 export const SET_MODE = 'SET_MODE'
 
-interface SetModeAction {
+type SetModeAction = {
   type: typeof SET_MODE
   payload: AppMode
 }
