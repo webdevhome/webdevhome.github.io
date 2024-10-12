@@ -6,7 +6,7 @@ import { useAllLinks } from '../../links'
 import { useHiddenLinksCount } from '../../stores/hiddenLinks/hiddenLinksHooks'
 import { AppMenuHeader } from '../Header/AppMenuHeader'
 import { AppMenuItem } from '../Header/AppMenuItem'
-import { AppMenuText } from '../Header/AppMenuText'
+import { AppMenuFooter } from '../Header/AppMenuFooter'
 import { MdiIcon } from '../Icon/MdiIcon'
 
 export const AppInfo: FC = () => {
@@ -26,10 +26,12 @@ export const AppInfo: FC = () => {
         label="Source"
         action="https://github.com/webdevhome/webdevhome.github.io"
       />
-      <AppMenuText>WebdevHome v{packageJson.version}</AppMenuText>
-      <AppMenuText>
-        {allLinks.length} links / {hiddenLinksCount} hidden
-      </AppMenuText>
+      <AppMenuFooter>
+        <p>WebdevHome v{packageJson.version}</p>
+        <p>
+          {hiddenLinksCount}/{allLinks.length} links hidden
+        </p>
+      </AppMenuFooter>
     </MenuSection>
   )
 }

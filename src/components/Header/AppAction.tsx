@@ -21,7 +21,7 @@ export const AppAction: FC<Props> = ({
     <div
       className={classNames(
         'flex items-center',
-        'p-2',
+        'px-3 py-1.5',
         'rounded-md',
         'select-none',
         {
@@ -47,7 +47,7 @@ export const AppAction: FC<Props> = ({
       <MdiIcon path={icon} />
       <div
         className={classNames('ml-2 text-sm font-semibold', {
-          'hidden sm:block': !highlight,
+          'hidden lg:block': !highlight,
         })}
       >
         {label}

@@ -23,7 +23,6 @@ export const AppMenu: FC<PropsWithChildren<Props>> = ({
         anchor="bottom end"
         className={classNames(
           'flex flex-col gap-y-px',
-          'p-1',
           'bg-white dark:bg-gray-600',
           'border border-gray-300 dark:border-gray-400',
           'rounded-md',

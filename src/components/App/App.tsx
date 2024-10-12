@@ -27,6 +27,8 @@ import { useSearchMode } from './useSearchMode'
 import { useTheme } from './useTheme'
 import { useToggleDescriptions } from './useToggleDescriptions'
 import { useToggleJumpLinks } from './useToggleJumpLinks'
+import { AppMenuDivider } from '../Header/AppMenuDivider'
+import { AppSearchButton } from '../Header/AppSearchButton'
 
 export const WebdevHome: FC = () => {
   const customizeMode = useCustomizeMode()
@@ -47,12 +49,18 @@ export const WebdevHome: FC = () => {
   return (
     <AppLayout
       sidebar={
-        isCurrentAppMode(AppMode.default, AppMode.customize) && toggleJumpLinks.showJumpLinks ? (
+        isCurrentAppMode(AppMode.default, AppMode.customize) &&
+        toggleJumpLinks.showJumpLinks ? (
           <JumpLinks />
         ) : null
       }
       header={
         <AppHeader
+          centerItems={
+            <>
+              {isCurrentAppMode(AppMode.default) ? <AppSearchButton /> : null}
+            </>
+          }
           actions={
             <>
               {isCurrentAppMode(AppMode.default) ? (
@@ -62,33 +70,6 @@ export const WebdevHome: FC = () => {
                     label="Top"
                     action={handleScrollTopClick}
                   />
-                  <AppAction
-                    icon={mdiMagnify}
-                    label="Search"
-                    action={searchMode.handleSearchAction}
-                  />
-                  <AppMenu icon={mdiCogOutline} label="Options">
-                    <AppMenuItem
-                      label="Customize links"
-                      icon={<MdiIcon path={mdiListStatus} />}
-                      action={customizeMode.handleCustomizeAction}
-                    />
-                    <AppMenuItem
-                      label="Show link info"
-                      icon={<MdiIcon path={mdiNoteTextOutline} />}
-                      selected={toggleDescriptions.showDescriptions}
-                      action={toggleDescriptions.toggle}
-                    />
-                    <AppMenuItem
-                      label="Show group list"
-                      icon={<MdiIcon path={mdiDockLeft} />}
-                      selected={toggleJumpLinks.showJumpLinks}
-                      action={toggleJumpLinks.toggle}
-                    />
-
-                    <AppThemeSwitcher />
-                    <AppInfo />
-                  </AppMenu>
                 </>
               ) : isCurrentAppMode(AppMode.search) ? (
                 <>
@@ -98,16 +79,6 @@ export const WebdevHome: FC = () => {
                     highlight
                     action={searchMode.handleSearchAction}
                   />
-                  <AppMenu icon={mdiCogOutline} label="Options">
-                    <AppMenuItem
-                      label="Show link info"
-                      icon={<MdiIcon path={mdiNoteTextOutline} />}
-                      selected={toggleDescriptions.showDescriptions}
-                      action={toggleDescriptions.toggle}
-                    />
-
-                    <AppThemeSwitcher />
-                  </AppMenu>
                 </>
               ) : isCurrentAppMode(AppMode.customize) ? (
                 <>
@@ -117,18 +88,33 @@ export const WebdevHome: FC = () => {
                     highlight
                     action={customizeMode.handleCustomizeAction}
                   />
-                  <AppMenu icon={mdiCogOutline} label="Options">
-                    <AppMenuItem
-                      label="Show link info"
-                      icon={<MdiIcon path={mdiNoteTextOutline} />}
-                      selected={toggleDescriptions.showDescriptions}
-                      action={toggleDescriptions.toggle}
-                    />
-
-                    <AppThemeSwitcher />
-                  </AppMenu>
                 </>
               ) : null}
+
+              <AppMenu icon={mdiCogOutline} label="Options">
+                <AppMenuItem
+                  label="Customize links"
+                  icon={<MdiIcon path={mdiListStatus} />}
+                  action={customizeMode.handleCustomizeAction}
+                  visible={isCurrentAppMode(AppMode.default)}
+                />
+                <AppMenuDivider />
+                <AppMenuItem
+                  label="Show group list"
+                  icon={<MdiIcon path={mdiDockLeft} />}
+                  selected={toggleJumpLinks.showJumpLinks}
+                  action={toggleJumpLinks.toggle}
+                />
+                <AppMenuItem
+                  label="Show link info"
+                  icon={<MdiIcon path={mdiNoteTextOutline} />}
+                  selected={toggleDescriptions.showDescriptions}
+                  action={toggleDescriptions.toggle}
+                />
+
+                <AppThemeSwitcher />
+                <AppInfo />
+              </AppMenu>
             </>
           }
         />

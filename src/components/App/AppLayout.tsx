@@ -15,8 +15,8 @@ export const AppLayout: FC<PropsWithChildren<Props>> = ({
     <div
       className={classNames(
         'fixed inset-0',
-        'grid grid-cols-1 grid-rows-1',
-        'lg:grid-cols-[auto,1fr] lg:grid-rows-[auto,1fr]',
+        'grid grid-cols-1 grid-rows-[auto,1fr]',
+        'lg:grid-cols-[auto,1fr]',
         'overflow-hidden',
         'bg-white dark:bg-gray-700',
       )}

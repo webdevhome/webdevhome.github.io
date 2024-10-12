@@ -10,7 +10,7 @@ export const SearchHint: FC<PropsWithChildren<Props>> = ({
   inputs,
 }) => {
   return (
-    <div className="mt-4">
+    <div className="mt-4 text-gray-600 dark:text-gray-300">
       {inputs !== undefined && inputs.length > 0 ? (
         <div>
           {inputs.map((input, index) => (
@@ -22,7 +22,7 @@ export const SearchHint: FC<PropsWithChildren<Props>> = ({
         </div>
       ) : null}
 
-      <div className="text-gray-600 dark:text-gray-300">{children}</div>
+      <div>{children}</div>
     </div>
   )
 }

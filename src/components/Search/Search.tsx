@@ -39,11 +39,11 @@ export const Search: FC = () => {
         <input
           ref={searchInputRef}
           className={classNames(
-            'block h-14',
-            'my-5 px-8',
+            'block h-12',
+            'my-5 px-6',
             'border-none',
-            'bg-gray-200 dark:bg-gray-500',
-            'font-sans text-2xl',
+            'bg-gray-200 dark:bg-gray-600',
+            'font-sans text-xl',
             'text-gray-800 dark:text-white',
             'placeholder:text-gray-400 dark:placeholder:text-gray-300',
             'rounded-full',
