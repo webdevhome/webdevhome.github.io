@@ -5,7 +5,6 @@ import {
   mdiCogOutline,
   mdiDockLeft,
   mdiListStatus,
-  mdiMagnify,
   mdiNoteTextOutline,
 } from '@mdi/js'
 import { FC } from 'react'
@@ -14,7 +13,9 @@ import { AppMode } from '../../stores/appMode/appModeReducer'
 import { AppAction } from '../Header/AppAction'
 import { AppHeader } from '../Header/AppHeader'
 import { AppMenu } from '../Header/AppMenu'
+import { AppMenuDivider } from '../Header/AppMenuDivider'
 import { AppMenuItem } from '../Header/AppMenuItem'
+import { AppSearchButton } from '../Header/AppSearchButton'
 import { MdiIcon } from '../Icon/MdiIcon'
 import { JumpLinks } from '../JumpLinks/JumpLinks'
 import { Links } from '../Links/Links'
@@ -27,8 +28,6 @@ import { useSearchMode } from './useSearchMode'
 import { useTheme } from './useTheme'
 import { useToggleDescriptions } from './useToggleDescriptions'
 import { useToggleJumpLinks } from './useToggleJumpLinks'
-import { AppMenuDivider } from '../Header/AppMenuDivider'
-import { AppSearchButton } from '../Header/AppSearchButton'
 
 export const WebdevHome: FC = () => {
   const customizeMode = useCustomizeMode()
