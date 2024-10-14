@@ -301,6 +301,8 @@
           "title": "AlternativeTo",
           "url": "https://alternativeto.net",
           "description": "Find alternatives to some given technology.",
+          "icon": "alternativeto",
+          "color": "#0289D5",
           "searchUrl": "https://alternativeto.net/browse/search?q={search}",
           "searchConcat": "+"
         },
