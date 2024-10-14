@@ -88,11 +88,12 @@ export const Link: FC<Props> = ({
           'dark:text-gray-400 dark:hover:text-gray-300': !visible,
           'text-gray-700': visible,
         },
-        'hover:bg-gray-200 active:bg-gray-300',
-        'dark:hover:bg-gray-600 dark:active:bg-gray-500',
+        'hover:bg-black/10 active:bg-black/15',
+        'dark:hover:bg-white/10 dark:active:bg-white/15',
         {
-          'bg-gray-100 dark:bg-gray-500': focus,
-          'outline outline-2 -outline-offset-1 outline-gray-400': focus,
+          'bg-black/10 dark:bg-white/10': focus,
+          'outline outline-1 -outline-offset-1 outline-black/25 dark:outline-white/25':
+            focus,
         },
         'focus:outline focus:outline-2 focus:-outline-offset-1',
         'focus:relative focus:z-10',
@@ -108,7 +109,7 @@ export const Link: FC<Props> = ({
           'grid items-center justify-center',
           'p-1',
           'bg-white',
-          'rounded',
+          'rounded shadow-sm dark:shadow-none',
         )}
         style={{ color: link.color }}
       >

@@ -25,12 +25,12 @@ export const AppAction: FC<Props> = ({
         'rounded-md',
         'select-none',
         {
-          'hover:bg-gray-300 active:bg-gray-400': !active && !highlight,
+          'hover:bg-black/10 active:bg-black/15': !active && !highlight,
           'bg-brand-500 hover:bg-brand-600 active:bg-brand-700':
             active && !highlight,
           'bg-brand-500/15 hover:bg-brand-500/25 active:bg-brand-500/35':
             highlight,
-          'dark:hover:bg-gray-600 dark:active:bg-gray-500':
+          'dark:hover:bg-white/10 dark:active:bg-white/15':
             !active && !highlight,
           'dark:hover:bg-brand-600 dark:active:bg-brand-700':
             active && !highlight,

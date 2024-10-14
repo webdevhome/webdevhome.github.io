@@ -4,6 +4,7 @@ import {
   mdiCheck,
   mdiCogOutline,
   mdiDockLeft,
+  mdiImage,
   mdiListStatus,
   mdiNoteTextOutline,
 } from '@mdi/js'
@@ -26,6 +27,7 @@ import { AppThemeSwitcher } from './AppThemeSwitcher'
 import { useCustomizeMode } from './useCustomizeMode'
 import { useSearchMode } from './useSearchMode'
 import { useTheme } from './useTheme'
+import { useToggleBackground } from './useToggleBackground'
 import { useToggleDescriptions } from './useToggleDescriptions'
 import { useToggleJumpLinks } from './useToggleJumpLinks'
 
@@ -34,15 +36,16 @@ export const WebdevHome: FC = () => {
   const searchMode = useSearchMode()
   const toggleDescriptions = useToggleDescriptions()
   const toggleJumpLinks = useToggleJumpLinks()
+  const toggleBackground = useToggleBackground()
   const isCurrentAppMode = useIsCurrentAppMode()
 
   useTheme()
 
   function handleScrollTopClick() {
-    const htmlEl = document.children.item(0)
-    if (htmlEl === null) return
+    const mainContentElement = document.getElementById('main-content')
+    if (mainContentElement === null) return
 
-    htmlEl.scrollTo({ top: 0, behavior: 'smooth' })
+    mainContentElement.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
@@ -109,6 +112,12 @@ export const WebdevHome: FC = () => {
                   icon={<MdiIcon path={mdiNoteTextOutline} />}
                   selected={toggleDescriptions.showDescriptions}
                   action={toggleDescriptions.toggle}
+                />
+                <AppMenuItem
+                  label="Show background"
+                  icon={<MdiIcon path={mdiImage} />}
+                  selected={toggleBackground.showBackground}
+                  action={toggleBackground.toggle}
                 />
 
                 <AppThemeSwitcher />

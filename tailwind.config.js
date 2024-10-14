@@ -15,6 +15,10 @@ export default {
     },
     {
       pattern:
+        /outline-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-300/,
+    },
+    {
+      pattern:
         /text-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-800/,
     },
     {
@@ -42,6 +46,9 @@ export default {
         'monospace',
       ],
     },
+    boxShadow: {
+      sm: '0 1px 2px 0 rgb(0 0 0 / 0.15)',
+    },
     extend: {
       colors: {
         brand: {
@@ -56,6 +63,10 @@ export default {
           800: '#163f3e',
           900: '#102828',
         },
+      },
+      backgroundImage: {
+        'page-light': 'url("/assets/images/background-light.jpg")',
+        'page-dark': 'url("/assets/images/background-dark.jpg")',
       },
     },
   },

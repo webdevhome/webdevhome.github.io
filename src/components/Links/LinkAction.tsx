@@ -21,8 +21,8 @@ export const LinkAction: FC<PropsWithChildren<Props>> = ({
         'px-2',
         'cursor-default',
         {
-          'hover:bg-gray-300 active:bg-gray-400': hasHover,
-          'dark:hover:bg-gray-500 dark:active:bg-gray-400': hasHover,
+          'hover:bg-black/10 active:bg-black/15': hasHover,
+          'dark:hover:bg-white/10 dark:active:bg-white/15': hasHover,
         },
       )}
       onClick={onClick}

@@ -25,7 +25,7 @@ export const AppMenu: FC<PropsWithChildren<Props>> = ({
           'flex flex-col gap-y-px',
           'bg-white dark:bg-gray-600',
           'border border-gray-300 dark:border-gray-400',
-          'rounded-md',
+          'rounded-md shadow-lg',
         )}
       >
         {children}

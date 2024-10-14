@@ -10,12 +10,14 @@ type AppSettingsState = {
   theme: AppTheme
   showDescriptions: boolean
   showJumpLinks: boolean
+  showBackground: boolean
 }
 
 const initialState: AppSettingsState = {
   theme: AppTheme.auto,
   showDescriptions: false,
   showJumpLinks: true,
+  showBackground: false,
 }
 
 export function appSettings(
@@ -33,6 +35,10 @@ export function appSettings(
 
     case SettingsActions.setDisplayJumpLinks: {
       return { ...state, showJumpLinks: action.payload }
+    }
+
+    case SettingsActions.setDisplayBackground: {
+      return { ...state, showBackground: action.payload }
     }
 
     default: {

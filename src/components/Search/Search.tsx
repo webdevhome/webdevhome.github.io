@@ -42,12 +42,12 @@ export const Search: FC = () => {
             'block h-12',
             'my-5 px-6',
             'border-none',
-            'bg-gray-200 dark:bg-gray-600',
+            'bg-black/10 dark:bg-white/10',
             'font-sans text-xl',
-            'text-gray-800 dark:text-white',
-            'placeholder:text-gray-400 dark:placeholder:text-gray-300',
+            'text-black/80 dark:text-white/80',
+            'placeholder:text-black/40 dark:placeholder:text-white/40',
             'rounded-full',
-            'outline-2 focus:outline-brand-500',
+            'outline-2 focus:outline-brand-500/75',
           )}
           type="text"
           placeholder={searchTarget === null ? 'Search links...' : 'Search...'}

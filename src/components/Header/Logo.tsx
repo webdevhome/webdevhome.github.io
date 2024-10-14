@@ -5,8 +5,7 @@ export const Logo: FC = () => {
   return (
     <div
       className={classNames(
-        'font-mono text-lg sm:text-2xl',
-        'sm:tracking-wide',
+        'font-mono text-2xl',
         'text-gray-400 dark:text-gray-200',
         'select-none text-nowrap',
       )}

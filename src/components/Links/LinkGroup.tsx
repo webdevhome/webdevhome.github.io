@@ -17,6 +17,7 @@ import { slugify } from '../../utils/slugify'
 import { MdiIcon } from '../Icon/MdiIcon'
 import { Link } from './Link'
 import { LinkGroupButton } from './LinkGroupButton'
+import { useToggleBackground } from '../App/useToggleBackground'
 
 interface Props {
   group: ILinkGroup
@@ -27,6 +28,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
   const isCurrentAppMode = useIsCurrentAppMode()
   const getIsLinkHidden = useGetIsLinkHidden()
   const dispatch = useAppDispatch()
+  const toggleBackground = useToggleBackground()
 
   const [showHiddenLinks, setShowHiddenLinks] = useState(false)
 
@@ -68,10 +70,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
   }
 
   return (
-    <div
-      id={slugify(group.name)}
-      className="scroll-mt-20"
-    >
+    <div id={slugify(group.name)} className="scroll-mt-20">
       <div className="mb-2 flex gap-x-1">
         <div
           className={classNames(
@@ -81,6 +80,10 @@ export const LinkGroup: FC<Props> = ({ group }) => {
             'text-center font-semibold uppercase tracking-wider',
             `text-${group.color ?? 'gray'}-800 dark:text-${group.color ?? 'gray'}-50`,
             'rounded-md',
+            {
+              [`outline outline-1 -outline-offset-1 outline-${group.color}-300 dark:outline-none`]:
+                toggleBackground.showBackground,
+            },
           )}
         >
           {group.name}

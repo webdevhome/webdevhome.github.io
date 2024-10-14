@@ -6,6 +6,7 @@ export enum StorageKey {
   themeSetting = 'wdh:theme-setting',
   showDescriptionsSetting = 'wdh:show-descriptions-setting',
   showJumpLinksSetting = 'wdh:show-jump-links-setting',
+  showBackgroundSetting = 'wdh:show-background-setting',
 }
 
 export function getStorageValue(key: StorageKey): string | null
