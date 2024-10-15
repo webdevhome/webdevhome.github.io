@@ -1,4 +1,5 @@
 import plugin from 'tailwindcss/plugin'
+import type { Config } from 'tailwindcss/types/config'
 
 export default {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
@@ -87,4 +88,4 @@ export default {
       })
     }),
   ],
-}
+} satisfies Config

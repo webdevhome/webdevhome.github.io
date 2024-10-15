@@ -70,7 +70,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
   }
 
   return (
-    <div id={slugify(group.name)} className="scroll-mt-20">
+    <div id={slugify(group.name)} className="scroll-mt-4">
       <div className="mb-2 flex gap-x-1">
         <div
           className={classNames(

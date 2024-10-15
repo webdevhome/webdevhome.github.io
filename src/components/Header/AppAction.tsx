@@ -21,7 +21,8 @@ export const AppAction: FC<Props> = ({
     <div
       className={classNames(
         'flex items-center',
-        'px-3 py-1.5',
+        'p-1.5',
+        { 'sm:px-3': label !== undefined },
         'rounded-md',
         'select-none',
         {
@@ -45,13 +46,16 @@ export const AppAction: FC<Props> = ({
       onClick={action}
     >
       <MdiIcon path={icon} />
-      <div
-        className={classNames('ml-2 text-sm font-semibold', {
-          'hidden lg:block': !highlight,
-        })}
-      >
-        {label}
-      </div>
+
+      {label !== undefined ? (
+        <div
+          className={classNames('ml-2 text-sm font-semibold', {
+            'hidden lg:block': !highlight,
+          })}
+        >
+          {label}
+        </div>
+      ) : null}
     </div>
   )
 }

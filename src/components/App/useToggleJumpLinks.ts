@@ -1,10 +1,15 @@
 import { useCallback } from 'react'
 import { useAppDispatch, useAppSelector } from '../../stores'
-import { setDisplayJumpLinks } from '../../stores/appSettings/appSettingsActions'
+import {
+  setDisplayJumpLinks,
+  setDisplayJumpLinksMobile,
+} from '../../stores/appSettings/appSettingsActions'
 
 type UseToggleJumpLinksResult = {
   showJumpLinks: boolean
+  showJumpLinksMobile: boolean
   toggle: () => void
+  toggleMobile: () => void
 }
 
 export function useToggleJumpLinks(): UseToggleJumpLinksResult {
@@ -14,9 +19,17 @@ export function useToggleJumpLinks(): UseToggleJumpLinksResult {
     (state) => state.appSettings.showJumpLinks,
   )
 
+  const showJumpLinksMobile = useAppSelector(
+    (state) => state.appSettings.showJumpLinksMobile,
+  )
+
   const toggle = useCallback(() => {
     dispatch(setDisplayJumpLinks(!showJumpLinks))
   }, [dispatch, showJumpLinks])
 
-  return { showJumpLinks, toggle }
+  const toggleMobile = useCallback(() => {
+    dispatch(setDisplayJumpLinksMobile(!showJumpLinksMobile))
+  }, [dispatch, showJumpLinksMobile])
+
+  return { showJumpLinks, showJumpLinksMobile, toggle, toggleMobile }
 }

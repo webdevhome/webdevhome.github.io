@@ -24,9 +24,10 @@ export const store = createStore(rootReducer, {
     theme: loadThemeSetting(),
     showDescriptions: loadShowDescriptionsSetting(),
     showJumpLinks: loadShowJumpLinksSetting(),
+    showJumpLinksMobile: false,
     showBackground: loadShowBackgroundSetting(),
   },
-})
+}, window.__REDUX_DEVTOOLS_EXTENSION__?.())
 
 persistToLocalStorage(store)
 

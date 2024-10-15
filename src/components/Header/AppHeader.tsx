@@ -1,5 +1,8 @@
+import { mdiClose, mdiMenu } from '@mdi/js'
 import classNames from 'classnames'
 import { FC, ReactElement } from 'react'
+import { useToggleJumpLinks } from '../App/useToggleJumpLinks'
+import { AppAction } from './AppAction'
 import { Logo } from './Logo'
 
 interface Props {
@@ -8,16 +11,28 @@ interface Props {
 }
 
 export const AppHeader: FC<Props> = ({ centerItems, actions }) => {
+  const toggleJumpLinks = useToggleJumpLinks()
+
+  function handleMenuClick() {
+    // TODO: if (mobile) { toggleJumpLinks.toggleMobile() } else { toggleJumpLinks.toggle() }
+  }
+
   return (
     <div
       className={classNames(
         'grid items-center',
         'grid-cols-[1fr,auto] grid-rows-[auto,auto] md:grid-cols-[1fr,auto,1fr] md:grid-rows-1',
         'px-page',
-        'bg-white/20 dark:bg-black/20',
+        'bg-white/30 dark:bg-black/30',
       )}
     >
-      <Logo />
+      <div className="flex items-center gap-x-2">
+        <AppAction
+          icon={toggleJumpLinks.showJumpLinksMobile ? mdiClose : mdiMenu}
+          action={handleMenuClick}
+        />
+        <Logo />
+      </div>
 
       {centerItems !== null ? (
         <div className="col-span-2 row-start-2 flex items-center gap-x-1 justify-self-center py-2 md:col-span-1 md:col-start-2 md:row-start-1">

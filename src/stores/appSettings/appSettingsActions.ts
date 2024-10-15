@@ -4,6 +4,7 @@ export const enum SettingsActions {
   setTheme,
   setDisplayDescription,
   setDisplayJumpLinks,
+  setDisplayJumpLinksMobile,
   setDisplayBackground,
 }
 
@@ -22,6 +23,11 @@ type SetDisplayJumpLinksAction = {
   payload: boolean
 }
 
+type SetDisplayJumpLinksMobileAction = {
+  type: SettingsActions.setDisplayJumpLinksMobile
+  payload: boolean
+}
+
 type SetDisplayBackgroundAction = {
   type: SettingsActions.setDisplayBackground
   payload: boolean
@@ -31,6 +37,7 @@ export type AppSettingsActions =
   | SetThemeAction
   | SetDisplayDescriptionAction
   | SetDisplayJumpLinksAction
+  | SetDisplayJumpLinksMobileAction
   | SetDisplayBackgroundAction
 
 export function setTheme(payload: AppTheme): SetThemeAction {
@@ -47,6 +54,12 @@ export function setDisplayJumpLinks(
   payload: boolean,
 ): SetDisplayJumpLinksAction {
   return { type: SettingsActions.setDisplayJumpLinks, payload }
+}
+
+export function setDisplayJumpLinksMobile(
+  payload: boolean,
+): SetDisplayJumpLinksMobileAction {
+  return { type: SettingsActions.setDisplayJumpLinksMobile, payload }
 }
 
 export function setDisplayBackground(

@@ -3,10 +3,9 @@ import {
   mdiArrowLeft,
   mdiCheck,
   mdiCogOutline,
-  mdiDockLeft,
   mdiImage,
   mdiListStatus,
-  mdiNoteTextOutline,
+  mdiNoteTextOutline
 } from '@mdi/js'
 import { FC } from 'react'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
@@ -52,7 +51,7 @@ export const WebdevHome: FC = () => {
     <AppLayout
       sidebar={
         isCurrentAppMode(AppMode.default, AppMode.customize) &&
-        toggleJumpLinks.showJumpLinks ? (
+        toggleJumpLinks.showJumpLinks || toggleJumpLinks.showJumpLinksMobile ? (
           <JumpLinks />
         ) : null
       }
@@ -101,12 +100,6 @@ export const WebdevHome: FC = () => {
                   visible={isCurrentAppMode(AppMode.default)}
                 />
                 <AppMenuDivider />
-                <AppMenuItem
-                  label="Show group list"
-                  icon={<MdiIcon path={mdiDockLeft} />}
-                  selected={toggleJumpLinks.showJumpLinks}
-                  action={toggleJumpLinks.toggle}
-                />
                 <AppMenuItem
                   label="Show link info"
                   icon={<MdiIcon path={mdiNoteTextOutline} />}
