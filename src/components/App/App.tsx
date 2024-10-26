@@ -5,7 +5,7 @@ import {
   mdiCogOutline,
   mdiImage,
   mdiListStatus,
-  mdiNoteTextOutline
+  mdiNoteTextOutline,
 } from '@mdi/js'
 import { FC } from 'react'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
@@ -28,13 +28,11 @@ import { useSearchMode } from './useSearchMode'
 import { useTheme } from './useTheme'
 import { useToggleBackground } from './useToggleBackground'
 import { useToggleDescriptions } from './useToggleDescriptions'
-import { useToggleJumpLinks } from './useToggleJumpLinks'
 
 export const WebdevHome: FC = () => {
   const customizeMode = useCustomizeMode()
   const searchMode = useSearchMode()
   const toggleDescriptions = useToggleDescriptions()
-  const toggleJumpLinks = useToggleJumpLinks()
   const toggleBackground = useToggleBackground()
   const isCurrentAppMode = useIsCurrentAppMode()
 
@@ -49,12 +47,6 @@ export const WebdevHome: FC = () => {
 
   return (
     <AppLayout
-      sidebar={
-        isCurrentAppMode(AppMode.default, AppMode.customize) &&
-        toggleJumpLinks.showJumpLinks || toggleJumpLinks.showJumpLinksMobile ? (
-          <JumpLinks />
-        ) : null
-      }
       header={
         <AppHeader
           centerItems={
@@ -119,6 +111,11 @@ export const WebdevHome: FC = () => {
             </>
           }
         />
+      }
+      sidebar={
+        isCurrentAppMode(AppMode.default, AppMode.customize) ? (
+          <JumpLinks />
+        ) : null
       }
     >
       {isCurrentAppMode(AppMode.default, AppMode.customize) ? (

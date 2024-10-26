@@ -8,8 +8,8 @@ import {
 type UseToggleJumpLinksResult = {
   showJumpLinks: boolean
   showJumpLinksMobile: boolean
-  toggle: () => void
-  toggleMobile: () => void
+  toggle: (value?: boolean) => void
+  toggleMobile: (value?: boolean) => void
 }
 
 export function useToggleJumpLinks(): UseToggleJumpLinksResult {
@@ -23,13 +23,19 @@ export function useToggleJumpLinks(): UseToggleJumpLinksResult {
     (state) => state.appSettings.showJumpLinksMobile,
   )
 
-  const toggle = useCallback(() => {
-    dispatch(setDisplayJumpLinks(!showJumpLinks))
-  }, [dispatch, showJumpLinks])
+  const toggle = useCallback(
+    (value?: boolean) => {
+      dispatch(setDisplayJumpLinks(value ?? !showJumpLinks))
+    },
+    [dispatch, showJumpLinks],
+  )
 
-  const toggleMobile = useCallback(() => {
-    dispatch(setDisplayJumpLinksMobile(!showJumpLinksMobile))
-  }, [dispatch, showJumpLinksMobile])
+  const toggleMobile = useCallback(
+    (value?: boolean) => {
+      dispatch(setDisplayJumpLinksMobile(value ?? !showJumpLinksMobile))
+    },
+    [dispatch, showJumpLinksMobile],
+  )
 
   return { showJumpLinks, showJumpLinksMobile, toggle, toggleMobile }
 }

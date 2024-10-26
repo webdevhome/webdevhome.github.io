@@ -9,7 +9,7 @@ export const Links: FC = () => {
       className={classNames(
         'grid grid-cols-[repeat(auto-fill,minmax(290px,1fr))]',
         'gap-x-2 gap-y-8 sm:gap-x-4 lg:gap-x-8',
-        'px-page py-4',
+        'p-page',
       )}
     >
       {links.items.map((group) => (

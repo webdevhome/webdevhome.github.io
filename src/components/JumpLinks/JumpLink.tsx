@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import { FC } from 'react'
 import { slugify } from '../../utils/slugify'
 import { useToggleBackground } from '../App/useToggleBackground'
+import { useToggleJumpLinks } from '../App/useToggleJumpLinks'
 
 interface Props {
   label: string
@@ -10,19 +11,21 @@ interface Props {
 
 export const JumpLink: FC<Props> = ({ label, color = 'gray' }) => {
   const toggleBackground = useToggleBackground()
+  const toggleJumpLinks = useToggleJumpLinks()
 
   function handleClick() {
     const target = document.getElementById(slugify(label))
     if (target === null) return
 
     target.scrollIntoView({ behavior: 'smooth' })
+    toggleJumpLinks.toggleMobile(false)
   }
 
   return (
     <div
       className={classNames(
         'jump-link',
-        'px-3 py-1 md:px-2.5 md:py-1',
+        'px-3 py-1.5 md:px-2.5 md:py-1',
         'rounded-md',
         'cursor-pointer',
         'text-sm font-semibold',
