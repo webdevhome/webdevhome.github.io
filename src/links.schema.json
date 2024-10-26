@@ -8,10 +8,7 @@
     "group": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "name",
-        "items"
-      ],
+      "required": ["name", "items"],
       "properties": {
         "name": {
           "type": "string"
@@ -54,23 +51,12 @@
     "link": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "title",
-        "url"
-      ],
+      "required": ["title", "url"],
       "dependencies": {
-        "icon": [
-          "color"
-        ],
-        "color": [
-          "icon"
-        ],
-        "searchUrl": [
-          "searchConcat"
-        ],
-        "searchConcat": [
-          "searchUrl"
-        ]
+        "icon": ["color"],
+        "color": ["icon"],
+        "searchUrl": ["searchConcat"],
+        "searchConcat": ["searchUrl"]
       },
       "properties": {
         "title": {

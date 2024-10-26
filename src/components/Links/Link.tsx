@@ -18,6 +18,7 @@ import { Kbd } from '../basics/Kbd'
 import { DefaultIcon } from '../Icon/DefaultIcon'
 import { MdiIcon } from '../Icon/MdiIcon'
 import { LinkAction } from './LinkAction'
+import { useToggleBackground } from '../App/useToggleBackground'
 
 interface Props {
   link: LinkItem
@@ -34,6 +35,7 @@ export const Link: FC<Props> = ({
 }) => {
   const dispatch = useAppDispatch()
   const isCurrentAppMode = useIsCurrentAppMode()
+  const toggleBackground = useToggleBackground()
 
   const showDescription = useAppSelector(
     (state) => state.appSettings.showDescriptions,
@@ -88,11 +90,12 @@ export const Link: FC<Props> = ({
           'dark:text-gray-400 dark:hover:text-gray-300': !visible,
           'text-gray-700': visible,
         },
-        'hover:bg-gray-200 active:bg-gray-300',
-        'dark:hover:bg-gray-600 dark:active:bg-gray-500',
+        'hover:bg-black/10 active:bg-black/15',
+        'dark:hover:bg-white/10 dark:active:bg-white/15',
         {
-          'bg-gray-100 dark:bg-gray-500': focus,
-          'outline outline-2 -outline-offset-1 outline-gray-400': focus,
+          'bg-black/10 dark:bg-white/10': focus,
+          'outline outline-1 -outline-offset-1 outline-black/25 dark:outline-white/25':
+            focus,
         },
         'focus:outline focus:outline-2 focus:-outline-offset-1',
         'focus:relative focus:z-10',
@@ -108,14 +111,17 @@ export const Link: FC<Props> = ({
           'grid items-center justify-center',
           'p-1',
           'bg-white',
-          'rounded',
+          'dark:shadow-none rounded',
+          {
+            'shadow-sm': toggleBackground.showBackground,
+          },
         )}
         style={{ color: link.color }}
       >
         {link.icon !== undefined ? (
           <ReactSVG
             src={getIconUrl(link.icon)}
-            className={classNames('w-[27px] h-[27px]')}
+            className={classNames('h-[27px] w-[27px]')}
           />
         ) : (
           <DefaultIcon />
@@ -131,11 +137,11 @@ export const Link: FC<Props> = ({
         {link.title}
       </div>
 
-      <div className="flex self-stretch -my-1 -mr-1">
+      <div className="-my-1 -mr-1 flex self-stretch">
         {searchable && !isCustomizeMode ? (
           <>
             {focus ? (
-              <div className="self-center mr-2">
+              <div className="mr-2 self-center">
                 <span className="flex items-center justify-center">
                   <Kbd>Tab</Kbd>
                 </span>

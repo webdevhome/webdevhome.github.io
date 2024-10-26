@@ -3,13 +3,21 @@
 @tailwind utilities;
 
 @layer base {
-  svg {
-    @apply align-middle fill-current;
-  }
+    svg {
+        @apply fill-current align-middle;
+    }
 }
 
 @layer components {
-  .px-page {
-    @apply px-2 sm:px-4 lg:px-6;
-  }
+    .px-page {
+        @apply px-2 sm:px-4 lg:px-6;
+    }
+
+    .py-page {
+        @apply py-2 sm:py-4 lg:py-6;
+    }
+
+    .p-page {
+        @apply p-2 sm:p-4 lg:p-6;
+    }
 }

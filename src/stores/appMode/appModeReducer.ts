@@ -7,7 +7,7 @@ export enum AppMode {
   customize = 'CUSTOMIZE',
 }
 
-export interface AppModeState {
+export type AppModeState = {
   currentMode: AppMode
 }
 
@@ -17,7 +17,7 @@ const initialState: AppModeState = {
 
 export function appMode(
   state = initialState,
-  action: AppActions
+  action: AppActions,
 ): AppModeState {
   switch (action.type) {
     case SET_MODE: {

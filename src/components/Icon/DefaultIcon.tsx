@@ -9,7 +9,7 @@ export const DefaultIcon: FC = () => {
       className={classNames(
         'grid items-center justify-center',
         'text-gray-300',
-        'w-[27px] h-[27px]',
+        'h-[27px] w-[27px]',
       )}
     >
       <MdiIcon path={mdiLinkVariant} />

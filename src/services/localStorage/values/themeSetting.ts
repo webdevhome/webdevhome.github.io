@@ -2,7 +2,7 @@ import { AppTheme } from '../../../stores/appSettings/appSettingsReducer'
 import {
   getStorageValue,
   setStorageValue,
-  StorageKey
+  StorageKey,
 } from '../localStorageService'
 
 export function loadThemeSetting(): AppTheme {

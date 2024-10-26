@@ -5,13 +5,15 @@ export enum StorageKey {
   hiddenItems = 'wdh:hidden-items',
   themeSetting = 'wdh:theme-setting',
   showDescriptionsSetting = 'wdh:show-descriptions-setting',
+  showJumpLinksSetting = 'wdh:show-jump-links-setting',
+  showBackgroundSetting = 'wdh:show-background-setting',
 }
 
 export function getStorageValue(key: StorageKey): string | null
 export function getStorageValue(key: StorageKey, fallback: string): string
 export function getStorageValue(
   key: StorageKey,
-  fallback?: string
+  fallback?: string,
 ): string | null {
   return localStorage.getItem(key) ?? fallback ?? null
 }

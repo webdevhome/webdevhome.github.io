@@ -25,7 +25,7 @@ export const AppThemeSwitcher: FC = () => {
         action={themeSwitcher.setDarkTheme}
       />
       <AppMenuItem
-        label="Use system theme"
+        label="System"
         icon={<MdiIcon path={mdiThemeLightDark} />}
         selected={themeSwitcher.isAutoTheme}
         action={themeSwitcher.setAutoTheme}

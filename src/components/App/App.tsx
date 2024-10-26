@@ -3,64 +3,57 @@ import {
   mdiArrowLeft,
   mdiCheck,
   mdiCogOutline,
+  mdiImage,
   mdiListStatus,
-  mdiMagnify,
   mdiNoteTextOutline,
 } from '@mdi/js'
-import classNames from 'classnames'
 import { FC } from 'react'
-import packageJson from '../../../package.json'
-import { links, useAllLinks } from '../../links'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
 import { AppMode } from '../../stores/appMode/appModeReducer'
-import { useHiddenLinksCount } from '../../stores/hiddenLinks/hiddenLinksHooks'
-import { AppFooter } from '../Footer/AppFooter'
-import { FooterDivider } from '../Footer/FooterDivider'
-import { FooterGroup } from '../Footer/FooterGroup'
 import { AppAction } from '../Header/AppAction'
 import { AppHeader } from '../Header/AppHeader'
 import { AppMenu } from '../Header/AppMenu'
+import { AppMenuDivider } from '../Header/AppMenuDivider'
 import { AppMenuItem } from '../Header/AppMenuItem'
+import { AppSearchButton } from '../Header/AppSearchButton'
 import { MdiIcon } from '../Icon/MdiIcon'
 import { JumpLinks } from '../JumpLinks/JumpLinks'
-import { LinkGroup } from '../Links/LinkGroup'
+import { Links } from '../Links/Links'
 import { Search } from '../Search/Search'
-import { AppContent } from './AppContent'
+import { AppInfo } from './AppInfo'
+import { AppLayout } from './AppLayout'
 import { AppThemeSwitcher } from './AppThemeSwitcher'
 import { useCustomizeMode } from './useCustomizeMode'
 import { useSearchMode } from './useSearchMode'
 import { useTheme } from './useTheme'
+import { useToggleBackground } from './useToggleBackground'
 import { useToggleDescriptions } from './useToggleDescriptions'
 
 export const WebdevHome: FC = () => {
   const customizeMode = useCustomizeMode()
   const searchMode = useSearchMode()
   const toggleDescriptions = useToggleDescriptions()
+  const toggleBackground = useToggleBackground()
   const isCurrentAppMode = useIsCurrentAppMode()
-  const allLinks = useAllLinks()
-  const hiddenLinksCount = useHiddenLinksCount()
 
   useTheme()
 
   function handleScrollTopClick() {
-    const htmlEl = document.children.item(0)
-    if (htmlEl === null) return
+    const mainContentElement = document.getElementById('main-content')
+    if (mainContentElement === null) return
 
-    htmlEl.scrollTo({ top: 0, behavior: 'smooth' })
+    mainContentElement.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
-    <div className="min-h-full">
-      <div
-        className={classNames(
-          'sticky top-0 left-0 right-0',
-          'bg-gray-200 supports-backdrop:bg-gray-100/75',
-          'dark:bg-gray-900 dark:supports-backdrop:bg-gray-900/70',
-          'border-b border-gray-300 dark:border-gray-600',
-          'supports-backdrop:backdrop-blur',
-        )}
-      >
+    <AppLayout
+      header={
         <AppHeader
+          centerItems={
+            <>
+              {isCurrentAppMode(AppMode.default) ? <AppSearchButton /> : null}
+            </>
+          }
           actions={
             <>
               {isCurrentAppMode(AppMode.default) ? (
@@ -70,26 +63,6 @@ export const WebdevHome: FC = () => {
                     label="Top"
                     action={handleScrollTopClick}
                   />
-                  <AppAction
-                    icon={mdiMagnify}
-                    label="Search"
-                    action={searchMode.handleSearchAction}
-                  />
-                  <AppMenu icon={mdiCogOutline} label="Options">
-                    <AppMenuItem
-                      label="Customize links"
-                      icon={<MdiIcon path={mdiListStatus} />}
-                      action={customizeMode.handleCustomizeAction}
-                    />
-                    <AppMenuItem
-                      label="Show link info"
-                      icon={<MdiIcon path={mdiNoteTextOutline} />}
-                      selected={toggleDescriptions.showDescriptions}
-                      action={toggleDescriptions.toggle}
-                    />
-
-                    <AppThemeSwitcher />
-                  </AppMenu>
                 </>
               ) : isCurrentAppMode(AppMode.search) ? (
                 <>
@@ -99,16 +72,6 @@ export const WebdevHome: FC = () => {
                     highlight
                     action={searchMode.handleSearchAction}
                   />
-                  <AppMenu icon={mdiCogOutline} label="Options">
-                    <AppMenuItem
-                      label="Show link info"
-                      icon={<MdiIcon path={mdiNoteTextOutline} />}
-                      selected={toggleDescriptions.showDescriptions}
-                      action={toggleDescriptions.toggle}
-                    />
-
-                    <AppThemeSwitcher />
-                  </AppMenu>
                 </>
               ) : isCurrentAppMode(AppMode.customize) ? (
                 <>
@@ -118,74 +81,48 @@ export const WebdevHome: FC = () => {
                     highlight
                     action={customizeMode.handleCustomizeAction}
                   />
-                  <AppMenu icon={mdiCogOutline} label="Options">
-                    <AppMenuItem
-                      label="Show link info"
-                      icon={<MdiIcon path={mdiNoteTextOutline} />}
-                      selected={toggleDescriptions.showDescriptions}
-                      action={toggleDescriptions.toggle}
-                    />
-
-                    <AppThemeSwitcher />
-                  </AppMenu>
                 </>
               ) : null}
+
+              <AppMenu icon={mdiCogOutline} label="Options">
+                <AppMenuItem
+                  label="Customize links"
+                  icon={<MdiIcon path={mdiListStatus} />}
+                  action={customizeMode.handleCustomizeAction}
+                  visible={isCurrentAppMode(AppMode.default)}
+                />
+                <AppMenuDivider />
+                <AppMenuItem
+                  label="Show link info"
+                  icon={<MdiIcon path={mdiNoteTextOutline} />}
+                  selected={toggleDescriptions.showDescriptions}
+                  action={toggleDescriptions.toggle}
+                />
+                <AppMenuItem
+                  label="Show background"
+                  icon={<MdiIcon path={mdiImage} />}
+                  selected={toggleBackground.showBackground}
+                  action={toggleBackground.toggle}
+                />
+
+                <AppThemeSwitcher />
+                <AppInfo />
+              </AppMenu>
             </>
           }
         />
-      </div>
-
-      <div className="h-full">
-        {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
-          <>
-            <JumpLinks />
-            <AppContent>
-              {links.items.map((group, index) => (
-                <LinkGroup group={group} key={group.name} />
-              ))}
-            </AppContent>
-          </>
-        ) : (
-          <Search />
-        )}
-
-        {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
-          <AppFooter>
-            <FooterGroup
-              title={`WebdevHome v${packageJson.version}`}
-              items={[
-                {
-                  label: `${allLinks.length} links / ${hiddenLinksCount} hidden`,
-                },
-                {
-                  label: 'Changelog',
-                  href: 'https://github.com/webdevhome/webdevhome.github.io/releases',
-                },
-                {
-                  label: 'GitHub',
-                  href: 'https://github.com/webdevhome/webdevhome.github.io',
-                },
-              ]}
-            />
-
-            <FooterDivider />
-
-            <FooterGroup
-              title="Icons"
-              items={[
-                {
-                  label: 'Material Design Icons',
-                  href: 'https://materialdesignicons.com',
-                },
-                {
-                  label: 'Simple Icons',
-                  href: 'https://simpleicons.org/',
-                },
-              ]}
-            />
-          </AppFooter>
-        ) : null}
-      </div>
-    </div>
+      }
+      sidebar={
+        isCurrentAppMode(AppMode.default, AppMode.customize) ? (
+          <JumpLinks />
+        ) : null
+      }
+    >
+      {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
+        <Links />
+      ) : (
+        <Search />
+      )}
+    </AppLayout>
   )
 }

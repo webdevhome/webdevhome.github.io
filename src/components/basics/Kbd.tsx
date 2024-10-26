@@ -9,7 +9,7 @@ export const Kbd: FC<PropsWithChildren> = ({ children }) => {
         'bg-gray-100 dark:bg-gray-600',
         'border border-gray-300 dark:border-gray-500',
         'rounded-md',
-        'font-mono text-base text-brand-700 dark:text-brand-200',
+        'font-mono text-sm text-brand-700 dark:text-brand-200',
       )}
     >
       {children}

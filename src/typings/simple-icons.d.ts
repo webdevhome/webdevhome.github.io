@@ -1,5 +1,5 @@
 declare module 'simple-icons' {
-  export interface IconObject {
+  export type IconObject = {
     title: string
     slug: string
     hex: string

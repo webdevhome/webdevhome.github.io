@@ -4,17 +4,17 @@ export const SET_SEARCH_TERM = 'SET_SEARCH_TERM'
 export const SET_ON_SITE_SEARCH_TERM = 'SET_ON_SITE_SEARCH_TERM'
 export const SET_CURRENT_SEARCH_TARGET = 'SET_CURRENT_SEARCH_TARGET'
 
-interface SetSearchTermAction {
+type SetSearchTermAction = {
   type: typeof SET_SEARCH_TERM
   payload: string
 }
 
-interface SetOnSiteSearchTermAction {
+type SetOnSiteSearchTermAction = {
   type: typeof SET_ON_SITE_SEARCH_TERM
   payload: string
 }
 
-interface SetSearchTargetAction {
+type SetSearchTargetAction = {
   type: typeof SET_CURRENT_SEARCH_TARGET
   payload: SearchTarget | null
 }
@@ -29,13 +29,13 @@ export function setSearchTerm(searchTerm: string): SetSearchTermAction {
 }
 
 export function setOnSiteSearchTerm(
-  searchTerm: string
+  searchTerm: string,
 ): SetOnSiteSearchTermAction {
   return { type: SET_ON_SITE_SEARCH_TERM, payload: searchTerm }
 }
 
 export function setSearchTarget(
-  searchTarget: SearchTarget | null
+  searchTarget: SearchTarget | null,
 ): SetSearchTargetAction {
   return { type: SET_CURRENT_SEARCH_TARGET, payload: searchTarget }
 }

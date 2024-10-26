@@ -5,7 +5,7 @@ import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
 import { AppMode } from '../../stores/appMode/appModeReducer'
 import { setSearchTerm } from '../../stores/search/searchActions'
 
-export interface UseSearchModeResult {
+export type UseSearchModeResult = {
   handleSearchAction: () => void
 }
 

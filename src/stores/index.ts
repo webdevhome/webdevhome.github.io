@@ -8,6 +8,8 @@ import { appSettings } from './appSettings/appSettingsReducer'
 import { hiddenLinks } from './hiddenLinks/hiddenLinksReducer'
 import { persistToLocalStorage } from './persistToLocalStorage'
 import { search } from './search/searchReducer'
+import { loadShowJumpLinksSetting } from '../services/localStorage/values/showJumpLinksSetting'
+import { loadShowBackgroundSetting } from '../services/localStorage/values/showBackgroundSetting'
 
 const rootReducer = combineReducers({
   appMode,
@@ -21,8 +23,11 @@ export const store = createStore(rootReducer, {
   appSettings: {
     theme: loadThemeSetting(),
     showDescriptions: loadShowDescriptionsSetting(),
+    showJumpLinks: loadShowJumpLinksSetting(),
+    showJumpLinksMobile: false,
+    showBackground: loadShowBackgroundSetting(),
   },
-})
+}, window.__REDUX_DEVTOOLS_EXTENSION__?.())
 
 persistToLocalStorage(store)
 

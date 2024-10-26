@@ -19,15 +19,15 @@ This is a collection of links I, as a web developer, use very frequently. Maybe 
 
 To start WebdevHome locally run:
 
-~~~
+```shell
 npm ci
-~~~
+```
 
 and then:
 
-~~~
+```shell
 npm run dev
-~~~
+```
 
 This starts a watcher that builds the project every time you make some changes. Also, the local version of your app (running on localhost:3000) gets opened in your default browser automatically.
 
@@ -37,19 +37,19 @@ End the watcher script by pressing `[Ctrl]` + `[C]` in your terminal.
 
 If you want to run this app in your own Docker environment run the following commands from inside the project root directory:
 
-~~~
+```shell
 docker-compose build
-~~~
+```
 
 and then:
 
-~~~
+```shell
 docker-compose up
-~~~
+```
 
-*Or `docker-compose up -d` to run in detached mode.*
+_Or `docker-compose up -d` to run in detached mode._
 
-*Halt the app in detached mode by running `docker-compose down`.*
+_Halt the app in detached mode by running `docker-compose down`._
 
 If you make any changes, start again at `docker-compose build`.
 
