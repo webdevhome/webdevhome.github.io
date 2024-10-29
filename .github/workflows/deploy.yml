@@ -1,9 +1,9 @@
 name: Build and deploy website
 
 on:
-  pull_request:
-    types: [closed]
-    branches: [develop]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   build-and-deploy:
