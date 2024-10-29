@@ -1943,6 +1943,13 @@
           "color": "#4000BF"
         },
         {
+          "title": "Bruno",
+          "url": "https://www.usebruno.com",
+          "description": "A git friendly REST client.",
+          "icon": "bruno",
+          "color": "#F4AA41"
+        },
+        {
           "title": "Adobe",
           "url": "https://www.adobe.com",
           "icon": "adobe",
