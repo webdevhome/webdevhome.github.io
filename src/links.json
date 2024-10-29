@@ -150,6 +150,12 @@
           "color": "#3ecf8e"
         },
         {
+          "title": "Appwrite",
+          "url": "https://appwrite.io",
+          "icon": "appwrite",
+          "color": "#FD366E"
+        },
+        {
           "title": "DigitalOcean",
           "url": "https://www.digitalocean.com",
           "icon": "digitalocean",
@@ -695,6 +701,13 @@
           "color": "#00DC82"
         },
         {
+          "title": "VitePress",
+          "url": "https://vitepress.dev",
+          "description": "Static site generator powered by Vue.",
+          "icon": "vitepress",
+          "color": "#5C73E7"
+        },
+        {
           "title": "Angular",
           "url": "https://angular.io",
           "icon": "angular",
@@ -1007,6 +1020,11 @@
           "color": "#09D3AC"
         },
         {
+          "title": "void(0)",
+          "url": "https://voidzero.dev",
+          "description": "A universal build chain from the creators of Vite."
+        },
+        {
           "title": "Biome",
           "url": "https://biomejs.dev",
           "description": "A universal build chain that includes a linter, compiler, bundler, and more. It's the successor of Rome.",
@@ -1063,6 +1081,13 @@
           "description": "JavaScript and TypeScript linter.",
           "icon": "eslint",
           "color": "#4B32C3"
+        },
+        {
+          "title": "Cypress",
+          "url": "https://www.cypress.io",
+          "description": "Library for test automation.",
+          "icon": "cypress",
+          "color": "#69D3A7"
         },
         {
           "title": "Puppeteer",
@@ -1705,6 +1730,18 @@
           "description": "Check which devtools support which debugging action.",
           "searchUrl": "https://www.canidev.tools/?q={search}",
           "searchConcat": "+"
+        },
+        {
+          "title": "Can I WebView...",
+          "url": "https://caniwebview.com",
+          "description": "Check system webviews for feature support.",
+          "searchUrl": "https://caniwebview.com/search/?s={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Accessibility Support",
+          "url": "https://a11ysupport.io",
+          "description": "Will your code work with assistive technologies?"
         },
         {
           "title": "Web Platform Status",

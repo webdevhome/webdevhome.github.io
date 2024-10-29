@@ -77,7 +77,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
             'flex-auto',
             'px-4 py-2',
             `bg-${group.color ?? 'gray'}-100 dark:bg-${group.color ?? 'gray'}-600`,
-            'text-center font-semibold uppercase tracking-wider',
+            'text-center font-semibold uppercase tracking-wider leading-tight',
             `text-${group.color ?? 'gray'}-800 dark:text-${group.color ?? 'gray'}-50`,
             'rounded-md',
             {

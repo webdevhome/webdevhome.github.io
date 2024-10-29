@@ -51,7 +51,7 @@ export const SearchTargetLabel: FC<Props> = ({ title, icon, color }) => {
       className={classNames(
         'flex flex-col items-start gap-y-4 sm:flex-row sm:items-center',
         'sm:px-8',
-        'text-xl',
+        'text-base',
         'text-gray-700 dark:text-gray-100',
       )}
     >
@@ -60,8 +60,8 @@ export const SearchTargetLabel: FC<Props> = ({ title, icon, color }) => {
         className={classNames(
           'flex items-center',
           'mr-4 px-2 py-1',
-          'bg-gray-100 hover:bg-gray-200 active:bg-gray-300',
-          'dark:bg-gray-600 dark:hover:bg-gray-500 dark:active:bg-gray-400',
+          'bg-black/10 hover:bg-black/20 active:bg-black/25',
+          'dark:bg-white/15 dark:hover:bg-white/25 dark:active:bg-white/30',
           'rounded',
           'cursor-default select-none',
         )}

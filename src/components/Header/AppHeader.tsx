@@ -33,7 +33,8 @@ export const AppHeader: FC<Props> = ({ centerItems, actions }) => {
       className={classNames(
         'grid items-center',
         'grid-cols-[1fr,auto] grid-rows-[auto,auto] md:grid-cols-[1fr,auto,1fr] md:grid-rows-1',
-        'border-b border-black/10 dark:border-white/10',
+        // 'border-b border-black/10 dark:border-white/10',
+        'bg-black/5 dark:bg-white/5',
         'px-page',
       )}
     >
