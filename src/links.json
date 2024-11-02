@@ -1884,7 +1884,7 @@
           "url": "https://www.docker.com",
           "icon": "docker",
           "color": "#2496ED",
-          "searchUrl": "https://www.docker.com/search/node?keys={search}",
+          "searchUrl": "https://www.docker.com/search/?_sf_s={search}",
           "searchConcat": "%20"
         },
         {
