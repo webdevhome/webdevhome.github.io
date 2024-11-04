@@ -3,7 +3,7 @@
   "version": "2.4.3",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "npm test && vite build",
     "preview": "vite preview",
     "test": "tsc && eslint src",
