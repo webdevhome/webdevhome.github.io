@@ -2,8 +2,7 @@ import plugin from 'tailwindcss/plugin'
 import type { Config } from 'tailwindcss/types/config'
 
 export default {
-  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: 'class',
+  content: ['./index.html', './src/**/*.{ts,vue}'],
   safelist: [
     {
       pattern:
@@ -30,14 +29,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: [
-        'Helvetica Neue',
-        'Segoe UI',
-        'Roboto',
-        'Verdana',
-        'Arial',
-        'sans-serif',
-      ],
+      sans: ['Helvetica Neue', 'Segoe UI', 'Roboto', 'Verdana', 'Arial', 'sans-serif'],
       mono: [
         'JetBrains Mono',
         'IBM Plex Mono',

@@ -1,38 +1,34 @@
-import js from '@eslint/js'
-import globals from 'globals'
-// TypeScript
-import tseslint from 'typescript-eslint'
-// React
-import reactPlugin from 'eslint-plugin-react'
-import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import pluginVue from 'eslint-plugin-vue'
+import vueTsEslintConfig from '@vue/eslint-config-typescript'
+import pluginVitest from '@vitest/eslint-plugin'
+import pluginCypress from 'eslint-plugin-cypress/flat'
+import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 
-export default tseslint.config(
-  { ignores: ['dist/**/*'] },
-  js.configs.recommended,
+export default [
   {
-    files: ['src/**/*.{js,jsx,ts,tsx}'],
-    languageOptions: {
-      globals: { ...globals.browser },
-    },
+    name: 'app/files-to-lint',
+    files: ['**/*.{ts,mts,tsx,vue}'],
   },
 
-  // TypeScript
-  ...tseslint.configs.recommended,
+  {
+    name: 'app/files-to-ignore',
+    ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
+  },
 
-  // React
+  ...pluginVue.configs['flat/essential'],
+  ...vueTsEslintConfig(),
+  
   {
-    ...reactPlugin.configs.flat.recommended,
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
+    ...pluginVitest.configs.recommended,
+    files: ['src/**/__tests__/*'],
   },
-  reactPlugin.configs.flat['jsx-runtime'],
+  
   {
-    files: ['src/**/*.{ts,tsx}'],
-    plugins: {
-      'react-hooks': reactHooksPlugin,
-    },
+    ...pluginCypress.configs.recommended,
+    files: [
+      'cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}',
+      'cypress/support/**/*.{js,ts,jsx,tsx}'
+    ],
   },
-)
+  skipFormatting,
+]
