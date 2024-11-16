@@ -1,44 +1,27 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { showBackgroundSetting } from '@/lib/settings/settings.js'
+</script>
 
 <template>
-  <div class="app-layout" :class="{ background: true, 'no-background': false }">
-    <div class="header">
+  <div
+    :class="[
+      'fixed inset-0',
+      'grid grid-cols-[auto,1fr] grid-rows-[auto,1fr]',
+      'overflow-hidden',
+      {
+        'bg-page-light bg-cover bg-center dark:bg-page-dark': showBackgroundSetting.value.value,
+        'bg-white dark:bg-gray-800': !showBackgroundSetting.value.value,
+      },
+    ]"
+  >
+    <div class="col-span-2">
       <slot name="header"></slot>
     </div>
-    <div class="sidebar">
+    <div class="overflow-auto">
       <slot name="sidebar"></slot>
     </div>
-    <div class="content" id="app-main-content">
+    <div class="overflow-auto" id="app-main-content">
       <slot name="content"></slot>
     </div>
   </div>
 </template>
-
-<style scoped>
-.app-layout {
-  @apply fixed inset-0;
-  @apply grid grid-cols-[auto,1fr] grid-rows-[auto,1fr];
-  @apply overflow-hidden;
-
-  &.background {
-    @apply bg-page-light bg-cover bg-center;
-    @apply dark:bg-page-dark;
-  }
-
-  &.no-background {
-    @apply bg-white dark:bg-gray-800;
-  }
-}
-
-.header {
-  @apply col-span-2;
-}
-
-.sidebar {
-  @apply overflow-auto;
-}
-
-.content {
-  @apply overflow-auto;
-}
-</style>

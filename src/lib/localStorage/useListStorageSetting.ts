@@ -30,8 +30,12 @@ export function useListStorageSetting({
   const value = readonly(refValue)
 
   watch(refValue, () => {
-    // TODO: Convert value
-    localStorage.setItem(name, refValue.value)
+    try {
+      const storageValue = JSON.stringify(refValue.value)
+      localStorage.setItem(name, storageValue)
+    } catch (error) {
+      console.error(error)
+    }
   })
 
   function setValue(newValue: string[]) {

@@ -1,31 +1,69 @@
 <script setup lang="ts">
 import AppLayout from '@/components/AppLayout.vue'
-import { themeSetting } from './lib/settings/settings.js'
+import AllLinks from './components/AllLinks.vue'
+import AppAction from './components/AppAction.vue'
+import AppHeader from './components/AppHeader.vue'
+import AppSearch from './components/AppSearch.vue'
+import AppSearchButton from './components/AppSearchButton.vue'
+import JumpLinks from './components/JumpLinks.vue'
+import { AppMode, isCurrentAppMode } from './states/appMode.js'
 
-function setLight() {
-  themeSetting.setValue('light')
+function handleScrollTopClick() {
+  const mainContentElement = document.getElementById('main-content')
+  if (mainContentElement === null) return
+
+  mainContentElement.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
-function setDark() {
-  themeSetting.setValue('dark')
-}
+function handleSearchAction() {}
 
-function setAuto() {
-  themeSetting.setValue('auto')
-}
+function handleCustomizeAction() {}
 </script>
 
 <template>
   <AppLayout>
-    <template #header>Header</template>
-    <template #sidebar>Sidebar</template>
+    <template #header>
+      <AppHeader>
+        <template #center>
+          <AppSearchButton v-if="isCurrentAppMode(AppMode.default)" />
+        </template>
+
+        <template #actions>
+          <AppAction
+            v-if="isCurrentAppMode(AppMode.default)"
+            icon="Top"
+            label="Top"
+            @action="handleScrollTopClick"
+          />
+
+          <AppAction
+            v-if="isCurrentAppMode(AppMode.search)"
+            icon="left"
+            label="Back"
+            highlight
+            @action="handleSearchAction"
+          />
+
+          <AppAction
+            v-if="isCurrentAppMode(AppMode.customize)"
+            icon="check"
+            label="Done"
+            highlight
+            @action="handleCustomizeAction"
+          />
+
+          Menu
+        </template>
+      </AppHeader>
+    </template>
+
+    <template #sidebar>
+      <JumpLinks v-if="isCurrentAppMode(AppMode.default, AppMode.customize)" />
+    </template>
+
     <template #content>
-      <div class="flex gap-x-2">
-        <div class="text-white">{{ themeSetting.value }}</div>
-        <button class="bg-gray-100 border border-gray-400 px-2 rounded" @click="setLight">light</button>
-        <button class="bg-gray-100 border border-gray-400 px-2 rounded" @click="setDark">dark</button>
-        <button class="bg-gray-100 border border-gray-400 px-2 rounded" @click="setAuto">auto</button>
-      </div>
+      <AllLinks v-if="isCurrentAppMode(AppMode.default, AppMode.customize)" />
+      <AppSearch v-else />
     </template>
   </AppLayout>
 </template>

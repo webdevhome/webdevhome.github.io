@@ -1,6 +1,6 @@
-import { computed, ref, watch } from 'vue'
-import { difference, isSubset, union, without } from 'es-toolkit'
 import { allLinks, type LinkItem } from '@/lib/links/links'
+import { difference, isSubset, union, without } from 'es-toolkit'
+import { computed, ref, watch } from 'vue'
 
 const storageKey = 'wdh:hidden-items'
 const hiddenLinkUrlsFromStorage: string[] = JSON.parse(localStorage.getItem(storageKey) ?? '')
@@ -21,6 +21,10 @@ export const hiddenLinks = computed(() => {
 
   return result
 })
+
+export function isHiddenLinkUrl(url: string): boolean {
+  return hiddenLinkUrls.value.includes(url)
+}
 
 export function toggleHiddenLink(url: string) {
   if (hiddenLinkUrls.value.includes(url)) {
