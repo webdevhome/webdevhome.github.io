@@ -3,7 +3,14 @@ import { difference, isSubset, union, without } from 'es-toolkit'
 import { computed, ref, watch } from 'vue'
 
 const storageKey = 'wdh:hidden-items'
-const hiddenLinkUrlsFromStorage: string[] = JSON.parse(localStorage.getItem(storageKey) ?? '')
+const hiddenLinkUrlsFromStorage = ((): string[] => {
+  try {
+    return JSON.parse(localStorage.getItem(storageKey) ?? '')
+  } catch {
+    return []
+  }
+})()
+
 const hiddenLinkUrls = ref(hiddenLinkUrlsFromStorage)
 
 watch(hiddenLinkUrls, (newHiddenLinks) => {

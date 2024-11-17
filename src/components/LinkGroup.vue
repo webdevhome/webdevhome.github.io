@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isHiddenLinkUrl } from '@/lib/links/hiddenLinks.js'
+import { isHiddenLinkUrl, toggleHiddenLinksGroup } from '@/lib/links/hiddenLinks.js'
 import type { LinkGroup } from '@/lib/links/links.js'
 import { showBackgroundSetting } from '@/lib/settings/settings.js'
 import { AppMode, isCurrentAppMode } from '@/states/appMode.js'
@@ -61,26 +61,36 @@ const showHiddenLinksButtonLabel = computed(() => {
           },
           'rounded',
         ]"
-        @click="handleToggleGroupClick"
+        @click="() => toggleHiddenLinksGroup(group.items.map((item) => item.url))"
       >
         <span v-if="allGroupLinksAreHidden">[_]</span>
         <span v-else>[X]</span>
       </div>
     </div>
 
-    <template v-if="isCurrentAppMode(AppMode.default) && hiddenLinks.length > 0">
-      <LinkGroupButton @click="showHiddenLinks = !showHiddenLinks">
-        {{ showHiddenLinksButtonLabel }}
-      </LinkGroupButton>
+    <div class="grid gap-y-px">
+      <LinkItem
+        v-for="link in group.items"
+        :link="link"
+        :key="link.url"
+        :searchable="link.searchUrl !== undefined"
+        :visible="!isHiddenLinkUrl(link.url)"
+      />
 
-      <div v-if="showHiddenLinks">
-        <LinkItem
-          v-for="link in hiddenLinks"
-          :key="link.url"
-          :link="link"
-          :searchable="link.searchUrl !== undefined"
-        />
-      </div>
-    </template>
+      <template v-if="isCurrentAppMode(AppMode.default) && hiddenLinks.length > 0">
+        <LinkGroupButton @click="showHiddenLinks = !showHiddenLinks">
+          {{ showHiddenLinksButtonLabel }}
+        </LinkGroupButton>
+
+        <div v-if="showHiddenLinks">
+          <LinkItem
+            v-for="link in hiddenLinks"
+            :key="link.url"
+            :link="link"
+            :searchable="link.searchUrl !== undefined"
+          />
+        </div>
+      </template>
+    </div>
   </div>
 </template>

@@ -10,6 +10,8 @@ export type LinkItem = {
   searchConcat?: string
 }
 
+export type SearchTarget = LinkItem & Required<Pick<LinkItem, 'searchUrl' | 'searchConcat'>>
+
 export type TailwindColorName =
   | 'red'
   | 'orange'

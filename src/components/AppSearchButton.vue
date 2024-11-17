@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { AppMode, currentAppMode } from '@/states/appMode.js'
+</script>
+
 <template>
   <div
     :class="[
@@ -9,8 +13,8 @@
       'text-black/60 dark:text-white/60',
       'cursor-default select-none',
     ]"
-    @click="search"
+    @click="currentAppMode = AppMode.search"
   >
-    MdiIcon:Magnify Search...
+    🔎
   </div>
 </template>

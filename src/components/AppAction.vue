@@ -48,7 +48,7 @@ withDefaults(
       }
     "
   >
-    Icon
+    {{ icon }}
 
     <div
       v-if="label !== undefined"

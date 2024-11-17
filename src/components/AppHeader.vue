@@ -1,5 +1,20 @@
 <script setup lang="ts">
+import { toggleJumpLinks, toggleJumpLinksMobile } from '@/lib/jumpLinks/jumpLinks.js'
+import { AppMode, isCurrentAppMode } from '@/states/appMode.js'
+import { config } from '@/tailwindConfig.js'
+import AppAction from './AppAction.vue'
 import AppLogo from './AppLogo.vue'
+
+function handleMenuClick() {
+  const query = `(min-width: ${config.theme.screens.md})`
+  const queryList = window.matchMedia(query)
+
+  if (queryList.matches) {
+    toggleJumpLinks()
+  } else {
+    toggleJumpLinksMobile()
+  }
+}
 </script>
 
 <template>
@@ -13,7 +28,11 @@ import AppLogo from './AppLogo.vue'
     ]"
   >
     <div class="flex items-center gap-x-2">
-      AppAction
+      <AppAction
+        icon="🍔"
+        @action="handleMenuClick"
+        :available="isCurrentAppMode(AppMode.default, AppMode.customize)"
+      />
       <AppLogo />
     </div>
 

@@ -6,7 +6,7 @@ import AppHeader from './components/AppHeader.vue'
 import AppSearch from './components/AppSearch.vue'
 import AppSearchButton from './components/AppSearchButton.vue'
 import JumpLinks from './components/JumpLinks.vue'
-import { AppMode, isCurrentAppMode } from './states/appMode.js'
+import { AppMode, currentAppMode, isCurrentAppMode } from './states/appMode.js'
 
 function handleScrollTopClick() {
   const mainContentElement = document.getElementById('main-content')
@@ -14,10 +14,6 @@ function handleScrollTopClick() {
 
   mainContentElement.scrollTo({ top: 0, behavior: 'smooth' })
 }
-
-function handleSearchAction() {}
-
-function handleCustomizeAction() {}
 </script>
 
 <template>
@@ -41,7 +37,7 @@ function handleCustomizeAction() {}
             icon="left"
             label="Back"
             highlight
-            @action="handleSearchAction"
+            @action="currentAppMode = AppMode.default"
           />
 
           <AppAction
@@ -49,7 +45,7 @@ function handleCustomizeAction() {}
             icon="check"
             label="Done"
             highlight
-            @action="handleCustomizeAction"
+            @action="currentAppMode = AppMode.default"
           />
 
           Menu
