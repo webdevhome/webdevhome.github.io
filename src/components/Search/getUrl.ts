@@ -12,8 +12,8 @@ export function getUrl(
     searchTerm !== ''
   ) {
     const concatChar = searchTarget.searchConcat ?? '+'
-    const encodedSearchTerm = searchTerm.replace(/ /g, concatChar)
-    return searchTarget.searchUrl.replace(/\{search\}/, encodedSearchTerm)
+    const encodedSearchTerm = searchTerm.replaceAll(' ', concatChar)
+    return searchTarget.searchUrl.replaceAll('{search}', encodedSearchTerm)
   }
 
   return focusedItem !== null ? focusedItem.url : null

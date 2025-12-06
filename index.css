@@ -3,21 +3,41 @@
 @tailwind utilities;
 
 @layer base {
-    svg {
-        @apply fill-current align-middle;
+  @font-face {
+    font-family: InterVariable;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/assets/fonts/InterVariable.woff2') format('woff2');
+  }
+
+  :root {
+    color-scheme: light dark;
+
+    &.light {
+      color-scheme: light;
     }
+
+    &.dark {
+      color-scheme: dark;
+    }
+  }
+
+  svg {
+    @apply fill-current align-middle;
+  }
 }
 
 @layer components {
-    .px-page {
-        @apply px-2 sm:px-4 lg:px-6;
-    }
+  .px-page {
+    @apply px-2 sm:px-4 lg:px-6;
+  }
 
-    .py-page {
-        @apply py-2 sm:py-4 lg:py-6;
-    }
+  .py-page {
+    @apply py-2 sm:py-4 lg:py-6;
+  }
 
-    .p-page {
-        @apply p-2 sm:p-4 lg:p-6;
-    }
+  .p-page {
+    @apply p-2 sm:p-4 lg:p-6;
+  }
 }

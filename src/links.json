@@ -91,9 +91,7 @@
         {
           "title": "Heroku",
           "url": "https://heroku.com",
-          "icon": "heroku",
-          "color": "#430098",
-          "searchUrl": "https://heroku.com/search?q={search}",
+          "searchUrl": "https://heroku.com/search?s={search}",
           "searchConcat": "+"
         },
         {
@@ -116,16 +114,14 @@
         {
           "title": "Microsoft Azure",
           "url": "https://azure.microsoft.com",
-          "searchUrl": "https://azure.microsoft.com/de-de/search/?q={search}",
+          "searchUrl": "https://azure.microsoft.com/search/?q={search}",
           "searchConcat": "+"
         },
         {
           "title": "Amazon Web Services",
           "url": "https://aws.amazon.com",
-          "icon": "amazonwebservices",
-          "color": "#232F3E",
           "searchUrl": "https://aws.amazon.com/de/search/?searchQuery={search}",
-          "searchConcat": "+"
+          "searchConcat": "%20"
         },
         {
           "title": "Google Cloud",
@@ -201,6 +197,13 @@
           "color": "#F69220"
         },
         {
+          "title": "unpkg",
+          "url": "https://unpkg.com",
+          "description": "A content delivery network for everything on npm.",
+          "icon": "unpkg",
+          "color": "#000000"
+        },
+        {
           "title": "Composer",
           "url": "https://getcomposer.org",
           "description": "PHP package manager.",
@@ -258,8 +261,8 @@
           "description": "Docker image directory.",
           "icon": "docker",
           "color": "#2496ED",
-          "searchUrl": "https://hub.docker.com/search?q={search}&type=image",
-          "searchConcat": "%20"
+          "searchUrl": "https://hub.docker.com/search?q={search}",
+          "searchConcat": "+"
         }
       ]
     },
@@ -275,11 +278,6 @@
           "color": "#5395FD"
         },
         {
-          "title": "1loc",
-          "url": "https://1loc.dev",
-          "description": "Collection of one liner functions and code."
-        },
-        {
           "title": "BundlePhobia",
           "url": "https://bundlephobia.com",
           "description": "Check bundle size of npm packages.",
@@ -290,11 +288,6 @@
           "title": "bundlejs",
           "url": "https://bundlejs.com",
           "description": "A npm package size checker."
-        },
-        {
-          "title": "up-to.date/?",
-          "url": "https://up-to.date",
-          "description": "Check which version of a package or software is the latest."
         },
         {
           "title": "gitignore.io",
@@ -421,9 +414,7 @@
         },
         {
           "title": "Slack",
-          "url": "https://slack.com",
-          "icon": "slack",
-          "color": "#4A154B"
+          "url": "https://slack.com"
         }
       ]
     },
@@ -450,15 +441,15 @@
           "url": "https://www.gitbook.com",
           "description": "",
           "icon": "gitbook",
-          "color": "#3884FF"
+          "color": "#BBDDE5"
         },
         {
-          "title": "MDN",
+          "title": "MDN Web Docs",
           "url": "https://developer.mozilla.org",
           "description": "Web technology documentation (HTML, CSS, JS, Browser APIs, etc.) by Mozilla.",
           "icon": "mdnwebdocs",
           "color": "#000000",
-          "searchUrl": "https://developer.mozilla.org/de/search?q={search}",
+          "searchUrl": "https://developer.mozilla.org/search?q={search}",
           "searchConcat": "+"
         },
         {
@@ -466,8 +457,8 @@
           "url": "https://docs.github.com",
           "icon": "github",
           "color": "#181717",
-          "searchUrl": "https://docs.github.com/en?github-docs-dotcom-en%5Bquery%5D={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://docs.github.com/search?search-overlay-input={search}&query={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Microsoft Docs",
@@ -485,9 +476,7 @@
         },
         {
           "title": "Oracle Help Center",
-          "url": "https://docs.oracle.com/en",
-          "icon": "oracle",
-          "color": "#F80000"
+          "url": "https://docs.oracle.com/en"
         },
         {
           "title": "Cheatography",
@@ -538,8 +527,6 @@
         {
           "title": "CodePen",
           "url": "https://codepen.io",
-          "icon": "codepen",
-          "color": "#000000",
           "searchUrl": "https://codepen.io/search/pens?q={search}",
           "searchConcat": "+"
         },
@@ -570,8 +557,8 @@
           "color": "#0175C2"
         },
         {
-          "title": "SassMeister",
-          "url": "https://www.sassmeister.com",
+          "title": "Sass Playground",
+          "url": "https://sass-lang.com/playground",
           "icon": "sass",
           "color": "#CC6699"
         },
@@ -626,7 +613,7 @@
           "url": "https://material.io/design",
           "description": "Official documentation for Google's Material Design.",
           "icon": "materialdesign",
-          "color": "#757575",
+          "color": "#6750A4",
           "searchUrl": "https://material.io/search.html?q={search}",
           "searchConcat": "%20"
         },
@@ -637,22 +624,27 @@
           "color": "#000000"
         },
         {
+          "title": "linaria",
+          "url": "https://linaria.dev/",
+          "description": "A zero-runtime CSS-in-JS library."
+        },
+        {
+          "title": "Panda CSS",
+          "url": "https://panda-css.com/",
+          "description": "A zero-runtime CSS-in-JS library."
+        },
+        {
           "title": "vanilla-extract",
           "url": "https://vanilla-extract.style",
-          "description": "A zero-runtime CSS-in-JS library."
+          "description": "A zero-runtime CSS-in-JS library.",
+          "icon": "vanillaextract",
+          "color": "#F786AD"
         },
         {
           "title": "Styled Components",
           "url": "https://styled-components.com",
           "icon": "styledcomponents",
           "color": "#DB7093"
-        },
-        {
-          "title": "JSS",
-          "url": "https://cssinjs.org",
-          "description": "CSS-in-JS library.",
-          "icon": "jss",
-          "color": "#F7DF1E"
         }
       ]
     },
@@ -697,7 +689,7 @@
           "title": "Nuxt.js",
           "url": "https://nuxt.com",
           "description": "A framework based on Vue.",
-          "icon": "nuxtdotjs",
+          "icon": "nuxt",
           "color": "#00DC82"
         },
         {
@@ -866,10 +858,6 @@
           "color": "#CA4245"
         },
         {
-          "title": "Reach Router",
-          "url": "https://reach.tech/router"
-        },
-        {
           "title": "Redux",
           "url": "https://redux.js.org",
           "description": "Application state management library.",
@@ -880,13 +868,6 @@
           "title": "Jotai",
           "url": "https://jotai.org",
           "description": "Atomic state management library for React similar to Recoil."
-        },
-        {
-          "title": "Recoil",
-          "url": "https://recoiljs.org",
-          "description": "An experimental new state management library for React by Facebook Open Source. (Seems to be deprecated now with Jotai as its alternative!)",
-          "icon": "recoil",
-          "color": "#3578E5"
         },
         {
           "title": "MobX",
@@ -908,6 +889,13 @@
           "description": "GraphQL client.",
           "icon": "apollographql",
           "color": "#311C87"
+        },
+        {
+          "title": "TanStack",
+          "url": "https://tanstack.com",
+          "description": "List of open source libraries, including TanStack Query.",
+          "icon": "tanstack",
+          "color": "#000000"
         },
         {
           "title": "TanStack Query",
@@ -937,7 +925,7 @@
           "url": "https://zod.dev",
           "description": "TypeScript-first schema validation with static type inference",
           "icon": "zod",
-          "color": "#3E67B1"
+          "color": "#408AFF"
         },
         {
           "title": "RxJS",
@@ -950,7 +938,7 @@
           "title": "D3",
           "url": "https://d3js.org",
           "description": "A library for data-driven visualizations.",
-          "icon": "d3dotjs",
+          "icon": "d3",
           "color": "#F9A03C"
         },
         {
@@ -1013,13 +1001,6 @@
           "color": "#646CFF"
         },
         {
-          "title": "Create React App",
-          "url": "https://create-react-app.dev",
-          "description": "A starter template for React apps.",
-          "icon": "createreactapp",
-          "color": "#09D3AC"
-        },
-        {
           "title": "void(0)",
           "url": "https://voidzero.dev",
           "description": "A universal build chain from the creators of Vite."
@@ -1036,7 +1017,7 @@
           "url": "https://swc.rs",
           "description": "Rust-based platform for the web.",
           "icon": "swc",
-          "color": "#000000"
+          "color": "#F8C457"
         },
         {
           "title": "esbuild",
@@ -1162,7 +1143,7 @@
           "title": "Have I been pwned",
           "url": "https://haveibeenpwned.com",
           "icon": "haveibeenpwned",
-          "color": "#2A6379"
+          "color": "#030304"
         }
       ]
     },
@@ -1194,12 +1175,101 @@
         {
           "title": "Semver",
           "url": "https://semver.org",
-          "description": "A detailed description of the versioning schema \"MAJOR.MINOR.PATCH\"."
+          "description": "A detailed description of the versioning schema \"MAJOR.MINOR.PATCH\".",
+          "icon": "semver",
+          "color": "#3F4551"
         },
         {
           "title": "Gitmoji",
           "url": "https://gitmoji.carloscuesta.me",
           "description": "An emoji guide for your commit messages."
+        }
+      ]
+    },
+    {
+      "name": "Markup, Data & Typesetting",
+      "color": "amber",
+      "items": [
+        {
+          "title": "Markdown",
+          "url": "https://daringfireball.net/projects/markdown/",
+          "icon": "markdown",
+          "color": "#000000"
+        },
+        {
+          "title": "CommonMark",
+          "url": "https://commonmark.org",
+          "icon": "markdown",
+          "color": "#000000"
+        },
+        {
+          "title": "GitHub Flavored Markdown",
+          "url": "https://github.github.com/gfm/"
+        },
+        {
+          "title": "AsciiDoc",
+          "url": "https://asciidoc.org/",
+          "icon": "asciidoctor",
+          "color": "#E40046"
+        },
+        {
+          "title": "Mermaid",
+          "url": "https://mermaid.js.org",
+          "description": "A language that turns text to diagrams.",
+          "icon": "mermaid",
+          "color": "#FF3670"
+        },
+        {
+          "title": "D2",
+          "url": "https://d2lang.com",
+          "description": "A language that turns text to diagrams."
+        },
+        {
+          "title": "JSON",
+          "url": "https://www.json.org",
+          "icon": "json",
+          "color": "#000000"
+        },
+        {
+          "title": "TOML",
+          "url": "https://toml.io",
+          "icon": "toml",
+          "color": "#9C4121"
+        },
+        {
+          "title": "YAML",
+          "url": "https://yaml.org",
+          "icon": "yaml",
+          "color": "#CB171E"
+        },
+        {
+          "title": "DocBook",
+          "url": "https://www.oasis-open.org/docbook/",
+          "description": "XML document for books, articles, and documentation."
+        },
+        {
+          "title": "DITA",
+          "url": "https://dita-lang.org",
+          "description": "XML-Format"
+        },
+        {
+          "title": "LaTeX",
+          "url": "https://www.latex-project.org",
+          "description": "The traditional typesetting language.",
+          "icon": "latex",
+          "color": "#008080"
+        },
+        {
+          "title": "Typst",
+          "url": "https://typst.app",
+          "description": "A modern, scriptable typesetting language.",
+          "icon": "typst",
+          "color": "#239DAD"
+        },
+        {
+          "title": "Pandoc",
+          "url": "https://pandoc.org",
+          "description": "A universal document converter."
         }
       ]
     },
@@ -1269,12 +1339,6 @@
           "color": "#E6484F"
         },
         {
-          "title": "Elm",
-          "url": "https://elm-lang.org",
-          "icon": "elm",
-          "color": "#1293D8"
-        },
-        {
           "title": "Babel",
           "url": "https://babeljs.io",
           "icon": "babel",
@@ -1283,7 +1347,7 @@
       ]
     },
     {
-      "name": "Server Languages",
+      "name": "Other Languages",
       "color": "amber",
       "items": [
         {
@@ -1297,7 +1361,7 @@
           "url": "https://github.com/nvm-sh/nvm",
           "description": "Node.js version manager for macOS and Linux.",
           "icon": "nvm",
-          "color": "#F4DD4B"
+          "color": "#333333"
         },
         {
           "title": "NVM for Windows",
@@ -1314,7 +1378,7 @@
           "title": "Bun",
           "url": "https://bun.sh",
           "icon": "bun",
-          "color": "#000000"
+          "color": "#9D907C"
         },
         {
           "title": "Python",
@@ -1363,6 +1427,12 @@
           "color": "#000000"
         },
         {
+          "title": "Zig",
+          "url": "https://ziglang.org",
+          "icon": "zig",
+          "color": "#F7A41D"
+        },
+        {
           "title": "Golang",
           "url": "https://golang.org",
           "icon": "go",
@@ -1402,7 +1472,7 @@
       ]
     },
     {
-      "name": "Server Frameworks & CMS",
+      "name": "Server Frameworks",
       "color": "amber",
       "items": [
         {
@@ -1430,6 +1500,57 @@
           "searchUrl": "https://www.yiiframework.com/search?q={search}",
           "searchConcat": "+"
         },
+        {
+          "title": "Fiber",
+          "url": "https://gofiber.io",
+          "description": "Go web framework."
+        },
+        {
+          "title": "Express",
+          "url": "https://expressjs.com",
+          "description": "Node.js web framework.",
+          "icon": "express",
+          "color": "#000000"
+        },
+        {
+          "title": "Fastify",
+          "url": "https://fastify.dev",
+          "description": "Node.js web framework.",
+          "icon": "fastify",
+          "color": "#000000"
+        },
+        {
+          "title": "NestJS",
+          "url": "https://nestjs.com",
+          "description": "Node.js web framework.",
+          "icon": "nestjs",
+          "color": "#E0234E"
+        },
+        {
+          "title": "Ruby on Rails",
+          "url": "https://rubyonrails.org",
+          "description": "Ruby web framework.",
+          "icon": "rubyonrails",
+          "color": "#D30001"
+        },
+        {
+          "title": "ASP.NET",
+          "url": "https://dotnet.microsoft.com/apps/aspnet",
+          "description": ".NET web framework."
+        },
+        {
+          "title": "Spring",
+          "url": "https://spring.io",
+          "description": "Java web framework.",
+          "icon": "spring",
+          "color": "#6DB33F"
+        }
+      ]
+    },
+    {
+      "name": "Content Management",
+      "color": "amber",
+      "items": [
         {
           "title": "WordPress",
           "url": "https://wordpress.org",
@@ -1477,56 +1598,11 @@
           "color": "#000000"
         },
         {
-          "title": "Fiber",
-          "url": "https://gofiber.io",
-          "description": "Go web framework."
-        },
-        {
-          "title": "Express",
-          "url": "https://expressjs.com",
-          "description": "Node.js web framework.",
-          "icon": "express",
-          "color": "#000000"
-        },
-        {
-          "title": "Fastify",
-          "url": "https://fastify.dev",
-          "description": "Node.js web framework.",
-          "icon": "fastify",
-          "color": "#000000"
-        },
-        {
-          "title": "NestJS",
-          "url": "https://nestjs.com",
-          "description": "Node.js web framework.",
-          "icon": "nestjs",
-          "color": "#E0234E"
-        },
-        {
           "title": "Directus",
           "url": "https://directus.io",
           "description": "Free* headless CMS for Node.js.",
           "icon": "directus",
           "color": "#263238"
-        },
-        {
-          "title": "Ruby on Rails",
-          "url": "https://rubyonrails.org",
-          "description": "Ruby web framework.",
-          "icon": "rubyonrails",
-          "color": "#D30001"
-        },
-        {
-          "title": "ASP.NET",
-          "url": "https://dotnet.microsoft.com/apps/aspnet",
-          "description": ".NET web framework."
-        },
-        {
-          "title": "Spring",
-          "url": "https://spring.io",
-          "description": "Java web framework.",
-          "icon": "spring",
-          "color": "#6DB33F"
         }
       ]
     },
@@ -1540,8 +1616,8 @@
           "description": "A relational database.",
           "icon": "mysql",
           "color": "#4479A1",
-          "searchUrl": "https://www.oracle.com/search/results?Ntt={search}&Dy=1&Nty=1&cat=mysql&Ntk=SI-ALL5",
-          "searchConcat": "%20"
+          "searchUrl": "https://search.oracle.com/mysql?q={search}&size=10&page=1&tab=all&app=mysql",
+          "searchConcat": "+"
         },
         {
           "title": "MariaDB",
@@ -1569,9 +1645,7 @@
         {
           "title": "Oracle Database",
           "url": "https://www.oracle.com/de/database/technologies",
-          "description": "A relational database.",
-          "icon": "oracle",
-          "color": "#F80000"
+          "description": "A relational database."
         },
         {
           "title": "SQLite",
@@ -1599,6 +1673,12 @@
           "color": "#E42528",
           "searchUrl": "https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default",
           "searchConcat": "+"
+        },
+        {
+          "title": "SurrealDB",
+          "url": "https://surrealdb.com",
+          "icon": "surrealdb",
+          "color": "#FF00A0"
         },
         {
           "title": "Redis",
@@ -1797,6 +1877,13 @@
           "description": "Table illustrating browser support of ECMAScript features."
         },
         {
+          "title": "CSS Database",
+          "url": "https://cssdb.org",
+          "description": "CSS database is a list of CSS features and their positions in the process of becoming implemented web standards.",
+          "icon": "css",
+          "color": "#663399"
+        },
+        {
           "title": "Mozilla Specification Positions",
           "url": "https://mozilla.github.io/standards-positions",
           "description": "A list of Mozilla's position on open web and web-related specifications.",
@@ -1856,29 +1943,77 @@
           "url": "https://www.microsoft.com/de-de/edge/download"
         },
         {
-          "title": "Git",
-          "url": "https://git-scm.com",
-          "icon": "git",
-          "color": "#f05032",
-          "searchUrl": "https://git-scm.com/search/results?search={search}",
+          "title": "Adobe",
+          "url": "https://www.adobe.com",
+          "searchUrl": "https://www.adobe.com/search.html#q={search}&sort=relevancy",
           "searchConcat": "%20"
         },
         {
-          "title": "GitKraken",
-          "url": "https://gitkraken.com",
-          "description": "A git client.",
-          "icon": "gitkraken",
-          "color": "#179287"
+          "title": "Affinity",
+          "url": "https://affinity.serif.com"
         },
         {
-          "title": "Fork",
-          "url": "https://git-fork.com",
-          "description": "A git client."
+          "title": "Canva",
+          "url": "https://www.canva.com"
         },
         {
-          "title": "ddev",
-          "url": "https://ddev.com"
+          "title": "Figma",
+          "url": "https://figma.com",
+          "icon": "figma",
+          "color": "#f24e1e"
+        }
+      ]
+    },
+    {
+      "name": "Code Editors & IDEs",
+      "color": "rose",
+      "items": [
+        {
+          "title": "Visual Studio",
+          "url": "https://visualstudio.microsoft.com",
+          "searchUrl": "https://visualstudio.microsoft.com/search/?query={search}",
+          "searchConcat": "+"
         },
+        {
+          "title": "Visual Studio Code",
+          "url": "https://code.visualstudio.com",
+          "searchUrl": "https://code.visualstudio.com/Search?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "VSCodium",
+          "url": "https://vscodium.com",
+          "description": "Free/Libre Open Source Software Binaries of VS Code.",
+          "icon": "vscodium",
+          "color": "#2F80ED"
+        },
+        {
+          "title": "JetBrains",
+          "url": "https://www.jetbrains.com",
+          "description": "Developer of IDEs like IntelliJ, PHPStorm, WebStorm, etc.",
+          "icon": "jetbrains",
+          "color": "#000000",
+          "searchUrl": "https://www.jetbrains.com/search/?q={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "Zed",
+          "url": "https://zed.dev",
+          "icon": "zedindustries",
+          "color": "#084CCF"
+        },
+        {
+          "title": "Cursor",
+          "url": "https://cursor.com",
+          "icon": "cursor",
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "name": "Development Tools",
+      "color": "rose",
+      "items": [
         {
           "title": "Docker",
           "url": "https://www.docker.com",
@@ -1894,39 +2029,22 @@
           "color": "#326CE5"
         },
         {
-          "title": "Vagrant",
-          "url": "https://www.vagrantup.com",
-          "icon": "vagrant",
-          "color": "#1868F2"
+          "title": "ddev",
+          "url": "https://ddev.com"
         },
         {
           "title": "VirtualBox",
           "url": "https://www.virtualbox.org",
           "icon": "virtualbox",
-          "color": "#183A61",
+          "color": "#2F61B4",
           "searchUrl": "https://www.virtualbox.org/search?q={search}&wiki=on&changeset=on&ticket=on",
           "searchConcat": "+"
         },
         {
-          "title": "Visual Studio Code",
-          "url": "https://code.visualstudio.com",
-          "searchUrl": "https://code.visualstudio.com/Search?q={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "Visual Studio",
-          "url": "https://visualstudio.microsoft.com",
-          "searchUrl": "https://visualstudio.microsoft.com/search/?query={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "JetBrains",
-          "url": "https://www.jetbrains.com",
-          "description": "Developer of IDEs like IntelliJ, PHPStorm, WebStorm, etc.",
-          "icon": "jetbrains",
-          "color": "#000000",
-          "searchUrl": "https://www.jetbrains.com/search/?q={search}",
-          "searchConcat": "%20"
+          "title": "Vagrant",
+          "url": "https://www.vagrantup.com",
+          "icon": "vagrant",
+          "color": "#1868F2"
         },
         {
           "title": "Postman",
@@ -1950,30 +2068,52 @@
           "color": "#F4AA41"
         },
         {
-          "title": "Adobe",
-          "url": "https://www.adobe.com",
-          "icon": "adobe",
-          "color": "#ff0000",
-          "searchUrl": "https://www.adobe.com/search.html#q={search}&sort=relevancy",
+          "title": "Git",
+          "url": "https://git-scm.com",
+          "icon": "git",
+          "color": "#f05032",
+          "searchUrl": "https://git-scm.com/search/results?search={search}",
           "searchConcat": "%20"
         },
         {
-          "title": "Affinity",
-          "url": "https://affinity.serif.com",
-          "icon": "affinity",
-          "color": "#222324"
+          "title": "GitKraken",
+          "url": "https://gitkraken.com",
+          "description": "A git client.",
+          "icon": "gitkraken",
+          "color": "#179287"
         },
         {
-          "title": "Canva",
-          "url": "https://www.canva.com",
-          "icon": "canva",
-          "color": "#00C4CC"
+          "title": "Fork",
+          "url": "https://git-fork.com",
+          "description": "A git client."
+        }
+      ]
+    },
+    {
+      "name": "Shells",
+      "color": "rose",
+      "items": [
+        {
+          "title": "Zsh",
+          "url": "https://www.zsh.org",
+          "icon": "zsh",
+          "color": "#F15A24"
         },
         {
-          "title": "Figma",
-          "url": "https://figma.com",
-          "icon": "figma",
-          "color": "#f24e1e"
+          "title": "Fish shell",
+          "url": "https://fishshell.com",
+          "icon": "fishshell",
+          "color": "#34C534"
+        },
+        {
+          "title": "Nushell",
+          "url": "https://www.nushell.sh",
+          "icon": "nushell",
+          "color": "#4E9A06"
+        },
+        {
+          "title": "PowerShell",
+          "url": "https://learn.microsoft.com/de-de/powershell/"
         }
       ]
     },
@@ -2001,7 +2141,7 @@
           "title": "Spotify",
           "url": "https://open.spotify.com",
           "icon": "spotify",
-          "color": "#1DB954",
+          "color": "#1ED760",
           "searchUrl": "https://open.spotify.com/search/{search}",
           "searchConcat": "%20"
         },
@@ -2036,8 +2176,6 @@
         {
           "title": "TuneIn",
           "url": "https://tunein.com",
-          "icon": "tunein",
-          "color": "#14D8CC",
           "searchUrl": "https://tunein.com/search/?query={search}",
           "searchConcat": "%20"
         },
@@ -2054,6 +2192,12 @@
       "color": "stone",
       "items": [
         {
+          "title": "Stack Overflow Annual Developer Survey",
+          "url": "https://survey.stackoverflow.co",
+          "icon": "stackoverflow",
+          "color": "#F58025"
+        },
+        {
           "title": "State of HTML",
           "url": "https://stateofhtml.com",
           "icon": "html5",
@@ -2062,14 +2206,14 @@
         {
           "title": "State of CSS",
           "url": "https://stateofcss.com",
-          "icon": "css3",
-          "color": "#1572b6"
+          "icon": "css",
+          "color": "#663399"
         },
         {
           "title": "State of JavaScript",
           "url": "https://stateofjs.com",
           "icon": "javascript",
-          "color": "#f7df1e"
+          "color": "#F7DF1E"
         },
         {
           "title": "State of GraphQL",
@@ -2101,26 +2245,16 @@
           "url": "https://webweekly.email"
         },
         {
-          "title": "JAMstacked",
-          "url": "https://jamstack.email",
-          "icon": "jamstack",
-          "color": "#F0047F"
-        },
-        {
           "title": "CSS Weekly",
           "url": "https://css-weekly.com",
-          "icon": "css3",
-          "color": "#1572b6"
+          "icon": "css",
+          "color": "#663399"
         },
         {
           "title": "JavaScript Weekly",
           "url": "https://javascriptweekly.com",
           "icon": "javascript",
           "color": "#f7df1e"
-        },
-        {
-          "title": "ECMAScript News",
-          "url": "https://ecmascript.news"
         },
         {
           "title": "Node Weekly",
@@ -2135,16 +2269,16 @@
           "color": "#61dafb"
         },
         {
-          "title": "React Newsletter",
-          "url": "https://reactnewsletter.com",
-          "icon": "react",
-          "color": "#61dafb"
-        },
-        {
           "title": "Golang Weekly",
           "url": "https://golangweekly.com",
           "icon": "go",
           "color": "#00ADD8"
+        },
+        {
+          "title": "SwiftUI Weekly",
+          "url": "https://weekly.swiftwithmajid.com",
+          "icon": "swift",
+          "color": "#F05138"
         },
         {
           "title": "Pycoder's Weekly",
@@ -2166,7 +2300,9 @@
         },
         {
           "title": "daily.dev",
-          "url": "https://daily.dev"
+          "url": "https://daily.dev",
+          "icon": "dailydotdev",
+          "color": "#CE3DF3"
         },
         {
           "title": "Codrops Collective",

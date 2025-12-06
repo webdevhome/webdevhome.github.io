@@ -100,7 +100,7 @@ export const Link: FC<Props> = ({
         'focus:outline focus:outline-2 focus:-outline-offset-1',
         'focus:relative focus:z-10',
         'focus:outline-gray-400',
-        'rounded-md',
+        'rounded-lg',
         { 'cursor-default': isCustomizeMode },
         'overflow-hidden',
       )}
@@ -110,19 +110,17 @@ export const Link: FC<Props> = ({
         className={classNames(
           'grid items-center justify-center',
           'p-1',
-          'bg-white',
-          'dark:shadow-none rounded',
-          {
-            'shadow-sm': toggleBackground.showBackground,
-          },
+          'bg-[linear-gradient(to_bottom_right,hsl(from_currentcolor_h_s_98%),hsl(from_currentcolor_h_s_94%))]',
+          'dark:bg-[linear-gradient(to_bottom_right,hsl(from_currentcolor_h_calc(s*0.25)_90%),hsl(from_currentcolor_h_calc(s*0.25)_70%))]',
+          'shadow-[0_1px_2px_rgb(from_black_r_g_b/25%),1px_1px_1px_rgb(from_white_r_g_b/50%)_inset]',
+          'rounded-md',
         )}
-        style={{ color: link.color }}
+        style={{
+          color: `light-dark(${link.color}, hsl(from ${link.color} h calc(s * 0.9) calc(l * 0.5 + 10)))`,
+        }}
       >
         {link.icon !== undefined ? (
-          <ReactSVG
-            src={getIconUrl(link.icon)}
-            className={classNames('h-[27px] w-[27px]')}
-          />
+          <ReactSVG src={getIconUrl(link.icon)} className="h-[27px] w-[27px]" />
         ) : (
           <DefaultIcon />
         )}

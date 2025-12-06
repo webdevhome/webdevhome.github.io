@@ -8,7 +8,7 @@ export const DefaultIcon: FC = () => {
     <div
       className={classNames(
         'grid items-center justify-center',
-        'text-gray-300',
+        'text-gray-300 dark:text-gray-400',
         'h-[27px] w-[27px]',
       )}
     >

@@ -77,9 +77,9 @@ export const LinkGroup: FC<Props> = ({ group }) => {
             'flex-auto',
             'px-4 py-2',
             `bg-${group.color ?? 'gray'}-100 dark:bg-${group.color ?? 'gray'}-600`,
-            'text-center font-semibold uppercase tracking-wider leading-tight',
+            'text-center font-semibold uppercase leading-tight tracking-wider',
             `text-${group.color ?? 'gray'}-800 dark:text-${group.color ?? 'gray'}-50`,
-            'rounded-md',
+            'rounded-lg',
             {
               [`outline outline-1 -outline-offset-1 outline-${group.color}-300 dark:outline-none`]:
                 toggleBackground.showBackground,
@@ -94,8 +94,8 @@ export const LinkGroup: FC<Props> = ({ group }) => {
             className={classNames(
               'grid items-center justify-center',
               'px-2',
-              'hover:bg-gray-200 active:bg-gray-300',
-              'dark:hover:bg-gray-600 dark:active:bg-gray-500',
+              'hover:bg-black/10 active:bg-black/15',
+              'dark:hover:bg-white/10 dark:active:bg-white/15',
               {
                 'text-brand-700 dark:text-brand-300': !allGroupLinksAreHidden,
                 'text-gray-400 hover:text-gray-500 active:text-gray-600':

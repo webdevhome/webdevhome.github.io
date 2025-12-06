@@ -31,6 +31,7 @@ export default {
   theme: {
     fontFamily: {
       sans: [
+        'Inter',
         'Helvetica Neue',
         'Segoe UI',
         'Roboto',
