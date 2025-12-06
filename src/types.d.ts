@@ -1,5 +1,3 @@
-/* eslint-disable no-var */
-
 import { StoreEnhancer } from 'redux'
 
 export {}

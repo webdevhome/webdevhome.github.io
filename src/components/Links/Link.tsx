@@ -18,7 +18,6 @@ import { Kbd } from '../basics/Kbd'
 import { DefaultIcon } from '../Icon/DefaultIcon'
 import { MdiIcon } from '../Icon/MdiIcon'
 import { LinkAction } from './LinkAction'
-import { useToggleBackground } from '../App/useToggleBackground'
 
 interface Props {
   link: LinkItem
@@ -35,7 +34,6 @@ export const Link: FC<Props> = ({
 }) => {
   const dispatch = useAppDispatch()
   const isCurrentAppMode = useIsCurrentAppMode()
-  const toggleBackground = useToggleBackground()
 
   const showDescription = useAppSelector(
     (state) => state.appSettings.showDescriptions,
