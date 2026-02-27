@@ -1,10 +1,10 @@
 import classNames from 'classnames'
-import { FC, PropsWithChildren, ReactElement, ReactNode } from 'react'
+import { FC, PropsWithChildren, ReactElement } from 'react'
 import { useToggleBackground } from './useToggleBackground'
 
 type Props = {
   header: ReactElement
-  sidebar: ReactNode
+  sidebar: ReactElement
 }
 
 export const AppLayout: FC<PropsWithChildren<Props>> = ({

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 
-interface Props {
+type Props = {
   text: string
 }
 

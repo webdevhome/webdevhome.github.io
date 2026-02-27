@@ -1,28 +1,27 @@
 import { MenuSection } from '@headlessui/react'
-import { mdiListBoxOutline, mdiSourceBranch } from '@mdi/js'
+import { FolderGitIcon, LogsIcon } from 'lucide-react'
 import { FC } from 'react'
 import packageJson from '../../../package.json'
 import { useAllLinks } from '../../links'
 import { useHiddenLinksCount } from '../../stores/hiddenLinks/hiddenLinksHooks'
+import { AppMenuFooter } from '../Header/AppMenuFooter'
 import { AppMenuHeader } from '../Header/AppMenuHeader'
 import { AppMenuItem } from '../Header/AppMenuItem'
-import { AppMenuFooter } from '../Header/AppMenuFooter'
-import { MdiIcon } from '../Icon/MdiIcon'
 
 export const AppInfo: FC = () => {
   const allLinks = useAllLinks()
   const hiddenLinksCount = useHiddenLinksCount()
 
   return (
-    <MenuSection className="flex flex-col gap-y-px">
+    <MenuSection className="flex flex-col gap-y-1">
       <AppMenuHeader title="Links" />
       <AppMenuItem
-        icon={<MdiIcon path={mdiListBoxOutline} />}
+        icon={<LogsIcon />}
         label="Changelog"
         action="https://github.com/webdevhome/webdevhome.github.io/releases"
       />
       <AppMenuItem
-        icon={<MdiIcon path={mdiSourceBranch} />}
+        icon={<FolderGitIcon />}
         label="Source"
         action="https://github.com/webdevhome/webdevhome.github.io"
       />

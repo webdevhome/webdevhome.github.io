@@ -1,11 +1,10 @@
 import classNames from 'classnames'
+import { XIcon } from 'lucide-react'
 import { FC } from 'react'
 import { links } from '../../links'
 import { useAllLinksInGroupAreHidden } from '../../stores/hiddenLinks/hiddenLinksHooks'
 import { useToggleJumpLinks } from '../App/useToggleJumpLinks'
 import { JumpLink } from './JumpLink'
-import { MdiIcon } from '../Icon/MdiIcon'
-import { mdiClose } from '@mdi/js'
 
 export const JumpLinks: FC = () => {
   const allLinksInGroupAreHidden = useAllLinksInGroupAreHidden()
@@ -29,7 +28,7 @@ export const JumpLinks: FC = () => {
       <div
         className={classNames(
           'max-md:fixed max-md:bottom-0 max-md:top-0',
-          'max-md:bg-white dark:max-md:bg-black',
+          'max-md:bg-white dark:max-md:bg-gray-800',
           'jump-links w-[300px]',
           'max-md:transition-[left] max-md:duration-300',
           {
@@ -45,7 +44,7 @@ export const JumpLinks: FC = () => {
           className="m-4 place-self-end text-black dark:text-white md:hidden"
           onClick={handleMobileCloseClick}
         >
-          <MdiIcon path={mdiClose} />
+          <XIcon />
         </div>
 
         <div className="p-page flex flex-col gap-1 max-md:overflow-auto md:flex">

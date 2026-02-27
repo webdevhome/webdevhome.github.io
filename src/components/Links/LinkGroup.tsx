@@ -1,8 +1,5 @@
-import {
-  mdiCheckboxMultipleBlankOutline,
-  mdiCheckboxMultipleOutline,
-} from '@mdi/js'
 import classNames from 'classnames'
+import { CopyCheckIcon, CopyIcon } from 'lucide-react'
 import { FC, useCallback, useMemo, useState } from 'react'
 import { LinkGroup as ILinkGroup, LinkItem } from '../../links'
 import { useAppDispatch } from '../../stores'
@@ -14,12 +11,11 @@ import {
   useGetIsLinkHidden,
 } from '../../stores/hiddenLinks/hiddenLinksHooks'
 import { slugify } from '../../utils/slugify'
-import { MdiIcon } from '../Icon/MdiIcon'
+import { useToggleBackground } from '../App/useToggleBackground'
 import { Link } from './Link'
 import { LinkGroupButton } from './LinkGroupButton'
-import { useToggleBackground } from '../App/useToggleBackground'
 
-interface Props {
+type Props = {
   group: ILinkGroup
 }
 
@@ -107,11 +103,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
             )}
             onClick={() => handleToggleGroupClick(...group.items)}
           >
-            {allGroupLinksAreHidden ? (
-              <MdiIcon path={mdiCheckboxMultipleBlankOutline} />
-            ) : (
-              <MdiIcon path={mdiCheckboxMultipleOutline} />
-            )}
+            {allGroupLinksAreHidden ? <CopyIcon /> : <CopyCheckIcon />}
           </div>
         ) : null}
       </div>

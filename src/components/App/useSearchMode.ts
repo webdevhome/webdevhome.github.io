@@ -14,12 +14,15 @@ export function useSearchMode(): UseSearchModeResult {
   const currentAppMode = useAppSelector((state) => state.appMode.currentMode)
   const dispatch = useAppDispatch()
 
-  const handleGlobalKeypress = useCallback(
+  const handleGlobalKeydown = useCallback(
     (event: KeyboardEvent) => {
       if (isCurrentAppMode(AppMode.default)) {
         if (event.key === '\n') return
         if (event.key === ' ') return
         if (event.key.length !== 1) return
+        if (event.ctrlKey) return
+        if (event.altKey) return
+        if (event.metaKey) return
         dispatch(setAppMode(AppMode.search))
         dispatch(setSearchTerm(event.key))
       }
@@ -28,12 +31,12 @@ export function useSearchMode(): UseSearchModeResult {
   )
 
   useEffect(() => {
-    globalThis.addEventListener('keypress', handleGlobalKeypress)
+    globalThis.addEventListener('keydown', handleGlobalKeydown)
 
     return () => {
-      globalThis.removeEventListener('keypress', handleGlobalKeypress)
+      globalThis.removeEventListener('keydown', handleGlobalKeydown)
     }
-  }, [handleGlobalKeypress, isCurrentAppMode])
+  }, [handleGlobalKeydown, isCurrentAppMode])
 
   const handleSearchAction = useCallback((): void => {
     dispatch(setSearchTerm(''))

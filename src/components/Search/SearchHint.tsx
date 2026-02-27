@@ -1,7 +1,7 @@
 import { FC, Fragment, PropsWithChildren } from 'react'
 import { Kbd } from '../basics/Kbd'
 
-interface Props {
+type Props = {
   inputs?: string[]
 }
 

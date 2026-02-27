@@ -1,4 +1,4 @@
-import { LinkItem } from '../../links'
+import { LinkItem, onlyValidLinks } from '../../links'
 import { AppActions } from '../actions'
 import {
   SET_HIDDEN_LINKS,
@@ -20,7 +20,7 @@ export function hiddenLinks(
 ): HiddenLinksState {
   switch (action.type) {
     case SET_HIDDEN_LINKS: {
-      return { ...state, links: action.payload }
+      return { ...state, links: action.payload.filter(onlyValidLinks) }
     }
 
     case TOGGLE_HIDDEN_LINK: {
@@ -28,7 +28,7 @@ export function hiddenLinks(
         ? state.links.filter((link) => link !== action.payload)
         : [...state.links, action.payload]
 
-      return { ...state, links: hiddenLinks }
+      return { ...state, links: hiddenLinks.filter(onlyValidLinks) }
     }
 
     case TOGGLE_HIDDEN_LINKS_GROUP: {
@@ -37,7 +37,9 @@ export function hiddenLinks(
         // `hiddenLinks`, which makes all of them visible again.
         return {
           ...state,
-          links: state.links.filter((link) => !action.payload.includes(link)),
+          links: state.links
+            .filter((link) => !action.payload.includes(link))
+            .filter(onlyValidLinks),
         }
       }
 
@@ -47,7 +49,10 @@ export function hiddenLinks(
         (link) => !state.links.includes(link),
       )
 
-      return { ...state, links: [...state.links, ...missingLinks] }
+      return {
+        ...state,
+        links: [...state.links, ...missingLinks].filter(onlyValidLinks),
+      }
     }
 
     default: {

@@ -108,15 +108,15 @@ export function useSearch({
   const handleGlobalKeydown = useCallback(
     (event: globalThis.KeyboardEvent) => {
       if (event.key === 'Escape') {
-        if (searchTarget !== null) {
+        if (searchTarget === null) {
+          event.preventDefault()
+          dispatch(setAppMode(AppMode.default))
+        } else {
           event.preventDefault()
           dispatch(setSearchTarget(null))
           if (searchTerm === '') {
             dispatch(setAppMode(AppMode.default))
           }
-        } else {
-          event.preventDefault()
-          dispatch(setAppMode(AppMode.default))
         }
         return
       }
@@ -190,9 +190,9 @@ export function useSearch({
           if (url === null) return
 
           if (event.ctrlKey) {
-            window.open(url, '', 'alwaysRaised=on')
+            globalThis.open(url, '', 'alwaysRaised=on')
           } else {
-            window.location.href = url
+            globalThis.location.href = url
           }
 
           if (event.ctrlKey || event.shiftKey) {

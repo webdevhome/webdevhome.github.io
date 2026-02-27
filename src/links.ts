@@ -56,10 +56,29 @@ export const links: Links = {
   items: linksData.items as LinkGroup[],
 }
 
-export function useAllLinks(): LinkItem[] {
-  const allLinks = useMemo(() => {
-    return links.items.flatMap((group) => group.items)
-  }, [])
+export const allLinks: LinkItem[] = links.items.flatMap((group) => group.items)
 
-  return allLinks
+export function useAllLinks(): LinkItem[] {
+  return useMemo(() => allLinks, [])
+}
+
+/**
+ * This is a filter function for `Array.prototype.filter`. The `filter` function
+ * then returns only URLs defined in `links.json`.
+ *
+ * @example
+ * ``` ts
+ * const someLinks: string[] = []
+ * const filteredLinks: string[] = someLinks.filter(onlyValidLinks)
+ * ```
+ *
+ * @param url
+ *  The current URL passed from `Array.prototype.filter`.
+ *
+ * @returns
+ *  - `true` if `url` is a valid URL defined in `links.json`.
+ *  - `false` otherwise.
+ */
+export function onlyValidLinks(url: string): boolean {
+  return allLinks.some((l) => l.url === url)
 }

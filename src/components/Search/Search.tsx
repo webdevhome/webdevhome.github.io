@@ -27,13 +27,13 @@ export const Search: FC = () => {
 
   return (
     <div className="mx-auto flex w-[600px] max-w-full flex-col px-4 py-10">
-      {searchTarget !== null ? (
+      {searchTarget === null ? null : (
         <SearchTargetLabel
           title={searchTarget.title}
           icon={searchTarget.icon}
           color={searchTarget.color}
         />
-      ) : null}
+      )}
 
       <div className="flex max-w-full flex-col">
         <input

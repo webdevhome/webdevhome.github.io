@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { FC, MouseEvent, PropsWithChildren } from 'react'
 
-interface Props {
+type Props = {
   className?: string
   hasHover?: boolean
   onClick?: (event: MouseEvent<HTMLDivElement>) => void

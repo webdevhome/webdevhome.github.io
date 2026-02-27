@@ -19,9 +19,9 @@ export const AppMenuItem: FC<Props> = ({
 }) => {
   const wrapperClassNames = classNames(
     'flex items-center',
-    'mx-1 px-3 py-1 first:mt-1 last:mb-1',
+    'mx-1 pl-2 pr-6 py-1.5 first:mt-1 last:mb-1',
     'rounded',
-    'text-sm font-semibold',
+    'text-sm font-medium',
     'dark:text-white',
     'select-none cursor-default',
     {
@@ -32,10 +32,10 @@ export const AppMenuItem: FC<Props> = ({
       'data-[focus]:bg-gray-200 dark:data-[focus]:bg-gray-700': !selected,
       'active:bg-brand-300 active:data-[focus]:bg-brand-300 active:data-[focus]:text-brand-950':
         selected,
-      'dark:active:bg-brand-600 dark:active:data-[focus]:bg-brand-600':
+      'dark:active:bg-brand-300 dark:active:data-[focus]:bg-brand-300':
         selected,
       'active:bg-gray-300 active:data-[focus]:bg-gray-300': !selected,
-      'dark:active:bg-gray-800 dark:active:data-[focus]:bg-gray-800': !selected,
+      'dark:active:bg-gray-600 dark:active:data-[focus]:bg-gray-600': !selected,
     },
   )
 
@@ -47,17 +47,13 @@ export const AppMenuItem: FC<Props> = ({
     <MenuItem>
       {typeof action === 'function' ? (
         <div className={wrapperClassNames} onClick={action}>
-          <div className="mr-2">
-            {icon !== undefined ? icon : <div className="size-6"></div>}
-          </div>
+          <div className="mr-3">{icon ?? <div className="size-6"></div>}</div>
 
           {label}
         </div>
       ) : (
         <a className={wrapperClassNames} href={action}>
-          <div className="mr-2">
-            {icon !== undefined ? icon : <div className="size-6"></div>}
-          </div>
+          <div className="mr-3">{icon ?? <div className="size-6"></div>}</div>
 
           {label}
         </a>

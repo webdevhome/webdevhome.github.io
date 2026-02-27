@@ -1,7 +1,6 @@
-import { mdiLinkVariant } from '@mdi/js'
 import classNames from 'classnames'
+import { Link2Icon } from 'lucide-react'
 import { FC } from 'react'
-import { MdiIcon } from './MdiIcon'
 
 export const DefaultIcon: FC = () => {
   return (
@@ -12,7 +11,7 @@ export const DefaultIcon: FC = () => {
         'h-[27px] w-[27px]',
       )}
     >
-      <MdiIcon path={mdiLinkVariant} />
+      <Link2Icon />
     </div>
   )
 }

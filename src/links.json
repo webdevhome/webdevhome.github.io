@@ -429,10 +429,10 @@
         },
         {
           "title": "Read the Docs",
-          "url": "https://readthedocs.org",
+          "url": "https://about.readthedocs.com",
           "description": "Service for writing documentation for your libraries.",
           "icon": "readthedocs",
-          "color": "#8CA1AF",
+          "color": "#000000",
           "searchUrl": "https://readthedocs.org/search/?q={search}",
           "searchConcat": "+"
         },
@@ -491,12 +491,6 @@
           "description": "A list of cheatsheets by Rico Sta. Cruz."
         },
         {
-          "title": "Interactive Git Cheat Sheet",
-          "url": "https://ndpsoftware.com/git-cheatsheet.html",
-          "icon": "git",
-          "color": "#f05032"
-        },
-        {
           "title": "Emmet Cheat Sheet",
           "url": "https://docs.emmet.io/cheat-sheet",
           "description": "The official cheat sheet for Emmet - the editor shortcuts to quickly write HTML."
@@ -517,6 +511,11 @@
           "title": "Type Level TypeScript",
           "url": "https://type-level-typescript.com/",
           "description": "A course to learn TypeScript in-depth."
+        },
+        {
+          "title": "Public APIs",
+          "url": "https://github.com/public-apis/public-apis",
+          "description": "A list of public APIs"
         }
       ]
     },
@@ -610,7 +609,7 @@
         },
         {
           "title": "Material Design",
-          "url": "https://material.io/design",
+          "url": "https://m3.material.io",
           "description": "Official documentation for Google's Material Design.",
           "icon": "materialdesign",
           "color": "#6750A4",
@@ -701,7 +700,7 @@
         },
         {
           "title": "Angular",
-          "url": "https://angular.io",
+          "url": "https://angular.dev",
           "icon": "angular",
           "color": "#0F0F11"
         },
@@ -833,10 +832,6 @@
           "color": "#512BD4"
         },
         {
-          "title": "Xamarin",
-          "url": "https://visualstudio.microsoft.com/de/xamarin/"
-        },
-        {
           "title": "Flutter",
           "url": "https://flutter.dev",
           "description": "A Dart based framework to build multi-platform apps.",
@@ -935,6 +930,13 @@
           "color": "#B7178C"
         },
         {
+          "title": "PixiJS",
+          "url": "https://pixijs.com",
+          "description": "A 2D WebGL renderer.",
+          "searchUrl": "https://pixijs.com/search/?q={search}",
+          "searchConcat": "+"
+        },
+        {
           "title": "D3",
           "url": "https://d3js.org",
           "description": "A library for data-driven visualizations.",
@@ -998,7 +1000,7 @@
           "url": "https://vitejs.dev",
           "description": "A JavaScript bundler.",
           "icon": "vite",
-          "color": "#646CFF"
+          "color": "#9135FF"
         },
         {
           "title": "void(0)",
@@ -1088,7 +1090,7 @@
           "title": "Vitest",
           "url": "https://vitest.dev",
           "icon": "vitest",
-          "color": "#6E9F18"
+          "color": "#00FF74"
         },
         {
           "title": "Mocha",
@@ -1434,11 +1436,9 @@
         },
         {
           "title": "Golang",
-          "url": "https://golang.org",
+          "url": "https://go.dev",
           "icon": "go",
-          "color": "#00ADD8",
-          "searchUrl": "https://golang.org/search?q={search}",
-          "searchConcat": "+"
+          "color": "#00ADD8"
         },
         {
           "title": "PHP",
@@ -1544,6 +1544,18 @@
           "description": "Java web framework.",
           "icon": "spring",
           "color": "#6DB33F"
+        },
+        {
+          "title": "Quarkus",
+          "url": "https://quarkus.io",
+          "searchUrl": "https://quarkus.io/guides/#q={search}",
+          "searchConcat": "+",
+          "icon": "quarkus",
+          "color": "#4695EB"
+        },
+        {
+          "title": "Micronaut",
+          "url": "https://micronaut.io"
         }
       ]
     },
@@ -1582,6 +1594,13 @@
           "description": "Commercial PHP CMS.",
           "icon": "craftcms",
           "color": "#E5422B"
+        },
+        {
+          "title": "Statamic",
+          "url": "https://statamic.com",
+          "description": "Commercial PHP CMS.",
+          "icon": "statamic",
+          "color": "#FF269E"
         },
         {
           "title": "October CMS",
@@ -1697,6 +1716,22 @@
       ]
     },
     {
+      "name": "Self Hosting",
+      "color": "amber",
+      "items": [
+        {
+          "title": "selfh.st",
+          "url": "https://selfh.st",
+          "description": "A weekly newsletter about self hosting."
+        },
+        {
+          "title": "Awesome Selfhosted",
+          "url": "https://awesome-selfhosted.net",
+          "description": "List of apps and services you can host yourself."
+        }
+      ]
+    },
+    {
       "name": "Fonts, Icons & Images",
       "color": "fuchsia",
       "items": [
@@ -1755,6 +1790,13 @@
           "searchConcat": "%20"
         },
         {
+          "title": "Shields.io",
+          "url": "https://shields.io",
+          "description": "A public API to generate small static and dynamic badge images.",
+          "icon": "shieldsdotio",
+          "color": "#000000"
+        },
+        {
           "title": "Pexels",
           "url": "https://www.pexels.com",
           "description": "Stock images.",
@@ -1805,13 +1847,6 @@
           "searchConcat": "+"
         },
         {
-          "title": "Can I DevTools...",
-          "url": "https://www.canidev.tools",
-          "description": "Check which devtools support which debugging action.",
-          "searchUrl": "https://www.canidev.tools/?q={search}",
-          "searchConcat": "+"
-        },
-        {
           "title": "Can I WebView...",
           "url": "https://caniwebview.com",
           "description": "Check system webviews for feature support.",
@@ -1845,11 +1880,6 @@
           "title": "Node Green",
           "url": "https://node.green",
           "description": "Table that illustrates which Node.js version supports which ECMAScript features."
-        },
-        {
-          "title": "Is Houdini ready yet?",
-          "url": "https://ishoudinireadyyet.com",
-          "description": "Table that illustrates the current development status of Houdini in all major browsers."
         },
         {
           "title": "Timeline of Web Browsers",
@@ -1950,7 +1980,7 @@
         },
         {
           "title": "Affinity",
-          "url": "https://affinity.serif.com"
+          "url": "https://affinity.studio"
         },
         {
           "title": "Canva",
@@ -2042,7 +2072,7 @@
         },
         {
           "title": "Vagrant",
-          "url": "https://www.vagrantup.com",
+          "url": "https://developer.hashicorp.com/vagrant",
           "icon": "vagrant",
           "color": "#1868F2"
         },

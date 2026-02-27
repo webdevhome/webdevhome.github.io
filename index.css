@@ -24,7 +24,7 @@
   }
 
   svg {
-    @apply fill-current align-middle;
+    @apply align-middle;
   }
 }
 

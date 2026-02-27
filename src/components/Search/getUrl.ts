@@ -16,5 +16,5 @@ export function getUrl(
     return searchTarget.searchUrl.replaceAll('{search}', encodedSearchTerm)
   }
 
-  return focusedItem !== null ? focusedItem.url : null
+  return focusedItem?.url ?? null
 }

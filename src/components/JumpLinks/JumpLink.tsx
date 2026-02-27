@@ -4,7 +4,7 @@ import { slugify } from '../../utils/slugify'
 import { useToggleBackground } from '../App/useToggleBackground'
 import { useToggleJumpLinks } from '../App/useToggleJumpLinks'
 
-interface Props {
+type Props = {
   label: string
   color?: string
 }

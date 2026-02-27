@@ -1,8 +1,7 @@
+import classNames from 'classnames'
+import { SearchIcon } from 'lucide-react'
 import { FC } from 'react'
 import { useSearchMode } from '../App/useSearchMode'
-import { MdiIcon } from '../Icon/MdiIcon'
-import { mdiMagnify } from '@mdi/js'
-import classNames from 'classnames'
 
 export const AppSearchButton: FC = () => {
   const searchMode = useSearchMode()
@@ -20,7 +19,7 @@ export const AppSearchButton: FC = () => {
       )}
       onClick={searchMode.handleSearchAction}
     >
-      <MdiIcon path={mdiMagnify} />
+      <SearchIcon />
       Search...
     </div>
   )

@@ -1,9 +1,8 @@
 import classNames from 'classnames'
-import { FC } from 'react'
-import { MdiIcon } from '../Icon/MdiIcon'
+import { FC, ReactElement } from 'react'
 
-interface Props {
-  icon: string
+type Props = {
+  icon: ReactElement
   available?: boolean
   active?: boolean
   highlight?: boolean
@@ -57,9 +56,9 @@ export const AppAction: FC<Props> = ({
       tabIndex={0}
       onClick={handleClick}
     >
-      <MdiIcon path={icon} />
+      {icon}
 
-      {label !== undefined ? (
+      {label === undefined ? null : (
         <div
           className={classNames('ml-2 text-sm font-semibold', {
             'hidden lg:block': !highlight,
@@ -67,7 +66,7 @@ export const AppAction: FC<Props> = ({
         >
           {label}
         </div>
-      ) : null}
+      )}
     </div>
   )
 }

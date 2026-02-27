@@ -1,14 +1,14 @@
-import { mdiMenu } from '@mdi/js'
 import classNames from 'classnames'
+import { ListTreeIcon } from 'lucide-react'
 import { FC, ReactElement } from 'react'
+import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
+import { AppMode } from '../../stores/appMode/appModeReducer'
+import { config } from '../../tailwindConfig'
 import { useToggleJumpLinks } from '../App/useToggleJumpLinks'
 import { AppAction } from './AppAction'
 import { Logo } from './Logo'
-import { config } from '../../tailwindConfig'
-import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
-import { AppMode } from '../../stores/appMode/appModeReducer'
 
-interface Props {
+type Props = {
   centerItems?: ReactElement | null
   actions?: ReactElement | null
 }
@@ -19,7 +19,7 @@ export const AppHeader: FC<Props> = ({ centerItems, actions }) => {
 
   function handleMenuClick() {
     const query = `(min-width: ${config.theme.screens.md})`
-    const queryList = window.matchMedia(query)
+    const queryList = globalThis.matchMedia(query)
 
     if (queryList.matches) {
       toggleJumpLinks.toggle()
@@ -40,7 +40,7 @@ export const AppHeader: FC<Props> = ({ centerItems, actions }) => {
     >
       <div className="flex items-center gap-x-2">
         <AppAction
-          icon={mdiMenu}
+          icon={<ListTreeIcon />}
           action={handleMenuClick}
           available={isCurrentAppMode(AppMode.default, AppMode.customize)}
         />

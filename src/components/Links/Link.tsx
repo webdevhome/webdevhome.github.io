@@ -1,9 +1,5 @@
-import {
-  mdiCheckboxBlankOutline,
-  mdiCheckboxOutline,
-  mdiMagnify,
-} from '@mdi/js'
 import classNames from 'classnames'
+import { EyeIcon, EyeOffIcon, SearchIcon } from 'lucide-react'
 import { FC, MouseEvent, useCallback, useMemo } from 'react'
 import { ReactSVG } from 'react-svg'
 import { LinkItem, SearchTarget } from '../../links'
@@ -16,10 +12,9 @@ import { setSearchTarget } from '../../stores/search/searchActions'
 import { getIconUrl } from '../../utils/getIconUrl'
 import { Kbd } from '../basics/Kbd'
 import { DefaultIcon } from '../Icon/DefaultIcon'
-import { MdiIcon } from '../Icon/MdiIcon'
 import { LinkAction } from './LinkAction'
 
-interface Props {
+type Props = {
   link: LinkItem
   searchable?: boolean
   visible?: boolean
@@ -54,7 +49,7 @@ export const Link: FC<Props> = ({
 
   const handleLinkClick = useCallback(
     (event: MouseEvent<HTMLAnchorElement>): void => {
-      if (!isCustomizeMode) return
+      if (!isCustomizeMode && !event.altKey) return
 
       event.preventDefault()
       dispatch(toggleHiddenLink(link.url))
@@ -81,7 +76,7 @@ export const Link: FC<Props> = ({
       title={linkTitle}
       className={classNames(
         'grid grid-cols-[auto,1fr,auto] grid-rows-[auto,auto]',
-        'items-center gap-x-2',
+        'items-center gap-x-3',
         'p-1',
         {
           'text-gray-400 hover:text-gray-600': !visible,
@@ -101,6 +96,7 @@ export const Link: FC<Props> = ({
         'rounded-lg',
         { 'cursor-default': isCustomizeMode },
         'overflow-hidden',
+        'group',
       )}
       onClick={handleLinkClick}
     >
@@ -117,18 +113,24 @@ export const Link: FC<Props> = ({
           color: `light-dark(${link.color}, hsl(from ${link.color} h calc(s * 0.9) calc(l * 0.5 + 10)))`,
         }}
       >
-        {link.icon !== undefined ? (
-          <ReactSVG src={getIconUrl(link.icon)} className="h-[27px] w-[27px]" />
-        ) : (
+        {link.icon === undefined ? (
           <DefaultIcon />
+        ) : (
+          <ReactSVG
+            src={getIconUrl(link.icon)}
+            className="h-[27px] w-[27px] fill-current"
+          />
         )}
       </div>
 
       <div
-        className={classNames({
-          'text-black dark:text-gray-50': visible,
-          'line-through': !visible,
-        })}
+        className={classNames([
+          'weight-medium text-base leading-4',
+          {
+            'text-black dark:text-gray-50': visible,
+            'line-through': !visible,
+          },
+        ])}
       >
         {link.title}
       </div>
@@ -149,7 +151,7 @@ export const Link: FC<Props> = ({
               hasHover
               onClick={handleSearchClick}
             >
-              <MdiIcon path={mdiMagnify} />
+              <SearchIcon className="opacity-40 group-hover:opacity-100" />
             </LinkAction>
           </>
         ) : null}
@@ -160,17 +162,15 @@ export const Link: FC<Props> = ({
               'text-brand-700 dark:text-brand-300': visible,
             })}
           >
-            <MdiIcon
-              path={visible ? mdiCheckboxOutline : mdiCheckboxBlankOutline}
-            />
+            {visible ? <EyeIcon /> : <EyeOffIcon />}
           </LinkAction>
         ) : null}
       </div>
 
       {showDescription && link.description !== undefined ? (
         <div
-          className={classNames('col-start-2', 'pb-1', 'text-sm', {
-            'text-gray-500 dark:text-gray-300': visible,
+          className={classNames('col-start-2', 'py-1', 'text-sm leading-4', {
+            'text-gray-500 dark:text-gray-400': visible,
           })}
         >
           {link.description}

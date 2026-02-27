@@ -1,10 +1,10 @@
 import { Menu, MenuButton, MenuItems } from '@headlessui/react'
 import classNames from 'classnames'
-import { FC, PropsWithChildren } from 'react'
+import { FC, PropsWithChildren, ReactElement } from 'react'
 import { AppAction } from './AppAction'
 
 type Props = {
-  icon: string
+  icon: ReactElement
   label: string
 }
 
@@ -22,10 +22,10 @@ export const AppMenu: FC<PropsWithChildren<Props>> = ({
       <MenuItems
         anchor="bottom end"
         className={classNames(
-          'flex flex-col gap-y-px',
-          'bg-white dark:bg-gray-600',
-          'border border-gray-300 dark:border-gray-400',
-          'rounded-md shadow-lg',
+          'flex flex-col gap-y-1',
+          'bg-white dark:bg-gray-800',
+          'border border-gray-300 dark:border-gray-600',
+          'shadow-lg rounded-md',
         )}
       >
         {children}

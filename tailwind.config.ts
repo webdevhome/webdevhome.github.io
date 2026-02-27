@@ -50,6 +50,11 @@ export default {
     },
     boxShadow: {
       sm: '0 1px 2px 0 rgb(0 0 0 / 0.15)',
+      lg: `0px 0.6px 0.9px hsl(0 0 0 / 0),
+        -0.1px 5.6px 8.4px hsl(0 0 0 / 0.03),
+        -0.1px 10.5px 15.8px hsl(0 0 0 / 0.06),
+        -0.2px 18.4px 27.6px hsl(0 0 0 / 0.09),
+        -0.4px 32.2px 48.3px hsl(0 0 0 / 0.12)`,
     },
     extend: {
       colors: {

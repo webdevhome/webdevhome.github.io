@@ -1,5 +1,5 @@
-import { mdiArrowLeft } from '@mdi/js'
 import classNames from 'classnames'
+import { ArrowLeftIcon } from 'lucide-react'
 import { FC, useMemo } from 'react'
 import { ReactSVG } from 'react-svg'
 import { LinkItem } from '../../links'
@@ -8,9 +8,9 @@ import { setAppMode } from '../../stores/appMode/appModeActions'
 import { AppMode } from '../../stores/appMode/appModeReducer'
 import { setSearchTarget } from '../../stores/search/searchActions'
 import { getIconUrl } from '../../utils/getIconUrl'
-import { MdiIcon } from '../Icon/MdiIcon'
+import { DefaultIcon } from '../Icon/DefaultIcon'
 
-interface Props {
+type Props = {
   title: LinkItem['title']
   icon: LinkItem['icon']
   color: LinkItem['color']
@@ -23,17 +23,22 @@ export const SearchTargetLabel: FC<Props> = ({ title, icon, color }) => {
 
   const searchTargetIcon = useMemo(() => {
     if (icon === undefined) {
-      return <span className="w-2" />
+      return (
+        <span className="mr-2 shrink-0 rounded bg-white p-1">
+          <DefaultIcon />
+        </span>
+      )
     }
-
-    const iconUrl = getIconUrl(icon)
 
     return (
       <span
         className="mr-2 h-[31px] w-[31px] shrink-0 rounded bg-white p-1"
         style={{ color }}
       >
-        <ReactSVG src={iconUrl} className="search-target-item__icon" />
+        <ReactSVG
+          src={getIconUrl(icon)}
+          className="search-target-item__icon fill-current"
+        />
       </span>
     )
   }, [color, icon])
@@ -67,7 +72,7 @@ export const SearchTargetLabel: FC<Props> = ({ title, icon, color }) => {
         )}
       >
         <span className="mr-1">
-          <MdiIcon path={mdiArrowLeft} />
+          <ArrowLeftIcon />
         </span>
         Back
       </div>

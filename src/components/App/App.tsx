@@ -1,12 +1,14 @@
 import {
-  mdiArrowCollapseUp,
-  mdiArrowLeft,
-  mdiCheck,
-  mdiCogOutline,
-  mdiImage,
-  mdiListStatus,
-  mdiNoteTextOutline,
-} from '@mdi/js'
+  ArrowLeftIcon,
+  ArrowUpToLineIcon,
+  CheckIcon,
+  EyeIcon,
+  EyeOffIcon,
+  FormIcon,
+  ListTodoIcon,
+  SettingsIcon,
+  WallpaperIcon,
+} from 'lucide-react'
 import { FC } from 'react'
 import { useIsCurrentAppMode } from '../../stores/appMode/appModeHooks'
 import { AppMode } from '../../stores/appMode/appModeReducer'
@@ -16,18 +18,27 @@ import { AppMenu } from '../Header/AppMenu'
 import { AppMenuDivider } from '../Header/AppMenuDivider'
 import { AppMenuItem } from '../Header/AppMenuItem'
 import { AppSearchButton } from '../Header/AppSearchButton'
-import { MdiIcon } from '../Icon/MdiIcon'
 import { JumpLinks } from '../JumpLinks/JumpLinks'
 import { Links } from '../Links/Links'
 import { Search } from '../Search/Search'
+import { AppImportExportMenuItems } from './AppImportExportMenuItems'
 import { AppInfo } from './AppInfo'
 import { AppLayout } from './AppLayout'
 import { AppThemeSwitcher } from './AppThemeSwitcher'
+import { ExportDialog } from './ExportDialog'
+import { ImportDialog } from './ImportDialog'
 import { useCustomizeMode } from './useCustomizeMode'
 import { useSearchMode } from './useSearchMode'
 import { useTheme } from './useTheme'
 import { useToggleBackground } from './useToggleBackground'
 import { useToggleDescriptions } from './useToggleDescriptions'
+
+function handleScrollTopClick() {
+  const mainContentElement = document.getElementById('main-content')
+  if (mainContentElement === null) return
+
+  mainContentElement.scrollTo({ top: 0, behavior: 'smooth' })
+}
 
 export const WebdevHome: FC = () => {
   const customizeMode = useCustomizeMode()
@@ -38,91 +49,98 @@ export const WebdevHome: FC = () => {
 
   useTheme()
 
-  function handleScrollTopClick() {
-    const mainContentElement = document.getElementById('main-content')
-    if (mainContentElement === null) return
-
-    mainContentElement.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   return (
-    <AppLayout
-      header={
-        <AppHeader
-          centerItems={
-            <>
-              {isCurrentAppMode(AppMode.default) ? <AppSearchButton /> : null}
-            </>
-          }
-          actions={
-            <>
-              {isCurrentAppMode(AppMode.default) ? (
-                <>
+    <>
+      <AppLayout
+        header={
+          <AppHeader
+            centerItems={
+              <>
+                {isCurrentAppMode(AppMode.default) ? <AppSearchButton /> : null}
+              </>
+            }
+            actions={
+              <>
+                {isCurrentAppMode(AppMode.default) ? (
                   <AppAction
-                    icon={mdiArrowCollapseUp}
+                    icon={<ArrowUpToLineIcon />}
                     label="Top"
                     action={handleScrollTopClick}
                   />
-                </>
-              ) : isCurrentAppMode(AppMode.search) ? (
-                <>
+                ) : isCurrentAppMode(AppMode.search) ? (
                   <AppAction
-                    icon={mdiArrowLeft}
+                    icon={<ArrowLeftIcon />}
                     label="Back"
                     highlight
                     action={searchMode.handleSearchAction}
                   />
-                </>
-              ) : isCurrentAppMode(AppMode.customize) ? (
-                <>
-                  <AppAction
-                    icon={mdiCheck}
-                    label="Done"
-                    highlight
+                ) : isCurrentAppMode(AppMode.customize) ? (
+                  <>
+                    <AppAction
+                      icon={<CheckIcon />}
+                      label="Done"
+                      highlight
+                      action={customizeMode.handleCustomizeAction}
+                    />
+                    <AppAction
+                      icon={<EyeIcon />}
+                      label="Show all"
+                      action={customizeMode.showAll}
+                    />
+                    <AppAction
+                      icon={<EyeOffIcon />}
+                      label="Hide all"
+                      action={customizeMode.hideAll}
+                    />
+                  </>
+                ) : null}
+
+                <AppMenu icon={<SettingsIcon />} label="Options">
+                  <AppMenuItem
+                    label="Customize links"
+                    icon={<ListTodoIcon />}
                     action={customizeMode.handleCustomizeAction}
+                    visible={isCurrentAppMode(AppMode.default)}
                   />
-                </>
-              ) : null}
+                  <AppMenuDivider />
+                  <AppMenuItem
+                    label="Show link info"
+                    icon={<FormIcon />}
+                    selected={toggleDescriptions.showDescriptions}
+                    action={toggleDescriptions.toggle}
+                  />
+                  <AppMenuItem
+                    label="Show background"
+                    icon={<WallpaperIcon />}
+                    selected={toggleBackground.showBackground}
+                    action={toggleBackground.toggle}
+                  />
 
-              <AppMenu icon={mdiCogOutline} label="Options">
-                <AppMenuItem
-                  label="Customize links"
-                  icon={<MdiIcon path={mdiListStatus} />}
-                  action={customizeMode.handleCustomizeAction}
-                  visible={isCurrentAppMode(AppMode.default)}
-                />
-                <AppMenuDivider />
-                <AppMenuItem
-                  label="Show link info"
-                  icon={<MdiIcon path={mdiNoteTextOutline} />}
-                  selected={toggleDescriptions.showDescriptions}
-                  action={toggleDescriptions.toggle}
-                />
-                <AppMenuItem
-                  label="Show background"
-                  icon={<MdiIcon path={mdiImage} />}
-                  selected={toggleBackground.showBackground}
-                  action={toggleBackground.toggle}
-                />
+                  <AppThemeSwitcher />
+                  <AppImportExportMenuItems />
+                  <AppInfo />
+                </AppMenu>
+              </>
+            }
+          />
+        }
+        sidebar={
+          <>
+            {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
+              <JumpLinks />
+            ) : null}
+          </>
+        }
+      >
+        {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
+          <Links />
+        ) : (
+          <Search />
+        )}
+      </AppLayout>
 
-                <AppThemeSwitcher />
-                <AppInfo />
-              </AppMenu>
-            </>
-          }
-        />
-      }
-      sidebar={
-        isCurrentAppMode(AppMode.default, AppMode.customize) ? (
-          <JumpLinks />
-        ) : null
-      }
-    >
-      {isCurrentAppMode(AppMode.default, AppMode.customize) ? (
-        <Links />
-      ) : (
-        <Search />
-      )}
-    </AppLayout>
+      <ImportDialog />
+      <ExportDialog />
+    </>
   )
 }

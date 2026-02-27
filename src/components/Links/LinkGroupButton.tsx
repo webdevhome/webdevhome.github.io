@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { FC, PropsWithChildren } from 'react'
 
-interface Props {
+type Props = {
   onClick?: () => void
 }
 
