@@ -1776,9 +1776,16 @@
         {
           "title": "Lucide",
           "url": "https://lucide.dev",
-          "description": "Fork of Feather Icons.",
+          "description": "Fork of Feather Icons with more icons.",
           "icon": "lucide",
           "color": "#F56565"
+        },
+        {
+          "title": "Dashboard Icons",
+          "url": "https://dashboardicons.com/",
+          "description": "A collection of icons for services, applications and tools, designed specifically for dashboards and app directories.",
+          "searchUrl": "https://dashboardicons.com/icons?q={search}",
+          "searchConcat": "+"
         },
         {
           "title": "Simple Icons",
@@ -1895,6 +1902,11 @@
         {
           "title": "W3C",
           "url": "https://www.w3.org"
+        },
+        {
+          "title": "WebDX Developer Signals",
+          "url": "https://github.com/web-platform-dx/developer-signals",
+          "description": "A repository to gather feedback about wanted web platform features, provided by the W3C WebDX Community Group."
         },
         {
           "title": "ECMAScript Proposals",
