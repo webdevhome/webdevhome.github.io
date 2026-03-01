@@ -5,6 +5,7 @@ type Props = {
   icon: ReactElement
   available?: boolean
   active?: boolean
+  visible?: 'small-screens' | 'big-screens' | 'always'
   highlight?: boolean
   label?: string
   action?: () => void
@@ -14,6 +15,7 @@ export const AppAction: FC<Props> = ({
   icon,
   available = true,
   active = false,
+  visible = 'always',
   highlight = false,
   label,
   action = () => {},
@@ -28,7 +30,11 @@ export const AppAction: FC<Props> = ({
       className={classNames(
         'flex items-center',
         'p-1.5',
-        { 'sm:px-3': label !== undefined },
+        { 'lg:px-3': label !== undefined },
+        {
+          'max-md:hidden': visible === 'big-screens',
+          'md:hidden': visible === 'small-screens',
+        },
         'rounded-md',
         'select-none',
         {

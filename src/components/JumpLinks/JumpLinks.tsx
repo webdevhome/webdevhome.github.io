@@ -18,7 +18,7 @@ export const JumpLinks: FC = () => {
     <>
       <div
         className={classNames('md:hidden', {
-          'max-md:fixed max-md:inset-0 max-md:block max-md:bg-black/50':
+          'max-md:fixed max-md:inset-0 max-md:block max-md:bg-black/10 dark:max-md:bg-black/50':
             toggleJumpLinks.showJumpLinksMobile,
           'max-md:hidden': !toggleJumpLinks.showJumpLinksMobile,
         })}
@@ -28,9 +28,10 @@ export const JumpLinks: FC = () => {
       <div
         className={classNames(
           'max-md:fixed max-md:bottom-0 max-md:top-0',
-          'max-md:bg-white dark:max-md:bg-gray-800',
+          'max-md:bg-gray-200 dark:max-md:bg-gray-800',
           'jump-links w-[300px]',
           'max-md:transition-[left] max-md:duration-300',
+          'z-10',
           {
             'max-md:left-0 max-md:grid max-md:grid-rows-[auto,1fr]':
               toggleJumpLinks.showJumpLinksMobile,
@@ -47,7 +48,7 @@ export const JumpLinks: FC = () => {
           <XIcon />
         </div>
 
-        <div className="p-page flex flex-col gap-1 max-md:overflow-auto md:flex">
+        <div className="flex flex-col gap-1 p-2 max-md:overflow-auto md:flex">
           {links.items
             .filter((group) => !allLinksInGroupAreHidden(group))
             .map((linkGroup, index) => (

@@ -317,42 +317,6 @@
       ]
     },
     {
-      "name": "Development Platforms",
-      "color": "orange",
-      "items": [
-        {
-          "title": "Chrome Developers",
-          "url": "https://developer.chrome.com",
-          "description": "Official developer resources about Chrome Browser.",
-          "icon": "googlechrome",
-          "color": "#4285F4"
-        },
-        {
-          "title": "ChromeOS.dev",
-          "url": "https://chromeos.dev",
-          "description": "Official developer resources about ChromeOS.",
-          "icon": "googlechrome",
-          "color": "#4285F4",
-          "searchUrl": "https://chromeos.dev/en/search?q={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "Chrome Web Store Developer Dashboard",
-          "url": "https://chrome.google.com/webstore/devconsole",
-          "description": "Official Dashboard to manage Chrome Extensions, Themes, etc.",
-          "icon": "chromewebstore",
-          "color": "#4285F4"
-        },
-        {
-          "title": "Firefox Add-On Developer Hub",
-          "url": "https://addons.mozilla.org/en-US/developers/addons",
-          "description": "Official Dashboard to manage Firefox Extensions.",
-          "icon": "firefoxbrowser",
-          "color": "#FF7139"
-        }
-      ]
-    },
-    {
       "name": "Find Help & Discuss",
       "color": "cyan",
       "items": [
@@ -578,7 +542,7 @@
       ]
     },
     {
-      "name": "CSS Frameworks",
+      "name": "CSS Frameworks & Libraries",
       "color": "blue",
       "items": [
         {
@@ -843,7 +807,7 @@
       ]
     },
     {
-      "name": "Other Libraries",
+      "name": "Other JS Libraries",
       "color": "blue",
       "items": [
         {
@@ -951,6 +915,13 @@
           "color": "#000000"
         },
         {
+          "title": "GSAP",
+          "url": "https://gsap.com",
+          "description": "A JavaScript animation library.",
+          "icon": "gsap",
+          "color": "#0AE448"
+        },
+        {
           "title": "Headless UI",
           "url": "https://headlessui.dev",
           "description": "Unstyled UI components for React and Vue by the developers of Tailwind CSS.",
@@ -974,13 +945,6 @@
           "description": "date-fns provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.",
           "icon": "datefns",
           "color": "#770C56"
-        },
-        {
-          "title": "Autoprefixer",
-          "url": "https://github.com/postcss/autoprefixer",
-          "description": "Library that automatically insert browser prefixes into your CSS.",
-          "icon": "autoprefixer",
-          "color": "#DD3735"
         }
       ]
     },
@@ -1276,7 +1240,7 @@
       ]
     },
     {
-      "name": "Browser Languages",
+      "name": "CSS Compilation",
       "color": "amber",
       "items": [
         {
@@ -1303,6 +1267,19 @@
           "icon": "postcss",
           "color": "#DD3A0A"
         },
+        {
+          "title": "Autoprefixer",
+          "url": "https://github.com/postcss/autoprefixer",
+          "description": "Library that automatically insert browser prefixes into your CSS.",
+          "icon": "autoprefixer",
+          "color": "#DD3735"
+        }
+      ]
+    },
+    {
+      "name": "JS, WASM & Type Systems",
+      "color": "amber",
+      "items": [
         {
           "title": "TypeScript",
           "url": "https://www.typescriptlang.org",
@@ -1391,6 +1368,36 @@
           "searchConcat": "+"
         },
         {
+          "title": "PHP",
+          "url": "https://www.php.net",
+          "icon": "php",
+          "color": "#777BB4",
+          "searchUrl": "https://www.php.net/manual-lookup.php?pattern={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": ".NET",
+          "url": "https://dotnet.microsoft.com",
+          "icon": "dotnet",
+          "color": "#512BD4"
+        },
+        {
+          "title": "Java",
+          "url": "https://www.java.com"
+        },
+        {
+          "title": "OpenJDK",
+          "url": "https://openjdk.java.net",
+          "icon": "openjdk",
+          "color": "#000000"
+        },
+        {
+          "title": "Kotlin",
+          "url": "https://kotlinlang.org",
+          "icon": "kotlin",
+          "color": "#7F52FF"
+        },
+        {
           "title": "Ruby",
           "url": "https://www.ruby-lang.org",
           "icon": "ruby",
@@ -1409,12 +1416,6 @@
           "color": "#0175c2",
           "searchUrl": "https://dart.dev/search?ie=UTF-8&q={search}",
           "searchConcat": "+"
-        },
-        {
-          "title": "Kotlin",
-          "url": "https://kotlinlang.org",
-          "icon": "kotlin",
-          "color": "#7F52FF"
         },
         {
           "title": "Swift",
@@ -1439,30 +1440,6 @@
           "url": "https://go.dev",
           "icon": "go",
           "color": "#00ADD8"
-        },
-        {
-          "title": "PHP",
-          "url": "https://www.php.net",
-          "icon": "php",
-          "color": "#777BB4",
-          "searchUrl": "https://www.php.net/manual-lookup.php?pattern={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": ".NET",
-          "url": "https://dotnet.microsoft.com",
-          "icon": "dotnet",
-          "color": "#512BD4"
-        },
-        {
-          "title": "Java",
-          "url": "https://www.java.com"
-        },
-        {
-          "title": "OpenJDK",
-          "url": "https://openjdk.java.net",
-          "icon": "openjdk",
-          "color": "#000000"
         },
         {
           "title": "TypeSpec",
@@ -1732,7 +1709,7 @@
       ]
     },
     {
-      "name": "Fonts, Icons & Images",
+      "name": "Fonts & Texts",
       "color": "fuchsia",
       "items": [
         {
@@ -1748,6 +1725,17 @@
           "url": "https://gwfh.mranftl.com",
           "description": "A web service that helps to self-host fonts from Google Fonts."
         },
+        {
+          "title": "Get Lorem",
+          "url": "https://getlorem.com",
+          "description": "An online Lorem Ipsum generator which also offers a CLI."
+        }
+      ]
+    },
+    {
+      "name": "Icons & Texts",
+      "color": "fuchsia",
+      "items": [
         {
           "title": "Icônes",
           "url": "https://icones.js.org",
@@ -1802,7 +1790,13 @@
           "description": "A public API to generate small static and dynamic badge images.",
           "icon": "shieldsdotio",
           "color": "#000000"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Images & Photos",
+      "color": "fuchsia",
+      "items": [
         {
           "title": "Pexels",
           "url": "https://www.pexels.com",
@@ -1832,71 +1826,68 @@
           "title": "Transparent Textures",
           "url": "https://transparenttextures.com",
           "description": "A collection of transparent background patterns."
+        },
+        {
+          "title": "Lorem Picsum",
+          "url": "https://picsum.photos",
+          "description": "The lorem ipsum for photos."
         }
       ]
     },
     {
-      "name": "Browser Status",
+      "name": "Colors & Palettes",
+      "color": "fuchsia",
+      "items": [
+        {
+          "title": "OKLCH Color Picker",
+          "url": "https://oklch.com",
+          "description": "A color picker for the OKLCH color space."
+        },
+        {
+          "title": "Harmonizer",
+          "url": "https://harmonizer.evilmartians.com",
+          "description": "A color palette generator using the OKLCH color space."
+        }
+      ]
+    },
+    {
+      "name": "Development Platforms",
       "color": "violet",
       "items": [
         {
-          "title": "Can I use...",
-          "url": "https://caniuse.com",
-          "description": "Check browser compatibility of various language features and browser APIs.",
-          "searchUrl": "https://caniuse.com/#search={search}",
-          "searchConcat": "%20"
-        },
-        {
-          "title": "Can I email...",
-          "url": "https://caniemail.com",
-          "description": "Check e-mail client compatibility of various language features.",
-          "searchUrl": "https://www.caniemail.com/search/?s={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "Can I WebView...",
-          "url": "https://caniwebview.com",
-          "description": "Check system webviews for feature support.",
-          "searchUrl": "https://caniwebview.com/search/?s={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "Accessibility Support",
-          "url": "https://a11ysupport.io",
-          "description": "Will your code work with assistive technologies?"
-        },
-        {
-          "title": "Web Platform Status",
-          "url": "https://webstatus.dev",
-          "description": "A website to check which browser supports which web platform features. Initially developed by Google.",
-          "searchUrl": "https://webstatus.dev/?q={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "Chrome Platform Status",
-          "url": "https://www.chromestatus.com",
-          "description": "Chrome browser release notes.",
+          "title": "Chrome Developers",
+          "url": "https://developer.chrome.com",
+          "description": "Official developer resources about Chrome Browser.",
           "icon": "googlechrome",
-          "color": "#4285f4"
+          "color": "#4285F4"
         },
         {
-          "title": "Microsoft 365/Edge Roadmap",
-          "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge"
+          "title": "ChromeOS.dev",
+          "url": "https://chromeos.dev",
+          "description": "Official developer resources about ChromeOS.",
+          "icon": "googlechrome",
+          "color": "#4285F4",
+          "searchUrl": "https://chromeos.dev/en/search?q={search}",
+          "searchConcat": "+"
         },
         {
-          "title": "Node Green",
-          "url": "https://node.green",
-          "description": "Table that illustrates which Node.js version supports which ECMAScript features."
+          "title": "Chrome Web Store Developer Dashboard",
+          "url": "https://chrome.google.com/webstore/devconsole",
+          "description": "Official Dashboard to manage Chrome Extensions, Themes, etc.",
+          "icon": "chromewebstore",
+          "color": "#4285F4"
         },
         {
-          "title": "Timeline of Web Browsers",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg",
-          "description": "A graphical timeline of all web browsers, grouped by used engine."
+          "title": "Firefox Add-On Developer Hub",
+          "url": "https://addons.mozilla.org/en-US/developers/addons",
+          "description": "Official Dashboard to manage Firefox Extensions.",
+          "icon": "firefoxbrowser",
+          "color": "#FF7139"
         }
       ]
     },
     {
-      "name": "Standards & Proposals",
+      "name": "Web Standards & Ecosystem",
       "color": "violet",
       "items": [
         {
@@ -1961,6 +1952,66 @@
           "url": "https://openjsf.org",
           "icon": "openjsfoundation",
           "color": "#0075C9"
+        }
+      ]
+    },
+    {
+      "name": "Browser Status",
+      "color": "violet",
+      "items": [
+        {
+          "title": "Can I use...",
+          "url": "https://caniuse.com",
+          "description": "Check browser compatibility of various language features and browser APIs.",
+          "searchUrl": "https://caniuse.com/#search={search}",
+          "searchConcat": "%20"
+        },
+        {
+          "title": "Can I email...",
+          "url": "https://caniemail.com",
+          "description": "Check e-mail client compatibility of various language features.",
+          "searchUrl": "https://www.caniemail.com/search/?s={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Can I WebView...",
+          "url": "https://caniwebview.com",
+          "description": "Check system webviews for feature support.",
+          "searchUrl": "https://caniwebview.com/search/?s={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Accessibility Support",
+          "url": "https://a11ysupport.io",
+          "description": "Will your code work with assistive technologies?"
+        },
+        {
+          "title": "Web Platform Status",
+          "url": "https://webstatus.dev",
+          "description": "A website to check which browser supports which web platform features. Initially developed by Google.",
+          "searchUrl": "https://webstatus.dev/?q={search}",
+          "searchConcat": "+"
+        },
+        {
+          "title": "Chrome Platform Status",
+          "url": "https://www.chromestatus.com",
+          "description": "Chrome browser release notes.",
+          "icon": "googlechrome",
+          "color": "#4285f4"
+        },
+        {
+          "title": "Microsoft 365/Edge Roadmap",
+          "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge"
+        },
+        {
+          "title": "Node Green",
+          "url": "https://node.green",
+          "description": "Table that illustrates which Node.js version supports which ECMAScript features."
+        },
+        {
+          "title": "Timeline of Web Browsers",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg",
+          "description": "A graphical timeline of all web browsers, grouped by used engine."
         }
       ]
     },
@@ -2160,7 +2211,7 @@
       ]
     },
     {
-      "name": "Stay Focused",
+      "name": "Audio & Video",
       "color": "rose",
       "items": [
         {

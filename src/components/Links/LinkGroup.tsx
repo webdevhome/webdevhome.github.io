@@ -11,7 +11,6 @@ import {
   useGetIsLinkHidden,
 } from '../../stores/hiddenLinks/hiddenLinksHooks'
 import { slugify } from '../../utils/slugify'
-import { useToggleBackground } from '../App/useToggleBackground'
 import { Link } from './Link'
 import { LinkGroupButton } from './LinkGroupButton'
 
@@ -24,7 +23,6 @@ export const LinkGroup: FC<Props> = ({ group }) => {
   const isCurrentAppMode = useIsCurrentAppMode()
   const getIsLinkHidden = useGetIsLinkHidden()
   const dispatch = useAppDispatch()
-  const toggleBackground = useToggleBackground()
 
   const [showHiddenLinks, setShowHiddenLinks] = useState(false)
 
@@ -66,19 +64,20 @@ export const LinkGroup: FC<Props> = ({ group }) => {
   }
 
   return (
-    <div id={slugify(group.name)} className="scroll-mt-4">
+    <div id={slugify(group.name)} className="scroll-mt-2">
       <div className="mb-2 flex gap-x-1">
         <div
           className={classNames(
             'flex-auto',
             'px-4 py-2',
             `bg-${group.color ?? 'gray'}-100 dark:bg-${group.color ?? 'gray'}-600`,
-            'text-center font-semibold uppercase leading-tight tracking-wider',
+            'text-center font-bold uppercase leading-tight tracking-wider',
             `text-${group.color ?? 'gray'}-800 dark:text-${group.color ?? 'gray'}-50`,
             'rounded-lg',
+            'shadow-sm',
             {
-              [`outline outline-1 -outline-offset-1 outline-${group.color}-300 dark:outline-none`]:
-                toggleBackground.showBackground,
+              // [`outline outline-1 -outline-offset-1 outline-${group.color}-300 dark:outline-none`]:
+              // 'shadow-sm': toggleBackground.showBackground,
             },
           )}
         >

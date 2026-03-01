@@ -125,7 +125,7 @@ export const Link: FC<Props> = ({
 
       <div
         className={classNames([
-          'weight-medium text-base leading-4',
+          'text-base font-semibold leading-4',
           {
             'text-black dark:text-gray-50': visible,
             'line-through': !visible,

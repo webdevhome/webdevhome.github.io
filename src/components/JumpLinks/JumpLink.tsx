@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 import { slugify } from '../../utils/slugify'
-import { useToggleBackground } from '../App/useToggleBackground'
 import { useToggleJumpLinks } from '../App/useToggleJumpLinks'
 
 type Props = {
@@ -10,7 +9,6 @@ type Props = {
 }
 
 export const JumpLink: FC<Props> = ({ label, color = 'gray' }) => {
-  const toggleBackground = useToggleBackground()
   const toggleJumpLinks = useToggleJumpLinks()
 
   function handleClick() {
@@ -25,21 +23,24 @@ export const JumpLink: FC<Props> = ({ label, color = 'gray' }) => {
     <div
       className={classNames(
         'jump-link',
-        'px-3 py-1.5 md:px-2.5 md:py-1',
-        'rounded-md',
+        'grid grid-cols-[auto,1fr] gap-2',
         'cursor-pointer',
-        'text-sm font-semibold',
-        `bg-${color}-100 dark:bg-${color}-600`,
-        `text-${color}-800 dark:text-${color}-50`,
+        'text-base font-medium',
+        `text-${color}-800 dark:text-${color}-200`,
         'select-none',
-        {
-          [`outline outline-1 -outline-offset-1 outline-${color}-300 dark:outline-none`]:
-            toggleBackground.showBackground,
-        },
+        'group',
       )}
       onClick={handleClick}
     >
-      {label}
+      <div
+        className={classNames([
+          'h-8 w-1.5 rounded-full',
+          `bg-${color}-600 dark:bg-${color}-400`,
+        ])}
+      />
+      <span className="grid items-center rounded-md px-2 group-hover:bg-black/10 dark:group-hover:bg-white/15">
+        {label}
+      </span>
     </div>
   )
 }

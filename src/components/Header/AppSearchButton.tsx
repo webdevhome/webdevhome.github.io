@@ -9,8 +9,9 @@ export const AppSearchButton: FC = () => {
   return (
     <div
       className={classNames(
+        'max-md:hidden',
         'flex gap-x-1',
-        'mb-2 px-20 py-1 md:mt-2',
+        'px-20 py-1.5',
         'rounded-full',
         'bg-black/10 hover:bg-black/20 active:bg-black/25',
         'dark:bg-white/10 dark:hover:bg-white/20 dark:active:bg-white/25',

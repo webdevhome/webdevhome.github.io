@@ -6,6 +6,7 @@ import {
   EyeOffIcon,
   FormIcon,
   ListTodoIcon,
+  SearchIcon,
   SettingsIcon,
   WallpaperIcon,
 } from 'lucide-react'
@@ -62,11 +63,19 @@ export const WebdevHome: FC = () => {
             actions={
               <>
                 {isCurrentAppMode(AppMode.default) ? (
-                  <AppAction
-                    icon={<ArrowUpToLineIcon />}
-                    label="Top"
-                    action={handleScrollTopClick}
-                  />
+                  <>
+                    <AppAction
+                      icon={<SearchIcon />}
+                      label="Search"
+                      visible="small-screens"
+                      action={searchMode.handleSearchAction}
+                    />
+                    <AppAction
+                      icon={<ArrowUpToLineIcon />}
+                      label="Top"
+                      action={handleScrollTopClick}
+                    />
+                  </>
                 ) : isCurrentAppMode(AppMode.search) ? (
                   <AppAction
                     icon={<ArrowLeftIcon />}
