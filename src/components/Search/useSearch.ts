@@ -18,6 +18,7 @@ import {
   setSearchTarget,
   setSearchTerm,
 } from '../../stores/search/searchActions'
+import { useOpenLinksInNewTab } from '../App/useOpenLinksInNewTab'
 import { getUrl } from './getUrl'
 
 const fuzzyOptions = { key: 'title', allowTypo: false }
@@ -52,6 +53,7 @@ export function useSearch({
   const getIsLinkHidden = useGetIsLinkHidden()
   const dispatch = useAppDispatch()
   const allLinks = useAllLinks()
+  const openLinksInNewTab = useOpenLinksInNewTab()
 
   const [keyboardIndex, setKeyboardIndex] = useState<number>(0)
 
@@ -189,15 +191,13 @@ export function useSearch({
 
           if (url === null) return
 
-          if (event.ctrlKey) {
+          if (event.ctrlKey || openLinksInNewTab.openLinksInNewTab) {
             globalThis.open(url, '', 'alwaysRaised=on')
+            dispatch(setAppMode(AppMode.default))
           } else {
             globalThis.location.href = url
           }
 
-          if (event.ctrlKey || event.shiftKey) {
-            dispatch(setAppMode(AppMode.default))
-          }
           break
         }
 

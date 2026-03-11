@@ -12,6 +12,7 @@ type AppSettingsState = {
   showJumpLinks: boolean
   showJumpLinksMobile: boolean
   showBackground: boolean
+  openLinksInNewTab: boolean
 }
 
 const initialState: AppSettingsState = {
@@ -20,6 +21,7 @@ const initialState: AppSettingsState = {
   showJumpLinks: true,
   showJumpLinksMobile: false,
   showBackground: false,
+  openLinksInNewTab: false,
 }
 
 export function appSettings(
@@ -45,6 +47,10 @@ export function appSettings(
 
     case SettingsActions.setDisplayBackground: {
       return { ...state, showBackground: action.payload }
+    }
+
+    case SettingsActions.setOpenLinksInNewTab: {
+      return { ...state, openLinksInNewTab: action.payload }
     }
 
     default: {

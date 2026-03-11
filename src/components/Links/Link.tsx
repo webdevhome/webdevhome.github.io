@@ -10,6 +10,7 @@ import { AppMode } from '../../stores/appMode/appModeReducer'
 import { toggleHiddenLink } from '../../stores/hiddenLinks/hiddenLinksActions'
 import { setSearchTarget } from '../../stores/search/searchActions'
 import { getIconUrl } from '../../utils/getIconUrl'
+import { useOpenLinksInNewTab } from '../App/useOpenLinksInNewTab'
 import { Kbd } from '../basics/Kbd'
 import { DefaultIcon } from '../Icon/DefaultIcon'
 import { LinkAction } from './LinkAction'
@@ -29,6 +30,7 @@ export const Link: FC<Props> = ({
 }) => {
   const dispatch = useAppDispatch()
   const isCurrentAppMode = useIsCurrentAppMode()
+  const openLinksInNewTab = useOpenLinksInNewTab()
 
   const showDescription = useAppSelector(
     (state) => state.appSettings.showDescriptions,
@@ -49,10 +51,14 @@ export const Link: FC<Props> = ({
 
   const handleLinkClick = useCallback(
     (event: MouseEvent<HTMLAnchorElement>): void => {
-      if (!isCustomizeMode && !event.altKey) return
+      if (isCustomizeMode || event.altKey) {
+        event.preventDefault()
+        dispatch(toggleHiddenLink(link.url))
+      }
 
-      event.preventDefault()
-      dispatch(toggleHiddenLink(link.url))
+      if (openLinksInNewTab.openLinksInNewTab) {
+        dispatch(setAppMode(AppMode.default))
+      }
     },
     [dispatch, isCustomizeMode, link.url],
   )
@@ -73,6 +79,7 @@ export const Link: FC<Props> = ({
     <a
       href={link.url}
       rel="noreferrer"
+      {...(openLinksInNewTab.openLinksInNewTab ? { target: '_blank' } : {})}
       title={linkTitle}
       className={classNames(
         'grid grid-cols-[auto,1fr,auto] grid-rows-[auto,auto]',

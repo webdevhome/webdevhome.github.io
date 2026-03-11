@@ -2,6 +2,7 @@ import {
   ArrowLeftIcon,
   ArrowUpToLineIcon,
   CheckIcon,
+  ExternalLinkIcon,
   EyeIcon,
   EyeOffIcon,
   FormIcon,
@@ -33,6 +34,7 @@ import { useSearchMode } from './useSearchMode'
 import { useTheme } from './useTheme'
 import { useToggleBackground } from './useToggleBackground'
 import { useToggleDescriptions } from './useToggleDescriptions'
+import { useOpenLinksInNewTab } from './useOpenLinksInNewTab'
 
 function handleScrollTopClick() {
   const mainContentElement = document.getElementById('main-content')
@@ -47,6 +49,7 @@ export const WebdevHome: FC = () => {
   const toggleDescriptions = useToggleDescriptions()
   const toggleBackground = useToggleBackground()
   const isCurrentAppMode = useIsCurrentAppMode()
+  const openLinksInNewTab = useOpenLinksInNewTab()
 
   useTheme()
 
@@ -123,6 +126,12 @@ export const WebdevHome: FC = () => {
                     icon={<WallpaperIcon />}
                     selected={toggleBackground.showBackground}
                     action={toggleBackground.toggle}
+                  />
+                  <AppMenuItem
+                    label="Open links in new tab"
+                    icon={<ExternalLinkIcon />}
+                    selected={openLinksInNewTab.openLinksInNewTab}
+                    action={openLinksInNewTab.toggle}
                   />
 
                   <AppThemeSwitcher />

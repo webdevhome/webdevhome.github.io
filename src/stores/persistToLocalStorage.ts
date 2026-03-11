@@ -1,4 +1,5 @@
 import { saveHiddenLinks } from '../services/localStorage/values/hiddenLinks'
+import { saveOpenLinksInNewTabSetting } from '../services/localStorage/values/openLinksInNewTab'
 import { saveShowBackgroundSetting } from '../services/localStorage/values/showBackgroundSetting'
 import { saveShowDescriptionsSetting } from '../services/localStorage/values/showDescriptionsSetting'
 import { saveShowJumpLinksSetting } from '../services/localStorage/values/showJumpLinksSetting'
@@ -11,6 +12,7 @@ type LastState = {
   showDescriptionsSetting: AppState['appSettings']['showDescriptions'] | null
   showJumpLinksSetting: AppState['appSettings']['showJumpLinks'] | null
   showBackgroundSetting: AppState['appSettings']['showBackground'] | null
+  openLinksInNewTab: AppState['appSettings']['openLinksInNewTab'] | null
 }
 
 const lastState: LastState = {
@@ -19,6 +21,7 @@ const lastState: LastState = {
   showDescriptionsSetting: null,
   showJumpLinksSetting: null,
   showBackgroundSetting: null,
+  openLinksInNewTab: null,
 }
 
 export function persistToLocalStorage(store: AppStore): void {
@@ -53,6 +56,12 @@ export function persistToLocalStorage(store: AppStore): void {
     if (lastState.showBackgroundSetting !== showBackgroundSetting) {
       saveShowBackgroundSetting(showBackgroundSetting)
       lastState.showBackgroundSetting = showBackgroundSetting
+    }
+
+    const openLinksInNewTab = state.appSettings.openLinksInNewTab
+    if (lastState.openLinksInNewTab !== openLinksInNewTab) {
+      saveOpenLinksInNewTabSetting(openLinksInNewTab)
+      lastState.openLinksInNewTab = openLinksInNewTab
     }
   })
 }

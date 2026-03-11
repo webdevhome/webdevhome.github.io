@@ -10,6 +10,7 @@ import { appSettings } from './appSettings/appSettingsReducer'
 import { hiddenLinks } from './hiddenLinks/hiddenLinksReducer'
 import { persistToLocalStorage } from './persistToLocalStorage'
 import { search } from './search/searchReducer'
+import { loadOpenLinksInNewTabSetting } from '../services/localStorage/values/openLinksInNewTab'
 
 const rootReducer = combineReducers({
   appMode,
@@ -28,6 +29,7 @@ export const store = createStore(
       showJumpLinks: loadShowJumpLinksSetting(),
       showJumpLinksMobile: false,
       showBackground: loadShowBackgroundSetting(),
+      openLinksInNewTab: loadOpenLinksInNewTabSetting(),
     },
   },
   globalThis.__REDUX_DEVTOOLS_EXTENSION__?.(),

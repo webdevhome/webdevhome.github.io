@@ -7,6 +7,7 @@ export enum StorageKey {
   showDescriptionsSetting = 'wdh:show-descriptions-setting',
   showJumpLinksSetting = 'wdh:show-jump-links-setting',
   showBackgroundSetting = 'wdh:show-background-setting',
+  openLinksInNewTab = 'wdh:open-links-in-new-tab'
 }
 
 export function getStorageValue(key: StorageKey): string | null
