@@ -41,6 +41,11 @@ export const Link: FC<Props> = ({
     [isCurrentAppMode],
   )
 
+  const isSearchMode = useMemo(
+    () => isCurrentAppMode(AppMode.search),
+    [isCurrentAppMode],
+  )
+
   const linkTitle = useMemo(() => {
     if (link.description === undefined) {
       return link.title
@@ -56,7 +61,7 @@ export const Link: FC<Props> = ({
         dispatch(toggleHiddenLink(link.url))
       }
 
-      if (openLinksInNewTab.openLinksInNewTab) {
+      if (isSearchMode && openLinksInNewTab.openLinksInNewTab) {
         dispatch(setAppMode(AppMode.default))
       }
     },
