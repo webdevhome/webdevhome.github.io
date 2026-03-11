@@ -113,9 +113,11 @@ export const LinkGroup: FC<Props> = ({ group }) => {
           />
         ))}
 
-        <LinkGroupButton onClick={handleShowHiddenLinksClick}>
-          {showHiddenLinksButtonLabel}
-        </LinkGroupButton>
+        {hiddenLinks.length > 0 ? (
+          <LinkGroupButton onClick={handleShowHiddenLinksClick}>
+            {showHiddenLinksButtonLabel}
+          </LinkGroupButton>
+        ) : null}
 
         {showHiddenLinks ? (
           <div>
