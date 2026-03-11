@@ -22,8 +22,8 @@ import { useOpenLinksInNewTab } from '../App/useOpenLinksInNewTab'
 import { getUrl } from './getUrl'
 
 const fuzzyOptions = { key: 'title', allowTypo: false }
-const maxResultsCount = 6
-const maxHiddenResultsCount = 2
+const maxResultsCount = 8
+const maxHiddenResultsCount = 4
 
 type GroupedLinks = {
   visible: LinkItem[]
