@@ -16,7 +16,7 @@ export function useOpenLinksInNewTab(): UseOpenLinksInNewTabResult {
 
   const toggle = useCallback(() => {
     dispatch(setOpenLinksInNewTab(!openLinksInNewTab))
-  }, [])
+  }, [dispatch, openLinksInNewTab])
 
   return { openLinksInNewTab, toggle }
 }
