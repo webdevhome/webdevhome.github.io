@@ -1,41 +1,41 @@
 import { AppTheme } from './appSettingsReducer'
 
-export const enum SettingsActions {
-  setTheme,
-  setDisplayDescription,
-  setDisplayJumpLinks,
-  setDisplayJumpLinksMobile,
-  setDisplayBackground,
-  setOpenLinksInNewTab,
+export const enum AppSettingsActionType {
+  SetTheme = 'set theme',
+  SetDisplayDescription = 'set display description',
+  SetDisplayJumpLinks = 'set display jump links',
+  SetDisplayJumpLinksMobile = 'set display jump links (mobile)',
+  SetDisplayBackground = 'set display background',
+  SetOpenLinksInNewTab = 'set open links in new tab',
 }
 
 type SetThemeAction = {
-  type: SettingsActions.setTheme
+  type: AppSettingsActionType.SetTheme
   payload: AppTheme
 }
 
 type SetDisplayDescriptionAction = {
-  type: SettingsActions.setDisplayDescription
+  type: AppSettingsActionType.SetDisplayDescription
   payload: boolean
 }
 
 type SetDisplayJumpLinksAction = {
-  type: SettingsActions.setDisplayJumpLinks
+  type: AppSettingsActionType.SetDisplayJumpLinks
   payload: boolean
 }
 
 type SetDisplayJumpLinksMobileAction = {
-  type: SettingsActions.setDisplayJumpLinksMobile
+  type: AppSettingsActionType.SetDisplayJumpLinksMobile
   payload: boolean
 }
 
 type SetDisplayBackgroundAction = {
-  type: SettingsActions.setDisplayBackground
+  type: AppSettingsActionType.SetDisplayBackground
   payload: boolean
 }
 
 type SetOpenLinksInNewTabAction = {
-  type: SettingsActions.setOpenLinksInNewTab
+  type: AppSettingsActionType.SetOpenLinksInNewTab
   payload: boolean
 }
 
@@ -48,35 +48,35 @@ export type AppSettingsActions =
   | SetOpenLinksInNewTabAction
 
 export function setTheme(payload: AppTheme): SetThemeAction {
-  return { type: SettingsActions.setTheme, payload }
+  return { type: AppSettingsActionType.SetTheme, payload }
 }
 
 export function setDisplayDescription(
   payload: boolean,
 ): SetDisplayDescriptionAction {
-  return { type: SettingsActions.setDisplayDescription, payload }
+  return { type: AppSettingsActionType.SetDisplayDescription, payload }
 }
 
 export function setDisplayJumpLinks(
   payload: boolean,
 ): SetDisplayJumpLinksAction {
-  return { type: SettingsActions.setDisplayJumpLinks, payload }
+  return { type: AppSettingsActionType.SetDisplayJumpLinks, payload }
 }
 
 export function setDisplayJumpLinksMobile(
   payload: boolean,
 ): SetDisplayJumpLinksMobileAction {
-  return { type: SettingsActions.setDisplayJumpLinksMobile, payload }
+  return { type: AppSettingsActionType.SetDisplayJumpLinksMobile, payload }
 }
 
 export function setDisplayBackground(
   payload: boolean,
 ): SetDisplayBackgroundAction {
-  return { type: SettingsActions.setDisplayBackground, payload }
+  return { type: AppSettingsActionType.SetDisplayBackground, payload }
 }
 
 export function setOpenLinksInNewTab(
   payload: boolean,
 ): SetOpenLinksInNewTabAction {
-  return { type: SettingsActions.setOpenLinksInNewTab, payload }
+  return { type: AppSettingsActionType.SetOpenLinksInNewTab, payload }
 }

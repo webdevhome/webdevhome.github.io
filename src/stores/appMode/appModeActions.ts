@@ -1,24 +1,26 @@
 import { AppMode } from './appModeReducer'
 
-export const SET_MODE = 'SET_MODE'
+export const enum AppModeActionType {
+  SetMode = 'set app mode',
+}
 
-type SetModeAction = {
-  type: typeof SET_MODE
+type SetAppModeAction = {
+  type: AppModeActionType.SetMode
   payload: AppMode
 }
 
-export type AppModeActions = SetModeAction
+export type AppModeActions = SetAppModeAction
 
-export function setAppMode(mode: AppMode): SetModeAction {
-  return { type: SET_MODE, payload: mode }
+export function setAppMode(mode: AppMode): SetAppModeAction {
+  return { type: AppModeActionType.SetMode, payload: mode }
 }
 
 export function toggleAppMode(
   mode: AppMode,
   currentMode: AppMode,
-): SetModeAction {
+): SetAppModeAction {
   return {
-    type: SET_MODE,
+    type: AppModeActionType.SetMode,
     payload: currentMode === AppMode.default ? mode : AppMode.default,
   }
 }

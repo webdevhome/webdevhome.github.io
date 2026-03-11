@@ -1,11 +1,7 @@
 import { SearchTarget } from '../../links'
 import { AppActions } from '../actions'
-import { SET_MODE } from '../appMode/appModeActions'
-import {
-  SET_CURRENT_SEARCH_TARGET,
-  SET_ON_SITE_SEARCH_TERM,
-  SET_SEARCH_TERM,
-} from './searchActions'
+import { AppModeActionType } from '../appMode/appModeActions'
+import { SearchActionType } from './searchActions'
 
 export type SearchState = {
   searchTerm: string
@@ -22,19 +18,19 @@ export function search(
   action: AppActions,
 ): SearchState {
   switch (action.type) {
-    case SET_SEARCH_TERM: {
+    case SearchActionType.SetSearchTerm: {
       return { ...state, searchTerm: action.payload }
     }
 
-    case SET_ON_SITE_SEARCH_TERM: {
+    case SearchActionType.SetOnSiteSearchTerm: {
       return { ...state, onSiteSearchTerm: action.payload }
     }
 
-    case SET_CURRENT_SEARCH_TARGET: {
+    case SearchActionType.SetCurrentSearchTarget: {
       return { ...state, onSiteSearchTerm: '', searchTarget: action.payload }
     }
 
-    case SET_MODE: {
+    case AppModeActionType.SetMode: {
       return getInitialState()
     }
 

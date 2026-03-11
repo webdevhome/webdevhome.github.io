@@ -1,4 +1,4 @@
-import { AppSettingsActions, SettingsActions } from './appSettingsActions'
+import { AppSettingsActions, AppSettingsActionType } from './appSettingsActions'
 
 export enum AppTheme {
   auto = 'auto',
@@ -29,27 +29,27 @@ export function appSettings(
   action: AppSettingsActions,
 ): AppSettingsState {
   switch (action.type) {
-    case SettingsActions.setTheme: {
+    case AppSettingsActionType.SetTheme: {
       return { ...state, theme: action.payload }
     }
 
-    case SettingsActions.setDisplayDescription: {
+    case AppSettingsActionType.SetDisplayDescription: {
       return { ...state, showDescriptions: action.payload }
     }
 
-    case SettingsActions.setDisplayJumpLinks: {
+    case AppSettingsActionType.SetDisplayJumpLinks: {
       return { ...state, showJumpLinks: action.payload }
     }
 
-    case SettingsActions.setDisplayJumpLinksMobile: {
+    case AppSettingsActionType.SetDisplayJumpLinksMobile: {
       return { ...state, showJumpLinksMobile: action.payload }
     }
 
-    case SettingsActions.setDisplayBackground: {
+    case AppSettingsActionType.SetDisplayBackground: {
       return { ...state, showBackground: action.payload }
     }
 
-    case SettingsActions.setOpenLinksInNewTab: {
+    case AppSettingsActionType.SetOpenLinksInNewTab: {
       return { ...state, openLinksInNewTab: action.payload }
     }
 

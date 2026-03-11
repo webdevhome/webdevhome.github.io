@@ -1,10 +1,6 @@
 import { LinkItem, onlyValidLinks } from '../../links'
 import { AppActions } from '../actions'
-import {
-  SET_HIDDEN_LINKS,
-  TOGGLE_HIDDEN_LINK,
-  TOGGLE_HIDDEN_LINKS_GROUP,
-} from './hiddenLinksActions'
+import { HiddenLinksActionType } from './hiddenLinksActions'
 
 export type HiddenLinksState = {
   links: Array<LinkItem['url']>
@@ -19,11 +15,11 @@ export function hiddenLinks(
   action: AppActions,
 ): HiddenLinksState {
   switch (action.type) {
-    case SET_HIDDEN_LINKS: {
+    case HiddenLinksActionType.SetHiddenLinks: {
       return { ...state, links: action.payload.filter(onlyValidLinks) }
     }
 
-    case TOGGLE_HIDDEN_LINK: {
+    case HiddenLinksActionType.ToggleHiddenLink: {
       const hiddenLinks = state.links.includes(action.payload)
         ? state.links.filter((link) => link !== action.payload)
         : [...state.links, action.payload]
@@ -31,7 +27,7 @@ export function hiddenLinks(
       return { ...state, links: hiddenLinks.filter(onlyValidLinks) }
     }
 
-    case TOGGLE_HIDDEN_LINKS_GROUP: {
+    case HiddenLinksActionType.ToggleHiddenLinkGroup: {
       if (action.payload.every((link) => state.links.includes(link))) {
         // Group is already entirely hidden. Remove all of them from
         // `hiddenLinks`, which makes all of them visible again.

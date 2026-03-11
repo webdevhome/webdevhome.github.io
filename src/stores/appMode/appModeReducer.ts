@@ -1,5 +1,5 @@
 import { AppActions } from '../actions'
-import { SET_MODE } from './appModeActions'
+import { AppModeActionType } from './appModeActions'
 
 export enum AppMode {
   default = 'DEFAULT',
@@ -20,7 +20,7 @@ export function appMode(
   action: AppActions,
 ): AppModeState {
   switch (action.type) {
-    case SET_MODE: {
+    case AppModeActionType.SetMode: {
       return { ...state, currentMode: action.payload }
     }
 
