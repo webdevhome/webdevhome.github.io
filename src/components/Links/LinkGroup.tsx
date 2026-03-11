@@ -75,10 +75,6 @@ export const LinkGroup: FC<Props> = ({ group }) => {
             `text-${group.color ?? 'gray'}-800 dark:text-${group.color ?? 'gray'}-50`,
             'rounded-lg',
             'shadow-sm',
-            {
-              // [`outline outline-1 -outline-offset-1 outline-${group.color}-300 dark:outline-none`]:
-              // 'shadow-sm': toggleBackground.showBackground,
-            },
           )}
         >
           {group.name}
