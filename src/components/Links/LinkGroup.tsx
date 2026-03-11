@@ -113,24 +113,20 @@ export const LinkGroup: FC<Props> = ({ group }) => {
           />
         ))}
 
-        {isCurrentAppMode(AppMode.default) && hiddenLinks.length > 0 ? (
-          <>
-            <LinkGroupButton onClick={handleShowHiddenLinksClick}>
-              {showHiddenLinksButtonLabel}
-            </LinkGroupButton>
+        <LinkGroupButton onClick={handleShowHiddenLinksClick}>
+          {showHiddenLinksButtonLabel}
+        </LinkGroupButton>
 
-            {showHiddenLinks ? (
-              <div>
-                {hiddenLinks.map((link) => (
-                  <Link
-                    key={link.url}
-                    link={link}
-                    searchable={link.searchUrl !== undefined}
-                  />
-                ))}
-              </div>
-            ) : null}
-          </>
+        {showHiddenLinks ? (
+          <div>
+            {hiddenLinks.map((link) => (
+              <Link
+                key={link.url}
+                link={link}
+                searchable={link.searchUrl !== undefined}
+              />
+            ))}
+          </div>
         ) : null}
       </div>
     </div>

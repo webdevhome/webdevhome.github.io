@@ -78,7 +78,7 @@ export const Link: FC<Props> = ({
     [dispatch, link],
   )
 
-  if (!isCustomizeMode && !visible) return null
+  if (!visible) return null
 
   return (
     <a
