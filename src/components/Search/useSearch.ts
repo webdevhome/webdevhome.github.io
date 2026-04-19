@@ -6,12 +6,15 @@ import {
   useCallback,
   useEffect,
   useMemo,
-  useState,
 } from 'react'
 import { LinkItem, SearchTarget, useAllLinks } from '../../links'
 import { useAppDispatch, useAppSelector } from '../../stores'
 import { setAppMode } from '../../stores/appMode/appModeActions'
 import { AppMode } from '../../stores/appMode/appModeReducer'
+import {
+  createGlobalState,
+  useGlobalState,
+} from '../../stores/createGlobalState.js'
 import { useGetIsLinkHidden } from '../../stores/hiddenLinks/hiddenLinksHooks'
 import {
   setOnSiteSearchTerm,
@@ -42,6 +45,8 @@ type UseSearchReturn = {
   handleInputChange: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
+const keyboardIndexState = createGlobalState(0)
+
 export function useSearch({
   searchInputRef,
 }: UseSearchParams): UseSearchReturn {
@@ -55,7 +60,7 @@ export function useSearch({
   const allLinks = useAllLinks()
   const openLinksInNewTab = useOpenLinksInNewTab()
 
-  const [keyboardIndex, setKeyboardIndex] = useState<number>(0)
+  const [keyboardIndex, setKeyboardIndex] = useGlobalState(keyboardIndexState)
 
   const links = useMemo(() => {
     const result: GroupedLinks = { visible: [], hidden: [] }
@@ -205,6 +210,7 @@ export function useSearch({
           if (results === null) return
 
           event.preventDefault()
+
           setKeyboardIndex(Math.max(0, keyboardIndex - 1))
           break
         }
@@ -234,6 +240,7 @@ export function useSearch({
       results,
       searchTarget,
       searchTerm,
+      setKeyboardIndex,
     ],
   )
 
