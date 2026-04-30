@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+
+@source inline(
+  'bg-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-100'
+);
+@source inline(
+  '{dark:,}bg-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-{600}'
+);
+@source inline(
+  'outline-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-300'
+);
+@source inline(
+  'text-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-800'
+);
+@source inline(
+  '{dark:,}text-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-{50,300}'
+);
+
+@theme {
+  --color-brand-50: #f6fdfd;
+  --color-brand-100: #cce6e5;
+  --color-brand-200: #a1cfce;
+  --color-brand-300: #76b9b8;
+  --color-brand-400: #4aa3a2;
+  --color-brand-500: #1f8d8b;
+  --color-brand-600: #1e7170;
+  --color-brand-700: #1b5857;
+  --color-brand-800: #163f3e;
+  --color-brand-900: #102828;
+
+  --font-sans:
+    Inter, 'Helvetica Neue', 'Segoe UI', Roboto, Verdana, Arial, sans-serif;
+  --font-mono:
+    'JetBrains Mono', 'IBM Plex Mono', 'Cascadia Code', 'Roboto Mono',
+    'Fira Code', monospace;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.15);
+  --shadow-lg:
+    0px 0.6px 0.9px hsl(0 0 0 / 0), -0.1px 5.6px 8.4px hsl(0 0 0 / 0.03),
+    -0.1px 10.5px 15.8px hsl(0 0 0 / 0.06),
+    -0.2px 18.4px 27.6px hsl(0 0 0 / 0.09),
+    -0.4px 32.2px 48.3px hsl(0 0 0 / 0.12);
+}
+
+@custom-variant supports-backdrop (@supports (backdrop-filter: blur(1px)));
+@custom-variant dark (&:where(.dark, .dark *));
+
+@utility scrollbargutter-auto {
+  scrollbar-gutter: auto;
+}
+
+@utility scrollbargutter-stable {
+  scrollbar-gutter: stable;
+}
+
+@utility scrollbargutter-stable-both {
+  scrollbar-gutter: stable both-edges;
+}
+
+@utility scrollbargutter-inherit {
+  scrollbar-gutter: inherit;
+}
+
+@utility scrollbargutter-initial {
+  scrollbar-gutter: initial;
+}
+
+@utility scrollbargutter-revert {
+  scrollbar-gutter: revert;
+}
+
+@utility scrollbargutter-unset {
+  scrollbar-gutter: unset;
+}
+
+@layer base {
+  @font-face {
+    font-family: InterVariable;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/assets/fonts/InterVariable.woff2') format('woff2');
+  }
+
+  :root {
+    color-scheme: light dark;
+
+    &.light {
+      color-scheme: light;
+    }
+
+    &.dark {
+      color-scheme: dark;
+    }
+  }
+
+  svg {
+    @apply align-middle;
+  }
+}
+
+@layer components {
+  .px-page {
+    @apply px-2 sm:px-4 lg:px-6;
+  }
+
+  .py-page {
+    @apply py-2 sm:py-4 lg:py-6;
+  }
+
+  .p-page {
+    @apply p-2 sm:p-4 lg:p-6;
+  }
+}

@@ -3,23 +3,21 @@
   "items": [
     {
       "name": "Source Control & CI/CD",
-      "color": "slate",
+      "color": "mist",
       "items": [
         {
           "title": "GitHub",
           "url": "https://github.com",
           "icon": "github",
           "color": "#181717",
-          "searchUrl": "https://github.com/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://github.com/search?q={search}"
         },
         {
           "title": "GitLab",
           "url": "https://gitlab.com/explore",
           "icon": "gitlab",
           "color": "#FC6D26",
-          "searchUrl": "https://gitlab.com/search?utf8=%E2%9C%93&search={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://gitlab.com/search?utf8=%E2%9C%93&search={search}"
         },
         {
           "title": "Atlassian Home",
@@ -73,7 +71,7 @@
     },
     {
       "name": "Hosting & Cloud Services",
-      "color": "slate",
+      "color": "mist",
       "items": [
         {
           "title": "Vercel",
@@ -92,7 +90,7 @@
           "title": "Heroku",
           "url": "https://heroku.com",
           "searchUrl": "https://heroku.com/search?s={search}",
-          "searchConcat": "+"
+          "color": "#5a1ba9"
         },
         {
           "title": "Render",
@@ -109,35 +107,34 @@
         {
           "title": "Fortrabbit",
           "url": "https://www.fortrabbit.com",
-          "description": "PHP hosting platform."
+          "description": "PHP hosting platform.",
+          "color": "#65D0EA"
         },
         {
           "title": "Microsoft Azure",
           "url": "https://azure.microsoft.com",
           "searchUrl": "https://azure.microsoft.com/search/?q={search}",
-          "searchConcat": "+"
+          "color": "#3376CD"
         },
         {
           "title": "Amazon Web Services",
           "url": "https://aws.amazon.com",
           "searchUrl": "https://aws.amazon.com/de/search/?searchQuery={search}",
-          "searchConcat": "%20"
+          "color": "#000000"
         },
         {
           "title": "Google Cloud",
           "url": "https://cloud.google.com",
           "icon": "googlecloud",
           "color": "#4285F4",
-          "searchUrl": "https://cloud.google.com/s/results/?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://cloud.google.com/s/results/?q={search}"
         },
         {
           "title": "Firebase",
           "url": "https://firebase.google.com",
           "icon": "firebase",
           "color": "#DD2C00",
-          "searchUrl": "https://firebase.google.com/s/results?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://firebase.google.com/s/results?q={search}"
         },
         {
           "title": "Supabase",
@@ -162,8 +159,7 @@
           "url": "https://www.cloudflare.com",
           "icon": "cloudflare",
           "color": "#F38020",
-          "searchUrl": "https://www.cloudflare.com/searchresults/#q={search}&f[Language]=English",
-          "searchConcat": "%20"
+          "searchUrl": "https://www.cloudflare.com/searchresults/#q={search}&f[Language]=English"
         }
       ]
     },
@@ -177,8 +173,14 @@
           "description": "Node.js package directory and package manager.",
           "icon": "npm",
           "color": "#cb3837",
-          "searchUrl": "https://www.npmjs.com/search?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://www.npmjs.com/search?q={search}"
+        },
+        {
+          "title": "npmx",
+          "url": "https://npmx.dev",
+          "description": "A fast, modern browser for the npm registry.",
+          "searchUrl": "https://npmx.dev/search?q={search}",
+          "color": "#000000"
         },
         {
           "title": "Yarn",
@@ -186,8 +188,7 @@
           "description": "Alternative package manager for Node.js.",
           "icon": "yarn",
           "color": "#2e2a65",
-          "searchUrl": "https://yarnpkg.com/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://yarnpkg.com/search?q={search}"
         },
         {
           "title": "pnpm",
@@ -216,8 +217,7 @@
           "description": "PHP package directory.",
           "icon": "packagist",
           "color": "#F28D1A",
-          "searchUrl": "https://packagist.org/?query={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://packagist.org/?query={search}"
         },
         {
           "title": "Nuget",
@@ -225,8 +225,7 @@
           "description": ".Net package manager.",
           "icon": "nuget",
           "color": "#004880",
-          "searchUrl": "https://www.nuget.org/packages?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://www.nuget.org/packages?q={search}"
         },
         {
           "title": "Go Packages",
@@ -234,17 +233,15 @@
           "description": "Golang package directory.",
           "icon": "go",
           "color": "#00ADD8",
-          "searchUrl": "https://pkg.go.dev/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://pkg.go.dev/search?q={search}"
         },
         {
           "title": "Rust Crates",
           "url": "https://crates.io",
-          "description": "Rust package directory",
+          "description": "Rust package directory.",
           "icon": "rust",
           "color": "#000000",
-          "searchUrl": "https://crates.io/search?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://crates.io/search?q={search}"
         },
         {
           "title": "Dart Packages",
@@ -252,8 +249,7 @@
           "description": "Dart package directory.",
           "icon": "dart",
           "color": "#0175C2",
-          "searchUrl": "https://pub.dev/packages?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://pub.dev/packages?q={search}"
         },
         {
           "title": "Docker Hub",
@@ -261,8 +257,7 @@
           "description": "Docker image directory.",
           "icon": "docker",
           "color": "#2496ED",
-          "searchUrl": "https://hub.docker.com/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://hub.docker.com/search?q={search}"
         }
       ]
     },
@@ -282,12 +277,13 @@
           "url": "https://bundlephobia.com",
           "description": "Check bundle size of npm packages.",
           "searchUrl": "https://bundlephobia.com/result?p={search}",
-          "searchConcat": "%20"
+          "color": "#000000"
         },
         {
           "title": "bundlejs",
           "url": "https://bundlejs.com",
-          "description": "A npm package size checker."
+          "description": "A npm package size checker.",
+          "color": "#60a5fa"
         },
         {
           "title": "gitignore.io",
@@ -302,8 +298,7 @@
           "description": "Find alternatives to some given technology.",
           "icon": "alternativeto",
           "color": "#0289D5",
-          "searchUrl": "https://alternativeto.net/browse/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://alternativeto.net/browse/search?q={search}"
         },
         {
           "title": "StackShare",
@@ -311,8 +306,7 @@
           "description": "A service that let's you analyze and manage your technology stack. You can also browse other company's stacks.",
           "icon": "stackshare",
           "color": "#0690fa",
-          "searchUrl": "https://stackshare.io/search/q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://stackshare.io/search/q={search}"
         }
       ]
     },
@@ -325,40 +319,35 @@
           "url": "https://stackoverflow.com",
           "icon": "stackoverflow",
           "color": "#F58025",
-          "searchUrl": "https://stackoverflow.com/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://stackoverflow.com/search?q={search}"
         },
         {
           "title": "Super User",
           "url": "https://superuser.com",
           "icon": "superuser",
           "color": "#38A1CE",
-          "searchUrl": "https://superuser.com/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://superuser.com/search?q={search}"
         },
         {
           "title": "Server Fault",
           "url": "https://serverfault.com",
           "icon": "serverfault",
           "color": "#E7282D",
-          "searchUrl": "https://serverfault.com/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://serverfault.com/search?q={search}"
         },
         {
           "title": "Reddit",
           "url": "https://reddit.com",
           "icon": "reddit",
           "color": "#ff4500",
-          "searchUrl": "https://www.reddit.com/search/?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://www.reddit.com/search/?q={search}"
         },
         {
           "title": "X / Twitter",
           "url": "https://twitter.com",
           "icon": "x",
           "color": "#000000",
-          "searchUrl": "https://twitter.com/search?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://twitter.com/search?q={search}"
         },
         {
           "title": "WhatsApp Web",
@@ -374,11 +363,13 @@
         },
         {
           "title": "Microsoft Teams",
-          "url": "https://www.microsoft.com/microsoft-teams/log-in"
+          "url": "https://www.microsoft.com/microsoft-teams/log-in",
+          "color": "#5D5BCD"
         },
         {
           "title": "Slack",
-          "url": "https://slack.com"
+          "url": "https://slack.com",
+          "color": "#592366"
         }
       ]
     },
@@ -397,13 +388,11 @@
           "description": "Service for writing documentation for your libraries.",
           "icon": "readthedocs",
           "color": "#000000",
-          "searchUrl": "https://readthedocs.org/search/?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://readthedocs.org/search/?q={search}"
         },
         {
           "title": "GitBook",
           "url": "https://www.gitbook.com",
-          "description": "",
           "icon": "gitbook",
           "color": "#BBDDE5"
         },
@@ -413,51 +402,51 @@
           "description": "Web technology documentation (HTML, CSS, JS, Browser APIs, etc.) by Mozilla.",
           "icon": "mdnwebdocs",
           "color": "#000000",
-          "searchUrl": "https://developer.mozilla.org/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://developer.mozilla.org/search?q={search}"
         },
         {
           "title": "GitHub Docs",
           "url": "https://docs.github.com",
           "icon": "github",
           "color": "#181717",
-          "searchUrl": "https://docs.github.com/search?search-overlay-input={search}&query={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://docs.github.com/search?search-overlay-input={search}&query={search}"
         },
         {
           "title": "Microsoft Docs",
           "url": "https://docs.microsoft.com",
           "searchUrl": "https://docs.microsoft.com/en-us/search/?search={search}&category=All",
-          "searchConcat": "+"
+          "color": "#84B4E2"
         },
         {
           "title": "Apple Developer",
           "url": "https://developer.apple.com",
           "icon": "apple",
           "color": "#000000",
-          "searchUrl": "https://developer.apple.com/search/?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://developer.apple.com/search/?q={search}"
         },
         {
           "title": "Oracle Help Center",
-          "url": "https://docs.oracle.com/en"
+          "url": "https://docs.oracle.com/en",
+          "color": "#B84F3C"
         },
         {
           "title": "Cheatography",
           "url": "https://cheatography.com",
           "description": "List of various cheat sheets.",
           "searchUrl": "https://cheatography.com/explore/search/?q={search}",
-          "searchConcat": "+"
+          "color": "#222222"
         },
         {
           "title": "devhints.io",
           "url": "https://devhints.io/",
-          "description": "A list of cheatsheets by Rico Sta. Cruz."
+          "description": "A list of cheatsheets by Rico Sta. Cruz.",
+          "color": "#745fb5"
         },
         {
           "title": "Emmet Cheat Sheet",
           "url": "https://docs.emmet.io/cheat-sheet",
-          "description": "The official cheat sheet for Emmet - the editor shortcuts to quickly write HTML."
+          "description": "The official cheat sheet for Emmet - the editor shortcuts to quickly write HTML.",
+          "color": "#8DC942"
         },
         {
           "title": "BEM",
@@ -479,7 +468,7 @@
         {
           "title": "Public APIs",
           "url": "https://github.com/public-apis/public-apis",
-          "description": "A list of public APIs"
+          "description": "A list of public APIs."
         }
       ]
     },
@@ -491,15 +480,14 @@
           "title": "CodePen",
           "url": "https://codepen.io",
           "searchUrl": "https://codepen.io/search/pens?q={search}",
-          "searchConcat": "+"
+          "color": "#1E1F25"
         },
         {
           "title": "CodeSandbox",
           "url": "https://codesandbox.io",
           "icon": "codesandbox",
           "color": "#000000",
-          "searchUrl": "https://codesandbox.io/search?query={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://codesandbox.io/search?query={search}"
         },
         {
           "title": "TS Playground",
@@ -537,7 +525,8 @@
         },
         {
           "title": "regex101",
-          "url": "https://regex101.com"
+          "url": "https://regex101.com",
+          "color": "#1E3350"
         }
       ]
     },
@@ -577,8 +566,7 @@
           "description": "Official documentation for Google's Material Design.",
           "icon": "materialdesign",
           "color": "#6750A4",
-          "searchUrl": "https://material.io/search.html?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://material.io/search.html?q={search}"
         },
         {
           "title": "CSS Modules",
@@ -589,12 +577,14 @@
         {
           "title": "linaria",
           "url": "https://linaria.dev/",
-          "description": "A zero-runtime CSS-in-JS library."
+          "description": "A zero-runtime CSS-in-JS library.",
+          "color": "#A74D8E"
         },
         {
           "title": "Panda CSS",
           "url": "https://panda-css.com/",
-          "description": "A zero-runtime CSS-in-JS library."
+          "description": "A zero-runtime CSS-in-JS library.",
+          "color": "#F8E164"
         },
         {
           "title": "vanilla-extract",
@@ -612,7 +602,7 @@
       ]
     },
     {
-      "name": "JS Frameworks",
+      "name": "UI Frameworks (DOM controling)",
       "color": "blue",
       "items": [
         {
@@ -629,38 +619,10 @@
           "color": "#673AB8"
         },
         {
-          "title": "Gatsby",
-          "url": "https://gatsbyjs.org",
-          "description": "A framework based on React.",
-          "icon": "gatsby",
-          "color": "#663399"
-        },
-        {
-          "title": "Next.js",
-          "url": "https://nextjs.org",
-          "description": "A framework based on React.",
-          "icon": "nextdotjs",
-          "color": "#000000"
-        },
-        {
           "title": "Vue",
           "url": "https://vuejs.org",
           "icon": "vuedotjs",
           "color": "#4FC08D"
-        },
-        {
-          "title": "Nuxt.js",
-          "url": "https://nuxt.com",
-          "description": "A framework based on Vue.",
-          "icon": "nuxt",
-          "color": "#00DC82"
-        },
-        {
-          "title": "VitePress",
-          "url": "https://vitepress.dev",
-          "description": "Static site generator powered by Vue.",
-          "icon": "vitepress",
-          "color": "#5C73E7"
         },
         {
           "title": "Angular",
@@ -689,12 +651,16 @@
           "color": "#FF3E00"
         },
         {
-          "title": "Astro",
-          "url": "https://astro.build",
-          "description": "A framework for content-driven websites.",
-          "icon": "astro",
-          "color": "#BC52EE"
-        },
+          "title": "JS web framework benchmark",
+          "url": "https://krausest.github.io/js-framework-benchmark",
+          "description": "A performance benchmark table for many JS web frameworks."
+        }
+      ]
+    },
+    {
+      "name": "UI Frameworks (DOM enhancing)",
+      "color": "blue",
+      "items": [
         {
           "title": "Alpine.js",
           "url": "https://alpinejs.dev",
@@ -729,11 +695,247 @@
           "description": "A modest JavaScript framework for the HTML you already have.",
           "icon": "stimulus",
           "color": "#77E8B9"
+        }
+      ]
+    },
+    {
+      "name": "UI Frameworks (Server side)",
+      "color": "blue",
+      "items": [
+        {
+          "title": "Astro",
+          "url": "https://astro.build",
+          "description": "A framework for content-driven websites.",
+          "icon": "astro",
+          "color": "#BC52EE"
         },
         {
-          "title": "JS web framework benchmark",
-          "url": "https://krausest.github.io/js-framework-benchmark",
-          "description": "A performance benchmark table for many JS web frameworks."
+          "title": "Next.js",
+          "url": "https://nextjs.org",
+          "description": "A framework based on React.",
+          "icon": "nextdotjs",
+          "color": "#000000"
+        },
+        {
+          "title": "Nuxt.js",
+          "url": "https://nuxt.com",
+          "description": "A framework based on Vue.",
+          "icon": "nuxt",
+          "color": "#00DC82"
+        },
+        {
+          "title": "VitePress",
+          "url": "https://vitepress.dev",
+          "description": "Static site generator powered by Vue.",
+          "icon": "vitepress",
+          "color": "#5C73E7"
+        },
+        {
+          "title": "Gatsby",
+          "url": "https://gatsbyjs.org",
+          "description": "A framework based on React.",
+          "icon": "gatsby",
+          "color": "#663399"
+        }
+      ]
+    },
+    {
+      "name": "UI, Animation & Rendering",
+      "color": "blue",
+      "items": [
+        {
+          "title": "Headless UI",
+          "url": "https://headlessui.dev",
+          "description": "Unstyled UI components for React and Vue by the developers of Tailwind CSS.",
+          "icon": "headlessui",
+          "color": "#66E3FF"
+        },
+        {
+          "title": "Motion",
+          "url": "https://motion.dev",
+          "description": "A JavaScript animation library.",
+          "color": "#FDF45B"
+        },
+        {
+          "title": "GSAP",
+          "url": "https://gsap.com",
+          "description": "A JavaScript animation library.",
+          "icon": "gsap",
+          "color": "#0AE448"
+        },
+        {
+          "title": "PixiJS",
+          "url": "https://pixijs.com",
+          "description": "A 2D WebGL renderer.",
+          "searchUrl": "https://pixijs.com/search/?q={search}",
+          "color": "#D43A65"
+        },
+        {
+          "title": "D3",
+          "url": "https://d3js.org",
+          "description": "A library for data-driven visualizations.",
+          "icon": "d3",
+          "color": "#F9A03C"
+        },
+        {
+          "title": "Three.js",
+          "url": "https://threejs.org",
+          "description": "A library for creating 3D graphics.",
+          "icon": "threedotjs",
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "name": "State Management",
+      "color": "blue",
+      "items": [
+        {
+          "title": "Jotai",
+          "url": "https://jotai.org",
+          "description": "Atomic state management library for React.",
+          "color": "#000000"
+        },
+        {
+          "title": "Zustand",
+          "url": "https://zustand-demo.pmnd.rs",
+          "description": "State management library for React.",
+          "color": "#423E39"
+        },
+        {
+          "title": "Pinia",
+          "url": "https://pinia.vuejs.org",
+          "description": "Data store for Vue.js.",
+          "icon": "pinia",
+          "color": "#FFD859"
+        },
+        {
+          "title": "Redux",
+          "url": "https://redux.js.org",
+          "description": "State management library.",
+          "icon": "redux",
+          "color": "#764ABC"
+        },
+        {
+          "title": "MobX",
+          "url": "https://mobx.js.org",
+          "description": "State management library.",
+          "icon": "mobx",
+          "color": "#FF9955"
+        },
+        {
+          "title": "Nano Stores",
+          "url": "https://github.com/nanostores/nanostores",
+          "description": "A tiny state manager for React, React Native, Preact, Vue, Svelte, Solid, Lit, Angular, and vanilla JS.",
+          "icon": "nanostores",
+          "color": "#000000"
+        },
+        {
+          "title": "xoid",
+          "url": "https://www.xoid.dev/",
+          "description": "Framework-agnostic state management library with bindings for multiple frameworks.",
+          "color": "#2A2860"
+        },
+        {
+          "title": "XState",
+          "url": "https://stately.ai",
+          "description": "Actor-based state management & orchestration for complex app logic.",
+          "icon": "xstate",
+          "color": "#2C3E50"
+        }
+      ]
+    },
+    {
+      "name": "Other JS Libraries",
+      "color": "blue",
+      "items": [
+        {
+          "title": "React Router",
+          "url": "https://reactrouter.com",
+          "icon": "reactrouter",
+          "color": "#CA4245"
+        },
+        {
+          "title": "TanStack",
+          "url": "https://tanstack.com",
+          "description": "List of open source libraries, including TanStack Query.",
+          "icon": "tanstack",
+          "color": "#000000"
+        },
+        {
+          "title": "TanStack Query",
+          "url": "https://tanstack.com/query",
+          "description": "Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte.",
+          "icon": "reactquery",
+          "color": "#FF4154"
+        },
+        {
+          "title": "Socket.io",
+          "url": "https://socket.io",
+          "description": "Bidirectional and low-latency communication for every platform.",
+          "icon": "socketdotio",
+          "color": "#010101"
+        },
+        {
+          "title": "Apollo",
+          "url": "https://www.apollographql.com",
+          "description": "GraphQL client.",
+          "icon": "apollographql",
+          "color": "#311C87"
+        },
+        {
+          "title": "Axios",
+          "url": "https://axios-http.com",
+          "description": "JS REST client library.",
+          "icon": "axios",
+          "color": "#5A29E4"
+        },
+        {
+          "title": "TinyBase",
+          "url": "https://tinybase.org",
+          "description": "A reactive data store & sync engine.",
+          "color": "#C63361"
+        },
+        {
+          "title": "i18next",
+          "url": "https://www.i18next.com",
+          "description": "Framework-agnostic i18n library.",
+          "icon": "i18next",
+          "color": "#26A69A",
+          "searchUrl": "https://www.i18next.com/?q={search}"
+        },
+        {
+          "title": "Zod",
+          "url": "https://zod.dev",
+          "description": "TypeScript-first schema validation with static type inference.",
+          "icon": "zod",
+          "color": "#408AFF"
+        },
+        {
+          "title": "RxJS",
+          "url": "https://rxjs.dev",
+          "description": "Library for functional reactive programming.",
+          "icon": "reactivex",
+          "color": "#B7178C"
+        },
+        {
+          "title": "Lodash",
+          "url": "https://lodash.com",
+          "icon": "lodash",
+          "color": "#3492ff"
+        },
+        {
+          "title": "es-toolkit",
+          "url": "https://es-toolkit.slash.page",
+          "description": "State-of-the-art JavaScript utility library.",
+          "color": "#45825C"
+        },
+        {
+          "title": "date-fns",
+          "url": "https://date-fns.org",
+          "description": "date-fns provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.",
+          "icon": "datefns",
+          "color": "#770C56"
         }
       ]
     },
@@ -778,8 +980,7 @@
           "description": "A framework to build native desktop apps using the web stack.",
           "icon": "electron",
           "color": "#47848F",
-          "searchUrl": "https://www.electronjs.org/?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://www.electronjs.org/?q={search}"
         },
         {
           "title": "Tauri",
@@ -801,150 +1002,7 @@
           "description": "A Dart based framework to build multi-platform apps.",
           "icon": "flutter",
           "color": "#02569B",
-          "searchUrl": "https://flutter.dev/search?q={search}",
-          "searchConcat": "+"
-        }
-      ]
-    },
-    {
-      "name": "Other JS Libraries",
-      "color": "blue",
-      "items": [
-        {
-          "title": "React Router",
-          "url": "https://reactrouter.com",
-          "icon": "reactrouter",
-          "color": "#CA4245"
-        },
-        {
-          "title": "Redux",
-          "url": "https://redux.js.org",
-          "description": "Application state management library.",
-          "icon": "redux",
-          "color": "#764ABC"
-        },
-        {
-          "title": "Jotai",
-          "url": "https://jotai.org",
-          "description": "Atomic state management library for React similar to Recoil."
-        },
-        {
-          "title": "MobX",
-          "url": "https://mobx.js.org",
-          "description": "Application state management library.",
-          "icon": "mobx",
-          "color": "#FF9955"
-        },
-        {
-          "title": "Socket.io",
-          "url": "https://socket.io",
-          "description": "Bidirectional and low-latency communication for every platform.",
-          "icon": "socketdotio",
-          "color": "#010101"
-        },
-        {
-          "title": "Apollo",
-          "url": "https://www.apollographql.com",
-          "description": "GraphQL client.",
-          "icon": "apollographql",
-          "color": "#311C87"
-        },
-        {
-          "title": "TanStack",
-          "url": "https://tanstack.com",
-          "description": "List of open source libraries, including TanStack Query.",
-          "icon": "tanstack",
-          "color": "#000000"
-        },
-        {
-          "title": "TanStack Query",
-          "url": "https://tanstack.com/query",
-          "description": "Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte.",
-          "icon": "reactquery",
-          "color": "#FF4154"
-        },
-        {
-          "title": "Axios",
-          "url": "https://axios-http.com",
-          "description": "JS REST client library.",
-          "icon": "axios",
-          "color": "#5A29E4"
-        },
-        {
-          "title": "i18next",
-          "url": "https://www.i18next.com",
-          "description": "Framework agnostic i18n library.",
-          "icon": "i18next",
-          "color": "#26A69A",
-          "searchUrl": "https://www.i18next.com/?q={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "Zod",
-          "url": "https://zod.dev",
-          "description": "TypeScript-first schema validation with static type inference",
-          "icon": "zod",
-          "color": "#408AFF"
-        },
-        {
-          "title": "RxJS",
-          "url": "https://rxjs.dev",
-          "description": "Library for functional reactive programming.",
-          "icon": "reactivex",
-          "color": "#B7178C"
-        },
-        {
-          "title": "PixiJS",
-          "url": "https://pixijs.com",
-          "description": "A 2D WebGL renderer.",
-          "searchUrl": "https://pixijs.com/search/?q={search}",
-          "searchConcat": "+"
-        },
-        {
-          "title": "D3",
-          "url": "https://d3js.org",
-          "description": "A library for data-driven visualizations.",
-          "icon": "d3",
-          "color": "#F9A03C"
-        },
-        {
-          "title": "Three.js",
-          "url": "https://threejs.org",
-          "description": "A library for creating 3D graphics.",
-          "icon": "threedotjs",
-          "color": "#000000"
-        },
-        {
-          "title": "GSAP",
-          "url": "https://gsap.com",
-          "description": "A JavaScript animation library.",
-          "icon": "gsap",
-          "color": "#0AE448"
-        },
-        {
-          "title": "Headless UI",
-          "url": "https://headlessui.dev",
-          "description": "Unstyled UI components for React and Vue by the developers of Tailwind CSS.",
-          "icon": "headlessui",
-          "color": "#66E3FF"
-        },
-        {
-          "title": "Lodash",
-          "url": "https://lodash.com",
-          "icon": "lodash",
-          "color": "#3492ff"
-        },
-        {
-          "title": "es-toolkit",
-          "url": "https://es-toolkit.slash.page",
-          "description": "State-of-the-art JavaScript utility library."
-        },
-        {
-          "title": "date-fns",
-          "url": "https://date-fns.org",
-          "description": "date-fns provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.",
-          "icon": "datefns",
-          "color": "#770C56"
+          "searchUrl": "https://flutter.dev/search?q={search}"
         }
       ]
     },
@@ -967,9 +1025,31 @@
           "color": "#9135FF"
         },
         {
+          "title": "Vite+",
+          "url": "https://viteplus.dev",
+          "description": "A unified toolchain by void(0).",
+          "icon": "vite",
+          "color": "#9135FF"
+        },
+        {
+          "title": "Rolldown",
+          "url": "https://rolldown.rs",
+          "description": "A JavaScript bundler by void(0).",
+          "icon": "rolldown",
+          "color": "#FF4100"
+        },
+        {
+          "title": "oxc",
+          "url": "https://oxc.rs/",
+          "description": "A JavaScript compiler by void(0).",
+          "icon": "oxc",
+          "color": "#00F7F1"
+        },
+        {
           "title": "void(0)",
           "url": "https://voidzero.dev",
-          "description": "A universal build chain from the creators of Vite."
+          "description": "A universal build chain from the creators of Vite.",
+          "color": "#000000"
         },
         {
           "title": "Biome",
@@ -1014,21 +1094,9 @@
       ]
     },
     {
-      "name": "Testing & Security",
+      "name": "Testing",
       "color": "green",
       "items": [
-        {
-          "title": "webhint",
-          "url": "https://webhint.io",
-          "description": "Linting tool that checks your website's accessibility, speed, cross-browser compatibility, and more."
-        },
-        {
-          "title": "ESLint",
-          "url": "https://eslint.org",
-          "description": "JavaScript and TypeScript linter.",
-          "icon": "eslint",
-          "color": "#4B32C3"
-        },
         {
           "title": "Cypress",
           "url": "https://www.cypress.io",
@@ -1053,6 +1121,7 @@
         {
           "title": "Vitest",
           "url": "https://vitest.dev",
+          "description": "JS/TS testing framework by void(0).",
           "icon": "vitest",
           "color": "#00FF74"
         },
@@ -1069,20 +1138,20 @@
           "description": "A framework for browser automation.",
           "icon": "selenium",
           "color": "#43B02A"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Security",
+      "color": "green",
+      "items": [
         {
-          "title": "Prettier",
-          "url": "https://prettier.io",
-          "description": "An opinionated code formatter",
-          "icon": "prettier",
-          "color": "#F7B93E"
-        },
-        {
-          "title": "EditorConfig",
-          "url": "https://editorconfig.org",
-          "description": "Control some text editor settings by using a config file.",
-          "icon": "editorconfig",
-          "color": "#010101"
+          "title": "OWASP Cheat Sheet Series Project",
+          "url": "https://cheatsheetseries.owasp.org",
+          "description": "Open Web Application Security Project (OWASP) Cheat Sheets.",
+          "icon": "owasp",
+          "color": "#000000",
+          "searchUrl": "https://cheatsheetseries.owasp.org/?q={search}"
         },
         {
           "title": "Let's Encrypt",
@@ -1094,7 +1163,7 @@
         {
           "title": "JWT",
           "url": "https://jwt.io",
-          "description": "JSON Web Tokens",
+          "description": "JSON Web Tokens.",
           "icon": "jsonwebtokens",
           "color": "#000000"
         },
@@ -1114,18 +1183,42 @@
       ]
     },
     {
-      "name": "Best Practices & Conventions",
+      "name": "Linting & Code Style",
       "color": "green",
       "items": [
         {
-          "title": "OWASP Cheat Sheet Series Project",
-          "url": "https://cheatsheetseries.owasp.org",
-          "description": "Open Web Application Security Project (OWASP) Cheat Sheets.",
-          "icon": "owasp",
-          "color": "#000000",
-          "searchUrl": "https://cheatsheetseries.owasp.org/?q={search}",
-          "searchConcat": "%20"
+          "title": "webhint",
+          "url": "https://webhint.io",
+          "description": "Linting tool that checks your website's accessibility, speed, cross-browser compatibility, and more.",
+          "color": "#40079C"
         },
+        {
+          "title": "ESLint",
+          "url": "https://eslint.org",
+          "description": "JavaScript and TypeScript linter.",
+          "icon": "eslint",
+          "color": "#4B32C3"
+        },
+        {
+          "title": "Prettier",
+          "url": "https://prettier.io",
+          "description": "An opinionated code formatter.",
+          "icon": "prettier",
+          "color": "#F7B93E"
+        },
+        {
+          "title": "EditorConfig",
+          "url": "https://editorconfig.org",
+          "description": "Control some text editor settings by using a config file.",
+          "icon": "editorconfig",
+          "color": "#010101"
+        }
+      ]
+    },
+    {
+      "name": "Best Practices & Conventions",
+      "color": "green",
+      "items": [
         {
           "title": "The Twelve-Factor App",
           "url": "https://12factor.net",
@@ -1148,7 +1241,8 @@
         {
           "title": "Gitmoji",
           "url": "https://gitmoji.carloscuesta.me",
-          "description": "An emoji guide for your commit messages."
+          "description": "An emoji guide for your commit messages.",
+          "color": "#F9DE79"
         }
       ]
     },
@@ -1170,7 +1264,8 @@
         },
         {
           "title": "GitHub Flavored Markdown",
-          "url": "https://github.github.com/gfm/"
+          "url": "https://github.github.com/gfm/",
+          "color": "#181717"
         },
         {
           "title": "AsciiDoc",
@@ -1188,7 +1283,8 @@
         {
           "title": "D2",
           "url": "https://d2lang.com",
-          "description": "A language that turns text to diagrams."
+          "description": "A language that turns text to diagrams.",
+          "color": "#526EEB"
         },
         {
           "title": "JSON",
@@ -1216,7 +1312,7 @@
         {
           "title": "DITA",
           "url": "https://dita-lang.org",
-          "description": "XML-Format"
+          "description": "XML-Format."
         },
         {
           "title": "LaTeX",
@@ -1235,12 +1331,14 @@
         {
           "title": "Pandoc",
           "url": "https://pandoc.org",
-          "description": "A universal document converter."
+          "description": "A universal document converter.",
+          "icon": "pandoc",
+          "color": "#4093DA"
         }
       ]
     },
     {
-      "name": "CSS Compilation",
+      "name": "CSS Processors",
       "color": "amber",
       "items": [
         {
@@ -1277,7 +1375,7 @@
       ]
     },
     {
-      "name": "JS, WASM & Type Systems",
+      "name": "JS & WASM Languages",
       "color": "amber",
       "items": [
         {
@@ -1285,15 +1383,6 @@
           "url": "https://www.typescriptlang.org",
           "icon": "typescript",
           "color": "#3178C6"
-        },
-        {
-          "title": "Definitely Typed",
-          "url": "https://www.typescriptlang.org/dt/search",
-          "description": "Find npm packages that have type declarations, either bundled or on Definitely Typed.",
-          "icon": "typescript",
-          "color": "#3178C6",
-          "searchUrl": "https://www.typescriptlang.org/dt/search?search={search}",
-          "searchConcat": "+"
         },
         {
           "title": "JSDoc",
@@ -1326,7 +1415,7 @@
       ]
     },
     {
-      "name": "Other Languages",
+      "name": "JS Runtimes & Tools",
       "color": "amber",
       "items": [
         {
@@ -1340,7 +1429,7 @@
           "url": "https://github.com/nvm-sh/nvm",
           "description": "Node.js version manager for macOS and Linux.",
           "icon": "nvm",
-          "color": "#333333"
+          "color": "#F4DD4B"
         },
         {
           "title": "NVM for Windows",
@@ -1358,22 +1447,26 @@
           "url": "https://bun.sh",
           "icon": "bun",
           "color": "#9D907C"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Other Languages",
+      "color": "amber",
+      "items": [
         {
           "title": "Python",
           "url": "https://www.python.org",
           "icon": "python",
           "color": "#3776AB",
-          "searchUrl": "https://www.python.org/search/?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://www.python.org/search/?q={search}"
         },
         {
           "title": "PHP",
           "url": "https://www.php.net",
           "icon": "php",
           "color": "#777BB4",
-          "searchUrl": "https://www.php.net/manual-lookup.php?pattern={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://www.php.net/manual-lookup.php?pattern={search}"
         },
         {
           "title": ".NET",
@@ -1383,7 +1476,8 @@
         },
         {
           "title": "Java",
-          "url": "https://www.java.com"
+          "url": "https://www.java.com",
+          "color": "#E59639"
         },
         {
           "title": "OpenJDK",
@@ -1414,8 +1508,7 @@
           "url": "https://dart.dev",
           "icon": "dart",
           "color": "#0175c2",
-          "searchUrl": "https://dart.dev/search?ie=UTF-8&q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://dart.dev/search?ie=UTF-8&q={search}"
         },
         {
           "title": "Swift",
@@ -1444,7 +1537,8 @@
         {
           "title": "TypeSpec",
           "url": "https://typespec.io",
-          "description": "A language by Microsoft to describe data and to generate API specs, client and server code, docs, etc."
+          "description": "A language by Microsoft to describe data and to generate API specs, client and server code, docs, etc.",
+          "color": "#2B5D9E"
         }
       ]
     },
@@ -1458,8 +1552,7 @@
           "description": "PHP web framework.",
           "icon": "symfony",
           "color": "#000000",
-          "searchUrl": "https://symfony.com/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://symfony.com/search?q={search}"
         },
         {
           "title": "Laravel",
@@ -1474,13 +1567,13 @@
           "description": "PHP web framework.",
           "icon": "yii",
           "color": "#40B3D8",
-          "searchUrl": "https://www.yiiframework.com/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://www.yiiframework.com/search?q={search}"
         },
         {
           "title": "Fiber",
           "url": "https://gofiber.io",
-          "description": "Go web framework."
+          "description": "Go web framework.",
+          "color": "#00ADD8"
         },
         {
           "title": "Express",
@@ -1513,7 +1606,8 @@
         {
           "title": "ASP.NET",
           "url": "https://dotnet.microsoft.com/apps/aspnet",
-          "description": ".NET web framework."
+          "description": ".NET web framework.",
+          "color": "#7C66D9"
         },
         {
           "title": "Spring",
@@ -1526,13 +1620,13 @@
           "title": "Quarkus",
           "url": "https://quarkus.io",
           "searchUrl": "https://quarkus.io/guides/#q={search}",
-          "searchConcat": "+",
           "icon": "quarkus",
           "color": "#4695EB"
         },
         {
           "title": "Micronaut",
-          "url": "https://micronaut.io"
+          "url": "https://micronaut.io",
+          "color": "#000000"
         }
       ]
     },
@@ -1546,8 +1640,7 @@
           "description": "Open source PHP CMS.",
           "icon": "wordpress",
           "color": "#21759B",
-          "searchUrl": "https://wordpress.org/search/{search}/",
-          "searchConcat": "+"
+          "searchUrl": "https://wordpress.org/search/{search}/"
         },
         {
           "title": "Drupal",
@@ -1555,8 +1648,7 @@
           "description": "Open source PHP CMS.",
           "icon": "drupal",
           "color": "#0678BE",
-          "searchUrl": "https://www.drupal.org/search/site/{search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://www.drupal.org/search/site/{search}"
         },
         {
           "title": "Grav",
@@ -1612,8 +1704,7 @@
           "description": "A relational database.",
           "icon": "mysql",
           "color": "#4479A1",
-          "searchUrl": "https://search.oracle.com/mysql?q={search}&size=10&page=1&tab=all&app=mysql",
-          "searchConcat": "+"
+          "searchUrl": "https://search.oracle.com/mysql?q={search}&size=10&page=1&tab=all&app=mysql"
         },
         {
           "title": "MariaDB",
@@ -1627,7 +1718,7 @@
           "url": "https://www.microsoft.com/de-de/sql-server",
           "description": "A relational database.",
           "searchUrl": "https://www.microsoft.com/en-us/search/explore?q={search}",
-          "searchConcat": "+"
+          "color": "#3376CD"
         },
         {
           "title": "PostgreSQL",
@@ -1635,13 +1726,13 @@
           "description": "A relational database.",
           "icon": "postgresql",
           "color": "#4169E1",
-          "searchUrl": "https://www.postgresql.org/search/?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://www.postgresql.org/search/?q={search}"
         },
         {
           "title": "Oracle Database",
           "url": "https://www.oracle.com/de/database/technologies",
-          "description": "A relational database."
+          "description": "A relational database.",
+          "color": "#B84F3C"
         },
         {
           "title": "SQLite",
@@ -1649,8 +1740,7 @@
           "description": "A file based relational database.",
           "icon": "sqlite",
           "color": "#003B57",
-          "searchUrl": "https://www.sqlite.org/search?s=d&q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://www.sqlite.org/search?s=d&q={search}"
         },
         {
           "title": "MongoDB",
@@ -1658,8 +1748,7 @@
           "description": "A document database.",
           "icon": "mongodb",
           "color": "#47A248",
-          "searchUrl": "https://www.mongodb.com/search?addsearch={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://www.mongodb.com/search?addsearch={search}"
         },
         {
           "title": "CouchDB",
@@ -1667,8 +1756,7 @@
           "description": "A document database.",
           "icon": "apachecouchdb",
           "color": "#E42528",
-          "searchUrl": "https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default",
-          "searchConcat": "+"
+          "searchUrl": "https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default"
         },
         {
           "title": "SurrealDB",
@@ -1699,12 +1787,15 @@
         {
           "title": "selfh.st",
           "url": "https://selfh.st",
-          "description": "A weekly newsletter about self hosting."
+          "description": "A weekly newsletter about self hosting.",
+          "color": "#2C5FD1"
         },
         {
           "title": "Awesome Selfhosted",
           "url": "https://awesome-selfhosted.net",
-          "description": "List of apps and services you can host yourself."
+          "description": "List of apps and services you can host yourself.",
+          "icon": "awesomelists",
+          "color": "#FC60A8"
         }
       ]
     },
@@ -1717,8 +1808,7 @@
           "url": "https://fonts.google.com",
           "icon": "googlefonts",
           "color": "#4285F4",
-          "searchUrl": "https://fonts.google.com/?query={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://fonts.google.com/?query={search}"
         },
         {
           "title": "Google Webfonts Helper",
@@ -1740,26 +1830,26 @@
           "title": "Icônes",
           "url": "https://icones.js.org",
           "description": "A collection of many icon sets. You can search for icons in all icon sets at once.",
-          "searchUrl": "https://icones.js.org/collection/all?s={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://icones.js.org/collection/all?s={search}"
         },
         {
           "title": "Font Awesome",
           "url": "https://fontawesome.com",
           "icon": "fontawesome",
           "color": "#528DD7",
-          "searchUrl": "https://fontawesome.com/icons?d=gallery&p=2&q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://fontawesome.com/icons?d=gallery&p=2&q={search}"
         },
         {
           "title": "Pictogrammers",
           "url": "https://pictogrammers.com",
-          "description": "A collection of open-source icons including \"Material Design Icons\"."
+          "description": "A collection of open-source icons including \"Material Design Icons\".",
+          "color": "#4B0962"
         },
         {
           "title": "Heroicons",
           "url": "https://heroicons.com",
-          "description": "Icons by the developers of Tailwind CSS."
+          "description": "Icons by the developers of Tailwind CSS.",
+          "color": "#845EEE"
         },
         {
           "title": "Lucide",
@@ -1772,8 +1862,7 @@
           "title": "Dashboard Icons",
           "url": "https://dashboardicons.com/",
           "description": "A collection of icons for services, applications and tools, designed specifically for dashboards and app directories.",
-          "searchUrl": "https://dashboardicons.com/icons?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://dashboardicons.com/icons?q={search}"
         },
         {
           "title": "Simple Icons",
@@ -1781,8 +1870,7 @@
           "description": "Collection of single colored brand logos.",
           "icon": "simpleicons",
           "color": "#111111",
-          "searchUrl": "https://simpleicons.org/?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://simpleicons.org/?q={search}"
         },
         {
           "title": "Shields.io",
@@ -1803,8 +1891,7 @@
           "description": "Stock images.",
           "icon": "pexels",
           "color": "#05A081",
-          "searchUrl": "https://www.pexels.com/de-de/suche/{search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://www.pexels.com/de-de/suche/{search}"
         },
         {
           "title": "Unsplash",
@@ -1812,8 +1899,7 @@
           "description": "Stock images.",
           "icon": "unsplash",
           "color": "#000000",
-          "searchUrl": "https://unsplash.com/s/photos/{search}",
-          "searchConcat": "-"
+          "searchUrl": "https://unsplash.com/s/photos/{search}"
         },
         {
           "title": "Subtle Patterns",
@@ -1867,8 +1953,7 @@
           "description": "Official developer resources about ChromeOS.",
           "icon": "googlechrome",
           "color": "#4285F4",
-          "searchUrl": "https://chromeos.dev/en/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://chromeos.dev/en/search?q={search}"
         },
         {
           "title": "Chrome Web Store Developer Dashboard",
@@ -1892,7 +1977,8 @@
       "items": [
         {
           "title": "W3C",
-          "url": "https://www.w3.org"
+          "url": "https://www.w3.org",
+          "color": "#255997"
         },
         {
           "title": "WebDX Developer Signals",
@@ -1926,26 +2012,28 @@
         {
           "title": "TC39",
           "url": "https://tc39.es",
-          "description": "Official website of Ecma International's TC39 (Technical Committee 39)."
+          "description": "Official website of Ecma International's TC39 (Technical Committee 39).",
+          "color": "#EC8331"
         },
         {
           "title": "TC39 Forum",
           "url": "https://es.discourse.group",
           "description": "Official forum of Ecma International's TC39 (Technical Committee 39). Talk about ECMAScript features and proposals.",
           "searchUrl": "https://es.discourse.group/search?q={search}",
-          "searchConcat": "%20"
+          "color": "#EC8331"
         },
         {
           "title": "WICG",
           "url": "https://wicg.io/",
           "description": "Official website of the WICG (Web Incubator Community Group).",
           "searchUrl": "https://discourse.wicg.io/search?q={search}",
-          "searchConcat": "%20"
+          "color": "#5AB1C1"
         },
         {
           "title": "Open UI",
           "url": "https://open-ui.org/",
-          "description": "Official website of Open UI (a W3C community group). It's about making built-in form controls styleable while also adding new ones."
+          "description": "Official website of Open UI (a W3C community group). It's about making built-in form controls styleable while also adding new ones.",
+          "color": "#49A258"
         },
         {
           "title": "OpenJS Foundation",
@@ -1964,21 +2052,21 @@
           "url": "https://caniuse.com",
           "description": "Check browser compatibility of various language features and browser APIs.",
           "searchUrl": "https://caniuse.com/#search={search}",
-          "searchConcat": "%20"
+          "color": "#7A3A14"
         },
         {
           "title": "Can I email...",
           "url": "https://caniemail.com",
           "description": "Check e-mail client compatibility of various language features.",
           "searchUrl": "https://www.caniemail.com/search/?s={search}",
-          "searchConcat": "+"
+          "color": "#3070DE"
         },
         {
           "title": "Can I WebView...",
           "url": "https://caniwebview.com",
           "description": "Check system webviews for feature support.",
           "searchUrl": "https://caniwebview.com/search/?s={search}",
-          "searchConcat": "+"
+          "color": "#255997"
         },
         {
           "title": "Accessibility Support",
@@ -1989,8 +2077,7 @@
           "title": "Web Platform Status",
           "url": "https://webstatus.dev",
           "description": "A website to check which browser supports which web platform features. Initially developed by Google.",
-          "searchUrl": "https://webstatus.dev/?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://webstatus.dev/?q={search}"
         },
         {
           "title": "Chrome Platform Status",
@@ -2001,7 +2088,8 @@
         },
         {
           "title": "Microsoft 365/Edge Roadmap",
-          "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge"
+          "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge",
+          "color": "#3B84D1"
         },
         {
           "title": "Node Green",
@@ -2033,21 +2121,24 @@
         },
         {
           "title": "Microsoft Edge",
-          "url": "https://www.microsoft.com/de-de/edge/download"
+          "url": "https://www.microsoft.com/de-de/edge/download",
+          "color": "#3B84D1"
         },
         {
           "title": "Adobe",
           "url": "https://www.adobe.com",
           "searchUrl": "https://www.adobe.com/search.html#q={search}&sort=relevancy",
-          "searchConcat": "%20"
+          "color": "#D83320"
         },
         {
           "title": "Affinity",
-          "url": "https://affinity.studio"
+          "url": "https://affinity.studio",
+          "color": "#B7EF84"
         },
         {
           "title": "Canva",
-          "url": "https://www.canva.com"
+          "url": "https://www.canva.com",
+          "color": "#8B33F6"
         },
         {
           "title": "Figma",
@@ -2064,14 +2155,13 @@
         {
           "title": "Visual Studio",
           "url": "https://visualstudio.microsoft.com",
-          "searchUrl": "https://visualstudio.microsoft.com/search/?query={search}",
-          "searchConcat": "+"
+          "color": "#9158EE"
         },
         {
           "title": "Visual Studio Code",
           "url": "https://code.visualstudio.com",
           "searchUrl": "https://code.visualstudio.com/Search?q={search}",
-          "searchConcat": "+"
+          "color": "#3376CD"
         },
         {
           "title": "VSCodium",
@@ -2086,8 +2176,7 @@
           "description": "Developer of IDEs like IntelliJ, PHPStorm, WebStorm, etc.",
           "icon": "jetbrains",
           "color": "#000000",
-          "searchUrl": "https://www.jetbrains.com/search/?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://www.jetbrains.com/search/?q={search}"
         },
         {
           "title": "Zed",
@@ -2112,8 +2201,7 @@
           "url": "https://www.docker.com",
           "icon": "docker",
           "color": "#2496ED",
-          "searchUrl": "https://www.docker.com/search/?_sf_s={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://www.docker.com/search/?_sf_s={search}"
         },
         {
           "title": "Kubernetes",
@@ -2123,15 +2211,15 @@
         },
         {
           "title": "ddev",
-          "url": "https://ddev.com"
+          "url": "https://ddev.com",
+          "color": "#4BA5DD"
         },
         {
           "title": "VirtualBox",
           "url": "https://www.virtualbox.org",
           "icon": "virtualbox",
           "color": "#2F61B4",
-          "searchUrl": "https://www.virtualbox.org/search?q={search}&wiki=on&changeset=on&ticket=on",
-          "searchConcat": "+"
+          "searchUrl": "https://www.virtualbox.org/search?q={search}&wiki=on&changeset=on&ticket=on"
         },
         {
           "title": "Vagrant",
@@ -2165,8 +2253,7 @@
           "url": "https://git-scm.com",
           "icon": "git",
           "color": "#f05032",
-          "searchUrl": "https://git-scm.com/search/results?search={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://git-scm.com/search/results?search={search}"
         },
         {
           "title": "GitKraken",
@@ -2178,7 +2265,8 @@
         {
           "title": "Fork",
           "url": "https://git-fork.com",
-          "description": "A git client."
+          "description": "A git client for Windows and macOS.",
+          "color": "#4DA1E9"
         }
       ]
     },
@@ -2206,7 +2294,8 @@
         },
         {
           "title": "PowerShell",
-          "url": "https://learn.microsoft.com/de-de/powershell/"
+          "url": "https://learn.microsoft.com/de-de/powershell/",
+          "color": "#3376CD"
         }
       ]
     },
@@ -2219,46 +2308,42 @@
           "url": "https://youtube.com",
           "icon": "youtube",
           "color": "#ff0000",
-          "searchUrl": "https://www.youtube.com/results?search_query={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://www.youtube.com/results?search_query={search}"
         },
         {
           "title": "YouTube Music",
           "url": "https://music.youtube.com",
           "icon": "youtubemusic",
           "color": "#ff0000",
-          "searchUrl": "https://music.youtube.com/search?q={search}",
-          "searchConcat": "+"
+          "searchUrl": "https://music.youtube.com/search?q={search}"
         },
         {
           "title": "Spotify",
           "url": "https://open.spotify.com",
           "icon": "spotify",
           "color": "#1ED760",
-          "searchUrl": "https://open.spotify.com/search/{search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://open.spotify.com/search/{search}"
         },
         {
           "title": "Apple Music",
           "url": "https://music.apple.com",
           "icon": "applemusic",
           "color": "#FA243C",
-          "searchUrl": "https://music.apple.com/us/search?term={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://music.apple.com/us/search?term={search}"
         },
         {
           "title": "Deezer",
           "url": "https://www.deezer.com",
           "searchUrl": "https://www.deezer.com/search/{search}",
-          "searchConcat": "%20"
+          "icon": "deezer",
+          "color": "#A238FF"
         },
         {
           "title": "SoundCloud",
           "url": "https://soundcloud.com",
           "icon": "soundcloud",
           "color": "#FF5500",
-          "searchUrl": "https://soundcloud.com/search?q={search}",
-          "searchConcat": "%20"
+          "searchUrl": "https://soundcloud.com/search?q={search}"
         },
         {
           "title": "Mixcloud",
@@ -2270,19 +2355,25 @@
           "title": "TuneIn",
           "url": "https://tunein.com",
           "searchUrl": "https://tunein.com/search/?query={search}",
-          "searchConcat": "%20"
+          "color": "#64D5CB"
         },
         {
           "title": "DI.FM",
           "url": "https://di.fm",
           "searchUrl": "https://www.di.fm/search?q={search}",
-          "searchConcat": "+"
+          "color": "#488BF3"
+        },
+        {
+          "title": "myNoise",
+          "url": "https://mynoise.net",
+          "description": "Custom Soundscapes for Focus, Relaxation & Sleep.",
+          "color": "#EC6241"
         }
       ]
     },
     {
       "name": "Developer Surveys",
-      "color": "stone",
+      "color": "mauve",
       "items": [
         {
           "title": "Stack Overflow Annual Developer Survey",
@@ -2324,7 +2415,7 @@
     },
     {
       "name": "Stay in the Loop",
-      "color": "stone",
+      "color": "mauve",
       "items": [
         {
           "title": "Frontend Focus",
@@ -2401,7 +2492,7 @@
           "title": "Codrops Collective",
           "url": "https://tympanus.net/codrops/collective",
           "searchUrl": "https://tympanus.net/codrops/?s={search}&search-type=posts",
-          "searchConcat": "+"
+          "color": "#000000"
         }
       ]
     }

@@ -1,38 +1,36 @@
 import js from '@eslint/js'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
-// TypeScript
 import tseslint from 'typescript-eslint'
-// React
-import reactPlugin from 'eslint-plugin-react'
-import reactHooksPlugin from 'eslint-plugin-react-hooks'
 
-export default tseslint.config(
-  { ignores: ['dist/**/*'] },
-  js.configs.recommended,
+export default defineConfig([
+  globalIgnores(['dist']),
   {
-    files: ['src/**/*.{js,jsx,ts,tsx}'],
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
     languageOptions: {
-      globals: { ...globals.browser },
+      ecmaVersion: 2020,
+      globals: globals.browser,
+    },
+    rules: {
+      'no-restricted-globals': [
+        'error',
+        {
+          name: 'window',
+          message: 'Use global objects and functions directly.',
+        },
+        {
+          name: 'globalThis',
+          message: 'Use global objects and functions directly.',
+        },
+      ],
     },
   },
-
-  // TypeScript
-  ...tseslint.configs.recommended,
-
-  // React
-  {
-    ...reactPlugin.configs.flat.recommended,
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
-  },
-  reactPlugin.configs.flat['jsx-runtime'],
-  {
-    files: ['src/**/*.{ts,tsx}'],
-    plugins: {
-      'react-hooks': reactHooksPlugin,
-    },
-  },
-)
+])

@@ -8,7 +8,10 @@
     "group": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "items"],
+      "required": [
+        "name",
+        "items"
+      ],
       "properties": {
         "name": {
           "type": "string"
@@ -37,7 +40,11 @@
             "gray",
             "zinc",
             "neutral",
-            "stone"
+            "stone",
+            "taupe",
+            "mauve",
+            "mist",
+            "olive"
           ]
         },
         "items": {
@@ -51,12 +58,14 @@
     "link": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "url"],
+      "required": [
+        "title",
+        "url"
+      ],
       "dependencies": {
-        "icon": ["color"],
-        "color": ["icon"],
-        "searchUrl": ["searchConcat"],
-        "searchConcat": ["searchUrl"]
+        "icon": [
+          "color"
+        ]
       },
       "properties": {
         "title": {
@@ -76,9 +85,6 @@
           "type": "string"
         },
         "searchUrl": {
-          "type": "string"
-        },
-        "searchConcat": {
           "type": "string"
         }
       }
