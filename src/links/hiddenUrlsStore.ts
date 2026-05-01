@@ -1,11 +1,11 @@
 import { useAtom } from '@xoid/react'
 import { atom } from 'xoid'
-import { allLinks, type LinkItem } from './links.ts'
 import {
   arrayConverter,
   storageMapping,
   type StorageValueConverter,
 } from '../utils/storageMapping.ts'
+import { allLinks, links, type LinkGroup, type LinkItem } from './links.ts'
 
 const hiddenUrlsStorageMapping = storageMapping(
   'wdh:hidden-items',
@@ -38,10 +38,6 @@ $hiddenUrls.subscribe(hiddenUrlsStorageMapping.write)
 
 const $hiddenUrlsCount = atom((read) => read($hiddenUrls).length)
 
-export function allUrlsAreHidden(urls: LinkItem['url'][]): boolean {
-  return urls.every((u) => $hiddenUrls.value.includes(u))
-}
-
 export function isUrlHidden(url: LinkItem['url']): boolean {
   return $hiddenUrls.value.includes(url)
 }
@@ -70,6 +66,20 @@ export function useHiddenUrls(): LinkItem['url'][] {
   return useAtom($hiddenUrls)
 }
 
+export function useVisibleLinkGroups(): LinkGroup[] {
+  const hiddenUrls = useAtom($hiddenUrls)
+
+  return links.items.filter((group) => {
+    return group.items.some((link) => !hiddenUrls.includes(link.url))
+  })
+}
+
 export function useHiddenUrlsCount(): number {
   return useAtom($hiddenUrlsCount)
+}
+
+export function useAllUrlsAreHidden(urls: LinkItem['url'][]): boolean {
+  const hiddenUrls = useAtom($hiddenUrls)
+
+  return urls.every((u) => hiddenUrls.includes(u))
 }

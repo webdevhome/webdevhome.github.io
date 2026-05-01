@@ -1,16 +1,16 @@
 import classNames from 'classnames'
 import { CopyCheckIcon, CopyIcon } from 'lucide-react'
 import { type FC, useState } from 'react'
-import { type LinkGroup as ILinkGroup } from './links.ts'
 import { appMode, useIsAppMode } from '../app/appModeStore.ts'
 import { slugify } from '../utils/slugify.ts'
 import {
-  allUrlsAreHidden,
   toggleUrls,
+  useAllUrlsAreHidden,
   useHiddenUrls,
 } from './hiddenUrlsStore.ts'
 import { Link } from './Link.tsx'
 import { LinkGroupButton } from './LinkGroupButton.tsx'
+import { type LinkGroup as ILinkGroup } from './links.ts'
 
 type Props = {
   group: ILinkGroup
@@ -27,7 +27,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
 
   const hiddenLinks = group.items.filter((i) => hiddenUrls.includes(i.url))
 
-  const isGroupHidden = allUrlsAreHidden(group.items.map((i) => i.url))
+  const allUrlsAreHidden = useAllUrlsAreHidden(group.items.map((i) => i.url))
 
   const hiddenLinksCount = hiddenLinks.length
   const pluralizedLink = hiddenLinksCount === 1 ? 'link' : 'links'
@@ -38,7 +38,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
     setShowHiddenLinks(!showHiddenLinks)
   }
 
-  if (isGroupHidden && !isAppMode(appMode.customize)) {
+  if (allUrlsAreHidden && !isAppMode(appMode.customize)) {
     return null
   }
 
@@ -67,17 +67,17 @@ export const LinkGroup: FC<Props> = ({ group }) => {
               'hover:bg-black/10 active:bg-black/15',
               'dark:hover:bg-white/10 dark:active:bg-white/15',
               {
-                'text-brand-600 hover:text-brand-800': !isGroupHidden,
-                'dark:text-brand-300 hover:dark:text-brand-100': !isGroupHidden,
-                'text-brand-600/50 hover:text-brand-700/75': isGroupHidden,
+                'text-brand-600 hover:text-brand-800': !allUrlsAreHidden,
+                'dark:text-brand-300 hover:dark:text-brand-100': !allUrlsAreHidden,
+                'text-brand-600/50 hover:text-brand-700/75': allUrlsAreHidden,
                 'dark:text-brand-300/50 dark:hover:text-brand-200/75':
-                  isGroupHidden,
+                  allUrlsAreHidden,
               },
               'rounded',
             )}
             onClick={() => toggleUrls(group.items.map((link) => link.url))}
           >
-            {isGroupHidden ? <CopyIcon /> : <CopyCheckIcon />}
+            {allUrlsAreHidden ? <CopyIcon /> : <CopyCheckIcon />}
           </button>
         ) : null}
       </div>

@@ -1,18 +1,18 @@
 import classNames from 'classnames'
 import { XIcon } from 'lucide-react'
 import { type FC } from 'react'
-import { links } from '../links/links.ts'
+import { useVisibleLinkGroups } from '../links/hiddenUrlsStore.ts'
+import { JumpLink } from './JumpLink.tsx'
 import {
   toggleJumpLinksMobile,
   useShowJumpLinks,
   useShowJumpLinksMobile,
 } from './useJumpLinks.ts'
-import { allUrlsAreHidden } from '../links/hiddenUrlsStore.ts'
-import { JumpLink } from './JumpLink.tsx'
 
 export const JumpLinks: FC = () => {
   const showJumpLinks = useShowJumpLinks()
   const showJumpLinksMobile = useShowJumpLinksMobile()
+  const visibleLinkGroups = useVisibleLinkGroups()
 
   return (
     <>
@@ -49,15 +49,13 @@ export const JumpLinks: FC = () => {
         </button>
 
         <div className="flex flex-col gap-0.5 p-2 max-md:overflow-auto md:flex">
-          {links.items
-            .filter((group) => !allUrlsAreHidden(group.items.map((i) => i.url)))
-            .map((linkGroup) => (
-              <JumpLink
-                key={linkGroup.name}
-                label={linkGroup.name}
-                color={linkGroup.color}
-              />
-            ))}
+          {visibleLinkGroups.map((linkGroup) => (
+            <JumpLink
+              key={linkGroup.name}
+              label={linkGroup.name}
+              color={linkGroup.color}
+            />
+          ))}
         </div>
       </div>
     </>
