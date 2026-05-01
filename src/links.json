@@ -449,13 +449,6 @@
           "color": "#8DC942"
         },
         {
-          "title": "BEM",
-          "url": "https://getbem.com/introduction",
-          "description": "A CSS naming convention that groups classes using namespaces.",
-          "icon": "bem",
-          "color": "#000000"
-        },
-        {
           "title": "Learn X in Y minutes",
           "url": "https://learnxinyminutes.com",
           "description": "Resources to learn languages or tools in X minutes."
@@ -598,6 +591,13 @@
           "url": "https://styled-components.com",
           "icon": "styledcomponents",
           "color": "#DB7093"
+        },
+        {
+          "title": "BEM",
+          "url": "https://getbem.com/introduction",
+          "description": "A CSS naming convention that groups classes using namespaces.",
+          "icon": "bem",
+          "color": "#000000"
         }
       ]
     },
