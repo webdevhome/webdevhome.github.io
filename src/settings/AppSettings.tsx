@@ -5,8 +5,7 @@ import {
   WallpaperIcon,
 } from 'lucide-react'
 import { type FC } from 'react'
-import { AppMenuDivider } from '../header/AppMenuDivider.tsx'
-import { AppMenuItem } from '../header/AppMenuItem.tsx'
+import { setAppMode, useIsAppMode } from '../app/appModeStore.ts'
 import {
   toggleShowDescriptions,
   useShowDescriptions,
@@ -15,7 +14,8 @@ import {
   toggleOpenLinksInNewTab,
   useOpenLinksInNewTab,
 } from '../links/useOpenLinksInNewTab.ts'
-import { setAppMode, useIsAppMode } from './appModeStore.ts'
+import { UiMenuDivider } from '../ui/UiMenuDivider.tsx'
+import { UiMenuItem } from '../ui/UiMenuItem.tsx'
 import {
   toggleBackgroundImage,
   useShowBackground,
@@ -29,26 +29,26 @@ export const AppSettings: FC = () => {
 
   return (
     <>
-      <AppMenuItem
+      <UiMenuItem
         label="Show/hide links..."
         icon={<ListTodoIcon />}
         action={() => setAppMode('customize')}
         visible={isAppMode('default')}
       />
-      <AppMenuDivider />
-      <AppMenuItem
+      <UiMenuDivider />
+      <UiMenuItem
         label="Show links description"
         icon={<FormIcon />}
         selected={showDescriptions}
         action={toggleShowDescriptions}
       />
-      <AppMenuItem
+      <UiMenuItem
         label="Colorful background"
         icon={<WallpaperIcon />}
         selected={showBackground}
         action={toggleBackgroundImage}
       />
-      <AppMenuItem
+      <UiMenuItem
         label="Open links in new tab"
         icon={<ExternalLinkIcon />}
         selected={openLinksInNewTab}

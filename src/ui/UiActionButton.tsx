@@ -11,7 +11,7 @@ type Props = {
   action?: () => void
 }
 
-export const AppAction: FC<Props> = ({
+export const UiActionButton: FC<Props> = ({
   icon,
   available = true,
   active = false,

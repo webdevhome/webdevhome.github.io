@@ -6,14 +6,13 @@ export function detectPlatform(): 'mac' | 'windows' | 'linux' {
     return 'linux'
   }
 
-  const platform = navigator.platform?.toLowerCase() ?? ''
   const userAgent = navigator.userAgent?.toLowerCase() ?? ''
 
-  if (platform.includes('mac') || userAgent.includes('mac')) {
+  if (userAgent.includes('mac')) {
     return 'mac'
   }
 
-  if (platform.includes('win') || userAgent.includes('win')) {
+  if (userAgent.includes('win')) {
     return 'windows'
   }
 

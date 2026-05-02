@@ -6,7 +6,7 @@ type Props = {
   rightButtons?: ReactElement
 }
 
-export const AppDialogFooter: FC<Props> = ({
+export const UiDialogFooter: FC<Props> = ({
   message,
   leftButtons,
   rightButtons,

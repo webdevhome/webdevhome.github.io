@@ -8,7 +8,7 @@ type Props = {
   onClose: () => void
 }
 
-export const AppDialog: FC<PropsWithChildren<Props>> = ({
+export const UiDialog: FC<PropsWithChildren<Props>> = ({
   title,
   footer,
   isOpen,

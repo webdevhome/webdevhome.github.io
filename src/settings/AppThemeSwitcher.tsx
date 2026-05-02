@@ -1,27 +1,27 @@
 import { MenuSection } from '@headlessui/react'
 import { MoonIcon, SunIcon, SunMoonIcon } from 'lucide-react'
 import { type FC } from 'react'
-import { AppMenuHeader } from '../header/AppMenuHeader.tsx'
-import { AppMenuItem } from '../header/AppMenuItem.tsx'
+import { UiMenuHeader } from '../ui/UiMenuHeader.tsx'
+import { UiMenuItem } from '../ui/UiMenuItem.tsx'
 import { isCurrentTheme, setTheme } from './themes.ts'
 
 export const AppThemeSwitcher: FC = () => {
   return (
     <MenuSection className="flex flex-col gap-y-1">
-      <AppMenuHeader title="Theme" />
-      <AppMenuItem
+      <UiMenuHeader title="Theme" />
+      <UiMenuItem
         label="Light"
         icon={<SunIcon />}
         selected={isCurrentTheme('light')}
         action={() => setTheme('light')}
       />
-      <AppMenuItem
+      <UiMenuItem
         label="Dark"
         icon={<MoonIcon />}
         selected={isCurrentTheme('dark')}
         action={() => setTheme('dark')}
       />
-      <AppMenuItem
+      <UiMenuItem
         label="System"
         icon={<SunMoonIcon />}
         selected={isCurrentTheme('auto')}

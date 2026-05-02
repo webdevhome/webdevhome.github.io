@@ -22,7 +22,7 @@ export const SearchResults: FC = () => {
             key={link.obj.url}
             link={link.obj}
             searchable={link.obj.searchUrl !== undefined}
-            visible={true}
+            isHidden={true}
             focused={link === focusedResult}
             showGroup
           />
@@ -42,7 +42,7 @@ export const SearchResults: FC = () => {
               key={link.obj.url}
               link={link.obj}
               searchable={link.obj.searchUrl !== undefined}
-              visible={true}
+              isHidden={true}
               focused={link === focusedResult}
               showGroup
             />

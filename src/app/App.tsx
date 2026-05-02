@@ -1,26 +1,25 @@
 import { Activity, type FC } from 'react'
 import { AppHeader } from '../header/AppHeader.tsx'
-import { AppSearchButton } from '../header/AppSearchButton.tsx'
+import { UiSearchButton } from '../ui/UiSearchButton.tsx'
 import { ExportDialog } from '../import-export/ExportDialog.tsx'
 import { ImportDialog } from '../import-export/ImportDialog.tsx'
 import { JumpLinks } from '../jump-links/JumpLinks.tsx'
 import { Links } from '../links/Links.tsx'
 import { Search } from '../search/Search.tsx'
-import { useThemes } from '../theme-switcher/themes.ts'
+import { useThemes } from '../settings/themes.ts'
 import { useActivityMode } from '../utils/useActivityMode.ts'
-import { AppHeaderActions } from './AppHeaderActions.tsx'
+import { AppHeaderActions } from '../header/AppHeaderActions.tsx'
 import { AppLayout } from './AppLayout.tsx'
 import { useIsAppMode } from './appModeStore.ts'
-import { AppSettingsMenu } from './AppSettingsMenu.tsx'
+import { AppSettingsMenu } from '../settings/AppSettingsMenu.tsx'
 
 export const App: FC = () => {
   useThemes()
 
   const isAppMode = useIsAppMode()
-
   const activityMode = useActivityMode()
 
-  const headerCenterItems = <>{isAppMode('default') && <AppSearchButton />}</>
+  const headerCenterItems = isAppMode('default') ? <UiSearchButton /> : null
 
   const headerActions = (
     <>
@@ -33,18 +32,16 @@ export const App: FC = () => {
     <AppHeader centerItems={headerCenterItems} actions={headerActions} />
   )
 
-  const isDefaultOrCustomizeAppMode = isAppMode('default', 'customize')
-
-  const sidebar = <>{isDefaultOrCustomizeAppMode ? <JumpLinks /> : null}</>
+  const sidebar = isAppMode('default', 'customize') ? <JumpLinks /> : null
 
   return (
     <>
       <AppLayout header={header} sidebar={sidebar}>
-        <Activity mode={activityMode(() => isDefaultOrCustomizeAppMode)}>
+        <Activity mode={activityMode(() => isAppMode('default', 'customize'))}>
           <Links />
         </Activity>
 
-        <Activity mode={activityMode(() => !isDefaultOrCustomizeAppMode)}>
+        <Activity mode={activityMode(() => !isAppMode('default', 'customize'))}>
           <Search />
         </Activity>
       </AppLayout>

@@ -1,8 +1,8 @@
 import { type FC } from 'react'
-import { AppButton } from '../ui/AppButton.tsx'
-import { AppDialog } from '../ui/AppDialog.tsx'
-import { AppDialogFooter } from '../ui/AppDialogFooter.tsx'
-import { AppTextarea } from '../ui/AppTextarea.tsx'
+import { UiButton } from '../ui/UiButton.tsx'
+import { UiDialog } from '../ui/UiDialog.tsx'
+import { UiDialogFooter } from '../ui/UiDialogFooter.tsx'
+import { UiTextarea } from '../ui/UiTextarea.tsx'
 import { useDataExport } from './useDataExport.ts'
 
 export const ExportDialog: FC = () => {
@@ -11,41 +11,41 @@ export const ExportDialog: FC = () => {
   const close = () => setShowDialog(false)
 
   return (
-    <AppDialog
+    <UiDialog
       title="Export data to clipboard"
       isOpen={showDialog}
       onClose={close}
       footer={
-        <AppDialogFooter
+        <UiDialogFooter
           leftButtons={
-            <AppButton
+            <UiButton
               onClick={() => {
                 textareaRef.current?.select()
               }}
             >
               Select text
-            </AppButton>
+            </UiButton>
           }
           rightButtons={
             <>
-              <AppButton onClick={close}>Close</AppButton>
-              <AppButton
+              <UiButton onClick={close}>Close</UiButton>
+              <UiButton
                 onClick={() => navigator.clipboard.writeText(exportJSON)}
                 type="primary"
               >
                 Copy to clipboard
-              </AppButton>
+              </UiButton>
             </>
           }
         />
       }
     >
-      <AppTextarea
+      <UiTextarea
         className="font-mono"
         value={exportJSON}
         readonly
         ref={textareaRef}
-      ></AppTextarea>
-    </AppDialog>
+      ></UiTextarea>
+    </UiDialog>
   )
 }

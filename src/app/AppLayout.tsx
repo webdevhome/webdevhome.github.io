@@ -10,12 +10,12 @@ import {
   useShowJumpLinksMobile,
 } from '../jump-links/useJumpLinks.ts'
 import { useIsAppMode } from './appModeStore.ts'
-import { useShowBackground } from './useBackgroundImage.ts'
+import { useShowBackground } from '../settings/useBackgroundImage.ts'
 import { useFocusAppLayoutElements } from './useFocusAppLayoutElements.ts'
 
 type Props = {
   header: ReactElement
-  sidebar: ReactElement
+  sidebar: ReactElement | null
 }
 
 export const AppLayout: FC<PropsWithChildren<Props>> = ({

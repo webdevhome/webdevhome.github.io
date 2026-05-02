@@ -7,7 +7,7 @@ type Props = {
   onClick: MouseEventHandler<HTMLButtonElement>
 }
 
-export const AppButton: FC<PropsWithChildren<Props>> = ({
+export const UiButton: FC<PropsWithChildren<Props>> = ({
   type = 'default',
   onClick,
   children,

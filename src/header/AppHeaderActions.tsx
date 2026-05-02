@@ -7,9 +7,13 @@ import {
   SearchIcon,
 } from 'lucide-react'
 import { type FC } from 'react'
-import { AppAction } from '../header/AppAction.tsx'
+import { UiActionButton } from '../ui/UiActionButton.tsx'
 import { hideAllUrls, showAllUrls } from '../links/hiddenUrlsStore.ts'
-import { exitSearchMode, setAppMode, useIsAppMode } from './appModeStore.ts'
+import {
+  exitSearchMode,
+  setAppMode,
+  useIsAppMode,
+} from '../app/appModeStore.ts'
 
 function handleScrollTopClick() {
   const mainContentElement = document.getElementById('main-content')
@@ -24,13 +28,13 @@ export const AppHeaderActions: FC = () => {
   if (isAppMode('default')) {
     return (
       <>
-        <AppAction
+        <UiActionButton
           icon={<SearchIcon />}
           label="Search"
           visible="small-screens"
           action={() => setAppMode('search')}
         />
-        <AppAction
+        <UiActionButton
           icon={<ArrowUpToLineIcon />}
           label="Top"
           action={handleScrollTopClick}
@@ -41,7 +45,7 @@ export const AppHeaderActions: FC = () => {
 
   if (isAppMode('search')) {
     return (
-      <AppAction
+      <UiActionButton
         icon={<ArrowLeftIcon />}
         label="Back"
         highlight
@@ -53,14 +57,18 @@ export const AppHeaderActions: FC = () => {
   if (isAppMode('customize')) {
     return (
       <>
-        <AppAction
+        <UiActionButton
           icon={<CheckIcon />}
           label="Done"
           highlight
           action={() => setAppMode('default')}
         />
-        <AppAction icon={<EyeIcon />} label="Show all" action={showAllUrls} />
-        <AppAction
+        <UiActionButton
+          icon={<EyeIcon />}
+          label="Show all"
+          action={showAllUrls}
+        />
+        <UiActionButton
           icon={<EyeOffIcon />}
           label="Hide all"
           action={hideAllUrls}

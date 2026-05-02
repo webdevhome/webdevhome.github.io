@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { type FC, type PropsWithChildren } from 'react'
 
-export const AppMenuFooter: FC<PropsWithChildren> = ({ children }) => {
+export const UiMenuFooter: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div
       className={classNames([

@@ -1,6 +1,5 @@
 import { type JSX } from 'react'
 import linksData from '../links.json' with { type: 'json' }
-import { type OptionalExceptFor } from '../utilityTypes.ts'
 
 export type LinkItem = {
   title: string
@@ -12,10 +11,7 @@ export type LinkItem = {
   searchUrl?: string
 }
 
-export type SearchTarget = OptionalExceptFor<
-  LinkItem,
-  'title' | 'url' | 'searchUrl'
->
+export type SearchTarget = LinkItem & Required<Pick<LinkItem, 'searchUrl'>>
 
 export type TailwindColorName =
   | 'red'
@@ -62,3 +58,7 @@ export const linkToGroupMap = new Map<LinkItem, LinkGroup>(
     return g.items.map((l) => [l, g])
   }),
 )
+
+export function linkHasSearchUrl(link: LinkItem): link is SearchTarget {
+  return typeof link.searchUrl === 'string'
+}

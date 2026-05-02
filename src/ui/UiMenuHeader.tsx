@@ -6,7 +6,7 @@ type Props = {
   title: string
 }
 
-export const AppMenuHeader: FC<Props> = ({ title }) => {
+export const UiMenuHeader: FC<Props> = ({ title }) => {
   return (
     <MenuHeading
       className={classNames(

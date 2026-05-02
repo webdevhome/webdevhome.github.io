@@ -19,14 +19,14 @@ function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>): void {
   event.stopPropagation()
 }
 
-export const AppTextarea = function AppTextarea({
+export const UiTextarea = ({
   value = '',
   disabled = false,
   readonly = false,
   className = '',
   onChange,
   ref,
-}: Props) {
+}: Props) => {
   return (
     <Textarea
       value={value}

@@ -1,8 +1,8 @@
 import { type ChangeEvent, type FC } from 'react'
-import { AppButton } from '../ui/AppButton.tsx'
-import { AppDialog } from '../ui/AppDialog.tsx'
-import { AppDialogFooter } from '../ui/AppDialogFooter.tsx'
-import { AppTextarea } from '../ui/AppTextarea.tsx'
+import { UiButton } from '../ui/UiButton.tsx'
+import { UiDialog } from '../ui/UiDialog.tsx'
+import { UiDialogFooter } from '../ui/UiDialogFooter.tsx'
+import { UiTextarea } from '../ui/UiTextarea.tsx'
 import { useDataImport } from './useDataImport.ts'
 
 export const ImportDialog: FC = () => {
@@ -22,43 +22,41 @@ export const ImportDialog: FC = () => {
   }
 
   return (
-    <AppDialog
+    <UiDialog
       title="Import data from clipboard"
       isOpen={showDialog}
       onClose={() => setShowDialog(false)}
       footer={
-        <AppDialogFooter
+        <UiDialogFooter
           message={importError}
           leftButtons={
             <>
-              <AppButton
+              <UiButton
                 onClick={() =>
                   navigator.clipboard.readText().then((t) => setImportJSON(t))
                 }
               >
                 Paste from clipboard
-              </AppButton>
-              <AppButton onClick={() => setImportJSON('')}>
-                Clear input
-              </AppButton>
+              </UiButton>
+              <UiButton onClick={() => setImportJSON('')}>Clear input</UiButton>
             </>
           }
           rightButtons={
             <>
-              <AppButton onClick={() => setShowDialog(false)}>Close</AppButton>
-              <AppButton onClick={applyImport} type="primary">
+              <UiButton onClick={() => setShowDialog(false)}>Close</UiButton>
+              <UiButton onClick={applyImport} type="primary">
                 Import data
-              </AppButton>
+              </UiButton>
             </>
           }
         />
       }
     >
-      <AppTextarea
+      <UiTextarea
         className="font-mono"
         value={importJSON}
         onChange={handleImportDialogTextareaChange}
-      ></AppTextarea>
-    </AppDialog>
+      ></UiTextarea>
+    </UiDialog>
   )
 }

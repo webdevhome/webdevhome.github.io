@@ -7,7 +7,7 @@ import {
   toggleJumpLinksMobile,
 } from '../jump-links/useJumpLinks.ts'
 import { isMinBreakpoint } from '../utils/breakpoints.ts'
-import { AppAction } from './AppAction.tsx'
+import { UiActionButton } from '../ui/UiActionButton.tsx'
 import { Logo } from './Logo.tsx'
 
 function handleMenuClick() {
@@ -34,7 +34,7 @@ export const AppHeader: FC<Props> = ({ centerItems, actions }) => {
       )}
     >
       <div className="flex items-center gap-x-2">
-        <AppAction
+        <UiActionButton
           icon={<ListTreeIcon />}
           action={handleMenuClick}
           available={isAppMode('default', 'customize')}

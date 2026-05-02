@@ -3,9 +3,9 @@ import { FolderGitIcon, LogsIcon } from 'lucide-react'
 import { type FC } from 'react'
 import packageJson from '../../package.json' with { type: 'json' }
 import { allLinks } from '../links/links.ts'
-import { AppMenuFooter } from '../header/AppMenuFooter.tsx'
-import { AppMenuHeader } from '../header/AppMenuHeader.tsx'
-import { AppMenuItem } from '../header/AppMenuItem.tsx'
+import { UiMenuFooter } from '../ui/UiMenuFooter.tsx'
+import { UiMenuHeader } from '../ui/UiMenuHeader.tsx'
+import { UiMenuItem } from '../ui/UiMenuItem.tsx'
 import { useHiddenUrlsCount } from '../links/hiddenUrlsStore.ts'
 
 export const AppInfo: FC = () => {
@@ -15,18 +15,18 @@ export const AppInfo: FC = () => {
 
   return (
     <MenuSection className="flex flex-col gap-y-1">
-      <AppMenuHeader title="Links" />
-      <AppMenuItem
+      <UiMenuHeader title="Links" />
+      <UiMenuItem
         icon={<LogsIcon />}
         label="Changelog"
         action="https://github.com/webdevhome/webdevhome.github.io/releases"
       />
-      <AppMenuItem
+      <UiMenuItem
         icon={<FolderGitIcon />}
         label="Source code"
         action="https://github.com/webdevhome/webdevhome.github.io"
       />
-      <AppMenuFooter>
+      <UiMenuFooter>
         <p>
           {allLinksCount} links &bull; {visibleUrlsCount} visible &bull;{' '}
           {hiddenUrlsCount} hidden
@@ -34,7 +34,7 @@ export const AppInfo: FC = () => {
         <p>
           <strong>Version {packageJson.version}</strong>
         </p>
-      </AppMenuFooter>
+      </UiMenuFooter>
     </MenuSection>
   )
 }

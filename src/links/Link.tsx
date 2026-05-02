@@ -1,20 +1,21 @@
 import classNames from 'classnames'
-import { EyeIcon, EyeOffIcon, SearchIcon } from 'lucide-react'
 import { type FC, type MouseEvent } from 'react'
 import { setAppMode, useIsAppMode } from '../app/appModeStore.ts'
 import { setSearchTarget } from '../search/search.ts'
-import { Kbd } from '../ui/Kbd.tsx'
 import { toggleUrl } from './hiddenUrlsStore.ts'
-import { LinkAction } from './LinkAction.tsx'
+import { LinkDescription } from './LinkDescription.tsx'
+import { LinkGroupLabel } from './LinkGroupLabel.tsx'
 import { LinkItemIcon } from './LinkItemIcon.tsx'
-import { linkToGroupMap, type LinkItem, type SearchTarget } from './links.ts'
+import { linkHasSearchUrl, linkToGroupMap, type LinkItem } from './links.ts'
+import { LinkSearchButton } from './LinkSearchButton.tsx'
+import { LinkVisibilityToggleButton } from './LinkVisibilityToggleButton.tsx'
 import { useShowDescriptions } from './useLinkDescriptions.ts'
 import { useOpenLinksInNewTab } from './useOpenLinksInNewTab.ts'
 
 type Props = {
   link: LinkItem
   searchable?: boolean
-  visible?: boolean
+  isHidden?: boolean
   focused?: boolean
   showGroup?: boolean
 }
@@ -22,14 +23,13 @@ type Props = {
 export const Link: FC<Props> = ({
   link,
   searchable = false,
-  visible = true,
+  isHidden = false,
   focused = false,
   showGroup = false,
 }) => {
   const openLinksInNewTab = useOpenLinksInNewTab()
-  const isAppMode = useIsAppMode()
-
   const showDescription = useShowDescriptions()
+  const isAppMode = useIsAppMode()
 
   const group = linkToGroupMap.get(link) ?? null
 
@@ -52,8 +52,9 @@ export const Link: FC<Props> = ({
   function handleSearchClick(event: MouseEvent<HTMLButtonElement>) {
     event.stopPropagation()
     event.preventDefault()
+    if (!linkHasSearchUrl(link)) return
+    setSearchTarget(link)
     setAppMode('search')
-    setSearchTarget(link as SearchTarget)
   }
 
   return (
@@ -93,71 +94,23 @@ export const Link: FC<Props> = ({
       >
         <div>{link.title}</div>
 
-        {showGroup && group !== null && (
-          <div className="mt-0.5 flex items-center gap-1.5">
-            <div
-              className={classNames([
-                'h-2 w-2 rounded-full',
-                `bg-${group.color}-600 dark:bg-${group.color}-600`,
-              ])}
-            ></div>
-            <div
-              className={classNames([
-                'text-xs opacity-70',
-                `text-${group.color}-800 dark:text-${group.color}-300`,
-              ])}
-            >
-              {group?.name ?? '-'}
-            </div>
-          </div>
-        )}
+        <LinkGroupLabel showGroup={showGroup} group={group} />
       </div>
 
       <div className="-my-1 -mr-1 flex self-stretch">
-        {searchable && !isAppMode('customize') ? (
-          <>
-            {focused ? (
-              <div className="mr-2 self-center">
-                <span className="flex items-center justify-center">
-                  <Kbd>Tab</Kbd>
-                </span>
-              </div>
-            ) : null}
+        <LinkSearchButton
+          focused={focused}
+          searchable={searchable}
+          onClick={handleSearchClick}
+        />
 
-            <LinkAction
-              className="self-stretch dark:text-gray-50"
-              hasHover
-              onClick={handleSearchClick}
-            >
-              <SearchIcon className="opacity-40 group-hover:opacity-100" />
-            </LinkAction>
-          </>
-        ) : null}
-
-        {isAppMode('customize') ? (
-          <LinkAction
-            className={classNames({
-              'text-brand-600 group-hover:text-brand-800': visible,
-              'dark:text-brand-300 group-hover:dark:text-brand-100': visible,
-              'text-brand-600/50 group-hover:text-brand-700/75': !visible,
-              'dark:text-brand-300/50 dark:group-hover:text-brand-200/75':
-                !visible,
-            })}
-          >
-            {visible ? <EyeIcon /> : <EyeOffIcon />}
-          </LinkAction>
-        ) : null}
+        <LinkVisibilityToggleButton isHidden={isHidden} />
       </div>
 
-      {showDescription && link.description !== undefined ? (
-        <div
-          className={classNames('col-start-2', 'py-1', 'text-sm leading-4', {
-            'text-gray-500 dark:text-gray-400': visible,
-          })}
-        >
-          {link.description}
-        </div>
-      ) : null}
+      <LinkDescription
+        description={link.description}
+        showDescription={showDescription}
+      />
     </a>
   )
 }

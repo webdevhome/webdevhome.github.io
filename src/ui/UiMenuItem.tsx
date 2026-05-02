@@ -10,7 +10,7 @@ type Props = {
   action?: (() => void) | string
 }
 
-export const AppMenuItem: FC<Props> = ({
+export const UiMenuItem: FC<Props> = ({
   label,
   icon,
   selected = false,

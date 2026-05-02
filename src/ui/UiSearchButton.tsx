@@ -3,7 +3,7 @@ import { SearchIcon } from 'lucide-react'
 import { type FC } from 'react'
 import { setAppMode } from '../app/appModeStore.ts'
 
-export const AppSearchButton: FC = () => {
+export const UiSearchButton: FC = () => {
   return (
     <button
       className={classNames(

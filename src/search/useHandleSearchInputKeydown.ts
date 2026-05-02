@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react'
 import type { KeyboardEvent } from 'react'
 import { exitSearchMode, setAppMode } from '../app/appModeStore.ts'
-import type { SearchTarget } from '../links/links.ts'
+import { linkHasSearchUrl } from '../links/links.ts'
 import { isOpenLinksInNewTabEnabled } from '../links/useOpenLinksInNewTab.ts'
 import {
   $focusedSearchResult,
@@ -44,11 +44,10 @@ export function useHandleSearchInputKeydown(): (
     Tab(event) {
       event.preventDefault()
 
-      if ($searchTarget.get() !== null) return
       if (focusedResult === null) return
-      if (focusedResult.obj.searchUrl === undefined) return
+      if (!linkHasSearchUrl(focusedResult.obj)) return
 
-      setSearchTarget(focusedResult.obj as SearchTarget)
+      setSearchTarget(focusedResult.obj)
     },
 
     Enter(event) {

@@ -1,22 +1,22 @@
 import { Menu, MenuButton, MenuItems } from '@headlessui/react'
 import classNames from 'classnames'
 import { type FC, type PropsWithChildren, type ReactElement } from 'react'
-import { AppAction } from './AppAction.tsx'
+import { UiActionButton } from './UiActionButton.tsx'
 
 type Props = {
   icon: ReactElement
   label: string
 }
 
-export const AppMenu: FC<PropsWithChildren<Props>> = ({
+export const UiMenu: FC<PropsWithChildren<Props>> = ({
   icon,
   label,
   children,
 }) => {
   return (
     <Menu>
-      <MenuButton className="cursor-default" tabIndex={-1} as='div'>
-        <AppAction icon={icon} label={label} />
+      <MenuButton className="cursor-default" tabIndex={-1} as="div">
+        <UiActionButton icon={icon} label={label} />
       </MenuButton>
 
       <MenuItems

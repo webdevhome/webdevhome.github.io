@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { type FC } from 'react'
+import { LinkGroup } from '../link-groups/LinkGroup.tsx'
 import { links } from './links.ts'
-import { LinkGroup } from './LinkGroup.tsx'
 
 export const Links: FC = () => {
   return (
