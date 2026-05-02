@@ -524,8 +524,45 @@
       ]
     },
     {
+      "name": "CSS Processors",
+      "color": "purple",
+      "items": [
+        {
+          "title": "Sass",
+          "url": "https://sass-lang.com",
+          "icon": "sass",
+          "color": "#cc6699"
+        },
+        {
+          "title": "Less",
+          "url": "https://lesscss.org",
+          "icon": "less",
+          "color": "#1D365D"
+        },
+        {
+          "title": "Stylus",
+          "url": "https://stylus-lang.com",
+          "icon": "stylus",
+          "color": "#333333"
+        },
+        {
+          "title": "PostCSS",
+          "url": "https://postcss.org",
+          "icon": "postcss",
+          "color": "#DD3A0A"
+        },
+        {
+          "title": "Autoprefixer",
+          "url": "https://github.com/postcss/autoprefixer",
+          "description": "Library that automatically insert browser prefixes into your CSS.",
+          "icon": "autoprefixer",
+          "color": "#DD3735"
+        }
+      ]
+    },
+    {
       "name": "CSS Frameworks & Libraries",
-      "color": "blue",
+      "color": "purple",
       "items": [
         {
           "title": "Tailwind CSS",
@@ -602,7 +639,7 @@
       ]
     },
     {
-      "name": "UI Frameworks (DOM controling)",
+      "name": "UI Frameworks (DOM controlling)",
       "color": "blue",
       "items": [
         {
@@ -1334,43 +1371,6 @@
           "description": "A universal document converter.",
           "icon": "pandoc",
           "color": "#4093DA"
-        }
-      ]
-    },
-    {
-      "name": "CSS Processors",
-      "color": "amber",
-      "items": [
-        {
-          "title": "Sass",
-          "url": "https://sass-lang.com",
-          "icon": "sass",
-          "color": "#cc6699"
-        },
-        {
-          "title": "Less",
-          "url": "https://lesscss.org",
-          "icon": "less",
-          "color": "#1D365D"
-        },
-        {
-          "title": "Stylus",
-          "url": "https://stylus-lang.com",
-          "icon": "stylus",
-          "color": "#333333"
-        },
-        {
-          "title": "PostCSS",
-          "url": "https://postcss.org",
-          "icon": "postcss",
-          "color": "#DD3A0A"
-        },
-        {
-          "title": "Autoprefixer",
-          "url": "https://github.com/postcss/autoprefixer",
-          "description": "Library that automatically insert browser prefixes into your CSS.",
-          "icon": "autoprefixer",
-          "color": "#DD3735"
         }
       ]
     },
