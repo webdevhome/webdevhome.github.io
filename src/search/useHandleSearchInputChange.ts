@@ -1,21 +1,21 @@
 import type { ChangeEvent } from 'react'
 import {
   $searchTarget,
-  $searchTerm,
-  $onSiteSearchTerm,
-  $keyboardIndex,
-} from './useSearch.ts'
+  setKeyboardIndex,
+  setOnSiteSearchTerm,
+  setSearchTerm,
+} from './search.ts'
 
 export function useHandleSearchInputChange(): (
   event: ChangeEvent<HTMLInputElement>,
 ) => void {
   return (event: ChangeEvent<HTMLInputElement>) => {
-    if ($searchTarget.value === null) {
-      $searchTerm.set(event.target.value)
+    if ($searchTarget.get() === null) {
+      setSearchTerm(event.target.value)
     } else {
-      $onSiteSearchTerm.set(event.target.value)
+      setOnSiteSearchTerm(event.target.value)
     }
 
-    $keyboardIndex.set(0)
+    setKeyboardIndex(0)
   }
 }

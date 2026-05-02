@@ -48,6 +48,10 @@ export const $hiddenSearchResults = computed(
   },
 )
 
+export function setKeyboardIndex(index: number): void {
+  $keyboardIndex.set(index)
+}
+
 export function useSearchTerm(): string {
   return useStore($searchTerm)
 }
@@ -57,7 +61,7 @@ export function setSearchTerm(term: string = ''): void {
 }
 
 export function hasValidSearchTerm(): boolean {
-  return $searchTerm.value.trim() !== ''
+  return $searchTerm.get().trim() !== ''
 }
 
 export function useOnSiteSearchTerm(): string {
@@ -69,7 +73,7 @@ export function setOnSiteSearchTerm(term: string = ''): void {
 }
 
 export function hasSearchTarget(): boolean {
-  return $searchTarget.value !== null
+  return $searchTarget.get() !== null
 }
 
 export function setSearchTarget(target: SearchTarget | null = null): void {

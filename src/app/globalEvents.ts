@@ -1,5 +1,5 @@
 import { toggleJumpLinks } from '../jump-links/useJumpLinks.ts'
-import { hasSearchTarget } from '../search/useSearch.ts'
+import { hasSearchTarget } from '../search/search.ts'
 import {
   exitOnSiteSearch,
   exitSearchMode,

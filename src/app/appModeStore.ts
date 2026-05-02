@@ -5,7 +5,7 @@ import {
   setOnSiteSearchTerm,
   setSearchTarget,
   setSearchTerm,
-} from '../search/useSearch.ts'
+} from '../search/search.ts'
 
 export type AppMode = 'default' | 'search' | 'customize'
 
@@ -16,7 +16,7 @@ export function setAppMode(mode: AppMode): void {
 }
 
 export function getCurrentAppMode(): AppMode {
-  return $appMode.value
+  return $appMode.get()
 }
 
 export function useIsAppMode(): (...modes: AppMode[]) => boolean {

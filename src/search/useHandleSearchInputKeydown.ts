@@ -3,7 +3,6 @@ import type { KeyboardEvent } from 'react'
 import { exitSearchMode, setAppMode } from '../app/appModeStore.ts'
 import type { SearchTarget } from '../links/links.ts'
 import { isOpenLinksInNewTabEnabled } from '../links/useOpenLinksInNewTab.ts'
-import { getOnSiteSearchUrl } from './getOnSiteSearchUrl.ts'
 import {
   $focusedSearchResult,
   $hiddenSearchResults,
@@ -14,7 +13,9 @@ import {
   $visibleSearchResults,
   maxHiddenResultsCount,
   maxResultsCount,
-} from './useSearch.ts'
+  setKeyboardIndex,
+  setSearchTarget,
+} from './search.ts'
 
 export function useHandleSearchInputKeydown(): (
   event: KeyboardEvent<HTMLInputElement>,
@@ -28,13 +29,13 @@ export function useHandleSearchInputKeydown(): (
     (event: KeyboardEvent<HTMLInputElement>) => void
   > = {
     Backspace(event) {
-      if ($searchTarget.value !== null && $onSiteSearchTerm.value === '') {
+      if ($searchTarget.get() !== null && $onSiteSearchTerm.get() === '') {
         event.preventDefault()
-        $searchTarget.set(null)
-        if ($searchTerm.value === '') {
+        setSearchTarget()
+        if ($searchTerm.get() === '') {
           setAppMode('default')
         }
-      } else if ($searchTerm.value === '' && $onSiteSearchTerm.value === '') {
+      } else if ($searchTerm.get() === '' && $onSiteSearchTerm.get() === '') {
         event.preventDefault()
         setAppMode('default')
       }
@@ -43,19 +44,22 @@ export function useHandleSearchInputKeydown(): (
     Tab(event) {
       event.preventDefault()
 
-      if ($searchTarget.value !== null) return
+      if ($searchTarget.get() !== null) return
       if (focusedResult === null) return
       if (focusedResult.obj.searchUrl === undefined) return
 
-      $searchTarget.set(focusedResult.obj as SearchTarget)
+      setSearchTarget(focusedResult.obj as SearchTarget)
     },
 
     Enter(event) {
       const url = (() => {
-        if ($searchTarget.value === null) {
+        const searchTarget = $searchTarget.get()
+        if (searchTarget === null) {
           return focusedResult?.obj.url ?? null
         }
-        return getOnSiteSearchUrl($searchTarget.value, $onSiteSearchTerm.value)
+
+        const encodedSearchTerm = encodeURIComponent($onSiteSearchTerm.get())
+        return searchTarget.searchUrl.replaceAll('{search}', encodedSearchTerm)
       })()
 
       if (url === null) return
@@ -73,7 +77,7 @@ export function useHandleSearchInputKeydown(): (
 
       event.preventDefault()
 
-      $keyboardIndex.set(Math.max(0, $keyboardIndex.get() - 1))
+      setKeyboardIndex(Math.max(0, $keyboardIndex.get() - 1))
     },
 
     ArrowDown(event) {
@@ -88,7 +92,7 @@ export function useHandleSearchInputKeydown(): (
       )
       const totalResultsCount = resultsCount + hiddenResultsCount
 
-      $keyboardIndex.set(
+      setKeyboardIndex(
         Math.min(totalResultsCount - 1, $keyboardIndex.get() + 1),
       )
     },

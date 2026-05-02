@@ -10,7 +10,7 @@ import {
   useOnSiteSearchTerm,
   useSearchTarget,
   useSearchTerm,
-} from './useSearch.ts'
+} from './search.ts'
 
 export const Search: FC = () => {
   const searchInputRef = useRef<HTMLInputElement>(null)

@@ -11,7 +11,7 @@ const effectiveThemes: AppTheme[] = ['light', 'dark']
 const $themeSetting = persistentAtom<AppThemeSetting>('wdh:app-theme', 'auto')
 
 export function isCurrentTheme(theme: AppThemeSetting): boolean {
-  return $themeSetting.value === theme
+  return $themeSetting.get() === theme
 }
 
 export function setTheme(theme: AppThemeSetting): void {

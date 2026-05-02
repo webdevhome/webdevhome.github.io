@@ -2,7 +2,7 @@ import { persistentAtom } from '@nanostores/persistent'
 import { useStore } from '@nanostores/react'
 import { computed } from 'nanostores'
 import { jsonEncoder } from '../utils/nanostores.ts'
-import { allLinks, links, type LinkGroup, type LinkItem } from './links.ts'
+import { allLinks, links, type LinkItem } from './links.ts'
 
 const $hiddenUrls = persistentAtom<string[]>(
   'wdh:hidden-items',
@@ -55,13 +55,11 @@ export function useHiddenUrls(): LinkItem['url'][] {
   return useStore($hiddenUrls)
 }
 
-export function useVisibleLinkGroups(): LinkGroup[] {
-  const hiddenUrls = useStore($hiddenUrls)
-
+export const $visibleLinkGroups = computed([$hiddenUrls], (hiddenUrls) => {
   return links.items.filter((group) => {
     return group.items.some((link) => !hiddenUrls.includes(link.url))
   })
-}
+})
 
 export function useHiddenUrlsCount(): number {
   return useStore($hiddenUrlsCount)

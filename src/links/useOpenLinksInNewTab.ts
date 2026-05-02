@@ -17,5 +17,5 @@ export function useOpenLinksInNewTab() {
 }
 
 export function isOpenLinksInNewTabEnabled(): boolean {
-  return $openLinksInNewTabSetting.value
+  return $openLinksInNewTabSetting.get()
 }

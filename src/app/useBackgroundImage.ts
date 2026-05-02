@@ -1,6 +1,6 @@
 import { persistentAtom } from '@nanostores/persistent'
 import { useStore } from '@nanostores/react'
-import { booleanEncoder } from '../utils/nanostores.ts'
+import { booleanEncoder, negateBooleanStore } from '../utils/nanostores.ts'
 
 const $showBackground = persistentAtom(
   'wdh:show-background',
@@ -9,7 +9,7 @@ const $showBackground = persistentAtom(
 )
 
 export function toggleBackgroundImage() {
-  $showBackground.set(!$showBackground.get())
+  negateBooleanStore($showBackground)
 }
 
 export function useShowBackground(): boolean {

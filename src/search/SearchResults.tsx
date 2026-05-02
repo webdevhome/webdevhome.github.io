@@ -7,7 +7,7 @@ import {
   $focusedSearchResult,
   $hiddenSearchResults,
   $visibleSearchResults,
-} from './useSearch.ts'
+} from './search.ts'
 
 export const SearchResults: FC = () => {
   const results = useStore($visibleSearchResults)

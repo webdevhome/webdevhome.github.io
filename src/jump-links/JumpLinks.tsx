@@ -1,7 +1,8 @@
+import { useStore } from '@nanostores/react'
 import classNames from 'classnames'
 import { XIcon } from 'lucide-react'
 import { type FC } from 'react'
-import { useVisibleLinkGroups } from '../links/hiddenUrlsStore.ts'
+import { $visibleLinkGroups } from '../links/hiddenUrlsStore.ts'
 import { JumpLink } from './JumpLink.tsx'
 import {
   toggleJumpLinksMobile,
@@ -12,7 +13,7 @@ import {
 export const JumpLinks: FC = () => {
   const showJumpLinks = useShowJumpLinks()
   const showJumpLinksMobile = useShowJumpLinksMobile()
-  const visibleLinkGroups = useVisibleLinkGroups()
+  const visibleLinkGroups = useStore($visibleLinkGroups)
 
   return (
     <>
