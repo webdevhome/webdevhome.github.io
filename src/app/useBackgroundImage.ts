@@ -1,20 +1,17 @@
-import { useAtom } from '@xoid/react'
-import { atom } from 'xoid'
-import { negate } from '../utils/negate.ts'
-import { booleanConverter, storageMapping } from '../utils/storageMapping.ts'
+import { persistentAtom } from '@nanostores/persistent'
+import { useStore } from '@nanostores/react'
+import { booleanEncoder } from '../utils/nanostores.ts'
 
-const showBackgroundStorageMapping = storageMapping(
+const $showBackground = persistentAtom(
   'wdh:show-background',
   false,
-  booleanConverter,
+  booleanEncoder,
 )
-const $showBackground = atom(showBackgroundStorageMapping.read())
-$showBackground.subscribe(showBackgroundStorageMapping.write)
 
 export function toggleBackgroundImage() {
-  $showBackground.update(negate)
+  $showBackground.set(!$showBackground.get())
 }
 
 export function useShowBackground(): boolean {
-  return useAtom($showBackground)
+  return useStore($showBackground)
 }

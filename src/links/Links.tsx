@@ -7,7 +7,7 @@ export const Links: FC = () => {
   return (
     <div
       className={classNames(
-        'grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))]',
+        'grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))]',
         'gap-x-4 gap-y-8',
         'p-2',
       )}

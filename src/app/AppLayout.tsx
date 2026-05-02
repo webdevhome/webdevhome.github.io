@@ -9,7 +9,7 @@ import {
   useShowJumpLinks,
   useShowJumpLinksMobile,
 } from '../jump-links/useJumpLinks.ts'
-import { appMode, useIsAppMode } from './appModeStore.ts'
+import { useIsAppMode } from './appModeStore.ts'
 import { useShowBackground } from './useBackgroundImage.ts'
 import { useFocusAppLayoutElements } from './useFocusAppLayoutElements.ts'
 
@@ -56,10 +56,10 @@ export const AppLayout: FC<PropsWithChildren<Props>> = ({
         className={classNames([
           'overflow-auto rounded-xl bg-white/30 max-md:contents dark:bg-white/5',
           'outline-none',
-          'ring-black/30 focus-within:ring-1',
+          'ring-black/30 focus-within:ring-1 dark:ring-white/30',
           {
             'max-md:hidden': !showJumpLinksMobile,
-            'md:hidden': !showJumpLinks || isAppMode(appMode.search),
+            'md:hidden': !showJumpLinks || isAppMode('search'),
           },
         ])}
         ref={sidebarRef}
@@ -72,10 +72,9 @@ export const AppLayout: FC<PropsWithChildren<Props>> = ({
         className={classNames([
           'overflow-auto rounded-xl bg-white/30 dark:bg-white/5',
           'outline-none',
-          'ring-black/30 focus-within:ring-1',
+          'ring-black/30 focus-within:ring-1 dark:ring-white/30',
           {
-            'row-start-2 md:col-span-2':
-              !showJumpLinks || isAppMode(appMode.search),
+            'row-start-2 md:col-span-2': !showJumpLinks || isAppMode('search'),
           },
         ])}
         id="main-content"

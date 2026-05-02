@@ -4,17 +4,13 @@ WebdevHome is a collection of links I, as a web developer, use very frequently. 
 
 [Open WebdevHome](https://webdevhome.github.io)
 
-## Credits
+## Developed with
 
-[TypeScript](https://github.com/microsoft/TypeScript)
-• [React](https://github.com/facebook/react)
-• [xoid](https://github.com/xoidlabs/xoid)
-• [Headless UI](https://github.com/tailwindlabs/headlessui)
-• [farzher/fuzzysort](https://github.com/farzher/fuzzysort)
+[![](https://img.shields.io/badge/TypeScript-303540?logo=typescript)](https://github.com/microsoft/TypeScript) [![](https://img.shields.io/badge/React-303540?logo=react&logoColor=61DAFB)](https://github.com/facebook/react) [![](https://img.shields.io/badge/Nano_Stores-303540?logo=nanostores)](https://github.com/nanostores/nanostores) [![](https://img.shields.io/badge/fuzzysort-303540)](https://github.com/farzher/fuzzysort)
 
-[TailwindCSS](https://github.com/tailwindlabs/tailwindcss)
-• [Simple Icons](https://github.com/simple-icons/simple-icons)
-• [Lucide Icons](https://github.com/lucide-icons/lucide)
+[![](https://img.shields.io/badge/Headless_UI-303540?logo=headlessui)](https://github.com/tailwindlabs/headlessui) [![](https://img.shields.io/badge/Tailwind_CSS-303540?logo=tailwind-css&logoColor=00bcff)](https://github.com/tailwindlabs/tailwindcss)
+
+[![](https://img.shields.io/badge/Simple_Icons-303540?logo=simpleicons)](https://github.com/simple-icons/simple-icons) [![](https://img.shields.io/badge/Lucide_Icons-303540?logo=lucide)](https://github.com/lucide-icons/lucide)
 
 ## How to use
 

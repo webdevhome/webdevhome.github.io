@@ -1,24 +1,22 @@
-import { useAtom } from '@xoid/react'
-import { atom } from 'xoid'
-import { negate } from '../utils/negate.ts'
-import { booleanConverter, storageMapping } from '../utils/storageMapping.ts'
+import { persistentAtom } from '@nanostores/persistent'
+import { useStore } from '@nanostores/react'
+import { atom } from 'nanostores'
+import { booleanEncoder, negateBooleanStore } from '../utils/nanostores.ts'
 
-const showJumpLinksStorageMapping = storageMapping(
+const $showJumpLinksSetting = persistentAtom(
   'wdh:show-jump-links',
   true,
-  booleanConverter,
+  booleanEncoder,
 )
-const $showJumpLinksSetting = atom(showJumpLinksStorageMapping.read())
-$showJumpLinksSetting.subscribe(showJumpLinksStorageMapping.write)
 
 export function toggleJumpLinks(): void {
-  $showJumpLinksSetting.update(negate)
+  negateBooleanStore($showJumpLinksSetting)
 }
 
 const $showJumpLinksMobileSetting = atom(false)
 
 export function toggleJumpLinksMobile() {
-  $showJumpLinksMobileSetting.update(negate)
+  negateBooleanStore($showJumpLinksMobileSetting)
 }
 
 export function setShowJumpLinksMobile(value: boolean): void {
@@ -26,9 +24,9 @@ export function setShowJumpLinksMobile(value: boolean): void {
 }
 
 export function useShowJumpLinks(): boolean {
-  return useAtom($showJumpLinksSetting)
+  return useStore($showJumpLinksSetting)
 }
 
 export function useShowJumpLinksMobile(): boolean {
-  return useAtom($showJumpLinksMobileSetting)
+  return useStore($showJumpLinksMobileSetting)
 }

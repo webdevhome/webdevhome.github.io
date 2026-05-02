@@ -9,12 +9,7 @@ import {
 import { type FC } from 'react'
 import { AppAction } from '../header/AppAction.tsx'
 import { hideAllUrls, showAllUrls } from '../links/hiddenUrlsStore.ts'
-import {
-  appMode,
-  exitSearchMode,
-  setAppMode,
-  useIsAppMode,
-} from './appModeStore.ts'
+import { exitSearchMode, setAppMode, useIsAppMode } from './appModeStore.ts'
 
 function handleScrollTopClick() {
   const mainContentElement = document.getElementById('main-content')
@@ -26,14 +21,14 @@ function handleScrollTopClick() {
 export const AppHeaderActions: FC = () => {
   const isAppMode = useIsAppMode()
 
-  if (isAppMode(appMode.default)) {
+  if (isAppMode('default')) {
     return (
       <>
         <AppAction
           icon={<SearchIcon />}
           label="Search"
           visible="small-screens"
-          action={() => setAppMode(appMode.search)}
+          action={() => setAppMode('search')}
         />
         <AppAction
           icon={<ArrowUpToLineIcon />}
@@ -44,7 +39,7 @@ export const AppHeaderActions: FC = () => {
     )
   }
 
-  if (isAppMode(appMode.search)) {
+  if (isAppMode('search')) {
     return (
       <AppAction
         icon={<ArrowLeftIcon />}
@@ -55,14 +50,14 @@ export const AppHeaderActions: FC = () => {
     )
   }
 
-  if (isAppMode(appMode.customize)) {
+  if (isAppMode('customize')) {
     return (
       <>
         <AppAction
           icon={<CheckIcon />}
           label="Done"
           highlight
-          action={() => setAppMode(appMode.default)}
+          action={() => setAppMode('default')}
         />
         <AppAction icon={<EyeIcon />} label="Show all" action={showAllUrls} />
         <AppAction

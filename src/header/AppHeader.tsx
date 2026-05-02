@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 import { ListTreeIcon } from 'lucide-react'
 import { type FC, type ReactElement } from 'react'
-import { appMode, useIsAppMode } from '../app/appModeStore.ts'
-import { isMinBreakpoint } from '../utils/breakpoints.ts'
+import { useIsAppMode } from '../app/appModeStore.ts'
 import {
   toggleJumpLinks,
   toggleJumpLinksMobile,
 } from '../jump-links/useJumpLinks.ts'
+import { isMinBreakpoint } from '../utils/breakpoints.ts'
 import { AppAction } from './AppAction.tsx'
 import { Logo } from './Logo.tsx'
 
@@ -37,7 +37,7 @@ export const AppHeader: FC<Props> = ({ centerItems, actions }) => {
         <AppAction
           icon={<ListTreeIcon />}
           action={handleMenuClick}
-          available={isAppMode(appMode.default, appMode.customize)}
+          available={isAppMode('default', 'customize')}
         />
         <Logo />
       </div>

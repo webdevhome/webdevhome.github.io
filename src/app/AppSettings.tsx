@@ -15,7 +15,7 @@ import {
   toggleOpenLinksInNewTab,
   useOpenLinksInNewTab,
 } from '../links/useOpenLinksInNewTab.ts'
-import { appMode, setAppMode, useIsAppMode } from './appModeStore.ts'
+import { setAppMode, useIsAppMode } from './appModeStore.ts'
 import {
   toggleBackgroundImage,
   useShowBackground,
@@ -32,8 +32,8 @@ export const AppSettings: FC = () => {
       <AppMenuItem
         label="Show/hide links..."
         icon={<ListTodoIcon />}
-        action={() => setAppMode(appMode.customize)}
-        visible={isAppMode(appMode.default)}
+        action={() => setAppMode('customize')}
+        visible={isAppMode('default')}
       />
       <AppMenuDivider />
       <AppMenuItem

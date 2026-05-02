@@ -1,5 +1,5 @@
-import { useAtom } from '@xoid/react'
-import { atom } from 'xoid'
+import { useStore } from '@nanostores/react'
+import { atom } from 'nanostores'
 import { setHiddenUrls } from '../links/hiddenUrlsStore.ts'
 
 const $showDialog = atom(false)
@@ -16,9 +16,9 @@ export type DataImport = {
 }
 
 export function useDataImport(): DataImport {
-  const showDialog = useAtom($showDialog)
-  const importJSON = useAtom($importJSON)
-  const importError = useAtom($importError)
+  const showDialog = useStore($showDialog)
+  const importJSON = useStore($importJSON)
+  const importError = useStore($importError)
 
   function applyImport(): void {
     $importError.set(null)

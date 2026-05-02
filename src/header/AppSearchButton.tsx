@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { SearchIcon } from 'lucide-react'
 import { type FC } from 'react'
-import { appMode, setAppMode } from '../app/appModeStore.ts'
+import { setAppMode } from '../app/appModeStore.ts'
 
 export const AppSearchButton: FC = () => {
   return (
@@ -17,7 +17,7 @@ export const AppSearchButton: FC = () => {
         'cursor-default',
         'select-none',
       )}
-      onClick={() => setAppMode(appMode.search)}
+      onClick={() => setAppMode('search')}
     >
       <SearchIcon />
       Search...

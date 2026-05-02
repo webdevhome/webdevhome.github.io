@@ -1,17 +1,18 @@
-import { type FC, type RefObject } from 'react'
+import { useStore } from '@nanostores/react'
+import { type FC } from 'react'
 import { Link } from '../links/Link.tsx'
 import { SearchDivider } from './SearchDivider.tsx'
 import { SearchHint } from './SearchHint.tsx'
-import { useSearch } from './useSearch.ts'
+import {
+  $focusedSearchResult,
+  $hiddenSearchResults,
+  $visibleSearchResults,
+} from './useSearch.ts'
 
-type Props = {
-  searchInputRef: RefObject<HTMLInputElement | null>
-}
-
-export const SearchResults: FC<Props> = ({ searchInputRef }) => {
-  const { results, hiddenResults, focusedResult } = useSearch({
-    searchInputRef,
-  })
+export const SearchResults: FC = () => {
+  const results = useStore($visibleSearchResults)
+  const hiddenResults = useStore($hiddenSearchResults)
+  const focusedResult = useStore($focusedSearchResult)
 
   return (
     <>
@@ -22,7 +23,7 @@ export const SearchResults: FC<Props> = ({ searchInputRef }) => {
             link={link.obj}
             searchable={link.obj.searchUrl !== undefined}
             visible={true}
-            focus={link === focusedResult}
+            focused={link === focusedResult}
             showGroup
           />
         ))
@@ -42,7 +43,7 @@ export const SearchResults: FC<Props> = ({ searchInputRef }) => {
               link={link.obj}
               searchable={link.obj.searchUrl !== undefined}
               visible={true}
-              focus={link === focusedResult}
+              focused={link === focusedResult}
               showGroup
             />
           ))}

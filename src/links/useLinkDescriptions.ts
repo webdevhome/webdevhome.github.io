@@ -1,20 +1,17 @@
-import { useAtom } from '@xoid/react'
-import { atom } from 'xoid'
-import { negate } from '../utils/negate.ts'
-import { booleanConverter, storageMapping } from '../utils/storageMapping.ts'
+import { persistentAtom } from '@nanostores/persistent'
+import { useStore } from '@nanostores/react'
+import { booleanEncoder, negateBooleanStore } from '../utils/nanostores.ts'
 
-const showDescriptionsStorageMapping = storageMapping(
+const $showDescriptions = persistentAtom(
   'wdh:show-descriptions',
   false,
-  booleanConverter,
+  booleanEncoder,
 )
-const $showDescriptions = atom(showDescriptionsStorageMapping.read())
-$showDescriptions.subscribe(showDescriptionsStorageMapping.write)
 
 export function toggleShowDescriptions(): void {
-  $showDescriptions.update(negate)
+  negateBooleanStore($showDescriptions)
 }
 
 export function useShowDescriptions(): boolean {
-  return useAtom($showDescriptions)
+  return useStore($showDescriptions)
 }

@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import { ArrowLeftIcon } from 'lucide-react'
 import { type FC } from 'react'
-import { type LinkItem } from '../links/links.ts'
 import { exitOnSiteSearch } from '../app/appModeStore.ts'
-import { SearchTargetIcon } from './SearchTargetIcon.tsx'
+import { LinkItemIcon } from '../links/LinkItemIcon.tsx'
+import { type LinkItem } from '../links/links.ts'
 
 type Props = {
   title: LinkItem['title']
@@ -40,8 +40,8 @@ export const SearchTargetLabel: FC<Props> = ({ title, icon, color }) => {
 
       <div className="flex flex-wrap items-center gap-y-2">
         <span className="mr-2">Search on</span>
-        <span className="flex items-center">
-          <SearchTargetIcon icon={icon} color={color} />
+        <span className="flex items-center gap-2">
+          <LinkItemIcon icon={icon} color={color} />
           <span>
             <span className="text-brand-600 dark:text-brand-300">{title}</span>:
           </span>

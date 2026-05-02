@@ -1,14 +1,12 @@
 import classNames from 'classnames'
 import { EyeIcon, EyeOffIcon, SearchIcon } from 'lucide-react'
 import { type FC, type MouseEvent } from 'react'
-import { ReactSVG } from 'react-svg'
-import { appMode, setAppMode, useIsAppMode } from '../app/appModeStore.ts'
+import { setAppMode, useIsAppMode } from '../app/appModeStore.ts'
 import { setSearchTarget } from '../search/useSearch.ts'
-import { DefaultIcon } from '../ui/DefaultIcon.tsx'
 import { Kbd } from '../ui/Kbd.tsx'
-import { getIconUrl } from '../utils/getIconUrl.ts'
 import { toggleUrl } from './hiddenUrlsStore.ts'
 import { LinkAction } from './LinkAction.tsx'
+import { LinkItemIcon } from './LinkItemIcon.tsx'
 import { linkToGroupMap, type LinkItem, type SearchTarget } from './links.ts'
 import { useShowDescriptions } from './useLinkDescriptions.ts'
 import { useOpenLinksInNewTab } from './useOpenLinksInNewTab.ts'
@@ -17,7 +15,7 @@ type Props = {
   link: LinkItem
   searchable?: boolean
   visible?: boolean
-  focus?: boolean
+  focused?: boolean
   showGroup?: boolean
 }
 
@@ -25,7 +23,7 @@ export const Link: FC<Props> = ({
   link,
   searchable = false,
   visible = true,
-  focus = false,
+  focused = false,
   showGroup = false,
 }) => {
   const openLinksInNewTab = useOpenLinksInNewTab()
@@ -41,20 +39,20 @@ export const Link: FC<Props> = ({
       : `${link.title}: ${link.description}`
 
   function handleLinkClick(event: MouseEvent<HTMLAnchorElement>): void {
-    if (isAppMode(appMode.customize) || event.altKey) {
+    if (isAppMode('customize') || event.altKey) {
       event.preventDefault()
       toggleUrl(link.url)
     }
 
-    if (isAppMode(appMode.search) && openLinksInNewTab) {
-      setAppMode(appMode.default)
+    if (isAppMode('search') && openLinksInNewTab) {
+      setAppMode('default')
     }
   }
 
   function handleSearchClick(event: MouseEvent<HTMLButtonElement>) {
     event.stopPropagation()
     event.preventDefault()
-    setAppMode(appMode.search)
+    setAppMode('search')
     setSearchTarget(link as SearchTarget)
   }
 
@@ -71,42 +69,21 @@ export const Link: FC<Props> = ({
         'hover:bg-black/10 active:bg-black/15',
         'dark:hover:bg-white/10 dark:active:bg-white/15',
         {
-          'bg-black/10 dark:bg-white/10': focus,
+          'bg-black/10 dark:bg-white/10': focused,
           'outline-1 -outline-offset-1 outline-black/25 dark:outline-white/25':
-            focus,
+            focused,
         },
         'focus:outline-2 focus:-outline-offset-1',
         'focus:relative focus:z-10',
         'focus:outline-gray-400',
         'rounded-lg',
-        { 'cursor-default': isAppMode(appMode.customize) },
+        { 'cursor-default': isAppMode('customize') },
         'overflow-hidden',
         'group',
       )}
       onClick={handleLinkClick}
     >
-      <div
-        className={classNames(
-          'grid items-center justify-center',
-          'p-1',
-          'bg-[linear-gradient(to_bottom_right,hsl(from_currentcolor_h_s_98%),hsl(from_currentcolor_h_s_94%))]',
-          'dark:bg-[linear-gradient(to_bottom_right,hsl(from_currentcolor_h_calc(s*0.25)_90%),hsl(from_currentcolor_h_calc(s*0.25)_70%))]',
-          'shadow-[0_1px_2px_rgb(from_black_r_g_b/25%),1px_1px_1px_rgb(from_white_r_g_b/50%)_inset]',
-          'rounded-md',
-        )}
-        style={{
-          color: `light-dark(${link.color ?? 'silver'}, hsl(from ${link.color ?? 'silver'} h calc(s * 0.9) calc(l * 0.5 + 10)))`,
-        }}
-      >
-        {link.icon === undefined ? (
-          <DefaultIcon />
-        ) : (
-          <ReactSVG
-            src={getIconUrl(link.icon)}
-            className="h-[27px] w-[27px] fill-current"
-          />
-        )}
-      </div>
+      <LinkItemIcon icon={link.icon} color={link.color} />
 
       <div
         className={classNames([
@@ -137,9 +114,9 @@ export const Link: FC<Props> = ({
       </div>
 
       <div className="-my-1 -mr-1 flex self-stretch">
-        {searchable && !isAppMode(appMode.customize) ? (
+        {searchable && !isAppMode('customize') ? (
           <>
-            {focus ? (
+            {focused ? (
               <div className="mr-2 self-center">
                 <span className="flex items-center justify-center">
                   <Kbd>Tab</Kbd>
@@ -157,7 +134,7 @@ export const Link: FC<Props> = ({
           </>
         ) : null}
 
-        {isAppMode(appMode.customize) ? (
+        {isAppMode('customize') ? (
           <LinkAction
             className={classNames({
               'text-brand-600 group-hover:text-brand-800': visible,

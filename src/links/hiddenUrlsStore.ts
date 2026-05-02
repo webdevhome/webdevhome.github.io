@@ -1,57 +1,46 @@
-import { useAtom } from '@xoid/react'
-import { atom } from 'xoid'
-import {
-  arrayConverter,
-  storageMapping,
-  type StorageValueConverter,
-} from '../utils/storageMapping.ts'
+import { persistentAtom } from '@nanostores/persistent'
+import { useStore } from '@nanostores/react'
+import { computed } from 'nanostores'
+import { jsonEncoder } from '../utils/nanostores.ts'
 import { allLinks, links, type LinkGroup, type LinkItem } from './links.ts'
 
-const hiddenUrlsStorageMapping = storageMapping(
+const $hiddenUrls = persistentAtom<string[]>(
   'wdh:hidden-items',
   [],
-  arrayConverter as StorageValueConverter<LinkItem['url'][]>,
+  jsonEncoder,
 )
-const $hiddenUrls = atom(hiddenUrlsStorageMapping.read(), (state) => ({
-  toggleUrl(url: LinkItem['url']): void {
-    state.update((oldState): LinkItem['url'][] => {
-      if (oldState.includes(url)) {
-        return oldState.filter((u) => u !== url)
-      } else {
-        return [...oldState, url]
-      }
-    })
-  },
 
-  toggleUrls(urls: LinkItem['url'][]): void {
-    state.update((oldState): LinkItem['url'][] => {
-      if (urls.some((u) => oldState.includes(u))) {
-        return oldState.filter((u) => !urls.includes(u))
-      } else {
-        const urlsToAdd = urls.filter((u) => !oldState.includes(u))
-        return [...oldState, ...urlsToAdd]
-      }
-    })
-  },
-}))
-$hiddenUrls.subscribe(hiddenUrlsStorageMapping.write)
+export const $allLinksByVisibility = computed($hiddenUrls, (hiddenUrls) => {
+  return Object.groupBy(allLinks, (link) => {
+    return hiddenUrls.includes(link.url) ? 'hidden' : 'visible'
+  })
+})
 
-const $hiddenUrlsCount = atom((read) => read($hiddenUrls).length)
-
-export function isUrlHidden(url: LinkItem['url']): boolean {
-  return $hiddenUrls.value.includes(url)
-}
+const $hiddenUrlsCount = computed($hiddenUrls, (urls) => urls.length)
 
 export function setHiddenUrls(urls: LinkItem['url'][]): void {
   $hiddenUrls.set(urls)
 }
 
 export function toggleUrl(url: LinkItem['url']): void {
-  $hiddenUrls.actions.toggleUrl(url)
+  const oldState = $hiddenUrls.get()
+
+  if (oldState.includes(url)) {
+    $hiddenUrls.set(oldState.filter((u) => u !== url))
+  } else {
+    $hiddenUrls.set([...oldState, url])
+  }
 }
 
 export function toggleUrls(urls: LinkItem['url'][]): void {
-  $hiddenUrls.actions.toggleUrls(urls)
+  const oldState = $hiddenUrls.get()
+
+  if (urls.some((u) => oldState.includes(u))) {
+    $hiddenUrls.set(oldState.filter((u) => !urls.includes(u)))
+  } else {
+    const urlsToAdd = urls.filter((u) => !oldState.includes(u))
+    $hiddenUrls.set([...oldState, ...urlsToAdd])
+  }
 }
 
 export function showAllUrls(): void {
@@ -63,11 +52,11 @@ export function hideAllUrls(): void {
 }
 
 export function useHiddenUrls(): LinkItem['url'][] {
-  return useAtom($hiddenUrls)
+  return useStore($hiddenUrls)
 }
 
 export function useVisibleLinkGroups(): LinkGroup[] {
-  const hiddenUrls = useAtom($hiddenUrls)
+  const hiddenUrls = useStore($hiddenUrls)
 
   return links.items.filter((group) => {
     return group.items.some((link) => !hiddenUrls.includes(link.url))
@@ -75,11 +64,11 @@ export function useVisibleLinkGroups(): LinkGroup[] {
 }
 
 export function useHiddenUrlsCount(): number {
-  return useAtom($hiddenUrlsCount)
+  return useStore($hiddenUrlsCount)
 }
 
 export function useAllUrlsAreHidden(urls: LinkItem['url'][]): boolean {
-  const hiddenUrls = useAtom($hiddenUrls)
+  const hiddenUrls = useStore($hiddenUrls)
 
   return urls.every((u) => hiddenUrls.includes(u))
 }

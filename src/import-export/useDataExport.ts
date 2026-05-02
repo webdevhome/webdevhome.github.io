@@ -1,6 +1,6 @@
-import { useAtom } from '@xoid/react'
+import { useStore } from '@nanostores/react'
+import { atom } from 'nanostores'
 import { type RefObject, useRef } from 'react'
-import { atom } from 'xoid'
 import { useHiddenUrls } from '../links/hiddenUrlsStore.ts'
 
 const $showDialog = atom(false)
@@ -15,7 +15,7 @@ export type DataExport = {
 export function useDataExport(): DataExport {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
-  const showDialog = useAtom($showDialog)
+  const showDialog = useStore($showDialog)
   const hiddenUrls = useHiddenUrls()
 
   const exportJSON = JSON.stringify(hiddenUrls)

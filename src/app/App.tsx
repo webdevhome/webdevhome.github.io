@@ -10,7 +10,7 @@ import { useThemes } from '../theme-switcher/themes.ts'
 import { useActivityMode } from '../utils/useActivityMode.ts'
 import { AppHeaderActions } from './AppHeaderActions.tsx'
 import { AppLayout } from './AppLayout.tsx'
-import { appMode, useIsAppMode } from './appModeStore.ts'
+import { useIsAppMode } from './appModeStore.ts'
 import { AppSettingsMenu } from './AppSettingsMenu.tsx'
 
 export const App: FC = () => {
@@ -20,9 +20,7 @@ export const App: FC = () => {
 
   const activityMode = useActivityMode()
 
-  const headerCenterItems = (
-    <>{isAppMode(appMode.default) && <AppSearchButton />}</>
-  )
+  const headerCenterItems = <>{isAppMode('default') && <AppSearchButton />}</>
 
   const headerActions = (
     <>
@@ -35,10 +33,7 @@ export const App: FC = () => {
     <AppHeader centerItems={headerCenterItems} actions={headerActions} />
   )
 
-  const isDefaultOrCustomizeAppMode = isAppMode(
-    appMode.default,
-    appMode.customize,
-  )
+  const isDefaultOrCustomizeAppMode = isAppMode('default', 'customize')
 
   const sidebar = <>{isDefaultOrCustomizeAppMode ? <JumpLinks /> : null}</>
 

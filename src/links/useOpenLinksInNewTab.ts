@@ -1,20 +1,21 @@
-import { useAtom } from '@xoid/react'
-import { atom } from 'xoid'
-import { negate } from '../utils/negate.ts'
-import { booleanConverter, storageMapping } from '../utils/storageMapping.ts'
+import { persistentAtom } from '@nanostores/persistent'
+import { useStore } from '@nanostores/react'
+import { booleanEncoder, negateBooleanStore } from '../utils/nanostores.ts'
 
-const openLinksInNewTabStorageMapping = storageMapping(
+const $openLinksInNewTabSetting = persistentAtom(
   'wdh:open-links-in-new-tab',
   false,
-  booleanConverter,
+  booleanEncoder,
 )
-const $openLinksInNewTabSetting = atom(openLinksInNewTabStorageMapping.read())
-$openLinksInNewTabSetting.subscribe(openLinksInNewTabStorageMapping.write)
 
 export function toggleOpenLinksInNewTab() {
-  $openLinksInNewTabSetting.update(negate)
+  negateBooleanStore($openLinksInNewTabSetting)
 }
 
 export function useOpenLinksInNewTab() {
-  return useAtom($openLinksInNewTabSetting)
+  return useStore($openLinksInNewTabSetting)
+}
+
+export function isOpenLinksInNewTabEnabled(): boolean {
+  return $openLinksInNewTabSetting.value
 }

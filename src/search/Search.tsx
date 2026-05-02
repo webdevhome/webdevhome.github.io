@@ -3,9 +3,11 @@ import { type FC, useRef } from 'react'
 import { SearchHints } from './SearchHints.tsx'
 import { SearchResults } from './SearchResults.tsx'
 import { SearchTargetLabel } from './SearchTargetLabel.tsx'
+import { useAutoFocusSearchInput } from './useAutoFocusSearchInput.ts'
+import { useHandleSearchInputChange } from './useHandleSearchInputChange.ts'
+import { useHandleSearchInputKeydown } from './useHandleSearchInputKeydown.ts'
 import {
   useOnSiteSearchTerm,
-  useSearch,
   useSearchTarget,
   useSearchTerm,
 } from './useSearch.ts'
@@ -17,13 +19,14 @@ export const Search: FC = () => {
   const onSiteSearchTerm = useOnSiteSearchTerm()
   const searchTarget = useSearchTarget()
 
-  const { handleInputKeydown, handleInputChange } = useSearch({
-    searchInputRef,
-  })
+  const handleInputKeydown = useHandleSearchInputKeydown()
+  const handleInputChange = useHandleSearchInputChange()
+
+  useAutoFocusSearchInput(searchInputRef)
 
   return (
     <div className="mx-auto flex w-150 max-w-full flex-col px-4 py-10 max-md:py-0">
-      {searchTarget === null ? null : (
+      {searchTarget !== null && (
         <SearchTargetLabel
           title={searchTarget.title}
           icon={searchTarget.icon}
@@ -47,22 +50,20 @@ export const Search: FC = () => {
             'focus:outline-brand-700/50 dark:focus:outline-brand-400/80',
           )}
           type="text"
-          placeholder={searchTarget === null ? 'Search links...' : 'Search...'}
+          placeholder={
+            searchTarget === null
+              ? 'Search links...'
+              : `Search on ${searchTarget.title}...`
+          }
           value={searchTarget === null ? searchTerm : onSiteSearchTerm}
           onChange={handleInputChange}
           onKeyDown={handleInputKeydown}
         />
       </div>
 
-      {searchTarget === null ? (
-        <div>
-          {searchTerm === '' ? (
-            <SearchHints />
-          ) : (
-            <SearchResults searchInputRef={searchInputRef} />
-          )}
-        </div>
-      ) : null}
+      {searchTarget === null && (
+        <div>{searchTerm === '' ? <SearchHints /> : <SearchResults />}</div>
+      )}
     </div>
   )
 }

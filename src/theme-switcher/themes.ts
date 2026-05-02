@@ -1,27 +1,20 @@
-import { useAtom } from '@xoid/react'
+import { persistentAtom } from '@nanostores/persistent'
+import { useStore } from '@nanostores/react'
+import { atom, computed } from 'nanostores'
 import { useEffect } from 'react'
-import { atom } from 'xoid'
-import type { ValuesOf } from '../utilityTypes.ts'
-import { defaultConverter, storageMapping } from '../utils/storageMapping.ts'
 
-export const appTheme = { auto: 'auto', light: 'light', dark: 'dark' }
-const effectiveThemes = [appTheme.light, appTheme.dark] as const
+type AppTheme = 'light' | 'dark'
+type AppThemeSetting = AppTheme | 'auto'
 
-export type AppTheme = ValuesOf<typeof appTheme>
+const effectiveThemes: AppTheme[] = ['light', 'dark']
 
-const themeStorageMapping = storageMapping(
-  'wdh:app-theme',
-  appTheme.auto,
-  defaultConverter,
-)
-const $themeSetting = atom(themeStorageMapping.read())
-$themeSetting.subscribe(themeStorageMapping.write)
+const $themeSetting = persistentAtom<AppThemeSetting>('wdh:app-theme', 'auto')
 
-export function isCurrentTheme(theme: AppTheme): boolean {
+export function isCurrentTheme(theme: AppThemeSetting): boolean {
   return $themeSetting.value === theme
 }
 
-export function setTheme(theme: AppTheme): void {
+export function setTheme(theme: AppThemeSetting): void {
   $themeSetting.set(theme)
 }
 
@@ -33,19 +26,19 @@ prefersDarkQuery.addEventListener('change', (event) => {
 
 const $prefersDark = atom(prefersDarkQuery.matches)
 
-const $effectiveTheme = atom((read) => {
-  const theme = read($themeSetting)
-  const prefersDark = read($prefersDark)
+const $effectiveTheme = computed(
+  [$themeSetting, $prefersDark],
+  (theme, prefersDark): AppTheme => {
+    if (theme === 'auto') {
+      return prefersDark ? 'dark' : 'light'
+    }
 
-  if (theme === appTheme.auto) {
-    return prefersDark ? appTheme.dark : appTheme.light
-  }
-
-  return theme
-})
+    return theme
+  },
+)
 
 export function useThemes(): void {
-  const effectiveTheme = useAtom($effectiveTheme)
+  const effectiveTheme = useStore($effectiveTheme)
 
   useEffect(() => {
     const htmlElement = document.getElementsByTagName('html')[0]

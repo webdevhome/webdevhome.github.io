@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { CopyCheckIcon, CopyIcon } from 'lucide-react'
 import { type FC, useState } from 'react'
-import { appMode, useIsAppMode } from '../app/appModeStore.ts'
+import { useIsAppMode } from '../app/appModeStore.ts'
 import { slugify } from '../utils/slugify.ts'
 import {
   toggleUrls,
@@ -38,7 +38,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
     setShowHiddenLinks(!showHiddenLinks)
   }
 
-  if (allUrlsAreHidden && !isAppMode(appMode.customize)) {
+  if (allUrlsAreHidden && !isAppMode('customize')) {
     return null
   }
 
@@ -50,7 +50,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
             'flex-auto',
             'px-4 py-2',
             `bg-${group.color ?? 'gray'}-100 dark:bg-${group.color ?? 'gray'}-600`,
-            'text-center leading-tight font-bold tracking-wider uppercase',
+            'text-center text-lg leading-tight font-medium tracking-wide',
             `text-${group.color ?? 'gray'}-800 dark:text-${group.color ?? 'gray'}-50`,
             'rounded-lg',
             'shadow-sm',
@@ -59,7 +59,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
           {group.name}
         </div>
 
-        {isAppMode(appMode.customize) ? (
+        {isAppMode('customize') ? (
           <button
             className={classNames(
               'grid items-center justify-center',
@@ -68,7 +68,8 @@ export const LinkGroup: FC<Props> = ({ group }) => {
               'dark:hover:bg-white/10 dark:active:bg-white/15',
               {
                 'text-brand-600 hover:text-brand-800': !allUrlsAreHidden,
-                'dark:text-brand-300 hover:dark:text-brand-100': !allUrlsAreHidden,
+                'dark:text-brand-300 hover:dark:text-brand-100':
+                  !allUrlsAreHidden,
                 'text-brand-600/50 hover:text-brand-700/75': allUrlsAreHidden,
                 'dark:text-brand-300/50 dark:hover:text-brand-200/75':
                   allUrlsAreHidden,
@@ -103,7 +104,7 @@ export const LinkGroup: FC<Props> = ({ group }) => {
               <Link
                 key={link.url}
                 link={link}
-                visible={!isAppMode(appMode.customize)}
+                visible={!isAppMode('customize')}
                 searchable={link.searchUrl !== undefined}
               />
             ))}

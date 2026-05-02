@@ -1,7 +1,6 @@
 import { toggleJumpLinks } from '../jump-links/useJumpLinks.ts'
 import { hasSearchTarget } from '../search/useSearch.ts'
 import {
-  appMode,
   exitOnSiteSearch,
   exitSearchMode,
   getCurrentAppMode,
@@ -10,14 +9,14 @@ import {
 } from './appModeStore.ts'
 
 const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
-  [appMode.default](event) {
+  default(event) {
     if (event.altKey && event.code === 'KeyB') {
       toggleJumpLinks()
       return
     }
 
     if (event.altKey && event.code === 'KeyE') {
-      setAppMode(appMode.customize)
+      setAppMode('customize')
       return
     }
 
@@ -28,16 +27,16 @@ const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
     if (event.altKey) return
     if (event.metaKey) return
 
-    setAppMode(appMode.search)
+    setAppMode('search')
   },
 
-  [appMode.customize](event) {
+  customize(event) {
     if (event.key === 'Escape') {
-      setAppMode(appMode.default)
+      setAppMode('default')
     }
   },
 
-  [appMode.search](event) {
+  search(event) {
     if (event.key === 'Escape') {
       event.preventDefault()
 
