@@ -14,7 +14,7 @@
         },
         {
           "title": "GitLab",
-          "url": "https://gitlab.com/explore",
+          "url": "https://gitlab.com",
           "icon": "gitlab",
           "color": "#FC6D26",
           "searchUrl": "https://gitlab.com/search?utf8=%E2%9C%93&search={search}"
