@@ -1,10 +1,4 @@
-import { StoreEnhancer } from 'redux'
-
 export {}
-
-declare global {
-  var __REDUX_DEVTOOLS_EXTENSION__: () => StoreEnhancer
-}
 
 declare module 'simple-icons' {
   export type IconObject = {
