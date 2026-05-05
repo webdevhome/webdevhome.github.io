@@ -1,31 +1,61 @@
 {
-  "short_name": "WebdevHome",
-  "name": "<WebdevHome />",
+  "name": "webdevhome",
+  "short_name": "webdevhome",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "16x16",
-      "type": "image/x-icon"
+      "src": "appicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     },
     {
-      "src": "favicon-16.png",
-      "type": "image/png",
-      "sizes": "16x16"
+      "src": "appicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
-      "src": "favicon-32.png",
-      "type": "image/png",
-      "sizes": "32x32"
+      "src": "appicon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
     },
     {
-      "src": "favicon-128.png",
-      "type": "image/png",
-      "sizes": "128x128"
+      "src": "appicon-152.png",
+      "sizes": "152x152",
+      "type": "image/png"
     },
     {
-      "src": "favicon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "appicon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "appicon-120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "appicon-114.png",
+      "sizes": "114x114",
+      "type": "image/png"
+    },
+    {
+      "src": "appicon-76.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    },
+    {
+      "src": "appicon-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "appicon-60.png",
+      "sizes": "60x60",
+      "type": "image/png"
+    },
+    {
+      "src": "appicon-57.png",
+      "sizes": "57x57",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
