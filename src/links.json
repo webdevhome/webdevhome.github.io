@@ -1353,6 +1353,11 @@
           "color": "#000000"
         },
         {
+          "title": "JSON Schema",
+          "url": "https://json-schema.org",
+          "color": "#000000"
+        },
+        {
           "title": "TOML",
           "url": "https://toml.io",
           "icon": "toml",
