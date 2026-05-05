@@ -47,14 +47,16 @@ export type Links = {
   items: LinkGroup[]
 }
 
-export const links: Links = {
-  items: linksData.items as LinkGroup[],
-}
+const linksJson = linksData as Links
 
-export const allLinks: LinkItem[] = links.items.flatMap((group) => group.items)
+export const linkGroups: LinkGroup[] = linksJson.items
+
+export const allLinks: Set<LinkItem> = new Set(
+  linksJson.items.flatMap((group) => group.items),
+)
 
 export const linkToGroupMap = new Map<LinkItem, LinkGroup>(
-  links.items.flatMap((g) => {
+  linksJson.items.flatMap((g) => {
     return g.items.map((l) => [l, g])
   }),
 )

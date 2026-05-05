@@ -1,16 +1,13 @@
 import classNames from 'classnames'
 import { type FC, useRef } from 'react'
+import { useOnSiteSearchTerm, useSearchTarget } from './onSiteSearch.ts'
+import { useSearchTerm } from './search.ts'
 import { SearchHints } from './SearchHints.tsx'
 import { SearchResults } from './SearchResults.tsx'
 import { SearchTargetLabel } from './SearchTargetLabel.tsx'
 import { useAutoFocusSearchInput } from './useAutoFocusSearchInput.ts'
 import { useHandleSearchInputChange } from './useHandleSearchInputChange.ts'
 import { useHandleSearchInputKeydown } from './useHandleSearchInputKeydown.ts'
-import {
-  useOnSiteSearchTerm,
-  useSearchTarget,
-  useSearchTerm,
-} from './search.ts'
 
 export const Search: FC = () => {
   const searchInputRef = useRef<HTMLInputElement>(null)

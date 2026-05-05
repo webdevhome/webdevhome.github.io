@@ -1,18 +1,33 @@
 import classNames from 'classnames'
-import { CopyCheckIcon, CopyIcon } from 'lucide-react'
-import { type FC } from 'react'
-import { useIsAppMode } from '../app/appModeStore.ts'
+import { CopyCheckIcon, CopyIcon, CopySlashIcon } from 'lucide-react'
+import { type FC, type ReactElement } from 'react'
+import { useIsAppMode } from '../app/appMode.ts'
+
+export type LinksVisible = 'all' | 'some' | 'none'
 
 type Props = {
-  allUrlsAreHidden: boolean
+  linksVisible: LinksVisible
   onClick: () => void
 }
 
 export const LinkGroupSelectAllButton: FC<Props> = ({
-  allUrlsAreHidden,
+  linksVisible: state,
   onClick,
 }) => {
   const isAppMode = useIsAppMode()
+
+  const icon = ((): ReactElement => {
+    switch (state) {
+      case 'all':
+        return <CopyCheckIcon />
+      case 'some':
+        return <CopySlashIcon />
+      case 'none':
+        return <CopyIcon />
+      default:
+        throw new TypeError(`Unknown state "${state satisfies never}"`)
+    }
+  })()
 
   if (!isAppMode('customize')) {
     return null
@@ -25,18 +40,13 @@ export const LinkGroupSelectAllButton: FC<Props> = ({
         'px-2',
         'hover:bg-black/10 active:bg-black/15',
         'dark:hover:bg-white/10 dark:active:bg-white/15',
-        {
-          'text-brand-600 hover:text-brand-800': !allUrlsAreHidden,
-          'dark:text-brand-300 hover:dark:text-brand-100': !allUrlsAreHidden,
-          'text-brand-600/50 hover:text-brand-700/75': allUrlsAreHidden,
-          'dark:text-brand-300/50 dark:hover:text-brand-200/75':
-            allUrlsAreHidden,
-        },
+        'text-brand-600 hover:text-brand-800',
+        'dark:text-brand-300 hover:dark:text-brand-100',
         'rounded',
       )}
       onClick={onClick}
     >
-      {allUrlsAreHidden ? <CopyIcon /> : <CopyCheckIcon />}
+      {icon}
     </button>
   )
 }

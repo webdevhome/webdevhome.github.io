@@ -1,10 +1,10 @@
 import classNames from 'classnames'
-import { type FC, type MouseEvent, type PropsWithChildren } from 'react'
+import { type FC, type MouseEventHandler, type PropsWithChildren } from 'react'
 
 type Props = {
   className?: string
   hasHover?: boolean
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
+  onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
 export const LinkAction: FC<PropsWithChildren<Props>> = ({

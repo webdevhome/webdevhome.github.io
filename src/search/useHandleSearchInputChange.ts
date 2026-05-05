@@ -1,16 +1,12 @@
 import type { ChangeEvent } from 'react'
-import {
-  $searchTarget,
-  setKeyboardIndex,
-  setOnSiteSearchTerm,
-  setSearchTerm,
-} from './search.ts'
+import { getSearchTarget, setOnSiteSearchTerm } from './onSiteSearch.ts'
+import { setKeyboardIndex, setSearchTerm } from './search.ts'
 
 export function useHandleSearchInputChange(): (
   event: ChangeEvent<HTMLInputElement>,
 ) => void {
   return (event: ChangeEvent<HTMLInputElement>) => {
-    if ($searchTarget.get() === null) {
+    if (getSearchTarget() === null) {
       setSearchTerm(event.target.value)
     } else {
       setOnSiteSearchTerm(event.target.value)

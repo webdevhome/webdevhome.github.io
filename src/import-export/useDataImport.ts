@@ -1,6 +1,7 @@
 import { useStore } from '@nanostores/react'
 import { atom } from 'nanostores'
-import { setHiddenUrls } from '../links/hiddenUrlsStore.ts'
+import { setHiddenUrls } from '../links/hiddenUrls.ts'
+import type { LinkItem } from '../links/links.ts'
 
 const $showDialog = atom(false)
 const $importJSON = atom('')
@@ -31,11 +32,15 @@ export function useDataImport(): DataImport {
       if (!Array.isArray(importData)) {
         throw new TypeError('Data is not an array.')
       }
-      if (importData.some((it) => typeof it !== 'string')) {
+
+      const isStringArray = (it: unknown[]): it is string[] =>
+        it.every((el) => typeof el === 'string')
+
+      if (!isStringArray(importData)) {
         throw new Error('Every element in the array must be a string.')
       }
 
-      setHiddenUrls(importData)
+      setHiddenUrls(importData satisfies LinkItem['url'][])
     } catch (error: unknown) {
       if (!Error.isError(error)) {
         $importError.set('Unknown error parsing data.')

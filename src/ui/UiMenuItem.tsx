@@ -25,8 +25,8 @@ export const UiMenuItem: FC<Props> = ({
     'dark:text-white',
     'select-none cursor-default',
     {
-      'bg-brand-100 text-brand-700': selected,
-      'dark:bg-brand-500 dark:text-brand-300': selected,
+      'bg-brand-100 text-brand-800': selected,
+      'dark:bg-brand-700 dark:text-brand-300': selected,
       'data-[focus]:bg-brand-200 data-[focus]:text-brand-800': selected,
       'dark:data-[focus]:bg-brand-400 dark:data-[focus]:text-white': selected,
       'data-[focus]:bg-gray-200 dark:data-[focus]:bg-gray-700': !selected,

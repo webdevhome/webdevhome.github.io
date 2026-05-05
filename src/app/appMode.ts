@@ -1,11 +1,7 @@
 import { useStore } from '@nanostores/react'
 import { atom } from 'nanostores'
-import {
-  hasValidSearchTerm,
-  setOnSiteSearchTerm,
-  setSearchTarget,
-  setSearchTerm,
-} from '../search/search.ts'
+import { setOnSiteSearchTerm, setSearchTarget } from '../search/onSiteSearch.ts'
+import { hasValidSearchTerm, setSearchTerm } from '../search/search.ts'
 
 export type AppMode = 'default' | 'search' | 'customize'
 
@@ -21,6 +17,7 @@ export function getCurrentAppMode(): AppMode {
 
 export function useIsAppMode(): (...modes: AppMode[]) => boolean {
   const mode = useStore($appMode)
+
   return (...modes) => modes.includes(mode)
 }
 

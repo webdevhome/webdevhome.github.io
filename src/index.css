@@ -1,32 +1,67 @@
 @import 'tailwindcss';
 
+/* link group title background (light) */
+/* prettier-ignore */
+@source inline('bg-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-{100}');
+
+/* link group title background (dark), jump links marker background (light/dark) */
+/* prettier-ignore */
+@source inline('{dark:,}bg-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-{600}');
+
+/* link group title text (light) */
+/* prettier-ignore */
+@source inline('text-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-800');
+
+/* link group title text (dark) */
+/* prettier-ignore */
 @source inline(
-  'bg-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-100'
-);
-@source inline(
-  '{dark:,}bg-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-{600}'
-);
-@source inline(
-  'outline-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-300'
-);
-@source inline(
-  'text-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-800'
-);
-@source inline(
-  '{dark:,}text-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-{50,300}'
+  'dark:text-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-{50,300}'
 );
 
 @theme {
-  --color-brand-50: #f6fdfd;
-  --color-brand-100: #cce6e5;
-  --color-brand-200: #a1cfce;
-  --color-brand-300: #76b9b8;
-  --color-brand-400: #4aa3a2;
-  --color-brand-500: #1f8d8b;
-  --color-brand-600: #1e7170;
-  --color-brand-700: #1b5857;
-  --color-brand-800: #163f3e;
-  --color-brand-900: #102828;
+  --color-gray-50: oklch(98.7% 0.002 197.1);
+  --color-gray-100: oklch(96.3% 0.002 197.1);
+  --color-gray-200: oklch(92.5% 0.005 214.3);
+  --color-gray-300: oklch(87.2% 0.007 219.6);
+  --color-gray-400: oklch(72.3% 0.014 214.4);
+  --color-gray-500: oklch(56% 0.021 213.5);
+  --color-gray-600: oklch(45% 0.017 213.2);
+  --color-gray-700: oklch(37.8% 0.015 216);
+  --color-gray-800: oklch(27.5% 0.011 216.9);
+  --color-gray-900: oklch(21.8% 0.008 223.9);
+  --color-gray-950: oklch(14.8% 0.004 228.8);
+
+  --color-brand-50: oklch(
+    0.9285714285714285 0.03547813593378833 206.41586320968938
+  );
+  --color-brand-100: oklch(
+    0.8571428571428571 0.0754840498851943 208.50590579568805
+  );
+  --color-brand-200: oklch(
+    0.7857142857142857 0.1201512655608065 210.35725391264182
+  );
+  --color-brand-300: oklch(
+    0.7142857142857142 0.16958422855857652 212.00531054228514
+  );
+  --color-brand-400: oklch(
+    0.6428571428571428 0.22386539246704984 213.47948980726738
+  );
+  --color-brand-500: oklch(
+    0.5714285714285714 0.212295338775088 214.80425406058797
+  );
+  --color-brand-600: oklch(0.5 0.19531249999999997 216);
+  --color-brand-700: oklch(
+    0.42857142857142855 0.16485981478886055 218.3101595578776
+  );
+  --color-brand-800: oklch(
+    0.3571428571428571 0.13548756563003217 220.688925073939
+  );
+  --color-brand-900: oklch(
+    0.2857142857142857 0.10706549431347086 223.13085035050793
+  );
+  --color-brand-950: oklch(
+    0.21428571428571427 0.0794550510034819 225.62928334001322
+  );
 
   --font-sans:
     Inter, 'Helvetica Neue', 'Segoe UI', Roboto, Verdana, Arial, sans-serif;

@@ -6,10 +6,11 @@ export const Kbd: FC<PropsWithChildren> = ({ children }) => {
     <kbd
       className={classNames(
         'px-1',
-        'bg-gray-100 dark:bg-gray-600',
-        'border border-gray-300 dark:border-gray-500',
+        'dark:bg-brand-800 bg-brand-100',
+        'border-brand-400 dark:border-brand-600 border',
+        'text-brand-700 dark:text-brand-100 font-mono text-sm',
+        'font-semibold',
         'rounded-md',
-        'text-brand-700 dark:text-brand-200 font-mono text-sm',
       )}
     >
       {children}

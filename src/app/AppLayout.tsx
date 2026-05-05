@@ -9,7 +9,7 @@ import {
   useShowJumpLinks,
   useShowJumpLinksMobile,
 } from '../jump-links/useJumpLinks.ts'
-import { useIsAppMode } from './appModeStore.ts'
+import { useIsAppMode } from './appMode.ts'
 import { useShowBackground } from '../settings/useBackgroundImage.ts'
 import { useFocusAppLayoutElements } from './useFocusAppLayoutElements.ts'
 
@@ -46,7 +46,7 @@ export const AppLayout: FC<PropsWithChildren<Props>> = ({
         {
           'bg-[url(/assets/images/background-light.jpg)] bg-cover bg-center dark:bg-[url(/assets/images/background-dark.jpg)]':
             showBackground,
-          'bg-gray-200 dark:bg-gray-800': !showBackground,
+          'bg-gray-300 dark:bg-gray-800': !showBackground,
         },
       )}
     >

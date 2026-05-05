@@ -5,7 +5,7 @@ import {
   WallpaperIcon,
 } from 'lucide-react'
 import { type FC } from 'react'
-import { setAppMode, useIsAppMode } from '../app/appModeStore.ts'
+import { setAppMode, useIsAppMode } from '../app/appMode.ts'
 import {
   toggleShowDescriptions,
   useShowDescriptions,

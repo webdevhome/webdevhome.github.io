@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { ArrowLeftIcon } from 'lucide-react'
 import { type FC } from 'react'
-import { exitOnSiteSearch } from '../app/appModeStore.ts'
+import { exitOnSiteSearch } from '../app/appMode.ts'
 import { LinkItemIcon } from '../links/LinkItemIcon.tsx'
 import { type LinkItem } from '../links/links.ts'
 

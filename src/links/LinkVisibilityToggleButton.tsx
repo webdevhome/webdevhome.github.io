@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { EyeIcon, EyeOffIcon } from 'lucide-react'
 import { type FC } from 'react'
-import { useIsAppMode } from '../app/appModeStore.ts'
+import { useIsAppMode } from '../app/appMode.ts'
 import { LinkAction } from './LinkAction.tsx'
 
 type Props = {

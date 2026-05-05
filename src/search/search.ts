@@ -1,34 +1,42 @@
 import { useStore } from '@nanostores/react'
-import fuzzy from 'fuzzysort'
 import { atom, computed } from 'nanostores'
-import { $allLinksByVisibility } from '../links/hiddenUrlsStore.ts'
-import { type LinkItem, type SearchTarget } from '../links/links.ts'
+import { $allLinksByVisibility } from '../links/hiddenUrls.ts'
+import type { LinkItem } from '../links/links.ts'
+import { getSearchResults } from './getSearchResults.ts'
 
-export const maxResultsCount = 8
-export const maxHiddenResultsCount = 4
-
+//#region search term
 export const $searchTerm = atom('')
-export const $onSiteSearchTerm = atom('')
-export const $searchTarget = atom<SearchTarget | null>(null)
-export const $keyboardIndex = atom(0)
+export const useSearchTerm = () => useStore($searchTerm)
 
-type GetSearchResultsOptions = {
-  links: LinkItem[] | undefined
-  searchTerm: string
-  limit: number
+export function getSearchTerm(): string {
+  return $searchTerm.get()
 }
 
-function getSearchResults({
-  links = [],
-  searchTerm,
-  limit,
-}: GetSearchResultsOptions): Fuzzysort.KeyResults<LinkItem> {
-  return fuzzy.go(searchTerm, links, { key: 'title', limit })
+export function setSearchTerm(term: string = ''): void {
+  $searchTerm.set(term)
 }
 
+export function hasValidSearchTerm(): boolean {
+  return $searchTerm.get().trim() !== ''
+}
+//#endregion search term
+
+//#region keyboard index
+const $keyboardIndex = atom(0)
+
+export function getKeyboardIndex(): number {
+  return $keyboardIndex.get()
+}
+
+export function setKeyboardIndex(index: number): void {
+  $keyboardIndex.set(index)
+}
+//#endregion keyboard index
+
+//#region computed
 export const $visibleSearchResults = computed(
   [$searchTerm, $allLinksByVisibility],
-  (searchTerm, linksByVisibility) => {
+  (searchTerm, linksByVisibility): Fuzzysort.KeyResults<LinkItem> => {
     return getSearchResults({
       searchTerm,
       links: linksByVisibility.visible,
@@ -39,7 +47,7 @@ export const $visibleSearchResults = computed(
 
 export const $hiddenSearchResults = computed(
   [$searchTerm, $allLinksByVisibility],
-  (searchTerm, linksByVisibility) => {
+  (searchTerm, linksByVisibility): Fuzzysort.KeyResults<LinkItem> => {
     return getSearchResults({
       searchTerm,
       links: linksByVisibility.hidden,
@@ -48,45 +56,13 @@ export const $hiddenSearchResults = computed(
   },
 )
 
-export function setKeyboardIndex(index: number): void {
-  $keyboardIndex.set(index)
-}
-
-export function useSearchTerm(): string {
-  return useStore($searchTerm)
-}
-
-export function setSearchTerm(term: string = ''): void {
-  $searchTerm.set(term)
-}
-
-export function hasValidSearchTerm(): boolean {
-  return $searchTerm.get().trim() !== ''
-}
-
-export function useOnSiteSearchTerm(): string {
-  return useStore($onSiteSearchTerm)
-}
-
-export function setOnSiteSearchTerm(term: string = ''): void {
-  $onSiteSearchTerm.set(term)
-}
-
-export function hasSearchTarget(): boolean {
-  return $searchTarget.get() !== null
-}
-
-export function setSearchTarget(target: SearchTarget | null = null): void {
-  $searchTarget.set(target)
-}
-
-export function useSearchTarget(): SearchTarget | null {
-  return useStore($searchTarget)
-}
-
 export const $focusedSearchResult = computed(
   [$visibleSearchResults, $hiddenSearchResults, $keyboardIndex],
-  (visibleResults, hiddenResults, keyboardIndex) => {
+  (
+    visibleResults,
+    hiddenResults,
+    keyboardIndex,
+  ): Fuzzysort.KeyResult<LinkItem> | null => {
     if (visibleResults !== null && keyboardIndex < visibleResults.length) {
       return visibleResults[keyboardIndex]
     }
@@ -98,3 +74,4 @@ export const $focusedSearchResult = computed(
     return null
   },
 )
+//#endregion computed

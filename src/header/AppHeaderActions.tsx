@@ -7,13 +7,9 @@ import {
   SearchIcon,
 } from 'lucide-react'
 import { type FC } from 'react'
+import { exitSearchMode, setAppMode, useIsAppMode } from '../app/appMode.ts'
+import { hideAllUrls, showAllUrls } from '../links/hiddenUrls.ts'
 import { UiActionButton } from '../ui/UiActionButton.tsx'
-import { hideAllUrls, showAllUrls } from '../links/hiddenUrlsStore.ts'
-import {
-  exitSearchMode,
-  setAppMode,
-  useIsAppMode,
-} from '../app/appModeStore.ts'
 
 function handleScrollTopClick() {
   const mainContentElement = document.getElementById('main-content')
@@ -36,6 +32,7 @@ export const AppHeaderActions: FC = () => {
         />
         <UiActionButton
           icon={<ArrowUpToLineIcon />}
+          title="Scroll to top"
           label="Top"
           action={handleScrollTopClick}
         />

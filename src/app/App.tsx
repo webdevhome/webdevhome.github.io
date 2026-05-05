@@ -10,7 +10,7 @@ import { useThemes } from '../settings/themes.ts'
 import { useActivityMode } from '../utils/useActivityMode.ts'
 import { AppHeaderActions } from '../header/AppHeaderActions.tsx'
 import { AppLayout } from './AppLayout.tsx'
-import { useIsAppMode } from './appModeStore.ts'
+import { useIsAppMode } from './appMode.ts'
 import { AppSettingsMenu } from '../settings/AppSettingsMenu.tsx'
 
 export const App: FC = () => {

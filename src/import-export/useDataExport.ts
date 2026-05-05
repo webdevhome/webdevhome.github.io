@@ -1,7 +1,8 @@
 import { useStore } from '@nanostores/react'
 import { atom } from 'nanostores'
 import { type RefObject, useRef } from 'react'
-import { useHiddenUrls } from '../links/hiddenUrlsStore.ts'
+import { useHiddenUrls } from '../links/hiddenUrls.ts'
+import { makeSetEncoder } from '../utils/nanostores.ts'
 
 const $showDialog = atom(false)
 
@@ -18,7 +19,8 @@ export function useDataExport(): DataExport {
   const showDialog = useStore($showDialog)
   const hiddenUrls = useHiddenUrls()
 
-  const exportJSON = JSON.stringify(hiddenUrls)
+  const setEncoder = makeSetEncoder<string>()
+  const exportJSON = setEncoder.encode(hiddenUrls) ?? ''
 
   return {
     showDialog,

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { ListTreeIcon } from 'lucide-react'
 import { type FC, type ReactElement } from 'react'
-import { useIsAppMode } from '../app/appModeStore.ts'
+import { useIsAppMode } from '../app/appMode.ts'
 import {
   toggleJumpLinks,
   toggleJumpLinksMobile,
@@ -35,6 +35,7 @@ export const AppHeader: FC<Props> = ({ centerItems, actions }) => {
     >
       <div className="flex items-center gap-x-2">
         <UiActionButton
+          title="Toggle Jump Links"
           icon={<ListTreeIcon />}
           action={handleMenuClick}
           available={isAppMode('default', 'customize')}

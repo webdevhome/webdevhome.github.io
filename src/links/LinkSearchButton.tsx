@@ -1,13 +1,13 @@
 import { SearchIcon } from 'lucide-react'
-import { type FC, type MouseEvent } from 'react'
-import { useIsAppMode } from '../app/appModeStore.ts'
+import { type FC, type MouseEventHandler } from 'react'
+import { useIsAppMode } from '../app/appMode.ts'
 import { Kbd } from '../ui/Kbd.tsx'
 import { LinkAction } from './LinkAction.tsx'
 
 type Props = {
   searchable: boolean
   focused: boolean
-  onClick: (event: MouseEvent<HTMLButtonElement>) => void
+  onClick: MouseEventHandler<HTMLButtonElement>
 }
 
 export const LinkSearchButton: FC<Props> = ({

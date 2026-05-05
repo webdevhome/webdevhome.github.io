@@ -1,41 +1,48 @@
 import { useStore } from '@nanostores/react'
-import type { KeyboardEvent } from 'react'
-import { exitSearchMode, setAppMode } from '../app/appModeStore.ts'
+import type { KeyboardEvent, KeyboardEventHandler } from 'react'
+import { exitSearchMode, setAppMode } from '../app/appMode.ts'
 import { linkHasSearchUrl } from '../links/links.ts'
 import { isOpenLinksInNewTabEnabled } from '../links/useOpenLinksInNewTab.ts'
 import {
+  getOnSiteSearchTerm,
+  getSearchTarget,
+  setSearchTarget,
+} from './onSiteSearch.ts'
+import {
   $focusedSearchResult,
   $hiddenSearchResults,
-  $keyboardIndex,
-  $onSiteSearchTerm,
-  $searchTarget,
-  $searchTerm,
   $visibleSearchResults,
-  maxHiddenResultsCount,
-  maxResultsCount,
+  getKeyboardIndex,
+  getSearchTerm,
   setKeyboardIndex,
-  setSearchTarget,
 } from './search.ts'
+
+const maxResultsCount = 8
+const maxHiddenResultsCount = 4
 
 export function useHandleSearchInputKeydown(): (
   event: KeyboardEvent<HTMLInputElement>,
 ) => void {
-  const results = useStore($visibleSearchResults)
+  const visibleResults = useStore($visibleSearchResults)
   const hiddenResults = useStore($hiddenSearchResults)
   const focusedResult = useStore($focusedSearchResult)
 
   const keydownHandler: Record<
     string,
-    (event: KeyboardEvent<HTMLInputElement>) => void
+    KeyboardEventHandler<HTMLInputElement>
   > = {
     Backspace(event) {
-      if ($searchTarget.get() !== null && $onSiteSearchTerm.get() === '') {
+      const searchTerm = getSearchTerm()
+      const onSiteSearchTerm = getOnSiteSearchTerm()
+      const searchTarget = getSearchTarget()
+
+      if (searchTarget !== null && onSiteSearchTerm === '') {
         event.preventDefault()
         setSearchTarget()
-        if ($searchTerm.get() === '') {
+        if (searchTerm === '') {
           setAppMode('default')
         }
-      } else if ($searchTerm.get() === '' && $onSiteSearchTerm.get() === '') {
+      } else if (searchTerm === '' && onSiteSearchTerm === '') {
         event.preventDefault()
         setAppMode('default')
       }
@@ -52,12 +59,12 @@ export function useHandleSearchInputKeydown(): (
 
     Enter(event) {
       const url = (() => {
-        const searchTarget = $searchTarget.get()
+        const searchTarget = getSearchTarget()
         if (searchTarget === null) {
           return focusedResult?.obj.url ?? null
         }
 
-        const encodedSearchTerm = encodeURIComponent($onSiteSearchTerm.get())
+        const encodedSearchTerm = encodeURIComponent(getOnSiteSearchTerm())
         return searchTarget.searchUrl.replaceAll('{search}', encodedSearchTerm)
       })()
 
@@ -72,28 +79,26 @@ export function useHandleSearchInputKeydown(): (
     },
 
     ArrowUp(event) {
-      if (results === null) return
+      if (visibleResults === null) return
 
       event.preventDefault()
 
-      setKeyboardIndex(Math.max(0, $keyboardIndex.get() - 1))
+      setKeyboardIndex(Math.max(0, getKeyboardIndex() - 1))
     },
 
     ArrowDown(event) {
-      if (results === null) return
+      if (visibleResults === null) return
 
       event.preventDefault()
 
-      const resultsCount = Math.min(results.total, maxResultsCount)
+      const resultsCount = Math.min(visibleResults.total, maxResultsCount)
       const hiddenResultsCount = Math.min(
         hiddenResults?.total ?? 0,
         maxHiddenResultsCount,
       )
       const totalResultsCount = resultsCount + hiddenResultsCount
 
-      setKeyboardIndex(
-        Math.min(totalResultsCount - 1, $keyboardIndex.get() + 1),
-      )
+      setKeyboardIndex(Math.min(totalResultsCount - 1, getKeyboardIndex() + 1))
     },
   }
 

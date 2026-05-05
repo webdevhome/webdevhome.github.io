@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import { type FC, type MouseEvent } from 'react'
-import { setAppMode, useIsAppMode } from '../app/appModeStore.ts'
-import { setSearchTarget } from '../search/search.ts'
-import { toggleUrl } from './hiddenUrlsStore.ts'
+import { setAppMode, useIsAppMode } from '../app/appMode.ts'
+import { setSearchTarget } from '../search/onSiteSearch.ts'
+import { toggleUrl } from './hiddenUrls.ts'
 import { LinkDescription } from './LinkDescription.tsx'
 import { LinkGroupLabel } from './LinkGroupLabel.tsx'
 import { LinkItemIcon } from './LinkItemIcon.tsx'
@@ -89,7 +89,7 @@ export const Link: FC<Props> = ({
       <div
         className={classNames([
           'text-base leading-4 font-semibold',
-          'text-black dark:text-gray-50',
+          'text-brand-950 dark:text-white',
         ])}
       >
         <div>{link.title}</div>

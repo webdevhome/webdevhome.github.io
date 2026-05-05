@@ -2,7 +2,7 @@ import { useStore } from '@nanostores/react'
 import classNames from 'classnames'
 import { XIcon } from 'lucide-react'
 import { type FC } from 'react'
-import { $visibleLinkGroups } from '../links/hiddenUrlsStore.ts'
+import { $visibleLinkGroups } from '../links/hiddenUrls.ts'
 import { JumpLink } from './JumpLink.tsx'
 import {
   toggleJumpLinksMobile,
@@ -30,7 +30,7 @@ export const JumpLinks: FC = () => {
         className={classNames(
           'max-md:fixed max-md:top-0 max-md:bottom-0',
           'max-md:bg-gray-200 dark:max-md:bg-gray-800',
-          'jump-links w-[340px]',
+          'jump-links w-[320px]',
           'max-md:transition-[left] max-md:duration-300',
           'z-30',
           {

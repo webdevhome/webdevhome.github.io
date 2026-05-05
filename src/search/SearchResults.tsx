@@ -10,14 +10,14 @@ import {
 } from './search.ts'
 
 export const SearchResults: FC = () => {
-  const results = useStore($visibleSearchResults)
+  const visibleResults = useStore($visibleSearchResults)
   const hiddenResults = useStore($hiddenSearchResults)
   const focusedResult = useStore($focusedSearchResult)
 
   return (
     <>
-      {results !== null && results.total > 0 ? (
-        results.map((link) => (
+      {visibleResults !== null && visibleResults.total > 0 ? (
+        visibleResults.map((link) => (
           <Link
             key={link.obj.url}
             link={link.obj}

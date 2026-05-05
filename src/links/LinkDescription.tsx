@@ -24,7 +24,7 @@ export const LinkDescription: FC<Props> = ({
         'col-start-2',
         'py-1',
         'text-sm leading-4',
-        'text-gray-500 dark:text-gray-400',
+        'dark:text-brand-100/80 text-brand-800/80',
       )}
     >
       {description}
