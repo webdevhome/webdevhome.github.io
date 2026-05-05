@@ -1,8 +1,8 @@
-# WebdevHome
+# webdevhome
 
-WebdevHome is a collection of links I, as a web developer, use very frequently. Maybe you will find them useful, too. You can also access the search feature of some of these pages from within WebdevHome.
+webdevhome is a collection of links I, as a web developer, use very frequently. Maybe you will find them useful, too. You can also access the search feature of some of these pages from within webdevhome.
 
-[Open WebdevHome](https://webdevhome.github.io)
+[Open webdevhome](https://webdevhome.github.io)
 
 ## Developed with
 

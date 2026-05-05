@@ -1,4 +1,4 @@
-name: Deploy WebdevHome to GitHub Pages
+name: Deploy webdevhome to GitHub Pages
 
 on:
   push:
