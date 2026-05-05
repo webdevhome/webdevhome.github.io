@@ -286,6 +286,12 @@
           "color": "#60a5fa"
         },
         {
+          "title": "JS Benchmark",
+          "url": "https://jsbenchmark.com",
+          "description": "A website where you can write small benchmarks in the browser.",
+          "color": "#EF8A6A"
+        },
+        {
           "title": "gitignore.io",
           "url": "https://www.toptal.com/developers/gitignore",
           "description": "Generate .gitignore files (by Toptal).",
@@ -949,6 +955,19 @@
           "color": "#408AFF"
         },
         {
+          "title": "Immer",
+          "url": "https://immerjs.github.io/immer",
+          "description": "Library that allows working with immutable data structures while you can use mutating syntax.",
+          "icon": "immer",
+          "color": "#00E7C3"
+        },
+        {
+          "title": "Immutable.js",
+          "url": "https://immutable-js.com",
+          "description": "Library that provides immutable data structures.",
+          "color": "#E85351"
+        },
+        {
           "title": "RxJS",
           "url": "https://rxjs.dev",
           "description": "Library for functional reactive programming.",
@@ -958,6 +977,7 @@
         {
           "title": "Lodash",
           "url": "https://lodash.com",
+          "description": "A classic utility library for JavaScript.",
           "icon": "lodash",
           "color": "#3492ff"
         },
@@ -996,18 +1016,21 @@
         {
           "title": "NativeScript",
           "url": "https://nativescript.org",
+          "description": "A cross-platform framework for any frontend framework.",
           "icon": "nativescript",
           "color": "#65ADF1"
         },
         {
           "title": "Quasar",
           "url": "https://quasar.dev",
+          "description": "A cross-platform Vue.js framework.",
           "icon": "quasar",
           "color": "#050A14"
         },
         {
           "title": "Svelte Native",
-          "url": "https://svelte-native.technology",
+          "url": "https://svelte.nativescript.org",
+          "description": "Build native apps using Svelte.",
           "icon": "svelte",
           "color": "#FF3E00"
         },
