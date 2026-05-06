@@ -12,6 +12,10 @@ export function setAppMode(mode: AppMode) {
   $appMode.set(mode)
 }
 
+export function toggleAppMode(modeA: AppMode, modeB: AppMode) {
+  $appMode.set($appMode.get() === modeA ? modeB : modeA)
+}
+
 export function getCurrentAppMode(): AppMode {
   return $appMode.get()
 }
@@ -34,7 +38,7 @@ export function exitOnSiteSearch() {
   setOnSiteSearchTerm()
 }
 
-export function useAppModeChange(
+export function useOnAppModeChanged(
   callback: (value: AppMode, oldValue: AppMode) => void,
 ) {
   useEffect(() => $appMode.listen(callback), [callback])

@@ -10,7 +10,7 @@ import {
   useShowJumpLinksMobile,
 } from '../jump-links/useJumpLinks.ts'
 import { useShowBackground } from '../settings/useBackgroundImage.ts'
-import { useAppModeChange, useIsAppMode } from './appMode.ts'
+import { useOnAppModeChanged, useIsAppMode } from './appMode.ts'
 import { useFocusAppLayoutElements } from './useFocusAppLayoutElements.ts'
 
 type Props = {
@@ -36,7 +36,7 @@ export const AppLayout: FC<PropsWithChildren<Props>> = ({
     mainContentRef,
   })
 
-  useAppModeChange((value) => {
+  useOnAppModeChanged((value) => {
     if (value === 'default') focusMainElement()
   })
 

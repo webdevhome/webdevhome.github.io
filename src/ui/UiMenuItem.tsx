@@ -1,12 +1,15 @@
 import { MenuItem } from '@headlessui/react'
 import classNames from 'classnames'
-import { type FC, type ReactElement } from 'react'
+import { type FC, type MouseEvent, type ReactElement } from 'react'
+
+const defaultAction = () => {}
 
 type Props = {
   label: string
   icon: ReactElement
   selected?: boolean
   visible?: boolean
+  closeOnAction?: boolean
   action?: (() => void) | string
 }
 
@@ -15,7 +18,8 @@ export const UiMenuItem: FC<Props> = ({
   icon,
   selected = false,
   visible = true,
-  action = () => {},
+  closeOnAction = true,
+  action = defaultAction,
 }) => {
   const wrapperClassNames = classNames(
     'flex items-center',
@@ -39,25 +43,35 @@ export const UiMenuItem: FC<Props> = ({
     },
   )
 
+  function handleClick(event: MouseEvent<HTMLButtonElement>) {
+    if (typeof action !== 'function') return
+    action()
+
+    if (closeOnAction) return
+    event.preventDefault()
+  }
+
   if (!visible) {
     return null
   }
 
+  if (typeof action === 'function') {
+    return (
+      <MenuItem>
+        <button className={wrapperClassNames} onClick={handleClick}>
+          <div className="mr-3">{icon ?? <div className="size-6"></div>}</div>
+          <span>{label}</span>
+        </button>
+      </MenuItem>
+    )
+  }
+
   return (
     <MenuItem>
-      {typeof action === 'function' ? (
-        <button className={wrapperClassNames} onClick={action}>
-          <div className="mr-3">{icon ?? <div className="size-6"></div>}</div>
-
-          {label}
-        </button>
-      ) : (
-        <a className={wrapperClassNames} href={action}>
-          <div className="mr-3">{icon ?? <div className="size-6"></div>}</div>
-
-          {label}
-        </a>
-      )}
+      <a className={wrapperClassNames} href={action}>
+        <div className="mr-3">{icon ?? <div className="size-6"></div>}</div>
+        <span>{label}</span>
+      </a>
     </MenuItem>
   )
 }
