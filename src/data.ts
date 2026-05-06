@@ -1,6 +1,4 @@
-import { type LinksMap } from './links/links.ts'
-
-const {
+import {
   si30secondsofcode,
   siAlpinedotjs,
   siAlternativeto,
@@ -67,6 +65,7 @@ const {
   siGatsby,
   siGit,
   siGitbook,
+  siGitea,
   siGithub,
   siGitignoredotio,
   siGitkraken,
@@ -227,7 +226,8 @@ const {
   siZig,
   siZod,
   siZsh,
-} = await import('simple-icons')
+} from 'simple-icons'
+import { type LinksMap } from './links/links.ts'
 
 export function defineLinks<T extends LinksMap>(links: T): T {
   links.set(
@@ -251,6 +251,15 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         icon: siGitlab,
         color: '#FC6D26',
         searchUrl: 'https://gitlab.com/search?utf8=%E2%9C%93&search={search}',
+      },
+      {
+        id: 'gitea',
+        title: 'Gitea',
+        url: 'https://gitea.com',
+        icon: siGitea,
+        color: '#609926',
+        searchUrl:
+          'https://gitea.com/explore/repos?only_show_relevant=false&q={search}&sort=recentupdate',
       },
       {
         id: 'atlassianHome',

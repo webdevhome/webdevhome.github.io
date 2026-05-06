@@ -10,4 +10,26 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] }),
   ],
+  build: {
+    rolldownOptions: {
+      output: {
+        codeSplitting: {
+          groups: [
+            {
+              name: 'simple-icons',
+              test: /node_modules[\\/]simple-icons/,
+              minSize: 50_000,
+              maxSize: 100_000,
+              priority: 20,
+            },
+            {
+              name: 'vendor',
+              test: /node_modules/,
+              priority: 10,
+            },
+          ],
+        },
+      },
+    },
+  },
 })
