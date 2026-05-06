@@ -5,21 +5,12 @@ import { Kbd } from '../ui/Kbd.tsx'
 import { LinkAction } from './LinkAction.tsx'
 
 type Props = {
-  searchable: boolean
   focused: boolean
   onClick: MouseEventHandler<HTMLButtonElement>
 }
 
-export const LinkSearchButton: FC<Props> = ({
-  searchable,
-  focused,
-  onClick,
-}) => {
+export const LinkSearchButton: FC<Props> = ({ focused, onClick }) => {
   const isAppMode = useIsAppMode()
-
-  if (!searchable) {
-    return null
-  }
 
   if (isAppMode('customize')) {
     return null

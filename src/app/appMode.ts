@@ -1,13 +1,14 @@
 import { useStore } from '@nanostores/react'
 import { atom } from 'nanostores'
+import { useEffect } from 'react'
 import { setOnSiteSearchTerm, setSearchTarget } from '../search/onSiteSearch.ts'
-import { hasValidSearchTerm, setSearchTerm } from '../search/search.ts'
+import { setSearchTerm } from '../search/search.ts'
 
 export type AppMode = 'default' | 'search' | 'customize'
 
 const $appMode = atom<AppMode>('default')
 
-export function setAppMode(mode: AppMode): void {
+export function setAppMode(mode: AppMode) {
   $appMode.set(mode)
 }
 
@@ -21,17 +22,20 @@ export function useIsAppMode(): (...modes: AppMode[]) => boolean {
   return (...modes) => modes.includes(mode)
 }
 
-export function exitSearchMode(): void {
+export function exitSearchMode() {
   $appMode.set('default')
   setSearchTerm()
   setOnSiteSearchTerm()
   setSearchTarget()
 }
 
-export function exitOnSiteSearch(): void {
+export function exitOnSiteSearch() {
   setSearchTarget()
   setOnSiteSearchTerm()
-  if (!hasValidSearchTerm()) {
-    $appMode.set('default')
-  }
+}
+
+export function useAppModeChange(
+  callback: (value: AppMode, oldValue: AppMode) => void,
+) {
+  useEffect(() => $appMode.listen(callback), [callback])
 }

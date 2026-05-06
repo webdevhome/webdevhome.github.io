@@ -1,5 +1,8 @@
 import classNames from 'classnames'
+import { ArrowLeftIcon } from 'lucide-react'
 import { type FC, useRef } from 'react'
+import { exitOnSiteSearch } from '../app/appMode.ts'
+import { UiActionButton } from '../ui/UiActionButton.tsx'
 import { useOnSiteSearchTerm, useSearchTarget } from './onSiteSearch.ts'
 import { useSearchTerm } from './search.ts'
 import { SearchHints } from './SearchHints.tsx'
@@ -22,13 +25,18 @@ export const Search: FC = () => {
   useAutoFocusSearchInput(searchInputRef)
 
   return (
-    <div className="mx-auto flex w-150 max-w-full flex-col px-4 py-10 max-md:py-0">
+    <div className="small-height:py-4 small-height:gap-y-6 mx-auto flex w-150 max-w-full flex-col gap-y-8 px-4 py-10">
       {searchTarget !== null && (
-        <SearchTargetLabel
-          title={searchTarget.title}
-          icon={searchTarget.icon}
-          color={searchTarget.color}
-        />
+        <>
+          <UiActionButton
+            icon={<ArrowLeftIcon />}
+            action={exitOnSiteSearch}
+            label="Back to links search"
+            labelVisible="always"
+          />
+
+          <SearchTargetLabel target={searchTarget} />
+        </>
       )}
 
       <div className="flex max-w-full flex-col">
@@ -36,7 +44,7 @@ export const Search: FC = () => {
           ref={searchInputRef}
           className={classNames(
             'block h-12',
-            'my-5 px-6',
+            'px-6',
             'border-none',
             'bg-black/10 dark:bg-white/10',
             'font-sans text-xl',
@@ -48,9 +56,7 @@ export const Search: FC = () => {
           )}
           type="text"
           placeholder={
-            searchTarget === null
-              ? 'Search links...'
-              : `Search on ${searchTarget.title}...`
+            searchTarget === null ? 'Search links...' : `Search on website...`
           }
           value={searchTarget === null ? searchTerm : onSiteSearchTerm}
           onChange={handleInputChange}

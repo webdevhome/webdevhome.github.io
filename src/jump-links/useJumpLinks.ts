@@ -9,7 +9,7 @@ const $showJumpLinksSetting = persistentAtom(
   booleanEncoder,
 )
 
-export function toggleJumpLinks(): void {
+export function toggleJumpLinks() {
   negateBooleanStore($showJumpLinksSetting)
 }
 
@@ -19,7 +19,7 @@ export function toggleJumpLinksMobile() {
   negateBooleanStore($showJumpLinksMobileSetting)
 }
 
-export function setShowJumpLinksMobile(value: boolean): void {
+export function setShowJumpLinksMobile(value: boolean) {
   $showJumpLinksMobileSetting.set(value)
 }
 

@@ -5,10 +5,14 @@ type Options = {
   mainContentRef: RefObject<HTMLDivElement | null>
 }
 
+type FocusAppLayoutElement = {
+  focusMainElement: () => void
+}
+
 export function useFocusAppLayoutElements({
   sidebarRef,
   mainContentRef,
-}: Options): void {
+}: Options): FocusAppLayoutElement {
   // Automatically focus main content on app start.
   // That way the user can immediately scroll using the keyboard.
   useEffect(() => {
@@ -39,4 +43,10 @@ export function useFocusAppLayoutElements({
       document.removeEventListener('keydown', handleKeydown)
     }
   }, [mainContentRef, sidebarRef])
+
+  function focusMainElement() {
+    mainContentRef.current?.focus()
+  }
+
+  return { focusMainElement }
 }

@@ -2,7 +2,13 @@ import { persistentAtom } from '@nanostores/persistent'
 import { useStore } from '@nanostores/react'
 import { computed } from 'nanostores'
 import { makeSetEncoder, updateStore } from '../utils/nanostores.ts'
-import { allLinks, linkGroups, type LinkGroup, type LinkItem } from './links.ts'
+import {
+  categoryToLinksMap,
+  linksSet,
+  linksToCategoryMap,
+  type Category,
+  type LinkItem,
+} from './links.ts'
 
 export type LinkVisibilityState = 'visible' | 'hidden'
 
@@ -16,11 +22,11 @@ export function useHiddenUrls(): Set<LinkItem['url']> {
   return useStore($hiddenUrls)
 }
 
-export function setHiddenUrls(urls: LinkItem['url'][]): void {
+export function setHiddenUrls(urls: LinkItem['url'][]) {
   $hiddenUrls.set(new Set(urls))
 }
 
-export function toggleUrl(url: LinkItem['url']): void {
+export function toggleUrl(url: LinkItem['url']) {
   const oldState = $hiddenUrls.get()
 
   if (oldState.has(url)) {
@@ -30,7 +36,7 @@ export function toggleUrl(url: LinkItem['url']): void {
   }
 }
 
-export function toggleUrls(urls: LinkItem['url'][]): void {
+export function toggleUrls(urls: LinkItem['url'][]) {
   const hiddenUrls = $hiddenUrls.get()
   const urlsToToggle = new Set(urls)
 
@@ -45,18 +51,13 @@ export function toggleUrls(urls: LinkItem['url'][]): void {
   }
 }
 
-export function showAllUrls(): void {
+export function showAllUrls() {
   $hiddenUrls.set(new Set())
 }
 
-export function hideAllUrls(): void {
-  const newHiddenUrls = new Set<LinkItem['url']>()
-
-  for (const link of allLinks) {
-    newHiddenUrls.add(link.url)
-  }
-
-  $hiddenUrls.set(newHiddenUrls)
+export function hideAllUrls() {
+  const allUrls = linksSet.values().map((link) => link.url)
+  $hiddenUrls.set(new Set<LinkItem['url']>(allUrls))
 }
 
 export function useIsUrlHidden(): (url: LinkItem['url']) => boolean {
@@ -78,17 +79,24 @@ type LinksByVisibility = Partial<Record<LinkVisibilityState, LinkItem[]>>
 export const $allLinksByVisibility = computed(
   $hiddenUrls,
   (hiddenUrls): LinksByVisibility => {
-    return Object.groupBy(allLinks, (link): LinkVisibilityState => {
-      return hiddenUrls.has(link.url) ? 'hidden' : 'visible'
-    })
+    return Object.groupBy(
+      linksToCategoryMap.keys(),
+      (link): LinkVisibilityState => {
+        return hiddenUrls.has(link.url) ? 'hidden' : 'visible'
+      },
+    )
   },
 )
 
 export const $visibleLinkGroups = computed(
   [$hiddenUrls],
-  (hiddenUrls): LinkGroup[] => {
-    return linkGroups.filter((group) => {
-      return group.items.some((l) => !hiddenUrls.has(l.url))
-    })
+  (hiddenUrls): Category[] => {
+    return categoryToLinksMap
+      .entries()
+      .filter(([, links]) => {
+        return links.some((l) => !hiddenUrls.has(l.url))
+      })
+      .map(([category]) => category)
+      .toArray()
   },
 )

@@ -14,7 +14,7 @@ export function isCurrentTheme(theme: AppThemeSetting): boolean {
   return $themeSetting.get() === theme
 }
 
-export function setTheme(theme: AppThemeSetting): void {
+export function setTheme(theme: AppThemeSetting) {
   $themeSetting.set(theme)
 }
 
@@ -37,7 +37,7 @@ const $effectiveTheme = computed(
   },
 )
 
-export function useThemes(): void {
+export function useThemes() {
   const effectiveTheme = useStore($effectiveTheme)
 
   useEffect(() => {

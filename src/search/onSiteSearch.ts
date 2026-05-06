@@ -10,7 +10,7 @@ export function getOnSiteSearchTerm(): string {
   return $onSiteSearchTerm.get()
 }
 
-export function setOnSiteSearchTerm(term: string = ''): void {
+export function setOnSiteSearchTerm(term: string = '') {
   $onSiteSearchTerm.set(term)
 }
 // #endregion on site search term
@@ -23,7 +23,7 @@ export function getSearchTarget(): SearchTarget | null {
   return $searchTarget.get()
 }
 
-export function setSearchTarget(target: SearchTarget | null = null): void {
+export function setSearchTarget(target: SearchTarget | null = null) {
   $searchTarget.set(target)
 }
 

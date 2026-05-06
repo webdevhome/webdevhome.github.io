@@ -8,7 +8,7 @@ const $showDescriptions = persistentAtom(
   booleanEncoder,
 )
 
-export function toggleShowDescriptions(): void {
+export function toggleShowDescriptions() {
   negateBooleanStore($showDescriptions)
 }
 

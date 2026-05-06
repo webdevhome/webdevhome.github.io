@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { type FC } from 'react'
 import { LinkGroup } from '../link-groups/LinkGroup.tsx'
-import { linkGroups } from './links.ts'
+import { categoryToLinksMap } from './links.ts'
 
 export const Links: FC = () => {
   return (
@@ -12,9 +12,12 @@ export const Links: FC = () => {
         'p-2',
       )}
     >
-      {linkGroups.map((group) => (
-        <LinkGroup group={group} key={group.name} />
-      ))}
+      {categoryToLinksMap
+        .entries()
+        .map(([group, links]) => (
+          <LinkGroup group={group} links={links} key={group.id} />
+        ))
+        .toArray()}
     </div>
   )
 }

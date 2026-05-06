@@ -4,13 +4,13 @@ import { FolderGitIcon, LogsIcon } from 'lucide-react'
 import { type FC } from 'react'
 import packageJson from '../../package.json' with { type: 'json' }
 import { $hiddenUrlsCount } from '../links/hiddenUrls.ts'
-import { allLinks } from '../links/links.ts'
+import { linksToCategoryMap } from '../links/links.ts'
 import { UiMenuFooter } from '../ui/UiMenuFooter.tsx'
 import { UiMenuHeader } from '../ui/UiMenuHeader.tsx'
 import { UiMenuItem } from '../ui/UiMenuItem.tsx'
 
 export const AppInfo: FC = () => {
-  const allLinksCount = allLinks.size
+  const allLinksCount = linksToCategoryMap.size
   const hiddenUrlsCount = useStore($hiddenUrlsCount)
   const visibleUrlsCount = allLinksCount - hiddenUrlsCount
 

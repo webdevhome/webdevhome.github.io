@@ -8,7 +8,7 @@ export function updateStore<T>(
   store.set(updateFn(store.get()))
 }
 
-export function negateBooleanStore(store: WritableAtom<boolean>): void {
+export function negateBooleanStore(store: WritableAtom<boolean>) {
   updateStore(store, (v) => !v)
 }
 

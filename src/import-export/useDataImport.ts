@@ -21,7 +21,7 @@ export function useDataImport(): DataImport {
   const importJSON = useStore($importJSON)
   const importError = useStore($importError)
 
-  function applyImport(): void {
+  function applyImport() {
     $importError.set(null)
 
     try {

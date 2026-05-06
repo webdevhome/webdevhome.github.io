@@ -5,8 +5,8 @@ import {
   useIsUrlHidden,
   type LinkVisibilityState,
 } from '../links/hiddenUrls.ts'
-import { LinkList } from '../links/LinkList.tsx'
-import { type LinkGroup as ILinkGroup } from '../links/links.ts'
+import { Link } from '../links/Link.tsx'
+import { type Category, type LinkItem } from '../links/links.ts'
 import { slugify } from '../utils/slugify.ts'
 import {
   LinkGroupSelectAllButton,
@@ -16,17 +16,18 @@ import { LinkGroupTitle } from './LinkGroupTitle.tsx'
 import { ShowHiddenLinksButton } from './ShowHiddenLinksButton.tsx'
 
 type Props = {
-  group: ILinkGroup
+  group: Category
+  links: LinkItem[]
 }
 
-export const LinkGroup: FC<Props> = ({ group }) => {
+export const LinkGroup: FC<Props> = ({ group, links }) => {
   const [showHiddenLinks, setShowHiddenLinks] = useState(false)
 
   const isAppMode = useIsAppMode()
   const isUrlHidden = useIsUrlHidden()
 
   const linksByVisibility = Object.groupBy(
-    group.items,
+    links,
     (l): LinkVisibilityState => (isUrlHidden(l.url) ? 'hidden' : 'visible'),
   )
 
@@ -49,18 +50,20 @@ export const LinkGroup: FC<Props> = ({ group }) => {
   }
 
   return (
-    <div id={slugify(group.name)} className="scroll-mt-2">
+    <div id={slugify(group.title)} className="scroll-mt-2">
       <div className="mb-2 flex gap-x-1">
-        <LinkGroupTitle color={group.color}>{group.name}</LinkGroupTitle>
+        <LinkGroupTitle color={group.color}>{group.title}</LinkGroupTitle>
 
         <LinkGroupSelectAllButton
           linksVisible={linksVisible}
-          onClick={() => toggleUrls(group.items.map((link) => link.url))}
+          onClick={() => toggleUrls(links.map((link) => link.url))}
         />
       </div>
 
       <div className="grid gap-y-px">
-        <LinkList links={linksByVisibility.visible} />
+        {linksByVisibility.visible?.map((link) => (
+          <Link key={link.url} link={link} />
+        ))}
 
         <ShowHiddenLinksButton
           hiddenLinksCount={hiddenLinksCount}
@@ -68,9 +71,10 @@ export const LinkGroup: FC<Props> = ({ group }) => {
           onClick={() => setShowHiddenLinks(!showHiddenLinks)}
         />
 
-        {showHiddenLinks ? (
-          <LinkList links={linksByVisibility.hidden} areLinksHidden />
-        ) : null}
+        {showHiddenLinks &&
+          linksByVisibility.hidden?.map((link) => (
+            <Link key={link.url} link={link} />
+          ))}
       </div>
     </div>
   )

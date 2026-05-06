@@ -44,7 +44,8 @@ export const AppHeaderActions: FC = () => {
     return (
       <UiActionButton
         icon={<ArrowLeftIcon />}
-        label="Back"
+        label="Back to home"
+        labelVisible="always"
         highlight
         action={exitSearchMode}
       />
@@ -57,6 +58,7 @@ export const AppHeaderActions: FC = () => {
         <UiActionButton
           icon={<CheckIcon />}
           label="Done"
+          labelVisible="always"
           highlight
           action={() => setAppMode('default')}
         />

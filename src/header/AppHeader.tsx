@@ -38,7 +38,7 @@ export const AppHeader: FC<Props> = ({ centerItems, actions }) => {
           title="Toggle Jump Links"
           icon={<ListTreeIcon />}
           action={handleMenuClick}
-          available={isAppMode('default', 'customize')}
+          enabled={isAppMode('default', 'customize')}
         />
         <Logo />
       </div>

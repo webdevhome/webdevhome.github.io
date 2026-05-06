@@ -1,18 +1,18 @@
 import classNames from 'classnames'
 import { type FC } from 'react'
-import type { LinkGroup } from './links.ts'
+import type { Category } from './links.ts'
 
 type Props = {
-  group: LinkGroup | null
-  showGroup: boolean
+  category: Category | null
+  showGroup?: boolean
 }
 
-export const LinkGroupLabel: FC<Props> = ({ group, showGroup }) => {
+export const LinkGroupLabel: FC<Props> = ({ category, showGroup = true }) => {
   if (!showGroup) {
     return null
   }
 
-  if (group === null) {
+  if (category === null) {
     return null
   }
 
@@ -21,16 +21,17 @@ export const LinkGroupLabel: FC<Props> = ({ group, showGroup }) => {
       <div
         className={classNames([
           'h-2 w-2 rounded-full',
-          `bg-${group.color}-600 dark:bg-${group.color}-600`,
+          `bg-${category.color}-600 dark:bg-${category.color}-600`,
         ])}
-      ></div>
+      />
+
       <div
         className={classNames([
-          'text-xs opacity-70',
-          `text-${group.color}-800 dark:text-${group.color}-300`,
+          'text-xs font-semibold opacity-70',
+          `text-${category.color}-800 dark:text-${category.color}-300`,
         ])}
       >
-        {group?.name ?? '-'}
+        {category.title}
       </div>
     </div>
   )

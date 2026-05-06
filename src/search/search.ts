@@ -12,12 +12,8 @@ export function getSearchTerm(): string {
   return $searchTerm.get()
 }
 
-export function setSearchTerm(term: string = ''): void {
+export function setSearchTerm(term: string = '') {
   $searchTerm.set(term)
-}
-
-export function hasValidSearchTerm(): boolean {
-  return $searchTerm.get().trim() !== ''
 }
 //#endregion search term
 
@@ -28,7 +24,7 @@ export function getKeyboardIndex(): number {
   return $keyboardIndex.get()
 }
 
-export function setKeyboardIndex(index: number): void {
+export function setKeyboardIndex(index: number) {
   $keyboardIndex.set(index)
 }
 //#endregion keyboard index

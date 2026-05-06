@@ -50,11 +50,11 @@ export const JumpLinks: FC = () => {
         </button>
 
         <div className="flex flex-col gap-0.5 p-2 max-md:overflow-auto md:flex">
-          {visibleLinkGroups.map((linkGroup) => (
+          {visibleLinkGroups.map((category) => (
             <JumpLink
-              key={linkGroup.name}
-              label={linkGroup.name}
-              color={linkGroup.color}
+              key={category.id}
+              label={category.title}
+              color={category.color}
             />
           ))}
         </div>

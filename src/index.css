@@ -79,6 +79,7 @@
 
 @custom-variant supports-backdrop (@supports (backdrop-filter: blur(1px)));
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant small-height (@media (height < 500px));
 
 @utility scrollbargutter-auto {
   scrollbar-gutter: auto;

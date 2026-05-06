@@ -3,7 +3,7 @@ import { migrateToV2 } from './migrations/v2.ts'
 
 export const storageVersionKey = 'wdh:storage-version'
 
-export function migrateLocalStorage(): void {
+export function migrateLocalStorage() {
   const storageVersionString = localStorage.getItem(storageVersionKey) ?? 'v0'
   const storageVersionStringMatch = /^v(\d+)$/.exec(storageVersionString)
   const storageVersion =

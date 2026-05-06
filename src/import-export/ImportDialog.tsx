@@ -17,7 +17,7 @@ export const ImportDialog: FC = () => {
 
   function handleImportDialogTextareaChange(
     event: ChangeEvent<HTMLTextAreaElement>,
-  ): void {
+  ) {
     setImportJSON(event.target.value)
   }
 

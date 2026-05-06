@@ -1,4 +1,4 @@
-export function renameStorageKey(oldKey: string, newKey: string): void {
+export function renameStorageKey(oldKey: string, newKey: string) {
   const value = localStorage.getItem(oldKey)
   if (value === null) return
 

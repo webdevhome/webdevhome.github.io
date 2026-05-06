@@ -1,66 +1,48 @@
-import { type JSX } from 'react'
-import linksData from '../links.json' with { type: 'json' }
+import type { SimpleIcon } from 'simple-icons'
+import { defineLinks } from '../data.ts'
+import type { TailwindColorName } from '../tailwindCss.ts'
+
+//#region types
+export type Category = {
+  id: string
+  title: string
+  color: TailwindColorName
+}
 
 export type LinkItem = {
+  id: string
   title: string
   url: string
   description?: string
-  icon?: string
-  color?: string
-  iconComp?: JSX.Element
   searchUrl?: string
+  color?: string
+  icon?: SimpleIcon
 }
 
-export type SearchTarget = LinkItem & Required<Pick<LinkItem, 'searchUrl'>>
+export type SearchTarget = Omit<LinkItem, 'searchUrl'> &
+  Required<Pick<LinkItem, 'searchUrl'>>
 
-export type TailwindColorName =
-  | 'red'
-  | 'orange'
-  | 'amber'
-  | 'yellow'
-  | 'lime'
-  | 'green'
-  | 'emerald'
-  | 'teal'
-  | 'cyan'
-  | 'sky'
-  | 'blue'
-  | 'indigo'
-  | 'violet'
-  | 'purple'
-  | 'fuchsia'
-  | 'pink'
-  | 'rose'
-  | 'slate'
-  | 'gray'
-  | 'zinc'
-  | 'neutral'
-  | 'stone'
+export type LinksMap = Map<Category, LinkItem[]>
+//#endregion types
 
-export type LinkGroup = {
-  name: string
-  color?: TailwindColorName
-  items: LinkItem[]
-}
+//#region exports
+export const categoryToLinksMap = defineLinks<LinksMap>(new Map())
 
-export type Links = {
-  items: LinkGroup[]
-}
+export const linksToCategoryMap: Map<LinkItem, Category> = (() => {
+  const result = new Map<LinkItem, Category>()
 
-const linksJson = linksData as Links
+  for (const [category, links] of categoryToLinksMap.entries()) {
+    for (const link of links) {
+      result.set(link, category)
+    }
+  }
 
-export const linkGroups: LinkGroup[] = linksJson.items
+  return result
+})()
 
-export const allLinks: Set<LinkItem> = new Set(
-  linksJson.items.flatMap((group) => group.items),
-)
+export const linksSet = new Set<LinkItem>(linksToCategoryMap.keys())
 
-export const linkToGroupMap = new Map<LinkItem, LinkGroup>(
-  linksJson.items.flatMap((g) => {
-    return g.items.map((l) => [l, g])
-  }),
-)
-
-export function linkHasSearchUrl(link: LinkItem): link is SearchTarget {
+export function linkIsSearchTarget(link: LinkItem): link is SearchTarget {
   return typeof link.searchUrl === 'string'
 }
+//#endregion exports

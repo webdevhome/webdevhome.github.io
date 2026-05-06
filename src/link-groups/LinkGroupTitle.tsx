@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { type FC, type PropsWithChildren } from 'react'
-import type { TailwindColorName } from '../links/links.ts'
+import type { TailwindColorName } from '../tailwindCss.ts'
 
 type Props = {
   color: TailwindColorName | undefined

@@ -15,7 +15,7 @@ type Props = {
   ref?: RefObject<HTMLTextAreaElement | null>
 }
 
-function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>): void {
+function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
   event.stopPropagation()
 }
 

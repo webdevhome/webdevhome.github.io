@@ -2,11 +2,15 @@ import classNames from 'classnames'
 import { type FC, type MouseEvent } from 'react'
 import { setAppMode, useIsAppMode } from '../app/appMode.ts'
 import { setSearchTarget } from '../search/onSiteSearch.ts'
-import { toggleUrl } from './hiddenUrls.ts'
+import { toggleUrl, useIsUrlHidden } from './hiddenUrls.ts'
 import { LinkDescription } from './LinkDescription.tsx'
 import { LinkGroupLabel } from './LinkGroupLabel.tsx'
 import { LinkItemIcon } from './LinkItemIcon.tsx'
-import { linkHasSearchUrl, linkToGroupMap, type LinkItem } from './links.ts'
+import {
+  linkIsSearchTarget,
+  linksToCategoryMap,
+  type LinkItem,
+} from './links.ts'
 import { LinkSearchButton } from './LinkSearchButton.tsx'
 import { LinkVisibilityToggleButton } from './LinkVisibilityToggleButton.tsx'
 import { useShowDescriptions } from './useLinkDescriptions.ts'
@@ -14,31 +18,31 @@ import { useOpenLinksInNewTab } from './useOpenLinksInNewTab.ts'
 
 type Props = {
   link: LinkItem
-  searchable?: boolean
-  isHidden?: boolean
   focused?: boolean
   showGroup?: boolean
 }
 
 export const Link: FC<Props> = ({
   link,
-  searchable = false,
-  isHidden = false,
   focused = false,
   showGroup = false,
 }) => {
   const openLinksInNewTab = useOpenLinksInNewTab()
   const showDescription = useShowDescriptions()
   const isAppMode = useIsAppMode()
+  const isUrlHidden = useIsUrlHidden()
 
-  const group = linkToGroupMap.get(link) ?? null
+  const isHidden = isUrlHidden(link.url)
+  const group = linksToCategoryMap.get(link) ?? null
 
-  const linkTitle =
-    link.description === undefined
-      ? link.title
-      : `${link.title}: ${link.description}`
+  const linkTitle = (() => {
+    if (link.description === undefined) {
+      return link.title
+    }
+    return `${link.title}: ${link.description}`
+  })()
 
-  function handleLinkClick(event: MouseEvent<HTMLAnchorElement>): void {
+  function handleLinkClick(event: MouseEvent<HTMLAnchorElement>) {
     if (isAppMode('customize') || event.altKey) {
       event.preventDefault()
       toggleUrl(link.url)
@@ -52,7 +56,7 @@ export const Link: FC<Props> = ({
   function handleSearchClick(event: MouseEvent<HTMLButtonElement>) {
     event.stopPropagation()
     event.preventDefault()
-    if (!linkHasSearchUrl(link)) return
+    if (!linkIsSearchTarget(link)) return
     setSearchTarget(link)
     setAppMode('search')
   }
@@ -86,23 +90,23 @@ export const Link: FC<Props> = ({
     >
       <LinkItemIcon icon={link.icon} color={link.color} />
 
-      <div
-        className={classNames([
-          'text-base leading-4 font-semibold',
-          'text-brand-950 dark:text-white',
-        ])}
-      >
-        <div>{link.title}</div>
+      <div>
+        <div
+          className={classNames([
+            'text-base leading-4 font-semibold',
+            'text-brand-950 dark:text-white',
+          ])}
+        >
+          {link.title}
+        </div>
 
-        <LinkGroupLabel showGroup={showGroup} group={group} />
+        <LinkGroupLabel showGroup={showGroup} category={group} />
       </div>
 
       <div className="-my-1 -mr-1 flex self-stretch">
-        <LinkSearchButton
-          focused={focused}
-          searchable={searchable}
-          onClick={handleSearchClick}
-        />
+        {link.searchUrl !== undefined && (
+          <LinkSearchButton focused={focused} onClick={handleSearchClick} />
+        )}
 
         <LinkVisibilityToggleButton isHidden={isHidden} />
       </div>

@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react'
 import type { KeyboardEvent, KeyboardEventHandler } from 'react'
-import { exitSearchMode, setAppMode } from '../app/appMode.ts'
-import { linkHasSearchUrl } from '../links/links.ts'
+import { exitOnSiteSearch, exitSearchMode } from '../app/appMode.ts'
+import { linkIsSearchTarget } from '../links/links.ts'
 import { isOpenLinksInNewTabEnabled } from '../links/useOpenLinksInNewTab.ts'
 import {
   getOnSiteSearchTerm,
@@ -38,13 +38,10 @@ export function useHandleSearchInputKeydown(): (
 
       if (searchTarget !== null && onSiteSearchTerm === '') {
         event.preventDefault()
-        setSearchTarget()
-        if (searchTerm === '') {
-          setAppMode('default')
-        }
+        exitOnSiteSearch()
       } else if (searchTerm === '' && onSiteSearchTerm === '') {
         event.preventDefault()
-        setAppMode('default')
+        exitSearchMode()
       }
     },
 
@@ -52,7 +49,7 @@ export function useHandleSearchInputKeydown(): (
       event.preventDefault()
 
       if (focusedResult === null) return
-      if (!linkHasSearchUrl(focusedResult.obj)) return
+      if (!linkIsSearchTarget(focusedResult.obj)) return
 
       setSearchTarget(focusedResult.obj)
     },

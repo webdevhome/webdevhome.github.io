@@ -1,4 +1,3 @@
-import type { KeyboardEventHandler } from 'react'
 import { toggleJumpLinks } from '../jump-links/useJumpLinks.ts'
 import { hasSearchTarget } from '../search/onSiteSearch.ts'
 import {
@@ -9,7 +8,7 @@ import {
   type AppMode,
 } from './appMode.ts'
 
-const keydownHandler: Record<AppMode, KeyboardEventHandler> = {
+const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
   default(event) {
     if (event.altKey && event.code === 'KeyB') {
       toggleJumpLinks()
@@ -50,7 +49,7 @@ const keydownHandler: Record<AppMode, KeyboardEventHandler> = {
   },
 }
 
-export function registerGlobalEvents(): void {
+export function registerGlobalEvents() {
   document.addEventListener('keydown', (event) => {
     const mode = getCurrentAppMode()
     keydownHandler[mode]?.(event)

@@ -21,8 +21,6 @@ export const SearchResults: FC = () => {
           <Link
             key={link.obj.url}
             link={link.obj}
-            searchable={link.obj.searchUrl !== undefined}
-            isHidden={true}
             focused={link === focusedResult}
             showGroup
           />
@@ -41,8 +39,6 @@ export const SearchResults: FC = () => {
             <Link
               key={link.obj.url}
               link={link.obj}
-              searchable={link.obj.searchUrl !== undefined}
-              isHidden={true}
               focused={link === focusedResult}
               showGroup
             />

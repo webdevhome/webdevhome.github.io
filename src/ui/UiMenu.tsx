@@ -5,7 +5,7 @@ import { UiActionButton } from './UiActionButton.tsx'
 
 type Props = {
   icon: ReactElement
-  label: string
+  label?: string
 }
 
 export const UiMenu: FC<PropsWithChildren<Props>> = ({
