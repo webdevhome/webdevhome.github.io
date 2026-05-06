@@ -4,6 +4,7 @@ import { setAppMode, useIsAppMode } from '../app/appMode.ts'
 import { setSearchTarget } from '../search/onSiteSearch.ts'
 import { toggleUrl, useIsUrlHidden } from './hiddenUrls.ts'
 import { LinkDescription } from './LinkDescription.tsx'
+import { useShowDescriptions } from './linkDescriptions.ts'
 import { LinkGroupLabel } from './LinkGroupLabel.tsx'
 import { LinkItemIcon } from './LinkItemIcon.tsx'
 import {
@@ -13,19 +14,18 @@ import {
 } from './links.ts'
 import { LinkSearchButton } from './LinkSearchButton.tsx'
 import { LinkVisibilityToggleButton } from './LinkVisibilityToggleButton.tsx'
-import { useShowDescriptions } from './useLinkDescriptions.ts'
-import { useOpenLinksInNewTab } from './useOpenLinksInNewTab.ts'
+import { useOpenLinksInNewTab } from './openLinksInNewTab.ts'
 
 type Props = {
   link: LinkItem
   focused?: boolean
-  showGroup?: boolean
+  showCategory?: boolean
 }
 
 export const Link: FC<Props> = ({
   link,
   focused = false,
-  showGroup = false,
+  showCategory = false,
 }) => {
   const openLinksInNewTab = useOpenLinksInNewTab()
   const showDescription = useShowDescriptions()
@@ -33,7 +33,7 @@ export const Link: FC<Props> = ({
   const isUrlHidden = useIsUrlHidden()
 
   const isHidden = isUrlHidden(link.url)
-  const group = linksToCategoryMap.get(link) ?? null
+  const category = linksToCategoryMap.get(link) ?? null
 
   const linkTitle = (() => {
     if (link.description === undefined) {
@@ -100,7 +100,7 @@ export const Link: FC<Props> = ({
           {link.title}
         </div>
 
-        <LinkGroupLabel showGroup={showGroup} category={group} />
+        <LinkGroupLabel showGroup={showCategory} category={category} />
       </div>
 
       <div className="-my-1 -mr-1 flex self-stretch">

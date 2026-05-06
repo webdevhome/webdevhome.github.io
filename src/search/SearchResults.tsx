@@ -3,6 +3,7 @@ import { type FC } from 'react'
 import { Link } from '../links/Link.tsx'
 import { SearchDivider } from './SearchDivider.tsx'
 import { SearchHint } from './SearchHint.tsx'
+import { useShowCategoriesInSearch } from './categoriesInSearch.ts'
 import {
   $focusedSearchResult,
   $hiddenSearchResults,
@@ -10,6 +11,8 @@ import {
 } from './search.ts'
 
 export const SearchResults: FC = () => {
+  const showCategoriesInSearch = useShowCategoriesInSearch()
+
   const visibleResults = useStore($visibleSearchResults)
   const hiddenResults = useStore($hiddenSearchResults)
   const focusedResult = useStore($focusedSearchResult)
@@ -22,7 +25,7 @@ export const SearchResults: FC = () => {
             key={link.obj.url}
             link={link.obj}
             focused={link === focusedResult}
-            showGroup
+            showCategory={showCategoriesInSearch}
           />
         ))
       ) : (
@@ -40,7 +43,7 @@ export const SearchResults: FC = () => {
               key={link.obj.url}
               link={link.obj}
               focused={link === focusedResult}
-              showGroup
+              showCategory={showCategoriesInSearch}
             />
           ))}
         </>

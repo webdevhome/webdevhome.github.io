@@ -2,7 +2,7 @@ import { useStore } from '@nanostores/react'
 import type { KeyboardEvent, KeyboardEventHandler } from 'react'
 import { exitOnSiteSearch, exitSearchMode } from '../app/appMode.ts'
 import { linkIsSearchTarget } from '../links/links.ts'
-import { isOpenLinksInNewTabEnabled } from '../links/useOpenLinksInNewTab.ts'
+import { isOpenLinksInNewTabEnabled } from '../links/openLinksInNewTab.ts'
 import {
   getOnSiteSearchTerm,
   getSearchTarget,

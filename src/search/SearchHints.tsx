@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { useOpenLinksInNewTab } from '../links/useOpenLinksInNewTab.ts'
+import { useOpenLinksInNewTab } from '../links/openLinksInNewTab.ts'
 import { SearchHint } from './SearchHint.tsx'
 
 export const SearchHints: FC = () => {
