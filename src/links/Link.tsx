@@ -1,7 +1,10 @@
 import classNames from 'classnames'
 import { type FC, type MouseEvent } from 'react'
-import { setAppMode, useIsAppMode } from '../app/appMode.ts'
-import { setSearchTarget } from '../search/onSiteSearch.ts'
+import {
+  enterOnSiteSearchMode,
+  exitSearchMode,
+  useIsAppMode,
+} from '../app/appMode.ts'
 import { toggleUrl, useIsUrlHidden } from './hiddenUrls.ts'
 import { LinkDescription } from './LinkDescription.tsx'
 import { useShowDescriptions } from './linkDescriptions.ts'
@@ -49,16 +52,19 @@ export const Link: FC<Props> = ({
     }
 
     if (isAppMode('search') && openLinksInNewTab) {
-      setAppMode('default')
+      exitSearchMode()
     }
   }
 
   function handleSearchClick(event: MouseEvent<HTMLButtonElement>) {
+    // Prevents click to be recognized as regular click on link
+    // and therefore exiting the search mode.
     event.stopPropagation()
+    // Prevents linked website from opening.
     event.preventDefault()
+
     if (!linkIsSearchTarget(link)) return
-    setSearchTarget(link)
-    setAppMode('search')
+    enterOnSiteSearchMode(link)
   }
 
   return (

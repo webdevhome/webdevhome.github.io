@@ -30,4 +30,10 @@ export function setSearchTarget(target: SearchTarget | null = null) {
 export function hasSearchTarget(): boolean {
   return $searchTarget.get() !== null
 }
+
+export function useHasSearchTarget(): () => boolean {
+  const searchTarget = useStore($searchTarget)
+
+  return () => searchTarget !== null
+}
 //#endregion search target

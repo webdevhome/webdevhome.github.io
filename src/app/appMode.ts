@@ -3,6 +3,7 @@ import { atom } from 'nanostores'
 import { useEffect } from 'react'
 import { setOnSiteSearchTerm, setSearchTarget } from '../search/onSiteSearch.ts'
 import { setSearchTerm } from '../search/search.ts'
+import type { SearchTarget } from '../links/links.ts'
 
 export type AppMode = 'default' | 'search' | 'customize'
 
@@ -31,6 +32,11 @@ export function exitSearchMode() {
   setSearchTerm()
   setOnSiteSearchTerm()
   setSearchTarget()
+}
+
+export function enterOnSiteSearchMode(target: SearchTarget) {
+  setSearchTarget(target)
+  $appMode.set('search')
 }
 
 export function exitOnSiteSearch() {

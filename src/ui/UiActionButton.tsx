@@ -2,14 +2,23 @@ import classNames from 'classnames'
 import { type FC, type ReactElement } from 'react'
 
 type Props = {
+  /** The icon that should be displayed in the button. */
   icon: ReactElement
-  title?: string
-  enabled?: boolean
-  active?: boolean
-  visible?: 'small-screens' | 'big-screens' | 'always'
-  highlight?: boolean
+  /** The button label. */
   label?: string
+  /** The tooltip text. */
+  title?: string
+  /** Disable the button by passing `false`. */
+  enabled?: boolean
+  /** Control the toggle state. Passing `true` highlights the button. */
+  active?: boolean
+  /** Control on which screen sizes the button should be displayed. */
+  visible?: 'small-screens' | 'big-screens' | 'always'
+  /** Control if the button should be highlighted (be a primary button). */
+  highlight?: boolean
+  /** Control on which screen sizes the button label should be displayed. */
   labelVisible?: 'big-screens' | 'always'
+  /** The button action that should be executed when clicked on the button. */
   action?: () => void
 }
 

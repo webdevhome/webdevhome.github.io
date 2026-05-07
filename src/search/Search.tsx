@@ -1,8 +1,5 @@
 import classNames from 'classnames'
-import { ArrowLeftIcon } from 'lucide-react'
 import { type FC, useRef } from 'react'
-import { exitOnSiteSearch } from '../app/appMode.ts'
-import { UiActionButton } from '../ui/UiActionButton.tsx'
 import { useOnSiteSearchTerm, useSearchTarget } from './onSiteSearch.ts'
 import { useSearchTerm } from './search.ts'
 import { SearchHints } from './SearchHints.tsx'
@@ -26,18 +23,7 @@ export const Search: FC = () => {
 
   return (
     <div className="small-height:py-4 small-height:gap-y-6 mx-auto flex w-150 max-w-full flex-col gap-y-8 px-4 py-10">
-      {searchTarget !== null && (
-        <>
-          <UiActionButton
-            icon={<ArrowLeftIcon />}
-            action={exitOnSiteSearch}
-            label="Back to links search"
-            labelVisible="always"
-          />
-
-          <SearchTargetLabel target={searchTarget} />
-        </>
-      )}
+      {searchTarget !== null && <SearchTargetLabel target={searchTarget} />}
 
       <div className="flex max-w-full flex-col">
         <input

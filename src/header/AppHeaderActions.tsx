@@ -5,11 +5,19 @@ import {
   EyeIcon,
   EyeOffIcon,
   SearchIcon,
+  XIcon,
 } from 'lucide-react'
 import { type FC } from 'react'
-import { exitSearchMode, setAppMode, useIsAppMode } from '../app/appMode.ts'
+import {
+  exitOnSiteSearch,
+  exitSearchMode,
+  setAppMode,
+  useIsAppMode,
+} from '../app/appMode.ts'
 import { hideAllUrls, showAllUrls } from '../links/hiddenUrls.ts'
+import { useHasSearchTarget } from '../search/onSiteSearch.ts'
 import { UiActionButton } from '../ui/UiActionButton.tsx'
+import { UiHeaderDivider } from '../ui/UiHeaderDivider.tsx'
 
 function handleScrollTopClick() {
   const mainContentElement = document.getElementById('main-content')
@@ -20,6 +28,7 @@ function handleScrollTopClick() {
 
 export const AppHeaderActions: FC = () => {
   const isAppMode = useIsAppMode()
+  const hasSearchTarget = useHasSearchTarget()
 
   if (isAppMode('default')) {
     return (
@@ -42,26 +51,30 @@ export const AppHeaderActions: FC = () => {
 
   if (isAppMode('search')) {
     return (
-      <UiActionButton
-        icon={<ArrowLeftIcon />}
-        label="Back to home"
-        labelVisible="always"
-        highlight
-        action={exitSearchMode}
-      />
+      <>
+        {hasSearchTarget() && (
+          <UiActionButton
+            icon={<ArrowLeftIcon />}
+            label="Back to link search"
+            labelVisible="big-screens"
+            action={exitOnSiteSearch}
+          />
+        )}
+
+        <UiActionButton
+          icon={<XIcon />}
+          label="Close search"
+          labelVisible="big-screens"
+          highlight
+          action={exitSearchMode}
+        />
+      </>
     )
   }
 
   if (isAppMode('customize')) {
     return (
       <>
-        <UiActionButton
-          icon={<CheckIcon />}
-          label="Done"
-          labelVisible="always"
-          highlight
-          action={() => setAppMode('default')}
-        />
         <UiActionButton
           icon={<EyeIcon />}
           label="Show all"
@@ -71,6 +84,23 @@ export const AppHeaderActions: FC = () => {
           icon={<EyeOffIcon />}
           label="Hide all"
           action={hideAllUrls}
+        />
+
+        <UiActionButton
+          icon={<CheckIcon />}
+          label="Done"
+          labelVisible="always"
+          highlight
+          action={() => setAppMode('default')}
+        />
+
+        <UiHeaderDivider />
+
+        <UiActionButton
+          icon={<ArrowUpToLineIcon />}
+          title="Scroll to top"
+          label="Top"
+          action={handleScrollTopClick}
         />
       </>
     )
