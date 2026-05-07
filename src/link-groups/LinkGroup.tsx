@@ -62,7 +62,7 @@ export const LinkGroup: FC<Props> = ({ group, links }) => {
 
       <div className="grid gap-y-px">
         {linksByVisibility.visible?.map((link) => (
-          <Link key={link.url} link={link} />
+          <Link key={link.id} link={link} />
         ))}
 
         <ShowHiddenLinksButton
@@ -73,7 +73,7 @@ export const LinkGroup: FC<Props> = ({ group, links }) => {
 
         {showHiddenLinks &&
           linksByVisibility.hidden?.map((link) => (
-            <Link key={link.url} link={link} />
+            <Link key={link.id} link={link} />
           ))}
       </div>
     </div>

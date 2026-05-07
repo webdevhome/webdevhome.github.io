@@ -22,7 +22,7 @@ export const SearchResults: FC = () => {
       {visibleResults !== null && visibleResults.total > 0 ? (
         visibleResults.map((link) => (
           <Link
-            key={link.obj.url}
+            key={link.obj.id}
             link={link.obj}
             focused={link === focusedResult}
             showCategory={showCategoriesInSearch}
@@ -40,7 +40,7 @@ export const SearchResults: FC = () => {
 
           {hiddenResults.map((link) => (
             <Link
-              key={link.obj.url}
+              key={link.obj.id}
               link={link.obj}
               focused={link === focusedResult}
               showCategory={showCategoriesInSearch}
