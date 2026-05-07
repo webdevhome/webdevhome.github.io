@@ -173,6 +173,7 @@ import {
   siShieldsdotio,
   siSimpleicons,
   siSocketdotio,
+  siSolid,
   siSoundcloud,
   siSpotify,
   siSpring,
@@ -249,7 +250,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'GitLab',
         url: 'https://gitlab.com',
         icon: siGitlab,
-        color: '#FC6D26',
         searchUrl: 'https://gitlab.com/search?utf8=%E2%9C%93&search={search}',
       },
       {
@@ -257,7 +257,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Gitea',
         url: 'https://gitea.com',
         icon: siGitea,
-        color: '#609926',
         searchUrl:
           'https://gitea.com/explore/repos?only_show_relevant=false&q={search}&sort=recentupdate',
       },
@@ -267,14 +266,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://start.atlassian.com',
         description: 'A portal page to access your Atlassian services.',
         icon: siAtlassian,
-        color: '#0052CC',
       },
       {
         id: 'bitbucket',
         title: 'Bitbucket',
         url: 'https://bitbucket.org',
         icon: siBitbucket,
-        color: '#0052CC',
       },
       {
         id: 'asana',
@@ -282,7 +279,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://asana.com',
         description: 'Project management service.',
         icon: siAsana,
-        color: '#F06A6A',
       },
       {
         id: 'circleCi',
@@ -290,7 +286,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://circleci.com',
         description: 'CI/CD/Deployment service.',
         icon: siCircleci,
-        color: '#343434',
       },
       {
         id: 'jenkins',
@@ -298,7 +293,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.jenkins.io',
         description: 'CI/CD/Deployment service.',
         icon: siJenkins,
-        color: '#D24939',
       },
       {
         id: 'buddyWorks',
@@ -306,7 +300,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://buddy.works',
         description: 'CI/CD/Deployment service.',
         icon: siBuddy,
-        color: '#1A86FD',
       },
       {
         id: 'octopusDeploy',
@@ -314,7 +307,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://octopus.com',
         description: 'CI/CD/Deployment service.',
         icon: siOctopusdeploy,
-        color: '#2f93e0',
       },
     ],
   )
@@ -332,63 +324,54 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://vercel.co',
         description: 'Hosting solution by the developers of Next.js.',
         icon: siVercel,
-        color: '#000000',
       },
       {
         id: 'netlify',
         title: 'Netlify',
         url: 'https://netlify.com',
         icon: siNetlify,
-        color: '#00C7B7',
       },
       {
         id: 'heroku',
         title: 'Heroku',
         url: 'https://heroku.com',
         searchUrl: 'https://heroku.com/search?s={search}',
-        color: '#5a1ba9',
       },
       {
         id: 'renderDotCom',
         title: 'Render',
         url: 'https://render.com',
         icon: siRender,
-        color: '#000000',
       },
       {
         id: 'flyDotIo',
         title: 'Fly.io',
         url: 'https://fly.io',
         icon: siFlydotio,
-        color: '#24175B',
       },
       {
         id: 'fortRabbit',
         title: 'Fortrabbit',
         url: 'https://www.fortrabbit.com',
         description: 'PHP hosting platform.',
-        color: '#65D0EA',
       },
       {
         id: 'msAzure',
         title: 'Microsoft Azure',
         url: 'https://azure.microsoft.com',
         searchUrl: 'https://azure.microsoft.com/search/?q={search}',
-        color: '#3376CD',
       },
       {
         id: 'aws',
         title: 'Amazon Web Services',
         url: 'https://aws.amazon.com',
         searchUrl: 'https://aws.amazon.com/de/search/?searchQuery={search}',
-        color: '#000000',
       },
       {
         id: 'googleCloud',
         title: 'Google Cloud',
         url: 'https://cloud.google.com',
         icon: siGooglecloud,
-        color: '#4285F4',
         searchUrl: 'https://cloud.google.com/s/results/?q={search}',
       },
       {
@@ -396,7 +379,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Firebase',
         url: 'https://firebase.google.com',
         icon: siFirebase,
-        color: '#DD2C00',
         searchUrl: 'https://firebase.google.com/s/results?q={search}',
       },
       {
@@ -404,28 +386,24 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Supabase',
         url: 'https://supabase.com',
         icon: siSupabase,
-        color: '#3ecf8e',
       },
       {
         id: 'appwrite',
         title: 'Appwrite',
         url: 'https://appwrite.io',
         icon: siAppwrite,
-        color: '#FD366E',
       },
       {
         id: 'digitalOcean',
         title: 'DigitalOcean',
         url: 'https://www.digitalocean.com',
         icon: siDigitalocean,
-        color: '#0080FF',
       },
       {
         id: 'cloudflare',
         title: 'Cloudflare',
         url: 'https://www.cloudflare.com',
         icon: siCloudflare,
-        color: '#F38020',
         searchUrl:
           'https://www.cloudflare.com/searchresults/#q={search}&f[Language]=English',
       },
@@ -445,7 +423,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://npmjs.com',
         description: 'Node.js package directory and package manager.',
         icon: siNpm,
-        color: '#cb3837',
         searchUrl: 'https://www.npmjs.com/search?q={search}',
       },
       {
@@ -454,7 +431,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://npmx.dev',
         description: 'A fast, modern browser for the npm registry.',
         searchUrl: 'https://npmx.dev/search?q={search}',
-        color: '#000000',
       },
       {
         id: 'yarn',
@@ -462,7 +438,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://yarnpkg.com',
         description: 'Alternative package manager for Node.js.',
         icon: siYarn,
-        color: '#2e2a65',
         searchUrl: 'https://yarnpkg.com/search?q={search}',
       },
       {
@@ -471,7 +446,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://pnpm.io',
         description: 'Alternative package manager for Node.js.',
         icon: siPnpm,
-        color: '#F69220',
       },
       {
         id: 'unpkg',
@@ -479,7 +453,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://unpkg.com',
         description: 'A content delivery network for everything on npm.',
         icon: siUnpkg,
-        color: '#000000',
       },
       {
         id: 'phpComposer',
@@ -487,7 +460,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://getcomposer.org',
         description: 'PHP package manager.',
         icon: siComposer,
-        color: '#885630',
       },
       {
         id: 'packagist',
@@ -495,7 +467,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://packagist.org',
         description: 'PHP package directory.',
         icon: siPackagist,
-        color: '#F28D1A',
         searchUrl: 'https://packagist.org/?query={search}',
       },
       {
@@ -504,7 +475,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://nuget.org',
         description: '.Net package manager.',
         icon: siNuget,
-        color: '#004880',
         searchUrl: 'https://www.nuget.org/packages?q={search}',
       },
       {
@@ -513,7 +483,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://pkg.go.dev',
         description: 'Golang package directory.',
         icon: siGo,
-        color: '#00ADD8',
         searchUrl: 'https://pkg.go.dev/search?q={search}',
       },
       {
@@ -522,7 +491,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://crates.io',
         description: 'Rust package directory.',
         icon: siRust,
-        color: '#000000',
         searchUrl: 'https://crates.io/search?q={search}',
       },
       {
@@ -531,7 +499,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://pub.dev',
         description: 'Dart package directory.',
         icon: siDart,
-        color: '#0175C2',
         searchUrl: 'https://pub.dev/packages?q={search}',
       },
       {
@@ -540,7 +507,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://hub.docker.com',
         description: 'Docker image directory.',
         icon: siDocker,
-        color: '#2496ED',
         searchUrl: 'https://hub.docker.com/search?q={search}',
       },
     ],
@@ -559,7 +525,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://30secondsofcode.org',
         description: 'Short code snippets for repeating programming tasks.',
         icon: si30secondsofcode,
-        color: '#5395FD',
       },
       {
         id: 'bundlePhobia',
@@ -567,14 +532,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://bundlephobia.com',
         description: 'Check bundle size of npm packages.',
         searchUrl: 'https://bundlephobia.com/result?p={search}',
-        color: '#000000',
       },
       {
         id: 'bundleJs',
         title: 'bundlejs',
         url: 'https://bundlejs.com',
         description: 'A npm package size checker.',
-        color: '#60a5fa',
       },
       {
         id: 'jsBenchmark',
@@ -582,7 +545,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://jsbenchmark.com',
         description:
           'A website where you can write small benchmarks in the browser.',
-        color: '#EF8A6A',
       },
       {
         id: 'gitignoreDotIo',
@@ -590,7 +552,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.toptal.com/developers/gitignore',
         description: 'Generate .gitignore files (by Toptal).',
         icon: siGitignoredotio,
-        color: '#204ECF',
       },
       {
         id: 'alternativeTo',
@@ -598,7 +559,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://alternativeto.net',
         description: 'Find alternatives to some given technology.',
         icon: siAlternativeto,
-        color: '#0289D5',
         searchUrl: 'https://alternativeto.net/browse/search?q={search}',
       },
       {
@@ -608,7 +568,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           "A service that let's you analyze and manage your technology stack. You can also browse other company's stacks.",
         icon: siStackshare,
-        color: '#0690fa',
         searchUrl: 'https://stackshare.io/search/q={search}',
       },
     ],
@@ -626,7 +585,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Stack Overflow',
         url: 'https://stackoverflow.com',
         icon: siStackoverflow,
-        color: '#F58025',
         searchUrl: 'https://stackoverflow.com/search?q={search}',
       },
       {
@@ -634,7 +592,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Super User',
         url: 'https://superuser.com',
         icon: siSuperuser,
-        color: '#38A1CE',
         searchUrl: 'https://superuser.com/search?q={search}',
       },
       {
@@ -642,7 +599,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Server Fault',
         url: 'https://serverfault.com',
         icon: siServerfault,
-        color: '#E7282D',
         searchUrl: 'https://serverfault.com/search?q={search}',
       },
       {
@@ -650,7 +606,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Reddit',
         url: 'https://reddit.com',
         icon: siReddit,
-        color: '#ff4500',
         searchUrl: 'https://www.reddit.com/search/?q={search}',
       },
       {
@@ -658,7 +613,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'X / Twitter',
         url: 'https://twitter.com',
         icon: siX,
-        color: '#000000',
         searchUrl: 'https://twitter.com/search?q={search}',
       },
       {
@@ -666,26 +620,22 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'WhatsApp Web',
         url: 'https://web.whatsapp.com',
         icon: siWhatsapp,
-        color: '#25d366',
       },
       {
         id: 'telegramWeb',
         title: 'Telegram Web',
         url: 'https://web.telegram.org',
         icon: siTelegram,
-        color: '#26A5E4',
       },
       {
         id: 'msTeams',
         title: 'Microsoft Teams',
         url: 'https://www.microsoft.com/microsoft-teams/log-in',
-        color: '#5D5BCD',
       },
       {
         id: 'slack',
         title: 'Slack',
         url: 'https://slack.com',
-        color: '#592366',
       },
     ],
   )
@@ -709,7 +659,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://about.readthedocs.com',
         description: 'Service for writing documentation for your libraries.',
         icon: siReadthedocs,
-        color: '#000000',
         searchUrl: 'https://readthedocs.org/search/?q={search}',
       },
       {
@@ -717,7 +666,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'GitBook',
         url: 'https://www.gitbook.com',
         icon: siGitbook,
-        color: '#BBDDE5',
       },
       {
         id: 'mdnWebDocs',
@@ -726,7 +674,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Web technology documentation (HTML, CSS, JS, Browser APIs, etc.) by Mozilla.',
         icon: siMdnwebdocs,
-        color: '#000000',
         searchUrl: 'https://developer.mozilla.org/search?q={search}',
       },
       {
@@ -734,7 +681,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'GitHub Docs',
         url: 'https://docs.github.com',
         icon: siGithub,
-        color: '#181717',
         searchUrl:
           'https://docs.github.com/search?search-overlay-input={search}&query={search}',
       },
@@ -744,21 +690,18 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://docs.microsoft.com',
         searchUrl:
           'https://docs.microsoft.com/en-us/search/?search={search}&category=All',
-        color: '#84B4E2',
       },
       {
         id: 'appleDeveloper',
         title: 'Apple Developer',
         url: 'https://developer.apple.com',
         icon: siApple,
-        color: '#000000',
         searchUrl: 'https://developer.apple.com/search/?q={search}',
       },
       {
         id: 'oracleHelpCenter',
         title: 'Oracle Help Center',
         url: 'https://docs.oracle.com/en',
-        color: '#B84F3C',
       },
       {
         id: 'cheatography',
@@ -766,14 +709,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://cheatography.com',
         description: 'List of various cheat sheets.',
         searchUrl: 'https://cheatography.com/explore/search/?q={search}',
-        color: '#222222',
       },
       {
         id: 'devhintsDotIo',
         title: 'devhints.io',
         url: 'https://devhints.io/',
         description: 'A list of cheatsheets by Rico Sta. Cruz.',
-        color: '#745fb5',
       },
       {
         id: 'emmetCheatSheet',
@@ -781,7 +722,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://docs.emmet.io/cheat-sheet',
         description:
           'The official cheat sheet for Emmet - the editor shortcuts to quickly write HTML.',
-        color: '#8DC942',
       },
       {
         id: 'learnXInYMinutes',
@@ -816,14 +756,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'CodePen',
         url: 'https://codepen.io',
         searchUrl: 'https://codepen.io/search/pens?q={search}',
-        color: '#1E1F25',
       },
       {
         id: 'codeSandbox',
         title: 'CodeSandbox',
         url: 'https://codesandbox.io',
         icon: siCodesandbox,
-        color: '#000000',
         searchUrl: 'https://codesandbox.io/search?query={search}',
       },
       {
@@ -831,35 +769,30 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'TS Playground',
         url: 'https://www.typescriptlang.org/play',
         icon: siTypescript,
-        color: '#3178C6',
       },
       {
         id: 'rustPlayground',
         title: 'Rust Playground',
         url: 'https://play.rust-lang.org',
         icon: siRust,
-        color: '#000000',
       },
       {
         id: 'dartPad',
         title: 'DartPad',
         url: 'https://dartpad.dev',
         icon: siDart,
-        color: '#0175C2',
       },
       {
         id: 'sassPlayground',
         title: 'Sass Playground',
         url: 'https://sass-lang.com/playground',
         icon: siSass,
-        color: '#CC6699',
       },
       {
         id: 'jsFiddle',
         title: 'JSFiddle',
         url: 'https://jsfiddle.net',
         icon: siJsfiddle,
-        color: '#0084ff',
       },
       {
         id: 'jsBin',
@@ -870,7 +803,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         id: 'regex101',
         title: 'regex101',
         url: 'https://regex101.com',
-        color: '#1E3350',
       },
     ],
   )
@@ -887,28 +819,24 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Sass',
         url: 'https://sass-lang.com',
         icon: siSass,
-        color: '#cc6699',
       },
       {
         id: 'lessLang',
         title: 'Less',
         url: 'https://lesscss.org',
         icon: siLess,
-        color: '#1D365D',
       },
       {
         id: 'stylusLang',
         title: 'Stylus',
         url: 'https://stylus-lang.com',
         icon: siStylus,
-        color: '#333333',
       },
       {
         id: 'postCss',
         title: 'PostCSS',
         url: 'https://postcss.org',
         icon: siPostcss,
-        color: '#DD3A0A',
       },
       {
         id: 'autoprefixer',
@@ -917,7 +845,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Library that automatically insert browser prefixes into your CSS.',
         icon: siAutoprefixer,
-        color: '#DD3735',
       },
     ],
   )
@@ -935,7 +862,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://tailwindcss.com',
         description: 'A utility class based CSS framework.',
         icon: siTailwindcss,
-        color: '#06B6D4',
       },
       {
         id: 'mui',
@@ -944,21 +870,18 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'React component library with different design languages, including Material UI, and an unstyled version of every component.',
         icon: siMui,
-        color: '#007FFF',
       },
       {
         id: 'bootstrap',
         title: 'Bootstrap',
         url: 'https://getbootstrap.com',
         icon: siBootstrap,
-        color: '#7952B3',
       },
       {
         id: 'bulma',
         title: 'Bulma',
         url: 'https://bulma.io',
         icon: siBulma,
-        color: '#00D1B2',
       },
       {
         id: 'materialDesign',
@@ -966,7 +889,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://m3.material.io',
         description: "Official documentation for Google's Material Design.",
         icon: siMaterialdesign,
-        color: '#6750A4',
         searchUrl: 'https://material.io/search.html?q={search}',
       },
       {
@@ -974,21 +896,18 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'CSS Modules',
         url: 'https://github.com/css-modules/css-modules',
         icon: siCssmodules,
-        color: '#000000',
       },
       {
         id: 'linaria',
         title: 'linaria',
         url: 'https://linaria.dev/',
         description: 'A zero-runtime CSS-in-JS library.',
-        color: '#A74D8E',
       },
       {
         id: 'pandaCss',
         title: 'Panda CSS',
         url: 'https://panda-css.com/',
         description: 'A zero-runtime CSS-in-JS library.',
-        color: '#F8E164',
       },
       {
         id: 'vanillaExtract',
@@ -996,14 +915,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://vanilla-extract.style',
         description: 'A zero-runtime CSS-in-JS library.',
         icon: siVanillaextract,
-        color: '#F786AD',
       },
       {
         id: 'styledComponents',
         title: 'Styled Components',
         url: 'https://styled-components.com',
         icon: siStyledcomponents,
-        color: '#DB7093',
       },
       {
         id: 'bem',
@@ -1012,7 +929,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'A CSS naming convention that groups classes using namespaces.',
         icon: siBem,
-        color: '#000000',
       },
     ],
   )
@@ -1029,7 +945,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'React',
         url: 'https://reactjs.org',
         icon: siReact,
-        color: '#61DAFB',
       },
       {
         id: 'preact',
@@ -1037,28 +952,30 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://preactjs.com',
         description: 'Fast and small alternative to React with the same API.',
         icon: siPreact,
-        color: '#673AB8',
+      },
+      {
+        id: 'solidJs',
+        title: 'SolidJS',
+        url: 'https://www.solidjs.com',
+        icon: siSolid,
       },
       {
         id: 'vueJs',
         title: 'Vue',
         url: 'https://vuejs.org',
         icon: siVuedotjs,
-        color: '#4FC08D',
       },
       {
         id: 'angular',
         title: 'Angular',
         url: 'https://angular.dev',
         icon: siAngular,
-        color: '#0F0F11',
       },
       {
         id: 'stencilJs',
         title: 'Stencil',
         url: 'https://stenciljs.com',
         icon: siStencil,
-        color: '#5530FF',
       },
       {
         id: 'litJs',
@@ -1066,7 +983,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://lit.dev',
         description: 'A library for building web components.',
         icon: siLit,
-        color: '#324FFF',
       },
       {
         id: 'svelte',
@@ -1074,7 +990,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://svelte.dev',
         description: 'A framework without a runtime.',
         icon: siSvelte,
-        color: '#FF3E00',
       },
       {
         id: 'jsFrameworkBenchmark',
@@ -1099,7 +1014,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://alpinejs.dev',
         description: 'A library that attaches JS logic to the DOM.',
         icon: siAlpinedotjs,
-        color: '#8BC0D0',
       },
       {
         id: 'htmx',
@@ -1107,7 +1021,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://htmx.org',
         description: 'A library to add logic to HTML by using attributes.',
         icon: siHtmx,
-        color: '#3366CC',
       },
       {
         id: 'hotwire',
@@ -1116,7 +1029,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Hotwire is an alternative approach to building modern web applications without using much JavaScript by sending HTML instead of JSON over the wire. (Hotwire = Turbo + Stimulus)',
         icon: siHotwire,
-        color: '#FFE801',
       },
       {
         id: 'hotwiredTurbo',
@@ -1125,7 +1037,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'The speed of a single-page web application without having to write any JavaScript.',
         icon: siTurbo,
-        color: '#5CD8E5',
       },
       {
         id: 'stimulusJs',
@@ -1134,7 +1045,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'A modest JavaScript framework for the HTML you already have.',
         icon: siStimulus,
-        color: '#77E8B9',
       },
     ],
   )
@@ -1152,7 +1062,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://astro.build',
         description: 'A framework for content-driven websites.',
         icon: siAstro,
-        color: '#BC52EE',
       },
       {
         id: 'nextJs',
@@ -1160,7 +1069,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://nextjs.org',
         description: 'A framework based on React.',
         icon: siNextdotjs,
-        color: '#000000',
       },
       {
         id: 'nuxtJs',
@@ -1168,7 +1076,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://nuxt.com',
         description: 'A framework based on Vue.',
         icon: siNuxt,
-        color: '#00DC82',
       },
       {
         id: 'vitePress',
@@ -1176,7 +1083,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://vitepress.dev',
         description: 'Static site generator powered by Vue.',
         icon: siVitepress,
-        color: '#5C73E7',
       },
       {
         id: 'gatsby',
@@ -1184,7 +1090,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://gatsbyjs.org',
         description: 'A framework based on React.',
         icon: siGatsby,
-        color: '#663399',
       },
     ],
   )
@@ -1203,14 +1108,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Unstyled UI components for React and Vue by the developers of Tailwind CSS.',
         icon: siHeadlessui,
-        color: '#66E3FF',
       },
       {
         id: 'motionJs',
         title: 'Motion',
         url: 'https://motion.dev',
         description: 'A JavaScript animation library.',
-        color: '#FDF45B',
       },
       {
         id: 'gsap',
@@ -1218,7 +1121,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://gsap.com',
         description: 'A JavaScript animation library.',
         icon: siGsap,
-        color: '#0AE448',
       },
       {
         id: 'pixiJs',
@@ -1226,7 +1128,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://pixijs.com',
         description: 'A 2D WebGL renderer.',
         searchUrl: 'https://pixijs.com/search/?q={search}',
-        color: '#D43A65',
       },
       {
         id: 'd3js',
@@ -1234,7 +1135,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://d3js.org',
         description: 'A library for data-driven visualizations.',
         icon: siD3,
-        color: '#F9A03C',
       },
       {
         id: 'threeJs',
@@ -1242,7 +1142,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://threejs.org',
         description: 'A library for creating 3D graphics.',
         icon: siThreedotjs,
-        color: '#000000',
       },
     ],
   )
@@ -1259,14 +1158,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Jotai',
         url: 'https://jotai.org',
         description: 'Atomic state management library for React.',
-        color: '#000000',
       },
       {
         id: 'zustand',
         title: 'Zustand',
         url: 'https://zustand-demo.pmnd.rs',
         description: 'State management library for React.',
-        color: '#423E39',
       },
       {
         id: 'pinia',
@@ -1274,7 +1171,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://pinia.vuejs.org',
         description: 'Data store for Vue.js.',
         icon: siPinia,
-        color: '#FFD859',
       },
       {
         id: 'redux',
@@ -1282,7 +1178,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://redux.js.org',
         description: 'State management library.',
         icon: siRedux,
-        color: '#764ABC',
       },
       {
         id: 'mobX',
@@ -1290,7 +1185,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://mobx.js.org',
         description: 'State management library.',
         icon: siMobx,
-        color: '#FF9955',
       },
       {
         id: 'nanoStores',
@@ -1299,7 +1193,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'A tiny state manager for React, React Native, Preact, Vue, Svelte, Solid, Lit, Angular, and vanilla JS.',
         icon: siNanostores,
-        color: '#000000',
       },
       {
         id: 'xoid',
@@ -1307,7 +1200,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.xoid.dev/',
         description:
           'Framework-agnostic state management library with bindings for multiple frameworks.',
-        color: '#2A2860',
       },
       {
         id: 'xState',
@@ -1316,7 +1208,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Actor-based state management & orchestration for complex app logic.',
         icon: siXstate,
-        color: '#2C3E50',
       },
     ],
   )
@@ -1333,7 +1224,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'React Router',
         url: 'https://reactrouter.com',
         icon: siReactrouter,
-        color: '#CA4245',
       },
       {
         id: 'tanStack',
@@ -1341,7 +1231,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://tanstack.com',
         description: 'List of open source libraries, including TanStack Query.',
         icon: siTanstack,
-        color: '#000000',
       },
       {
         id: 'tanStackQuery',
@@ -1350,7 +1239,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte.',
         icon: siReactquery,
-        color: '#FF4154',
       },
       {
         id: 'socketDotIo',
@@ -1359,7 +1247,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Bidirectional and low-latency communication for every platform.',
         icon: siSocketdotio,
-        color: '#010101',
       },
       {
         id: 'apolloGraphQl',
@@ -1367,7 +1254,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.apollographql.com',
         description: 'GraphQL client.',
         icon: siApollographql,
-        color: '#311C87',
       },
       {
         id: 'axios',
@@ -1375,14 +1261,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://axios-http.com',
         description: 'JS REST client library.',
         icon: siAxios,
-        color: '#5A29E4',
       },
       {
         id: 'tinyBase',
         title: 'TinyBase',
         url: 'https://tinybase.org',
         description: 'A reactive data store & sync engine.',
-        color: '#C63361',
       },
       {
         id: 'i18next',
@@ -1390,7 +1274,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.i18next.com',
         description: 'Framework-agnostic i18n library.',
         icon: siI18next,
-        color: '#26A69A',
         searchUrl: 'https://www.i18next.com/?q={search}',
       },
       {
@@ -1400,7 +1283,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'TypeScript-first schema validation with static type inference.',
         icon: siZod,
-        color: '#408AFF',
       },
       {
         id: 'immer',
@@ -1409,14 +1291,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Library that allows working with immutable data structures while you can use mutating syntax.',
         icon: siImmer,
-        color: '#00E7C3',
       },
       {
         id: 'immutableJs',
         title: 'Immutable.js',
         url: 'https://immutable-js.com',
         description: 'Library that provides immutable data structures.',
-        color: '#E85351',
       },
       {
         id: 'rxJs',
@@ -1424,7 +1304,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://rxjs.dev',
         description: 'Library for functional reactive programming.',
         icon: siReactivex,
-        color: '#B7178C',
       },
       {
         id: 'lodash',
@@ -1432,14 +1311,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://lodash.com',
         description: 'A classic utility library for JavaScript.',
         icon: siLodash,
-        color: '#3492ff',
       },
       {
         id: 'esToolkit',
         title: 'es-toolkit',
         url: 'https://es-toolkit.slash.page',
         description: 'State-of-the-art JavaScript utility library.',
-        color: '#45825C',
       },
       {
         id: 'dateFns',
@@ -1448,7 +1325,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'date-fns provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.',
         icon: siDatefns,
-        color: '#770C56',
       },
     ],
   )
@@ -1466,14 +1342,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://ionic.io',
         description: 'A framework for hybrid mobile apps.',
         icon: siIonic,
-        color: '#3880FF',
       },
       {
         id: 'reactNative',
         title: 'React Native',
         url: 'https://reactnative.dev',
         icon: siReact,
-        color: '#61DAFB',
       },
       {
         id: 'nativeScript',
@@ -1481,7 +1355,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://nativescript.org',
         description: 'A cross-platform framework for any frontend framework.',
         icon: siNativescript,
-        color: '#65ADF1',
       },
       {
         id: 'quasar',
@@ -1489,7 +1362,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://quasar.dev',
         description: 'A cross-platform Vue.js framework.',
         icon: siQuasar,
-        color: '#050A14',
       },
       {
         id: 'svelteNative',
@@ -1497,7 +1369,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://svelte.nativescript.org',
         description: 'Build native apps using Svelte.',
         icon: siSvelte,
-        color: '#FF3E00',
       },
       {
         id: 'electron',
@@ -1506,7 +1377,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'A framework to build native desktop apps using the web stack.',
         icon: siElectron,
-        color: '#47848F',
         searchUrl: 'https://www.electronjs.org/?q={search}',
       },
       {
@@ -1516,7 +1386,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'A framework to build native desktop apps using the web stack and Rust.',
         icon: siTauri,
-        color: '#24C8D8',
       },
       {
         id: 'blazor',
@@ -1524,7 +1393,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor',
         description: 'Compile C# to WASM and run it in the Browser.',
         icon: siBlazor,
-        color: '#512BD4',
       },
       {
         id: 'flutter',
@@ -1532,7 +1400,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://flutter.dev',
         description: 'A Dart based framework to build multi-platform apps.',
         icon: siFlutter,
-        color: '#02569B',
         searchUrl: 'https://flutter.dev/search?q={search}',
       },
     ],
@@ -1551,7 +1418,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://webpack.js.org',
         description: 'A JavaScript bundler.',
         icon: siWebpack,
-        color: '#8DD6F9',
       },
       {
         id: 'vite',
@@ -1559,7 +1425,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://vitejs.dev',
         description: 'A JavaScript bundler.',
         icon: siVite,
-        color: '#9135FF',
       },
       {
         id: 'vitePlus',
@@ -1567,7 +1432,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://viteplus.dev',
         description: 'A unified toolchain by void(0).',
         icon: siVite,
-        color: '#9135FF',
       },
       {
         id: 'rolldown',
@@ -1575,7 +1439,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://rolldown.rs',
         description: 'A JavaScript bundler by void(0).',
         icon: siRolldown,
-        color: '#FF4100',
       },
       {
         id: 'oxc',
@@ -1583,14 +1446,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://oxc.rs/',
         description: 'A JavaScript compiler by void(0).',
         icon: siOxc,
-        color: '#00F7F1',
       },
       {
         id: 'void0',
         title: 'void(0)',
         url: 'https://voidzero.dev',
         description: 'A universal build chain from the creators of Vite.',
-        color: '#000000',
       },
       {
         id: 'biome',
@@ -1599,7 +1460,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           "A universal build chain that includes a linter, compiler, bundler, and more. It's the successor of Rome.",
         icon: siBiome,
-        color: '#60A5FA',
       },
       {
         id: 'swc',
@@ -1607,7 +1467,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://swc.rs',
         description: 'Rust-based platform for the web.',
         icon: siSwc,
-        color: '#F8C457',
       },
       {
         id: 'esbuild',
@@ -1615,7 +1474,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://esbuild.github.io',
         description: 'An extremely fast JavaScript bundler.',
         icon: siEsbuild,
-        color: '#ffcf00',
       },
       {
         id: 'parcel',
@@ -1629,7 +1487,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://rollupjs.org',
         description: 'A JavaScript bundler.',
         icon: siRollupdotjs,
-        color: '#EC4A3F',
       },
       {
         id: 'gulp',
@@ -1637,7 +1494,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://gulpjs.com',
         description: 'A task management toolkit.',
         icon: siGulp,
-        color: '#CF4647',
       },
     ],
   )
@@ -1655,7 +1511,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.cypress.io',
         description: 'Library for test automation.',
         icon: siCypress,
-        color: '#69D3A7',
       },
       {
         id: 'puppeteer',
@@ -1664,7 +1519,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'API to control and automate a browser without showing its UI.',
         icon: siPuppeteer,
-        color: '#40B5A4',
       },
       {
         id: 'jest',
@@ -1672,7 +1526,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://jestjs.io',
         description: 'JS/TS testing framework.',
         icon: siJest,
-        color: '#C21325',
       },
       {
         id: 'vitest',
@@ -1680,7 +1533,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://vitest.dev',
         description: 'JS/TS testing framework by void(0).',
         icon: siVitest,
-        color: '#00FF74',
       },
       {
         id: 'mocha',
@@ -1688,7 +1540,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://mochajs.org',
         description: 'JS/TS testing framework.',
         icon: siMocha,
-        color: '#8D6748',
       },
       {
         id: 'selenium',
@@ -1696,7 +1547,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.selenium.dev',
         description: 'A framework for browser automation.',
         icon: siSelenium,
-        color: '#43B02A',
       },
     ],
   )
@@ -1715,7 +1565,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Open Web Application Security Project (OWASP) Cheat Sheets.',
         icon: siOwasp,
-        color: '#000000',
         searchUrl: 'https://cheatsheetseries.owasp.org/?q={search}',
       },
       {
@@ -1724,7 +1573,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://letsencrypt.org',
         description: 'Free TLS certificates.',
         icon: siLetsencrypt,
-        color: '#003a70',
       },
       {
         id: 'jwt',
@@ -1732,7 +1580,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://jwt.io',
         description: 'JSON Web Tokens.',
         icon: siJsonwebtokens,
-        color: '#000000',
       },
       {
         id: 'auth0',
@@ -1740,14 +1587,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://auth0.com',
         description: 'An authentication and authorization platform.',
         icon: siAuth0,
-        color: '#EB5424',
       },
       {
         id: 'haveIBeenPwned',
         title: 'Have I been pwned',
         url: 'https://haveibeenpwned.com',
         icon: siHaveibeenpwned,
-        color: '#030304',
       },
     ],
   )
@@ -1765,7 +1610,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://webhint.io',
         description:
           "Linting tool that checks your website's accessibility, speed, cross-browser compatibility, and more.",
-        color: '#40079C',
       },
       {
         id: 'eslint',
@@ -1773,7 +1617,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://eslint.org',
         description: 'JavaScript and TypeScript linter.',
         icon: siEslint,
-        color: '#4B32C3',
       },
       {
         id: 'prettier',
@@ -1781,7 +1624,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://prettier.io',
         description: 'An opinionated code formatter.',
         icon: siPrettier,
-        color: '#F7B93E',
       },
       {
         id: 'editorConfig',
@@ -1790,7 +1632,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Control some text editor settings by using a config file.',
         icon: siEditorconfig,
-        color: '#010101',
       },
     ],
   )
@@ -1815,7 +1656,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://keepachangelog.com/en/1.1.0',
         description: 'Convention for writing changelogs.',
         icon: siKeepachangelog,
-        color: '#E05735',
       },
       {
         id: 'semver',
@@ -1824,14 +1664,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'A detailed description of the versioning schema "MAJOR.MINOR.PATCH".',
         icon: siSemver,
-        color: '#3F4551',
       },
       {
         id: 'gitmoji',
         title: 'Gitmoji',
         url: 'https://gitmoji.carloscuesta.me',
         description: 'An emoji guide for your commit messages.',
-        color: '#F9DE79',
       },
     ],
   )
@@ -1848,27 +1686,23 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Markdown',
         url: 'https://daringfireball.net/projects/markdown/',
         icon: siMarkdown,
-        color: '#000000',
       },
       {
         id: 'commonMark',
         title: 'CommonMark',
         url: 'https://commonmark.org',
         icon: siMarkdown,
-        color: '#000000',
       },
       {
         id: 'gfm',
         title: 'GitHub Flavored Markdown',
         url: 'https://github.github.com/gfm/',
-        color: '#181717',
       },
       {
         id: 'asciiDoc',
         title: 'AsciiDoc',
         url: 'https://asciidoc.org/',
         icon: siAsciidoctor,
-        color: '#E40046',
       },
       {
         id: 'mermaidJs',
@@ -1876,41 +1710,35 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://mermaid.js.org',
         description: 'A language that turns text to diagrams.',
         icon: siMermaid,
-        color: '#FF3670',
       },
       {
         id: 'd2lang',
         title: 'D2',
         url: 'https://d2lang.com',
         description: 'A language that turns text to diagrams.',
-        color: '#526EEB',
       },
       {
         id: 'json',
         title: 'JSON',
         url: 'https://www.json.org',
         icon: siJson,
-        color: '#000000',
       },
       {
         id: 'jsonSchema',
         title: 'JSON Schema',
         url: 'https://json-schema.org',
-        color: '#000000',
       },
       {
         id: 'toml',
         title: 'TOML',
         url: 'https://toml.io',
         icon: siToml,
-        color: '#9C4121',
       },
       {
         id: 'yaml',
         title: 'YAML',
         url: 'https://yaml.org',
         icon: siYaml,
-        color: '#CB171E',
       },
       {
         id: 'docBook',
@@ -1930,7 +1758,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.latex-project.org',
         description: 'The traditional typesetting language.',
         icon: siLatex,
-        color: '#008080',
       },
       {
         id: 'typst',
@@ -1938,7 +1765,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://typst.app',
         description: 'A modern, scriptable typesetting language.',
         icon: siTypst,
-        color: '#239DAD',
       },
       {
         id: 'pandoc',
@@ -1946,7 +1772,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://pandoc.org',
         description: 'A universal document converter.',
         icon: siPandoc,
-        color: '#4093DA',
       },
     ],
   )
@@ -1963,7 +1788,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'TypeScript',
         url: 'https://www.typescriptlang.org',
         icon: siTypescript,
-        color: '#3178C6',
       },
       {
         id: 'jsDoc',
@@ -1975,28 +1799,24 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'AssemblyScript',
         url: 'https://www.assemblyscript.org',
         icon: siAssemblyscript,
-        color: '#007AAC',
       },
       {
         id: 'reasonMl',
         title: 'Reason',
         url: 'https://reasonml.github.io',
         icon: siReason,
-        color: '#DD4B39',
       },
       {
         id: 'reScript',
         title: 'ReScript',
         url: 'https://rescript-lang.org',
         icon: siRescript,
-        color: '#E6484F',
       },
       {
         id: 'babelJs',
         title: 'Babel',
         url: 'https://babeljs.io',
         icon: siBabel,
-        color: '#F9DC3E',
       },
     ],
   )
@@ -2013,7 +1833,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Node.js',
         url: 'https://nodejs.org/en',
         icon: siNodedotjs,
-        color: '#339933',
       },
       {
         id: 'nvm',
@@ -2021,7 +1840,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://github.com/nvm-sh/nvm',
         description: 'Node.js version manager for macOS and Linux.',
         icon: siNvm,
-        color: '#F4DD4B',
       },
       {
         id: 'nvmWindows',
@@ -2035,14 +1853,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Deno',
         url: 'https://deno.land',
         icon: siDeno,
-        color: '#000000',
       },
       {
         id: 'bun',
         title: 'Bun',
         url: 'https://bun.sh',
         icon: siBun,
-        color: '#9D907C',
       },
     ],
   )
@@ -2059,7 +1875,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Python',
         url: 'https://www.python.org',
         icon: siPython,
-        color: '#3776AB',
         searchUrl: 'https://www.python.org/search/?q={search}',
       },
       {
@@ -2067,7 +1882,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'PHP',
         url: 'https://www.php.net',
         icon: siPhp,
-        color: '#777BB4',
         searchUrl: 'https://www.php.net/manual-lookup.php?pattern={search}',
       },
       {
@@ -2075,48 +1889,41 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: '.NET',
         url: 'https://dotnet.microsoft.com',
         icon: siDotnet,
-        color: '#512BD4',
       },
       {
         id: 'java',
         title: 'Java',
         url: 'https://www.java.com',
-        color: '#E59639',
       },
       {
         id: 'openJdk',
         title: 'OpenJDK',
         url: 'https://openjdk.java.net',
         icon: siOpenjdk,
-        color: '#000000',
       },
       {
         id: 'kotlin',
         title: 'Kotlin',
         url: 'https://kotlinlang.org',
         icon: siKotlin,
-        color: '#7F52FF',
       },
       {
         id: 'ruby',
         title: 'Ruby',
         url: 'https://www.ruby-lang.org',
         icon: siRuby,
-        color: '#CC342D',
       },
       {
         id: 'crystal',
         title: 'Crystal',
         url: 'https://crystal-lang.org',
         icon: siCrystal,
-        color: '#000000',
       },
       {
         id: 'dart',
         title: 'Dart',
         url: 'https://dart.dev',
         icon: siDart,
-        color: '#0175c2',
         searchUrl: 'https://dart.dev/search?ie=UTF-8&q={search}',
       },
       {
@@ -2124,28 +1931,24 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Swift',
         url: 'https://swift.org',
         icon: siSwift,
-        color: '#F05138',
       },
       {
         id: 'rust',
         title: 'Rust',
         url: 'https://rust-lang.org',
         icon: siRust,
-        color: '#000000',
       },
       {
         id: 'zig',
         title: 'Zig',
         url: 'https://ziglang.org',
         icon: siZig,
-        color: '#F7A41D',
       },
       {
         id: 'golang',
         title: 'Golang',
         url: 'https://go.dev',
         icon: siGo,
-        color: '#00ADD8',
       },
       {
         id: 'typeSpec',
@@ -2153,7 +1956,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://typespec.io',
         description:
           'A language by Microsoft to describe data and to generate API specs, client and server code, docs, etc.',
-        color: '#2B5D9E',
       },
     ],
   )
@@ -2171,7 +1973,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://symfony.com',
         description: 'PHP web framework.',
         icon: siSymfony,
-        color: '#000000',
         searchUrl: 'https://symfony.com/search?q={search}',
       },
       {
@@ -2180,7 +1981,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://laravel.com',
         description: 'PHP web framework.',
         icon: siLaravel,
-        color: '#FF2D20',
       },
       {
         id: 'yii',
@@ -2188,7 +1988,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.yiiframework.com',
         description: 'PHP web framework.',
         icon: siYii,
-        color: '#40B3D8',
         searchUrl: 'https://www.yiiframework.com/search?q={search}',
       },
       {
@@ -2196,7 +1995,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Fiber',
         url: 'https://gofiber.io',
         description: 'Go web framework.',
-        color: '#00ADD8',
       },
       {
         id: 'expressJs',
@@ -2204,7 +2002,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://expressjs.com',
         description: 'Node.js web framework.',
         icon: siExpress,
-        color: '#000000',
       },
       {
         id: 'fastify',
@@ -2212,7 +2009,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://fastify.dev',
         description: 'Node.js web framework.',
         icon: siFastify,
-        color: '#000000',
       },
       {
         id: 'nestJs',
@@ -2220,7 +2016,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://nestjs.com',
         description: 'Node.js web framework.',
         icon: siNestjs,
-        color: '#E0234E',
       },
       {
         id: 'rubyOnRails',
@@ -2228,14 +2023,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://rubyonrails.org',
         description: 'Ruby web framework.',
         icon: siRubyonrails,
-        color: '#D30001',
       },
       {
         id: 'aspDotNet',
         title: 'ASP.NET',
         url: 'https://dotnet.microsoft.com/apps/aspnet',
         description: '.NET web framework.',
-        color: '#7C66D9',
       },
       {
         id: 'javaSpring',
@@ -2243,7 +2036,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://spring.io',
         description: 'Java web framework.',
         icon: siSpring,
-        color: '#6DB33F',
       },
       {
         id: 'quarkus',
@@ -2251,13 +2043,11 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://quarkus.io',
         searchUrl: 'https://quarkus.io/guides/#q={search}',
         icon: siQuarkus,
-        color: '#4695EB',
       },
       {
         id: 'micronaut',
         title: 'Micronaut',
         url: 'https://micronaut.io',
-        color: '#000000',
       },
     ],
   )
@@ -2275,7 +2065,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://wordpress.org',
         description: 'Open source PHP CMS.',
         icon: siWordpress,
-        color: '#21759B',
         searchUrl: 'https://wordpress.org/search/{search}/',
       },
       {
@@ -2284,7 +2073,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.drupal.org',
         description: 'Open source PHP CMS.',
         icon: siDrupal,
-        color: '#0678BE',
         searchUrl: 'https://www.drupal.org/search/site/{search}',
       },
       {
@@ -2293,7 +2081,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://getgrav.org',
         description: 'Open source PHP CMS.',
         icon: siGrav,
-        color: '#221E1F',
       },
       {
         id: 'craftCms',
@@ -2301,7 +2088,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://craftcms.com',
         description: 'Commercial PHP CMS.',
         icon: siCraftcms,
-        color: '#E5422B',
       },
       {
         id: 'statamic',
@@ -2309,7 +2095,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://statamic.com',
         description: 'Commercial PHP CMS.',
         icon: siStatamic,
-        color: '#FF269E',
       },
       {
         id: 'octoberCms',
@@ -2317,7 +2102,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://octobercms.com/',
         description: 'Commercial PHP CMS.',
         icon: siOctobercms,
-        color: '#DB6A26',
       },
       {
         id: 'kirbyCms',
@@ -2325,7 +2109,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://getkirby.com',
         description: 'Commercial PHP CMS.',
         icon: siKirby,
-        color: '#000000',
       },
       {
         id: 'directus',
@@ -2333,7 +2116,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://directus.io',
         description: 'Free* headless CMS for Node.js.',
         icon: siDirectus,
-        color: '#263238',
       },
     ],
   )
@@ -2351,7 +2133,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.mysql.com',
         description: 'A relational database.',
         icon: siMysql,
-        color: '#4479A1',
         searchUrl:
           'https://search.oracle.com/mysql?q={search}&size=10&page=1&tab=all&app=mysql',
       },
@@ -2361,7 +2142,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://mariadb.org',
         description: 'A relational database.',
         icon: siMariadb,
-        color: '#003545',
       },
       {
         id: 'msSqlServer',
@@ -2369,7 +2149,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.microsoft.com/de-de/sql-server',
         description: 'A relational database.',
         searchUrl: 'https://www.microsoft.com/en-us/search/explore?q={search}',
-        color: '#3376CD',
       },
       {
         id: 'postgreSql',
@@ -2377,7 +2156,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.postgresql.org',
         description: 'A relational database.',
         icon: siPostgresql,
-        color: '#4169E1',
         searchUrl: 'https://www.postgresql.org/search/?q={search}',
       },
       {
@@ -2385,7 +2163,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Oracle Database',
         url: 'https://www.oracle.com/de/database/technologies',
         description: 'A relational database.',
-        color: '#B84F3C',
       },
       {
         id: 'sqlite',
@@ -2393,7 +2170,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.sqlite.org',
         description: 'A file based relational database.',
         icon: siSqlite,
-        color: '#003B57',
         searchUrl: 'https://www.sqlite.org/search?s=d&q={search}',
       },
       {
@@ -2402,7 +2178,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.mongodb.com',
         description: 'A document database.',
         icon: siMongodb,
-        color: '#47A248',
         searchUrl: 'https://www.mongodb.com/search?addsearch={search}',
       },
       {
@@ -2411,7 +2186,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://couchdb.apache.org',
         description: 'A document database.',
         icon: siApachecouchdb,
-        color: '#E42528',
         searchUrl:
           'https://docs.couchdb.org/en/stable/search.html?q={search}&check_keywords=yes&area=default',
       },
@@ -2420,7 +2194,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'SurrealDB',
         url: 'https://surrealdb.com',
         icon: siSurrealdb,
-        color: '#FF00A0',
       },
       {
         id: 'redis',
@@ -2428,7 +2201,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://redis.io',
         description: 'An in-memory key value store.',
         icon: siRedis,
-        color: '#FF4438',
       },
       {
         id: 'neo4j',
@@ -2436,7 +2208,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://neo4j.com',
         description: 'A graph database.',
         icon: siNeo4j,
-        color: '#4581C3',
       },
     ],
   )
@@ -2453,7 +2224,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'selfh.st',
         url: 'https://selfh.st',
         description: 'A weekly newsletter about self hosting.',
-        color: '#2C5FD1',
       },
       {
         id: 'awesomeSelfhost',
@@ -2461,7 +2231,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://awesome-selfhosted.net',
         description: 'List of apps and services you can host yourself.',
         icon: siAwesomelists,
-        color: '#FC60A8',
       },
     ],
   )
@@ -2478,7 +2247,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Google Fonts',
         url: 'https://fonts.google.com',
         icon: siGooglefonts,
-        color: '#4285F4',
         searchUrl: 'https://fonts.google.com/?query={search}',
       },
       {
@@ -2517,7 +2285,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Font Awesome',
         url: 'https://fontawesome.com',
         icon: siFontawesome,
-        color: '#528DD7',
         searchUrl: 'https://fontawesome.com/icons?d=gallery&p=2&q={search}',
       },
       {
@@ -2526,14 +2293,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://pictogrammers.com',
         description:
           'A collection of open-source icons including "Material Design Icons".',
-        color: '#4B0962',
       },
       {
         id: 'heroicons',
         title: 'Heroicons',
         url: 'https://heroicons.com',
         description: 'Icons by the developers of Tailwind CSS.',
-        color: '#845EEE',
       },
       {
         id: 'lucide',
@@ -2541,7 +2306,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://lucide.dev',
         description: 'Fork of Feather Icons with more icons.',
         icon: siLucide,
-        color: '#F56565',
       },
       {
         id: 'dashboardIcons',
@@ -2557,7 +2321,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://simpleicons.org',
         description: 'Collection of single colored brand logos.',
         icon: siSimpleicons,
-        color: '#111111',
         searchUrl: 'https://simpleicons.org/?q={search}',
       },
       {
@@ -2567,7 +2330,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'A public API to generate small static and dynamic badge images.',
         icon: siShieldsdotio,
-        color: '#000000',
       },
     ],
   )
@@ -2585,7 +2347,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.pexels.com',
         description: 'Stock images.',
         icon: siPexels,
-        color: '#05A081',
         searchUrl: 'https://www.pexels.com/de-de/suche/{search}',
       },
       {
@@ -2594,7 +2355,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://unsplash.com',
         description: 'Stock images.',
         icon: siUnsplash,
-        color: '#000000',
         searchUrl: 'https://unsplash.com/s/photos/{search}',
       },
       {
@@ -2603,7 +2363,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.toptal.com/designers/subtlepatterns',
         description: 'A collection of subtle background patterns (by Toptal).',
         icon: siToptal,
-        color: '#3863A0',
       },
       {
         id: 'transparentTextures',
@@ -2655,7 +2414,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://developer.chrome.com',
         description: 'Official developer resources about Chrome Browser.',
         icon: siGooglechrome,
-        color: '#4285F4',
       },
       {
         id: 'chromeOsDotDev',
@@ -2663,7 +2421,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://chromeos.dev',
         description: 'Official developer resources about ChromeOS.',
         icon: siGooglechrome,
-        color: '#4285F4',
         searchUrl: 'https://chromeos.dev/en/search?q={search}',
       },
       {
@@ -2673,7 +2430,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Official Dashboard to manage Chrome Extensions, Themes, etc.',
         icon: siChromewebstore,
-        color: '#4285F4',
       },
       {
         id: 'firefixAddOnDevHub',
@@ -2681,7 +2437,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://addons.mozilla.org/en-US/developers/addons',
         description: 'Official Dashboard to manage Firefox Extensions.',
         icon: siFirefoxbrowser,
-        color: '#FF7139',
       },
     ],
   )
@@ -2697,7 +2452,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         id: 'w3c',
         title: 'W3C',
         url: 'https://www.w3.org',
-        color: '#255997',
       },
       {
         id: 'webdxDevSignals',
@@ -2726,7 +2480,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'CSS database is a list of CSS features and their positions in the process of becoming implemented web standards.',
         icon: siCss,
-        color: '#663399',
       },
       {
         id: 'mozSpecPositions',
@@ -2735,7 +2488,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           "A list of Mozilla's position on open web and web-related specifications.",
         icon: siMozilla,
-        color: '#000000',
       },
       {
         id: 'tc39',
@@ -2743,7 +2495,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://tc39.es',
         description:
           "Official website of Ecma International's TC39 (Technical Committee 39).",
-        color: '#EC8331',
       },
       {
         id: 'tc39Forum',
@@ -2752,7 +2503,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           "Official forum of Ecma International's TC39 (Technical Committee 39). Talk about ECMAScript features and proposals.",
         searchUrl: 'https://es.discourse.group/search?q={search}',
-        color: '#EC8331',
       },
       {
         id: 'wicg',
@@ -2761,7 +2511,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Official website of the WICG (Web Incubator Community Group).',
         searchUrl: 'https://discourse.wicg.io/search?q={search}',
-        color: '#5AB1C1',
       },
       {
         id: 'openUi',
@@ -2769,14 +2518,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://open-ui.org/',
         description:
           "Official website of Open UI (a W3C community group). It's about making built-in form controls styleable while also adding new ones.",
-        color: '#49A258',
       },
       {
         id: 'openJs',
         title: 'OpenJS Foundation',
         url: 'https://openjsf.org',
         icon: siOpenjsfoundation,
-        color: '#0075C9',
       },
     ],
   )
@@ -2795,7 +2542,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Check browser compatibility of various language features and browser APIs.',
         searchUrl: 'https://caniuse.com/#search={search}',
-        color: '#7A3A14',
       },
       {
         id: 'canIEmail',
@@ -2804,7 +2550,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Check e-mail client compatibility of various language features.',
         searchUrl: 'https://www.caniemail.com/search/?s={search}',
-        color: '#3070DE',
       },
       {
         id: 'canIWebView',
@@ -2812,7 +2557,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://caniwebview.com',
         description: 'Check system webviews for feature support.',
         searchUrl: 'https://caniwebview.com/search/?s={search}',
-        color: '#255997',
       },
       {
         id: 'a11ySupport',
@@ -2834,13 +2578,11 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.chromestatus.com',
         description: 'Chrome browser release notes.',
         icon: siGooglechrome,
-        color: '#4285f4',
       },
       {
         id: 'msEdgeRoadmap',
         title: 'Microsoft 365/Edge Roadmap',
         url: 'https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge',
-        color: '#3B84D1',
       },
       {
         id: 'nodeGreen',
@@ -2871,20 +2613,17 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Mozilla Firefox',
         url: 'https://www.mozilla.org/de/firefox/new',
         icon: siFirefoxbrowser,
-        color: '#FF7139',
       },
       {
         id: 'chromeBrowser',
         title: 'Google Chrome',
         url: 'https://www.google.com/intl/de/chrome',
         icon: siGooglechrome,
-        color: '#4285F4',
       },
       {
         id: 'msEdgeBrowser',
         title: 'Microsoft Edge',
         url: 'https://www.microsoft.com/de-de/edge/download',
-        color: '#3B84D1',
       },
       {
         id: 'adobe',
@@ -2892,26 +2631,22 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.adobe.com',
         searchUrl:
           'https://www.adobe.com/search.html#q={search}&sort=relevancy',
-        color: '#D83320',
       },
       {
         id: 'affinity',
         title: 'Affinity',
         url: 'https://affinity.studio',
-        color: '#B7EF84',
       },
       {
         id: 'canva',
         title: 'Canva',
         url: 'https://www.canva.com',
-        color: '#8B33F6',
       },
       {
         id: 'figma',
         title: 'Figma',
         url: 'https://figma.com',
         icon: siFigma,
-        color: '#f24e1e',
       },
     ],
   )
@@ -2927,14 +2662,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         id: 'visualStudio',
         title: 'Visual Studio',
         url: 'https://visualstudio.microsoft.com',
-        color: '#9158EE',
       },
       {
         id: 'vsCode',
         title: 'Visual Studio Code',
         url: 'https://code.visualstudio.com',
         searchUrl: 'https://code.visualstudio.com/Search?q={search}',
-        color: '#3376CD',
       },
       {
         id: 'vsCodium',
@@ -2942,7 +2675,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://vscodium.com',
         description: 'Free/Libre Open Source Software Binaries of VS Code.',
         icon: siVscodium,
-        color: '#2F80ED',
       },
       {
         id: 'jetBrains',
@@ -2951,7 +2683,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         description:
           'Developer of IDEs like IntelliJ, PHPStorm, WebStorm, etc.',
         icon: siJetbrains,
-        color: '#000000',
         searchUrl: 'https://www.jetbrains.com/search/?q={search}',
       },
       {
@@ -2959,14 +2690,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Zed',
         url: 'https://zed.dev',
         icon: siZedindustries,
-        color: '#084CCF',
       },
       {
         id: 'cursorEditor',
         title: 'Cursor',
         url: 'https://cursor.com',
         icon: siCursor,
-        color: '#000000',
       },
     ],
   )
@@ -2983,7 +2712,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Docker',
         url: 'https://www.docker.com',
         icon: siDocker,
-        color: '#2496ED',
         searchUrl: 'https://www.docker.com/search/?_sf_s={search}',
       },
       {
@@ -2991,20 +2719,17 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Kubernetes',
         url: 'https://kubernetes.io',
         icon: siKubernetes,
-        color: '#326CE5',
       },
       {
         id: 'ddev',
         title: 'ddev',
         url: 'https://ddev.com',
-        color: '#4BA5DD',
       },
       {
         id: 'virtualBox',
         title: 'VirtualBox',
         url: 'https://www.virtualbox.org',
         icon: siVirtualbox,
-        color: '#2F61B4',
         searchUrl:
           'https://www.virtualbox.org/search?q={search}&wiki=on&changeset=on&ticket=on',
       },
@@ -3013,7 +2738,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Vagrant',
         url: 'https://developer.hashicorp.com/vagrant',
         icon: siVagrant,
-        color: '#1868F2',
       },
       {
         id: 'postman',
@@ -3021,7 +2745,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.postman.com',
         description: 'A REST client.',
         icon: siPostman,
-        color: '#FF6C37',
       },
       {
         id: 'insomnia',
@@ -3029,7 +2752,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://insomnia.rest',
         description: 'A REST client.',
         icon: siInsomnia,
-        color: '#4000BF',
       },
       {
         id: 'bruno',
@@ -3037,14 +2759,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.usebruno.com',
         description: 'A git friendly REST client.',
         icon: siBruno,
-        color: '#F4AA41',
       },
       {
         id: 'git',
         title: 'Git',
         url: 'https://git-scm.com',
         icon: siGit,
-        color: '#f05032',
         searchUrl: 'https://git-scm.com/search/results?search={search}',
       },
       {
@@ -3053,14 +2773,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://gitkraken.com',
         description: 'A git client.',
         icon: siGitkraken,
-        color: '#179287',
       },
       {
         id: 'fork',
         title: 'Fork',
         url: 'https://git-fork.com',
         description: 'A git client for Windows and macOS.',
-        color: '#4DA1E9',
       },
     ],
   )
@@ -3077,27 +2795,23 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Zsh',
         url: 'https://www.zsh.org',
         icon: siZsh,
-        color: '#F15A24',
       },
       {
         id: 'fishShell',
         title: 'Fish shell',
         url: 'https://fishshell.com',
         icon: siFishshell,
-        color: '#34C534',
       },
       {
         id: 'nushell',
         title: 'Nushell',
         url: 'https://www.nushell.sh',
         icon: siNushell,
-        color: '#4E9A06',
       },
       {
         id: 'powerShell',
         title: 'PowerShell',
         url: 'https://learn.microsoft.com/de-de/powershell/',
-        color: '#3376CD',
       },
     ],
   )
@@ -3114,7 +2828,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'YouTube',
         url: 'https://youtube.com',
         icon: siYoutube,
-        color: '#ff0000',
         searchUrl: 'https://www.youtube.com/results?search_query={search}',
       },
       {
@@ -3122,7 +2835,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'YouTube Music',
         url: 'https://music.youtube.com',
         icon: siYoutubemusic,
-        color: '#ff0000',
         searchUrl: 'https://music.youtube.com/search?q={search}',
       },
       {
@@ -3130,7 +2842,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Spotify',
         url: 'https://open.spotify.com',
         icon: siSpotify,
-        color: '#1ED760',
         searchUrl: 'https://open.spotify.com/search/{search}',
       },
       {
@@ -3138,7 +2849,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Apple Music',
         url: 'https://music.apple.com',
         icon: siApplemusic,
-        color: '#FA243C',
         searchUrl: 'https://music.apple.com/us/search?term={search}',
       },
       {
@@ -3147,14 +2857,12 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://www.deezer.com',
         searchUrl: 'https://www.deezer.com/search/{search}',
         icon: siDeezer,
-        color: '#A238FF',
       },
       {
         id: 'soundCloud',
         title: 'SoundCloud',
         url: 'https://soundcloud.com',
         icon: siSoundcloud,
-        color: '#FF5500',
         searchUrl: 'https://soundcloud.com/search?q={search}',
       },
       {
@@ -3162,28 +2870,24 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Mixcloud',
         url: 'https://mixcloud.com',
         icon: siMixcloud,
-        color: '#5000FF',
       },
       {
         id: 'tuneIn',
         title: 'TuneIn',
         url: 'https://tunein.com',
         searchUrl: 'https://tunein.com/search/?query={search}',
-        color: '#64D5CB',
       },
       {
         id: 'diFm',
         title: 'DI.FM',
         url: 'https://di.fm',
         searchUrl: 'https://www.di.fm/search?q={search}',
-        color: '#488BF3',
       },
       {
         id: 'myNoise',
         title: 'myNoise',
         url: 'https://mynoise.net',
         description: 'Custom Soundscapes for Focus, Relaxation & Sleep.',
-        color: '#EC6241',
       },
     ],
   )
@@ -3200,42 +2904,36 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'Stack Overflow Annual Developer Survey',
         url: 'https://survey.stackoverflow.co',
         icon: siStackoverflow,
-        color: '#F58025',
       },
       {
         id: 'stateOfHtml',
         title: 'State of HTML',
         url: 'https://stateofhtml.com',
         icon: siHtml5,
-        color: '#E34F26',
       },
       {
         id: 'stateOfCss',
         title: 'State of CSS',
         url: 'https://stateofcss.com',
         icon: siCss,
-        color: '#663399',
       },
       {
         id: 'stateOfJs',
         title: 'State of JavaScript',
         url: 'https://stateofjs.com',
         icon: siJavascript,
-        color: '#F7DF1E',
       },
       {
         id: 'stateOfGraphQL',
         title: 'State of GraphQL',
         url: 'https://www.stateofgraphql.com',
         icon: siGraphql,
-        color: '#E10098',
       },
       {
         id: 'stateOfReact',
         title: 'State of React',
         url: 'https://stateofreact.com',
         icon: siReact,
-        color: '#61DAFB',
       },
     ],
   )
@@ -3253,7 +2951,6 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         url: 'https://frontendfoc.us',
         description: 'Newsletter with news about web frontend development.',
         icon: siHtml5,
-        color: '#e34f26',
       },
       {
         id: 'webWeekly',
@@ -3265,77 +2962,66 @@ export function defineLinks<T extends LinksMap>(links: T): T {
         title: 'CSS Weekly',
         url: 'https://css-weekly.com',
         icon: siCss,
-        color: '#663399',
       },
       {
         id: 'jsWeekly',
         title: 'JavaScript Weekly',
         url: 'https://javascriptweekly.com',
         icon: siJavascript,
-        color: '#f7df1e',
       },
       {
         id: 'nodeWeekly',
         title: 'Node Weekly',
         url: 'https://nodeweekly.com',
         icon: siNodedotjs,
-        color: '#339933',
       },
       {
         id: 'reactStatusNewsletter',
         title: 'React Status Newsletter',
         url: 'https://react.statuscode.com',
         icon: siReact,
-        color: '#61dafb',
       },
       {
         id: 'goWeekly',
         title: 'Golang Weekly',
         url: 'https://golangweekly.com',
         icon: siGo,
-        color: '#00ADD8',
       },
       {
         id: 'swiftUiWeekly',
         title: 'SwiftUI Weekly',
         url: 'https://weekly.swiftwithmajid.com',
         icon: siSwift,
-        color: '#F05138',
       },
       {
         id: 'pycodersWeekly',
         title: "Pycoder's Weekly",
         url: 'https://pycoders.com',
         icon: siPython,
-        color: '#3776AB',
       },
       {
         id: 'rubyWeekly',
         title: 'Ruby Weekly',
         url: 'https://rubyweekly.com',
         icon: siRuby,
-        color: '#CC342D',
       },
       {
         id: 'postgresWeekly',
         title: 'Postgres Weekly',
         url: 'https://postgresweekly.com',
         icon: siPostgresql,
-        color: '#4169E1',
       },
       {
         id: 'dailyDotDev',
         title: 'daily.dev',
         url: 'https://daily.dev',
         icon: siDailydotdev,
-        color: '#CE3DF3',
       },
       {
         id: 'codropsCollective',
         title: 'Codrops Collective',
         url: 'https://tympanus.net/codrops/collective',
         searchUrl: 'https://tympanus.net/codrops/?s={search}&search-type=posts',
-        color: '#000000',
       },
     ],
   )
