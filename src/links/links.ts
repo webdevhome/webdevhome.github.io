@@ -28,6 +28,10 @@ export type LinksMap = Map<Category, LinkItem[]>
 //#region exports
 export const categoryToLinksMap = defineLinks<LinksMap>(new Map())
 
+export const categoriesArray = categoryToLinksMap.keys().toArray()
+
+export const allCategoryIds = categoriesArray.map((c) => c.id)
+
 export const linksToCategoryMap: Map<LinkItem, Category> = (() => {
   const result = new Map<LinkItem, Category>()
 

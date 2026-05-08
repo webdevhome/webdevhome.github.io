@@ -2,6 +2,8 @@ import {
   ArrowLeftIcon,
   ArrowUpToLineIcon,
   CheckIcon,
+  CopyMinusIcon,
+  CopyPlusIcon,
   EyeIcon,
   EyeOffIcon,
   SearchIcon,
@@ -14,21 +16,52 @@ import {
   setAppMode,
   useIsAppMode,
 } from '../app/appMode.ts'
-import { hideAllUrls, showAllUrls } from '../links/hiddenUrls.ts'
+import {
+  collapseAllLinkGroups,
+  expandAllLinkGroups,
+  useAreAllLinkGroupsCollapsed,
+  useAreAllLinkGroupsExpanded,
+} from '../link-groups/linkGroupsState.ts'
+import {
+  hideAllUrls,
+  showAllUrls,
+  useAreAnyUrlsHidden,
+} from '../links/hiddenUrls.ts'
 import { useHasSearchTarget } from '../search/onSiteSearch.ts'
 import { UiActionButton } from '../ui/UiActionButton.tsx'
 import { UiHeaderDivider } from '../ui/UiHeaderDivider.tsx'
-
-function handleScrollTopClick() {
-  const mainContentElement = document.getElementById('main-content')
-  if (mainContentElement === null) return
-
-  mainContentElement.scrollTo({ top: 0, behavior: 'smooth' })
-}
+import { scrollToTop, useIsScrolledToTop } from './scrollToTop.ts'
 
 export const AppHeaderActions: FC = () => {
   const isAppMode = useIsAppMode()
   const hasSearchTarget = useHasSearchTarget()
+  const areAllLinkGroupsCollapsed = useAreAllLinkGroupsCollapsed()
+  const areAllLinkGroupsExpanded = useAreAllLinkGroupsExpanded()
+  const areAnyUrlsHidden = useAreAnyUrlsHidden()
+  const isScrolledToTop = useIsScrolledToTop()
+
+  const defaultAndCustomizeModeActions = (
+    <>
+      <UiActionButton
+        icon={<CopyMinusIcon />}
+        title="Collapse all"
+        enabled={!areAllLinkGroupsCollapsed && areAnyUrlsHidden}
+        action={collapseAllLinkGroups}
+      />
+      <UiActionButton
+        icon={<CopyPlusIcon />}
+        title="Expand all"
+        enabled={!areAllLinkGroupsExpanded && areAnyUrlsHidden}
+        action={expandAllLinkGroups}
+      />
+      <UiActionButton
+        icon={<ArrowUpToLineIcon />}
+        title="Scroll to top"
+        enabled={!isScrolledToTop}
+        action={scrollToTop}
+      />
+    </>
+  )
 
   if (isAppMode('default')) {
     return (
@@ -39,11 +72,7 @@ export const AppHeaderActions: FC = () => {
           visible="small-screens"
           action={() => setAppMode('search')}
         />
-        <UiActionButton
-          icon={<ArrowUpToLineIcon />}
-          title="Scroll to top"
-          action={handleScrollTopClick}
-        />
+        {defaultAndCustomizeModeActions}
       </>
     )
   }
@@ -95,11 +124,7 @@ export const AppHeaderActions: FC = () => {
 
         <UiHeaderDivider />
 
-        <UiActionButton
-          icon={<ArrowUpToLineIcon />}
-          title="Scroll to top"
-          action={handleScrollTopClick}
-        />
+        {defaultAndCustomizeModeActions}
       </>
     )
   }

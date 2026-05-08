@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react'
+import { type FC } from 'react'
 import { useIsAppMode } from '../app/appMode.ts'
 import {
   toggleUrls,
@@ -18,10 +18,17 @@ import { ShowHiddenLinksButton } from './ShowHiddenLinksButton.tsx'
 type Props = {
   group: Category
   links: LinkItem[]
+  showHiddenLinks: boolean
+  onToggleShowHiddenLinks: (id: string) => void
 }
 
-export const LinkGroup: FC<Props> = ({ group, links }) => {
-  const [showHiddenLinks, setShowHiddenLinks] = useState(false)
+export const LinkGroup: FC<Props> = ({
+  group,
+  links,
+  showHiddenLinks,
+  onToggleShowHiddenLinks,
+}) => {
+  // const [showHiddenLinks, setShowHiddenLinks] = useState(false)
 
   const isAppMode = useIsAppMode()
   const isUrlHidden = useIsUrlHidden()
@@ -68,7 +75,7 @@ export const LinkGroup: FC<Props> = ({ group, links }) => {
         <ShowHiddenLinksButton
           hiddenLinksCount={hiddenLinksCount}
           showHiddenLinks={showHiddenLinks}
-          onClick={() => setShowHiddenLinks(!showHiddenLinks)}
+          onClick={() => onToggleShowHiddenLinks(group.id)}
         />
 
         {showHiddenLinks &&

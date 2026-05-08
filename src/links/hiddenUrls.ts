@@ -1,7 +1,7 @@
 import { persistentAtom } from '@nanostores/persistent'
 import { useStore } from '@nanostores/react'
 import { computed } from 'nanostores'
-import { makeSetEncoder, updateStore } from '../utils/nanostores.ts'
+import { makeSetEncoder } from '../utils/nanostores.ts'
 import {
   categoryToLinksMap,
   linksSet,
@@ -27,13 +27,7 @@ export function setHiddenUrls(urls: LinkItem['url'][]) {
 }
 
 export function toggleUrl(url: LinkItem['url']) {
-  const oldState = $hiddenUrls.get()
-
-  if (oldState.has(url)) {
-    updateStore($hiddenUrls, (urls) => urls.difference(new Set([url])))
-  } else {
-    updateStore($hiddenUrls, (urls) => new Set([...urls, url]))
-  }
+  $hiddenUrls.set($hiddenUrls.get().symmetricDifference(new Set([url])))
 }
 
 export function toggleUrls(urls: LinkItem['url'][]) {
@@ -70,6 +64,12 @@ export function useAreAllUrlsHidden(urls: LinkItem['url'][]): boolean {
   const hiddenUrls = useStore($hiddenUrls)
 
   return urls.every((u) => hiddenUrls.has(u))
+}
+
+export function useAreAnyUrlsHidden(): boolean {
+  const hiddenUrls = useStore($hiddenUrls)
+
+  return hiddenUrls.size > 0
 }
 
 export const $hiddenUrlsCount = computed($hiddenUrls, (urls) => urls.size)

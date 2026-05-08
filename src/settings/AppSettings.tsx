@@ -3,7 +3,6 @@ import {
   FormIcon,
   ListTodoIcon,
   TagsIcon,
-  WallpaperIcon,
 } from 'lucide-react'
 import { type FC } from 'react'
 import { toggleAppMode, useIsAppMode } from '../app/appMode.ts'
@@ -21,15 +20,10 @@ import {
 } from '../search/categoriesInSearch.ts'
 import { UiMenuDivider } from '../ui/UiMenuDivider.tsx'
 import { UiMenuItem } from '../ui/UiMenuItem.tsx'
-import {
-  toggleBackgroundImage,
-  useShowBackground,
-} from './useBackgroundImage.ts'
 
 export const AppSettings: FC = () => {
   const showDescriptions = useShowDescriptions()
   const openLinksInNewTab = useOpenLinksInNewTab()
-  const showBackground = useShowBackground()
   const showCategoriesInSearch = useShowCategoriesInSearch()
   const isAppMode = useIsAppMode()
 
@@ -57,13 +51,6 @@ export const AppSettings: FC = () => {
         selected={showCategoriesInSearch}
         closeOnAction={false}
         action={toggleShowCategoriesInSearch}
-      />
-      <UiMenuItem
-        label="Colorful background"
-        icon={<WallpaperIcon />}
-        selected={showBackground}
-        closeOnAction={false}
-        action={toggleBackgroundImage}
       />
       <UiMenuItem
         label="Open links in new tab"

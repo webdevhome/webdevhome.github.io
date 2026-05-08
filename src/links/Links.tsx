@@ -1,9 +1,15 @@
 import classNames from 'classnames'
 import { type FC } from 'react'
 import { LinkGroup } from '../link-groups/LinkGroup.tsx'
+import {
+  toggleExpandLinkGroup,
+  useExpandedLinkGroups,
+} from '../link-groups/linkGroupsState.ts'
 import { categoryToLinksMap } from './links.ts'
 
 export const Links: FC = () => {
+  const expandedLinkGroups = useExpandedLinkGroups()
+
   return (
     <div
       className={classNames(
@@ -14,8 +20,14 @@ export const Links: FC = () => {
     >
       {categoryToLinksMap
         .entries()
-        .map(([group, links]) => (
-          <LinkGroup group={group} links={links} key={group.id} />
+        .map(([category, links]) => (
+          <LinkGroup
+            key={category.id}
+            group={category}
+            links={links}
+            showHiddenLinks={expandedLinkGroups.has(category.id)}
+            onToggleShowHiddenLinks={toggleExpandLinkGroup}
+          />
         ))
         .toArray()}
     </div>
