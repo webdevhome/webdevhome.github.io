@@ -42,7 +42,6 @@ export const AppHeaderActions: FC = () => {
         <UiActionButton
           icon={<ArrowUpToLineIcon />}
           title="Scroll to top"
-          label="Top"
           action={handleScrollTopClick}
         />
       </>
@@ -99,7 +98,6 @@ export const AppHeaderActions: FC = () => {
         <UiActionButton
           icon={<ArrowUpToLineIcon />}
           title="Scroll to top"
-          label="Top"
           action={handleScrollTopClick}
         />
       </>
