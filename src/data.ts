@@ -81,6 +81,7 @@ import {
   siGulp,
   siHaveibeenpwned,
   siHeadlessui,
+  siHetzner,
   siHotwire,
   siHtml5,
   siHtmx,
@@ -300,7 +301,7 @@ export const linksData: LinksData = {
   },
 
   hosting: {
-    title: 'Hosting & Cloud Services',
+    title: 'Hosting & Cloud Providers',
     color: 'mist',
     links: {
       vercel: {
@@ -328,6 +329,11 @@ export const linksData: LinksData = {
         title: 'Fly.io',
         url: 'https://fly.io',
         icon: siFlydotio,
+      },
+      hetzner: {
+        title: 'Hetzner',
+        url: 'https://hetzner.com',
+        icon: siHetzner,
       },
       fortRabbit: {
         title: 'Fortrabbit',
