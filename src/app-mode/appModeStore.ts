@@ -6,10 +6,10 @@ import type { StoreObject } from '../utils/nanostores.ts'
 
 export type AppMode = 'default' | 'search' | 'customize'
 
-export const $appMode = atom<AppMode>('default')
+const $appMode = atom<AppMode>('default')
 
 export const appModeStore = {
-  appMode: readonlyType($appMode),
+  $appMode: readonlyType($appMode),
 
   set(mode: AppMode) {
     $appMode.set(mode)

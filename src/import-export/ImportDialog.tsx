@@ -1,4 +1,4 @@
-import { type ChangeEvent, type FC } from 'react'
+import { type FC } from 'react'
 import { UiButton } from '../ui/UiButton.tsx'
 import { UiDialog } from '../ui/UiDialog.tsx'
 import { UiDialogFooter } from '../ui/UiDialogFooter.tsx'
@@ -14,12 +14,6 @@ export const ImportDialog: FC = () => {
     importError,
     applyImport,
   } = useDataImport()
-
-  function handleImportDialogTextareaChange(
-    event: ChangeEvent<HTMLTextAreaElement>,
-  ) {
-    setImportJSON(event.target.value)
-  }
 
   return (
     <UiDialog
@@ -55,7 +49,7 @@ export const ImportDialog: FC = () => {
       <UiTextarea
         className="font-mono"
         value={importJSON}
-        onChange={handleImportDialogTextareaChange}
+        onChange={(event) => setImportJSON(event.target.value)}
       ></UiTextarea>
     </UiDialog>
   )

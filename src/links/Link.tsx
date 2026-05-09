@@ -30,8 +30,9 @@ export const Link: FC<Props> = ({
 }) => {
   const openLinksInNewTab = useStore(openLinksInNewTabStore.$setting)
   const showDescription = useStore(linkDescriptionsStore.$show)
-  const isAppMode = useIsAppMode()
   const hiddenLinks = useStore(hiddenLinksStore.$hiddenLinks)
+
+  const isAppMode = useIsAppMode()
 
   const isHidden = hiddenLinks.has(link)
   const category = linksToCategoryMap.get(link) ?? null

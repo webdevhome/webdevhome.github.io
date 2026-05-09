@@ -33,11 +33,6 @@ export const UiActionButton: FC<Props> = ({
   highlight = false,
   action = () => {},
 }) => {
-  function handleClick() {
-    if (!enabled) return
-    action()
-  }
-
   return (
     <button
       className={classNames(
@@ -74,7 +69,10 @@ export const UiActionButton: FC<Props> = ({
       )}
       title={title}
       tabIndex={0}
-      onClick={handleClick}
+      onClick={() => {
+        if (!enabled) return
+        action()
+      }}
     >
       {icon}
 

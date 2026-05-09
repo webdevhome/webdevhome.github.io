@@ -7,8 +7,8 @@ import { SearchHints } from './SearchHints.tsx'
 import { SearchResults } from './SearchResults.tsx'
 import { SearchTargetLabel } from './SearchTargetLabel.tsx'
 import { useAutoFocusSearchInput } from './useAutoFocusSearchInput.ts'
-import { useHandleSearchInputChange } from './useHandleSearchInputChange.ts'
-import { useHandleSearchInputKeydown } from './useHandleSearchInputKeydown.ts'
+import { handleSearchInputChange } from './handleSearchInputChange.ts'
+import { handleSearchInputKeydown } from './handleSearchInputKeydown.ts'
 
 export const Search: FC = () => {
   const searchInputRef = useRef<HTMLInputElement>(null)
@@ -16,9 +16,6 @@ export const Search: FC = () => {
   const searchTerm = useStore(searchStore.$searchTerm)
   const onSiteSearchTerm = useStore(onSiteSearchStore.$searchTerm)
   const searchTarget = useStore(onSiteSearchStore.$searchTarget)
-
-  const handleInputKeydown = useHandleSearchInputKeydown()
-  const handleInputChange = useHandleSearchInputChange()
 
   useAutoFocusSearchInput(searchInputRef)
 
@@ -46,8 +43,8 @@ export const Search: FC = () => {
             searchTarget === null ? 'Search links...' : `Search on website...`
           }
           value={searchTarget === null ? searchTerm : onSiteSearchTerm}
-          onChange={handleInputChange}
-          onKeyDown={handleInputKeydown}
+          onChange={handleSearchInputChange}
+          onKeyDown={handleSearchInputKeydown}
         />
       </div>
 

@@ -2,18 +2,9 @@ import classNames from 'classnames'
 import { ListTreeIcon } from 'lucide-react'
 import { type FC, type ReactElement } from 'react'
 import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
-import { jumpLinksStore } from '../jump-links/jumpLinksStore.ts'
 import { UiActionButton } from '../ui/UiActionButton.tsx'
-import { isMinBreakpoint } from '../utils/breakpoints.ts'
 import { Logo } from './Logo.tsx'
-
-function handleMenuClick() {
-  if (isMinBreakpoint('md', 'and above')) {
-    jumpLinksStore.toggleJumpLinks()
-  } else {
-    jumpLinksStore.toggleJumpLinksMobile()
-  }
-}
+import { handleMenuClick } from './handleMenuClick.tsx'
 
 type Props = {
   centerItems?: ReactElement | null

@@ -47,7 +47,7 @@ const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
 
 export function registerGlobalEvents() {
   document.addEventListener('keydown', (event) => {
-    const mode = appModeStore.appMode.get()
+    const mode = appModeStore.$appMode.get()
     keydownHandler[mode]?.(event)
   })
 }

@@ -74,11 +74,15 @@ export const searchStore = {
 
     const totalResultsCount = resultsCount + hiddenResultsCount
     const nextIndex = Math.min(totalResultsCount - 1, $keyboardIndex.get() + 1)
+    if (nextIndex === -1) return
 
     $keyboardIndex.set(nextIndex)
   },
 
   decrementKeyboardIndex() {
-    $keyboardIndex.set(Math.max(0, $keyboardIndex.get() - 1))
+    const nextIndex = Math.max(0, $keyboardIndex.get() - 1)
+    if (nextIndex === -1) return
+
+    $keyboardIndex.set(nextIndex)
   },
 } satisfies StoreObject
