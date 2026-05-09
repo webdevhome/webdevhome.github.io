@@ -1,5 +1,9 @@
 import type { PersistentEncoder } from '@nanostores/persistent'
-import type { WritableAtom } from 'nanostores'
+import type { ReadableAtom, WritableAtom } from 'nanostores'
+
+export type PureReadableAtom = ReadableAtom & { set?: never }
+
+export type StoreObject = Record<string, PureReadableAtom | CallableFunction>
 
 export function updateStore<T>(
   store: WritableAtom<T>,

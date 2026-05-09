@@ -1,47 +1,32 @@
 import { useStore } from '@nanostores/react'
 import type { KeyboardEvent, KeyboardEventHandler } from 'react'
-import { exitOnSiteSearch, exitSearchMode } from '../app/appMode.ts'
+import { appModeStore } from '../app-mode/appModeStore.ts'
 import { linkIsSearchTarget } from '../links/links.ts'
-import { isOpenLinksInNewTabEnabled } from '../links/openLinksInNewTab.ts'
-import {
-  getOnSiteSearchTerm,
-  getSearchTarget,
-  setSearchTarget,
-} from './onSiteSearch.ts'
-import {
-  $focusedSearchResult,
-  $hiddenSearchResults,
-  $visibleSearchResults,
-  getKeyboardIndex,
-  getSearchTerm,
-  setKeyboardIndex,
-} from './search.ts'
-
-const maxResultsCount = 8
-const maxHiddenResultsCount = 4
+import { openLinksInNewTabStore } from '../links/openLinksInNewTab.ts'
+import { onSiteSearchStore } from './onSiteSearch.ts'
+import { searchStore } from './search.ts'
 
 export function useHandleSearchInputKeydown(): (
   event: KeyboardEvent<HTMLInputElement>,
 ) => void {
-  const visibleResults = useStore($visibleSearchResults)
-  const hiddenResults = useStore($hiddenSearchResults)
-  const focusedResult = useStore($focusedSearchResult)
+  const visibleResults = useStore(searchStore.$visibleResults)
+  const focusedResult = useStore(searchStore.$focusedResult)
 
   const keydownHandler: Record<
     string,
     KeyboardEventHandler<HTMLInputElement>
   > = {
     Backspace(event) {
-      const searchTerm = getSearchTerm()
-      const onSiteSearchTerm = getOnSiteSearchTerm()
-      const searchTarget = getSearchTarget()
+      const searchTerm = searchStore.$searchTerm.get()
+      const onSiteSearchTerm = onSiteSearchStore.$searchTerm.get()
+      const searchTarget = onSiteSearchStore.$searchTarget.get()
 
       if (searchTarget !== null && onSiteSearchTerm === '') {
         event.preventDefault()
-        exitOnSiteSearch()
+        appModeStore.exitOnSiteSearch()
       } else if (searchTerm === '' && onSiteSearchTerm === '') {
         event.preventDefault()
-        exitSearchMode()
+        appModeStore.exitSearchMode()
       }
     },
 
@@ -51,25 +36,28 @@ export function useHandleSearchInputKeydown(): (
       if (focusedResult === null) return
       if (!linkIsSearchTarget(focusedResult.obj)) return
 
-      setSearchTarget(focusedResult.obj)
+      onSiteSearchStore.setSearchTarget(focusedResult.obj)
     },
 
     Enter(event) {
       const url = (() => {
-        const searchTarget = getSearchTarget()
+        const searchTarget = onSiteSearchStore.$searchTarget.get()
         if (searchTarget === null) {
           return focusedResult?.obj.url ?? null
         }
 
-        const encodedSearchTerm = encodeURIComponent(getOnSiteSearchTerm())
+        const onSiteSearchTerm = onSiteSearchStore.$searchTerm.get()
+        const encodedSearchTerm = encodeURIComponent(onSiteSearchTerm)
         return searchTarget.searchUrl.replaceAll('{search}', encodedSearchTerm)
       })()
 
       if (url === null) return
 
-      if (event.ctrlKey || isOpenLinksInNewTabEnabled()) {
+      const openInNewTabs = openLinksInNewTabStore.$setting.get()
+
+      if (event.ctrlKey || openInNewTabs) {
         open(url, '')
-        exitSearchMode()
+        appModeStore.exitSearchMode()
       } else {
         location.href = url
       }
@@ -77,25 +65,14 @@ export function useHandleSearchInputKeydown(): (
 
     ArrowUp(event) {
       if (visibleResults === null) return
-
       event.preventDefault()
-
-      setKeyboardIndex(Math.max(0, getKeyboardIndex() - 1))
+      searchStore.decrementKeyboardIndex()
     },
 
     ArrowDown(event) {
       if (visibleResults === null) return
-
       event.preventDefault()
-
-      const resultsCount = Math.min(visibleResults.total, maxResultsCount)
-      const hiddenResultsCount = Math.min(
-        hiddenResults?.total ?? 0,
-        maxHiddenResultsCount,
-      )
-      const totalResultsCount = resultsCount + hiddenResultsCount
-
-      setKeyboardIndex(Math.min(totalResultsCount - 1, getKeyboardIndex() + 1))
+      searchStore.incrementKeyboardIndex()
     },
   }
 

@@ -1,18 +1,17 @@
 import { MenuSection } from '@headlessui/react'
+import { useStore } from '@nanostores/react'
 import { MoonIcon, SunIcon, SunMoonIcon, WallpaperIcon } from 'lucide-react'
 import { type FC } from 'react'
 import { UiMenuDivider } from '../ui/UiMenuDivider.tsx'
 import { UiMenuHeader } from '../ui/UiMenuHeader.tsx'
 import { UiMenuItem } from '../ui/UiMenuItem.tsx'
-import { setTheme, useIsCurrentTheme } from './themes.ts'
-import {
-  toggleBackgroundImage,
-  useShowBackground,
-} from './useBackgroundImage.ts'
+import { themeStore } from './themes.ts'
+import { showBackgroundStore } from './useBackgroundImage.ts'
+import { useIsCurrentTheme } from './useIsCurrentTheme.ts'
 
 export const AppThemeSwitcher: FC = () => {
   const isCurrentTheme = useIsCurrentTheme()
-  const showBackground = useShowBackground()
+  const showBackground = useStore(showBackgroundStore.$show)
 
   return (
     <MenuSection className="flex flex-col gap-y-1">
@@ -22,21 +21,21 @@ export const AppThemeSwitcher: FC = () => {
         icon={<SunIcon />}
         selected={isCurrentTheme('light')}
         closeOnAction={false}
-        action={() => setTheme('light')}
+        action={() => themeStore.setThemeSetting('light')}
       />
       <UiMenuItem
         label="Dark"
         icon={<MoonIcon />}
         selected={isCurrentTheme('dark')}
         closeOnAction={false}
-        action={() => setTheme('dark')}
+        action={() => themeStore.setThemeSetting('dark')}
       />
       <UiMenuItem
         label="System"
         icon={<SunMoonIcon />}
         selected={isCurrentTheme('auto')}
         closeOnAction={false}
-        action={() => setTheme('auto')}
+        action={() => themeStore.setThemeSetting('auto')}
       />
       <UiMenuDivider />
       <UiMenuItem
@@ -44,7 +43,7 @@ export const AppThemeSwitcher: FC = () => {
         icon={<WallpaperIcon />}
         selected={showBackground}
         closeOnAction={false}
-        action={toggleBackgroundImage}
+        action={showBackgroundStore.toggle}
       />
     </MenuSection>
   )

@@ -1,6 +1,6 @@
 import { SearchIcon } from 'lucide-react'
 import { type FC, type MouseEventHandler } from 'react'
-import { useIsAppMode } from '../app/appMode.ts'
+import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
 import { Kbd } from '../ui/Kbd.tsx'
 import { LinkAction } from './LinkAction.tsx'
 

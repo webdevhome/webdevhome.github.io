@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { CopyCheckIcon, CopyIcon, CopySlashIcon } from 'lucide-react'
 import { type FC, type ReactElement } from 'react'
-import { useIsAppMode } from '../app/appMode.ts'
+import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
 
 export type LinksVisible = 'all' | 'some' | 'none'
 

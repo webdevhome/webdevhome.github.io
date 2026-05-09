@@ -1,3 +1,4 @@
+import { useStore } from '@nanostores/react'
 import {
   ArrowLeftIcon,
   ArrowUpToLineIcon,
@@ -10,49 +11,38 @@ import {
   XIcon,
 } from 'lucide-react'
 import { type FC } from 'react'
-import {
-  exitOnSiteSearch,
-  exitSearchMode,
-  setAppMode,
-  useIsAppMode,
-} from '../app/appMode.ts'
-import {
-  collapseAllLinkGroups,
-  expandAllLinkGroups,
-  useAreAllLinkGroupsCollapsed,
-  useAreAllLinkGroupsExpanded,
-} from '../link-groups/linkGroupsState.ts'
-import {
-  hideAllUrls,
-  showAllUrls,
-  useAreAnyUrlsHidden,
-} from '../links/hiddenUrls.ts'
-import { useHasSearchTarget } from '../search/onSiteSearch.ts'
+import { appModeStore } from '../app-mode/appModeStore.ts'
+import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
+import { categoriesStore } from '../link-categories/categoriesStore.ts'
+import { hiddenLinksStore } from '../links/hiddenLinksStore.ts'
+import { onSiteSearchStore } from '../search/onSiteSearch.ts'
 import { UiActionButton } from '../ui/UiActionButton.tsx'
 import { UiHeaderDivider } from '../ui/UiHeaderDivider.tsx'
 import { scrollToTop, useIsScrolledToTop } from './scrollToTop.ts'
 
 export const AppHeaderActions: FC = () => {
   const isAppMode = useIsAppMode()
-  const hasSearchTarget = useHasSearchTarget()
-  const areAllLinkGroupsCollapsed = useAreAllLinkGroupsCollapsed()
-  const areAllLinkGroupsExpanded = useAreAllLinkGroupsExpanded()
-  const areAnyUrlsHidden = useAreAnyUrlsHidden()
+  const onSiteSearchTarget = useStore(onSiteSearchStore.$searchTarget)
+  const areAllLinkGroupsCollapsed = useStore(categoriesStore.$areAllCollapsed)
+  const areAllLinkGroupsExpanded = useStore(categoriesStore.$areAllExpanded)
+  const areAnyLinksHidden = useStore(hiddenLinksStore.$areAnyLinksHidden)
   const isScrolledToTop = useIsScrolledToTop()
+
+  const hasOnSiteSearchTarget = onSiteSearchTarget !== null
 
   const defaultAndCustomizeModeActions = (
     <>
       <UiActionButton
         icon={<CopyMinusIcon />}
-        title="Collapse all"
-        enabled={!areAllLinkGroupsCollapsed && areAnyUrlsHidden}
-        action={collapseAllLinkGroups}
+        title="Collapse all hidden links"
+        enabled={!areAllLinkGroupsCollapsed && areAnyLinksHidden}
+        action={categoriesStore.collapseAll}
       />
       <UiActionButton
         icon={<CopyPlusIcon />}
-        title="Expand all"
-        enabled={!areAllLinkGroupsExpanded && areAnyUrlsHidden}
-        action={expandAllLinkGroups}
+        title="Expand all hidden links"
+        enabled={!areAllLinkGroupsExpanded && areAnyLinksHidden}
+        action={categoriesStore.expandAll}
       />
       <UiActionButton
         icon={<ArrowUpToLineIcon />}
@@ -70,7 +60,7 @@ export const AppHeaderActions: FC = () => {
           icon={<SearchIcon />}
           label="Search"
           visible="small-screens"
-          action={() => setAppMode('search')}
+          action={() => appModeStore.set('search')}
         />
         {defaultAndCustomizeModeActions}
       </>
@@ -80,12 +70,12 @@ export const AppHeaderActions: FC = () => {
   if (isAppMode('search')) {
     return (
       <>
-        {hasSearchTarget() && (
+        {hasOnSiteSearchTarget && (
           <UiActionButton
             icon={<ArrowLeftIcon />}
             label="Back to link search"
             labelVisible="big-screens"
-            action={exitOnSiteSearch}
+            action={appModeStore.exitOnSiteSearch}
           />
         )}
 
@@ -94,7 +84,7 @@ export const AppHeaderActions: FC = () => {
           label="Close search"
           labelVisible="big-screens"
           highlight
-          action={exitSearchMode}
+          action={appModeStore.exitSearchMode}
         />
       </>
     )
@@ -106,12 +96,12 @@ export const AppHeaderActions: FC = () => {
         <UiActionButton
           icon={<EyeIcon />}
           label="Show all"
-          action={showAllUrls}
+          action={hiddenLinksStore.showAll}
         />
         <UiActionButton
           icon={<EyeOffIcon />}
           label="Hide all"
-          action={hideAllUrls}
+          action={hiddenLinksStore.hideAll}
         />
 
         <UiActionButton
@@ -119,7 +109,7 @@ export const AppHeaderActions: FC = () => {
           label="Done"
           labelVisible="always"
           highlight
-          action={() => setAppMode('default')}
+          action={() => appModeStore.set('default')}
         />
 
         <UiHeaderDivider />

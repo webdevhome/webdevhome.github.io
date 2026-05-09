@@ -1,9 +1,10 @@
+import { useStore } from '@nanostores/react'
 import { type FC } from 'react'
-import { useOpenLinksInNewTab } from '../links/openLinksInNewTab.ts'
+import { openLinksInNewTabStore } from '../links/openLinksInNewTab.ts'
 import { SearchHint } from './SearchHint.tsx'
 
 export const SearchHints: FC = () => {
-  const openLinksInNewTab = useOpenLinksInNewTab()
+  const openLinksInNewTab = useStore(openLinksInNewTabStore.$setting)
 
   return (
     <div className="mx-6 text-base">

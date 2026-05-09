@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react'
 import { atom } from 'nanostores'
-import { setHiddenUrls } from '../links/hiddenUrls.ts'
-import type { LinkItem } from '../links/links.ts'
+import { hiddenLinksStore } from '../links/hiddenLinksStore.ts'
+import { allLinks, type LinkItem } from '../links/links.ts'
 
 const $showDialog = atom(false)
 const $importJSON = atom('')
@@ -28,19 +28,24 @@ export function useDataImport(): DataImport {
       if (importJSON.trim() === '') {
         throw new Error('Input is empty.')
       }
-      const importData: unknown = JSON.parse(importJSON)
-      if (!Array.isArray(importData)) {
+      const importedLinkIds: unknown = JSON.parse(importJSON)
+      if (!Array.isArray(importedLinkIds)) {
         throw new TypeError('Data is not an array.')
       }
 
-      const isStringArray = (it: unknown[]): it is string[] =>
-        it.every((el) => typeof el === 'string')
+      const isStringArray = (it: unknown[]): it is LinkItem['id'][] => {
+        return it.every((el) => typeof el === 'string')
+      }
 
-      if (!isStringArray(importData)) {
+      if (!isStringArray(importedLinkIds)) {
         throw new Error('Every element in the array must be a string.')
       }
 
-      setHiddenUrls(importData satisfies LinkItem['url'][])
+      const hiddenLinks = allLinks
+        .values()
+        .filter((l) => importedLinkIds.includes(l.id))
+
+      hiddenLinksStore.set(hiddenLinks)
     } catch (error: unknown) {
       if (!Error.isError(error)) {
         $importError.set('Unknown error parsing data.')

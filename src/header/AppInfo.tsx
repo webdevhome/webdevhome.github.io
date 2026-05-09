@@ -3,16 +3,15 @@ import { useStore } from '@nanostores/react'
 import { FolderGitIcon, LogsIcon } from 'lucide-react'
 import { type FC } from 'react'
 import packageJson from '../../package.json' with { type: 'json' }
-import { $hiddenUrlsCount } from '../links/hiddenUrls.ts'
-import { linksToCategoryMap } from '../links/links.ts'
+import { hiddenLinksStore } from '../links/hiddenLinksStore.ts'
+import { allLinksCount } from '../links/links.ts'
 import { UiMenuFooter } from '../ui/UiMenuFooter.tsx'
 import { UiMenuHeader } from '../ui/UiMenuHeader.tsx'
 import { UiMenuItem } from '../ui/UiMenuItem.tsx'
 
 export const AppInfo: FC = () => {
-  const allLinksCount = linksToCategoryMap.size
-  const hiddenUrlsCount = useStore($hiddenUrlsCount)
-  const visibleUrlsCount = allLinksCount - hiddenUrlsCount
+  const hiddenLinksCount = useStore(hiddenLinksStore.$hiddenLinksCount)
+  const visibleLinksCount = useStore(hiddenLinksStore.$visibleLinksCount)
 
   return (
     <MenuSection className="flex flex-col gap-y-1">
@@ -29,8 +28,8 @@ export const AppInfo: FC = () => {
       />
       <UiMenuFooter>
         <p>
-          {allLinksCount} links &bull; {visibleUrlsCount} visible &bull;{' '}
-          {hiddenUrlsCount} hidden
+          {allLinksCount} links &bull; {visibleLinksCount} visible &bull;{' '}
+          {hiddenLinksCount} hidden
         </p>
         <p>
           <strong>Version {packageJson.version}</strong>

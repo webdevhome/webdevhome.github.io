@@ -2,18 +2,16 @@ import { useStore } from '@nanostores/react'
 import classNames from 'classnames'
 import { XIcon } from 'lucide-react'
 import { type FC } from 'react'
-import { $visibleLinkGroups } from '../links/hiddenUrls.ts'
+import { hiddenLinksStore } from '../links/hiddenLinksStore.ts'
 import { JumpLink } from './JumpLink.tsx'
-import {
-  toggleJumpLinksMobile,
-  useShowJumpLinks,
-  useShowJumpLinksMobile,
-} from './useJumpLinks.ts'
+import { jumpLinksStore } from './jumpLinksStore.ts'
 
 export const JumpLinks: FC = () => {
-  const showJumpLinks = useShowJumpLinks()
-  const showJumpLinksMobile = useShowJumpLinksMobile()
-  const visibleLinkGroups = useStore($visibleLinkGroups)
+  const showJumpLinks = useStore(jumpLinksStore.$showJumpLinks)
+  const showJumpLinksMobile = useStore(jumpLinksStore.$showJumpLinksMobile)
+  const visibleCategories = useStore(hiddenLinksStore.$visibleCategories)
+
+  const visibleCategoriesArray = Array.from(visibleCategories)
 
   return (
     <>
@@ -23,7 +21,7 @@ export const JumpLinks: FC = () => {
             showJumpLinksMobile,
           'max-md:hidden': !showJumpLinksMobile,
         })}
-        onClick={toggleJumpLinksMobile}
+        onClick={jumpLinksStore.toggleJumpLinksMobile}
       />
 
       <div
@@ -44,13 +42,13 @@ export const JumpLinks: FC = () => {
       >
         <button
           className="m-4 place-self-end text-black md:hidden dark:text-white"
-          onClick={toggleJumpLinksMobile}
+          onClick={jumpLinksStore.toggleJumpLinksMobile}
         >
           <XIcon />
         </button>
 
         <div className="flex flex-col gap-0.5 p-2 max-md:overflow-auto md:flex">
-          {visibleLinkGroups.map((category) => (
+          {visibleCategoriesArray.map((category) => (
             <JumpLink
               key={category.id}
               label={category.title}

@@ -1,17 +1,17 @@
 import { persistentAtom } from '@nanostores/persistent'
-import { useStore } from '@nanostores/react'
-import { booleanEncoder, negateBooleanStore } from '../utils/nanostores.ts'
-
-const $showDescriptions = persistentAtom(
-  'wdh:show-descriptions',
-  false,
+import { readonlyType } from 'nanostores'
+import {
   booleanEncoder,
-)
+  negateBooleanStore,
+  type StoreObject,
+} from '../utils/nanostores.ts'
 
-export function toggleShowDescriptions() {
-  negateBooleanStore($showDescriptions)
-}
+const $show = persistentAtom('wdh:show-descriptions', false, booleanEncoder)
 
-export function useShowDescriptions(): boolean {
-  return useStore($showDescriptions)
-}
+export const linkDescriptionsStore = {
+  $show: readonlyType($show),
+
+  toggle() {
+    negateBooleanStore($show)
+  },
+} satisfies StoreObject

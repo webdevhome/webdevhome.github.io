@@ -3,19 +3,15 @@ import { type FC } from 'react'
 import { Link } from '../links/Link.tsx'
 import { SearchDivider } from './SearchDivider.tsx'
 import { SearchHint } from './SearchHint.tsx'
-import { useShowCategoriesInSearch } from './categoriesInSearch.ts'
-import {
-  $focusedSearchResult,
-  $hiddenSearchResults,
-  $visibleSearchResults,
-} from './search.ts'
+import { showCategoriesInSearchStore } from './categoriesInSearch.ts'
+import { searchStore } from './search.ts'
 
 export const SearchResults: FC = () => {
-  const showCategoriesInSearch = useShowCategoriesInSearch()
+  const showCategoriesInSearch = useStore(showCategoriesInSearchStore.$setting)
 
-  const visibleResults = useStore($visibleSearchResults)
-  const hiddenResults = useStore($hiddenSearchResults)
-  const focusedResult = useStore($focusedSearchResult)
+  const visibleResults = useStore(searchStore.$visibleResults)
+  const hiddenResults = useStore(searchStore.$hiddenResults)
+  const focusedResult = useStore(searchStore.$focusedResult)
 
   return (
     <>

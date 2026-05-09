@@ -1,14 +1,12 @@
+import { useStore } from '@nanostores/react'
 import classNames from 'classnames'
 import { type FC } from 'react'
-import { LinkGroup } from '../link-groups/LinkGroup.tsx'
-import {
-  toggleExpandLinkGroup,
-  useExpandedLinkGroups,
-} from '../link-groups/linkGroupsState.ts'
+import { categoriesStore } from '../link-categories/categoriesStore.ts'
+import { LinkCategory } from '../link-categories/LinkCategory.tsx'
 import { categoryToLinksMap } from './links.ts'
 
 export const Links: FC = () => {
-  const expandedLinkGroups = useExpandedLinkGroups()
+  const expandedLinkGroups = useStore(categoriesStore.$expandedCategories)
 
   return (
     <div
@@ -21,12 +19,12 @@ export const Links: FC = () => {
       {categoryToLinksMap
         .entries()
         .map(([category, links]) => (
-          <LinkGroup
+          <LinkCategory
             key={category.id}
             group={category}
             links={links}
-            showHiddenLinks={expandedLinkGroups.has(category.id)}
-            onToggleShowHiddenLinks={toggleExpandLinkGroup}
+            showHiddenLinks={expandedLinkGroups.has(category)}
+            onToggleShowHiddenLinks={categoriesStore.toggle}
           />
         ))
         .toArray()}

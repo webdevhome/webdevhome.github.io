@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { type FC } from 'react'
 import { slugify } from '../utils/slugify.ts'
-import { setShowJumpLinksMobile } from './useJumpLinks.ts'
+import { jumpLinksStore } from './jumpLinksStore.ts'
 
 type Props = {
   label: string
@@ -14,7 +14,7 @@ export const JumpLink: FC<Props> = ({ label, color = 'gray' }) => {
     if (target === null) return
 
     target.scrollIntoView({ behavior: 'smooth' })
-    setShowJumpLinksMobile(false)
+    jumpLinksStore.setShowJumpLinksMobile(false)
   }
 
   return (

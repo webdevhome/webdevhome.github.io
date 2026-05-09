@@ -1,35 +1,16 @@
 import { persistentAtom } from '@nanostores/persistent'
-import { useStore } from '@nanostores/react'
-import { atom, computed } from 'nanostores'
-import { useEffect } from 'react'
+import { atom, computed, readonlyType } from 'nanostores'
+import type { StoreObject } from '../utils/nanostores.ts'
+import { prefersDarkQuery } from './prefersColorScheme.ts'
 
-type AppTheme = 'light' | 'dark'
-type AppThemeSetting = AppTheme | 'auto'
+export type AppTheme = 'light' | 'dark'
+export type AppThemeSetting = AppTheme | 'auto'
 
-const effectiveThemes: AppTheme[] = ['light', 'dark']
-
-const $themeSetting = persistentAtom<AppThemeSetting>('wdh:app-theme', 'auto')
-
-export function useIsCurrentTheme(): (theme: AppThemeSetting) => boolean {
-  const themeSetting = useStore($themeSetting)
-
-  return (theme) => themeSetting === theme
-}
-
-export function setTheme(theme: AppThemeSetting) {
-  $themeSetting.set(theme)
-}
-
-const prefersDarkQuery = matchMedia('(prefers-color-scheme: dark)')
-
-prefersDarkQuery.addEventListener('change', (event) => {
-  $prefersDark.set(event.matches)
-})
-
+const $theme = persistentAtom<AppThemeSetting>('wdh:app-theme', 'auto')
 const $prefersDark = atom(prefersDarkQuery.matches)
 
 const $effectiveTheme = computed(
-  [$themeSetting, $prefersDark],
+  [$theme, $prefersDark],
   (theme, prefersDark): AppTheme => {
     if (theme === 'auto') {
       return prefersDark ? 'dark' : 'light'
@@ -39,14 +20,17 @@ const $effectiveTheme = computed(
   },
 )
 
-export function useThemes() {
-  const effectiveTheme = useStore($effectiveTheme)
+export const themeStore = {
+  $themeSetting: readonlyType($theme),
+  $prefersDark: readonlyType($prefersDark),
 
-  useEffect(() => {
-    const htmlElement = document.getElementsByTagName('html')[0]
+  $effectiveTheme,
 
-    for (const theme of effectiveThemes) {
-      htmlElement.classList.toggle(theme, theme === effectiveTheme)
-    }
-  }, [effectiveTheme])
-}
+  setThemeSetting(theme: AppThemeSetting) {
+    $theme.set(theme)
+  },
+
+  setPrefersDark(prefersDark: boolean) {
+    $prefersDark.set(prefersDark)
+  },
+} satisfies StoreObject

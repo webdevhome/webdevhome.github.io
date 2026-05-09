@@ -1,22 +1,16 @@
-import { toggleJumpLinks } from '../jump-links/useJumpLinks.ts'
-import { hasSearchTarget } from '../search/onSiteSearch.ts'
-import {
-  exitOnSiteSearch,
-  exitSearchMode,
-  getCurrentAppMode,
-  setAppMode,
-  type AppMode,
-} from './appMode.ts'
+import { appModeStore, type AppMode } from '../app-mode/appModeStore.ts'
+import { jumpLinksStore } from '../jump-links/jumpLinksStore.ts'
+import { onSiteSearchStore } from '../search/onSiteSearch.ts'
 
 const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
   default(event) {
     if (event.altKey && event.code === 'KeyB') {
-      toggleJumpLinks()
+      jumpLinksStore.toggleJumpLinks()
       return
     }
 
     if (event.altKey && event.code === 'KeyE') {
-      setAppMode('customize')
+      appModeStore.set('customize')
       return
     }
 
@@ -27,12 +21,12 @@ const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
     if (event.altKey) return
     if (event.metaKey) return
 
-    setAppMode('search')
+    appModeStore.set('search')
   },
 
   customize(event) {
     if (event.key === 'Escape') {
-      setAppMode('default')
+      appModeStore.set('default')
     }
   },
 
@@ -40,10 +34,12 @@ const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
     if (event.key === 'Escape') {
       event.preventDefault()
 
-      if (hasSearchTarget()) {
-        exitOnSiteSearch()
+      const hasSearchTarget = onSiteSearchStore.$searchTarget.get() !== null
+
+      if (hasSearchTarget) {
+        appModeStore.exitOnSiteSearch()
       } else {
-        exitSearchMode()
+        appModeStore.exitSearchMode()
       }
     }
   },
@@ -51,7 +47,7 @@ const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
 
 export function registerGlobalEvents() {
   document.addEventListener('keydown', (event) => {
-    const mode = getCurrentAppMode()
+    const mode = appModeStore.appMode.get()
     keydownHandler[mode]?.(event)
   })
 }

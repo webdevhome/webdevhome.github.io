@@ -1,13 +1,11 @@
+import { useStore } from '@nanostores/react'
 import classNames from 'classnames'
 import { type FC, type MouseEvent } from 'react'
-import {
-  enterOnSiteSearchMode,
-  exitSearchMode,
-  useIsAppMode,
-} from '../app/appMode.ts'
-import { toggleUrl, useIsUrlHidden } from './hiddenUrls.ts'
+import { appModeStore } from '../app-mode/appModeStore.ts'
+import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
+import { hiddenLinksStore } from './hiddenLinksStore.ts'
 import { LinkDescription } from './LinkDescription.tsx'
-import { useShowDescriptions } from './linkDescriptions.ts'
+import { linkDescriptionsStore } from './linkDescriptions.ts'
 import { LinkGroupLabel } from './LinkGroupLabel.tsx'
 import { LinkItemIcon } from './LinkItemIcon.tsx'
 import {
@@ -17,7 +15,7 @@ import {
 } from './links.ts'
 import { LinkSearchButton } from './LinkSearchButton.tsx'
 import { LinkVisibilityToggleButton } from './LinkVisibilityToggleButton.tsx'
-import { useOpenLinksInNewTab } from './openLinksInNewTab.ts'
+import { openLinksInNewTabStore } from './openLinksInNewTab.ts'
 
 type Props = {
   link: LinkItem
@@ -30,12 +28,12 @@ export const Link: FC<Props> = ({
   focused = false,
   showCategory = false,
 }) => {
-  const openLinksInNewTab = useOpenLinksInNewTab()
-  const showDescription = useShowDescriptions()
+  const openLinksInNewTab = useStore(openLinksInNewTabStore.$setting)
+  const showDescription = useStore(linkDescriptionsStore.$show)
   const isAppMode = useIsAppMode()
-  const isUrlHidden = useIsUrlHidden()
+  const hiddenLinks = useStore(hiddenLinksStore.$hiddenLinks)
 
-  const isHidden = isUrlHidden(link.url)
+  const isHidden = hiddenLinks.has(link)
   const category = linksToCategoryMap.get(link) ?? null
 
   const linkTitle = (() => {
@@ -48,11 +46,11 @@ export const Link: FC<Props> = ({
   function handleLinkClick(event: MouseEvent<HTMLAnchorElement>) {
     if (isAppMode('customize') || event.altKey) {
       event.preventDefault()
-      toggleUrl(link.url)
+      hiddenLinksStore.toggle(link)
     }
 
     if (isAppMode('search') && openLinksInNewTab) {
-      exitSearchMode()
+      appModeStore.exitSearchMode()
     }
   }
 
@@ -64,7 +62,7 @@ export const Link: FC<Props> = ({
     event.preventDefault()
 
     if (!linkIsSearchTarget(link)) return
-    enterOnSiteSearchMode(link)
+    appModeStore.enterOnSiteSearchMode(link)
   }
 
   return (
@@ -97,12 +95,7 @@ export const Link: FC<Props> = ({
       <LinkItemIcon icon={link.icon} color={link.color} />
 
       <div>
-        <div
-          className={classNames([
-            'text-base leading-4 font-semibold',
-            'text-brand-950 dark:text-white',
-          ])}
-        >
+        <div className="text-brand-950 text-base leading-4 font-semibold dark:text-white">
           {link.title}
         </div>
 

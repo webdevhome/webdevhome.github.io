@@ -1,39 +1,19 @@
-import { useStore } from '@nanostores/react'
-import { atom } from 'nanostores'
+import { atom, readonlyType } from 'nanostores'
 import type { SearchTarget } from '../links/links.ts'
+import type { StoreObject } from '../utils/nanostores.ts'
 
-//#region on site search term
 const $onSiteSearchTerm = atom('')
-export const useOnSiteSearchTerm = () => useStore($onSiteSearchTerm)
-
-export function getOnSiteSearchTerm(): string {
-  return $onSiteSearchTerm.get()
-}
-
-export function setOnSiteSearchTerm(term: string = '') {
-  $onSiteSearchTerm.set(term)
-}
-// #endregion on site search term
-
-//#region search target
 const $searchTarget = atom<SearchTarget | null>(null)
-export const useSearchTarget = () => useStore($searchTarget)
 
-export function getSearchTarget(): SearchTarget | null {
-  return $searchTarget.get()
-}
+export const onSiteSearchStore = {
+  $searchTerm: readonlyType($onSiteSearchTerm),
+  $searchTarget: readonlyType($searchTarget),
 
-export function setSearchTarget(target: SearchTarget | null = null) {
-  $searchTarget.set(target)
-}
+  setSearchTerm(term: string = '') {
+    $onSiteSearchTerm.set(term)
+  },
 
-export function hasSearchTarget(): boolean {
-  return $searchTarget.get() !== null
-}
-
-export function useHasSearchTarget(): () => boolean {
-  const searchTarget = useStore($searchTarget)
-
-  return () => searchTarget !== null
-}
-//#endregion search target
+  setSearchTarget(target: SearchTarget | null = null) {
+    $searchTarget.set(target)
+  },
+} satisfies StoreObject

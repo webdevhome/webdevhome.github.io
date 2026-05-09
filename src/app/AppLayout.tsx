@@ -1,3 +1,4 @@
+import { useStore } from '@nanostores/react'
 import classNames from 'classnames'
 import {
   type FC,
@@ -5,12 +6,10 @@ import {
   type ReactElement,
   useRef,
 } from 'react'
-import {
-  useShowJumpLinks,
-  useShowJumpLinksMobile,
-} from '../jump-links/useJumpLinks.ts'
-import { useShowBackground } from '../settings/useBackgroundImage.ts'
-import { useOnAppModeChanged, useIsAppMode } from './appMode.ts'
+import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
+import { useOnAppModeChanged } from '../app-mode/useOnAppModeChanged.ts'
+import { jumpLinksStore } from '../jump-links/jumpLinksStore.ts'
+import { showBackgroundStore } from '../settings/useBackgroundImage.ts'
 import { useFocusAppLayoutElements } from './useFocusAppLayoutElements.ts'
 
 type Props = {
@@ -26,9 +25,9 @@ export const AppLayout: FC<PropsWithChildren<Props>> = ({
   const sidebarRef = useRef<HTMLDivElement>(null)
   const mainContentRef = useRef<HTMLDivElement>(null)
 
-  const showBackground = useShowBackground()
-  const showJumpLinks = useShowJumpLinks()
-  const showJumpLinksMobile = useShowJumpLinksMobile()
+  const showBackground = useStore(showBackgroundStore.$show)
+  const showJumpLinks = useStore(jumpLinksStore.$showJumpLinks)
+  const showJumpLinksMobile = useStore(jumpLinksStore.$showJumpLinksMobile)
   const isAppMode = useIsAppMode()
 
   const { focusMainElement } = useFocusAppLayoutElements({

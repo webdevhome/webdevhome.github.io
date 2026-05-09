@@ -1,6 +1,10 @@
 import { persistentAtom } from '@nanostores/persistent'
-import { useStore } from '@nanostores/react'
-import { booleanEncoder, negateBooleanStore } from '../utils/nanostores.ts'
+import { readonlyType } from 'nanostores'
+import {
+  booleanEncoder,
+  negateBooleanStore,
+  type StoreObject,
+} from '../utils/nanostores.ts'
 
 const $showBackground = persistentAtom(
   'wdh:show-background',
@@ -8,10 +12,10 @@ const $showBackground = persistentAtom(
   booleanEncoder,
 )
 
-export function toggleBackgroundImage() {
-  negateBooleanStore($showBackground)
-}
+export const showBackgroundStore = {
+  $show: readonlyType($showBackground),
 
-export function useShowBackground(): boolean {
-  return useStore($showBackground)
-}
+  toggle() {
+    negateBooleanStore($showBackground)
+  },
+} satisfies StoreObject

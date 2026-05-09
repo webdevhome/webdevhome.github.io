@@ -1,3 +1,4 @@
+import { useStore } from '@nanostores/react'
 import {
   ExternalLinkIcon,
   FormIcon,
@@ -5,26 +6,18 @@ import {
   TagsIcon,
 } from 'lucide-react'
 import { type FC } from 'react'
-import { toggleAppMode, useIsAppMode } from '../app/appMode.ts'
-import {
-  toggleShowDescriptions,
-  useShowDescriptions,
-} from '../links/linkDescriptions.ts'
-import {
-  toggleOpenLinksInNewTab,
-  useOpenLinksInNewTab,
-} from '../links/openLinksInNewTab.ts'
-import {
-  toggleShowCategoriesInSearch,
-  useShowCategoriesInSearch,
-} from '../search/categoriesInSearch.ts'
+import { appModeStore } from '../app-mode/appModeStore.ts'
+import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
+import { linkDescriptionsStore } from '../links/linkDescriptions.ts'
+import { openLinksInNewTabStore } from '../links/openLinksInNewTab.ts'
+import { showCategoriesInSearchStore } from '../search/categoriesInSearch.ts'
 import { UiMenuDivider } from '../ui/UiMenuDivider.tsx'
 import { UiMenuItem } from '../ui/UiMenuItem.tsx'
 
 export const AppSettings: FC = () => {
-  const showDescriptions = useShowDescriptions()
-  const openLinksInNewTab = useOpenLinksInNewTab()
-  const showCategoriesInSearch = useShowCategoriesInSearch()
+  const showDescriptions = useStore(linkDescriptionsStore.$show)
+  const openLinksInNewTab = useStore(openLinksInNewTabStore.$setting)
+  const showCategoriesInSearch = useStore(showCategoriesInSearchStore.$setting)
   const isAppMode = useIsAppMode()
 
   return (
@@ -33,7 +26,7 @@ export const AppSettings: FC = () => {
         label="Show/hide links..."
         icon={<ListTodoIcon />}
         selected={isAppMode('customize')}
-        action={() => toggleAppMode('default', 'customize')}
+        action={() => appModeStore.toggle('default', 'customize')}
       />
 
       <UiMenuDivider />
@@ -43,21 +36,21 @@ export const AppSettings: FC = () => {
         icon={<FormIcon />}
         selected={showDescriptions}
         closeOnAction={false}
-        action={toggleShowDescriptions}
+        action={linkDescriptionsStore.toggle}
       />
       <UiMenuItem
         label="Show categories in search"
         icon={<TagsIcon />}
         selected={showCategoriesInSearch}
         closeOnAction={false}
-        action={toggleShowCategoriesInSearch}
+        action={showCategoriesInSearchStore.toggle}
       />
       <UiMenuItem
         label="Open links in new tab"
         icon={<ExternalLinkIcon />}
         selected={openLinksInNewTab}
         closeOnAction={false}
-        action={toggleOpenLinksInNewTab}
+        action={openLinksInNewTabStore.toggle}
       />
     </>
   )

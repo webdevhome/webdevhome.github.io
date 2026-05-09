@@ -1,10 +1,10 @@
+import { useStore } from '@nanostores/react'
 import { type FC } from 'react'
-import { useIsAppMode } from '../app/appMode.ts'
+import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
 import {
-  toggleUrls,
-  useIsUrlHidden,
+  hiddenLinksStore,
   type LinkVisibilityState,
-} from '../links/hiddenUrls.ts'
+} from '../links/hiddenLinksStore.ts'
 import { Link } from '../links/Link.tsx'
 import { type Category, type LinkItem } from '../links/links.ts'
 import { slugify } from '../utils/slugify.ts'
@@ -19,28 +19,26 @@ type Props = {
   group: Category
   links: LinkItem[]
   showHiddenLinks: boolean
-  onToggleShowHiddenLinks: (id: string) => void
+  onToggleShowHiddenLinks: (category: Category) => void
 }
 
-export const LinkGroup: FC<Props> = ({
+export const LinkCategory: FC<Props> = ({
   group,
   links,
   showHiddenLinks,
   onToggleShowHiddenLinks,
 }) => {
-  // const [showHiddenLinks, setShowHiddenLinks] = useState(false)
-
   const isAppMode = useIsAppMode()
-  const isUrlHidden = useIsUrlHidden()
+  const hiddenLinks = useStore(hiddenLinksStore.$hiddenLinks)
 
   const linksByVisibility = Object.groupBy(
     links,
-    (l): LinkVisibilityState => (isUrlHidden(l.url) ? 'hidden' : 'visible'),
+    (l): LinkVisibilityState => (hiddenLinks.has(l) ? 'hidden' : 'visible'),
   )
 
   const visibleLinksCount = linksByVisibility.visible?.length ?? 0
   const hiddenLinksCount = linksByVisibility.hidden?.length ?? 0
-  const areAllUrlsHidden = visibleLinksCount === 0
+  const areAllLinksHidden = visibleLinksCount === 0
 
   const linksVisible = ((): LinksVisible => {
     if (visibleLinksCount > 0 && hiddenLinksCount > 0) {
@@ -52,7 +50,7 @@ export const LinkGroup: FC<Props> = ({
     return 'none'
   })()
 
-  if (areAllUrlsHidden && !isAppMode('customize')) {
+  if (areAllLinksHidden && !isAppMode('customize')) {
     return null
   }
 
@@ -63,7 +61,7 @@ export const LinkGroup: FC<Props> = ({
 
         <LinkGroupSelectAllButton
           linksVisible={linksVisible}
-          onClick={() => toggleUrls(links.map((link) => link.url))}
+          onClick={() => hiddenLinksStore.toggleMultiple(links)}
         />
       </div>
 
@@ -75,7 +73,7 @@ export const LinkGroup: FC<Props> = ({
         <ShowHiddenLinksButton
           hiddenLinksCount={hiddenLinksCount}
           showHiddenLinks={showHiddenLinks}
-          onClick={() => onToggleShowHiddenLinks(group.id)}
+          onClick={() => onToggleShowHiddenLinks(group)}
         />
 
         {showHiddenLinks &&

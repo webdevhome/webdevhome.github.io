@@ -1,7 +1,8 @@
+import { useStore } from '@nanostores/react'
 import classNames from 'classnames'
 import { type FC, useRef } from 'react'
-import { useOnSiteSearchTerm, useSearchTarget } from './onSiteSearch.ts'
-import { useSearchTerm } from './search.ts'
+import { onSiteSearchStore } from './onSiteSearch.ts'
+import { searchStore } from './search.ts'
 import { SearchHints } from './SearchHints.tsx'
 import { SearchResults } from './SearchResults.tsx'
 import { SearchTargetLabel } from './SearchTargetLabel.tsx'
@@ -12,9 +13,9 @@ import { useHandleSearchInputKeydown } from './useHandleSearchInputKeydown.ts'
 export const Search: FC = () => {
   const searchInputRef = useRef<HTMLInputElement>(null)
 
-  const searchTerm = useSearchTerm()
-  const onSiteSearchTerm = useOnSiteSearchTerm()
-  const searchTarget = useSearchTarget()
+  const searchTerm = useStore(searchStore.$searchTerm)
+  const onSiteSearchTerm = useStore(onSiteSearchStore.$searchTerm)
+  const searchTarget = useStore(onSiteSearchStore.$searchTarget)
 
   const handleInputKeydown = useHandleSearchInputKeydown()
   const handleInputChange = useHandleSearchInputChange()

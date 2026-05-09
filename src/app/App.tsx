@@ -6,15 +6,15 @@ import { ImportDialog } from '../import-export/ImportDialog.tsx'
 import { JumpLinks } from '../jump-links/JumpLinks.tsx'
 import { Links } from '../links/Links.tsx'
 import { Search } from '../search/Search.tsx'
-import { useThemes } from '../settings/themes.ts'
+import { useApplyTheme } from '../settings/useApplyTheme.ts'
 import { useActivityMode } from '../utils/useActivityMode.ts'
 import { AppHeaderActions } from '../header/AppHeaderActions.tsx'
 import { AppLayout } from './AppLayout.tsx'
-import { useIsAppMode } from './appMode.ts'
+import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
 import { AppSettingsMenu } from '../settings/AppSettingsMenu.tsx'
 
 export const App: FC = () => {
-  useThemes()
+  useApplyTheme()
 
   const isAppMode = useIsAppMode()
   const activityMode = useActivityMode()
