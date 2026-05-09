@@ -27,6 +27,7 @@ import {
   siBuddy,
   siBulma,
   siBun,
+  siChai,
   siChromewebstore,
   siCircleci,
   siCloudflare,
@@ -1291,6 +1292,30 @@ export const linksData: LinksData = {
     title: 'Testing',
     color: 'green',
     links: {
+      vitest: {
+        title: 'Vitest',
+        url: 'https://vitest.dev',
+        description: 'JS/TS testing framework by void(0).',
+        icon: siVitest,
+      },
+      jest: {
+        title: 'Jest',
+        url: 'https://jestjs.io',
+        description: 'JS/TS testing framework.',
+        icon: siJest,
+      },
+      mocha: {
+        title: 'Mocha',
+        url: 'https://mochajs.org',
+        description: 'JS test runner.',
+        icon: siMocha,
+      },
+      chai: {
+        title: 'Chai',
+        url: 'https://www.chaijs.com',
+        description: 'BDD/TDD assertion library.',
+        icon: siChai,
+      },
       cypress: {
         title: 'Cypress',
         url: 'https://www.cypress.io',
@@ -1303,24 +1328,6 @@ export const linksData: LinksData = {
         description:
           'API to control and automate a browser without showing its UI.',
         icon: siPuppeteer,
-      },
-      jest: {
-        title: 'Jest',
-        url: 'https://jestjs.io',
-        description: 'JS/TS testing framework.',
-        icon: siJest,
-      },
-      vitest: {
-        title: 'Vitest',
-        url: 'https://vitest.dev',
-        description: 'JS/TS testing framework by void(0).',
-        icon: siVitest,
-      },
-      mocha: {
-        title: 'Mocha',
-        url: 'https://mochajs.org',
-        description: 'JS/TS testing framework.',
-        icon: siMocha,
       },
       selenium: {
         title: 'Selenium',
