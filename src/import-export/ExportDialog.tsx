@@ -1,12 +1,18 @@
-import { type FC } from 'react'
+import { useStore } from '@nanostores/react'
+import { useRef, type FC } from 'react'
 import { useEnableGlobalEvents } from '../app/useEnableGlobalEvents.ts'
 import { UiButton } from '../ui/UiButton.tsx'
 import { UiDialog } from '../ui/UiDialog.tsx'
 import { UiTextarea } from '../ui/UiTextarea.tsx'
-import { useDataExport } from './useDataExport.ts'
+import { exportDialogStore } from './exportDialogStore.ts'
+import { useExportJson } from './useExportJson.ts'
 
 export const ExportDialog: FC = () => {
-  const { exportJSON, textareaRef, showDialog, setShowDialog } = useDataExport()
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
+
+  const showDialog = useStore(exportDialogStore.$showDialog)
+
+  const exportJSON = useExportJson()
 
   useEnableGlobalEvents(!showDialog)
 
@@ -14,7 +20,7 @@ export const ExportDialog: FC = () => {
     <UiDialog
       title="Export data to clipboard"
       isOpen={showDialog}
-      onClose={() => setShowDialog(false)}
+      onClose={exportDialogStore.closeDialog}
       leftButtons={
         <UiButton
           onClick={() => {
@@ -25,15 +31,12 @@ export const ExportDialog: FC = () => {
         </UiButton>
       }
       rightButtons={
-        <>
-          <UiButton onClick={close}>Close</UiButton>
-          <UiButton
-            onClick={() => navigator.clipboard.writeText(exportJSON)}
-            type="primary"
-          >
-            Copy to clipboard
-          </UiButton>
-        </>
+        <UiButton
+          onClick={() => navigator.clipboard.writeText(exportJSON)}
+          type="primary"
+        >
+          Copy to clipboard
+        </UiButton>
       }
     >
       <UiTextarea
