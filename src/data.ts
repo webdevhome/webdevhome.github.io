@@ -82,6 +82,7 @@ import {
   siHaveibeenpwned,
   siHeadlessui,
   siHetzner,
+  siHono,
   siHotwire,
   siHtml5,
   siHtmx,
@@ -1713,6 +1714,12 @@ export const linksData: LinksData = {
         url: 'https://expressjs.com',
         description: 'Node.js web framework.',
         icon: siExpress,
+      },
+      honoJs: {
+        title: 'Hono',
+        url: 'https://hono.dev',
+        description: 'Web application framework for any JavaScript runtime.',
+        icon: siHono,
       },
       fastify: {
         title: 'Fastify',
