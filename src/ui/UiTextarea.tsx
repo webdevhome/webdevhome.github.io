@@ -11,6 +11,7 @@ type Props = {
   disabled?: boolean
   readonly?: boolean
   className?: string
+  placeholder?: string
   onChange?: ChangeEventHandler<HTMLTextAreaElement>
   ref?: RefObject<HTMLTextAreaElement | null>
 }
@@ -24,6 +25,7 @@ export const UiTextarea = ({
   disabled = false,
   readonly = false,
   className = '',
+  placeholder,
   onChange,
   ref,
 }: Props) => {
@@ -37,6 +39,7 @@ export const UiTextarea = ({
       )}
       disabled={disabled}
       readOnly={readonly}
+      placeholder={placeholder}
       onChange={onChange}
       onKeyDown={handleKeyDown}
       ref={ref}

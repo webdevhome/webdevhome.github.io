@@ -1,11 +1,14 @@
 import { useStore } from '@nanostores/react'
 import { atom } from 'nanostores'
 import { hiddenLinksStore } from '../links/hiddenLinksStore.ts'
-import { allLinks, type LinkItem } from '../links/links.ts'
+import { allLinks } from '../links/links.ts'
+import { isStringArray } from '../utils/isStringArray.ts'
 
 const $showDialog = atom(false)
 const $importJSON = atom('')
 const $importError = atom<string | null>(null)
+
+const urlRegex = /^https?:\/\//
 
 export type DataImport = {
   showDialog: boolean
@@ -28,22 +31,23 @@ export function useDataImport(): DataImport {
       if (importJSON.trim() === '') {
         throw new Error('Input is empty.')
       }
-      const importedLinkIds: unknown = JSON.parse(importJSON)
-      if (!Array.isArray(importedLinkIds)) {
-        throw new TypeError('Data is not an array.')
-      }
 
-      const isStringArray = (it: unknown[]): it is LinkItem['id'][] => {
-        return it.every((el) => typeof el === 'string')
-      }
-
-      if (!isStringArray(importedLinkIds)) {
+      const importedArray: unknown = JSON.parse(importJSON)
+      if (!isStringArray(importedArray)) {
         throw new Error('Every element in the array must be a string.')
       }
 
-      const hiddenLinks = allLinks
-        .values()
-        .filter((l) => importedLinkIds.includes(l.id))
+      if (importedArray.length === 0) return
+
+      const hiddenLinks = allLinks.values().filter((link) => {
+        // If imported data is of old URL based format (app version < 4)
+        if (urlRegex.exec(importedArray[0]) !== null) {
+          return importedArray.includes(link.url)
+        }
+
+        // If imported data is of current ID based format (app version >= 4)
+        return importedArray.includes(link.id)
+      })
 
       hiddenLinksStore.set(hiddenLinks)
     } catch (error: unknown) {
