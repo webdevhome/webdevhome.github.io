@@ -37,10 +37,10 @@ export function useFocusAppLayoutElements({
       keyCodeToElementMap[event.code]?.focus()
     }
 
-    document.addEventListener('keydown', handleKeydown)
+    addEventListener('keydown', handleKeydown)
 
     return () => {
-      document.removeEventListener('keydown', handleKeydown)
+      removeEventListener('keydown', handleKeydown)
     }
   }, [mainContentRef, sidebarRef])
 

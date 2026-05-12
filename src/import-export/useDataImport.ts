@@ -34,7 +34,9 @@ export function useDataImport(): DataImport {
 
       const importedArray: unknown = JSON.parse(importJSON)
       if (!isStringArray(importedArray)) {
-        throw new Error('Every element in the array must be a string.')
+        throw new Error(
+          'This JSON is not valid data. The JSON must be an array of link IDs or URLs.',
+        )
       }
 
       if (importedArray.length === 0) return

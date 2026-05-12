@@ -1,6 +1,16 @@
+import { atom } from 'nanostores'
 import { appModeStore, type AppMode } from '../app-mode/appModeStore.ts'
 import { jumpLinksStore } from '../jump-links/jumpLinksStore.ts'
 import { onSiteSearchStore } from '../search/onSiteSearch.ts'
+import { type StoreObject } from '../utils/nanostores.ts'
+
+const $enableGlobalEvents = atom(true)
+
+export const globalEventsStore = {
+  setEnableEvents(value: boolean) {
+    $enableGlobalEvents.set(value)
+  },
+} satisfies StoreObject
 
 const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
   default(event) {
@@ -46,7 +56,8 @@ const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
 }
 
 export function registerGlobalEvents() {
-  document.addEventListener('keydown', (event) => {
+  addEventListener('keydown', (event) => {
+    if (!$enableGlobalEvents.get()) return
     const mode = appModeStore.$appMode.get()
     keydownHandler[mode]?.(event)
   })

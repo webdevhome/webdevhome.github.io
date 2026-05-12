@@ -1,10 +1,6 @@
 import { Textarea } from '@headlessui/react'
 import classNames from 'classnames'
-import {
-  type ChangeEventHandler,
-  type KeyboardEvent,
-  type RefObject,
-} from 'react'
+import { type ChangeEventHandler, type RefObject } from 'react'
 
 type Props = {
   value?: string
@@ -14,10 +10,6 @@ type Props = {
   placeholder?: string
   onChange?: ChangeEventHandler<HTMLTextAreaElement>
   ref?: RefObject<HTMLTextAreaElement | null>
-}
-
-function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
-  event.stopPropagation()
 }
 
 export const UiTextarea = ({
@@ -41,7 +33,6 @@ export const UiTextarea = ({
       readOnly={readonly}
       placeholder={placeholder}
       onChange={onChange}
-      onKeyDown={handleKeyDown}
       ref={ref}
     ></Textarea>
   )
