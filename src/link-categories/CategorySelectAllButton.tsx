@@ -10,7 +10,7 @@ type Props = {
   onClick: () => void
 }
 
-export const LinkGroupSelectAllButton: FC<Props> = ({
+export const CategorySelectAllButton: FC<Props> = ({
   linksVisible: state,
   onClick,
 }) => {

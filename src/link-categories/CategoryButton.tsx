@@ -5,7 +5,7 @@ type Props = {
   onClick?: () => void
 }
 
-export const LinkGroupButton: FC<PropsWithChildren<Props>> = ({
+export const CategoryButton: FC<PropsWithChildren<Props>> = ({
   children,
   onClick,
 }) => {

@@ -1,5 +1,4 @@
-import { type SimpleIcon } from 'simple-icons'
-import { linksData } from '../data.ts'
+import { appConfig } from '../app/appConfig.ts'
 import type { TailwindColorName } from '../tailwindCss.ts'
 import { brandedString, type BrandedString } from '../utilityTypes.ts'
 
@@ -25,7 +24,7 @@ export type LinkItem = {
   description?: string
   searchUrl?: LinkSearchUrl
   color?: string
-  icon?: SimpleIcon
+  icon?: string
 }
 
 export type SearchTarget = Omit<LinkItem, 'searchUrl'> &
@@ -39,27 +38,37 @@ export type LinkDefinition = {
   title: string
   url: string
   description?: string
-  icon?: SimpleIcon
+  icon?: string
   color?: string
   searchUrl?: string
 }
 
-export type GroupDefinition = {
+export type CategoryDefinition = {
   title: string
   color: TailwindColorName
   links: Record<string, LinkDefinition>
 }
 
-export type LinksData = Record<string, GroupDefinition>
+export type LinksData = Record<string, CategoryDefinition>
+
+export type AppConfig = {
+  appTitle?: string | string[]
+  categories: LinksData
+}
 //#endregion
 
 //#region data
-export const categoryToLinksMap = ((): Map<Category, LinkItem[]> => {
-  const result = Object.entries(linksData).map(
-    ([groupId, groupDefinition]): [Category, LinkItem[]] => {
-      const { links: linksDefinition, ...groupRest } = groupDefinition
+export const categoryToLinksMap = await (async (): Promise<
+  Map<Category, LinkItem[]>
+> => {
+  const result = Object.entries(appConfig.categories).map(
+    ([categoryId, categoryDefinition]): [Category, LinkItem[]] => {
+      const { links: linksDefinition, ...categoryRest } = categoryDefinition
 
-      const group: Category = { id: brandedString(groupId), ...groupRest }
+      const category = {
+        id: brandedString(categoryId),
+        ...categoryRest,
+      } satisfies Category
 
       const links: LinkItem[] = Object.entries(linksDefinition).map(
         ([linkId, linkDefinition]): LinkItem => {
@@ -79,7 +88,7 @@ export const categoryToLinksMap = ((): Map<Category, LinkItem[]> => {
         },
       )
 
-      return [group, links]
+      return [category, links]
     },
   )
 

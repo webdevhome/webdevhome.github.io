@@ -4,11 +4,11 @@ import type { Category } from './links.ts'
 
 type Props = {
   category: Category | null
-  showGroup?: boolean
+  showCategory?: boolean
 }
 
-export const LinkGroupLabel: FC<Props> = ({ category, showGroup = true }) => {
-  if (!showGroup) {
+export const CategoryLabel: FC<Props> = ({ category, showCategory = true }) => {
+  if (!showCategory) {
     return null
   }
 

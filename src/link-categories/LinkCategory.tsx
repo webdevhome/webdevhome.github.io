@@ -9,21 +9,21 @@ import { Link } from '../links/Link.tsx'
 import { type Category, type LinkItem } from '../links/links.ts'
 import { slugify } from '../utils/slugify.ts'
 import {
-  LinkGroupSelectAllButton,
+  CategorySelectAllButton,
   type LinksVisible,
-} from './LinkGroupSelectAllButton.tsx'
-import { LinkGroupTitle } from './LinkGroupTitle.tsx'
+} from './CategorySelectAllButton.tsx'
+import { LinkGroupTitle } from './CategoryTitle.tsx'
 import { ShowHiddenLinksButton } from './ShowHiddenLinksButton.tsx'
 
 type Props = {
-  group: Category
+  category: Category
   links: LinkItem[]
   showHiddenLinks: boolean
   onToggleShowHiddenLinks: (category: Category) => void
 }
 
 export const LinkCategory: FC<Props> = ({
-  group,
+  category,
   links,
   showHiddenLinks,
   onToggleShowHiddenLinks,
@@ -55,11 +55,11 @@ export const LinkCategory: FC<Props> = ({
   }
 
   return (
-    <div id={slugify(group.title)} className="scroll-mt-2">
+    <div id={slugify(category.title)} className="scroll-mt-2">
       <div className="mb-2 flex gap-x-1">
-        <LinkGroupTitle color={group.color}>{group.title}</LinkGroupTitle>
+        <LinkGroupTitle color={category.color}>{category.title}</LinkGroupTitle>
 
-        <LinkGroupSelectAllButton
+        <CategorySelectAllButton
           linksVisible={linksVisible}
           onClick={() => hiddenLinksStore.toggleMultiple(links)}
         />
@@ -73,7 +73,7 @@ export const LinkCategory: FC<Props> = ({
         <ShowHiddenLinksButton
           hiddenLinksCount={hiddenLinksCount}
           showHiddenLinks={showHiddenLinks}
-          onClick={() => onToggleShowHiddenLinks(group)}
+          onClick={() => onToggleShowHiddenLinks(category)}
         />
 
         {showHiddenLinks &&

@@ -23,8 +23,8 @@ import { scrollToTop, useIsScrolledToTop } from './scrollToTop.ts'
 export const AppHeaderActions: FC = () => {
   const isAppMode = useIsAppMode()
   const onSiteSearchTarget = useStore(onSiteSearchStore.$searchTarget)
-  const areAllLinkGroupsCollapsed = useStore(categoriesStore.$areAllCollapsed)
-  const areAllLinkGroupsExpanded = useStore(categoriesStore.$areAllExpanded)
+  const areAllCategoriesCollapsed = useStore(categoriesStore.$areAllCollapsed)
+  const areAllCategoriesExpanded = useStore(categoriesStore.$areAllExpanded)
   const areAnyLinksHidden = useStore(hiddenLinksStore.$areAnyLinksHidden)
   const isScrolledToTop = useIsScrolledToTop()
 
@@ -35,13 +35,13 @@ export const AppHeaderActions: FC = () => {
       <UiActionButton
         icon={<CopyMinusIcon />}
         title="Collapse all hidden links"
-        enabled={!areAllLinkGroupsCollapsed && areAnyLinksHidden}
+        enabled={!areAllCategoriesCollapsed && areAnyLinksHidden}
         action={categoriesStore.collapseAll}
       />
       <UiActionButton
         icon={<CopyPlusIcon />}
         title="Expand all hidden links"
-        enabled={!areAllLinkGroupsExpanded && areAnyLinksHidden}
+        enabled={!areAllCategoriesExpanded && areAnyLinksHidden}
         action={categoriesStore.expandAll}
       />
       <UiActionButton

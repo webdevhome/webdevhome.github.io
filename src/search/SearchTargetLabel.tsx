@@ -1,6 +1,6 @@
 import { type FC } from 'react'
-import { LinkGroupLabel } from '../links/LinkGroupLabel.tsx'
-import { LinkItemIcon } from '../links/LinkItemIcon.tsx'
+import { CategoryLabel } from '../links/CategoryLabel.tsx'
+import { LinkIconBox } from '../icons/LinkIconBox.tsx'
 import { linksToCategoryMap, type SearchTarget } from '../links/links.ts'
 
 type Props = {
@@ -12,11 +12,11 @@ export const SearchTargetLabel: FC<Props> = ({ target }) => {
 
   return (
     <div className="not-small-height:flex-col small-height:gap-x-4 flex items-center gap-2 self-center">
-      <LinkItemIcon icon={target.icon} color={target.color} size="large" />
+      <LinkIconBox iconString={target.icon} color={target.color} size="large" />
 
       <span className="not-small-height:items-center flex flex-col text-xl font-semibold dark:text-white">
         <div>{target.title}</div>
-        <LinkGroupLabel category={category} />
+        <CategoryLabel category={category} />
       </span>
     </div>
   )
