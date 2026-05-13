@@ -70,7 +70,7 @@ npm run dev
 
 The app is now running on http://localhost:5173.
 
-Exit the dev server by pressing `[Ctrl]` + `[C]` in your terminal.
+Exit the dev server by pressing `ctrl` + `C` in your terminal.
 
 ### SimpleIcons
 
