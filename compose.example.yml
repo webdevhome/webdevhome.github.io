@@ -1,0 +1,16 @@
+name: webdevhome
+
+services:
+  app:
+    container_name: webdevhome
+    build:
+      context: /path/to/webdevhome
+      dockerfile: docker/Dockerfile
+    ports:
+      - target: 80
+        published: 8899
+    volumes:
+      - type: bind
+        source: ./config.json
+        target: /usr/share/nginx/html/public/config.json
+        read_only: true
