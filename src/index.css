@@ -1,18 +1,18 @@
 @import 'tailwindcss';
 
-/* link group title background (light) */
+/* category title background (light) */
 /* prettier-ignore */
 @source inline('bg-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-{100}');
 
-/* link group title background (dark), jump links marker background (light/dark) */
+/* category title background (dark), jump links marker background (light/dark) */
 /* prettier-ignore */
 @source inline('{dark:,}bg-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-{600}');
 
-/* link group title text (light) */
+/* category title text (light) */
 /* prettier-ignore */
 @source inline('text-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-800');
 
-/* link group title text (dark) */
+/* category title text (dark) */
 /* prettier-ignore */
 @source inline(
   'dark:text-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose,slate,gray,zinc,neutral,stone,taupe,mauve,mist,olive}-{50,300}'

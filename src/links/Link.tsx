@@ -6,8 +6,8 @@ import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
 import { hiddenLinksStore } from './hiddenLinksStore.ts'
 import { LinkDescription } from './LinkDescription.tsx'
 import { linkDescriptionsStore } from './linkDescriptions.ts'
-import { LinkGroupLabel } from './LinkGroupLabel.tsx'
-import { LinkItemIcon } from './LinkItemIcon.tsx'
+import { CategoryLabel } from './CategoryLabel.tsx'
+import { LinkIconBox } from '../icons/LinkIconBox.tsx'
 import {
   linkIsSearchTarget,
   linksToCategoryMap,
@@ -93,14 +93,14 @@ export const Link: FC<Props> = ({
       )}
       onClick={handleLinkClick}
     >
-      <LinkItemIcon icon={link.icon} color={link.color} />
+      <LinkIconBox iconString={link.icon} color={link.color} />
 
       <div>
         <div className="text-brand-950 text-base leading-4 font-semibold dark:text-white">
           {link.title}
         </div>
 
-        <LinkGroupLabel showGroup={showCategory} category={category} />
+        <CategoryLabel showCategory={showCategory} category={category} />
       </div>
 
       <div className="-my-1 -mr-1 flex self-stretch">

@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { LinkGroupButton } from './LinkGroupButton.tsx'
+import { CategoryButton } from './CategoryButton.tsx'
 
 type Props = {
   hiddenLinksCount: number
@@ -21,8 +21,8 @@ export const ShowHiddenLinksButton: FC<Props> = ({
   }
 
   return (
-    <LinkGroupButton onClick={onClick}>
+    <CategoryButton onClick={onClick}>
       {showHiddenLinksButtonLabel}
-    </LinkGroupButton>
+    </CategoryButton>
   )
 }

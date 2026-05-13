@@ -18,7 +18,7 @@ export const LinkGroupTitle: FC<PropsWithChildren<Props>> = ({
         'flex-auto',
         'px-4 py-2',
         `bg-${finalColor}-100 dark:bg-${finalColor}-600`,
-        'text-center text-lg leading-tight font-medium tracking-wide',
+        'text-center text-base leading-tight font-medium tracking-wide',
         `text-${finalColor}-800 dark:text-${finalColor}-50`,
         'rounded-lg',
         'shadow-sm',

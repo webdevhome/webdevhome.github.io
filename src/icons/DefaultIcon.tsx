@@ -1,17 +1,13 @@
 import classNames from 'classnames'
 import { SquircleDashedIcon } from 'lucide-react'
 import { type FC } from 'react'
-import { defaultIconSize, type IconSize } from './getIconSize.ts'
+import { defaultIconSize, type IconSizeData } from './getIconSize.ts'
 
 type Props = {
-  color?: string
-  iconSize?: IconSize
+  iconSize?: IconSizeData
 }
 
-export const DefaultIcon: FC<Props> = ({
-  color = 'black',
-  iconSize = defaultIconSize,
-}) => {
+export const DefaultIcon: FC<Props> = ({ iconSize = defaultIconSize }) => {
   return (
     <div
       className={classNames(
@@ -21,7 +17,7 @@ export const DefaultIcon: FC<Props> = ({
         iconSize.className,
       )}
     >
-      <SquircleDashedIcon color={color} size={iconSize.pixels} />
+      <SquircleDashedIcon size={iconSize.pixels} />
     </div>
   )
 }

@@ -6,7 +6,7 @@ import { LinkCategory } from '../link-categories/LinkCategory.tsx'
 import { categoryToLinksMap } from './links.ts'
 
 export const Links: FC = () => {
-  const expandedLinkGroups = useStore(categoriesStore.$expandedCategories)
+  const expandedCategories = useStore(categoriesStore.$expandedCategories)
 
   return (
     <div
@@ -21,9 +21,9 @@ export const Links: FC = () => {
         .map(([category, links]) => (
           <LinkCategory
             key={category.id}
-            group={category}
+            category={category}
             links={links}
-            showHiddenLinks={expandedLinkGroups.has(category)}
+            showHiddenLinks={expandedCategories.has(category)}
             onToggleShowHiddenLinks={categoriesStore.toggle}
           />
         ))

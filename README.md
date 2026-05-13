@@ -6,23 +6,21 @@ webdevhome is a collection of links I, as a web developer, use very frequently. 
 
 ## Developed with
 
-[![](https://img.shields.io/badge/TypeScript-303540?logo=typescript)](https://github.com/microsoft/TypeScript) [![](https://img.shields.io/badge/React-303540?logo=react&logoColor=61DAFB)](https://github.com/facebook/react) [![](https://img.shields.io/badge/Nano_Stores-303540?logo=nanostores)](https://github.com/nanostores/nanostores) [![](https://img.shields.io/badge/fuzzysort-303540)](https://github.com/farzher/fuzzysort)
+[![](https://img.shields.io/badge/Vite-354050?logo=vite)](https://github.com/vitejs/vite) [![](https://img.shields.io/badge/TypeScript-354050?logo=typescript)](https://github.com/microsoft/TypeScript) [![](https://img.shields.io/badge/React-354050?logo=react&logoColor=61DAFB)](https://github.com/facebook/react) [![](https://img.shields.io/badge/Nano_Stores-354050?logo=nanostores)](https://github.com/nanostores/nanostores) [![](https://img.shields.io/badge/fuzzysort-354050)](https://github.com/farzher/fuzzysort)
 
-[![](https://img.shields.io/badge/Headless_UI-303540?logo=headlessui)](https://github.com/tailwindlabs/headlessui) [![](https://img.shields.io/badge/Tailwind_CSS-303540?logo=tailwind-css&logoColor=00bcff)](https://github.com/tailwindlabs/tailwindcss)
+[![](https://img.shields.io/badge/Headless_UI-354050?logo=headlessui)](https://github.com/tailwindlabs/headlessui) [![](https://img.shields.io/badge/Tailwind_CSS-354050?logo=tailwind-css&logoColor=00bcff)](https://github.com/tailwindlabs/tailwindcss)
 
-[![](https://img.shields.io/badge/Simple_Icons-303540?logo=simpleicons)](https://github.com/simple-icons/simple-icons) [![](https://img.shields.io/badge/Lucide_Icons-303540?logo=lucide)](https://github.com/lucide-icons/lucide)
+[![](https://img.shields.io/badge/Simple_Icons-354050?logo=simpleicons)](https://github.com/simple-icons/simple-icons) [![](https://img.shields.io/badge/Lucide_Icons-354050?logo=lucide)](https://github.com/lucide-icons/lucide)
 
 ## How to use
 
 ### Filter and search
 
-By just typing in the name of a website the links get filtered automatically.
+By just typing in the name of a website the links get filtered automatically. E.g. just typing `gh` filters all pages that contain those letters, most importantly GitHub.
 
-E.g. just typing `gh` filters all pages that contain those letters, most importantly GitHub.
+Now press `Return` to go to the GitHub homepage, or press `Tab` to use on site search to directly search for things on GitHub. After entering a search term and pressing `Return` the search results page of that particular website opens with your search term already applied.
 
-Now press `Return` to go to the GitHub homepage, or press `Tab` and enter a search term to search for things on GitHub. Doing so opens the search results page of that particular website.
-
-You can also use the magnifier icon next to a link to start entering the search term for that site directly.
+You can also use the magnifier icon next to a link to enter on site search for that site directly.
 
 ### Link descriptions
 
@@ -36,7 +34,7 @@ By clicking on "Options" and then "Show/hide links..." you can select which link
 
 You can still access hidden links by clicking "Show x hidden links" or by using the search. Hidden links will be sorted to the bottom when using the search.
 
-**Caveat:** If you hide all links inside a group the group is hidden entirely. So, there's also no "Show x hidden links" button. To show a group at least one link in that group must be visible. You can still find all hidden links in the search though.
+**Caveat:** If you hide all links inside a category that category is hidden entirely. That means there's also no "Show x hidden links" button. To show a category at least one link in that category must be visible. You can still find all hidden links in the search though.
 
 ### Theme
 
@@ -45,6 +43,18 @@ You can choose between "Light", "Dark", and "System". The "System" theme will au
 ### Import and export hidden links
 
 You can export a list of all hidden links to the clipboard and import them from the clipboard. The format is a simple JSON array. That way you can share the list of your hidden links between multiple devices.
+
+### Keyboard shortcuts
+
+There are a couple of keyboard shortcuts that you can use:
+
+| Shortcut           | Action                                                    |
+| ------------------ | --------------------------------------------------------- |
+| `alt/option` + `1` | Focus the jump links sidebar (if it's visible).           |
+| `alt/option` + `2` | Focus the main links area.                                |
+| `alt/option` + `E` | Enter customization mode where you can show/hide links.   |
+| `alt/option` + `B` | Toggle jump links sidebar.                                |
+| `Escape`           | Exit out of search, on site search or customization mode. |
 
 ## Run development
 
@@ -60,48 +70,155 @@ npm run dev
 
 The app is now running on http://localhost:5173.
 
-End the dev server by pressing `[Ctrl]` + `[C]` in your terminal.
+Exit the dev server by pressing `[Ctrl]` + `[C]` in your terminal.
 
-### Using Docker
+### SimpleIcons
 
-```shell
-# Build image
-docker build . --target dev --tag webdevhome-dev --build-arg warp=true --build-arg ls_improvement=true --build-arg rm_cp_mv_interactive=true
-
-# Create and run container
-docker run --name webdevhome-dev --publish 5173:5173 --detach --tty webdevhome-dev
-```
-
-### Using Docker compose
-
-```shell
-docker compose up --build --detach --remove-orphans dev
-```
-
-### Build args
-
-| Arg                  | Values          | Default | Description                                                                     |
-| :------------------- | :-------------- | :------ | :------------------------------------------------------------------------------ |
-| ls_improvement       | `true`, `false` | `false` | Enable colors for `ls` command and enable aliases `ls`, `ll`, and `l`.          |
-| rm_cp_mv_interactive | `true`, `false` | `false` | Enable aliases for `rm`, `cp`, and `mv` to automatically include the `-i` flag. |
-| warp                 | `true`, `false` | `false` | Enable Warp support for console.                                                |
+Whenever the app needs to render an icon from SimpleIcons a JSON file is being fetched that only contains the necessary data for that one icon. These files are located at `public/simple-icons/*.json` but they are not included in the repository. They get generated when you run `npm run dev` or `npm run build`. However, you can generate them manually by running `npm run build:icons`. This might be necessary if you for example update the `simpleicons` npm package while the dev server is running.
 
 ## Run production
 
+### Using static hosting
+
+- Clone this repository.
+- Change `config.json` how you see fit.
+- Run `npm install`.
+- Run `npm run build`.
+- Deploy the content of the `dist` folder.
+
 ### Using Docker
 
-```shell
-# Build image
-docker build . --target prod --tag webdevhome
+Using Docker you can host webdevhome yourself and even customize the app. You can choose your own app name as well what categories and links should be available.
 
-# Create and run container
-docker run --name webdevhome --publish 80:80 --detach webdevhome-prod
+Create a new folder and place the following content inside it:
+
+- A new file named `compose.yml`
+- A new file named `config.json`
+  - This is where you configure the app and define your links and categories.
+- A new folder named `icons`
+  - You can place your custom icons in here.
+
+Put the following into your `compose.yml` and change the settings marked with comments:
+
+```yaml
+name: webdevhome
+
+services:
+  app:
+    container_name: webdevhome
+    build:
+      context: https://github.com/webdevhome/webdevhome.github.io.git#latest
+      dockerfile: docker/Dockerfile
+    ports:
+      - target: 80
+        published: 8123 # Change this to a port that is available in your environment.
+        # Uncomment the following to use the original links that are available under https://webdevhome.github.io
+        #args:
+        #- use_dynamic_config=false
+
+    volumes:
+      - type: bind
+        source: ./config.json
+        target: /usr/share/nginx/html/public/config.json
+        read_only: true
+      - type: bind
+        source: ./icons
+        target: /usr/share/nginx/html/icons
+        read_only: true
 ```
 
-Change the ports accordingly.
+Put the following into your `config.json`:
 
-### Using Docker compose
-
-```shell
-docker compose up --build --detach --remove-orphans webdevhome
+```json
+{
+  "appTitle": ["my", "links"],
+  "categories": {
+    "category1": {
+      "title": "Category 1",
+      "color": "red",
+      "links": {
+        "github": {
+          "title": "GitHub",
+          "url": "https://github.com",
+          "icon": "si:github",
+          "searchUrl": "https://github.com/search?q={search}"
+        }
+      }
+    }
+  }
+}
 ```
+
+Then run `docker compose up` in that directory.
+
+The application is now available under `http://localhost:8123` (or whatever port you use).
+
+## `config.json` documentation
+
+### Config root
+
+| Property     | Type                                 | Description                                                      |
+| ------------ | ------------------------------------ | ---------------------------------------------------------------- |
+| `appTitle`   | `string\|string[]`                   | The title of the app. Displayed in the tab title and app header. |
+| `categories` | `Record<string, CategoryDefinition>` | A list of your categories including all their links.             |
+
+### Type `CategoryDefinition`
+
+| Property | Type                             | Description                                                            |
+| -------- | -------------------------------- | ---------------------------------------------------------------------- |
+| `title`  | `string`                         | The name of the category.                                              |
+| `color`  | `string`                         | The color of the category. Only TailwindCSS color names are supported. |
+| `links`  | `Record<string, LinkDefinition>` | A list of all links in that category.                                  |
+
+### Type `CategoryDefinition.color`
+
+One of the following values:
+
+- red
+- orange
+- amber
+- yellow
+- lime
+- green
+- emerald
+- teal
+- cyan
+- sky
+- blue
+- indigo
+- violet
+- purple
+- fuchsia
+- pink
+- rose
+- slate
+- gray
+- zinc
+- neutral
+- stone
+- taupe
+- mauve
+- mist
+- olive
+
+### Type `LinkDefinition`
+
+| Property    | Type     | Description                                                |
+| ----------- | -------- | ---------------------------------------------------------- |
+| `title`     | `string` | The title of the link.                                     |
+| `url`       | `string` | The url of the link.                                       |
+| `icon`      | `string` | The icon of that link. (see below for more details)        |
+| `color`     | `string` | The color that should be used for the icon.                |
+| `searchUrl` | `string` | The search url for that link. (see below for more details) |
+
+### Type `LinkDefinition.icon`
+
+Currently two types of icons are supported: [SimpleIcons](https://simpleicons.com) and custom icons.
+
+To define an icon from **SimpleIcons** use a value of the format `si:{iconname}` – e.g. `"icon": "si:github"`. You can get the names for each icon from the SimpleIcons website.
+
+To define a **custom icon** use a value of the format `file:{filepath}` – e.g. `"icon": "file:icons/github.svg"`. `filepath` is used like this: `<img src={filepath}>`. This means you can use any file format that's supported by `<img>` including `.jpg`, `.png`, or `.svg`. The file must be located in your `icons` folder. In the example above there must be a file named `icons/github.svg`.
+
+### Type `LinkDefinition.searchUrl`
+
+Define here the URL of the websites search page with the search term replaced by `{search}` – e.g. `"searchUrl": "https://github.com/search?q={search}"`.
