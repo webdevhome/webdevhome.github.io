@@ -87,7 +87,8 @@
         "heroku": {
           "title": "Heroku",
           "url": "https://heroku.com",
-          "searchUrl": "https://heroku.com/search?s={search}"
+          "searchUrl": "https://heroku.com/search?s={search}",
+          "color": "#5a1ba9"
         },
         "renderDotCom": {
           "title": "Render",
@@ -107,12 +108,14 @@
         "fortRabbit": {
           "title": "Fortrabbit",
           "url": "https://www.fortrabbit.com",
-          "description": "PHP hosting platform."
+          "description": "PHP hosting platform.",
+          "color": "#65D0EA"
         },
         "msAzure": {
           "title": "Microsoft Azure",
           "url": "https://azure.microsoft.com",
-          "searchUrl": "https://azure.microsoft.com/search/?q={search}"
+          "searchUrl": "https://azure.microsoft.com/search/?q={search}",
+          "color": "#3376CD"
         },
         "aws": {
           "title": "Amazon Web Services",
@@ -259,7 +262,8 @@
         "bundleJs": {
           "title": "bundlejs",
           "url": "https://bundlejs.com",
-          "description": "A npm package size checker."
+          "description": "A npm package size checker.",
+          "color": "#60a5fa"
         },
         "jsBenchmark": {
           "title": "JS Benchmark",
@@ -334,11 +338,13 @@
         },
         "msTeams": {
           "title": "Microsoft Teams",
-          "url": "https://www.microsoft.com/microsoft-teams/log-in"
+          "url": "https://www.microsoft.com/microsoft-teams/log-in",
+          "color": "#5D5BCD"
         },
         "slack": {
           "title": "Slack",
-          "url": "https://slack.com"
+          "url": "https://slack.com",
+          "color": "#592366"
         }
       }
     },
@@ -379,7 +385,8 @@
         "msDocs": {
           "title": "Microsoft Docs",
           "url": "https://docs.microsoft.com",
-          "searchUrl": "https://docs.microsoft.com/en-us/search/?search={search}&category=All"
+          "searchUrl": "https://docs.microsoft.com/en-us/search/?search={search}&category=All",
+          "color": "#84B4E2"
         },
         "appleDeveloper": {
           "title": "Apple Developer",
@@ -389,7 +396,8 @@
         },
         "oracleHelpCenter": {
           "title": "Oracle Help Center",
-          "url": "https://docs.oracle.com/en"
+          "url": "https://docs.oracle.com/en",
+          "color": "#B84F3C"
         },
         "cheatography": {
           "title": "Cheatography",
@@ -400,12 +408,14 @@
         "devhintsDotIo": {
           "title": "devhints.io",
           "url": "https://devhints.io/",
-          "description": "A list of cheatsheets by Rico Sta. Cruz."
+          "description": "A list of cheatsheets by Rico Sta. Cruz.",
+          "color": "#745fb5"
         },
         "emmetCheatSheet": {
           "title": "Emmet Cheat Sheet",
           "url": "https://docs.emmet.io/cheat-sheet",
-          "description": "The official cheat sheet for Emmet - the editor shortcuts to quickly write HTML."
+          "description": "The official cheat sheet for Emmet - the editor shortcuts to quickly write HTML.",
+          "color": "#8DC942"
         },
         "learnXInYMinutes": {
           "title": "Learn X in Y minutes",
@@ -431,7 +441,8 @@
         "codePen": {
           "title": "CodePen",
           "url": "https://codepen.io",
-          "searchUrl": "https://codepen.io/search/pens?q={search}"
+          "searchUrl": "https://codepen.io/search/pens?q={search}",
+          "color": "#1E1F25"
         },
         "codeSandbox": {
           "title": "CodeSandbox",
@@ -470,7 +481,8 @@
         },
         "regex101": {
           "title": "regex101",
-          "url": "https://regex101.com"
+          "url": "https://regex101.com",
+          "color": "#1E3350"
         }
       }
     },
@@ -547,12 +559,14 @@
         "linaria": {
           "title": "linaria",
           "url": "https://linaria.dev/",
-          "description": "A zero-runtime CSS-in-JS library."
+          "description": "A zero-runtime CSS-in-JS library.",
+          "color": "#A74D8E"
         },
         "pandaCss": {
           "title": "Panda CSS",
           "url": "https://panda-css.com/",
-          "description": "A zero-runtime CSS-in-JS library."
+          "description": "A zero-runtime CSS-in-JS library.",
+          "color": "#F8E164"
         },
         "vanillaExtract": {
           "title": "vanilla-extract",
@@ -712,7 +726,8 @@
         "motionJs": {
           "title": "Motion",
           "url": "https://motion.dev",
-          "description": "A JavaScript animation library."
+          "description": "A JavaScript animation library.",
+          "color": "#FDF45B"
         },
         "gsap": {
           "title": "GSAP",
@@ -724,7 +739,8 @@
           "title": "PixiJS",
           "url": "https://pixijs.com",
           "description": "A 2D WebGL renderer.",
-          "searchUrl": "https://pixijs.com/search/?q={search}"
+          "searchUrl": "https://pixijs.com/search/?q={search}",
+          "color": "#D43A65"
         },
         "d3js": {
           "title": "D3",
@@ -752,7 +768,8 @@
         "zustand": {
           "title": "Zustand",
           "url": "https://zustand-demo.pmnd.rs",
-          "description": "State management library for React."
+          "description": "State management library for React.",
+          "color": "#423E39"
         },
         "pinia": {
           "title": "Pinia",
@@ -781,7 +798,8 @@
         "xoid": {
           "title": "xoid",
           "url": "https://www.xoid.dev/",
-          "description": "Framework-agnostic state management library with bindings for multiple frameworks."
+          "description": "Framework-agnostic state management library with bindings for multiple frameworks.",
+          "color": "#2A2860"
         },
         "xState": {
           "title": "XState",
@@ -833,7 +851,8 @@
         "tinyBase": {
           "title": "TinyBase",
           "url": "https://tinybase.org",
-          "description": "A reactive data store & sync engine."
+          "description": "A reactive data store & sync engine.",
+          "color": "#C63361"
         },
         "i18next": {
           "title": "i18next",
@@ -874,7 +893,8 @@
         "esToolkit": {
           "title": "es-toolkit",
           "url": "https://es-toolkit.slash.page",
-          "description": "State-of-the-art JavaScript utility library."
+          "description": "State-of-the-art JavaScript utility library.",
+          "color": "#45825C"
         },
         "dateFns": {
           "title": "date-fns",
@@ -1112,7 +1132,8 @@
         "webhint": {
           "title": "webhint",
           "url": "https://webhint.io",
-          "description": "Linting tool that checks your website's accessibility, speed, cross-browser compatibility, and more."
+          "description": "Linting tool that checks your website's accessibility, speed, cross-browser compatibility, and more.",
+          "color": "#40079C"
         },
         "eslint": {
           "title": "ESLint",
@@ -1130,7 +1151,8 @@
           "title": "EditorConfig",
           "url": "https://editorconfig.org",
           "description": "Control some text editor settings by using a config file.",
-          "icon": "si:editorconfig"
+          "icon": "si:editorconfig",
+          "color": "#000000"
         }
       }
     },
@@ -1158,7 +1180,8 @@
         "gitmoji": {
           "title": "Gitmoji",
           "url": "https://gitmoji.carloscuesta.me",
-          "description": "An emoji guide for your commit messages."
+          "description": "An emoji guide for your commit messages.",
+          "color": "#F9DE79"
         }
       }
     },
@@ -1178,7 +1201,8 @@
         },
         "gfm": {
           "title": "GitHub Flavored Markdown",
-          "url": "https://github.github.com/gfm/"
+          "url": "https://github.github.com/gfm/",
+          "color": "#181717"
         },
         "asciiDoc": {
           "title": "AsciiDoc",
@@ -1194,7 +1218,8 @@
         "d2lang": {
           "title": "D2",
           "url": "https://d2lang.com",
-          "description": "A language that turns text to diagrams."
+          "description": "A language that turns text to diagrams.",
+          "color": "#526EEB"
         },
         "json": {
           "title": "JSON",
@@ -1335,7 +1360,8 @@
         },
         "java": {
           "title": "Java",
-          "url": "https://www.java.com"
+          "url": "https://www.java.com",
+          "color": "#E59639"
         },
         "openJdk": {
           "title": "OpenJDK",
@@ -1386,7 +1412,8 @@
         "typeSpec": {
           "title": "TypeSpec",
           "url": "https://typespec.io",
-          "description": "A language by Microsoft to describe data and to generate API specs, client and server code, docs, etc."
+          "description": "A language by Microsoft to describe data and to generate API specs, client and server code, docs, etc.",
+          "color": "#2B5D9E"
         }
       }
     },
@@ -1417,7 +1444,8 @@
         "fiber": {
           "title": "Fiber",
           "url": "https://gofiber.io",
-          "description": "Go web framework."
+          "description": "Go web framework.",
+          "color": "#00ADD8"
         },
         "expressJs": {
           "title": "Express",
@@ -1452,7 +1480,8 @@
         "aspDotNet": {
           "title": "ASP.NET",
           "url": "https://dotnet.microsoft.com/apps/aspnet",
-          "description": ".NET web framework."
+          "description": ".NET web framework.",
+          "color": "#7C66D9"
         },
         "javaSpring": {
           "title": "Spring",
@@ -1549,7 +1578,8 @@
           "title": "Microsoft SQL Server",
           "url": "https://www.microsoft.com/de-de/sql-server",
           "description": "A relational database.",
-          "searchUrl": "https://www.microsoft.com/en-us/search/explore?q={search}"
+          "searchUrl": "https://www.microsoft.com/en-us/search/explore?q={search}",
+          "color": "#3376CD"
         },
         "postgreSql": {
           "title": "PostgreSQL",
@@ -1561,7 +1591,8 @@
         "oracleDb": {
           "title": "Oracle Database",
           "url": "https://www.oracle.com/de/database/technologies",
-          "description": "A relational database."
+          "description": "A relational database.",
+          "color": "#B84F3C"
         },
         "sqlite": {
           "title": "SQLite",
@@ -1610,7 +1641,8 @@
         "selfhost": {
           "title": "selfh.st",
           "url": "https://selfh.st",
-          "description": "A weekly newsletter about self hosting."
+          "description": "A weekly newsletter about self hosting.",
+          "color": "#2C5FD1"
         },
         "awesomeSelfhost": {
           "title": "Awesome Selfhosted",
@@ -1661,12 +1693,14 @@
         "pictogrammers": {
           "title": "Pictogrammers",
           "url": "https://pictogrammers.com",
-          "description": "A collection of open-source icons including \"Material Design Icons\"."
+          "description": "A collection of open-source icons including \"Material Design Icons\".",
+          "color": "#4B0962"
         },
         "heroicons": {
           "title": "Heroicons",
           "url": "https://heroicons.com",
-          "description": "Icons by the developers of Tailwind CSS."
+          "description": "Icons by the developers of Tailwind CSS.",
+          "color": "#845EEE"
         },
         "lucide": {
           "title": "Lucide",
@@ -1784,7 +1818,8 @@
       "links": {
         "w3c": {
           "title": "W3C",
-          "url": "https://www.w3.org"
+          "url": "https://www.w3.org",
+          "color": "#255997"
         },
         "webdxDevSignals": {
           "title": "WebDX Developer Signals",
@@ -1816,24 +1851,28 @@
         "tc39": {
           "title": "TC39",
           "url": "https://tc39.es",
-          "description": "Official website of Ecma International's TC39 (Technical Committee 39)."
+          "description": "Official website of Ecma International's TC39 (Technical Committee 39).",
+          "color": "#EC8331"
         },
         "tc39Forum": {
           "title": "TC39 Forum",
           "url": "https://es.discourse.group",
           "description": "Official forum of Ecma International's TC39 (Technical Committee 39). Talk about ECMAScript features and proposals.",
-          "searchUrl": "https://es.discourse.group/search?q={search}"
+          "searchUrl": "https://es.discourse.group/search?q={search}",
+          "color": "#EC8331"
         },
         "wicg": {
           "title": "WICG",
           "url": "https://wicg.io/",
           "description": "Official website of the WICG (Web Incubator Community Group).",
-          "searchUrl": "https://discourse.wicg.io/search?q={search}"
+          "searchUrl": "https://discourse.wicg.io/search?q={search}",
+          "color": "#5AB1C1"
         },
         "openUi": {
           "title": "Open UI",
           "url": "https://open-ui.org/",
-          "description": "Official website of Open UI (a W3C community group). It's about making built-in form controls styleable while also adding new ones."
+          "description": "Official website of Open UI (a W3C community group). It's about making built-in form controls styleable while also adding new ones.",
+          "color": "#49A258"
         },
         "openJs": {
           "title": "OpenJS Foundation",
@@ -1850,19 +1889,22 @@
           "title": "Can I use...",
           "url": "https://caniuse.com",
           "description": "Check browser compatibility of various language features and browser APIs.",
-          "searchUrl": "https://caniuse.com/#search={search}"
+          "searchUrl": "https://caniuse.com/#search={search}",
+          "color": "#7A3A14"
         },
         "canIEmail": {
           "title": "Can I email...",
           "url": "https://caniemail.com",
           "description": "Check e-mail client compatibility of various language features.",
-          "searchUrl": "https://www.caniemail.com/search/?s={search}"
+          "searchUrl": "https://www.caniemail.com/search/?s={search}",
+          "color": "#3070DE"
         },
         "canIWebView": {
           "title": "Can I WebView...",
           "url": "https://caniwebview.com",
           "description": "Check system webviews for feature support.",
-          "searchUrl": "https://caniwebview.com/search/?s={search}"
+          "searchUrl": "https://caniwebview.com/search/?s={search}",
+          "color": "#255997"
         },
         "a11ySupport": {
           "title": "Accessibility Support",
@@ -1883,7 +1925,8 @@
         },
         "msEdgeRoadmap": {
           "title": "Microsoft 365/Edge Roadmap",
-          "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge"
+          "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=Microsoft%20Edge",
+          "color": "#3B84D1"
         },
         "nodeGreen": {
           "title": "Node Green",
@@ -1913,20 +1956,24 @@
         },
         "msEdgeBrowser": {
           "title": "Microsoft Edge",
-          "url": "https://www.microsoft.com/de-de/edge/download"
+          "url": "https://www.microsoft.com/de-de/edge/download",
+          "color": "#3B84D1"
         },
         "adobe": {
           "title": "Adobe",
           "url": "https://www.adobe.com",
-          "searchUrl": "https://www.adobe.com/search.html#q={search}&sort=relevancy"
+          "searchUrl": "https://www.adobe.com/search.html#q={search}&sort=relevancy",
+          "color": "#D83320"
         },
         "affinity": {
           "title": "Affinity",
-          "url": "https://affinity.studio"
+          "url": "https://affinity.studio",
+          "color": "#B7EF84"
         },
         "canva": {
           "title": "Canva",
-          "url": "https://www.canva.com"
+          "url": "https://www.canva.com",
+          "color": "#8B33F6"
         },
         "figma": {
           "title": "Figma",
@@ -1941,12 +1988,14 @@
       "links": {
         "visualStudio": {
           "title": "Visual Studio",
-          "url": "https://visualstudio.microsoft.com"
+          "url": "https://visualstudio.microsoft.com",
+          "color": "#9158EE"
         },
         "vsCode": {
           "title": "Visual Studio Code",
           "url": "https://code.visualstudio.com",
-          "searchUrl": "https://code.visualstudio.com/Search?q={search}"
+          "searchUrl": "https://code.visualstudio.com/Search?q={search}",
+          "color": "#3376CD"
         },
         "vsCodium": {
           "title": "VSCodium",
@@ -1990,7 +2039,8 @@
         },
         "ddev": {
           "title": "ddev",
-          "url": "https://ddev.com"
+          "url": "https://ddev.com",
+          "color": "#4BA5DD"
         },
         "virtualBox": {
           "title": "VirtualBox",
@@ -2036,7 +2086,8 @@
         "fork": {
           "title": "Fork",
           "url": "https://git-fork.com",
-          "description": "A git client for Windows and macOS."
+          "description": "A git client for Windows and macOS.",
+          "color": "#4DA1E9"
         }
       }
     },
@@ -2061,7 +2112,8 @@
         },
         "powerShell": {
           "title": "PowerShell",
-          "url": "https://learn.microsoft.com/de-de/powershell/"
+          "url": "https://learn.microsoft.com/de-de/powershell/",
+          "color": "#3376CD"
         }
       }
     },
@@ -2113,17 +2165,20 @@
         "tuneIn": {
           "title": "TuneIn",
           "url": "https://tunein.com",
-          "searchUrl": "https://tunein.com/search/?query={search}"
+          "searchUrl": "https://tunein.com/search/?query={search}",
+          "color": "#64D5CB"
         },
         "diFm": {
           "title": "DI.FM",
           "url": "https://di.fm",
-          "searchUrl": "https://www.di.fm/search?q={search}"
+          "searchUrl": "https://www.di.fm/search?q={search}",
+          "color": "#488BF3"
         },
         "myNoise": {
           "title": "myNoise",
           "url": "https://mynoise.net",
-          "description": "Custom Soundscapes for Focus, Relaxation & Sleep."
+          "description": "Custom Soundscapes for Focus, Relaxation & Sleep.",
+          "color": "#EC6241"
         }
       }
     },
