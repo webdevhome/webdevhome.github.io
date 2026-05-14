@@ -20,7 +20,7 @@ const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
     }
 
     if (event.altKey && event.code === 'KeyE') {
-      appModeStore.set('customize')
+      appModeStore.setMode('customize')
       return
     }
 
@@ -31,12 +31,12 @@ const keydownHandler: Record<AppMode, (event: KeyboardEvent) => void> = {
     if (event.altKey) return
     if (event.metaKey) return
 
-    appModeStore.set('search')
+    appModeStore.enterSearchMode(event.key)
   },
 
   customize(event) {
     if (event.key === 'Escape') {
-      appModeStore.set('default')
+      appModeStore.setMode('default')
     }
   },
 

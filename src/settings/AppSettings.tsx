@@ -26,7 +26,7 @@ export const AppSettings: FC = () => {
         label="Show/hide links..."
         icon={<ListTodoIcon />}
         selected={isAppMode('customize')}
-        action={() => appModeStore.toggle('default', 'customize')}
+        action={() => appModeStore.toggleMode('default', 'customize')}
       />
 
       <UiMenuDivider />

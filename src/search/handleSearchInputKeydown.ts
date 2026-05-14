@@ -3,7 +3,7 @@ import { appModeStore } from '../app-mode/appModeStore.ts'
 import { linkIsSearchTarget } from '../links/links.ts'
 import { openLinksInNewTabStore } from '../links/openLinksInNewTab.ts'
 import { onSiteSearchStore } from './onSiteSearch.ts'
-import { searchStore } from './search.ts'
+import { searchStore } from './searchStore.ts'
 
 const keydownHandler: Record<string, KeyboardEventHandler<HTMLInputElement>> = {
   Backspace(event) {

@@ -4,7 +4,7 @@ import { Link } from '../links/Link.tsx'
 import { SearchDivider } from './SearchDivider.tsx'
 import { SearchHint } from './SearchHint.tsx'
 import { showCategoriesInSearchStore } from './categoriesInSearch.ts'
-import { searchStore } from './search.ts'
+import { searchStore } from './searchStore.ts'
 
 export const SearchResults: FC = () => {
   const showCategoriesInSearch = useStore(showCategoriesInSearchStore.$setting)

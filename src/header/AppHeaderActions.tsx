@@ -60,7 +60,7 @@ export const AppHeaderActions: FC = () => {
           icon={<SearchIcon />}
           label="Search"
           visible="small-screens"
-          action={() => appModeStore.set('search')}
+          action={() => appModeStore.setMode('search')}
         />
         {defaultAndCustomizeModeActions}
       </>
@@ -109,7 +109,7 @@ export const AppHeaderActions: FC = () => {
           label="Done"
           labelVisible="always"
           highlight
-          action={() => appModeStore.set('default')}
+          action={() => appModeStore.setMode('default')}
         />
 
         <UiHeaderDivider />

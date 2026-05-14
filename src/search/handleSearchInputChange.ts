@@ -1,6 +1,6 @@
 import type { ChangeEvent } from 'react'
 import { onSiteSearchStore } from './onSiteSearch.ts'
-import { searchStore } from './search.ts'
+import { searchStore } from './searchStore.ts'
 
 export function handleSearchInputChange(event: ChangeEvent<HTMLInputElement>) {
   const searchTarget = onSiteSearchStore.$searchTarget.get()

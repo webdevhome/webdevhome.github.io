@@ -17,7 +17,7 @@ export const UiSearchButton: FC = () => {
         'cursor-default',
         'select-none',
       )}
-      onClick={() => appModeStore.set('search')}
+      onClick={() => appModeStore.setMode('search')}
     >
       <SearchIcon />
       Search...
