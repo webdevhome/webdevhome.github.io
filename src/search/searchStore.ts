@@ -14,7 +14,7 @@ const $visibleResults = computed(
   [$searchTerm, hiddenLinksStore.$visibleLinks],
   (searchTerm, visibleLinks): Fuzzysort.KeyResults<LinkItem> => {
     const links = Array.from(visibleLinks)
-    return getSearchResults({ searchTerm, links, limit: 8 })
+    return getSearchResults({ searchTerm, links, limit: maxResultsCount })
   },
 )
 
@@ -22,7 +22,7 @@ const $hiddenResults = computed(
   [$searchTerm, hiddenLinksStore.$hiddenLinks],
   (searchTerm, hiddenLinks): Fuzzysort.KeyResults<LinkItem> => {
     const links = Array.from(hiddenLinks)
-    return getSearchResults({ searchTerm, links, limit: 2 })
+    return getSearchResults({ searchTerm, links, limit: maxHiddenResultsCount })
   },
 )
 
