@@ -33,7 +33,7 @@ export const LinkIconBox: FC<Props> = ({
           'p-4': size === 'large',
         },
         'bg-[linear-gradient(to_bottom,hsl(from_currentcolor_calc(h+20)_s_93%)_50%,hsl(from_currentcolor_calc(h+20)_s_85%))]',
-        'dark:bg-[linear-gradient(to_bottom,hsl(from_currentcolor_calc(h+20)_calc(s*0.25)_80%)_50%,hsl(from_currentcolor_calc(h+20)_calc(s*0.25)_60%))]',
+        'dark:bg-[linear-gradient(to_bottom,hsl(from_currentcolor_calc(h+20)_calc(s*0.4)_85%)_50%,hsl(from_currentcolor_calc(h+20)_calc(s*0.4)_70%))]',
         '[corner-shape:squircle]',
         {
           'rounded-md supports-[corner-shape:squircle]:rounded-xl':

@@ -21,8 +21,5 @@ export function useIconColor({ color, iconData }: UseIconColor) {
   const maxLightness = 40
   // const tanh = `(1 - 2 / (pow(e, 2 * (l / ${maxLightness})) + 1))`
   // const lightValue = `hsl(from ${cssColorValue} h calc(s * 0.9) calc(${tanh} * ${maxLightness}))`
-  const lightValue = `hsl(from ${cssColorValue} h s calc(l - (l * l) / (${maxLightness} * 4)))`
-  const darkValue = lightValue
-
-  return `light-dark(${lightValue}, ${darkValue})`
+  return `hsl(from ${cssColorValue} h s calc(l - (l * l) / (${maxLightness} * 4)))`
 }
