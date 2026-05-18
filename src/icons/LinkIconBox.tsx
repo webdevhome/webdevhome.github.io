@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { type FC } from 'react'
-import type { IconSize } from './getIconSize.ts'
+import type { IconSize } from './useIconSizeData.ts'
 import { LinkIcon } from './LinkIcon.tsx'
 import { useIcon } from './useIcon.ts'
 import { useIconColor } from './useIconColor.ts'
@@ -19,6 +19,11 @@ export const LinkIconBox: FC<Props> = ({
   const iconData = useIcon(iconString)
   const iconColor = useIconColor({ color, iconData })
 
+  const boxShadow =
+    size === 'default'
+      ? '0 0 1px hsl(from currentColor h 100 30 / 0.3), 0 1px 4px -1px hsl(from currentColor h 100 20 / 0.5), 0 0 1px 1px rgb(from white r g b / 0.5) inset'
+      : '0 0 1px hsl(from currentColor h 100 30 / 0.5), 0 6px 40px rgb(from black r g b / 0.2), 0 0 4px 1px rgb(from white r g b / 1) inset'
+
   return (
     <div
       className={classNames(
@@ -27,9 +32,8 @@ export const LinkIconBox: FC<Props> = ({
           'p-1': size === 'default',
           'p-4': size === 'large',
         },
-        'bg-[linear-gradient(to_bottom_right,hsl(from_currentcolor_h_s_98%),hsl(from_currentcolor_h_s_94%))]',
-        'dark:bg-[linear-gradient(to_bottom_right,hsl(from_currentcolor_h_calc(s*0.25)_90%),hsl(from_currentcolor_h_calc(s*0.25)_70%))]',
-        'shadow-[0_1px_2px_rgb(from_black_r_g_b/25%),1px_1px_1px_rgb(from_white_r_g_b/50%)_inset]',
+        'bg-[linear-gradient(to_bottom,hsl(from_currentcolor_calc(h+20)_s_93%)_50%,hsl(from_currentcolor_calc(h+20)_s_85%))]',
+        'dark:bg-[linear-gradient(to_bottom,hsl(from_currentcolor_calc(h+20)_calc(s*0.25)_80%)_50%,hsl(from_currentcolor_calc(h+20)_calc(s*0.25)_60%))]',
         '[corner-shape:squircle]',
         {
           'rounded-md supports-[corner-shape:squircle]:rounded-xl':
@@ -38,12 +42,9 @@ export const LinkIconBox: FC<Props> = ({
             size === 'large',
         },
       )}
-      style={{ color: iconColor }}
+      style={{ color: iconColor, boxShadow }}
     >
-      <LinkIcon
-        size={size}
-        iconData={iconData}
-      />
+      <LinkIcon size={size} iconData={iconData} />
     </div>
   )
 }

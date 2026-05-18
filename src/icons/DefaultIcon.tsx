@@ -1,23 +1,30 @@
 import classNames from 'classnames'
 import { SquircleDashedIcon } from 'lucide-react'
 import { type FC } from 'react'
-import { defaultIconSize, type IconSizeData } from './getIconSize.ts'
+import { useIconShadow } from './useIconShadow.ts'
+import { useIconSizeData, type IconSize } from './useIconSizeData.ts'
 
 type Props = {
-  iconSize?: IconSizeData
+  size?: IconSize
 }
 
-export const DefaultIcon: FC<Props> = ({ iconSize = defaultIconSize }) => {
+export const DefaultIcon: FC<Props> = ({ size = 'default' }) => {
+  const iconSizeData = useIconSizeData(size)
+  const iconShadow = useIconShadow(size)
+
   return (
     <div
       className={classNames(
         'grid items-center justify-center',
         'text-current',
         'h-[24px] w-[24px]',
-        iconSize.className,
+        iconSizeData.className,
       )}
     >
-      <SquircleDashedIcon size={iconSize.pixels} />
+      <SquircleDashedIcon
+        size={iconSizeData.pixels}
+        style={{ filter: iconShadow }}
+      />
     </div>
   )
 }
