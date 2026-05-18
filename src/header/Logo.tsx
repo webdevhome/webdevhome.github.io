@@ -1,36 +1,18 @@
+import classNames from 'classnames'
 import { type FC } from 'react'
 import { appConfig } from '../app/appConfig.ts'
 
 export const Logo: FC = () => {
-  const singleElementClassName = 'text-brand-800 dark:text-brand-100'
-  const element1ClassName = 'text-brand-900 dark:text-brand-300'
-  const element2ClassName = 'text-brand-600 dark:text-brand-50'
-
-  const titleText = (() => {
-    if (Array.isArray(appConfig.appTitle)) {
-      return (
-        <>
-          <span className={element1ClassName}>{appConfig.appTitle[0]}</span>
-          <span className={element2ClassName}>{appConfig.appTitle[1]}</span>
-        </>
-      )
-    }
-    if (typeof appConfig.appTitle === 'string') {
-      return (
-        <span className={singleElementClassName}>{appConfig.appTitle}</span>
-      )
-    }
-    return (
-      <>
-        <span className={element1ClassName}>my</span>
-        <span className={element2ClassName}>links</span>
-      </>
-    )
-  })()
-
   return (
-    <div className="font-mono text-lg font-bold tracking-wider text-nowrap select-none">
-      {titleText}
+    <div
+      className={classNames(
+        'text-lg font-semibold tracking-wide text-nowrap select-none',
+        'bg-cover bg-clip-text text-transparent',
+        'bg-[linear-gradient(70deg_in_oklch_decreasing_hue,oklch(0.4_0.18_240),oklch(0.4_0.18_40))]',
+        'dark:bg-[linear-gradient(70deg_in_oklch_decreasing_hue,oklch(0.75_0.1_240),oklch(0.75_0.1_40))]',
+      )}
+    >
+      {appConfig.appTitle}
     </div>
   )
 }

@@ -1,8 +1,5 @@
 {
-  "appTitle": [
-    "webdev",
-    "home"
-  ],
+  "appTitle": "webdevhome",
   "categories": {
     "sourceControl": {
       "title": "Source Control & CI/CD",

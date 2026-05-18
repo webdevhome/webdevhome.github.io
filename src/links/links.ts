@@ -52,7 +52,7 @@ export type CategoryDefinition = {
 export type LinksData = Record<string, CategoryDefinition>
 
 export type AppConfig = {
-  appTitle?: string | string[]
+  appTitle: string
   categories: LinksData
 }
 //#endregion
