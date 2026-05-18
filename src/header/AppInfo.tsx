@@ -1,38 +1,40 @@
 import { MenuSection } from '@headlessui/react'
 import { useStore } from '@nanostores/react'
-import { FolderGitIcon, LogsIcon } from 'lucide-react'
 import { type FC } from 'react'
 import packageJson from '../../package.json' with { type: 'json' }
 import { hiddenLinksStore } from '../links/hiddenLinksStore.ts'
 import { allLinksCount } from '../links/links.ts'
 import { UiMenuFooter } from '../ui/UiMenuFooter.tsx'
-import { UiMenuHeader } from '../ui/UiMenuHeader.tsx'
-import { UiMenuItem } from '../ui/UiMenuItem.tsx'
 
 export const AppInfo: FC = () => {
   const hiddenLinksCount = useStore(hiddenLinksStore.$hiddenLinksCount)
   const visibleLinksCount = useStore(hiddenLinksStore.$visibleLinksCount)
 
   return (
-    <MenuSection className="flex flex-col gap-y-1">
-      <UiMenuHeader title="Links" />
-      <UiMenuItem
-        icon={<LogsIcon />}
-        label="Changelog"
-        action="https://github.com/webdevhome/webdevhome.github.io/releases"
-      />
-      <UiMenuItem
-        icon={<FolderGitIcon />}
-        label="Source code"
-        action="https://github.com/webdevhome/webdevhome.github.io"
-      />
+    <MenuSection className="[&_a]:dark:text-brand-100 [&_a]:text-brand-600 flex flex-col gap-y-1 [&_a]:hover:underline">
       <UiMenuFooter>
         <p>
           {allLinksCount} links &bull; {visibleLinksCount} visible &bull;{' '}
           {hiddenLinksCount} hidden
         </p>
+        <div className="h-1"></div>
         <p>
-          <strong>Version {packageJson.version}</strong>
+          <strong>webdevhome version {packageJson.version}</strong>
+        </p>
+        <p>
+          <a href="https://github.com/webdevhome/webdevhome.github.io/releases">
+            Changelog
+          </a>{' '}
+          &bull;{' '}
+          <a href="https://github.com/webdevhome/webdevhome.github.io">
+            Source code
+          </a>
+        </p>
+        <p>
+          <a href="https://pixabay.com/illustrations/background-blurred-template-1696064/">
+            Background image
+          </a>{' '}
+          by <a href="https://pixabay.com/users/yuri_b-2216431/">Yuri_B</a>
         </p>
       </UiMenuFooter>
     </MenuSection>
