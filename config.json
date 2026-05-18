@@ -483,6 +483,11 @@
           "title": "regex101",
           "url": "https://regex101.com",
           "color": "#1E3350"
+        },
+        "desmos": {
+          "title": "Desmos",
+          "url": "https://www.desmos.com",
+          "description": "A set of calculators and mathematic tools."
         }
       }
     },
