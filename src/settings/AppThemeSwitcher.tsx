@@ -5,7 +5,7 @@ import { type FC } from 'react'
 import { UiMenuDivider } from '../ui/UiMenuDivider.tsx'
 import { UiMenuHeader } from '../ui/UiMenuHeader.tsx'
 import { UiMenuItem } from '../ui/UiMenuItem.tsx'
-import { themeStore } from './themes.ts'
+import { themeStore } from './themeStore.ts'
 import { showBackgroundStore } from './useBackgroundImage.ts'
 import { useIsCurrentTheme } from './useIsCurrentTheme.ts'
 

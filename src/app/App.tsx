@@ -1,35 +1,41 @@
+import { EllipsisIcon } from 'lucide-react'
 import { Activity, type FC } from 'react'
+import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
 import { AppHeader } from '../header/AppHeader.tsx'
-import { UiSearchButton } from '../ui/UiSearchButton.tsx'
+import { AppHeaderActions } from '../header/AppHeaderActions.tsx'
+import { AppInfo } from '../header/AppInfo.tsx'
+import { AppImportExportMenuItems } from '../import-export/AppImportExportMenuItems.tsx'
 import { ExportDialog } from '../import-export/ExportDialog.tsx'
 import { ImportDialog } from '../import-export/ImportDialog.tsx'
 import { JumpLinks } from '../jump-links/JumpLinks.tsx'
 import { Links } from '../links/Links.tsx'
 import { Search } from '../search/Search.tsx'
-import { useApplyTheme } from '../settings/useApplyTheme.ts'
+import { AppSettings } from '../settings/AppSettings.tsx'
+import { AppThemeSwitcher } from '../settings/AppThemeSwitcher.tsx'
+import { UiMenu } from '../ui/UiMenu.tsx'
+import { UiSearchButton } from '../ui/UiSearchButton.tsx'
 import { useActivityMode } from '../utils/useActivityMode.ts'
-import { AppHeaderActions } from '../header/AppHeaderActions.tsx'
 import { AppLayout } from './AppLayout.tsx'
-import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
-import { AppSettingsMenu } from '../settings/AppSettingsMenu.tsx'
 
 export const App: FC = () => {
-  useApplyTheme()
-
   const isAppMode = useIsAppMode()
   const activityMode = useActivityMode()
 
-  const headerCenterItems = isAppMode('default') ? <UiSearchButton /> : null
-
-  const headerActions = (
-    <>
-      <AppHeaderActions />
-      <AppSettingsMenu />
-    </>
-  )
-
   const header = (
-    <AppHeader centerItems={headerCenterItems} actions={headerActions} />
+    <AppHeader
+      centerItems={isAppMode('default') ? <UiSearchButton /> : null}
+      actions={
+        <>
+          <AppHeaderActions />
+          <UiMenu icon={<EllipsisIcon />}>
+            <AppSettings />
+            <AppThemeSwitcher />
+            <AppImportExportMenuItems />
+            <AppInfo />
+          </UiMenu>
+        </>
+      }
+    />
   )
 
   const sidebar = isAppMode('default', 'customize') ? <JumpLinks /> : null
