@@ -32,18 +32,22 @@ export const AppHeaderActions: FC = () => {
 
   const defaultAndCustomizeModeActions = (
     <>
-      <UiActionButton
-        icon={<CopyMinusIcon />}
-        title="Collapse all hidden links"
-        enabled={!areAllCategoriesCollapsed && areAnyLinksHidden}
-        action={categoriesStore.collapseAll}
-      />
-      <UiActionButton
-        icon={<CopyPlusIcon />}
-        title="Expand all hidden links"
-        enabled={!areAllCategoriesExpanded && areAnyLinksHidden}
-        action={categoriesStore.expandAll}
-      />
+      {areAnyLinksHidden && (
+        <>
+          <UiActionButton
+            icon={<CopyMinusIcon />}
+            title="Collapse all hidden links"
+            enabled={!areAllCategoriesCollapsed && areAnyLinksHidden}
+            action={categoriesStore.collapseAll}
+          />
+          <UiActionButton
+            icon={<CopyPlusIcon />}
+            title="Expand all hidden links"
+            enabled={!areAllCategoriesExpanded && areAnyLinksHidden}
+            action={categoriesStore.expandAll}
+          />
+        </>
+      )}
       <UiActionButton
         icon={<ArrowUpToLineIcon />}
         title="Scroll to top"
