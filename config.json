@@ -1256,6 +1256,11 @@
           "url": "https://github.github.com/gfm/",
           "color": "#181717"
         },
+        "markdoc": {
+          "title": "Markdoc",
+          "url": "https://markdoc.dev",
+          "color": "#ffd848"
+        },
         "asciiDoc": {
           "title": "AsciiDoc",
           "url": "https://asciidoc.org/",
