@@ -11,12 +11,19 @@ export const SearchTargetLabel: FC<Props> = ({ target }) => {
   const category = linksToCategoryMap.get(target) ?? null
 
   return (
-    <div className="not-small-height:flex-col small-height:gap-x-4 flex items-center gap-2 self-center">
+    <div className="flex items-center gap-2 gap-x-4">
       <LinkIconBox iconString={target.icon} color={target.color} size="large" />
 
-      <span className="not-small-height:items-center flex flex-col text-xl font-semibold dark:text-white">
-        <div>{target.title}</div>
+      <span className="flex flex-col dark:text-white">
+        <div className="text-xl leading-tight font-semibold">
+          <a href={target.url} className="hover:underline">
+            {target.title}
+          </a>
+        </div>
         <CategoryLabel category={category} />
+        {target.description !== undefined && (
+          <p className="mt-2 text-sm">{target.description}</p>
+        )}
       </span>
     </div>
   )
