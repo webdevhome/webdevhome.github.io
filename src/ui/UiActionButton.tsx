@@ -74,7 +74,7 @@ export const UiActionButton: FC<Props> = ({
         action()
       }}
     >
-      {icon}
+      <span className="opacity-80">{icon}</span>
 
       {label && (
         <div

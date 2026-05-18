@@ -59,7 +59,9 @@ export const UiMenuItem: FC<Props> = ({
     return (
       <MenuItem>
         <button className={wrapperClassNames} onClick={handleClick}>
-          <div className="mr-3">{icon ?? <div className="size-6"></div>}</div>
+          <div className="mr-3 opacity-80">
+            {icon ?? <div className="size-6"></div>}
+          </div>
           <span>{label}</span>
         </button>
       </MenuItem>
@@ -69,7 +71,9 @@ export const UiMenuItem: FC<Props> = ({
   return (
     <MenuItem>
       <a className={wrapperClassNames} href={action}>
-        <div className="mr-3">{icon ?? <div className="size-6"></div>}</div>
+        <div className="mr-3 opacity-80">
+          {icon ?? <div className="size-6"></div>}
+        </div>
         <span>{label}</span>
       </a>
     </MenuItem>
