@@ -1,17 +1,17 @@
-import { MenuSection } from '@headlessui/react'
 import { useStore } from '@nanostores/react'
 import { type FC } from 'react'
 import packageJson from '../../package.json' with { type: 'json' }
 import { hiddenLinksStore } from '../links/hiddenLinksStore.ts'
 import { allLinksCount } from '../links/links.ts'
 import { UiMenuFooter } from '../ui/UiMenuFooter.tsx'
+import { UiMenuSection } from '../ui/UiMenuSection.tsx'
 
 export const AppInfo: FC = () => {
   const hiddenLinksCount = useStore(hiddenLinksStore.$hiddenLinksCount)
   const visibleLinksCount = useStore(hiddenLinksStore.$visibleLinksCount)
 
   return (
-    <MenuSection className="[&_a]:dark:text-brand-100 [&_a]:text-brand-600 flex flex-col gap-y-1 [&_a]:hover:underline">
+    <UiMenuSection>
       <UiMenuFooter>
         <p>
           {allLinksCount} links &bull; {visibleLinksCount} visible &bull;{' '}
@@ -37,6 +37,6 @@ export const AppInfo: FC = () => {
           by <a href="https://pixabay.com/users/yuri_b-2216431/">Yuri_B</a>
         </p>
       </UiMenuFooter>
-    </MenuSection>
+    </UiMenuSection>
   )
 }

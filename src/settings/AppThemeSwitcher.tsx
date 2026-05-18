@@ -1,10 +1,10 @@
-import { MenuSection } from '@headlessui/react'
 import { useStore } from '@nanostores/react'
 import { MoonIcon, SunIcon, SunMoonIcon, WallpaperIcon } from 'lucide-react'
 import { type FC } from 'react'
 import { UiMenuDivider } from '../ui/UiMenuDivider.tsx'
 import { UiMenuHeader } from '../ui/UiMenuHeader.tsx'
 import { UiMenuItem } from '../ui/UiMenuItem.tsx'
+import { UiMenuSection } from '../ui/UiMenuSection.tsx'
 import { themeStore } from './themeStore.ts'
 import { showBackgroundStore } from './useBackgroundImage.ts'
 import { useIsCurrentTheme } from './useIsCurrentTheme.ts'
@@ -14,7 +14,7 @@ export const AppThemeSwitcher: FC = () => {
   const showBackground = useStore(showBackgroundStore.$show)
 
   return (
-    <MenuSection className="flex flex-col gap-y-1">
+    <UiMenuSection>
       <UiMenuHeader title="Theme" />
       <UiMenuItem
         label="Light"
@@ -45,6 +45,6 @@ export const AppThemeSwitcher: FC = () => {
         closeOnAction={false}
         action={showBackgroundStore.toggle}
       />
-    </MenuSection>
+    </UiMenuSection>
   )
 }

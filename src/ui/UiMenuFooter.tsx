@@ -14,6 +14,8 @@ export const UiMenuFooter: FC<PropsWithChildren> = ({ children }) => {
         'text-gray-500',
         'dark:text-gray-200',
         '[&>p]:my-1',
+        '[&_a]:dark:text-brand-100 [&_a]:text-brand-600',
+        '[&_a]:hover:underline',
       ])}
     >
       {children}
