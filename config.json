@@ -159,7 +159,7 @@
     },
     "packages": {
       "title": "Packages",
-      "color": "orange",
+      "color": "mist",
       "links": {
         "npm": {
           "title": "npm",
@@ -245,7 +245,7 @@
     },
     "codeRelated": {
       "title": "Code Related Services",
-      "color": "orange",
+      "color": "mist",
       "links": {
         "30secsOfCode": {
           "title": "30 seconds of code",
@@ -294,7 +294,7 @@
     },
     "helpDiscuss": {
       "title": "Find Help & Discuss",
-      "color": "cyan",
+      "color": "orange",
       "links": {
         "stackOverflow": {
           "title": "Stack Overflow",
@@ -350,7 +350,7 @@
     },
     "docsLearning": {
       "title": "Docs & Learning Resources",
-      "color": "cyan",
+      "color": "orange",
       "links": {
         "devDocsDotIo": {
           "title": "DevDocs",
@@ -436,7 +436,7 @@
     },
     "playgrounds": {
       "title": "Playgrounds",
-      "color": "cyan",
+      "color": "orange",
       "links": {
         "codePen": {
           "title": "CodePen",
@@ -1190,8 +1190,55 @@
         }
       }
     },
-    "markupDataTypesetting": {
-      "title": "Markup, Data & Typesetting",
+    "dataLangs": {
+      "title": "Data languages",
+      "color": "amber",
+      "links": {
+        "json": {
+          "title": "JSON",
+          "url": "https://www.json.org",
+          "icon": "si:json"
+        },
+        "jsonSchema": {
+          "title": "JSON Schema",
+          "url": "https://json-schema.org"
+        },
+        "toml": {
+          "title": "TOML",
+          "url": "https://toml.io",
+          "icon": "si:toml"
+        },
+        "yaml": {
+          "title": "YAML",
+          "url": "https://yaml.org",
+          "icon": "si:yaml"
+        },
+        "typeSpec": {
+          "title": "TypeSpec",
+          "url": "https://typespec.io",
+          "description": "A language by Microsoft to describe data and to generate API specs, client and server code, docs, etc.",
+          "color": "#2B5D9E"
+        },
+        "graphql": {
+          "title": "GraphQL",
+          "url": "https://graphql.org",
+          "description": "GraphQL is a query language for your API, and a server-side runtime for executing queries using a type system you define for your data.",
+          "icon": "si:graphql"
+        },
+        "docBook": {
+          "title": "DocBook",
+          "url": "https://www.oasis-open.org/docbook/",
+          "description": "XML document for books, articles, and documentation."
+        },
+        "dita": {
+          "title": "DITA",
+          "url": "https://dita-lang.org",
+          "description": "XML-Format."
+        }
+      }
+    },
+    "markupTypesetting": {
+      "title": "Markup & Typesetting",
       "color": "amber",
       "links": {
         "markdown": {
@@ -1225,35 +1272,6 @@
           "url": "https://d2lang.com",
           "description": "A language that turns text to diagrams.",
           "color": "#526EEB"
-        },
-        "json": {
-          "title": "JSON",
-          "url": "https://www.json.org",
-          "icon": "si:json"
-        },
-        "jsonSchema": {
-          "title": "JSON Schema",
-          "url": "https://json-schema.org"
-        },
-        "toml": {
-          "title": "TOML",
-          "url": "https://toml.io",
-          "icon": "si:toml"
-        },
-        "yaml": {
-          "title": "YAML",
-          "url": "https://yaml.org",
-          "icon": "si:yaml"
-        },
-        "docBook": {
-          "title": "DocBook",
-          "url": "https://www.oasis-open.org/docbook/",
-          "description": "XML document for books, articles, and documentation."
-        },
-        "dita": {
-          "title": "DITA",
-          "url": "https://dita-lang.org",
-          "description": "XML-Format."
         },
         "latex": {
           "title": "LaTeX",
@@ -1413,12 +1431,6 @@
           "title": "Golang",
           "url": "https://go.dev",
           "icon": "si:go"
-        },
-        "typeSpec": {
-          "title": "TypeSpec",
-          "url": "https://typespec.io",
-          "description": "A language by Microsoft to describe data and to generate API specs, client and server code, docs, etc.",
-          "color": "#2B5D9E"
         }
       }
     },
@@ -1636,24 +1648,6 @@
           "url": "https://neo4j.com",
           "description": "A graph database.",
           "icon": "si:neo4j"
-        }
-      }
-    },
-    "selfHosting": {
-      "title": "Self Hosting",
-      "color": "amber",
-      "links": {
-        "selfhost": {
-          "title": "selfh.st",
-          "url": "https://selfh.st",
-          "description": "A weekly newsletter about self hosting.",
-          "color": "#2C5FD1"
-        },
-        "awesomeSelfhost": {
-          "title": "Awesome Selfhosted",
-          "url": "https://awesome-selfhosted.net",
-          "description": "List of apps and services you can host yourself.",
-          "icon": "si:awesomelists"
         }
       }
     },
@@ -1942,6 +1936,24 @@
           "title": "Timeline of Web Browsers",
           "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg",
           "description": "A graphical timeline of all web browsers, grouped by used engine."
+        }
+      }
+    },
+    "selfHosting": {
+      "title": "Self Hosting",
+      "color": "rose",
+      "links": {
+        "selfhost": {
+          "title": "selfh.st",
+          "url": "https://selfh.st",
+          "description": "A weekly newsletter about self hosting.",
+          "color": "#2C5FD1"
+        },
+        "awesomeSelfhost": {
+          "title": "Awesome Selfhosted",
+          "url": "https://awesome-selfhosted.net",
+          "description": "List of apps and services you can host yourself.",
+          "icon": "si:awesomelists"
         }
       }
     },
