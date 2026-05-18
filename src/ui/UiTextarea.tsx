@@ -27,6 +27,7 @@ export const UiTextarea = ({
       className={classNames(
         'h-96 max-h-full w-full resize-none rounded border border-gray-300 p-4',
         'dark:border-gray-500 dark:bg-gray-700',
+        'leading-relaxed',
         className,
       )}
       disabled={disabled}

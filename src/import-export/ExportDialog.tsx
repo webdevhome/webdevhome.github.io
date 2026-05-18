@@ -40,7 +40,7 @@ export const ExportDialog: FC = () => {
       }
     >
       <UiTextarea
-        className="font-mono"
+        className="font-mono text-sm"
         value={exportJSON}
         readonly
         ref={textareaRef}

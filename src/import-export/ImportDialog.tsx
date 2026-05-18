@@ -54,7 +54,7 @@ export const ImportDialog: FC = () => {
       }
     >
       <UiTextarea
-        className="font-mono"
+        className="font-mono text-sm"
         value={importJSON}
         onChange={handleOnTextareaChange}
         placeholder={`Supported formats:\n\n- New ID based JSON array.\n  Example: ["github","gitlab"]\n\n- Old URL based JSON array.\n  Example: ["https://github.com","https://gitlab.com"]`}
