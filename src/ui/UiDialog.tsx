@@ -54,7 +54,7 @@ export const UiDialog: FC<PropsWithChildren<Props>> = ({
           <div className="overflow-y-auto p-4">{children}</div>
 
           <div className="px-4 pb-4">
-            <div className="grid grid-cols-[auto_1fr_auto] grid-rows-[auto_auto]">
+            <div className="grid grid-rows-[auto_auto] gap-2 lg:grid-cols-[auto_1fr_auto]">
               {message !== undefined && message.text !== null ? (
                 <span
                   className={classNames(
@@ -83,11 +83,11 @@ export const UiDialog: FC<PropsWithChildren<Props>> = ({
                 </span>
               ) : null}
 
-              <div className="col-start-1 row-start-2 flex items-center gap-x-4">
+              <div className="flex flex-col gap-x-4 gap-y-2 lg:col-start-1 lg:row-start-2 lg:flex-row lg:items-center">
                 {leftButtons}
               </div>
 
-              <div className="col-start-3 row-start-2 flex items-center gap-x-4">
+              <div className="flex flex-col gap-x-4 gap-y-2 lg:col-start-3 lg:row-start-2 lg:flex-row lg:items-center">
                 {rightButtons}
               </div>
             </div>
