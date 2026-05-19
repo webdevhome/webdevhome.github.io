@@ -20,7 +20,7 @@ export const Search: FC = () => {
   useAutoFocusSearchInput(searchInputRef)
 
   return (
-    <div className="small-height:py-4 small-height:gap-y-6 mx-auto flex w-150 max-w-full flex-col gap-y-8 px-4 py-10">
+    <div className="small-height:py-4 small-height:gap-y-6 mx-auto flex w-150 max-w-full flex-col gap-y-8 px-4 py-4 sm:py-12">
       {searchTarget !== null && <SearchTargetLabel target={searchTarget} />}
 
       <div className="flex max-w-full flex-col">
