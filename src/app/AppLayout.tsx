@@ -10,6 +10,7 @@ import { useIsAppMode } from '../app-mode/useIsAppMode.ts'
 import { useOnAppModeChanged } from '../app-mode/useOnAppModeChanged.ts'
 import { jumpLinksStore } from '../jump-links/jumpLinksStore.ts'
 import { showBackgroundStore } from '../settings/useBackgroundImage.ts'
+import { useMainContentScrollPosition } from '../utils/useScrollPosition.ts'
 import { useFocusAppLayoutElements } from './useFocusAppLayoutElements.ts'
 
 type Props = {
@@ -18,9 +19,9 @@ type Props = {
 }
 
 export const AppLayout: FC<PropsWithChildren<Props>> = ({
-  children,
   header,
   sidebar,
+  children,
 }) => {
   const sidebarRef = useRef<HTMLDivElement>(null)
   const mainContentRef = useRef<HTMLDivElement>(null)
@@ -28,12 +29,15 @@ export const AppLayout: FC<PropsWithChildren<Props>> = ({
   const showBackground = useStore(showBackgroundStore.$show)
   const showJumpLinks = useStore(jumpLinksStore.$showJumpLinks)
   const showJumpLinksMobile = useStore(jumpLinksStore.$showJumpLinksMobile)
+
   const isAppMode = useIsAppMode()
 
   const { focusMainElement } = useFocusAppLayoutElements({
     sidebarRef,
     mainContentRef,
   })
+
+  useMainContentScrollPosition(mainContentRef)
 
   useOnAppModeChanged((value) => {
     if (value === 'default') focusMainElement()

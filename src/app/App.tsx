@@ -47,7 +47,7 @@ export const App: FC = () => {
           <Links />
         </Activity>
 
-        <Activity mode={activityMode(() => !isAppMode('default', 'customize'))}>
+        <Activity mode={activityMode(() => isAppMode('search'))}>
           <Search />
         </Activity>
       </AppLayout>
