@@ -38,7 +38,7 @@ export const UiActionButton: FC<Props> = ({
       className={classNames(
         'flex items-center gap-2',
         'self-center',
-        'p-1.5',
+        'px-1.5 py-1.5 sm:px-2',
         { 'lg:px-3': label !== undefined },
         {
           'max-md:hidden': visible === 'big-screens',

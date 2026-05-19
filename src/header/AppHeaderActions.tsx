@@ -39,12 +39,14 @@ export const AppHeaderActions: FC = () => {
             title="Collapse all hidden links"
             enabled={!areAllCategoriesCollapsed && areAnyLinksHidden}
             action={categoriesStore.collapseAll}
+            visible="big-screens"
           />
           <UiActionButton
             icon={<CopyPlusIcon />}
             title="Expand all hidden links"
             enabled={!areAllCategoriesExpanded && areAnyLinksHidden}
             action={categoriesStore.expandAll}
+            visible="big-screens"
           />
         </>
       )}

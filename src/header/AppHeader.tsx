@@ -18,7 +18,7 @@ export const AppHeader: FC<Props> = ({ centerItems, actions }) => {
     <div
       className={classNames(
         'grid items-center',
-        'grid-cols-[1fr_auto] grid-rows-[auto_auto] md:grid-cols-[1fr_auto_1fr] md:grid-rows-1',
+        'grid-cols-[1fr_auto] grid-rows-[auto_auto] md:grid-cols-[1fr_auto_minmax(max-content,1fr)] md:grid-rows-1',
       )}
     >
       <div className="flex items-center gap-x-2">
@@ -28,12 +28,18 @@ export const AppHeader: FC<Props> = ({ centerItems, actions }) => {
           action={handleMenuClick}
           enabled={isAppMode('default', 'customize')}
         />
-        <Logo />
+        <div
+          className={classNames({
+            'max-sm:hidden': isAppMode('customize'),
+          })}
+        >
+          <Logo />
+        </div>
       </div>
 
       <div
         className={classNames(
-          'col-span-2 row-start-2 md:col-span-1 md:col-start-2 md:row-start-1',
+          'row-start-2 md:col-start-2 md:row-start-1',
           'flex items-center gap-x-1 justify-self-center',
         )}
       >
