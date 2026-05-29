@@ -8,7 +8,8 @@
     "build": "npm run build:icons && eslint . && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:icons": "node scripts/makeIconsJson.ts"
+    "build:icons": "node scripts/makeIconsJson.ts",
+    "build:favicon": "magick public/appicon-16.png public/appicon-32.png public/appicon-144.png public/favicon.ico"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.10",
