@@ -18,8 +18,9 @@ export function useIconColor({ color, iconData }: UseIconColor) {
     return 'dimgray'
   })()
 
-  const maxLightness = 40
-  // const tanh = `(1 - 2 / (pow(e, 2 * (l / ${maxLightness})) + 1))`
-  // const lightValue = `hsl(from ${cssColorValue} h calc(s * 0.9) calc(${tanh} * ${maxLightness}))`
-  return `hsl(from ${cssColorValue} h s calc(l - (l * l) / (${maxLightness} * 4)))`
+  const maxLightness = 75
+  const divisor = 10_000 / (100 - maxLightness)
+  const l = `calc(l - ((l * l) / ${divisor}))`
+
+  return `hsl(from ${cssColorValue} h s ${l})`
 }
