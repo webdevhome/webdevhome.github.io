@@ -366,6 +366,11 @@
           "url": "https://www.gitbook.com",
           "icon": "si:gitbook"
         },
+        "webDotDev": {
+          "title": "web.dev",
+          "url": "https://web.dev",
+          "description": "Learning resources for web development by the Chrome team."
+        },
         "mdnWebDocs": {
           "title": "MDN Web Docs",
           "url": "https://developer.mozilla.org",
@@ -590,7 +595,7 @@
       }
     },
     "uiFrameworksDomControlling": {
-      "title": "UI Frameworks (DOM controlling)",
+      "title": "UI Frameworks",
       "color": "blue",
       "links": {
         "reactJs": {
@@ -643,44 +648,8 @@
         }
       }
     },
-    "uiFrameworksDomEnhancing": {
-      "title": "UI Frameworks (DOM enhancing)",
-      "color": "blue",
-      "links": {
-        "alpineJs": {
-          "title": "Alpine.js",
-          "url": "https://alpinejs.dev",
-          "description": "A library that attaches JS logic to the DOM.",
-          "icon": "si:alpinedotjs"
-        },
-        "htmx": {
-          "title": "HTMX",
-          "url": "https://htmx.org",
-          "description": "A library to add logic to HTML by using attributes.",
-          "icon": "si:htmx"
-        },
-        "hotwire": {
-          "title": "Hotwire",
-          "url": "https://hotwired.dev",
-          "description": "Hotwire is an alternative approach to building modern web applications without using much JavaScript by sending HTML instead of JSON over the wire. (Hotwire = Turbo + Stimulus)",
-          "icon": "si:hotwire"
-        },
-        "hotwiredTurbo": {
-          "title": "Turbo",
-          "url": "https://turbo.hotwired.dev",
-          "description": "The speed of a single-page web application without having to write any JavaScript.",
-          "icon": "si:turbo"
-        },
-        "stimulusJs": {
-          "title": "Stimulus",
-          "url": "https://stimulus.hotwired.dev",
-          "description": "A modest JavaScript framework for the HTML you already have.",
-          "icon": "si:stimulus"
-        }
-      }
-    },
     "uiFrameworksServerSide": {
-      "title": "UI Frameworks (Server side)",
+      "title": "Meta Frameworks & Site Generators",
       "color": "blue",
       "links": {
         "astroJs": {
@@ -715,8 +684,44 @@
         }
       }
     },
+    "uiFrameworksDomEnhancing": {
+      "title": "Progressive Enhancement Libraries",
+      "color": "blue",
+      "links": {
+        "alpineJs": {
+          "title": "Alpine.js",
+          "url": "https://alpinejs.dev",
+          "description": "A library that attaches JS logic to the DOM.",
+          "icon": "si:alpinedotjs"
+        },
+        "htmx": {
+          "title": "HTMX",
+          "url": "https://htmx.org",
+          "description": "A library to add logic to HTML by using attributes.",
+          "icon": "si:htmx"
+        },
+        "hotwire": {
+          "title": "Hotwire",
+          "url": "https://hotwired.dev",
+          "description": "Hotwire is an alternative approach to building modern web applications without using much JavaScript by sending HTML instead of JSON over the wire. (Hotwire = Turbo + Stimulus)",
+          "icon": "si:hotwire"
+        },
+        "hotwiredTurbo": {
+          "title": "Turbo",
+          "url": "https://turbo.hotwired.dev",
+          "description": "The speed of a single-page web application without having to write any JavaScript.",
+          "icon": "si:turbo"
+        },
+        "stimulusJs": {
+          "title": "Stimulus",
+          "url": "https://stimulus.hotwired.dev",
+          "description": "A modest JavaScript framework for the HTML you already have.",
+          "icon": "si:stimulus"
+        }
+      }
+    },
     "uiAnimationRendering": {
-      "title": "UI, Animation & Rendering",
+      "title": "Components, Animation & Graphics",
       "color": "blue",
       "links": {
         "headlessUi": {
@@ -724,6 +729,16 @@
           "url": "https://headlessui.dev",
           "description": "Unstyled UI components for React and Vue by the developers of Tailwind CSS.",
           "icon": "si:headlessui"
+        },
+        "radixUi": {
+          "title": "Radix UI",
+          "url": "https://www.radix-ui.com",
+          "icon": "si:radixui"
+        },
+        "shadcn": {
+          "title": "shadcn",
+          "url": "https://www.shadcn.io",
+          "icon": "si:shadcnui"
         },
         "motionJs": {
           "title": "Motion",
@@ -811,21 +826,39 @@
         }
       }
     },
-    "miscJsLibs": {
-      "title": "Other JS Libraries",
+    "orms": {
+      "title": "ORMs & Query Builders",
       "color": "blue",
       "links": {
-        "reactRouter": {
-          "title": "React Router",
-          "url": "https://reactrouter.com",
-          "icon": "si:reactrouter"
+        "prismaOrm": {
+          "title": "Prisma",
+          "url": "https://www.prisma.io/orm",
+          "description": "TypeScript ORM.",
+          "icon": "si:prisma"
         },
-        "tanStack": {
-          "title": "TanStack",
-          "url": "https://tanstack.com",
-          "description": "List of open source libraries, including TanStack Query.",
-          "icon": "si:tanstack"
+        "drizzle": {
+          "title": "Drizzle ORM",
+          "url": "https://orm.drizzle.team",
+          "description": "TypeScript ORM.",
+          "icon": "si:drizzle"
         },
+        "typeorm": {
+          "title": "TypeORM",
+          "url": "https://typeorm.io",
+          "description": "TypeScript ORM.",
+          "icon": "si:typeorm"
+        },
+        "kysely": {
+          "title": "Kysely",
+          "url": "https://kysely.dev",
+          "description": "TypeScript SQL query builder."
+        }
+      }
+    },
+    "networkLibs": {
+      "title": "Networking & Fetch Libraries",
+      "color": "blue",
+      "links": {
         "tanStackQuery": {
           "title": "TanStack Query",
           "url": "https://tanstack.com/query",
@@ -855,6 +888,23 @@
           "url": "https://tinybase.org",
           "description": "A reactive data store & sync engine.",
           "color": "#C63361"
+        }
+      }
+    },
+    "miscJsLibs": {
+      "title": "Other JS Libraries",
+      "color": "blue",
+      "links": {
+        "reactRouter": {
+          "title": "React Router",
+          "url": "https://reactrouter.com",
+          "icon": "si:reactrouter"
+        },
+        "tanStack": {
+          "title": "TanStack",
+          "url": "https://tanstack.com",
+          "description": "List of open source libraries, including TanStack Query.",
+          "icon": "si:tanstack"
         },
         "i18next": {
           "title": "i18next",
@@ -1077,6 +1127,12 @@
           "description": "Library for test automation.",
           "icon": "si:cypress"
         },
+        "playwright": {
+          "title": "Playwright",
+          "url": "https://playwright.dev",
+          "description": "API to control and automate a browser.",
+          "color": "#45ba4b"
+        },
         "puppeteer": {
           "title": "Puppeteer",
           "url": "https://developers.google.com/web/tools/puppeteer",
@@ -1088,6 +1144,18 @@
           "url": "https://www.selenium.dev",
           "description": "A framework for browser automation.",
           "icon": "si:selenium"
+        },
+        "storybook": {
+          "title": "Storybook",
+          "url": "https://storybook.js.org",
+          "description": "Build, test & document components.",
+          "icon": "si:storybook"
+        },
+        "testingLibrary": {
+          "title": "Testing Library",
+          "url": "https://testing-library.com",
+          "description": "UI component testing library.",
+          "icon": "si:testinglibrary"
         }
       }
     },
@@ -1490,6 +1558,18 @@
           "description": "Node.js web framework.",
           "icon": "si:nestjs"
         },
+        "adonisJs": {
+          "title": "AdonisJS",
+          "url": "https://adonisjs.com",
+          "description": "TypeScript framework.",
+          "icon": "si:adonisjs"
+        },
+        "freshDeno": {
+          "title": "Fresh",
+          "url": "https://fresh.deno.dev",
+          "description": "Deno framework.",
+          "icon": "si:fresh"
+        },
         "rubyOnRails": {
           "title": "Ruby on Rails",
           "url": "https://rubyonrails.org",
@@ -1517,6 +1597,37 @@
         "micronaut": {
           "title": "Micronaut",
           "url": "https://micronaut.io"
+        }
+      }
+    },
+    "apiDevelopment": {
+      "title": "API development",
+      "color": "amber",
+      "links": {
+        "swagger": {
+          "title": "Swagger",
+          "url": "https://swagger.io",
+          "searchUrl": "https://swagger.io/?query={search}",
+          "icon": "si:swagger"
+        },
+        "openApi": {
+          "title": "OpenAPI",
+          "url": "https://www.openapis.org",
+          "searchUrl": "https://www.openapis.org/?s={search}",
+          "icon": "si:openapiinitiative"
+        },
+        "trpc": {
+          "title": "tRPC",
+          "url": "https://trpc.io",
+          "description": "Make typed APIs using TypeScript.",
+          "icon": "si:trpc"
+        },
+        "grpc": {
+          "title": "gRPC",
+          "url": "https://grpc.io",
+          "description": "Open source RPC framework.",
+          "searchUrl": "https://grpc.io/search/?q={search}",
+          "color": "#66c5c6"
         }
       }
     },
@@ -1820,17 +1931,55 @@
         "w3c": {
           "title": "W3C",
           "url": "https://www.w3.org",
+          "description": "World Wide Web Consortium. Consortium for web standards and guidelines.",
           "color": "#255997"
+        },
+        "openUi": {
+          "title": "Open UI",
+          "url": "https://open-ui.org/",
+          "description": "Official website of Open UI (a W3C community group). It's about making built-in form controls styleable while also adding new ones.",
+          "color": "#49A258"
         },
         "webdxDevSignals": {
           "title": "WebDX Developer Signals",
           "url": "https://github.com/web-platform-dx/developer-signals",
           "description": "A repository to gather feedback about wanted web platform features, provided by the W3C WebDX Community Group."
         },
+        "whatwg": {
+          "title": "WHATWG",
+          "url": "https://whatwg.org",
+          "description": "Web Hypertext Application Technology Working Group. Working group for HTML and related APIs.",
+          "color": "#3c790a"
+        },
+        "tc39": {
+          "title": "TC39",
+          "url": "https://tc39.es",
+          "description": "Official website of Ecma International's TC39. Committee for the JavaScript specification.",
+          "color": "#EC8331"
+        },
+        "tc39Forum": {
+          "title": "TC39 Forum",
+          "url": "https://es.discourse.group",
+          "description": "Forum of the TC39.",
+          "searchUrl": "https://es.discourse.group/search?q={search}",
+          "color": "#EC8331"
+        },
         "esProposals": {
           "title": "ECMAScript Proposals",
           "url": "https://github.com/tc39/proposals",
-          "description": "Official repository of all ECMAScript proposals."
+          "description": "List of all ECMAScript proposals by the TC39."
+        },
+        "wicg": {
+          "title": "WICG",
+          "url": "https://wicg.io/",
+          "description": "Web Incubator Community Group. Community group for experimentation and discussion of new web platform features.",
+          "searchUrl": "https://discourse.wicg.io/search?q={search}",
+          "color": "#5AB1C1"
+        },
+        "wpt": {
+          "title": "Web Platform Tests",
+          "url": "https://wpt.fyi",
+          "description": "A test suite to test browser interoperability."
         },
         "esCompatTable": {
           "title": "ECMAScript Compatibility Table",
@@ -1848,32 +1997,6 @@
           "url": "https://mozilla.github.io/standards-positions",
           "description": "A list of Mozilla's position on open web and web-related specifications.",
           "icon": "si:mozilla"
-        },
-        "tc39": {
-          "title": "TC39",
-          "url": "https://tc39.es",
-          "description": "Official website of Ecma International's TC39 (Technical Committee 39).",
-          "color": "#EC8331"
-        },
-        "tc39Forum": {
-          "title": "TC39 Forum",
-          "url": "https://es.discourse.group",
-          "description": "Official forum of Ecma International's TC39 (Technical Committee 39). Talk about ECMAScript features and proposals.",
-          "searchUrl": "https://es.discourse.group/search?q={search}",
-          "color": "#EC8331"
-        },
-        "wicg": {
-          "title": "WICG",
-          "url": "https://wicg.io/",
-          "description": "Official website of the WICG (Web Incubator Community Group).",
-          "searchUrl": "https://discourse.wicg.io/search?q={search}",
-          "color": "#5AB1C1"
-        },
-        "openUi": {
-          "title": "Open UI",
-          "url": "https://open-ui.org/",
-          "description": "Official website of Open UI (a W3C community group). It's about making built-in form controls styleable while also adding new ones.",
-          "color": "#49A258"
         },
         "openJs": {
           "title": "OpenJS Foundation",
@@ -2056,10 +2179,30 @@
           "url": "https://kubernetes.io",
           "icon": "si:kubernetes"
         },
+        "podman": {
+          "title": "Podman",
+          "url": "https://podman.io",
+          "icon": "si:podman"
+        },
+        "terraform": {
+          "title": "Terraform",
+          "url": "https://developer.hashicorp.com/terraform",
+          "icon": "si:terraform"
+        },
+        "coolify": {
+          "title": "Coolify",
+          "url": "https://coolify.io",
+          "icon": "si:coolify"
+        },
         "ddev": {
           "title": "ddev",
           "url": "https://ddev.com",
           "color": "#4BA5DD"
+        },
+        "deployer": {
+          "title": "Deployer",
+          "url": "https://deployer.org",
+          "description": "Deployment tool for PHP applications."
         },
         "virtualBox": {
           "title": "VirtualBox",
