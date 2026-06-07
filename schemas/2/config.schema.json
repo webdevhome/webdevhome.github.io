@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://webdevhome.github.io/schemas/2/config.schema.json",
+  "title": "Links",
+  "description": "A list of links to output on the website",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "appTitle",
+    "categories"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "appTitle": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/category"
+      }
+    }
+  },
+  "$defs": {
+    "tailwindColor": {
+      "type": "string",
+      "enum": [
+        "red",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "green",
+        "emerald",
+        "teal",
+        "cyan",
+        "sky",
+        "blue",
+        "indigo",
+        "violet",
+        "purple",
+        "fuchsia",
+        "pink",
+        "rose",
+        "slate",
+        "gray",
+        "zinc",
+        "neutral",
+        "stone",
+        "taupe",
+        "mauve",
+        "mist",
+        "olive"
+      ]
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "color",
+        "links"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "color": {
+          "$ref": "#/$defs/tailwindColor"
+        },
+        "links": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/link"
+          }
+        }
+      }
+    },
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "url"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "searchUrl": {
+          "type": "string",
+          "pattern": "\\{search\\}"
+        },
+        "icon": {
+          "type": "string",
+          "pattern": "^(si|file):"
+        },
+        "color": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

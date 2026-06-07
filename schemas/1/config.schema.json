@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://webdevhome.github.io/schemas/1/config.schema.json",
+  "title": "Links",
+  "description": "A list of links to output on the website",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "items"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string",
+          "enum": [
+            "red",
+            "orange",
+            "amber",
+            "yellow",
+            "lime",
+            "green",
+            "emerald",
+            "teal",
+            "cyan",
+            "sky",
+            "blue",
+            "indigo",
+            "violet",
+            "purple",
+            "fuchsia",
+            "pink",
+            "rose",
+            "slate",
+            "gray",
+            "zinc",
+            "neutral",
+            "stone",
+            "taupe",
+            "mauve",
+            "mist",
+            "olive"
+          ]
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/link"
+          }
+        }
+      }
+    },
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "url"
+      ],
+      "dependencies": {
+        "icon": [
+          "color"
+        ]
+      },
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "description": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        },
+        "searchUrl": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/group"
+      }
+    }
+  }
+}
