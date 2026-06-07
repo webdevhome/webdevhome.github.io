@@ -291,7 +291,7 @@
     },
     "helpDiscuss": {
       "title": "Find Help & Discuss",
-      "color": "orange",
+      "color": "yellow",
       "links": {
         "stackOverflow": {
           "title": "Stack Overflow",
@@ -347,7 +347,7 @@
     },
     "docsLearning": {
       "title": "Docs & Learning Resources",
-      "color": "orange",
+      "color": "yellow",
       "links": {
         "devDocsDotIo": {
           "title": "DevDocs",
@@ -438,7 +438,7 @@
     },
     "playgrounds": {
       "title": "Playgrounds",
-      "color": "orange",
+      "color": "yellow",
       "links": {
         "codePen": {
           "title": "CodePen",
@@ -490,107 +490,6 @@
           "title": "Desmos",
           "url": "https://www.desmos.com",
           "description": "A set of calculators and mathematic tools."
-        }
-      }
-    },
-    "cssProcessors": {
-      "title": "CSS Processors",
-      "color": "purple",
-      "links": {
-        "sassLang": {
-          "title": "Sass",
-          "url": "https://sass-lang.com",
-          "icon": "si:sass"
-        },
-        "lessLang": {
-          "title": "Less",
-          "url": "https://lesscss.org",
-          "icon": "si:less"
-        },
-        "stylusLang": {
-          "title": "Stylus",
-          "url": "https://stylus-lang.com",
-          "icon": "si:stylus"
-        },
-        "postCss": {
-          "title": "PostCSS",
-          "url": "https://postcss.org",
-          "icon": "si:postcss"
-        },
-        "autoprefixer": {
-          "title": "Autoprefixer",
-          "url": "https://github.com/postcss/autoprefixer",
-          "description": "Library that automatically insert browser prefixes into your CSS.",
-          "icon": "si:autoprefixer"
-        }
-      }
-    },
-    "cssLibs": {
-      "title": "CSS Frameworks & Libraries",
-      "color": "purple",
-      "links": {
-        "tailwindCss": {
-          "title": "Tailwind CSS",
-          "url": "https://tailwindcss.com",
-          "description": "A utility class based CSS framework.",
-          "icon": "si:tailwindcss"
-        },
-        "mui": {
-          "title": "MUI",
-          "url": "https://mui.com",
-          "description": "React component library with different design languages, including Material UI, and an unstyled version of every component.",
-          "icon": "si:mui"
-        },
-        "bootstrap": {
-          "title": "Bootstrap",
-          "url": "https://getbootstrap.com",
-          "icon": "si:bootstrap"
-        },
-        "bulma": {
-          "title": "Bulma",
-          "url": "https://bulma.io",
-          "icon": "si:bulma"
-        },
-        "materialDesign": {
-          "title": "Material Design",
-          "url": "https://m3.material.io",
-          "description": "Official documentation for Google's Material Design.",
-          "icon": "si:materialdesign",
-          "searchUrl": "https://material.io/search.html?q={search}"
-        },
-        "cssModules": {
-          "title": "CSS Modules",
-          "url": "https://github.com/css-modules/css-modules",
-          "icon": "si:cssmodules"
-        },
-        "linaria": {
-          "title": "linaria",
-          "url": "https://linaria.dev/",
-          "description": "A zero-runtime CSS-in-JS library.",
-          "color": "#A74D8E"
-        },
-        "pandaCss": {
-          "title": "Panda CSS",
-          "url": "https://panda-css.com/",
-          "description": "A zero-runtime CSS-in-JS library.",
-          "color": "#F8E164"
-        },
-        "vanillaExtract": {
-          "title": "vanilla-extract",
-          "url": "https://vanilla-extract.style",
-          "description": "A zero-runtime CSS-in-JS library.",
-          "icon": "si:vanillaextract"
-        },
-        "styledComponents": {
-          "title": "Styled Components",
-          "url": "https://styled-components.com",
-          "icon": "si:styledcomponents"
-        },
-        "bem": {
-          "title": "BEM",
-          "url": "https://getbem.com/introduction",
-          "description": "A CSS naming convention that groups classes using namespaces.",
-          "icon": "si:bem"
         }
       }
     },
@@ -720,26 +619,71 @@
         }
       }
     },
-    "uiAnimationRendering": {
-      "title": "Components, Animation & Graphics",
+    "nativeHybrideApps": {
+      "title": "Native & Hybrid Apps",
       "color": "blue",
       "links": {
-        "headlessUi": {
-          "title": "Headless UI",
-          "url": "https://headlessui.dev",
-          "description": "Unstyled UI components for React and Vue by the developers of Tailwind CSS.",
-          "icon": "si:headlessui"
+        "ionic": {
+          "title": "Ionic",
+          "url": "https://ionic.io",
+          "description": "A framework for hybrid mobile apps.",
+          "icon": "si:ionic"
         },
-        "radixUi": {
-          "title": "Radix UI",
-          "url": "https://www.radix-ui.com",
-          "icon": "si:radixui"
+        "reactNative": {
+          "title": "React Native",
+          "url": "https://reactnative.dev",
+          "icon": "si:react"
         },
-        "shadcn": {
-          "title": "shadcn",
-          "url": "https://www.shadcn.io",
-          "icon": "si:shadcnui"
+        "nativeScript": {
+          "title": "NativeScript",
+          "url": "https://nativescript.org",
+          "description": "A cross-platform framework for any frontend framework.",
+          "icon": "si:nativescript"
         },
+        "quasar": {
+          "title": "Quasar",
+          "url": "https://quasar.dev",
+          "description": "A cross-platform Vue.js framework.",
+          "icon": "si:quasar"
+        },
+        "svelteNative": {
+          "title": "Svelte Native",
+          "url": "https://svelte.nativescript.org",
+          "description": "Build native apps using Svelte.",
+          "icon": "si:svelte"
+        },
+        "electron": {
+          "title": "Electron",
+          "url": "https://www.electronjs.org",
+          "description": "A framework to build native desktop apps using the web stack.",
+          "icon": "si:electron",
+          "searchUrl": "https://www.electronjs.org/?q={search}"
+        },
+        "tauri": {
+          "title": "Tauri",
+          "url": "https://tauri.app",
+          "description": "A framework to build native desktop apps using the web stack and Rust.",
+          "icon": "si:tauri"
+        },
+        "blazor": {
+          "title": "Blazor",
+          "url": "https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor",
+          "description": "Compile C# to WASM and run it in the Browser.",
+          "icon": "si:blazor"
+        },
+        "flutter": {
+          "title": "Flutter",
+          "url": "https://flutter.dev",
+          "description": "A Dart based framework to build multi-platform apps.",
+          "icon": "si:flutter",
+          "searchUrl": "https://flutter.dev/search?q={search}"
+        }
+      }
+    },
+    "animationAndGraphics": {
+      "title": "Animation & Graphics",
+      "color": "cyan",
+      "links": {
         "motionJs": {
           "title": "Motion",
           "url": "https://motion.dev",
@@ -773,9 +717,78 @@
         }
       }
     },
+    "componentLibs": {
+      "title": "Component Libraries",
+      "color": "cyan",
+      "links": {
+        "headlessUi": {
+          "title": "Headless UI",
+          "url": "https://headlessui.dev",
+          "description": "Unstyled UI components for React and Vue by the developers of Tailwind CSS.",
+          "icon": "si:headlessui"
+        },
+        "radixUi": {
+          "title": "Radix UI",
+          "url": "https://www.radix-ui.com",
+          "icon": "si:radixui"
+        },
+        "shadcn": {
+          "title": "shadcn/ui",
+          "url": "https://www.shadcn.io",
+          "icon": "si:shadcnui"
+        },
+        "shadcnVue": {
+          "title": "shadcn/vue",
+          "url": "https://www.shadcn-vue.com",
+          "icon": "si:shadcnui",
+          "color": "#41B883"
+        },
+        "antDesign": {
+          "title": "Ant Design",
+          "url": "https://ant.design",
+          "icon": "si:antdesign"
+        },
+        "rekaUi": {
+          "title": "Reka UI",
+          "url": "https://reka-ui.com",
+          "icon": "si:rekaui"
+        },
+        "heroUi": {
+          "title": "HeroUI",
+          "url": "https://heroui.com",
+          "icon": "si:heroui"
+        },
+        "mantineui": {
+          "title": "Mantine UI",
+          "url": "https://ui.mantine.dev",
+          "icon": "si:mantine"
+        },
+        "chakraUi": {
+          "title": "Chakra UI",
+          "url": "https://chakra-ui.com",
+          "icon": "si:chakraui"
+        },
+        "uiKit": {
+          "title": "UIkit",
+          "url": "https://getuikit.com",
+          "icon": "si:uikit"
+        },
+        "mui": {
+          "title": "MUI",
+          "url": "https://mui.com",
+          "description": "React component library with different design languages, including Material UI, and an unstyled version of every component.",
+          "icon": "si:mui"
+        },
+        "elasticUi": {
+          "title": "Elastic UI",
+          "url": "https://eui.elastic.co",
+          "color": "#F04E98"
+        }
+      }
+    },
     "stateManagement": {
       "title": "State Management",
-      "color": "blue",
+      "color": "cyan",
       "links": {
         "jotai": {
           "title": "Jotai",
@@ -828,7 +841,7 @@
     },
     "orms": {
       "title": "ORMs & Query Builders",
-      "color": "blue",
+      "color": "cyan",
       "links": {
         "prismaOrm": {
           "title": "Prisma",
@@ -857,7 +870,7 @@
     },
     "networkLibs": {
       "title": "Networking & Fetch Libraries",
-      "color": "blue",
+      "color": "cyan",
       "links": {
         "tanStackQuery": {
           "title": "TanStack Query",
@@ -893,7 +906,7 @@
     },
     "miscJsLibs": {
       "title": "Other JS Libraries",
-      "color": "blue",
+      "color": "cyan",
       "links": {
         "reactRouter": {
           "title": "React Router",
@@ -956,70 +969,104 @@
         }
       }
     },
-    "nativeHybrideApps": {
-      "title": "Native & Hybrid Apps",
-      "color": "blue",
+    "cssProcessors": {
+      "title": "CSS Processors",
+      "color": "purple",
       "links": {
-        "ionic": {
-          "title": "Ionic",
-          "url": "https://ionic.io",
-          "description": "A framework for hybrid mobile apps.",
-          "icon": "si:ionic"
+        "sassLang": {
+          "title": "Sass",
+          "url": "https://sass-lang.com",
+          "icon": "si:sass"
         },
-        "reactNative": {
-          "title": "React Native",
-          "url": "https://reactnative.dev",
-          "icon": "si:react"
+        "lessLang": {
+          "title": "Less",
+          "url": "https://lesscss.org",
+          "icon": "si:less"
         },
-        "nativeScript": {
-          "title": "NativeScript",
-          "url": "https://nativescript.org",
-          "description": "A cross-platform framework for any frontend framework.",
-          "icon": "si:nativescript"
+        "stylusLang": {
+          "title": "Stylus",
+          "url": "https://stylus-lang.com",
+          "icon": "si:stylus"
         },
-        "quasar": {
-          "title": "Quasar",
-          "url": "https://quasar.dev",
-          "description": "A cross-platform Vue.js framework.",
-          "icon": "si:quasar"
+        "postCss": {
+          "title": "PostCSS",
+          "url": "https://postcss.org",
+          "icon": "si:postcss"
         },
-        "svelteNative": {
-          "title": "Svelte Native",
-          "url": "https://svelte.nativescript.org",
-          "description": "Build native apps using Svelte.",
-          "icon": "si:svelte"
+        "autoprefixer": {
+          "title": "Autoprefixer",
+          "url": "https://github.com/postcss/autoprefixer",
+          "description": "Library that automatically insert browser prefixes into your CSS.",
+          "icon": "si:autoprefixer"
+        }
+      }
+    },
+    "cssLibs": {
+      "title": "CSS Frameworks & Libraries",
+      "color": "purple",
+      "links": {
+        "tailwindCss": {
+          "title": "Tailwind CSS",
+          "url": "https://tailwindcss.com",
+          "description": "A utility class based CSS framework.",
+          "icon": "si:tailwindcss"
         },
-        "electron": {
-          "title": "Electron",
-          "url": "https://www.electronjs.org",
-          "description": "A framework to build native desktop apps using the web stack.",
-          "icon": "si:electron",
-          "searchUrl": "https://www.electronjs.org/?q={search}"
+        "bootstrap": {
+          "title": "Bootstrap",
+          "url": "https://getbootstrap.com",
+          "icon": "si:bootstrap"
         },
-        "tauri": {
-          "title": "Tauri",
-          "url": "https://tauri.app",
-          "description": "A framework to build native desktop apps using the web stack and Rust.",
-          "icon": "si:tauri"
+        "bulma": {
+          "title": "Bulma",
+          "url": "https://bulma.io",
+          "icon": "si:bulma"
         },
-        "blazor": {
-          "title": "Blazor",
-          "url": "https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor",
-          "description": "Compile C# to WASM and run it in the Browser.",
-          "icon": "si:blazor"
+        "materialDesign": {
+          "title": "Material Design",
+          "url": "https://m3.material.io",
+          "description": "Official documentation for Google's Material Design.",
+          "icon": "si:materialdesign",
+          "searchUrl": "https://material.io/search.html?q={search}"
         },
-        "flutter": {
-          "title": "Flutter",
-          "url": "https://flutter.dev",
-          "description": "A Dart based framework to build multi-platform apps.",
-          "icon": "si:flutter",
-          "searchUrl": "https://flutter.dev/search?q={search}"
+        "cssModules": {
+          "title": "CSS Modules",
+          "url": "https://github.com/css-modules/css-modules",
+          "icon": "si:cssmodules"
+        },
+        "linaria": {
+          "title": "linaria",
+          "url": "https://linaria.dev/",
+          "description": "A zero-runtime CSS-in-JS library.",
+          "color": "#A74D8E"
+        },
+        "pandaCss": {
+          "title": "Panda CSS",
+          "url": "https://panda-css.com/",
+          "description": "A zero-runtime CSS-in-JS library.",
+          "color": "#F8E164"
+        },
+        "vanillaExtract": {
+          "title": "vanilla-extract",
+          "url": "https://vanilla-extract.style",
+          "description": "A zero-runtime CSS-in-JS library.",
+          "icon": "si:vanillaextract"
+        },
+        "styledComponents": {
+          "title": "Styled Components",
+          "url": "https://styled-components.com",
+          "icon": "si:styledcomponents"
+        },
+        "bem": {
+          "title": "BEM",
+          "url": "https://getbem.com/introduction",
+          "description": "A CSS naming convention that groups classes using namespaces.",
+          "icon": "si:bem"
         }
       }
     },
     "buildBundle": {
       "title": "Build & Bundle",
-      "color": "green",
+      "color": "lime",
       "links": {
         "webpack": {
           "title": "Webpack",
@@ -1095,7 +1142,7 @@
     },
     "testing": {
       "title": "Testing",
-      "color": "green",
+      "color": "lime",
       "links": {
         "vitest": {
           "title": "Vitest",
@@ -1161,7 +1208,7 @@
     },
     "security": {
       "title": "Security",
-      "color": "green",
+      "color": "lime",
       "links": {
         "owaspCheatSheet": {
           "title": "OWASP Cheat Sheet Series Project",
@@ -1197,7 +1244,7 @@
     },
     "codeStyle": {
       "title": "Linting & Code Style",
-      "color": "green",
+      "color": "lime",
       "links": {
         "webhint": {
           "title": "webhint",
@@ -1228,7 +1275,7 @@
     },
     "bestPractices": {
       "title": "Best Practices & Conventions",
-      "color": "green",
+      "color": "lime",
       "links": {
         "the12factorApp": {
           "title": "The Twelve-Factor App",
@@ -1819,6 +1866,12 @@
           "url": "https://lucide.dev",
           "description": "Fork of Feather Icons with more icons.",
           "icon": "si:lucide"
+        },
+        "hugeicons": {
+          "title": "Hugeicons",
+          "url": "https://hugeicons.com",
+          "searchUrl": "https://hugeicons.com/icons?search={search}",
+          "color": "#afe67f"
         },
         "dashboardIcons": {
           "title": "Dashboard Icons",
