@@ -1,5 +1,5 @@
 {
-  "$schema": "./schemas/2/config.schema.json",
+  "$schema": "./public/schemas/2/config.schema.json",
   "appTitle": "webdevhome",
   "categories": {
     "sourceControl": {
