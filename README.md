@@ -155,10 +155,33 @@ The application is now available under `http://localhost:8123` (or whatever port
 
 ## `config.json` documentation
 
+### JSON Schema
+
+If you use webdevhome **with Docker** you can declare the schema in your JSON file using the public URL:
+
+```json
+{
+  "$schema": "https://webdevhome.github.io/schemas/2/config.schema.json",
+  "appTitle": "",
+  "categories": {}
+}
+```
+
+If you use webdevhome **without Docker** you can declare the schema in your JSON file using the public URL, but you can also a relative path to the file:
+
+```json
+{
+  "$schema": "./public/schemas/2/config.schema.json",
+  "appTitle": "",
+  "categories": {}
+}
+```
+
 ### Config root
 
 | Property     | Type                                 | Description                                                      |
 | ------------ | ------------------------------------ | ---------------------------------------------------------------- |
+| `$schema`    | `string`                             | The schema URL.                                                  |
 | `appTitle`   | `string\|string[]`                   | The title of the app. Displayed in the tab title and app header. |
 | `categories` | `Record<string, CategoryDefinition>` | A list of your categories including all their links.             |
 
