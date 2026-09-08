@@ -1,4 +1,4 @@
-import fuzzy from 'fuzzysort'
+import fuzzy, { type KeyResults } from 'fuzzysort'
 import type { LinkItem } from '../links/links.ts'
 
 type GetSearchResultsOptions = {
@@ -11,6 +11,6 @@ export function getSearchResults({
   links = [],
   searchTerm,
   limit,
-}: GetSearchResultsOptions): Fuzzysort.KeyResults<LinkItem> {
+}: GetSearchResultsOptions): KeyResults<LinkItem> {
   return fuzzy.go(searchTerm, links, { key: 'title', limit })
 }

@@ -1,3 +1,4 @@
+import type { KeyResult, KeyResults } from 'fuzzysort'
 import { atom, computed, readonlyType } from 'nanostores'
 import { hiddenLinksStore } from '../links/hiddenLinksStore.ts'
 import type { LinkItem } from '../links/links.ts'
@@ -12,7 +13,7 @@ const $keyboardIndex = atom(0)
 
 const $visibleResults = computed(
   [$searchTerm, hiddenLinksStore.$visibleLinks],
-  (searchTerm, visibleLinks): Fuzzysort.KeyResults<LinkItem> => {
+  (searchTerm, visibleLinks): KeyResults<LinkItem> => {
     const links = Array.from(visibleLinks)
     return getSearchResults({ searchTerm, links, limit: maxResultsCount })
   },
@@ -20,7 +21,7 @@ const $visibleResults = computed(
 
 const $hiddenResults = computed(
   [$searchTerm, hiddenLinksStore.$hiddenLinks],
-  (searchTerm, hiddenLinks): Fuzzysort.KeyResults<LinkItem> => {
+  (searchTerm, hiddenLinks): KeyResults<LinkItem> => {
     const links = Array.from(hiddenLinks)
     return getSearchResults({ searchTerm, links, limit: maxHiddenResultsCount })
   },
@@ -32,7 +33,7 @@ const $focusedResult = computed(
     visibleResults,
     hiddenResults,
     keyboardIndex,
-  ): Fuzzysort.KeyResult<LinkItem> | null => {
+  ): KeyResult<LinkItem> | null => {
     if (visibleResults !== null && keyboardIndex < visibleResults.length) {
       return visibleResults[keyboardIndex]
     }
