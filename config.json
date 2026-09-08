@@ -18,6 +18,12 @@
           "icon": "si:gitlab",
           "searchUrl": "https://gitlab.com/search?utf8=%E2%9C%93&search={search}"
         },
+        "codeberg": {
+          "title": "Codeberg",
+          "url": "https://codeberg.org",
+          "icon": "si:codeberg",
+          "searchUrl": "https://codeberg.org/explore/repos?q={search}&only_show_relevant=true&sort=recentupdate"
+        },
         "gitea": {
           "title": "Gitea",
           "url": "https://gitea.com",
@@ -2243,6 +2249,12 @@
           "url": "https://developer.hashicorp.com/terraform",
           "icon": "si:terraform"
         },
+        "ansible": {
+          "title": "Ansible",
+          "url": "https://ansible.com",
+          "icon": "si:ansible",
+          "searchUrl": "https://docs.ansible.com/projects/ansible/latest/search.html?q={search}&check_keywords=yes&area=default"
+        },
         "coolify": {
           "title": "Coolify",
           "url": "https://coolify.io",
@@ -2251,6 +2263,7 @@
         "ddev": {
           "title": "ddev",
           "url": "https://ddev.com",
+          "description": "Docker-based PHP and Node.js development environments.",
           "color": "#4BA5DD"
         },
         "deployer": {
@@ -2307,10 +2320,65 @@
         }
       }
     },
-    "shells": {
-      "title": "Shells",
+    "servers": {
+      "title": "Server",
       "color": "rose",
       "links": {
+        "apacheHttpd": {
+          "title": "Apache HTTP Server",
+          "url": "https://httpd.apache.org",
+          "icon": "si:apache"
+        },
+        "nginx": {
+          "title": "Nginx",
+          "url": "https://nginx.org",
+          "icon": "si:nginx"
+        },
+        "caddy": {
+          "title": "Caddy",
+          "url": "https://caddyserver.com",
+          "icon": "si:caddy"
+        },
+        "lighttpd": {
+          "title": "lighttpd/lighty",
+          "url": "https://www.lighttpd.net",
+          "color": "#295c75"
+        },
+        "msIIS": {
+          "title": "Microsoft IIS",
+          "url": "https://www.iis.net"
+        }
+      }
+    },
+    "shells": {
+      "title": "Terminals & Shells",
+      "color": "rose",
+      "links": {
+        "iTerm2": {
+          "title": "iTerm2",
+          "url": "https://iterm2.com",
+          "icon": "si:iterm2"
+        },
+        "ghostty": {
+          "title": "Ghostty",
+          "url": "https://ghostty.org",
+          "icon": "si:ghostty"
+        },
+        "warpTerminal": {
+          "title": "Warp",
+          "url": "https://www.warp.dev/terminal",
+          "icon": "si:warp"
+        },
+        "hyperTerminal": {
+          "title": "Hyper",
+          "url": "https://hyper.is",
+          "icon": "si:hyper"
+        },
+        "bash": {
+          "title": "Bash",
+          "url": "https://www.gnu.org/software/bash/manual/html_node/index.html",
+          "icon": "si:gnubash"
+        },
         "zsh": {
           "title": "Zsh",
           "url": "https://www.zsh.org",
@@ -2330,6 +2398,60 @@
           "title": "PowerShell",
           "url": "https://learn.microsoft.com/de-de/powershell/",
           "color": "#3376CD"
+        }
+      }
+    },
+    "operatingSystems": {
+      "title": "Operating Systems",
+      "color": "rose",
+      "links": {
+        "debian": {
+          "title": "Debian",
+          "url": "https://debian.org",
+          "icon": "si:debian",
+          "searchUrl": "https://search.debian.org/cgi-bin/omega?P={search}"
+        },
+        "fedora": {
+          "title": "Fedora",
+          "url": "https://fedoraproject.org",
+          "icon": "si:fedora"
+        },
+        "ubuntu": {
+          "title": "Ubuntu",
+          "url": "https://ubuntu.com",
+          "icon": "si:ubuntu",
+          "searchUrl": "https://ubuntu.com/search?q={search}"
+        },
+        "archlinux": {
+          "title": "Arch Linux",
+          "url": "https://archlinux.org",
+          "icon": "si:archlinux",
+          "searchUrl": "https://archlinux.org/packages/?q={search}"
+        },
+        "linuxMint": {
+          "title": "Linux Mint",
+          "url": "https://linuxmint.com",
+          "icon": "si:linuxmint"
+        },
+        "alpineLinux": {
+          "title": "Alpine Linux",
+          "url": "https://alpinelinux.org",
+          "icon": "si:alpinelinux"
+        },
+        "rhel": {
+          "title": "RHEL (Red Hat Enterprise Linux)",
+          "url": "https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux",
+          "icon": "si:redhat"
+        },
+        "centos": {
+          "title": "CentOS",
+          "url": "https://www.centos.org",
+          "icon": "si:centos"
+        },
+        "linuxDistroTimeline": {
+          "title": "Linux Distribution Timeline",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg",
+          "icon": "si:linux"
         }
       }
     },
